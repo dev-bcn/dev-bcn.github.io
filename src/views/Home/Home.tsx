@@ -25,7 +25,7 @@ const Home: FC = () => {
   return (
     <>
       <StyleHomeContainer />
-      {isOpen && <Navigation />}
+      <Navigation isOpened={isOpen}/>
       <StyledHamburger
         onClick={() => {
           setIsOpen(!isOpen);
