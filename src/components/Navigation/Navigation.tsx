@@ -3,16 +3,25 @@ import { FC } from "react";
 import styled from "styled-components";
 import { COLOR_PINK } from "../../styles/colors";
 
-const item = {
-  hidden: { width: 0 },
-  visible: { width: "100vw" },
-};
-
-const StyledNavigation = styled(motion.nav)`
-  background: ${COLOR_PINK};
+const StyledNavigationContainer = styled(motion.div)`
   position: absolute;
   top: 0;
   bottom: 0;
+  display: flex;
+`;
+
+const StyledNavigation = styled(motion.nav)`
+  width: 100vw;
+  background: ${COLOR_PINK};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+const StyledClipPath = styled(motion.div)`
+  clip-path: polygon(100% 0, 0 0, 0 100%);
+  width: 40vw;
+  background: ${COLOR_PINK};
 `;
 
 type TNavigationProps = {
@@ -20,17 +29,22 @@ type TNavigationProps = {
 };
 
 const Navigation: FC<TNavigationProps> = ({ isOpened }) => {
+  // ahora falta ponerle el clip path
   return (
     <AnimatePresence>
       {isOpened && (
-        <StyledNavigation
+        <StyledNavigationContainer
           transition={{ duration: 0.5 }}
           initial={{ width: 0 }}
-          animate={{ width: "100vw" }}
+          animate={{ width: "140vw" }}
           exit={{ width: 0 }}
         >
-          <p>aqui un div que ocupara todo</p>
-        </StyledNavigation>
+          <StyledNavigation>
+            <p>hola</p>
+            <p>hola</p>
+            </StyledNavigation>
+          <StyledClipPath />
+        </StyledNavigationContainer>
       )}
     </AnimatePresence>
   );
