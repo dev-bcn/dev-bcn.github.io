@@ -22,14 +22,17 @@ const Home: FC = () => {
     background-repeat: no-repeat;
     height: 100vh;
   `;
+
+  function handleSetMenu() {
+     setIsOpen(!isOpen)
+  }
+
   return (
     <>
       <StyleHomeContainer />
-      <Navigation isOpened={isOpen}/>
+      <Navigation isOpened={isOpen} setMenu={handleSetMenu} />
       <StyledHamburger
-        onClick={() => {
-          setIsOpen(!isOpen);
-        }}
+        onClick={handleSetMenu}
       >
         Hamburger
       </StyledHamburger>
