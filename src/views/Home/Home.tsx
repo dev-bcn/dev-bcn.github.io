@@ -1,14 +1,17 @@
-import { FC, useState } from 'react';
-import { useWindowSize } from 'react-use';
-import styled from 'styled-components';
-import conferenceImage from '../../assets/images/conferenceImage.jpg';
-import Navigation from '../../components/Navigation/Navigation';
+import { FC, useState } from "react";
+import { useWindowSize } from "react-use";
+import { motion } from "framer-motion";
+import styled from "styled-components";
+import conferenceImage from "../../assets/images/conferenceImage.jpg";
+import Navigation from "../../components/Navigation/Navigation";
+import HamburgerIcon from "../../assets/images/HamburgerIcon.svg";
 
-const StyledHamburger = styled.div`
+const StyledHamburger = styled(motion.img)`
   position: absolute;
   top: 2rem;
   right: 3rem;
-  color: white;
+  width: 30px;
+  height: 30px;
   cursor: poiner;
 `;
 const Home: FC = () => {
@@ -24,18 +27,14 @@ const Home: FC = () => {
   `;
 
   function handleSetMenu() {
-     setIsOpen(!isOpen)
+    setIsOpen(!isOpen);
   }
 
   return (
     <>
       <StyleHomeContainer />
       <Navigation isOpened={isOpen} setMenu={handleSetMenu} />
-      <StyledHamburger
-        onClick={handleSetMenu}
-      >
-        Hamburger
-      </StyledHamburger>
+      <StyledHamburger onClick={handleSetMenu} src={HamburgerIcon} whileTap={{ scale: 0.8 }}/>
     </>
   );
 };

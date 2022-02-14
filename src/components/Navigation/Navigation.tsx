@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { FC } from "react";
 import styled from "styled-components";
 import { COLOR_PINK } from "../../styles/colors";
-import CloseIcon from '../../assets/images/CloseIcon.svg';
+import CloseIcon from "../../assets/images/CloseIcon.svg";
 
 const StyledNavigationContainer = styled(motion.div)`
   position: absolute;
@@ -27,13 +27,12 @@ const StyledClipPath = styled(motion.div)`
   background: ${COLOR_PINK};
 `;
 
-const StyledCloseMenu = styled.img`
+const StyledCloseMenuImage = styled(motion.img)`
   position: absolute;
   top: 2rem;
   right: 3rem;
   width: 30px;
   height: 30px;
-  z-index: 2;
   cursor: pointer;
 `;
 
@@ -53,11 +52,10 @@ const Navigation: FC<TNavigationProps> = ({ isOpened, setMenu }) => {
           exit={{ width: 0 }}
         >
           <StyledNavigation>
-        
-          <StyledCloseMenu src={CloseIcon} onClick={setMenu}/>
+            <StyledCloseMenuImage src={CloseIcon} onClick={setMenu} whileTap={{ scale: 0.8 }} />
             <p>hola</p>
             <p>hola</p>
-            </StyledNavigation>
+          </StyledNavigation>
           <StyledClipPath />
         </StyledNavigationContainer>
       )}
