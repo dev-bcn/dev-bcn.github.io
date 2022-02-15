@@ -5,8 +5,9 @@ import { COLOR_PINK, COLOR_YELLOW } from "../../styles/colors";
 import CloseIcon from "../../assets/images/CloseIcon.svg";
 import { NavLink } from "react-router-dom";
 import { navigationItems } from "./NavigationData";
-import TicketIcon from "../../assets/images/TicketIcon.svg"; 
-import "./Navigation.scss";
+import TicketIcon from "../../assets/images/TicketIcon.svg";
+import { useWindowSize } from "react-use";
+import { MOBILE_BREAKPOINT } from '../../constants/BreakPoints';
 
 const StyledNavigationContainer = styled(motion.div)`
   position: absolute;
@@ -14,6 +15,9 @@ const StyledNavigationContainer = styled(motion.div)`
   bottom: 0;
   display: flex;
   z-index: 1;
+  transform: translate3d(0px, 0px, 0px);
+  /* visibility: visible; */
+  transition: transform 0.5s ease 0s;
 `;
 
 const StyledNavigation = styled(motion.nav)`
@@ -45,6 +49,7 @@ const StyledLink = styled(NavLink)`
   color: ${COLOR_YELLOW};
   text-decoration: none;
   padding: 0.5rem;
+  opacity: 1;
 
   &.${(props) => props.activeClassName} {
       &:before {
@@ -60,7 +65,7 @@ const HighlightLinkContainer = styled.div`
   margin: 0.5rem;
 `;
 
-const StyledNavLinkHighlighted = styled.a`
+const StyledNavLinkHighlighted = styled(motion.a)`
   color: ${COLOR_PINK};
   text-decoration: none;
   padding: 0.25rem 1.5rem;
@@ -77,13 +82,15 @@ type TNavigationProps = {
 };
 
 const Navigation: FC<TNavigationProps> = ({ isOpened, setMenu }) => {
+  const { width, height } = useWindowSize();
+
   return (
     <AnimatePresence>
       {isOpened && (
         <StyledNavigationContainer
-          transition={{ duration: 0.5 }}
+          transition={{ duration: .5, ease: "linear"}}
           initial={{ width: 0 }}
-          animate={{ width: "140vw" }}
+          animate={ width > MOBILE_BREAKPOINT ? {width: "140vw"}:{width: "100vw"}}
           exit={{ width: 0 }}
         >
           <StyledNavigation>
@@ -109,6 +116,7 @@ const Navigation: FC<TNavigationProps> = ({ isOpened, setMenu }) => {
               </StyledNavLinkHighlighted>
             </HighlightLinkContainer>
           </StyledNavigation>
+          {/* esto se quita con el width en mobile */}
           <StyledClipPath />
         </StyledNavigationContainer>
       )}
