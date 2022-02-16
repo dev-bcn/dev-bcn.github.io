@@ -6,6 +6,7 @@ import Navigation from '../../components/Navigation/Navigation';
 import HamburgerIcon from '../../assets/images/HamburgerIcon.svg';
 import { COLOR_GREEN, COLOR_PINK, COLOR_WHITE } from '../../styles/colors';
 import Countdown from 'react-countdown';
+import TimeCountDown from './components/TimeCountdown';
 
 export const StyledMenuIcon = styled(motion.img)`
   position: absolute;
@@ -50,23 +51,8 @@ const Home: FC = () => {
   function handleSetMenu() {
     setIsOpen(!isOpen);
   }
-  const Completionist = () => <span>You are good to go!</span>;
 
-  const renderer = ({ hours, minutes, seconds, completed }) => {
-    if (completed) {
-      // los estilos pero con todo Oeros
-      return <Completionist />;
-    } else {
-      // Render a countdown
-      return (
-        // aqiu le pongo los estilos
-        <span>
-          {hours}:{minutes}:{seconds}
-        </span>
-      );
-    }
-  };
-
+  const startDay = 8553600000;
   return (
     <>
       <Navigation isOpened={isOpen} setMenu={handleSetMenu} />
@@ -82,10 +68,10 @@ const Home: FC = () => {
         </StyledTitleContainer>
         <StyledSubtitle>27 - 28 - 29 May</StyledSubtitle>
         <StyledSubtitle>JVM & Tech</StyledSubtitle>
-        <Countdown date={Date.now() + 5000} renderer={renderer} />
+        <Countdown date={Date.now() + startDay } renderer={TimeCountDown} />
         {/* 
+          - Darle estilo al countdown
           - La V en movimiento
-          - CountDown 
           - Las letras laterales
       */}
       </StyleHomeContainer>
