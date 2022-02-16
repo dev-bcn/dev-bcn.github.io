@@ -52,7 +52,7 @@ const Home: FC = () => {
     setIsOpen(!isOpen);
   }
 
-  const startDay = 8553600000;
+  const startDay = '2022-05-26T00:00:00';
   return (
     <>
       <Navigation isOpened={isOpen} setMenu={handleSetMenu} />
@@ -68,9 +68,8 @@ const Home: FC = () => {
         </StyledTitleContainer>
         <StyledSubtitle>27 - 28 - 29 May</StyledSubtitle>
         <StyledSubtitle>JVM & Tech</StyledSubtitle>
-        <Countdown date={Date.now() + startDay } renderer={TimeCountDown} />
+        <Countdown date={startDay} renderer={TimeCountDown} />
         {/* 
-          - Darle estilo al countdown
           - La V en movimiento
           - Las letras laterales
       */}
