@@ -44,13 +44,35 @@ const TimeCountDown: FC<TimeCountDownProps> = ({
   seconds,
   completed,
 }) => {
-  const Completionist = () => <span>You are good to go!</span>;
 
   if (completed) {
     // los estilos pero con todo Oeros
-    return <Completionist />;
+    return (
+      <TimeCountDownContainer>
+        <StyledTimerContainer>
+          <StyledTimerNumber>0</StyledTimerNumber>
+          <StyledTimerNumber>DAYS</StyledTimerNumber>
+        </StyledTimerContainer>
+        <StyleLine />
+        <StyledTimerContainer>
+          <StyledTimerNumber>0</StyledTimerNumber>
+          <StyledTimerNumber>HOURS</StyledTimerNumber>
+        </StyledTimerContainer>
+        <StyleLine />
+        <StyledTimerContainer>
+          <StyledTimerNumber>0</StyledTimerNumber>
+          <StyledTimerNumber>MINUTES</StyledTimerNumber>
+        </StyledTimerContainer>
+        <StyleLine />
+        <StyledTimerContainer>
+          <StyledTimerNumber>0</StyledTimerNumber>
+          <StyledTimerNumber>SECONDS</StyledTimerNumber>
+        </StyledTimerContainer>
+      </TimeCountDownContainer>
+    )
   } else {
     // Render a countdown
+    
     return (
       // aqiu le pongo los estilos
       <TimeCountDownContainer>
