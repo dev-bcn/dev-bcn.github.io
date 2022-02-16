@@ -38,11 +38,13 @@ const StyledTitleContainer = styled.div`
 const StyledTitle = styled.h1`
   padding: 0.5rem 1rem;
   color: ${COLOR_WHITE};
+  font-family: SpaceGrotesk;
 `;
 
 const StyledSubtitle = styled.h2`
   color: ${COLOR_PINK};
-  font-weight: normal;
+  font-family: SpaceGrotesk-Light;
+  font-size: 1.25rem;
 `;
 
 const Home: FC = () => {

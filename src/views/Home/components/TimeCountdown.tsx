@@ -17,6 +17,8 @@ const StyledTimerContainer = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  font-family: SpaceGrotesk-Light;
+  color: ${COLOR_WHITE};
 `;
 
 const StyleLine = styled.div`
@@ -26,7 +28,11 @@ const StyleLine = styled.div`
 `;
 
 const StyledTimerNumber = styled.p`
-  color: ${COLOR_WHITE};
+  font-size: 14px;
+`;
+
+const StyledTimerLetters = styled.p`
+  font-size: 8px;
 `;
 
 type TimeCountDownProps = {
@@ -51,22 +57,22 @@ const TimeCountDown: FC<TimeCountDownProps> = ({
       <TimeCountDownContainer>
         <StyledTimerContainer>
           <StyledTimerNumber>0</StyledTimerNumber>
-          <StyledTimerNumber>DAYS</StyledTimerNumber>
+          <StyledTimerLetters>DAYS</StyledTimerLetters>
         </StyledTimerContainer>
         <StyleLine />
         <StyledTimerContainer>
           <StyledTimerNumber>0</StyledTimerNumber>
-          <StyledTimerNumber>HOURS</StyledTimerNumber>
+          <StyledTimerLetters>HOURS</StyledTimerLetters>
         </StyledTimerContainer>
         <StyleLine />
         <StyledTimerContainer>
           <StyledTimerNumber>0</StyledTimerNumber>
-          <StyledTimerNumber>MINUTES</StyledTimerNumber>
+          <StyledTimerLetters>MINUTES</StyledTimerLetters>
         </StyledTimerContainer>
         <StyleLine />
         <StyledTimerContainer>
           <StyledTimerNumber>0</StyledTimerNumber>
-          <StyledTimerNumber>SECONDS</StyledTimerNumber>
+          <StyledTimerLetters>SECONDS</StyledTimerLetters>
         </StyledTimerContainer>
       </TimeCountDownContainer>
     )
@@ -78,22 +84,22 @@ const TimeCountDown: FC<TimeCountDownProps> = ({
       <TimeCountDownContainer>
         <StyledTimerContainer>
           <StyledTimerNumber>{days}</StyledTimerNumber>
-          <StyledTimerNumber>DAYS</StyledTimerNumber>
+          <StyledTimerLetters>DAYS</StyledTimerLetters>
         </StyledTimerContainer>
         <StyleLine />
         <StyledTimerContainer>
           <StyledTimerNumber>{hours}</StyledTimerNumber>
-          <StyledTimerNumber>HOURS</StyledTimerNumber>
+          <StyledTimerLetters>HOURS</StyledTimerLetters>
         </StyledTimerContainer>
         <StyleLine />
         <StyledTimerContainer>
           <StyledTimerNumber>{minutes}</StyledTimerNumber>
-          <StyledTimerNumber>MINUTES</StyledTimerNumber>
+          <StyledTimerLetters>MINUTES</StyledTimerLetters>
         </StyledTimerContainer>
         <StyleLine />
         <StyledTimerContainer>
           <StyledTimerNumber>{seconds}</StyledTimerNumber>
-          <StyledTimerNumber>SECONDS</StyledTimerNumber>
+          <StyledTimerLetters>SECONDS</StyledTimerLetters>
         </StyledTimerContainer>
       </TimeCountDownContainer>
     );
