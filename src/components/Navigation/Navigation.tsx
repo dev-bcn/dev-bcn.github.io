@@ -9,6 +9,7 @@ import TicketsImage from '../../assets/images/TicketsImage.svg';
 import { useWindowSize } from 'react-use';
 import { MOBILE_BREAKPOINT } from '../../constants/BreakPoints';
 import { StyledMenuIcon } from '../../views/Home/Home';
+import NavigationLogo from '../../assets/images/NavigationLogo.svg';
 
 const StyledNavigationContainer = styled(motion.div)`
   position: absolute;
@@ -41,9 +42,11 @@ const StyledLink = styled(NavLink)`
   color: ${COLOR_YELLOW};
   text-decoration: none;
   cursor: pointer;
+  font-family: SpaceGrotesk-Bold;
   &.${(props) => props.activeClassName} {
     &:before {
       content: '/   ';
+      font-family: SpaceGrotesk-Bold;
     }
   }
 `;
@@ -58,6 +61,11 @@ const StyledNavLinkHighlighted = styled(motion.a)`
 const StyledNavLinkHighlightedImage = styled.img`
   width: 9rem;
   height: auto;
+`;
+
+const StyledNavigationLogo = styled.img`
+  height: 4rem;
+  margin-bottom: 1rem;
 `;
 
 type TNavigationProps = {
@@ -85,6 +93,7 @@ const Navigation: FC<TNavigationProps> = ({ isOpened, setMenu }) => {
               onClick={setMenu}
               whileTap={{ scale: 0.8 }}
             />
+            <StyledNavigationLogo src={NavigationLogo} />
             {navigationItems.map((item) => (
               <StyledLink
                 key={item.id}
