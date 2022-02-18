@@ -71,10 +71,7 @@ const TimeCountDown: FC<TimeCountDownProps> = ({
       </TimeCountDownContainer>
     );
   } else {
-    // Render a countdown
-
     return (
-      // aqiu le pongo los estilos
       <TimeCountDownContainer>
         <StyledTimerContainer>
           <p>{days}</p>

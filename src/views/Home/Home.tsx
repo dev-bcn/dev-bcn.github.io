@@ -124,7 +124,6 @@ const Home: FC = () => {
     <>
       <Navigation isOpened={isOpen} setMenu={handleSetMenu} />
       <StyleHomeContainer>
-        {/* el header es un compo */}
         <StyledMenuIcon
           onClick={handleSetMenu}
           src={HamburgerIcon}
