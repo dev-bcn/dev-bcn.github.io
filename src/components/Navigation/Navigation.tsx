@@ -1,14 +1,15 @@
-import { AnimatePresence, motion } from "framer-motion";
-import { FC } from "react";
-import styled from "styled-components";
-import { COLOR_PINK, COLOR_YELLOW } from "../../styles/colors";
-import CloseIcon from "../../assets/images/CloseIcon.svg";
-import { NavLink } from "react-router-dom";
-import { navigationItems } from "./NavigationData";
-import TicketsImage from "../../assets/images/TicketsImage.svg";
-import { useWindowSize } from "react-use";
-import { MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
-import { StyledMenuIcon } from "../../views/Home/Home";
+import { AnimatePresence, motion } from 'framer-motion';
+import { FC } from 'react';
+import styled from 'styled-components';
+import { COLOR_PINK, COLOR_YELLOW } from '../../styles/colors';
+import CloseIcon from '../../assets/images/CloseIcon.svg';
+import { NavLink } from 'react-router-dom';
+import { navigationItems } from './NavigationData';
+import TicketsImage from '../../assets/images/TicketsImage.svg';
+import { useWindowSize } from 'react-use';
+import { MOBILE_BREAKPOINT } from '../../constants/BreakPoints';
+import { StyledMenuIcon } from '../../views/Home/Home';
+import NavigationLogo from '../../assets/images/NavigationLogo.svg';
 
 const StyledNavigationContainer = styled(motion.div)`
   position: absolute;
@@ -44,7 +45,7 @@ const StyledLink = styled(NavLink)`
   font-family: SpaceGrotesk-Bold;
   &.${(props) => props.activeClassName} {
     &:before {
-      content: "/   ";
+      content: '/   ';
       font-family: SpaceGrotesk-Bold;
     }
   }
@@ -62,6 +63,11 @@ const StyledNavLinkHighlightedImage = styled.img`
   height: auto;
 `;
 
+const StyledNavigationLogo = styled.img`
+  height: 4rem;
+  margin-bottom: 1rem;
+`;
+
 type TNavigationProps = {
   isOpened: boolean;
   setMenu: () => void;
@@ -74,10 +80,10 @@ const Navigation: FC<TNavigationProps> = ({ isOpened, setMenu }) => {
     <AnimatePresence>
       {isOpened && (
         <StyledNavigationContainer
-          transition={{ duration: 0.5, ease: "easeIn" }}
+          transition={{ duration: 0.5, ease: 'easeIn' }}
           initial={{ width: 0 }}
           animate={
-            width > MOBILE_BREAKPOINT ? { width: "140vw" } : { width: "100vw" }
+            width > MOBILE_BREAKPOINT ? { width: '140vw' } : { width: '100vw' }
           }
           exit={{ width: 0 }}
         >
@@ -87,19 +93,20 @@ const Navigation: FC<TNavigationProps> = ({ isOpened, setMenu }) => {
               onClick={setMenu}
               whileTap={{ scale: 0.8 }}
             />
+            <StyledNavigationLogo src={NavigationLogo} />
             {navigationItems.map((item) => (
               <StyledLink
                 key={item.id}
                 to={item.link}
                 onClick={setMenu}
-                activeClassName="isActive"
+                activeClassName='isActive'
               >
                 {item.id}
               </StyledLink>
             ))}
             <StyledNavLinkHighlighted
-              href="https://www.google.es/"
-              target="_blank"
+              href='https://www.google.es/'
+              target='_blank'
             >
               <StyledNavLinkHighlightedImage src={TicketsImage} />
             </StyledNavLinkHighlighted>
