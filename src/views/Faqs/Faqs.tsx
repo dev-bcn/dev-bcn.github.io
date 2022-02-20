@@ -47,4 +47,5 @@ const Faqs: FC = () => {
   );
 };
 
+
 export default Faqs;

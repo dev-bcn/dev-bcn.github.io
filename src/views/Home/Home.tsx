@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import HomeImage from '../../assets/images/HomeImage.jpg';
@@ -114,7 +114,7 @@ const StyledBlueSlash = styled(motion.p)`
 const Home: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { width } = useWindowSize();
-
+  
   function handleSetMenu() {
     setIsOpen(!isOpen);
   }
@@ -158,9 +158,13 @@ const Home: FC = () => {
           </StyledBlueSlash>
         </StyledBottomSlash>
         {/* 
-        PEDIR A PARIBAS:
+        TODO: PEDIR A PARIBAS:
           - Links enlace menu
           - Logo amarillo
+          - Imagen de la parte de FAQS
+
+          TODO desarrollo:
+          - El header (sus animaciones, el posicionamiento y el poner el logo a la izquierda cuando se haga scroll)
       */}
       </StyleHomeContainer>
     </>
