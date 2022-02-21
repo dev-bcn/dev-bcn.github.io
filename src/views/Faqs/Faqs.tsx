@@ -31,7 +31,7 @@ const StyleMoreIcon = styled.img`
   right: -1rem;
   top: 5rem;
   height: 5rem;
-  @media (min-width: 480px) {
+  @media (min-width: 800px) {
     height: 10rem;
   }
 `;
@@ -41,7 +41,7 @@ const StyleLessIcon = styled.img`
   left: -1rem;
   top: 50%;
   height: 5rem;
-  @media (min-width: 480px) {
+  @media (min-width: 800px) {
     height: 10rem;
   }
 `;
