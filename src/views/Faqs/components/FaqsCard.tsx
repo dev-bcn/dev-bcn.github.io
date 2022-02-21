@@ -1,11 +1,9 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import ReadMoreIcon from '../../../assets/images/ReadMoreIcon.svg';
 import { Link } from 'react-router-dom';
 import { COLOR_WHITE } from '../../../styles/colors';
-import LessThanIcon from '../../../assets/images/LessThanIcon.svg';
-import MoreThanIcon from '../../../assets/images/MoreThanIcon.svg';
 
 type FaqCardType = {
   faq: {

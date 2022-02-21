@@ -1,4 +1,4 @@
-import { FC, useState, useRef } from 'react';
+import { FC, useState } from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import HomeImage from '../../assets/images/HomeImage.jpg';
@@ -114,7 +114,7 @@ const StyledBlueSlash = styled(motion.p)`
 const Home: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { width } = useWindowSize();
-  
+
   function handleSetMenu() {
     setIsOpen(!isOpen);
   }
