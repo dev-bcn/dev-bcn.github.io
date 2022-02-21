@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import styled from 'styled-components';
-import SectionTitle from '../../components/SectionTitle/SectionTitle';
+import TitleSection from '../../components/SectionTitle/TitleSection';
 import { COLOR_GREEN, COLOR_WHITE } from '../../styles/colors';
 
 const StyledSpeakersContainer = styled.section`
@@ -10,7 +10,7 @@ const StyledSpeakersContainer = styled.section`
 const Speakers: FC = () => {
   return (
     <StyledSpeakersContainer>
-      <SectionTitle
+      <TitleSection
         title='SPEAKERS'
         subtitle='Are you a technology company? Interested in meeting
         enthusiasts and geek people for technology? This is a

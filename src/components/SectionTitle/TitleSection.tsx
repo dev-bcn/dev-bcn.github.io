@@ -44,7 +44,7 @@ const StyledSubTitle = styled.p`
   }
 `;
 
-const SectionHeader: FC<ISectionTitleProps> = ({ title, subtitle, color }) => {
+const TitleSection: FC<ISectionTitleProps> = ({ title, subtitle, color }) => {
   return (
     <StyledTitleContainer>
       <StyledTitleBody>
@@ -55,4 +55,4 @@ const SectionHeader: FC<ISectionTitleProps> = ({ title, subtitle, color }) => {
   );
 };
 
-export default SectionHeader;
+export default TitleSection;
