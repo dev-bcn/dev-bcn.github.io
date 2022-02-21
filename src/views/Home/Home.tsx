@@ -158,9 +158,13 @@ const Home: FC = () => {
           </StyledBlueSlash>
         </StyledBottomSlash>
         {/* 
-        PEDIR A PARIBAS:
+        TODO: PEDIR A PARIBAS:
           - Links enlace menu
           - Logo amarillo
+          - Imagen de la parte de FAQS
+
+          TODO desarrollo:
+          - El header (sus animaciones, el posicionamiento y el poner el logo a la izquierda cuando se haga scroll)
       */}
       </StyleHomeContainer>
     </>
