@@ -49,8 +49,8 @@ const StyleLessIcon = styled.img`
 
 const Faqs: FC = () => {
   return (
-    <SectionWrapper color={COLOR_PINK}>
-      <div style={{ maxWidth: 1024 }}>
+    <>
+      <SectionWrapper color={COLOR_PINK}>
         <StyledFaqSection>
           {faqsData.map((faq, index) => (
             <FaqCard faq={faq} index={index} key={index} />
@@ -58,7 +58,7 @@ const Faqs: FC = () => {
           <StyleMoreIcon src={MoreThanIcon} />
           <StyleLessIcon src={LessThanIcon} />
         </StyledFaqSection>
-      </div>
+      </SectionWrapper>
       <StyledWaveContainer>
         <svg
           viewBox='0 0 500 150'
@@ -71,7 +71,7 @@ const Faqs: FC = () => {
           ></path>
         </svg>
       </StyledWaveContainer>
-    </SectionWrapper>
+    </>
   );
 };
 

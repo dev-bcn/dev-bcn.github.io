@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { MAX_WIDTH } from '../../constants/BreakPoints';
 import styled from 'styled-components';
 
 const StyledSectionWrapper = styled.div<{ color: string }>`
@@ -11,12 +12,23 @@ const StyledSectionWrapper = styled.div<{ color: string }>`
   }};
 `;
 
+const StyledInnerWrapper = styled.div`
+  width: 100%;
+  max-width: ${MAX_WIDTH}px;
+`;
+
 interface ISectionWrapperProps {
   color: string;
 }
 
 const SectionWrapper: FC<ISectionWrapperProps> = ({ children, color }) => {
-  return <StyledSectionWrapper color={color}>{children}</StyledSectionWrapper>;
+  return (
+    <StyledSectionWrapper color={color} className='SectionWrapper'>
+      <StyledInnerWrapper className='InnerSectionWrapper'>
+        {children}
+      </StyledInnerWrapper>
+    </StyledSectionWrapper>
+  );
 };
 
 export default SectionWrapper;
