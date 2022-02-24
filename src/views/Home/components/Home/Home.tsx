@@ -10,7 +10,7 @@ import {
 } from '../../../../styles/colors';
 import Countdown from 'react-countdown';
 import TimeCountDown from './components/TimeCountdown';
-import LessThanIcon from '../../../../assets/images/LessThanIcon.svg';
+import LessThanYellowIcon from '../../../../assets/images/LessThanYellowIcon.svg';
 import { useWindowSize } from 'react-use';
 import { TABLET_BREAKPOINT } from '../../../../constants/BreakPoints';
 
@@ -114,7 +114,7 @@ const Home: FC = () => {
         <StyledSubtitle>JVM & Tech</StyledSubtitle>
         <Countdown date={startDay} renderer={TimeCountDown} />
 
-        {width > TABLET_BREAKPOINT && <StyledLessThan src={LessThanIcon} />}
+        {width > TABLET_BREAKPOINT && <StyledLessThan src={LessThanYellowIcon} />}
         <StyledTopSlash
           initial={{ x: '100%' }}
           animate={{ x: 0 }}

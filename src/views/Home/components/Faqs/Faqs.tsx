@@ -1,7 +1,7 @@
 import { COLOR_PINK } from '../../../../styles/colors';
 import { FC } from 'react';
 import FaqCard from './components/FaqsCard';
-import LessThanIcon from '../../../../assets/images/LessThanIcon.svg';
+import LessThanYellowIcon from '../../../../assets/images/LessThanYellowIcon.svg';
 import MoreThanIcon from '../../../../assets/images/MoreThanIcon.svg';
 import SectionWrapper from '../../../../components/SectionWrapper/SectionWrapper';
 import { faqsData } from './FaqsData';
@@ -56,7 +56,7 @@ const Faqs: FC = () => {
             <FaqCard faq={faq} index={index} key={index} />
           ))}
           <StyleMoreIcon src={MoreThanIcon} />
-          <StyleLessIcon src={LessThanIcon} />
+          <StyleLessIcon src={LessThanYellowIcon} />
         </StyledFaqSection>
       </SectionWrapper>
       <StyledWaveContainer>

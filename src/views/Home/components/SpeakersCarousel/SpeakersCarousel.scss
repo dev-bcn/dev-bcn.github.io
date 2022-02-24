@@ -1,7 +1,8 @@
 .swiper {
   width: 100%;
-  height: 20rem;
+  height: 10rem;
   overflow-x: hidden;
+  margin: 2rem 0rem;
 }
 
 .swiper-slide {
@@ -27,6 +28,11 @@
 .swiper-slide img {
   display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+}
+
+.speakers__link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
 }
