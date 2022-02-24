@@ -1,7 +1,7 @@
 import { FC } from "react";
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper";
+import { Autoplay } from "swiper";
 import TitleSection from "../../../../components/SectionTitle/TitleSection";
 import {
   COLOR_GREEN,
@@ -95,7 +95,6 @@ const SpeakersCarousel: FC = () => {
             delay: 2500,
             disableOnInteraction: true,
           }}
-          pagination={true}
           breakpoints={{
             340: {
               width: 640,
@@ -109,7 +108,7 @@ const SpeakersCarousel: FC = () => {
             },
           }}
           centeredSlides={true}
-          modules={[Autoplay, Pagination]}
+          modules={[Autoplay]}
           className="mySwiper"
         >
           <SwiperSlide>
