@@ -1,7 +1,7 @@
 import { FC } from "react";
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper";
+import { Autoplay, Pagination } from "swiper";
 import TitleSection from "../../../../components/SectionTitle/TitleSection";
 import {
   COLOR_GREEN,
@@ -22,6 +22,24 @@ import "./SpeakersCarousel.scss";
 const StyledSpeakersContainer = styled.section`
   background-color: ${COLOR_GREEN};
   position: relative;
+`;
+
+const StyledSlideImage = styled.img`
+  display: block;
+  width: 100%;
+  height: auto;
+`;
+
+const StyledSlideContain = styled.div`
+  position: absolute;
+  bottom: 0px;
+  background: ${COLOR_PINK};
+  padding: .5rem .25rem;
+`;
+
+const StyledSlideText = styled.p`
+  font-size: .875rem;
+  color: white;
 `;
 
 const StyledLink = styled.div`
@@ -72,12 +90,12 @@ const SpeakersCarousel: FC = () => {
         and to support technological communities."
           color={COLOR_WHITE}
         />
-
         <Swiper
           autoplay={{
             delay: 2500,
             disableOnInteraction: true,
           }}
+          pagination={true}
           breakpoints={{
             340: {
               width: 640,
@@ -91,56 +109,80 @@ const SpeakersCarousel: FC = () => {
             },
           }}
           centeredSlides={true}
-          modules={[Autoplay]}
+          modules={[Autoplay, Pagination]}
           className="mySwiper"
         >
           <SwiperSlide>
-            <img
+            <StyledSlideImage
               src={require(`../../../../assets/images/BlackAvatar1.jpg`)}
               alt="Avatar"
             />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
           </SwiperSlide>
           <SwiperSlide>
-            <img
+            <StyledSlideImage
               src={require(`../../../../assets/images/BlackAvatar2.jpg`)}
               alt="Avatar"
             />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
           </SwiperSlide>
           <SwiperSlide>
-            <img
+            <StyledSlideImage
               src={require(`../../../../assets/images/BlackAvatar1.jpg`)}
               alt="Avatar"
             />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
           </SwiperSlide>
           <SwiperSlide>
-            <img
+            <StyledSlideImage
               src={require(`../../../../assets/images/BlackAvatar2.jpg`)}
               alt="Avatar"
             />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
           </SwiperSlide>
           <SwiperSlide>
-            <img
+            <StyledSlideImage
               src={require(`../../../../assets/images/BlackAvatar1.jpg`)}
               alt="Avatar"
             />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
           </SwiperSlide>
           <SwiperSlide>
-            <img
+            <StyledSlideImage
               src={require(`../../../../assets/images/BlackAvatar2.jpg`)}
               alt="Avatar"
             />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
           </SwiperSlide>
           <SwiperSlide>
-            <img
+            <StyledSlideImage
               src={require(`../../../../assets/images/BlackAvatar1.jpg`)}
               alt="Avatar"
             />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
           </SwiperSlide>
           <SwiperSlide>
-            <img
+            <StyledSlideImage
               src={require(`../../../../assets/images/BlackAvatar2.jpg`)}
               alt="Avatar"
             />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
           </SwiperSlide>
         </Swiper>
         <StyledLink>
