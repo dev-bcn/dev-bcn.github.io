@@ -1,12 +1,10 @@
-import { BrowserRouter } from 'react-router-dom';
-import Faqs from './views/Faqs/Faqs';
-import Home from './views/Home/Home';
+import { BrowserRouter, Route } from "react-router-dom";
+import { HomeWrapper } from "./views/Home/HomeWrapper";
 
 function App() {
   return (
     <BrowserRouter>
-      <Home />
-      <Faqs />
+      <Route path="/" component={HomeWrapper} />
     </BrowserRouter>
   );
 }
