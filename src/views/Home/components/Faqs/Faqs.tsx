@@ -1,14 +1,14 @@
-import { FC } from 'react';
-import { motion } from 'framer-motion';
-import styled from 'styled-components';
 import { COLOR_PINK } from '../../../../styles/colors';
-import { faqsData } from './FaqsData';
+import { FC } from 'react';
 import FaqCard from './components/FaqsCard';
 import LessThanIcon from '../../../../assets/images/LessThanIcon.svg';
 import MoreThanIcon from '../../../../assets/images/MoreThanIcon.svg';
+import SectionWrapper from '../../../../components/SectionWrapper/SectionWrapper';
+import { faqsData } from './FaqsData';
+import { motion } from 'framer-motion';
+import styled from 'styled-components';
 
 const StyledFaqSection = styled(motion.section)`
-  background: ${COLOR_PINK};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,6 +24,7 @@ const StyledWaveContainer = styled.div`
   background: ${COLOR_PINK};
   overflow-y: hidden;
   height: 5rem;
+  width: 100%;
 `;
 
 const StyleMoreIcon = styled.img`
@@ -48,14 +49,16 @@ const StyleLessIcon = styled.img`
 
 const Faqs: FC = () => {
   return (
-    <>
-      <StyledFaqSection>
-        {faqsData.map((faq, index) => (
-          <FaqCard faq={faq} index={index} key={index} />
-        ))}
-        <StyleMoreIcon src={MoreThanIcon} />
-        <StyleLessIcon src={LessThanIcon} />
-      </StyledFaqSection>
+    <SectionWrapper color={COLOR_PINK}>
+      <div style={{ maxWidth: 1024 }}>
+        <StyledFaqSection>
+          {faqsData.map((faq, index) => (
+            <FaqCard faq={faq} index={index} key={index} />
+          ))}
+          <StyleMoreIcon src={MoreThanIcon} />
+          <StyleLessIcon src={LessThanIcon} />
+        </StyledFaqSection>
+      </div>
       <StyledWaveContainer>
         <svg
           viewBox='0 0 500 150'
@@ -68,7 +71,7 @@ const Faqs: FC = () => {
           ></path>
         </svg>
       </StyledWaveContainer>
-    </>
+    </SectionWrapper>
   );
 };
 
