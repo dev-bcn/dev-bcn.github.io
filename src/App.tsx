@@ -5,7 +5,6 @@ import { HomeWrapper } from "./views/Home/HomeWrapper";
 function App() {
   return (
     <BrowserRouter>
-      <Navigation />
       <Route path="/" component={HomeWrapper} />
     </BrowserRouter>
   );
