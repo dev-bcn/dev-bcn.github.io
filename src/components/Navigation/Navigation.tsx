@@ -10,6 +10,7 @@ import { useWindowSize } from 'react-use';
 import { MOBILE_BREAKPOINT } from '../../constants/BreakPoints';
 import NavigationLogo from '../../assets/images/NavigationLogo.svg';
 import HamburgerIcon from '../../assets/images/HamburgerIcon.svg';
+import { useHistory } from "react-router-dom";
 
 
 export const StyledMenuIcon = styled(motion.img)`
@@ -23,7 +24,7 @@ export const StyledMenuIcon = styled(motion.img)`
 `;
 
 const StyledNavigationContainer = styled(motion.div)`
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   display: flex;
