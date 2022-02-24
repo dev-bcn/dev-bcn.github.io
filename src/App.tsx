@@ -1,14 +1,12 @@
-import { BrowserRouter } from 'react-router-dom';
-import Faqs from './views/Faqs/Faqs';
-import Home from './views/Home/Home';
-import Speakers from './views/Speakers/Speakers';
+import { BrowserRouter, Route } from "react-router-dom";
+import Navigation from "./components/Navigation/Navigation";
+import { HomeWrapper } from "./views/Home/HomeWrapper";
 
 function App() {
   return (
     <BrowserRouter>
-      <Home />
-      <Faqs />
-      <Speakers />
+      <Navigation />
+      <Route path="/" component={HomeWrapper} />
     </BrowserRouter>
   );
 }

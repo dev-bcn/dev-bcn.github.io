@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import styled from 'styled-components';
 import { COLOR_PINK, COLOR_YELLOW } from '../../styles/colors';
 import CloseIcon from '../../assets/images/CloseIcon.svg';
@@ -8,8 +8,19 @@ import { navigationItems } from './NavigationData';
 import TicketsImage from '../../assets/images/TicketsImage.svg';
 import { useWindowSize } from 'react-use';
 import { MOBILE_BREAKPOINT } from '../../constants/BreakPoints';
-import { StyledMenuIcon } from '../../views/Home/Home';
 import NavigationLogo from '../../assets/images/NavigationLogo.svg';
+import HamburgerIcon from '../../assets/images/HamburgerIcon.svg';
+
+
+export const StyledMenuIcon = styled(motion.img)`
+  position: absolute;
+  top: 2rem;
+  right: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+  z-index: 1; 
+`;
 
 const StyledNavigationContainer = styled(motion.div)`
   position: absolute;
@@ -68,15 +79,22 @@ const StyledNavigationLogo = styled.img`
   margin-bottom: 1rem;
 `;
 
-type TNavigationProps = {
-  isOpened: boolean;
-  setMenu: () => void;
-};
 
-const Navigation: FC<TNavigationProps> = ({ isOpened, setMenu }) => {
+const Navigation: FC = () => {
   const { width } = useWindowSize();
+  const [isOpened, setIsOpen] = useState(false);
+
+  function handleSetMenu() {
+    setIsOpen(!isOpened);
+  }
 
   return (
+    <>
+    <StyledMenuIcon
+          onClick={handleSetMenu}
+          src={HamburgerIcon}
+          whileTap={{ scale: 0.8 }}
+        />
     <AnimatePresence>
       {isOpened && (
         <StyledNavigationContainer
@@ -90,7 +108,7 @@ const Navigation: FC<TNavigationProps> = ({ isOpened, setMenu }) => {
           <StyledNavigation>
             <StyledMenuIcon
               src={CloseIcon}
-              onClick={setMenu}
+              onClick={handleSetMenu}
               whileTap={{ scale: 0.8 }}
             />
             <StyledNavigationLogo src={NavigationLogo} />
@@ -98,7 +116,7 @@ const Navigation: FC<TNavigationProps> = ({ isOpened, setMenu }) => {
               <StyledLink
                 key={item.id}
                 to={item.link}
-                onClick={setMenu}
+                onClick={handleSetMenu}
                 activeClassName='isActive'
               >
                 {item.id}
@@ -115,6 +133,7 @@ const Navigation: FC<TNavigationProps> = ({ isOpened, setMenu }) => {
         </StyledNavigationContainer>
       )}
     </AnimatePresence>
+    </>
   );
 };
 

@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import ReadMoreIcon from '../../../assets/images/ReadMoreIcon.svg';
+import ReadMoreIcon from '../../../../../assets/images/ReadMoreIcon.svg';
 import { Link } from 'react-router-dom';
-import { COLOR_WHITE } from '../../../styles/colors';
+import { COLOR_WHITE } from '../../../../../styles/colors';
 
 type FaqCardType = {
   faq: {
@@ -96,7 +96,7 @@ const FaqCard: FC<FaqCardType> = ({ faq, index }) => {
     <StyledFaqCard color={isOdd ? 'row' : 'row-reverse'}>
       <StyledFaqImageContainer>
         <StyledFaqImage
-          src={require(`../../../assets/images/FaqsImage${index}.png`)}
+          src={require(`../../../../../assets/images/FaqsImage${index}.png`)}
         />
         <StyledImageAnimation />
       </StyledFaqImageContainer>

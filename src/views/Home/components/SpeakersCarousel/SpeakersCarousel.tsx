@@ -1,20 +1,20 @@
 import { FC } from "react";
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, SwiperOptions } from "swiper";
-import TitleSection from "../../components/SectionTitle/TitleSection";
-import { COLOR_GREEN, COLOR_WHITE } from "../../styles/colors";
+import { Autoplay, Pagination } from "swiper";
+import TitleSection from "../../../../components/SectionTitle/TitleSection";
+import { COLOR_GREEN, COLOR_WHITE } from "../../../../styles/colors";
 
 import "swiper/css";
 import "swiper/css/pagination";
-import "./Speakers.scss";
+import "./SpeakersCarousel.scss";
 
 const StyledSpeakersContainer = styled.section`
   background-color: ${COLOR_GREEN};
   position: relative;
 `;
 
-const Speakers: FC = () => {
+const SpeakersCarousel: FC = () => {
   return (
     <>
       <StyledSpeakersContainer>
@@ -43,25 +43,25 @@ const Speakers: FC = () => {
         >
           <SwiperSlide>
             <img
-              src={require(`../../assets/images/FaqsImage1.png`)}
+              src={require(`../../../../assets/images/FaqsImage1.png`)}
               alt="hola"
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
-              src={require(`../../assets/images/FaqsImage1.png`)}
+              src={require(`../../../../assets/images/FaqsImage1.png`)}
               alt="hola"
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
-              src={require(`../../assets/images/FaqsImage1.png`)}
+              src={require(`../../../../assets/images/FaqsImage1.png`)}
               alt="hola"
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
-              src={require(`../../assets/images/FaqsImage1.png`)}
+              src={require(`../../../../assets/images/FaqsImage1.png`)}
               alt="hola"
             />
           </SwiperSlide>
@@ -71,4 +71,4 @@ const Speakers: FC = () => {
   );
 };
 
-export default Speakers;
+export default SpeakersCarousel;

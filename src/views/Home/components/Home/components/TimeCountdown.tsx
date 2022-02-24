@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import styled from 'styled-components';
-import { COLOR_WHITE, COLOR_YELLOW } from '../../../styles/colors';
+import { COLOR_WHITE, COLOR_YELLOW } from '../../../../../styles/colors';
 
 const TimeCountDownContainer = styled.div`
   display: flex;

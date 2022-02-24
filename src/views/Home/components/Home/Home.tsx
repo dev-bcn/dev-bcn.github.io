@@ -1,29 +1,18 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
-import HomeImage from '../../assets/images/HomeImage.jpg';
-import Navigation from '../../components/Navigation/Navigation';
-import HamburgerIcon from '../../assets/images/HamburgerIcon.svg';
+import HomeImage from '../../../../assets/images/HomeImage.jpg';
 import {
   COLOR_BLUE,
   COLOR_GREEN,
   COLOR_PINK,
   COLOR_WHITE,
-} from '../../styles/colors';
+} from '../../../../styles/colors';
 import Countdown from 'react-countdown';
 import TimeCountDown from './components/TimeCountdown';
-import LessThanIcon from '../../assets/images/LessThanIcon.svg';
+import LessThanIcon from '../../../../assets/images/LessThanIcon.svg';
 import { useWindowSize } from 'react-use';
-import { TABLET_BREAKPOINT } from '../../constants/BreakPoints';
-
-export const StyledMenuIcon = styled(motion.img)`
-  position: absolute;
-  top: 2rem;
-  right: 3rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  cursor: pointer;
-`;
+import { TABLET_BREAKPOINT } from '../../../../constants/BreakPoints';
 
 const StyleHomeContainer = styled.div`
   position: relative;
@@ -112,23 +101,12 @@ const StyledBlueSlash = styled(motion.p)`
 `;
 
 const Home: FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const { width } = useWindowSize();
-
-  function handleSetMenu() {
-    setIsOpen(!isOpen);
-  }
-
   const startDay = '2022-05-26T00:00:00';
+  
   return (
     <>
-      <Navigation isOpened={isOpen} setMenu={handleSetMenu} />
       <StyleHomeContainer>
-        <StyledMenuIcon
-          onClick={handleSetMenu}
-          src={HamburgerIcon}
-          whileTap={{ scale: 0.8 }}
-        />
         <StyledTitleContainer>
           <StyledTitle>JBCNConf 2022</StyledTitle>
         </StyledTitleContainer>
@@ -157,15 +135,6 @@ const Home: FC = () => {
             / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /{' '}
           </StyledBlueSlash>
         </StyledBottomSlash>
-        {/* 
-        TODO: PEDIR A PARIBAS:
-          - Links enlace menu
-          - Logo amarillo
-          - Imagen de la parte de FAQS
-
-          TODO desarrollo:
-          - El header (sus animaciones, el posicionamiento y el poner el logo a la izquierda cuando se haga scroll)
-      */}
       </StyleHomeContainer>
     </>
   );

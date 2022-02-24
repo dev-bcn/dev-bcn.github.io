@@ -1,11 +1,11 @@
 import { FC } from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
-import { COLOR_PINK } from '../../styles/colors';
+import { COLOR_PINK } from '../../../../styles/colors';
 import { faqsData } from './FaqsData';
 import FaqCard from './components/FaqsCard';
-import LessThanIcon from '../../assets/images/LessThanIcon.svg';
-import MoreThanIcon from '../../assets/images/MoreThanIcon.svg';
+import LessThanIcon from '../../../../assets/images/LessThanIcon.svg';
+import MoreThanIcon from '../../../../assets/images/MoreThanIcon.svg';
 
 const StyledFaqSection = styled(motion.section)`
   background: ${COLOR_PINK};
