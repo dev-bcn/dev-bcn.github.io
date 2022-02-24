@@ -3,7 +3,7 @@ export const navigationItems = [
     {id: 'NEWS', link:'/news'},
     {id: 'SCHEDULE', link:'/schedule'},
     {id: 'TALKS', link:'/talks'},
-    {id: 'WORKSHOPS', link:'/home'},
+    {id: 'WORKSHOPS', link:'/workshops'},
     {id: 'SPEAKERS', link:'/speakers'},
     {id: 'SPONSORS', link:'/sponsors'},
     {id: 'PRESS', link:'/press'},
