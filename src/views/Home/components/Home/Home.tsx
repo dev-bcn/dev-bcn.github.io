@@ -13,14 +13,19 @@ import TimeCountDown from './components/TimeCountdown';
 import LessThanYellowIcon from '../../../../assets/images/LessThanYellowIcon.svg';
 import { useWindowSize } from 'react-use';
 import { TABLET_BREAKPOINT } from '../../../../constants/BreakPoints';
+import SectionWrapper from '../../../../components/SectionWrapper/SectionWrapper';
 
-const StyleHomeContainer = styled.div`
-  position: relative;
-  background-image: url(${HomeImage});
+const StyledHomaImage = styled.div`
+background-image: url(${HomeImage});
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   height: 100vh;
+`;
+const StyleHomeContainer = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -105,7 +110,8 @@ const Home: FC = () => {
   const startDay = '2022-05-26T00:00:00';
   
   return (
-    <>
+    <StyledHomaImage>
+    <SectionWrapper color='transparent'>
       <StyleHomeContainer>
         <StyledTitleContainer>
           <StyledTitle>JBCNConf 2022</StyledTitle>
@@ -136,7 +142,8 @@ const Home: FC = () => {
           </StyledBlueSlash>
         </StyledBottomSlash>
       </StyleHomeContainer>
-    </>
+    </SectionWrapper>
+    </StyledHomaImage>
   );
 };
 

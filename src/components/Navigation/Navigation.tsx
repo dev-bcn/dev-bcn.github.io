@@ -7,9 +7,50 @@ import { NavLink, useLocation } from "react-router-dom";
 import { navigationItems } from "./NavigationData";
 import TicketsImage from "../../assets/images/TicketsImage.svg";
 import { useWindowSize } from "react-use";
-import { MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
+import { MAX_WIDTH, MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
 import NavigationLogo from "../../assets/images/NavigationLogo.svg";
 import HamburgerIcon from "../../assets/images/HamburgerIcon.svg";
+import SectionWrapper from "../SectionWrapper/SectionWrapper";
+import BlueHamburgerIcon from "../../assets/images/BlueHamburgerIcon.svg";
+
+const StyledHeaderWrapper = styled.div`
+  background: ${COLOR_YELLOW};
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index:2;
+`;
+
+const StyledHeader = styled.header`
+  background: ${COLOR_YELLOW};
+  height: 3rem;
+  max-width: ${MAX_WIDTH}px;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  @media (min-width: 480px) {
+    height: 4rem;
+  }
+`;
+
+const StyledBlueHamburger = styled(motion.img)`
+  height: 2.5rem;
+  @media (min-width: 480px) {
+    height: 3rem;
+  }
+`;
+
+const StyledHeaderLogo = styled.img`
+  height: 2.5rem;
+`;
 
 export const StyledMenuIcon = styled(motion.img)`
   position: absolute;
@@ -21,21 +62,12 @@ export const StyledMenuIcon = styled(motion.img)`
   z-index: 1;
 `;
 
-const StyledHeader = styled.header`
-  position: fixed;
-  top: 0;
-  background: ${COLOR_YELLOW};
-  height: 4rem;
-  width: 100%;
-  z-index: 1;
-`;
-
 const StyledNavigationContainer = styled(motion.div)`
   position: fixed;
   top: 0;
   bottom: 0;
   display: flex;
-  z-index: 1;
+  z-index: 2;
   transform: translate3d(0px, 0px, 0px);
   transition: transform 0.5s ease 0s;
 `;
@@ -68,6 +100,9 @@ const StyledLink = styled(NavLink)`
       font-family: SpaceGrotesk-Bold;
     }
   }
+  @media (min-width:${MOBILE_BREAKPOINT}px) {
+    font-size: 1.125rem;
+  }
 `;
 
 const StyledNavLinkHighlighted = styled(motion.a)`
@@ -99,16 +134,21 @@ const Navigation: FC = () => {
   return (
     <>
       {pathname === "/" ? (
-        // compo maxwidht con color transparent
-        <StyledMenuIcon
-          onClick={handleSetMenu}
-          src={HamburgerIcon}
-          whileTap={{ scale: 0.8 }}
-        />
+        <SectionWrapper color="transparent">
+          <StyledMenuIcon
+            onClick={handleSetMenu}
+            src={HamburgerIcon}
+            whileTap={{ scale: 0.8 }}
+          />
+        </SectionWrapper>
       ) : (
-        // compo maxwidth con color amarillo
-        // crear dentro del StyledHeader los dos iconos el logo y el hamburger
-        <StyledHeader />
+        <StyledHeaderWrapper>
+          <StyledHeader>
+            <StyledHeaderLogo src={NavigationLogo} />
+
+            <StyledBlueHamburger src={BlueHamburgerIcon} whileTap={{ scale: 0.8 }} onClick={handleSetMenu}/>
+          </StyledHeader>
+        </StyledHeaderWrapper>
       )}
       <AnimatePresence>
         {isOpened && (
