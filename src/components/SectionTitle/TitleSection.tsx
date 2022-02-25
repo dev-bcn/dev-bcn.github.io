@@ -49,7 +49,7 @@ const TitleSection: FC<ISectionTitleProps> = ({ title, subtitle, color }) => {
     <StyledTitleContainer>
       <StyledTitleBody>
         <StyledTitle color={color}>/ {title}</StyledTitle>
-        <StyledSubTitle>{subtitle}</StyledSubTitle>
+        <StyledSubTitle color={color}>{subtitle}</StyledSubTitle>
       </StyledTitleBody>
     </StyledTitleContainer>
   );
