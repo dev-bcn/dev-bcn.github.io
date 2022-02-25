@@ -7,6 +7,7 @@ const StyledSectionWrapper = styled.div<{ color: string }>`
   flex-direction: column;
   justify-content: start;
   align-items: center;
+  height: 100%;
   background: ${({ color }) => {
     return color;
   }};
@@ -14,6 +15,8 @@ const StyledSectionWrapper = styled.div<{ color: string }>`
 
 const StyledInnerWrapper = styled.div`
   width: 100%;
+  height: 100%;
+  position: relative;
   max-width: ${MAX_WIDTH}px;
 `;
 
