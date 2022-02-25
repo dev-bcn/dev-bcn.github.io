@@ -1,6 +1,6 @@
+import { COLOR_WHITE } from '../../styles/colors';
 import { FC } from 'react';
 import styled from 'styled-components';
-import { COLOR_WHITE } from '../../styles/colors';
 
 interface ISectionTitleProps {
   title: string;
@@ -49,7 +49,7 @@ const TitleSection: FC<ISectionTitleProps> = ({ title, subtitle, color }) => {
     <StyledTitleContainer>
       <StyledTitleBody>
         <StyledTitle color={color}>/ {title}</StyledTitle>
-        <StyledSubTitle>{subtitle}</StyledSubTitle>
+        <StyledSubTitle color={color}>{subtitle}</StyledSubTitle>
       </StyledTitleBody>
     </StyledTitleContainer>
   );
