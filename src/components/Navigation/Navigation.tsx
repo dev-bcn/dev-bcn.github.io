@@ -107,6 +107,7 @@ const Navigation: FC = () => {
         />
       ) : (
         // compo maxwidth con color amarillo
+        // crear dentro del StyledHeader los dos iconos el logo y el hamburger
         <StyledHeader />
       )}
       <AnimatePresence>
