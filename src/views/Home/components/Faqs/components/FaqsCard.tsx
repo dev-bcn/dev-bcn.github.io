@@ -13,7 +13,7 @@ type FaqCardType = {
   index: number;
 };
 
-const StyledFaqCard = styled.div`
+export const StyledFaqCard = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -26,7 +26,7 @@ const StyledFaqCard = styled.div`
   }
 `;
 
-const StyledFaqImageContainer = styled.div`
+export const StyledFaqImageContainer = styled.div`
   height: 10rem;
   position: relative;
   @media (min-width: 800px) {
@@ -34,13 +34,13 @@ const StyledFaqImageContainer = styled.div`
     width: 40%;
   }
 `;
-const StyledFaqImage = styled(motion.img)`
+export const StyledFaqImage = styled(motion.img)`
   display: block;
   height: 100%;
   width: 100%;
 `;
 
-const StyledImageAnimation = styled.div`
+export const StyledImageAnimation = styled.div`
   position: absolute;
   top: 0;
   bottom: 0;
@@ -56,7 +56,7 @@ const StyledImageAnimation = styled.div`
   }
 `;
 
-const StyledFaqInfo = styled(motion.div)`
+export const StyledFaqInfo = styled(motion.div)`
   display: flex;
   flex-direction: column;
   color: ${COLOR_WHITE};
@@ -66,7 +66,7 @@ const StyledFaqInfo = styled(motion.div)`
   }
 `;
 
-const StyledFaqTitle = styled.h2`
+export const StyledFaqTitle = styled.h2`
   padding-top: 1rem;
   @media (min-width: 800px) {
     text-align: start;
@@ -74,14 +74,14 @@ const StyledFaqTitle = styled.h2`
   }
 `;
 
-const StyledFaqText = styled.p`
+export const StyledFaqText = styled.p`
   padding: 0.5rem;
   @media (min-width: 800px) {
     text-align: start;
   }
 `;
 
-const StyledFaqDetailButton = styled.img`
+export const StyledFaqDetailButton = styled.img`
   width: 6rem;
   @media (min-width: 800px) {
     padding: 0 0.5rem;

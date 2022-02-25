@@ -10,7 +10,7 @@ import styled from 'styled-components';
 import { useWindowSize } from 'react-use';
 import { MOBILE_BREAKPOINT } from '../../../../constants/BreakPoints';
 
-const StyledFaqSection = styled(motion.section)`
+export const StyledFaqSection = styled(motion.section)`
   display: flex;
   flex-direction: column;
   justify-content: center;

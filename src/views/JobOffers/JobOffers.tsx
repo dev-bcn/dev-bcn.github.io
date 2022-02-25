@@ -7,6 +7,8 @@ import LessThanBlueIcon from '../../assets/images/LessThanBlueIcon.svg';
 import MoreThanBlueIcon from '../../assets/images/MoreThanBlueIcon.svg';
 import { useWindowSize } from 'react-use';
 import { MOBILE_BREAKPOINT } from '../../constants/BreakPoints';
+import { faqsData } from '../Home/components/Faqs/FaqsData';
+import FaqCard from '../Home/components/Faqs/components/FaqsCard';
 
 const StyledJobsSection = styled.section`
   display: flex;
@@ -57,13 +59,15 @@ const JobOffers: FC = ({}) => {
             color={COLOR_BLACK_BLUE}
           />
         </StyledTitleWrapper>
-
         {width > MOBILE_BREAKPOINT && (
           <>
             <StyledLessIcon src={LessThanBlueIcon} />
             <StyledMoreIcon src={MoreThanBlueIcon} />
           </>
         )}
+        {faqsData.map((faq, index) => (
+          <FaqCard faq={faq} index={index} key={index} />
+        ))}
       </StyledJobsSection>
     </SectionWrapper>
   );
