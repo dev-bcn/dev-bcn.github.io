@@ -1,10 +1,14 @@
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Navigation from "./components/Navigation/Navigation";
 import { HomeWrapper } from "./views/Home/HomeWrapper";
 
 function App() {
   return (
     <BrowserRouter>
-      <Route path="/" component={HomeWrapper} />
+      <Navigation />
+      <Switch>
+        <Route path="/" component={HomeWrapper} />
+      </Switch>
     </BrowserRouter>
   );
 }
