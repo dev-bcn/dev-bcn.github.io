@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import styled from 'styled-components';
+import { TABLET_BREAKPOINT } from '../../constants/BreakPoints';
 import { COLOR_WHITE } from '../../styles/colors';
 
 interface ISectionTitleProps {
@@ -22,7 +23,11 @@ const StyledTitleBody = styled.div`
   @media (min-width: 480px) {
     flex-direction: row;
     justify-content: space-between;
-    max-width: 56.25rem;
+    max-width: 50rem;
+    align-items: center;
+  }
+  @media (min-width: ${TABLET_BREAKPOINT}px) {
+    max-width: 30rem;
   }
 `;
 

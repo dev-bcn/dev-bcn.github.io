@@ -1,7 +1,11 @@
 import { FC } from 'react';
 import TitleSection from '../../components/SectionTitle/TitleSection';
 import SectionWrapper from '../../components/SectionWrapper/SectionWrapper';
-import { COLOR_BLACK_BLUE, COLOR_WHITE } from '../../styles/colors';
+import {
+  COLOR_BLACK_BLUE,
+  COLOR_GREEN,
+  COLOR_WHITE,
+} from '../../styles/colors';
 import styled from 'styled-components';
 import LessThanBlueIcon from '../../assets/images/LessThanBlueIcon.svg';
 import MoreThanBlueIcon from '../../assets/images/MoreThanBlueIcon.svg';
@@ -44,17 +48,20 @@ const StyledMoreIcon = styled.img`
   }
 `;
 
-const JobOffers: FC = ({}) => {
+const Speakers: FC = ({}) => {
   const { width } = useWindowSize();
 
   return (
-    <SectionWrapper color={COLOR_WHITE} marginTop={6}>
+    <SectionWrapper color={COLOR_GREEN} marginTop={8}>
       <StyledJobsSection>
         <StyledTitleWrapper>
           <TitleSection
-            title='JOB OFFERS'
-            subtitle='Have a look at some opportunities'
-            color={COLOR_BLACK_BLUE}
+            title='SPEAKERS'
+            subtitle='Speakers coming from all corners of the world join us to
+            share their experience in various technologies and to
+            invite everyone to participate in Open Source
+            Technologies and in the JCP.'
+            color={COLOR_WHITE}
           />
         </StyledTitleWrapper>
 
@@ -69,4 +76,4 @@ const JobOffers: FC = ({}) => {
   );
 };
 
-export default JobOffers;
+export default Speakers;

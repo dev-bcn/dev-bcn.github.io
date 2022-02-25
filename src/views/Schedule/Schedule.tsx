@@ -1,12 +1,15 @@
 import { FC } from 'react';
 import TitleSection from '../../components/SectionTitle/TitleSection';
 import SectionWrapper from '../../components/SectionWrapper/SectionWrapper';
-import { COLOR_BLACK_BLUE, COLOR_WHITE } from '../../styles/colors';
+import { COLOR_BLACK_BLUE, COLOR_BLUE, COLOR_WHITE } from '../../styles/colors';
 import styled from 'styled-components';
-import LessThanBlueIcon from '../../assets/images/LessThanBlueIcon.svg';
-import MoreThanBlueIcon from '../../assets/images/MoreThanBlueIcon.svg';
+import MoreThanBlueWhiteIcon from '../../assets/images/LessThanBlueWhiteIcon.svg';
+import LessThanBlueWhiteIcon from '../../assets/images/MoreThanBlueWhiteIcon.svg';
 import { useWindowSize } from 'react-use';
-import { MOBILE_BREAKPOINT } from '../../constants/BreakPoints';
+import {
+  MOBILE_BREAKPOINT,
+  TABLET_BREAKPOINT,
+} from '../../constants/BreakPoints';
 
 const StyledJobsSection = styled.section`
   display: flex;
@@ -44,7 +47,7 @@ const StyledMoreIcon = styled.img`
   }
 `;
 
-const JobOffers: FC = ({}) => {
+const Schedule: FC = ({}) => {
   const { width } = useWindowSize();
 
   return (
@@ -52,16 +55,19 @@ const JobOffers: FC = ({}) => {
       <StyledJobsSection>
         <StyledTitleWrapper>
           <TitleSection
-            title='JOB OFFERS'
-            subtitle='Have a look at some opportunities'
-            color={COLOR_BLACK_BLUE}
+            title='SCHEDULE'
+            subtitle='Speakers coming from all corners of the world join us to
+            share their experience in various technologies and to
+            invite everyone to participate in Open Source
+            Technologies and in the JCP.'
+            color={COLOR_BLUE}
           />
         </StyledTitleWrapper>
 
         {width > MOBILE_BREAKPOINT && (
           <>
-            <StyledLessIcon src={LessThanBlueIcon} />
-            <StyledMoreIcon src={MoreThanBlueIcon} />
+            <StyledLessIcon src={LessThanBlueWhiteIcon} />
+            <StyledMoreIcon src={MoreThanBlueWhiteIcon} />
           </>
         )}
       </StyledJobsSection>
@@ -69,4 +75,4 @@ const JobOffers: FC = ({}) => {
   );
 };
 
-export default JobOffers;
+export default Schedule;
