@@ -1,9 +1,9 @@
-import { FC } from 'react';
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
-import ReadMoreIcon from '../../../../../assets/images/ReadMoreIcon.svg';
-import { Link } from 'react-router-dom';
-import { COLOR_WHITE } from '../../../../../styles/colors';
+import { FC } from "react";
+import styled from "styled-components";
+import { motion } from "framer-motion";
+import ReadMoreIcon from "../../../../../assets/images/ReadMoreIcon.svg";
+import { Link } from "react-router-dom";
+import { COLOR_WHITE } from "../../../../../styles/colors";
 
 type FaqCardType = {
   faq: {
@@ -13,25 +13,30 @@ type FaqCardType = {
   index: number;
 };
 
-export const StyledFaqCard = styled.div`
+export const StyledFaqCard = styled.div<{ direction: string }>`
   display: flex;
   align-items: center;
   flex-direction: column;
   width: 90%;
   margin-bottom: 2rem;
   @media (min-width: 800px) {
-    flex-direction: ${(props) => (props.color ? props.color : 'row')};
+    flex-direction: ${({ direction }) => {
+      return direction;
+    }};
     max-width: 900px;
     margin-bottom: 1rem;
   }
 `;
 
-export const StyledFaqImageContainer = styled.div`
+export const StyledFaqImageContainer = styled.div<{ padding: string }>`
   height: 10rem;
   position: relative;
   @media (min-width: 800px) {
     height: auto;
     width: 40%;
+    padding: ${({ padding }) => {
+      return padding;
+    }};
   }
 `;
 export const StyledFaqImage = styled(motion.img)`
@@ -56,13 +61,15 @@ export const StyledImageAnimation = styled.div`
   }
 `;
 
-export const StyledFaqInfo = styled(motion.div)`
+export const StyledFaqInfo = styled(motion.div)<{align:string}>`
   display: flex;
   flex-direction: column;
   color: ${COLOR_WHITE};
   @media (min-width: 800px) {
     width: 40%;
-    align-items: flex-start;
+    align-items: ${({align}) => {
+      return align;
+    }};
   }
 `;
 
@@ -70,14 +77,15 @@ export const StyledFaqTitle = styled.h2`
   padding-top: 1rem;
   @media (min-width: 800px) {
     text-align: start;
-    padding: 0 1rem;
   }
 `;
 
 export const StyledFaqText = styled.p`
-  padding: 0.5rem;
+  padding: 0.5rem 0rem;
   @media (min-width: 800px) {
     text-align: start;
+    hyphens: auto;
+    word-wrap: break-word;
   }
 `;
 
@@ -93,17 +101,19 @@ const FaqCard: FC<FaqCardType> = ({ faq, index }) => {
   const isOdd = index % 2 === 0 ? true : false;
 
   return (
-    <StyledFaqCard color={isOdd ? 'row' : 'row-reverse'}>
-      <StyledFaqImageContainer>
+    <StyledFaqCard direction={isOdd ? "row" : "row-reverse"}>
+      <StyledFaqImageContainer
+        padding={isOdd ? "0 0 0 .75rem" : "0 .75rem 0 0"}
+      >
         <StyledFaqImage
           src={require(`../../../../../assets/images/FaqsImage${index}.png`)}
         />
         <StyledImageAnimation />
       </StyledFaqImageContainer>
-      <StyledFaqInfo>
+      <StyledFaqInfo align={isOdd ? "flex-start" : "flex-end"}>
         <StyledFaqTitle>{faq.question}</StyledFaqTitle>
         <StyledFaqText>{faq.answer}</StyledFaqText>
-        <Link to='/'>
+        <Link to="/">
           <StyledFaqDetailButton src={ReadMoreIcon} />
         </Link>
       </StyledFaqInfo>

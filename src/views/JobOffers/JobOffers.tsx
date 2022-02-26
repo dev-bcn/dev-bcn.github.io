@@ -7,8 +7,8 @@ import LessThanBlueIcon from '../../assets/images/LessThanBlueIcon.svg';
 import MoreThanBlueIcon from '../../assets/images/MoreThanBlueIcon.svg';
 import { useWindowSize } from 'react-use';
 import { MOBILE_BREAKPOINT } from '../../constants/BreakPoints';
-import { faqsData } from '../Home/components/Faqs/FaqsData';
-import FaqCard from '../Home/components/Faqs/components/FaqsCard';
+import JobsCard from './components/JobsCard';
+import { jobsAdevintaData, jobsMangoData, jobsWordlineData } from './JobsData';
 
 const StyledJobsSection = styled.section`
   display: flex;
@@ -65,8 +65,14 @@ const JobOffers: FC = ({}) => {
             <StyledMoreIcon src={MoreThanBlueIcon} />
           </>
         )}
-        {faqsData.map((faq, index) => (
-          <FaqCard faq={faq} index={index} key={index} />
+        {jobsAdevintaData.map((item, index) => (
+          <JobsCard item={item} index={index} key={index} />
+        ))}
+        {jobsMangoData.map((item, index) => (
+          <JobsCard item={item} index={index} key={index} />
+        ))}
+        {jobsWordlineData.map((item, index) => (
+          <JobsCard item={item} index={index} key={index} />
         ))}
       </StyledJobsSection>
     </SectionWrapper>
