@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import TitleSection from '../../components/SectionTitle/TitleSection';
 import SectionWrapper from '../../components/SectionWrapper/SectionWrapper';
-import { COLOR_BLACK_BLUE, COLOR_WHITE } from '../../styles/colors';
+import { COLOR_BLACK_BLUE, COLOR_PINK, COLOR_WHITE } from '../../styles/colors';
 import styled from 'styled-components';
 import LessThanBlueIcon from '../../assets/images/LessThanBlueIcon.svg';
 import MoreThanBlueIcon from '../../assets/images/MoreThanBlueIcon.svg';
@@ -9,6 +9,7 @@ import { useWindowSize } from 'react-use';
 import { MOBILE_BREAKPOINT } from '../../constants/BreakPoints';
 import JobsCard from './components/JobsCard';
 import { jobsAdevintaData, jobsMangoData, jobsWordlineData } from './JobsData';
+import { motion } from 'framer-motion';
 
 const StyledJobsSection = styled.section`
   display: flex;
@@ -46,7 +47,18 @@ const StyledMoreIcon = styled.img`
   }
 `;
 
-const JobOffers: FC = ({}) => {
+const StyledRightSlashWrapper = styled(motion.div)`
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+`
+
+const StyledSlashText = styled.h1`
+  color: ${COLOR_PINK};
+  white-space: nowrap;
+`;
+
+const JobOffers: FC = () => {
   const { width } = useWindowSize();
 
   return (
@@ -65,6 +77,16 @@ const JobOffers: FC = ({}) => {
             <StyledMoreIcon src={MoreThanBlueIcon} />
           </>
         )}
+        <StyledRightSlashWrapper
+          // initial={{ x: '120%' }}
+          // animate={{x: 0}}
+          // transition={{ duration: 4, ease: "easeIn" }}
+        >
+          <StyledSlashText>
+            ADEVINTA  ////////////////////////////////////////////////
+          </StyledSlashText>
+        </StyledRightSlashWrapper>
+
         {jobsAdevintaData.map((item, index) => (
           <JobsCard item={item} index={index} key={index} />
         ))}
