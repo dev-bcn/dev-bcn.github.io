@@ -1,7 +1,13 @@
 import { FC } from "react";
 import TitleSection from "../../components/SectionTitle/TitleSection";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import { COLOR_BLUE, COLOR_GREEN, COLOR_PINK, COLOR_WHITE, COLOR_YELLOW } from "../../styles/colors";
+import {
+  COLOR_BLUE,
+  COLOR_GREEN,
+  COLOR_PINK,
+  COLOR_WHITE,
+  COLOR_YELLOW,
+} from "../../styles/colors";
 import styled from "styled-components";
 import LessThanBlueIcon from "../../assets/images/LessThanBlueIcon.svg";
 import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
@@ -32,9 +38,9 @@ const StyledSpeakersSection = styled.section`
 const StyledLessIcon = styled.img`
   position: absolute;
   left: -1rem;
-  top: 0;
+  top: 2rem;
   height: 5rem;
-  @media (min-width: 800px) {
+  @media (min-width: ${BIG_BREAKPOINT}px) {
     height: 10rem;
   }
 `;
@@ -42,7 +48,7 @@ const StyledLessIcon = styled.img`
 const StyledMoreIcon = styled.img`
   position: absolute;
   right: -1rem;
-  top: 0;
+  top: 2rem;
   height: 5rem;
   @media (min-width: ${TABLET_BREAKPOINT}px) {
     height: 10rem;
@@ -53,11 +59,11 @@ const SpeakersCardsContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding-top: 3rem;
+  padding: 3rem 0;
   justify-content: center;
   z-index: 1;
   @media (min-width: ${TABLET_BREAKPOINT}px) {
-    padding-top: 5rem;
+    padding: 5rem 0;
   }
 `;
 
@@ -95,77 +101,104 @@ const StyledSlash = styled(motion.p)<{ color: string }>`
   height: 100%;
 `;
 
+const StyledWaveContainer = styled.div`
+  background: ${COLOR_WHITE};
+  overflow-y: hidden;
+  height: 8rem;
+  width: 100%;
+  @media (min-width: ${TABLET_BREAKPOINT}px) {
+    height: 10rem;
+  }
+`;
+
 const Speakers: FC = () => {
   const { width } = useWindowSize();
 
   return (
-    <SectionWrapper color={COLOR_GREEN} marginTop={8}>
-      <StyledSpeakersSection>
-        <TitleSection
-          title="SPEAKERS"
-          subtitle="Speakers coming from all corners of the world join us to
+    <>
+      <SectionWrapper color={COLOR_GREEN} marginTop={5}>
+        <StyledSpeakersSection>
+          <TitleSection
+            title="SPEAKERS"
+            subtitle="Speakers coming from all corners of the world join us to
             share their experience in various technologies and to
             invite everyone to participate in Open Source
             Technologies and in the JCP."
-          color={COLOR_WHITE}
-        />
-        {width > MOBILE_BREAKPOINT && (
-          <>
-            <StyledLessIcon src={LessThanBlueIcon} />
-            <StyledMoreIcon src={MoreThanBlueIcon} />
-          </>
-        )}
-        <SpeakersCardsContainer>
-          {speakersData.map((speaker, index) => (
-            <SpeakerCard key={index} speaker={speaker} />
-          ))}
-        </SpeakersCardsContainer>
-        <StyledContainerRightSlash 
-         initial={{ x: '100%' }}
-         animate={{ x: 0 }}
-         transition={{ duration: 4 }}
-         positionPercentage={"20%"}>
-          <StyledSlash color={COLOR_YELLOW}>
-            / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
-            / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /{" "}
-          </StyledSlash>
-        </StyledContainerRightSlash>
+            color={COLOR_WHITE}
+          />
+          {width > MOBILE_BREAKPOINT && (
+            <>
+              <StyledLessIcon src={LessThanBlueIcon} />
+              <StyledMoreIcon src={MoreThanBlueIcon} />
+            </>
+          )}
+          <SpeakersCardsContainer>
+            {speakersData.map((speaker, index) => (
+              <SpeakerCard key={index} speaker={speaker} />
+            ))}
+          </SpeakersCardsContainer>
+          <StyledContainerRightSlash
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            transition={{ duration: 4 }}
+            positionPercentage={"20%"}
+          >
+            <StyledSlash color={COLOR_YELLOW}>
+              / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+              / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /{" "}
+            </StyledSlash>
+          </StyledContainerRightSlash>
 
-        <StyledContainerLeftSlash 
-         initial={{ x: '-100%' }}
-         animate={{ x: 0 }}
-         transition={{ duration: 4 }}
-         positionPercentage={"40%"}>
-          <StyledSlash color={COLOR_PINK}>
-            / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
-            / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /{" "}
-          </StyledSlash>
+          <StyledContainerLeftSlash
+            initial={{ x: "-100%" }}
+            animate={{ x: 0 }}
+            transition={{ duration: 4 }}
+            positionPercentage={"40%"}
+          >
+            <StyledSlash color={COLOR_PINK}>
+              / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+              / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /{" "}
+            </StyledSlash>
           </StyledContainerLeftSlash>
-        
-          <StyledContainerRightSlash 
-         initial={{ x: '100%' }}
-         animate={{ x: 0 }}
-         transition={{ duration: 4 }}
-         positionPercentage={"60%"}>
-          <StyledSlash color={COLOR_BLUE}>
-            / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
-            / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /{" "}
-          </StyledSlash>
-        </StyledContainerRightSlash>
 
+          <StyledContainerRightSlash
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            transition={{ duration: 4 }}
+            positionPercentage={"60%"}
+          >
+            <StyledSlash color={COLOR_BLUE}>
+              / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+              / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /{" "}
+            </StyledSlash>
+          </StyledContainerRightSlash>
 
-        <StyledContainerLeftSlash 
-         initial={{ x: '-100%' }}
-         animate={{ x: 0 }}
-         transition={{ duration: 4 }}
-         positionPercentage={"80%"}>
-          <StyledSlash color={COLOR_YELLOW}>
-            / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
-            / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /{" "}
-          </StyledSlash>
-        </StyledContainerLeftSlash>
-      </StyledSpeakersSection>
-    </SectionWrapper>
+          <StyledContainerLeftSlash
+            initial={{ x: "-100%" }}
+            animate={{ x: 0 }}
+            transition={{ duration: 4 }}
+            positionPercentage={"80%"}
+          >
+            <StyledSlash color={COLOR_YELLOW}>
+              / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+              / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /{" "}
+            </StyledSlash>
+          </StyledContainerLeftSlash>
+        </StyledSpeakersSection>
+      </SectionWrapper>
+      <StyledWaveContainer>
+        <svg
+          viewBox="0 0 500 150"
+          preserveAspectRatio="none"
+          style={{ height: "100%", width: "100%" }}
+        >
+          <path
+            d="M-8.17,75.50 C207.95,-129.75 329.85,202.80 500.27,5.45 L501.41,-5.41 L0.00,0.00 Z"
+            style={{ stroke: "none", fill: "#06d6a0" }}
+          ></path>
+        </svg>
+      </StyledWaveContainer>
+    </>
   );
 };
 
