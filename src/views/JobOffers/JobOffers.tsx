@@ -1,15 +1,16 @@
-import { FC } from 'react';
-import TitleSection from '../../components/SectionTitle/TitleSection';
-import SectionWrapper from '../../components/SectionWrapper/SectionWrapper';
-import { COLOR_BLACK_BLUE, COLOR_PINK, COLOR_WHITE } from '../../styles/colors';
-import styled from 'styled-components';
-import LessThanBlueIcon from '../../assets/images/LessThanBlueIcon.svg';
-import MoreThanBlueIcon from '../../assets/images/MoreThanBlueIcon.svg';
-import { useWindowSize } from 'react-use';
-import { MOBILE_BREAKPOINT } from '../../constants/BreakPoints';
-import JobsCard from './components/JobsCard';
-import { jobsAdevintaData, jobsMangoData, jobsWordlineData } from './JobsData';
-import { motion } from 'framer-motion';
+import { FC } from "react";
+import TitleSection from "../../components/SectionTitle/TitleSection";
+import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
+import { COLOR_BLACK_BLUE, COLOR_PINK, COLOR_WHITE } from "../../styles/colors";
+import styled from "styled-components";
+import LessThanBlueIcon from "../../assets/images/LessThanBlueIcon.svg";
+import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
+import { useWindowSize } from "react-use";
+import { MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
+import JobsCard from "./components/JobsCard";
+import { jobsAdevintaData, jobsMangoData, jobsWordlineData } from "./JobsData";
+import { LeftHashWithText } from "../../components/LeftHashWithText/LeftHashWithText";
+import { RightHashWithText } from "../../components/RightHashWithText/RightHashWithText";
 
 const StyledJobsSection = styled.section`
   display: flex;
@@ -17,6 +18,7 @@ const StyledJobsSection = styled.section`
   justify-content: center;
   align-items: center;
   position: relative;
+  overflow-x: hidden;
 `;
 
 const StyledTitleWrapper = styled.div`
@@ -47,17 +49,6 @@ const StyledMoreIcon = styled.img`
   }
 `;
 
-const StyledRightSlashWrapper = styled(motion.div)`
-  display: flex;
-  width: 100%;
-  justify-content: flex-end;
-`
-
-const StyledSlashText = styled.h1`
-  color: ${COLOR_PINK};
-  white-space: nowrap;
-`;
-
 const JobOffers: FC = () => {
   const { width } = useWindowSize();
 
@@ -66,8 +57,8 @@ const JobOffers: FC = () => {
       <StyledJobsSection>
         <StyledTitleWrapper>
           <TitleSection
-            title='JOB OFFERS'
-            subtitle='Have a look at some opportunities'
+            title="JOB OFFERS"
+            subtitle="Have a look at some opportunities"
             color={COLOR_BLACK_BLUE}
           />
         </StyledTitleWrapper>
@@ -77,22 +68,15 @@ const JobOffers: FC = () => {
             <StyledMoreIcon src={MoreThanBlueIcon} />
           </>
         )}
-        <StyledRightSlashWrapper
-          // initial={{ x: '120%' }}
-          // animate={{x: 0}}
-          // transition={{ duration: 4, ease: "easeIn" }}
-        >
-          <StyledSlashText>
-            ADEVINTA  ////////////////////////////////////////////////
-          </StyledSlashText>
-        </StyledRightSlashWrapper>
-
+        <RightHashWithText color={COLOR_PINK} text="ADEVINTA" />
         {jobsAdevintaData.map((item, index) => (
           <JobsCard item={item} index={index} key={index} />
         ))}
+        <LeftHashWithText color={COLOR_PINK} text="MANGO" />
         {jobsMangoData.map((item, index) => (
           <JobsCard item={item} index={index} key={index} />
         ))}
+        <RightHashWithText color={COLOR_PINK} text="WORDLINE" />
         {jobsWordlineData.map((item, index) => (
           <JobsCard item={item} index={index} key={index} />
         ))}
