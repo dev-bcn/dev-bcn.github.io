@@ -14,13 +14,18 @@ const StyledTitleContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 0 2rem;
+  /* padding: 0 2rem; */
   width: 100%; 
+  height: 5rem;
+
+  @media (min-width: ${TABLET_BREAKPOINT}px) {
+    height: 5rem;
+  }
   
   @media (min-width: ${BIG_BREAKPOINT}px) {
     flex-direction: row;
     justify-content: space-between;
-    padding: 0 10rem;
+    /* padding: 0 10rem; */
     height: 10rem;
   }
 `;
