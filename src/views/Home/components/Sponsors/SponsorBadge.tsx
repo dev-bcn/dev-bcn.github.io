@@ -16,7 +16,7 @@ const StyledSponsorBadgeLeft = styled(motion.div)<{
 }>`
   display: none;
   position: absolute;
-  width: 60%;
+  width: ${({ position }) => (position === 'left' ? '60%' : '62%')};
   clip-path: ${({ position }) => {
     if (position === 'left') {
       return 'polygon(0 0, 100% 0, 92% 100%, 0% 100%)';
