@@ -64,7 +64,6 @@ const Speakers: FC = ({}) => {
             color={COLOR_WHITE}
           />
         </StyledTitleWrapper>
-
         {width > MOBILE_BREAKPOINT && (
           <>
             <StyledLessIcon src={LessThanBlueIcon} />
