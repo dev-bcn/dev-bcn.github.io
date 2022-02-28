@@ -1,5 +1,5 @@
 export const navigationItems = [
-  { id: 'HOME', link: '/' },
+  { id: 'HOME', link: '' },
   { id: 'NEWS', link: '/news' },
   { id: 'SCHEDULE', link: '/schedule' },
   { id: 'TALKS', link: '/talks' },
