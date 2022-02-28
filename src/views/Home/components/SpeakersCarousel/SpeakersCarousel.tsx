@@ -183,9 +183,81 @@ const SpeakersCarousel: FC = () => {
               <StyledSlideText>Name Surname</StyledSlideText>
             </StyledSlideContain>
           </SwiperSlide>
+          <SwiperSlide>
+            <StyledSlideImage
+              src={require(`../../../../assets/images/BlackAvatar1.jpg`)}
+              alt="Avatar"
+            />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
+          </SwiperSlide>
+          <SwiperSlide>
+            <StyledSlideImage
+              src={require(`../../../../assets/images/BlackAvatar2.jpg`)}
+              alt="Avatar"
+            />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
+          </SwiperSlide>
+          <SwiperSlide>
+            <StyledSlideImage
+              src={require(`../../../../assets/images/BlackAvatar1.jpg`)}
+              alt="Avatar"
+            />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
+          </SwiperSlide>
+          <SwiperSlide>
+            <StyledSlideImage
+              src={require(`../../../../assets/images/BlackAvatar2.jpg`)}
+              alt="Avatar"
+            />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
+          </SwiperSlide>
+          <SwiperSlide>
+            <StyledSlideImage
+              src={require(`../../../../assets/images/BlackAvatar1.jpg`)}
+              alt="Avatar"
+            />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
+          </SwiperSlide>
+          <SwiperSlide>
+            <StyledSlideImage
+              src={require(`../../../../assets/images/BlackAvatar2.jpg`)}
+              alt="Avatar"
+            />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
+          </SwiperSlide>
+          <SwiperSlide>
+            <StyledSlideImage
+              src={require(`../../../../assets/images/BlackAvatar1.jpg`)}
+              alt="Avatar"
+            />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
+          </SwiperSlide>
+          <SwiperSlide>
+            <StyledSlideImage
+              src={require(`../../../../assets/images/BlackAvatar2.jpg`)}
+              alt="Avatar"
+            />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
+          </SwiperSlide>
         </Swiper>
         <StyledLink>
-          <Link to="/speakers" className="speakers__link">
+          <Link to="/speakers" className="link--text">
             <StyledSubtitle> View all speakers</StyledSubtitle>
             <StyledLessThanRed src={LessThanRedIcon}/>
           </Link>

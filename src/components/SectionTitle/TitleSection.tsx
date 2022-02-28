@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import styled from 'styled-components';
-import { TABLET_BREAKPOINT } from '../../constants/BreakPoints';
+import { BIG_BREAKPOINT, TABLET_BREAKPOINT } from '../../constants/BreakPoints';
 import { COLOR_WHITE } from '../../styles/colors';
 
 interface ISectionTitleProps {
@@ -14,20 +14,27 @@ const StyledTitleContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0 2rem;
+  @media (min-width: ${TABLET_BREAKPOINT}px) {
+    padding: unset;
+  }
 `;
 
 const StyledTitleBody = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
 
-  @media (min-width: 480px) {
+  @media (min-width: ${TABLET_BREAKPOINT}px) {
     flex-direction: row;
     justify-content: space-between;
-    max-width: 50rem;
+    padding: 0 5rem;
     align-items: center;
   }
-  @media (min-width: ${TABLET_BREAKPOINT}px) {
-    max-width: 30rem;
+  @media (min-width: ${BIG_BREAKPOINT}px) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 10rem;
+    align-items: center;
   }
 `;
 
@@ -35,7 +42,8 @@ const StyledTitle = styled.h1`
   color: ${(props) => (props.color ? props.color : COLOR_WHITE)};
   font-family: SpaceGrotesk;
   padding-bottom: 1.5rem;
-  @media (min-width: 480px) {
+  text-align: center;
+  @media (min-width: ${TABLET_BREAKPOINT}px) {
     width: 40%;
     text-align: left;
     padding-bottom: unset;
