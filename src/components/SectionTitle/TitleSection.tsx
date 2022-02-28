@@ -13,28 +13,15 @@ const StyledTitleContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 2rem;
-  @media (min-width: ${TABLET_BREAKPOINT}px) {
-    padding: unset;
-  }
-`;
-
-const StyledTitleBody = styled.div`
-  display: flex;
   flex-direction: column;
-  align-items: center;
-
-  @media (min-width: ${TABLET_BREAKPOINT}px) {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0 5rem;
-    align-items: center;
-  }
+  padding: 0 2rem;
+  width: 100%; 
+  
   @media (min-width: ${BIG_BREAKPOINT}px) {
     flex-direction: row;
     justify-content: space-between;
     padding: 0 10rem;
-    align-items: center;
+    height: 10rem;
   }
 `;
 
@@ -43,7 +30,7 @@ const StyledTitle = styled.h1`
   font-family: SpaceGrotesk;
   padding-bottom: 1.5rem;
   text-align: center;
-  @media (min-width: ${TABLET_BREAKPOINT}px) {
+  @media (min-width: ${BIG_BREAKPOINT}px) {
     width: 40%;
     text-align: left;
     padding-bottom: unset;
@@ -60,10 +47,8 @@ const StyledSubTitle = styled.p`
 const TitleSection: FC<ISectionTitleProps> = ({ title, subtitle, color }) => {
   return (
     <StyledTitleContainer>
-      <StyledTitleBody>
         <StyledTitle color={color}>/ {title}</StyledTitle>
         <StyledSubTitle color={color}>{subtitle}</StyledSubTitle>
-      </StyledTitleBody>
     </StyledTitleContainer>
   );
 };

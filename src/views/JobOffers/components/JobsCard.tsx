@@ -25,6 +25,7 @@ export const StyledJobsInfo = styled(motion.div)<{align:string}>`
   display: flex;
   flex-direction: column;
   color: ${COLOR_BLACK_BLUE};
+  align-items: center;
   @media (min-width: 800px) {
     width: 40%;
     align-items: ${({align}) => {

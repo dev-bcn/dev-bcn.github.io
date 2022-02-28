@@ -17,17 +17,9 @@ const StyledJobsSection = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
   overflow-x: hidden;
 `;
 
-const StyledTitleWrapper = styled.div`
-  height: 5rem;
-  display: flex;
-  @media (min-width: 800px) {
-    height: 10rem;
-  }
-`;
 
 const StyledLessIcon = styled.img`
   position: absolute;
@@ -55,13 +47,11 @@ const JobOffers: FC = () => {
   return (
     <SectionWrapper color={COLOR_WHITE} marginTop={6}>
       <StyledJobsSection>
-        <StyledTitleWrapper>
           <TitleSection
             title="JOB OFFERS"
             subtitle="Have a look at some opportunities"
             color={COLOR_BLACK_BLUE}
           />
-        </StyledTitleWrapper>
         {width > MOBILE_BREAKPOINT && (
           <>
             <StyledLessIcon src={LessThanBlueIcon} />

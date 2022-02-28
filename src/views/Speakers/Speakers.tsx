@@ -12,12 +12,11 @@ import MoreThanBlueIcon from '../../assets/images/MoreThanBlueIcon.svg';
 import { useWindowSize } from 'react-use';
 import { MOBILE_BREAKPOINT } from '../../constants/BreakPoints';
 
-const StyledJobsSection = styled.section`
+const StyledSpeakersSection = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
 `;
 
 const StyledTitleWrapper = styled.div`
@@ -53,7 +52,7 @@ const Speakers: FC = ({}) => {
 
   return (
     <SectionWrapper color={COLOR_GREEN} marginTop={8}>
-      <StyledJobsSection>
+      <StyledSpeakersSection>
         <StyledTitleWrapper>
           <TitleSection
             title='SPEAKERS'
@@ -70,7 +69,7 @@ const Speakers: FC = ({}) => {
             <StyledMoreIcon src={MoreThanBlueIcon} />
           </>
         )}
-      </StyledJobsSection>
+      </StyledSpeakersSection>
     </SectionWrapper>
   );
 };
