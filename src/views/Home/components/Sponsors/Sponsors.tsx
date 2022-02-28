@@ -1,12 +1,16 @@
 import {
+  BIG_BREAKPOINT,
+  LARGE_BREAKPOINT,
+} from '../../../../constants/BreakPoints';
+import {
   COLOR_BLUE,
   COLOR_GREEN,
   COLOR_PINK,
   COLOR_WHITE,
+  COLOR_YELLOW,
 } from '../../../../styles/colors';
 import { FC, useEffect, useState } from 'react';
 
-import { BIG_BREAKPOINT } from '../../../../constants/BreakPoints';
 import LessThanRedIcon from '../../../../assets/images/LessThanRedIcon.svg';
 import MoreThanRedIcon from '../../../../assets/images/MoreThanRedIcon.svg';
 import SectionWrapper from '../../../../components/SectionWrapper/SectionWrapper';
@@ -110,10 +114,13 @@ const StyledSponsorLogosContainer = styled.div<{ position?: 'left' | 'right' }>`
   top: 4.25rem;
   z-index: 2;
   background: none;
-  justify-content: ${({ position }) =>
-    position === 'right' ? 'flex-end' : 'flex-start'};
+  justify-content: center;
+
+  flex-wrap: wrap;
 
   @media (min-width: ${BIG_BREAKPOINT}px) {
+    justify-content: ${({ position }) =>
+      position === 'right' ? 'flex-end' : 'flex-start'};
     padding-left: ${({ position }) =>
       position === 'right' ? 0 : sponsorMarginDesktop}%;
     padding-right: ${({ position }) =>
@@ -123,7 +130,7 @@ const StyledSponsorLogosContainer = styled.div<{ position?: 'left' | 'right' }>`
 `;
 
 const StyledSeparator = styled.div`
-  width: 10rem;
+  width: 7rem;
 
   @media (min-width: ${BIG_BREAKPOINT}px) {
     width: 4rem;
@@ -145,6 +152,35 @@ const StyledSponsorIconNormal = styled.img`
     height: 5rem;
     margin-left: 2.5rem;
   }
+`;
+
+const StyledSponsorIconSmall = styled.img`
+  height: 2.5rem;
+  margin-left: 0.5rem;
+  margin-bottom: 1rem;
+
+  @media (min-width: ${BIG_BREAKPOINT}px) {
+    height: 3.25rem;
+    margin-left: 2rem;
+    margin-bottom: 0;
+  }
+`;
+
+const StyledSponsorIconNano = styled.img`
+  height: 1.5rem;
+  margin-bottom: 1rem;
+
+  margin-left: 0.75rem;
+
+  @media (min-width: ${BIG_BREAKPOINT}px) {
+    height: 2rem;
+    margin-left: 2.5rem;
+  }
+`;
+
+const StyledFlexCol = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 type TSponsorName = 'top' | 'premium' | 'regular' | 'startup' | 'virtual';
@@ -202,6 +238,8 @@ const Sponsors: FC = ({}) => {
       [name]: false,
     });
   }
+
+  console.log(width);
 
   return (
     <SectionWrapper color={COLOR_WHITE}>
@@ -310,6 +348,205 @@ const Sponsors: FC = ({}) => {
             />
             <StyledSponsorIconNormal
               src={isHovered.premium ? redhatLogo : redhatLogo}
+            />
+          </StyledSponsorLogosContainer>
+        </StyledSponsorItemContainer>
+
+        <StyledSponsorItemContainer
+          className='SponsorItem regular'
+          onMouseEnter={() => {
+            handleHoverSponsor('regular');
+          }}
+          onMouseLeave={() => {
+            handleUnHoverSponsor('regular');
+          }}
+        >
+          <SponsorBadge
+            color={COLOR_PINK}
+            position='left'
+            isVisible={isHovered.regular}
+          />
+          <StyledSponsorTitleContainer className='SponsorTitle'>
+            <StyledSponsorTitleMargin />
+            <StyledSponsorTitleSlashesContainer
+              color={
+                isHovered.regular && width >= BIG_BREAKPOINT
+                  ? COLOR_WHITE
+                  : COLOR_PINK
+              }
+              id='Slashes'
+            >
+              REGULAR
+              <StyledSeparator />
+              <StyledSlashes>{slashes}</StyledSlashes>
+            </StyledSponsorTitleSlashesContainer>
+            {width >= BIG_BREAKPOINT && (
+              <StyledSponsorTitleSlashesContainer color={COLOR_PINK}>
+                <StyledSlashes>{slashes}</StyledSlashes>
+              </StyledSponsorTitleSlashesContainer>
+            )}
+          </StyledSponsorTitleContainer>
+
+          {width > BIG_BREAKPOINT && width < LARGE_BREAKPOINT ? (
+            <StyledFlexCol>
+              <StyledSponsorLogosContainer className='SponsorLogos'>
+                <StyledSponsorIconSmall
+                  src={isHovered.regular ? redhatLogo : redhatLogo}
+                />
+                <StyledSponsorIconSmall
+                  src={isHovered.regular ? redhatLogo : redhatLogo}
+                />
+              </StyledSponsorLogosContainer>
+              <StyledSponsorLogosContainer className='SponsorLogos'>
+                <StyledSponsorIconSmall
+                  src={isHovered.regular ? redhatLogo : redhatLogo}
+                />
+              </StyledSponsorLogosContainer>
+            </StyledFlexCol>
+          ) : (
+            <StyledSponsorLogosContainer className='SponsorLogos'>
+              <StyledSponsorIconSmall
+                src={isHovered.regular ? redhatLogo : redhatLogo}
+              />
+              <StyledSponsorIconSmall
+                src={isHovered.regular ? redhatLogo : redhatLogo}
+              />
+              <StyledSponsorIconSmall
+                src={isHovered.regular ? redhatLogo : redhatLogo}
+              />
+            </StyledSponsorLogosContainer>
+          )}
+        </StyledSponsorItemContainer>
+
+        <StyledSponsorItemContainer
+          className='SponsorItem startup'
+          onMouseEnter={() => {
+            handleHoverSponsor('startup');
+          }}
+          onMouseLeave={() => {
+            handleUnHoverSponsor('startup');
+          }}
+        >
+          <SponsorBadge
+            color={COLOR_YELLOW}
+            position='right'
+            isVisible={isHovered.startup}
+          />
+          <StyledSponsorTitleContainer className='SponsorTitle'>
+            <StyledSponsorTitleSlashesContainer
+              color={COLOR_YELLOW}
+              id='Slashes'
+            >
+              <StyledSlashes>{slashes}</StyledSlashes>
+              <StyledSeparator />
+
+              {width < BIG_BREAKPOINT && 'STARTUP'}
+            </StyledSponsorTitleSlashesContainer>
+            {width >= BIG_BREAKPOINT && (
+              <StyledSponsorTitleSlashesContainer
+                color={
+                  isHovered.startup && width >= BIG_BREAKPOINT
+                    ? COLOR_WHITE
+                    : COLOR_YELLOW
+                }
+              >
+                <StyledSlashes>{slashes}</StyledSlashes>
+                STARTUP
+              </StyledSponsorTitleSlashesContainer>
+            )}
+            <StyledSponsorTitleMargin />
+          </StyledSponsorTitleContainer>
+
+          <StyledSponsorLogosContainer
+            className='SponsorLogos'
+            position='right'
+          >
+            <StyledSponsorIconNano
+              src={isHovered.startup ? redhatLogo : redhatLogo}
+            />
+            <StyledSponsorIconNano
+              src={isHovered.startup ? redhatLogo : redhatLogo}
+            />
+            <StyledSponsorIconNano
+              src={isHovered.startup ? redhatLogo : redhatLogo}
+            />
+            <StyledSponsorIconNano
+              src={isHovered.startup ? redhatLogo : redhatLogo}
+            />
+            <StyledSponsorIconNano
+              src={isHovered.startup ? redhatLogo : redhatLogo}
+            />
+            <StyledSponsorIconNano
+              src={isHovered.startup ? redhatLogo : redhatLogo}
+            />
+            <StyledSponsorIconNano
+              src={isHovered.startup ? redhatLogo : redhatLogo}
+            />
+            <StyledSponsorIconNano
+              src={isHovered.startup ? redhatLogo : redhatLogo}
+            />
+          </StyledSponsorLogosContainer>
+        </StyledSponsorItemContainer>
+
+        <StyledSponsorItemContainer
+          className='SponsorItem virtual'
+          onMouseEnter={() => {
+            handleHoverSponsor('virtual');
+          }}
+          onMouseLeave={() => {
+            handleUnHoverSponsor('virtual');
+          }}
+        >
+          <SponsorBadge
+            color={COLOR_GREEN}
+            position='left'
+            isVisible={isHovered.virtual}
+          />
+          <StyledSponsorTitleContainer className='SponsorTitle'>
+            <StyledSponsorTitleMargin />
+            <StyledSponsorTitleSlashesContainer
+              color={
+                isHovered.virtual && width >= BIG_BREAKPOINT
+                  ? COLOR_WHITE
+                  : COLOR_GREEN
+              }
+              id='Slashes'
+            >
+              VIRTUAL
+              <StyledSeparator />
+              <StyledSlashes>{slashes}</StyledSlashes>
+            </StyledSponsorTitleSlashesContainer>
+            {width >= BIG_BREAKPOINT && (
+              <StyledSponsorTitleSlashesContainer color={COLOR_GREEN}>
+                <StyledSlashes>{slashes}</StyledSlashes>
+              </StyledSponsorTitleSlashesContainer>
+            )}
+          </StyledSponsorTitleContainer>
+
+          <StyledSponsorLogosContainer className='SponsorLogos'>
+            <StyledSponsorIconNano
+              src={isHovered.virtual ? redhatLogo : redhatLogo}
+            />
+            <StyledSponsorIconNano
+              src={isHovered.virtual ? redhatLogo : redhatLogo}
+            />
+            <StyledSponsorIconNano
+              src={isHovered.virtual ? redhatLogo : redhatLogo}
+            />
+            <StyledSponsorIconNano
+              src={isHovered.virtual ? redhatLogo : redhatLogo}
+            />
+            <StyledSponsorIconNano
+              src={isHovered.virtual ? redhatLogo : redhatLogo}
+            />
+            <StyledSponsorIconNano
+              src={isHovered.virtual ? redhatLogo : redhatLogo}
+            />
+            <StyledSponsorIconNano
+              src={isHovered.virtual ? redhatLogo : redhatLogo}
+            />
+            <StyledSponsorIconNano
+              src={isHovered.virtual ? redhatLogo : redhatLogo}
             />
           </StyledSponsorLogosContainer>
         </StyledSponsorItemContainer>
