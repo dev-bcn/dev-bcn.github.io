@@ -1,17 +1,18 @@
-import { AnimatePresence, motion } from "framer-motion";
-import { FC, useState } from "react";
-import styled from "styled-components";
-import { COLOR_PINK, COLOR_YELLOW } from "../../styles/colors";
-import CloseIcon from "../../assets/images/CloseIcon.svg";
-import { NavLink, useLocation } from "react-router-dom";
-import { navigationItems } from "./NavigationData";
-import TicketsImage from "../../assets/images/TicketsImage.svg";
-import { useWindowSize } from "react-use";
-import { MAX_WIDTH, MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
-import NavigationLogo from "../../assets/images/NavigationLogo.svg";
-import HamburgerIcon from "../../assets/images/HamburgerIcon.svg";
-import SectionWrapper from "../SectionWrapper/SectionWrapper";
-import BlueHamburgerIcon from "../../assets/images/BlueHamburgerIcon.svg";
+import { AnimatePresence, motion } from 'framer-motion';
+import { COLOR_PINK, COLOR_YELLOW } from '../../styles/colors';
+import { FC, useState } from 'react';
+import { MAX_WIDTH, MOBILE_BREAKPOINT } from '../../constants/BreakPoints';
+import { NavLink, useLocation } from 'react-router-dom';
+
+import BlueHamburgerIcon from '../../assets/images/BlueHamburgerIcon.svg';
+import CloseIcon from '../../assets/images/CloseIcon.svg';
+import HamburgerIcon from '../../assets/images/HamburgerIcon.svg';
+import NavigationLogo from '../../assets/images/NavigationLogo.svg';
+import SectionWrapper from '../SectionWrapper/SectionWrapper';
+import TicketsImage from '../../assets/images/TicketsImage.svg';
+import { navigationItems } from './NavigationData';
+import styled from 'styled-components';
+import { useWindowSize } from 'react-use';
 
 const StyledHeaderWrapper = styled.div`
   background: ${COLOR_YELLOW};
@@ -23,7 +24,7 @@ const StyledHeaderWrapper = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  z-index:2;
+  z-index: 2;
 `;
 
 const StyledHeader = styled.header`
@@ -96,11 +97,11 @@ const StyledLink = styled(NavLink)`
   font-family: SpaceGrotesk-Bold;
   &.${(props) => props.activeClassName} {
     &:before {
-      content: "/   ";
+      content: '/   ';
       font-family: SpaceGrotesk-Bold;
     }
   }
-  @media (min-width:${MOBILE_BREAKPOINT}px) {
+  @media (min-width: ${MOBILE_BREAKPOINT}px) {
     font-size: 1.125rem;
   }
 `;
@@ -133,8 +134,8 @@ const Navigation: FC = () => {
 
   return (
     <>
-      {pathname === "/" ? (
-        <SectionWrapper color="transparent">
+      {pathname === '/' ? (
+        <SectionWrapper color='transparent'>
           <StyledMenuIcon
             onClick={handleSetMenu}
             src={HamburgerIcon}
@@ -146,19 +147,23 @@ const Navigation: FC = () => {
           <StyledHeader>
             <StyledHeaderLogo src={NavigationLogo} />
 
-            <StyledBlueHamburger src={BlueHamburgerIcon} whileTap={{ scale: 0.8 }} onClick={handleSetMenu}/>
+            <StyledBlueHamburger
+              src={BlueHamburgerIcon}
+              whileTap={{ scale: 0.8 }}
+              onClick={handleSetMenu}
+            />
           </StyledHeader>
         </StyledHeaderWrapper>
       )}
       <AnimatePresence>
         {isOpened && (
           <StyledNavigationContainer
-            transition={{ duration: 0.5, ease: "easeIn" }}
+            transition={{ duration: 0.5, ease: 'easeIn' }}
             initial={{ width: 0 }}
             animate={
               width > MOBILE_BREAKPOINT
-                ? { width: "140vw" }
-                : { width: "100vw" }
+                ? { width: '140vw' }
+                : { width: '100vw' }
             }
             exit={{ width: 0 }}
           >
@@ -174,14 +179,15 @@ const Navigation: FC = () => {
                   key={item.id}
                   to={item.link}
                   onClick={handleSetMenu}
-                  activeClassName="isActive"
+                  activeClassName='isActive'
+                  exact={true}
                 >
                   {item.id}
                 </StyledLink>
               ))}
               <StyledNavLinkHighlighted
-                href="https://www.google.es/"
-                target="_blank"
+                href='https://www.google.es/'
+                target='_blank'
               >
                 <StyledNavLinkHighlightedImage src={TicketsImage} />
               </StyledNavLinkHighlighted>
