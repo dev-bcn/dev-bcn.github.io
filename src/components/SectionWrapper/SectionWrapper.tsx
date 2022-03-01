@@ -13,21 +13,29 @@ const StyledSectionWrapper = styled.div<{ color: string }>`
   }};
 `;
 
-const StyledInnerWrapper = styled.div`
+const StyledInnerWrapper = styled.div<{ marginTop: number }>`
   width: 100%;
   height: 100%;
   position: relative;
   max-width: ${MAX_WIDTH}px;
+  margin-top: ${({ marginTop }) => {
+    return `${marginTop}rem`;
+  }};
 `;
 
 interface ISectionWrapperProps {
   color: string;
+  marginTop?: number;
 }
 
-const SectionWrapper: FC<ISectionWrapperProps> = ({ children, color }) => {
+const SectionWrapper: FC<ISectionWrapperProps> = ({
+  children,
+  color,
+  marginTop = 0,
+}) => {
   return (
     <StyledSectionWrapper color={color} className='SectionWrapper'>
-      <StyledInnerWrapper className='InnerSectionWrapper'>
+      <StyledInnerWrapper marginTop={marginTop} className='InnerSectionWrapper'>
         {children}
       </StyledInnerWrapper>
     </StyledSectionWrapper>
