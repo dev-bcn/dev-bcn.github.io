@@ -171,6 +171,7 @@ const StyledSponsorIconBig = styled.img`
     height: 7rem;
   }
 `;
+
 const StyledSponsorIconNormal = styled.img`
   height: 2.75rem;
   margin-left: 0.5rem;

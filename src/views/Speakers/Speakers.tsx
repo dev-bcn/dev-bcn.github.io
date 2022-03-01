@@ -144,7 +144,7 @@ const Speakers: FC = () => {
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
             transition={{ duration: 4 }}
-            positionPercentage={'20%'}
+            positionPercentage='20%'
           >
             <StyledSlash color={COLOR_YELLOW}>
               / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
@@ -156,7 +156,7 @@ const Speakers: FC = () => {
             initial={{ x: '-100%' }}
             animate={{ x: 0 }}
             transition={{ duration: 4 }}
-            positionPercentage={'40%'}
+            positionPercentage='40%'
           >
             <StyledSlash color={COLOR_PINK}>
               / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
@@ -168,7 +168,7 @@ const Speakers: FC = () => {
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
             transition={{ duration: 4 }}
-            positionPercentage={'60%'}
+            positionPercentage='60%'
           >
             <StyledSlash color={COLOR_BLUE}>
               / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
@@ -180,7 +180,7 @@ const Speakers: FC = () => {
             initial={{ x: '-100%' }}
             animate={{ x: 0 }}
             transition={{ duration: 4 }}
-            positionPercentage={'80%'}
+            positionPercentage='80%'
           >
             <StyledSlash color={COLOR_YELLOW}>
               / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
