@@ -21,6 +21,7 @@ import {
 import SpeakersWelcomer from '../../assets/images/SpeakersWelcomer.jpg';
 import SpeakersPlanning from '../../assets/images/SpeakersPlanning.jpg';
 import { Link } from 'react-router-dom';
+import ScheduleAvatar1 from '../../assets/images/ScheduleAvatar1.jpg';
 
 const StyledScheduleSection = styled.section`
   display: flex;
@@ -28,12 +29,12 @@ const StyledScheduleSection = styled.section`
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 0 2rem;
+  padding: 0 2rem 5rem 2rem;
   @media (min-width: ${TABLET_BREAKPOINT}px) {
-    padding: 0 5rem;
+    padding: 0 5rem 5rem 2rem;
   }
   @media (min-width: ${BIG_BREAKPOINT}px) {
-    padding: 0 10rem;
+    padding: 0 10rem 7rem 10rem;
   }
 `;
 
@@ -87,6 +88,7 @@ const StyledTrack = styled.div<{
     return color;
   }};
   font-family: SpaceGrotesk-Bold;
+  margin-top: 1rem;
 `;
 
 const StyledWelcomerImage = styled.div`
@@ -131,9 +133,18 @@ const StyledPlanningImage = styled.div`
   background-size: cover;
   background-position: center center;
   position: relative;
-  margin: 1rem 0;
+  margin-top: 1rem;
 `;
 
+const StyledAvatarContainer = styled.div`
+  width: 30%;
+  margin-top: 1rem;
+  position: relative;
+`;
+const StyledAvatarImage = styled.img`
+  width: 100%;
+  height: auto;
+`;
 const Schedule: FC = ({}) => {
   const { width } = useWindowSize();
 
@@ -155,9 +166,6 @@ const Schedule: FC = ({}) => {
           </>
         )}
 
-        {/* TODO:
-        - siguiente igual
-        - igual que el TRACK 3 con width 100% */}
         <StyledScheduleContainer>
           <StyledTracksContainer>
             <StyledTrack
@@ -194,13 +202,13 @@ const Schedule: FC = ({}) => {
           </StyledWelcomerImage>
           <StyledPlanningImage>
             <StyledWelcomerTextContainer>
-              <StyledWelcomerText color={COLOR_BLUE}>
-                THE FUTURE IS
-              </StyledWelcomerText>
-              <StyledWelcomerText color={COLOR_BLUE}>
-                KUBERNETES-NATIVE
-              </StyledWelcomerText>
-              <Link to='/GraceJansen' className='link--text'>
+              <Link to='/meetingDetail' className='link--text'>
+                <StyledWelcomerTextLink color={COLOR_BLUE}>
+                  THE FUTURE IS <br />
+                  KUBERNETES-NATIVE
+                </StyledWelcomerTextLink>
+              </Link>
+              <Link to='/speakerDetail' className='link--text'>
                 <StyledWelcomerTextLink color={COLOR_PINK}>
                   Grace Jansen
                 </StyledWelcomerTextLink>
@@ -210,14 +218,193 @@ const Schedule: FC = ({}) => {
               </StyledWelcomerText>
             </StyledWelcomerTextContainer>
           </StyledPlanningImage>
+
           <StyledTrack
             width={'100%'}
             background={COLOR_GREEN}
             color={COLOR_BLACK_BLUE}
           >
-            TRACK 1
+            BREAK
           </StyledTrack>
-          <StyledTracksContainer></StyledTracksContainer>
+          <StyledTracksContainer>
+            <StyledAvatarContainer>
+              <StyledAvatarImage src={ScheduleAvatar1} />
+            </StyledAvatarContainer>
+            <StyledAvatarContainer>
+              <StyledAvatarImage src={ScheduleAvatar1} />
+            </StyledAvatarContainer>
+            <StyledAvatarContainer>
+              <StyledAvatarImage src={ScheduleAvatar1} />
+            </StyledAvatarContainer>
+          </StyledTracksContainer>
+
+          <StyledTrack
+            width={'100%'}
+            background={COLOR_YELLOW}
+            color={COLOR_BLUE}
+          >
+            BREAK
+          </StyledTrack>
+          <StyledTracksContainer>
+            <StyledAvatarContainer>
+              <StyledAvatarImage src={ScheduleAvatar1} />
+            </StyledAvatarContainer>
+            <StyledAvatarContainer>
+              <StyledAvatarImage src={ScheduleAvatar1} />
+            </StyledAvatarContainer>
+            <StyledAvatarContainer>
+              <StyledAvatarImage src={ScheduleAvatar1} />
+            </StyledAvatarContainer>
+          </StyledTracksContainer>
+
+          <StyledTrack
+            width={'100%'}
+            background={COLOR_PINK}
+            color={COLOR_WHITE}
+          >
+            LUNCH BREAK
+          </StyledTrack>
+          <StyledTracksContainer>
+            <StyledAvatarContainer>
+              <StyledAvatarImage src={ScheduleAvatar1} />
+            </StyledAvatarContainer>
+            <StyledAvatarContainer>
+              <StyledAvatarImage src={ScheduleAvatar1} />
+            </StyledAvatarContainer>
+            <StyledAvatarContainer>
+              <StyledAvatarImage src={ScheduleAvatar1} />
+            </StyledAvatarContainer>
+          </StyledTracksContainer>
+
+          <StyledTrack
+            width={'100%'}
+            background={COLOR_PINK}
+            color={COLOR_WHITE}
+          >
+            BREAK
+          </StyledTrack>
+          <StyledTracksContainer>
+            <StyledAvatarContainer>
+              <StyledAvatarImage src={ScheduleAvatar1} />
+            </StyledAvatarContainer>
+            <StyledAvatarContainer>
+              <StyledAvatarImage src={ScheduleAvatar1} />
+            </StyledAvatarContainer>
+            <StyledAvatarContainer>
+              <StyledAvatarImage src={ScheduleAvatar1} />
+            </StyledAvatarContainer>
+          </StyledTracksContainer>
+
+          <StyledTrack
+            width={'100%'}
+            background={COLOR_GREEN}
+            color={COLOR_BLACK_BLUE}
+          >
+            AFTERNOON BREAK
+          </StyledTrack>
+
+          <StyledPlanningImage>
+            <StyledWelcomerTextContainer>
+              <Link to='/meetingDetail' className='link--text'>
+                <StyledWelcomerTextLink color={COLOR_BLUE}>
+                  THE FUTURE IS <br />
+                  KUBERNETES-NATIVE
+                </StyledWelcomerTextLink>
+              </Link>
+              <Link to='/speakerDetail' className='link--text'>
+                <StyledWelcomerTextLink color={COLOR_PINK}>
+                  Grace Jansen
+                </StyledWelcomerTextLink>
+              </Link>
+              <StyledWelcomerText color={COLOR_BLUE}>
+                08:40 - 09:00
+              </StyledWelcomerText>
+            </StyledWelcomerTextContainer>
+          </StyledPlanningImage>
+
+          <StyledTrack
+            width={'100%'}
+            background={COLOR_GREEN}
+            color={COLOR_BLACK_BLUE}
+          >
+            BREAK
+          </StyledTrack>
+          <StyledTracksContainer>
+            <StyledAvatarContainer>
+              <StyledAvatarImage src={ScheduleAvatar1} />
+            </StyledAvatarContainer>
+            <StyledAvatarContainer>
+              <StyledAvatarImage src={ScheduleAvatar1} />
+            </StyledAvatarContainer>
+            <StyledAvatarContainer>
+              <StyledAvatarImage src={ScheduleAvatar1} />
+            </StyledAvatarContainer>
+          </StyledTracksContainer>
+
+          <StyledTrack
+            width={'100%'}
+            background={COLOR_YELLOW}
+            color={COLOR_BLUE}
+          >
+            BREAK
+          </StyledTrack>
+          <StyledTracksContainer>
+            <StyledAvatarContainer>
+              <StyledAvatarImage src={ScheduleAvatar1} />
+            </StyledAvatarContainer>
+            <StyledAvatarContainer>
+              <StyledAvatarImage src={ScheduleAvatar1} />
+            </StyledAvatarContainer>
+            <StyledAvatarContainer>
+              <StyledAvatarImage src={ScheduleAvatar1} />
+            </StyledAvatarContainer>
+          </StyledTracksContainer>
+
+          <StyledTrack
+            width={'100%'}
+            background={COLOR_PINK}
+            color={COLOR_WHITE}
+          >
+            LUNCH BREAK
+          </StyledTrack>
+          <StyledTracksContainer>
+            <StyledAvatarContainer>
+              <StyledAvatarImage src={ScheduleAvatar1} />
+            </StyledAvatarContainer>
+            <StyledAvatarContainer>
+              <StyledAvatarImage src={ScheduleAvatar1} />
+            </StyledAvatarContainer>
+            <StyledAvatarContainer>
+              <StyledAvatarImage src={ScheduleAvatar1} />
+            </StyledAvatarContainer>
+          </StyledTracksContainer>
+
+          <StyledTrack
+            width={'100%'}
+            background={COLOR_PINK}
+            color={COLOR_WHITE}
+          >
+            BREAK
+          </StyledTrack>
+          <StyledTracksContainer>
+            <StyledAvatarContainer>
+              <StyledAvatarImage src={ScheduleAvatar1} />
+            </StyledAvatarContainer>
+            <StyledAvatarContainer>
+              <StyledAvatarImage src={ScheduleAvatar1} />
+            </StyledAvatarContainer>
+            <StyledAvatarContainer>
+              <StyledAvatarImage src={ScheduleAvatar1} />
+            </StyledAvatarContainer>
+          </StyledTracksContainer>
+
+          <StyledTrack
+            width={'100%'}
+            background={COLOR_GREEN}
+            color={COLOR_BLACK_BLUE}
+          >
+            CLOSING CEREMONY
+          </StyledTrack>
         </StyledScheduleContainer>
       </StyledScheduleSection>
     </SectionWrapper>
