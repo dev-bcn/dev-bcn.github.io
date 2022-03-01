@@ -1,7 +1,12 @@
+import {
+  BIG_BREAKPOINT,
+  LARGE_BREAKPOINT,
+  TABLET_BREAKPOINT,
+} from '../../constants/BreakPoints';
+
+import { COLOR_WHITE } from '../../styles/colors';
 import { FC } from 'react';
 import styled from 'styled-components';
-import { BIG_BREAKPOINT, TABLET_BREAKPOINT } from '../../constants/BreakPoints';
-import { COLOR_WHITE } from '../../styles/colors';
 
 interface ISectionTitleProps {
   title: string;
@@ -14,12 +19,21 @@ const StyledTitleContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 100%; 
-  
+  width: 100%;
+  padding: 0 1rem;
+
   @media (min-width: ${BIG_BREAKPOINT}px) {
     flex-direction: row;
     justify-content: space-between;
     height: 10rem;
+    padding: 0 2rem;
+  }
+
+  @media (min-width: ${LARGE_BREAKPOINT}px) {
+    flex-direction: row;
+    justify-content: space-between;
+    height: 10rem;
+    padding: 0 5rem;
   }
 `;
 
@@ -45,8 +59,8 @@ const StyledSubTitle = styled.p`
 const TitleSection: FC<ISectionTitleProps> = ({ title, subtitle, color }) => {
   return (
     <StyledTitleContainer>
-        <StyledTitle color={color}>/ {title}</StyledTitle>
-        <StyledSubTitle color={color}>{subtitle}</StyledSubTitle>
+      <StyledTitle color={color}>/ {title}</StyledTitle>
+      <StyledSubTitle color={color}>{subtitle}</StyledSubTitle>
     </StyledTitleContainer>
   );
 };

@@ -1,23 +1,24 @@
-import { FC } from "react";
-import styled from "styled-components";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper";
-import TitleSection from "../../../../components/SectionTitle/TitleSection";
+import 'swiper/css';
+import 'swiper/css/pagination';
+import './SpeakersCarousel.scss';
+
 import {
   COLOR_GREEN,
   COLOR_PINK,
   COLOR_WHITE,
   COLOR_YELLOW,
-} from "../../../../styles/colors";
-import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
-import SectionWrapper from "../../../../components/SectionWrapper/SectionWrapper";
-import { TABLET_BREAKPOINT } from "../../../../constants/BreakPoints";
-import LessThanRedIcon from ".././../../../assets/images/LessThanRedIcon.svg";
+} from '../../../../styles/colors';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-import "swiper/css";
-import "swiper/css/pagination";
-import "./SpeakersCarousel.scss";
+import { Autoplay } from 'swiper';
+import { FC } from 'react';
+import { Link } from 'react-router-dom';
+import MoreThanRedIcon from '.././../../../assets/images/MoreThanRedIcon.svg';
+import SectionWrapper from '../../../../components/SectionWrapper/SectionWrapper';
+import { TABLET_BREAKPOINT } from '../../../../constants/BreakPoints';
+import TitleSection from '../../../../components/SectionTitle/TitleSection';
+import { motion } from 'framer-motion';
+import styled from 'styled-components';
 
 const StyledSpeakersContainer = styled.section`
   background-color: ${COLOR_GREEN};
@@ -34,11 +35,11 @@ const StyledSlideContain = styled.div`
   position: absolute;
   bottom: 0px;
   background: ${COLOR_PINK};
-  padding: .5rem .25rem;
+  padding: 0.5rem 0.25rem;
 `;
 
 const StyledSlideText = styled.p`
-  font-size: .875rem;
+  font-size: 0.875rem;
   color: white;
 `;
 
@@ -54,7 +55,7 @@ const StyledLink = styled.div`
 
 const StyledSubtitle = styled.h2`
   color: ${COLOR_PINK};
-  padding-right: .75rem;
+  padding-right: 0.75rem;
 `;
 
 const StyledLessThanRed = styled.img`
@@ -70,7 +71,7 @@ export const StyledBottomSlash = styled(motion.div)`
 `;
 
 const StyledYellowSlash = styled(motion.p)`
-  font-family: "SpaceGrotesk-Bold";
+  font-family: 'SpaceGrotesk-Bold';
   color: ${COLOR_YELLOW};
   font-size: 2rem;
   overflow-y: hidden;
@@ -82,12 +83,12 @@ const SpeakersCarousel: FC = () => {
     <SectionWrapper color={COLOR_GREEN}>
       <StyledSpeakersContainer>
         <TitleSection
-          title="SPEAKERS"
-          subtitle="Are you a technology company? Interested in meeting
+          title='SPEAKERS'
+          subtitle='Are you a technology company? Interested in meeting
         enthusiasts and geek people for technology? This is a
         priceless opportunity to participate in the first big Java
         and JVM conference in Spain, to pr mote your company
-        and to support technological communities."
+        and to support technological communities.'
           color={COLOR_WHITE}
         />
         <Swiper
@@ -109,12 +110,12 @@ const SpeakersCarousel: FC = () => {
           }}
           centeredSlides={true}
           modules={[Autoplay]}
-          className="mySwiper"
+          className='mySwiper'
         >
           <SwiperSlide>
             <StyledSlideImage
               src={require(`../../../../assets/images/BlackAvatar1.jpg`)}
-              alt="Avatar"
+              alt='Avatar'
             />
             <StyledSlideContain>
               <StyledSlideText>Name Surname</StyledSlideText>
@@ -123,7 +124,7 @@ const SpeakersCarousel: FC = () => {
           <SwiperSlide>
             <StyledSlideImage
               src={require(`../../../../assets/images/BlackAvatar2.jpg`)}
-              alt="Avatar"
+              alt='Avatar'
             />
             <StyledSlideContain>
               <StyledSlideText>Name Surname</StyledSlideText>
@@ -132,7 +133,7 @@ const SpeakersCarousel: FC = () => {
           <SwiperSlide>
             <StyledSlideImage
               src={require(`../../../../assets/images/BlackAvatar1.jpg`)}
-              alt="Avatar"
+              alt='Avatar'
             />
             <StyledSlideContain>
               <StyledSlideText>Name Surname</StyledSlideText>
@@ -141,7 +142,7 @@ const SpeakersCarousel: FC = () => {
           <SwiperSlide>
             <StyledSlideImage
               src={require(`../../../../assets/images/BlackAvatar2.jpg`)}
-              alt="Avatar"
+              alt='Avatar'
             />
             <StyledSlideContain>
               <StyledSlideText>Name Surname</StyledSlideText>
@@ -150,7 +151,7 @@ const SpeakersCarousel: FC = () => {
           <SwiperSlide>
             <StyledSlideImage
               src={require(`../../../../assets/images/BlackAvatar1.jpg`)}
-              alt="Avatar"
+              alt='Avatar'
             />
             <StyledSlideContain>
               <StyledSlideText>Name Surname</StyledSlideText>
@@ -159,7 +160,7 @@ const SpeakersCarousel: FC = () => {
           <SwiperSlide>
             <StyledSlideImage
               src={require(`../../../../assets/images/BlackAvatar2.jpg`)}
-              alt="Avatar"
+              alt='Avatar'
             />
             <StyledSlideContain>
               <StyledSlideText>Name Surname</StyledSlideText>
@@ -168,7 +169,7 @@ const SpeakersCarousel: FC = () => {
           <SwiperSlide>
             <StyledSlideImage
               src={require(`../../../../assets/images/BlackAvatar1.jpg`)}
-              alt="Avatar"
+              alt='Avatar'
             />
             <StyledSlideContain>
               <StyledSlideText>Name Surname</StyledSlideText>
@@ -177,7 +178,7 @@ const SpeakersCarousel: FC = () => {
           <SwiperSlide>
             <StyledSlideImage
               src={require(`../../../../assets/images/BlackAvatar2.jpg`)}
-              alt="Avatar"
+              alt='Avatar'
             />
             <StyledSlideContain>
               <StyledSlideText>Name Surname</StyledSlideText>
@@ -186,7 +187,7 @@ const SpeakersCarousel: FC = () => {
           <SwiperSlide>
             <StyledSlideImage
               src={require(`../../../../assets/images/BlackAvatar1.jpg`)}
-              alt="Avatar"
+              alt='Avatar'
             />
             <StyledSlideContain>
               <StyledSlideText>Name Surname</StyledSlideText>
@@ -195,7 +196,7 @@ const SpeakersCarousel: FC = () => {
           <SwiperSlide>
             <StyledSlideImage
               src={require(`../../../../assets/images/BlackAvatar2.jpg`)}
-              alt="Avatar"
+              alt='Avatar'
             />
             <StyledSlideContain>
               <StyledSlideText>Name Surname</StyledSlideText>
@@ -204,7 +205,7 @@ const SpeakersCarousel: FC = () => {
           <SwiperSlide>
             <StyledSlideImage
               src={require(`../../../../assets/images/BlackAvatar1.jpg`)}
-              alt="Avatar"
+              alt='Avatar'
             />
             <StyledSlideContain>
               <StyledSlideText>Name Surname</StyledSlideText>
@@ -213,7 +214,7 @@ const SpeakersCarousel: FC = () => {
           <SwiperSlide>
             <StyledSlideImage
               src={require(`../../../../assets/images/BlackAvatar2.jpg`)}
-              alt="Avatar"
+              alt='Avatar'
             />
             <StyledSlideContain>
               <StyledSlideText>Name Surname</StyledSlideText>
@@ -222,7 +223,7 @@ const SpeakersCarousel: FC = () => {
           <SwiperSlide>
             <StyledSlideImage
               src={require(`../../../../assets/images/BlackAvatar1.jpg`)}
-              alt="Avatar"
+              alt='Avatar'
             />
             <StyledSlideContain>
               <StyledSlideText>Name Surname</StyledSlideText>
@@ -231,7 +232,7 @@ const SpeakersCarousel: FC = () => {
           <SwiperSlide>
             <StyledSlideImage
               src={require(`../../../../assets/images/BlackAvatar2.jpg`)}
-              alt="Avatar"
+              alt='Avatar'
             />
             <StyledSlideContain>
               <StyledSlideText>Name Surname</StyledSlideText>
@@ -240,7 +241,7 @@ const SpeakersCarousel: FC = () => {
           <SwiperSlide>
             <StyledSlideImage
               src={require(`../../../../assets/images/BlackAvatar1.jpg`)}
-              alt="Avatar"
+              alt='Avatar'
             />
             <StyledSlideContain>
               <StyledSlideText>Name Surname</StyledSlideText>
@@ -249,7 +250,7 @@ const SpeakersCarousel: FC = () => {
           <SwiperSlide>
             <StyledSlideImage
               src={require(`../../../../assets/images/BlackAvatar2.jpg`)}
-              alt="Avatar"
+              alt='Avatar'
             />
             <StyledSlideContain>
               <StyledSlideText>Name Surname</StyledSlideText>
@@ -257,19 +258,19 @@ const SpeakersCarousel: FC = () => {
           </SwiperSlide>
         </Swiper>
         <StyledLink>
-          <Link to="/speakers" className="link--text">
+          <Link to='/speakers' className='link--text'>
             <StyledSubtitle> View all speakers</StyledSubtitle>
-            <StyledLessThanRed src={LessThanRedIcon}/>
+            <StyledLessThanRed src={MoreThanRedIcon} />
           </Link>
         </StyledLink>
         <StyledBottomSlash
-          initial={{ x: "-100%" }}
+          initial={{ x: '-100%' }}
           animate={{ x: 0 }}
           transition={{ duration: 6 }}
         >
           <StyledYellowSlash>
             / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
-            / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /{" "}
+            / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /{' '}
           </StyledYellowSlash>
         </StyledBottomSlash>
       </StyledSpeakersContainer>
