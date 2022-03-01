@@ -145,6 +145,8 @@ const StyledAvatarImage = styled.img`
   width: 100%;
   height: auto;
 `;
+
+// TODO: COMPONETIZAR ESTO
 const Schedule: FC = ({}) => {
   const { width } = useWindowSize();
 
