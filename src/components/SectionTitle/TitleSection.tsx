@@ -1,4 +1,8 @@
-import { BIG_BREAKPOINT, TABLET_BREAKPOINT } from '../../constants/BreakPoints';
+import {
+  BIG_BREAKPOINT,
+  LARGE_BREAKPOINT,
+  TABLET_BREAKPOINT,
+} from '../../constants/BreakPoints';
 
 import { COLOR_WHITE } from '../../styles/colors';
 import { FC } from 'react';
@@ -16,11 +20,20 @@ const StyledTitleContainer = styled.div`
   align-items: center;
   flex-direction: column;
   width: 100%;
+  padding: 0 1rem;
 
   @media (min-width: ${BIG_BREAKPOINT}px) {
     flex-direction: row;
     justify-content: space-between;
     height: 10rem;
+    padding: 0 2rem;
+  }
+
+  @media (min-width: ${LARGE_BREAKPOINT}px) {
+    flex-direction: row;
+    justify-content: space-between;
+    height: 10rem;
+    padding: 0 5rem;
   }
 `;
 
