@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
+import Footer from './components/Footer/Footer';
 import { HomeWrapper } from './views/Home/HomeWrapper';
 import JobOffers from './views/JobOffers/JobOffers';
 import Navigation from './components/Navigation/Navigation';
@@ -16,6 +17,7 @@ function App() {
         <Route path='/speakers' component={Speakers} />
         <Route path='/' component={HomeWrapper} exact />
       </Switch>
+      <Footer />
     </BrowserRouter>
   );
 }
