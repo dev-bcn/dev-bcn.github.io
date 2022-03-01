@@ -21,8 +21,6 @@ const StyledSponsorBadgeLeft = styled(motion.div)<{
     if (position === 'left') {
       return 'polygon(0 0, 100% 0, 92% 100%, 0% 100%)';
     } else {
-      console.log('right');
-
       return 'polygon(6% 0, 100% 0, 100% 100%, 0 100%)';
     }
   }};
