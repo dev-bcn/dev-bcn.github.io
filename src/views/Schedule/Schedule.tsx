@@ -1,29 +1,25 @@
 import { FC } from 'react';
 import TitleSection from '../../components/SectionTitle/TitleSection';
 import SectionWrapper from '../../components/SectionWrapper/SectionWrapper';
-import { COLOR_BLACK_BLUE, COLOR_BLUE, COLOR_WHITE } from '../../styles/colors';
+import { COLOR_BLUE, COLOR_WHITE } from '../../styles/colors';
 import styled from 'styled-components';
 import MoreThanBlueWhiteIcon from '../../assets/images/LessThanBlueWhiteIcon.svg';
 import LessThanBlueWhiteIcon from '../../assets/images/MoreThanBlueWhiteIcon.svg';
 import { useWindowSize } from 'react-use';
-import {
-  MOBILE_BREAKPOINT,
-  TABLET_BREAKPOINT,
-} from '../../constants/BreakPoints';
+import { BIG_BREAKPOINT, MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from '../../constants/BreakPoints';
 
-const StyledJobsSection = styled.section`
+const StyledScheduleSection = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
-`;
-
-const StyledTitleWrapper = styled.div`
-  height: 5rem;
-  display: flex;
-  @media (min-width: 800px) {
-    height: 10rem;
+  padding: 0 2rem;
+  @media (min-width: ${TABLET_BREAKPOINT}px) {
+    padding: 0 5rem;
+  }
+  @media (min-width: ${BIG_BREAKPOINT}px) {
+    padding: 0 10rem;
   }
 `;
 
@@ -52,8 +48,7 @@ const Schedule: FC = ({}) => {
 
   return (
     <SectionWrapper color={COLOR_WHITE} marginTop={6}>
-      <StyledJobsSection>
-        <StyledTitleWrapper>
+      <StyledScheduleSection>
           <TitleSection
             title='SCHEDULE'
             subtitle='Speakers coming from all corners of the world join us to
@@ -62,15 +57,19 @@ const Schedule: FC = ({}) => {
             Technologies and in the JCP.'
             color={COLOR_BLUE}
           />
-        </StyledTitleWrapper>
-
         {width > MOBILE_BREAKPOINT && (
           <>
             <StyledLessIcon src={LessThanBlueWhiteIcon} />
             <StyledMoreIcon src={MoreThanBlueWhiteIcon} />
           </>
         )}
-      </StyledJobsSection>
+
+        {/* TODO:
+        - div 3 tracks
+        - div backroung image relativa con texto absoluto con width 100%
+        - siguiente igual
+        - igual que el TRACK 3 con width 100% */}
+      </StyledScheduleSection>
     </SectionWrapper>
   );
 };
