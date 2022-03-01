@@ -16,8 +16,6 @@ import MoreThanRedIcon from '../../../../assets/images/MoreThanRedIcon.svg';
 import SectionWrapper from '../../../../components/SectionWrapper/SectionWrapper';
 import SponsorBadge from './SponsorBadge';
 import TitleSection from '../../../../components/SectionTitle/TitleSection';
-import adevintaLogo from '../../../../assets/sponsorIcons/adevintaLogo.svg';
-import ocadoLogo from '../../../../assets/sponsorIcons/ocadoLogo.svg';
 import redhatLogo from '../../../../assets/sponsorIcons/redhatLogo.svg';
 import styled from 'styled-components';
 import { useWindowSize } from 'react-use';
@@ -52,7 +50,6 @@ const StyledSponsorItemContainer = styled.div`
   padding: 1rem 0;
   padding-top: 11.5rem;
   z-index: 1;
-  margin-bottom: 0.5rem;
 
   @media (min-width: ${BIG_BREAKPOINT}px) {
     margin-bottom: 3rem;
@@ -103,22 +100,43 @@ const StyledSlashes = styled.div`
   clip-path: polygon(0 0, 100% 0, 97% 100%, 0% 100%);
 `;
 
-const StyledSponsorLogosContainer = styled.div<{ position?: 'left' | 'right' }>`
+const StyledSponsorLogosContainer = styled.div`
   display: flex;
+  position: absolute;
+  width: 100%;
+  top: 4.75rem;
+  z-index: 2;
+  background: none;
+
+  @media (min-width: ${BIG_BREAKPOINT}px) {
+    top: 5rem;
+  }
+`;
+
+const StyledLogos = styled.div<{ position?: 'left' | 'right' }>`
+  display: flex;
+  width: 100%;
+
   padding-left: ${({ position }) =>
     position === 'right' ? 0 : SponsorMargin}%;
   padding-right: ${({ position }) =>
     position === 'right' ? SponsorMargin : 0}%;
-  width: 100%;
-  position: absolute;
-  top: 4.25rem;
-  z-index: 2;
-  background: none;
-  justify-content: center;
 
   flex-wrap: wrap;
+  justify-content: center;
 
   @media (min-width: ${BIG_BREAKPOINT}px) {
+    justify-content: center;
+    padding-left: ${({ position }) =>
+      position === 'right' ? 0 : sponsorMarginDesktop}%;
+    padding-right: ${({ position }) =>
+      position === 'right' ? sponsorMarginDesktop : 0}%;
+    top: 5rem;
+    flex-wrap: wrap;
+    width: ${({ position }) => (position === 'right' ? 59 : 55)}%;
+  }
+
+  @media (min-width: ${LARGE_BREAKPOINT}px) {
     justify-content: ${({ position }) =>
       position === 'right' ? 'flex-end' : 'flex-start'};
     padding-left: ${({ position }) =>
@@ -126,6 +144,15 @@ const StyledSponsorLogosContainer = styled.div<{ position?: 'left' | 'right' }>`
     padding-right: ${({ position }) =>
       position === 'right' ? sponsorMarginDesktop : 0}%;
     top: 5rem;
+  }
+`;
+
+const StyledFlexGrow = styled.div`
+  flex: 1;
+  display: none;
+
+  @media (min-width: ${BIG_BREAKPOINT}px) {
+    display: flex;
   }
 `;
 
@@ -145,23 +172,34 @@ const StyledSponsorIconBig = styled.img`
   }
 `;
 const StyledSponsorIconNormal = styled.img`
-  height: 3rem;
+  height: 2.75rem;
   margin-left: 0.5rem;
 
   @media (min-width: ${BIG_BREAKPOINT}px) {
+    height: 3.5rem;
+    margin-left: 2rem;
+  }
+
+  @media (min-width: ${LARGE_BREAKPOINT}px) {
     height: 5rem;
     margin-left: 2.5rem;
   }
 `;
 
 const StyledSponsorIconSmall = styled.img`
-  height: 2.5rem;
-  margin-left: 0.5rem;
+  height: 2.35rem;
+  margin-right: 0.5rem;
   margin-bottom: 1rem;
 
   @media (min-width: ${BIG_BREAKPOINT}px) {
+    height: 3rem;
+    margin-right: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  @media (min-width: ${LARGE_BREAKPOINT}px) {
     height: 3.25rem;
-    margin-left: 2rem;
+    margin-right: 2rem;
     margin-bottom: 0;
   }
 `;
@@ -173,14 +211,31 @@ const StyledSponsorIconNano = styled.img`
   margin-left: 0.75rem;
 
   @media (min-width: ${BIG_BREAKPOINT}px) {
+    height: 1.75rem;
+    margin-left: 1rem;
+  }
+
+  @media (min-width: ${LARGE_BREAKPOINT}px) {
     height: 2rem;
     margin-left: 2.5rem;
   }
 `;
 
-const StyledFlexCol = styled.div`
-  display: flex;
-  flex-direction: column;
+const StyledSponsorIconMicro = styled.img`
+  height: 1.5rem;
+  margin-bottom: 1rem;
+
+  margin-left: 0.75rem;
+
+  @media (min-width: ${BIG_BREAKPOINT}px) {
+    height: 1.25rem;
+    margin-left: 1rem;
+  }
+
+  @media (min-width: ${LARGE_BREAKPOINT}px) {
+    height: 1.75rem;
+    margin-left: 2.5rem;
+  }
 `;
 
 type TSponsorName = 'top' | 'premium' | 'regular' | 'startup' | 'virtual';
@@ -239,8 +294,6 @@ const Sponsors: FC = ({}) => {
     });
   }
 
-  console.log(width);
-
   return (
     <SectionWrapper color={COLOR_WHITE}>
       <StyledSponsorsContainer>
@@ -294,9 +347,12 @@ const Sponsors: FC = ({}) => {
           </StyledSponsorTitleContainer>
 
           <StyledSponsorLogosContainer className='SponsorLogos'>
-            <StyledSponsorIconBig
-              src={isHovered.top ? redhatLogo : redhatLogo}
-            />
+            <StyledLogos>
+              <StyledSponsorIconBig
+                src={isHovered.top ? redhatLogo : redhatLogo}
+              />
+            </StyledLogos>
+            <StyledFlexGrow />
           </StyledSponsorLogosContainer>
         </StyledSponsorItemContainer>
 
@@ -339,16 +395,16 @@ const Sponsors: FC = ({}) => {
             <StyledSponsorTitleMargin />
           </StyledSponsorTitleContainer>
 
-          <StyledSponsorLogosContainer
-            className='SponsorLogos'
-            position='right'
-          >
-            <StyledSponsorIconNormal
-              src={isHovered.premium ? redhatLogo : redhatLogo}
-            />
-            <StyledSponsorIconNormal
-              src={isHovered.premium ? redhatLogo : redhatLogo}
-            />
+          <StyledSponsorLogosContainer className='SponsorLogos'>
+            <StyledFlexGrow />
+            <StyledLogos position='right'>
+              <StyledSponsorIconNormal
+                src={isHovered.premium ? redhatLogo : redhatLogo}
+              />
+              <StyledSponsorIconNormal
+                src={isHovered.premium ? redhatLogo : redhatLogo}
+              />
+            </StyledLogos>
           </StyledSponsorLogosContainer>
         </StyledSponsorItemContainer>
 
@@ -387,24 +443,8 @@ const Sponsors: FC = ({}) => {
             )}
           </StyledSponsorTitleContainer>
 
-          {width > BIG_BREAKPOINT && width < LARGE_BREAKPOINT ? (
-            <StyledFlexCol>
-              <StyledSponsorLogosContainer className='SponsorLogos'>
-                <StyledSponsorIconSmall
-                  src={isHovered.regular ? redhatLogo : redhatLogo}
-                />
-                <StyledSponsorIconSmall
-                  src={isHovered.regular ? redhatLogo : redhatLogo}
-                />
-              </StyledSponsorLogosContainer>
-              <StyledSponsorLogosContainer className='SponsorLogos'>
-                <StyledSponsorIconSmall
-                  src={isHovered.regular ? redhatLogo : redhatLogo}
-                />
-              </StyledSponsorLogosContainer>
-            </StyledFlexCol>
-          ) : (
-            <StyledSponsorLogosContainer className='SponsorLogos'>
+          <StyledSponsorLogosContainer className='SponsorLogos'>
+            <StyledLogos>
               <StyledSponsorIconSmall
                 src={isHovered.regular ? redhatLogo : redhatLogo}
               />
@@ -414,8 +454,9 @@ const Sponsors: FC = ({}) => {
               <StyledSponsorIconSmall
                 src={isHovered.regular ? redhatLogo : redhatLogo}
               />
-            </StyledSponsorLogosContainer>
-          )}
+            </StyledLogos>
+            <StyledFlexGrow />
+          </StyledSponsorLogosContainer>
         </StyledSponsorItemContainer>
 
         <StyledSponsorItemContainer
@@ -457,34 +498,34 @@ const Sponsors: FC = ({}) => {
             <StyledSponsorTitleMargin />
           </StyledSponsorTitleContainer>
 
-          <StyledSponsorLogosContainer
-            className='SponsorLogos'
-            position='right'
-          >
-            <StyledSponsorIconNano
-              src={isHovered.startup ? redhatLogo : redhatLogo}
-            />
-            <StyledSponsorIconNano
-              src={isHovered.startup ? redhatLogo : redhatLogo}
-            />
-            <StyledSponsorIconNano
-              src={isHovered.startup ? redhatLogo : redhatLogo}
-            />
-            <StyledSponsorIconNano
-              src={isHovered.startup ? redhatLogo : redhatLogo}
-            />
-            <StyledSponsorIconNano
-              src={isHovered.startup ? redhatLogo : redhatLogo}
-            />
-            <StyledSponsorIconNano
-              src={isHovered.startup ? redhatLogo : redhatLogo}
-            />
-            <StyledSponsorIconNano
-              src={isHovered.startup ? redhatLogo : redhatLogo}
-            />
-            <StyledSponsorIconNano
-              src={isHovered.startup ? redhatLogo : redhatLogo}
-            />
+          <StyledSponsorLogosContainer className='SponsorLogos'>
+            <StyledFlexGrow />
+            <StyledLogos position='right'>
+              <StyledSponsorIconNano
+                src={isHovered.startup ? redhatLogo : redhatLogo}
+              />
+              <StyledSponsorIconNano
+                src={isHovered.startup ? redhatLogo : redhatLogo}
+              />
+              <StyledSponsorIconNano
+                src={isHovered.startup ? redhatLogo : redhatLogo}
+              />
+              <StyledSponsorIconNano
+                src={isHovered.startup ? redhatLogo : redhatLogo}
+              />
+              <StyledSponsorIconNano
+                src={isHovered.startup ? redhatLogo : redhatLogo}
+              />
+              <StyledSponsorIconNano
+                src={isHovered.startup ? redhatLogo : redhatLogo}
+              />
+              <StyledSponsorIconNano
+                src={isHovered.startup ? redhatLogo : redhatLogo}
+              />
+              <StyledSponsorIconNano
+                src={isHovered.startup ? redhatLogo : redhatLogo}
+              />
+            </StyledLogos>
           </StyledSponsorLogosContainer>
         </StyledSponsorItemContainer>
 
@@ -524,30 +565,39 @@ const Sponsors: FC = ({}) => {
           </StyledSponsorTitleContainer>
 
           <StyledSponsorLogosContainer className='SponsorLogos'>
-            <StyledSponsorIconNano
-              src={isHovered.virtual ? redhatLogo : redhatLogo}
-            />
-            <StyledSponsorIconNano
-              src={isHovered.virtual ? redhatLogo : redhatLogo}
-            />
-            <StyledSponsorIconNano
-              src={isHovered.virtual ? redhatLogo : redhatLogo}
-            />
-            <StyledSponsorIconNano
-              src={isHovered.virtual ? redhatLogo : redhatLogo}
-            />
-            <StyledSponsorIconNano
-              src={isHovered.virtual ? redhatLogo : redhatLogo}
-            />
-            <StyledSponsorIconNano
-              src={isHovered.virtual ? redhatLogo : redhatLogo}
-            />
-            <StyledSponsorIconNano
-              src={isHovered.virtual ? redhatLogo : redhatLogo}
-            />
-            <StyledSponsorIconNano
-              src={isHovered.virtual ? redhatLogo : redhatLogo}
-            />
+            <StyledLogos>
+              <StyledSponsorIconMicro
+                src={isHovered.virtual ? redhatLogo : redhatLogo}
+              />
+              <StyledSponsorIconMicro
+                src={isHovered.virtual ? redhatLogo : redhatLogo}
+              />
+              <StyledSponsorIconMicro
+                src={isHovered.virtual ? redhatLogo : redhatLogo}
+              />
+              <StyledSponsorIconMicro
+                src={isHovered.virtual ? redhatLogo : redhatLogo}
+              />
+              <StyledSponsorIconMicro
+                src={isHovered.virtual ? redhatLogo : redhatLogo}
+              />
+              <StyledSponsorIconMicro
+                src={isHovered.virtual ? redhatLogo : redhatLogo}
+              />
+              <StyledSponsorIconMicro
+                src={isHovered.virtual ? redhatLogo : redhatLogo}
+              />
+              <StyledSponsorIconMicro
+                src={isHovered.virtual ? redhatLogo : redhatLogo}
+              />
+              <StyledSponsorIconMicro
+                src={isHovered.virtual ? redhatLogo : redhatLogo}
+              />
+              <StyledSponsorIconMicro
+                src={isHovered.virtual ? redhatLogo : redhatLogo}
+              />
+            </StyledLogos>
+            <StyledFlexGrow />
           </StyledSponsorLogosContainer>
         </StyledSponsorItemContainer>
       </StyledSponsorsContainer>

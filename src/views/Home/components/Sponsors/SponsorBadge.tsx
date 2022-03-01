@@ -23,7 +23,7 @@ const StyledSponsorBadgeLeft = styled(motion.div)<{
     } else {
       console.log('right');
 
-      return 'polygon(5% 0, 100% 0, 100% 100%, 0 100%)';
+      return 'polygon(6% 0, 100% 0, 100% 100%, 0 100%)';
     }
   }};
   top: 0;
