@@ -14,6 +14,14 @@ import styled from 'styled-components';
 import twitterIcon from '../../assets/images/twitterIcon.svg';
 import youtubeIcon from '../../assets/images/youtubeIcon.svg';
 
+const StyledFooterAbsoluteContainer = styled.div`
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+`;
+
 const StyledFooterContainer = styled.div`
   width: 100%;
   display: flex;
@@ -21,12 +29,11 @@ const StyledFooterContainer = styled.div`
   align-items: center;
   padding: 1rem;
   background-color: ${COLOR_GREEN};
-  margin-top: 8rem;
   position: relative;
   overflow: hidden;
   color: ${COLOR_WHITE};
 
-  @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
+  @media only screen and (min-width: 1100px) {
     padding: 1rem 2rem;
     flex-direction: row;
     justify-content: space-between;
@@ -109,63 +116,65 @@ const StyledSpan = styled.span`
 
 const Footer: FC = ({}) => {
   return (
-    <StyledFooterContainer>
-      <StyledFooterItem>
-        <StyledAbsoluteImg src={LessThanYellowIcon} />
-      </StyledFooterItem>
-      <StyledFooterItem>
-        <StyledFlexCol>
-          <StyledFlexRow justify='center'>
-            <StyledLink target={'_blank'} href='www.google.com'>
-              <StyledFooterIcon src={twitterIcon} />
-            </StyledLink>
-            <StyledLink target={'_blank'} href='www.google.com'>
-              <StyledFooterIcon src={youtubeIcon} />
-            </StyledLink>
-            <StyledLink target={'_blank'} href='www.google.com'>
-              <StyledFooterIcon src={facebookIcon} />
-            </StyledLink>
-            <StyledLink target={'_blank'} href='www.google.com'>
-              <StyledFooterIcon src={githubIcon} />
-            </StyledLink>
-            <StyledLink target={'_blank'} href='www.google.com'>
-              <StyledFooterIcon src={linkedinIcon} />
-            </StyledLink>
-          </StyledFlexRow>
-          <StyledFlexRow>
-            <StyledLink href='mailto:info@barcelonajug.com'>
-              <StyledFooterIcon src={emailIcon} />
-              info@barcelonajug.com
-            </StyledLink>
-          </StyledFlexRow>
-        </StyledFlexCol>
-      </StyledFooterItem>
-      <StyledFooterItem>
-        <StyledImg src={logo} />
-      </StyledFooterItem>
-      <StyledFooterItem>
-        <StyledFlexCol>
-          <StyledFlexRow>
-            <StyledFooterIcon src={eventsIcon} />
-            <StyledSpan>EVENTS</StyledSpan>
-          </StyledFlexRow>
-          <StyledFlexRow>
-            <StyledLink
-              target={'_blank'}
-              href='https://meetup.com/BarcelonaJUG'
-            >
-              meetup.com/BarcelonaJUG
-            </StyledLink>
-          </StyledFlexRow>
-          <StyledFlexRow>
-            <StyledLink target={'_blank'} href='https://barcelonajug.org'>
-              barcelonajug.org
-            </StyledLink>
-          </StyledFlexRow>
-        </StyledFlexCol>
-      </StyledFooterItem>
-      <StyledFooterItem></StyledFooterItem>
-    </StyledFooterContainer>
+    <StyledFooterAbsoluteContainer className='Footer'>
+      <StyledFooterContainer>
+        <StyledFooterItem>
+          <StyledAbsoluteImg src={LessThanYellowIcon} />
+        </StyledFooterItem>
+        <StyledFooterItem>
+          <StyledFlexCol>
+            <StyledFlexRow justify='center'>
+              <StyledLink target={'_blank'} href='www.google.com'>
+                <StyledFooterIcon src={twitterIcon} />
+              </StyledLink>
+              <StyledLink target={'_blank'} href='www.google.com'>
+                <StyledFooterIcon src={youtubeIcon} />
+              </StyledLink>
+              <StyledLink target={'_blank'} href='www.google.com'>
+                <StyledFooterIcon src={facebookIcon} />
+              </StyledLink>
+              <StyledLink target={'_blank'} href='www.google.com'>
+                <StyledFooterIcon src={githubIcon} />
+              </StyledLink>
+              <StyledLink target={'_blank'} href='www.google.com'>
+                <StyledFooterIcon src={linkedinIcon} />
+              </StyledLink>
+            </StyledFlexRow>
+            <StyledFlexRow>
+              <StyledLink href='mailto:info@barcelonajug.com'>
+                <StyledFooterIcon src={emailIcon} />
+                info@barcelonajug.com
+              </StyledLink>
+            </StyledFlexRow>
+          </StyledFlexCol>
+        </StyledFooterItem>
+        <StyledFooterItem>
+          <StyledImg src={logo} />
+        </StyledFooterItem>
+        <StyledFooterItem>
+          <StyledFlexCol>
+            <StyledFlexRow>
+              <StyledFooterIcon src={eventsIcon} />
+              <StyledSpan>EVENTS</StyledSpan>
+            </StyledFlexRow>
+            <StyledFlexRow>
+              <StyledLink
+                target={'_blank'}
+                href='https://meetup.com/BarcelonaJUG'
+              >
+                meetup.com/BarcelonaJUG
+              </StyledLink>
+            </StyledFlexRow>
+            <StyledFlexRow>
+              <StyledLink target={'_blank'} href='https://barcelonajug.org'>
+                barcelonajug.org
+              </StyledLink>
+            </StyledFlexRow>
+          </StyledFlexCol>
+        </StyledFooterItem>
+        <StyledFooterItem></StyledFooterItem>
+      </StyledFooterContainer>
+    </StyledFooterAbsoluteContainer>
   );
 };
 

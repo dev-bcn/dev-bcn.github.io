@@ -1,4 +1,4 @@
-export default [
+export const meetingDetailData = [
   {
     urlName: 'grace-jansen',
     talkTitle:
@@ -18,3 +18,7 @@ export default [
     keen passion for encouraging more women into STEM and especially Technology careers.`,
   },
 ];
+
+export function findMeeting(urlName: string) {
+  return meetingDetailData.find((meet) => meet.urlName === urlName);
+}
