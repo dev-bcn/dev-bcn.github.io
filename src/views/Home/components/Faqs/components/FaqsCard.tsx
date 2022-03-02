@@ -1,9 +1,9 @@
-import { FC } from "react";
-import styled from "styled-components";
-import { motion } from "framer-motion";
-import ReadMoreIcon from "../../../../../assets/images/ReadMoreIcon.svg";
-import { Link } from "react-router-dom";
-import { COLOR_WHITE } from "../../../../../styles/colors";
+import { FC } from 'react';
+import styled from 'styled-components';
+import { motion } from 'framer-motion';
+import ReadMoreIcon from '../../../../../assets/images/ReadMoreIcon.svg';
+import { Link } from 'react-router-dom';
+import { COLOR_WHITE } from '../../../../../styles/colors';
 
 type FaqCardType = {
   faq: {
@@ -18,13 +18,13 @@ export const StyledFaqCard = styled.div<{ direction: string }>`
   align-items: center;
   flex-direction: column;
   width: 90%;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   @media (min-width: 800px) {
     flex-direction: ${({ direction }) => {
       return direction;
     }};
     max-width: 900px;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
 `;
 
@@ -61,13 +61,13 @@ export const StyledImageAnimation = styled.div`
   }
 `;
 
-export const StyledFaqInfo = styled(motion.div)<{align:string}>`
+export const StyledFaqInfo = styled(motion.div)<{ align: string }>`
   display: flex;
   flex-direction: column;
   color: ${COLOR_WHITE};
   @media (min-width: 800px) {
     width: 40%;
-    align-items: ${({align}) => {
+    align-items: ${({ align }) => {
       return align;
     }};
   }
@@ -101,19 +101,19 @@ const FaqCard: FC<FaqCardType> = ({ faq, index }) => {
   const isOdd = index % 2 === 0 ? true : false;
 
   return (
-    <StyledFaqCard direction={isOdd ? "row" : "row-reverse"}>
+    <StyledFaqCard direction={isOdd ? 'row' : 'row-reverse'}>
       <StyledFaqImageContainer
-        padding={isOdd ? "0 0 0 .75rem" : "0 .75rem 0 0"}
+        padding={isOdd ? '0 0 0 .75rem' : '0 .75rem 0 0'}
       >
         <StyledFaqImage
           src={require(`../../../../../assets/images/FaqsImage${index}.png`)}
         />
         <StyledImageAnimation />
       </StyledFaqImageContainer>
-      <StyledFaqInfo align={isOdd ? "flex-start" : "flex-end"}>
+      <StyledFaqInfo align={isOdd ? 'flex-start' : 'flex-end'}>
         <StyledFaqTitle>{faq.question}</StyledFaqTitle>
         <StyledFaqText>{faq.answer}</StyledFaqText>
-        <Link to="/">
+        <Link to='/'>
           <StyledFaqDetailButton src={ReadMoreIcon} />
         </Link>
       </StyledFaqInfo>
