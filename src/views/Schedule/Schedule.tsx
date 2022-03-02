@@ -101,13 +101,13 @@ const StyledWelcomerImage = styled.div`
   margin-top: 1rem;
 `;
 
-const StyledWelcomerTextContainer = styled.div`
+export const StyledWelcomerTextContainer = styled.div`
   position: absolute;
   bottom: 0.25rem;
   left: 0.5rem;
 `;
 
-const StyledWelcomerText = styled.p<{ color: string }>`
+export const StyledWelcomerText = styled.p<{ color: string }>`
   color: ${({ color }) => {
     return color;
   }};
@@ -115,7 +115,7 @@ const StyledWelcomerText = styled.p<{ color: string }>`
   text-align: start;
 `;
 
-const StyledWelcomerTextLink = styled.p<{ color: string }>`
+export const StyledWelcomerTextLink = styled.p<{ color: string }>`
   color: ${({ color }) => {
     return color;
   }};
@@ -136,18 +136,17 @@ const StyledPlanningImage = styled.div`
   margin-top: 1rem;
 `;
 
-const StyledAvatarContainer = styled.div`
+export const StyledAvatarContainer = styled.div`
   width: 30%;
   margin-top: 1rem;
   position: relative;
 `;
-const StyledAvatarImage = styled.img`
+export const StyledAvatarImage = styled.img`
   width: 100%;
   height: auto;
 `;
 
-// TODO: COMPONETIZAR ESTO
-const Schedule: FC = ({}) => {
+const Schedule: FC = () => {
   const { width } = useWindowSize();
 
   return (
@@ -228,10 +227,27 @@ const Schedule: FC = ({}) => {
           >
             BREAK
           </StyledTrack>
+
           <StyledTracksContainer>
             <StyledAvatarContainer>
               <StyledAvatarImage src={ScheduleAvatar1} />
+              <StyledWelcomerTextContainer>
+              <Link to='/meetingDetail' className='link--text'>
+                <StyledWelcomerTextLink color={COLOR_PINK}>
+                  THE FUTURE IS KUBERNETES-NATIVE
+                </StyledWelcomerTextLink>
+              </Link>
+              <Link to='/speakerDetail' className='link--text'>
+                <StyledWelcomerTextLink color={COLOR_BLUE}>
+                  Grace Jansen
+                </StyledWelcomerTextLink>
+              </Link>
+              <StyledWelcomerText color={COLOR_PINK}>
+                08:40 - 09:00
+              </StyledWelcomerText>
+            </StyledWelcomerTextContainer>
             </StyledAvatarContainer>
+
             <StyledAvatarContainer>
               <StyledAvatarImage src={ScheduleAvatar1} />
             </StyledAvatarContainer>
