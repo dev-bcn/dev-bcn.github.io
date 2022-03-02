@@ -3,13 +3,15 @@ import { FC } from 'react';
 import SectionWrapper from '../../components/SectionWrapper/SectionWrapper';
 import styled from 'styled-components';
 
-const StyledPageContainer = styled.div``;
+const StyledContainer = styled.div`
+  padding-top: 2rem;
+`;
 
 const MeetingDetail: FC = ({}) => {
   return (
-    <SectionWrapper color={COLOR_WHITE} marginTop={4}>
-      <div className='MeetingDetail'></div>
-    </SectionWrapper>
+    <StyledContainer>
+      <div className='MeetingDetail'>sdgfdksjghdfskjh</div>
+    </StyledContainer>
   );
 };
 

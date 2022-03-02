@@ -41,7 +41,7 @@ const StyledLessIcon = styled.img`
   left: -1rem;
   top: 2rem;
   height: 5rem;
-  @media (min-width: 800px) {
+  @media (min-width: ${BIG_BREAKPOINT}px) {
     height: 10rem;
     top: 0rem;
   }
@@ -52,7 +52,7 @@ const StyledMoreIcon = styled.img`
   right: -1rem;
   top: 2rem;
   height: 5rem;
-  @media (min-width: 800px) {
+  @media (min-width: ${BIG_BREAKPOINT}px) {
     height: 10rem;
     top: 0rem;
   }

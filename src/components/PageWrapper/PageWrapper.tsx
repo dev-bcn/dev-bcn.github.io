@@ -6,7 +6,7 @@ const StyledPageWrapper = styled.div`
   padding-bottom: 20rem;
 
   @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    padding-bottom: 5rem;
+    padding-bottom: 10rem;
   }
 `;
 
