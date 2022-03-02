@@ -1,0 +1,100 @@
+import { COLOR_BLUE, COLOR_GREEN, COLOR_PINK } from '../../styles/colors';
+
+export const scheduleData1 = [
+  {
+    title: 'THE FUTURE IS KUBERNETES-NATIVE',
+    author: 'Grace Jansen',
+    date: '08:40 - 09:00',
+    meetingLink: '/meetingDetail/grace-jansen',
+    authorProfile: '/speakerDetail',
+    meetImageNumber: 1,
+    titleAndDateColor: COLOR_PINK,
+    authorNameColor: COLOR_BLUE,
+  },
+  {
+    title: 'THE FUTURE IS KUBERNETES-NATIVE',
+    author: 'Grace Jansen',
+    date: '08:40 - 09:00',
+    meetingLink: '/meetingDetail/grace-jansen',
+    authorProfile: '/speakerDetail',
+    meetImageNumber: 1,
+    titleAndDateColor: COLOR_BLUE,
+    authorNameColor: COLOR_PINK,
+  },
+  {
+    title: 'THE FUTURE IS KUBERNETES-NATIVE',
+    author: 'Grace Jansen',
+    date: '08:40 - 09:00',
+    meetingLink: '/meetingDetail/grace-jansen',
+    authorProfile: '/speakerDetail',
+    meetImageNumber: 1,
+    titleAndDateColor: COLOR_GREEN,
+    authorNameColor: COLOR_PINK,
+  },
+];
+
+export const scheduleData2 = [
+  {
+    title: 'THE FUTURE IS KUBERNETES-NATIVE',
+    author: 'Grace Jansen',
+    date: '08:40 - 09:00',
+    meetingLink: '/meetingDetail/grace-jansen',
+    authorProfile: '/speakerDetail',
+    meetImageNumber: 1,
+    titleAndDateColor: COLOR_PINK,
+    authorNameColor: COLOR_BLUE,
+  },
+  {
+    title: 'THE FUTURE IS KUBERNETES-NATIVE',
+    author: 'Grace Jansen',
+    date: '08:40 - 09:00',
+    meetingLink: '/meetingDetail/grace-jansen',
+    authorProfile: '/speakerDetail',
+    meetImageNumber: 1,
+    titleAndDateColor: COLOR_BLUE,
+    authorNameColor: COLOR_PINK,
+  },
+  {
+    title: 'THE FUTURE IS KUBERNETES-NATIVE',
+    author: 'Grace Jansen',
+    date: '08:40 - 09:00',
+    meetingLink: '/meetingDetail/grace-jansen',
+    authorProfile: '/speakerDetail',
+    meetImageNumber: 1,
+    titleAndDateColor: COLOR_GREEN,
+    authorNameColor: COLOR_PINK,
+  },
+];
+
+export const scheduleData3 = [
+  {
+    title: 'THE FUTURE IS KUBERNETES-NATIVE',
+    author: 'Grace Jansen',
+    date: '08:40 - 09:00',
+    meetingLink: '/meetingDetail/grace-jansen',
+    authorProfile: '/speakerDetail',
+    meetImageNumber: 1,
+    titleAndDateColor: COLOR_PINK,
+    authorNameColor: COLOR_BLUE,
+  },
+  {
+    title: 'THE FUTURE IS KUBERNETES-NATIVE',
+    author: 'Grace Jansen',
+    date: '08:40 - 09:00',
+    meetingLink: '/meetingDetail/grace-jansen',
+    authorProfile: '/speakerDetail',
+    meetImageNumber: 1,
+    titleAndDateColor: COLOR_BLUE,
+    authorNameColor: COLOR_PINK,
+  },
+  {
+    title: 'THE FUTURE IS KUBERNETES-NATIVE',
+    author: 'Grace Jansen',
+    date: '08:40 - 09:00',
+    meetingLink: '/meetingDetail/grace-jansen',
+    authorProfile: '/speakerDetail',
+    meetImageNumber: 1,
+    titleAndDateColor: COLOR_GREEN,
+    authorNameColor: COLOR_PINK,
+  },
+];

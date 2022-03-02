@@ -22,6 +22,8 @@ import SpeakersWelcomer from '../../assets/images/SpeakersWelcomer.jpg';
 import SpeakersPlanning from '../../assets/images/SpeakersPlanning.jpg';
 import { Link } from 'react-router-dom';
 import ScheduleAvatar1 from '../../assets/images/ScheduleAvatar1.jpg';
+import { AvatarCard } from './components/AvatarCard';
+import { scheduleData1, scheduleData2, scheduleData3 } from './ScheduleData';
 
 const StyledScheduleSection = styled.section`
   display: flex;
@@ -229,31 +231,9 @@ const Schedule: FC = () => {
           </StyledTrack>
 
           <StyledTracksContainer>
-            <StyledAvatarContainer>
-              <StyledAvatarImage src={ScheduleAvatar1} />
-              <StyledWelcomerTextContainer>
-              <Link to='/meetingDetail' className='link--text'>
-                <StyledWelcomerTextLink color={COLOR_PINK}>
-                  THE FUTURE IS KUBERNETES-NATIVE
-                </StyledWelcomerTextLink>
-              </Link>
-              <Link to='/speakerDetail' className='link--text'>
-                <StyledWelcomerTextLink color={COLOR_BLUE}>
-                  Grace Jansen
-                </StyledWelcomerTextLink>
-              </Link>
-              <StyledWelcomerText color={COLOR_PINK}>
-                08:40 - 09:00
-              </StyledWelcomerText>
-            </StyledWelcomerTextContainer>
-            </StyledAvatarContainer>
-
-            <StyledAvatarContainer>
-              <StyledAvatarImage src={ScheduleAvatar1} />
-            </StyledAvatarContainer>
-            <StyledAvatarContainer>
-              <StyledAvatarImage src={ScheduleAvatar1} />
-            </StyledAvatarContainer>
+            {scheduleData1.map((meet, index) => (
+              <AvatarCard key={index} meet={meet} />
+            ))}
           </StyledTracksContainer>
 
           <StyledTrack
@@ -263,17 +243,6 @@ const Schedule: FC = () => {
           >
             BREAK
           </StyledTrack>
-          <StyledTracksContainer>
-            <StyledAvatarContainer>
-              <StyledAvatarImage src={ScheduleAvatar1} />
-            </StyledAvatarContainer>
-            <StyledAvatarContainer>
-              <StyledAvatarImage src={ScheduleAvatar1} />
-            </StyledAvatarContainer>
-            <StyledAvatarContainer>
-              <StyledAvatarImage src={ScheduleAvatar1} />
-            </StyledAvatarContainer>
-          </StyledTracksContainer>
 
           <StyledTrack
             width={'100%'}
@@ -282,16 +251,11 @@ const Schedule: FC = () => {
           >
             LUNCH BREAK
           </StyledTrack>
+
           <StyledTracksContainer>
-            <StyledAvatarContainer>
-              <StyledAvatarImage src={ScheduleAvatar1} />
-            </StyledAvatarContainer>
-            <StyledAvatarContainer>
-              <StyledAvatarImage src={ScheduleAvatar1} />
-            </StyledAvatarContainer>
-            <StyledAvatarContainer>
-              <StyledAvatarImage src={ScheduleAvatar1} />
-            </StyledAvatarContainer>
+            {scheduleData2.map((meet, index) => (
+              <AvatarCard key={index} meet={meet} />
+            ))}
           </StyledTracksContainer>
 
           <StyledTrack
@@ -301,16 +265,11 @@ const Schedule: FC = () => {
           >
             BREAK
           </StyledTrack>
+
           <StyledTracksContainer>
-            <StyledAvatarContainer>
-              <StyledAvatarImage src={ScheduleAvatar1} />
-            </StyledAvatarContainer>
-            <StyledAvatarContainer>
-              <StyledAvatarImage src={ScheduleAvatar1} />
-            </StyledAvatarContainer>
-            <StyledAvatarContainer>
-              <StyledAvatarImage src={ScheduleAvatar1} />
-            </StyledAvatarContainer>
+            {scheduleData3.map((meet, index) => (
+              <AvatarCard key={index} meet={meet} />
+            ))}
           </StyledTracksContainer>
 
           <StyledTrack
@@ -347,16 +306,11 @@ const Schedule: FC = () => {
           >
             BREAK
           </StyledTrack>
+
           <StyledTracksContainer>
-            <StyledAvatarContainer>
-              <StyledAvatarImage src={ScheduleAvatar1} />
-            </StyledAvatarContainer>
-            <StyledAvatarContainer>
-              <StyledAvatarImage src={ScheduleAvatar1} />
-            </StyledAvatarContainer>
-            <StyledAvatarContainer>
-              <StyledAvatarImage src={ScheduleAvatar1} />
-            </StyledAvatarContainer>
+            {scheduleData1.map((meet, index) => (
+              <AvatarCard key={index} meet={meet} />
+            ))}
           </StyledTracksContainer>
 
           <StyledTrack
@@ -366,16 +320,11 @@ const Schedule: FC = () => {
           >
             BREAK
           </StyledTrack>
+
           <StyledTracksContainer>
-            <StyledAvatarContainer>
-              <StyledAvatarImage src={ScheduleAvatar1} />
-            </StyledAvatarContainer>
-            <StyledAvatarContainer>
-              <StyledAvatarImage src={ScheduleAvatar1} />
-            </StyledAvatarContainer>
-            <StyledAvatarContainer>
-              <StyledAvatarImage src={ScheduleAvatar1} />
-            </StyledAvatarContainer>
+            {scheduleData2.map((meet, index) => (
+              <AvatarCard key={index} meet={meet} />
+            ))}
           </StyledTracksContainer>
 
           <StyledTrack
@@ -385,16 +334,11 @@ const Schedule: FC = () => {
           >
             LUNCH BREAK
           </StyledTrack>
+
           <StyledTracksContainer>
-            <StyledAvatarContainer>
-              <StyledAvatarImage src={ScheduleAvatar1} />
-            </StyledAvatarContainer>
-            <StyledAvatarContainer>
-              <StyledAvatarImage src={ScheduleAvatar1} />
-            </StyledAvatarContainer>
-            <StyledAvatarContainer>
-              <StyledAvatarImage src={ScheduleAvatar1} />
-            </StyledAvatarContainer>
+            {scheduleData3.map((meet, index) => (
+              <AvatarCard key={index} meet={meet} />
+            ))}
           </StyledTracksContainer>
 
           <StyledTrack
@@ -404,16 +348,11 @@ const Schedule: FC = () => {
           >
             BREAK
           </StyledTrack>
+
           <StyledTracksContainer>
-            <StyledAvatarContainer>
-              <StyledAvatarImage src={ScheduleAvatar1} />
-            </StyledAvatarContainer>
-            <StyledAvatarContainer>
-              <StyledAvatarImage src={ScheduleAvatar1} />
-            </StyledAvatarContainer>
-            <StyledAvatarContainer>
-              <StyledAvatarImage src={ScheduleAvatar1} />
-            </StyledAvatarContainer>
+            {scheduleData1.map((meet, index) => (
+              <AvatarCard key={index} meet={meet} />
+            ))}
           </StyledTracksContainer>
 
           <StyledTrack
