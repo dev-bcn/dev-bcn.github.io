@@ -23,6 +23,13 @@ import styled from 'styled-components';
 const StyledSpeakersContainer = styled.section`
   background-color: ${COLOR_GREEN};
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const StyledTitleWrapper = styled.div`
+  max-width: 900px;
 `;
 
 const StyledSlideImage = styled.img`
@@ -82,15 +89,17 @@ const SpeakersCarousel: FC = () => {
   return (
     <SectionWrapper color={COLOR_GREEN}>
       <StyledSpeakersContainer>
-        <TitleSection
-          title='SPEAKERS'
-          subtitle='Are you a technology company? Interested in meeting
+        <StyledTitleWrapper>
+          <TitleSection
+            title='SPEAKERS'
+            subtitle='Are you a technology company? Interested in meeting
         enthusiasts and geek people for technology? This is a
         priceless opportunity to participate in the first big Java
         and JVM conference in Spain, to pr mote your company
         and to support technological communities.'
-          color={COLOR_WHITE}
-        />
+            color={COLOR_WHITE}
+          />
+        </StyledTitleWrapper>
         <Swiper
           autoplay={{
             delay: 2500,
