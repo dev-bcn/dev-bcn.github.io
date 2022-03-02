@@ -31,12 +31,12 @@ const StyledScheduleSection = styled.section`
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 0 2rem 5rem 2rem;
+  padding: 0 2rem 0rem 2rem;
   @media (min-width: ${TABLET_BREAKPOINT}px) {
-    padding: 0 5rem 5rem 2rem;
+    padding: 0 5rem 0rem 2rem;
   }
   @media (min-width: ${BIG_BREAKPOINT}px) {
-    padding: 0 10rem 7rem 10rem;
+    padding: 0 10rem 0rem 10rem;
   }
 `;
 
