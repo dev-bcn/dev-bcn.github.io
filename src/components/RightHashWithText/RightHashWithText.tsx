@@ -1,7 +1,7 @@
-import { FC } from "react";
-import { motion } from "framer-motion";
-import styled from "styled-components";
-import { MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
+import { FC } from 'react';
+import { motion } from 'framer-motion';
+import styled from 'styled-components';
+import { MOBILE_BREAKPOINT } from '../../constants/BreakPoints';
 
 export type TLateralHashWithText = {
   color: string;
@@ -12,9 +12,9 @@ const StyledRightSlashWrapper = styled(motion.div)`
   display: flex;
   width: 100%;
   justify-content: flex-end;
-  padding: 3rem 0;
+  padding: 1rem 0;
   @media (min-width: ${MOBILE_BREAKPOINT}px) {
-    padding: 5rem 0;
+    padding: 3rem 0;
   }
 `;
 
@@ -38,9 +38,9 @@ export const RightHashWithText: FC<TLateralHashWithText> = ({
 }) => {
   return (
     <StyledRightSlashWrapper
-      initial={{ x: "100%" }}
+      initial={{ x: '100%' }}
       animate={{ x: 0 }}
-      transition={{ duration: 2, ease: "easeIn" }}
+      transition={{ duration: 2, ease: 'easeIn' }}
     >
       {text ? (
         <StyledSlashText color={color}>

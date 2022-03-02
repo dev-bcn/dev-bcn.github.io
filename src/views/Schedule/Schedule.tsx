@@ -244,14 +244,6 @@ const Schedule: FC = () => {
             BREAK
           </StyledTrack>
 
-          <StyledTrack
-            width={'100%'}
-            background={COLOR_PINK}
-            color={COLOR_WHITE}
-          >
-            LUNCH BREAK
-          </StyledTrack>
-
           <StyledTracksContainer>
             {scheduleData2.map((meet, index) => (
               <AvatarCard key={index} meet={meet} />
@@ -263,7 +255,7 @@ const Schedule: FC = () => {
             background={COLOR_PINK}
             color={COLOR_WHITE}
           >
-            BREAK
+            LUNCH BREAK
           </StyledTrack>
 
           <StyledTracksContainer>
