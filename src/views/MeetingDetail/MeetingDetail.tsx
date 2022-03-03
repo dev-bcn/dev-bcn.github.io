@@ -5,6 +5,7 @@ import { FC } from 'react';
 import { IMeeting } from './MeetingDetailData';
 import LessThanRedIcon from '../../assets/images/LessThanRedIcon.svg';
 import MoreThanRedIcon from '../../assets/images/MoreThanRedIcon.svg';
+import TagBadge from '../../components/TagBadge/TagBadge';
 import styled from 'styled-components';
 import { useWindowSize } from 'react-use';
 
@@ -120,6 +121,11 @@ const MeetingDetail: FC<IMeetingDetailProps> = ({ meeting }) => {
           allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
           allowFullScreen
         ></iframe>
+        <StyledVideoTagsContainer>
+          {meeting.videoTags.map((tag) => (
+            <TagBadge text={tag} color={'green'} />
+          ))}
+        </StyledVideoTagsContainer>
       </StyledVideoContainer>
     </StyledContainer>
   );
