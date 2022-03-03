@@ -1,6 +1,15 @@
-import { BIG_BREAKPOINT, MOBILE_BREAKPOINT } from '../../constants/BreakPoints';
+import {
+  BIG_BREAKPOINT,
+  LARGE_BREAKPOINT,
+  MOBILE_BREAKPOINT,
+} from '../../constants/BreakPoints';
+import {
+  COLOR_BLUE,
+  COLOR_GREEN,
+  COLOR_PINK,
+  COLOR_YELLOW,
+} from '../../styles/colors';
 
-import { COLOR_PINK } from '../../styles/colors';
 import { FC } from 'react';
 import { IMeeting } from './MeetingDetailData';
 import LessThanRedIcon from '../../assets/images/LessThanRedIcon.svg';
@@ -73,6 +82,7 @@ const StyledVideoContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 1rem;
+  margin-bottom: 2rem;
 
   @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
     align-items: start;
@@ -87,12 +97,31 @@ const StyledVideoTagsContainer = styled.div`
 `;
 
 function getVideoHeight(windowWidth: number) {
-  let videoWidth = 0;
+  let videoHeight = 0;
   if (windowWidth < MOBILE_BREAKPOINT) {
-    videoWidth = 250;
+    videoHeight = 250;
+  } else if (windowWidth >= MOBILE_BREAKPOINT && windowWidth < BIG_BREAKPOINT) {
+    videoHeight = 300;
+  } else if (windowWidth >= BIG_BREAKPOINT && windowWidth < LARGE_BREAKPOINT) {
+    videoHeight = 450;
+  } else {
+    videoHeight = 600;
   }
 
-  return videoWidth.toString();
+  return videoHeight.toString();
+}
+
+function getRandomColor() {
+  const randomNum = Math.floor(Math.random() * 4);
+
+  const mappedColors: any = {
+    0: COLOR_PINK,
+    1: COLOR_YELLOW,
+    2: COLOR_GREEN,
+    3: COLOR_BLUE,
+  };
+
+  return mappedColors[randomNum];
 }
 interface IMeetingDetailProps {
   meeting: IMeeting;
@@ -100,6 +129,26 @@ interface IMeetingDetailProps {
 
 const MeetingDetail: FC<IMeetingDetailProps> = ({ meeting }) => {
   const { width } = useWindowSize();
+
+  let previousColor = 0;
+
+  function getRandomColor() {
+    let randomNum = 0;
+    do {
+      randomNum = Math.floor(Math.random() * 4);
+    } while (randomNum === previousColor);
+
+    previousColor = randomNum;
+
+    const mappedColors: any = {
+      0: COLOR_PINK,
+      1: COLOR_YELLOW,
+      2: COLOR_GREEN,
+      3: COLOR_BLUE,
+    };
+
+    return mappedColors[randomNum];
+  }
 
   return (
     <StyledContainer className='MeetingDetail'>
@@ -123,7 +172,7 @@ const MeetingDetail: FC<IMeetingDetailProps> = ({ meeting }) => {
         ></iframe>
         <StyledVideoTagsContainer>
           {meeting.videoTags.map((tag) => (
-            <TagBadge text={tag} color={'green'} />
+            <TagBadge text={tag} color={getRandomColor()} />
           ))}
         </StyledVideoTagsContainer>
       </StyledVideoContainer>
