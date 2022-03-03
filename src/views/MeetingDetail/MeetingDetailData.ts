@@ -1,12 +1,24 @@
-export const meetingDetailData = [
+export interface IMeeting {
+  urlName: string;
+  meetingTitle: string;
+  meetingDescription: string;
+  videoUrl: string;
+  videoTags: string[];
+  speakerName: string;
+  speakerTitle: string;
+  speakerDescription: string;
+}
+
+export const meetingDetailData: IMeeting[] = [
   {
     urlName: 'grace-jansen',
-    talkTitle:
+    meetingTitle:
       'REPLICATING PRODUCTION ON YOUR LAPTOP USING THE MAGIC OF CONTAINERS',
-    talkDescription:
+    meetingDescription:
       "Containers are an amazing technology that are revolutionising how we deploy and create applications. Docker and Kubernetes are helping developers and organisations realise the magical potential that container technology and orchestration offer. Enter MicroShed and the Testcontainers framework enabling local test automation that leverages that magical portability containers offer. In this session we'll explore how Testcontainers can help you run and test with true-to-production environments in development with minimal re-writing of your test code.",
     videoUrl:
       'https://www.youtube.com/embed/lQWQz3ftazo?list=PLo0fJV3LkR3xSBqFVCYSpsyuO7-etDpvu',
+    videoTags: ['Testing', 'Java', 'Testcontainers'],
     speakerName: 'Grace Jansen',
     speakerTitle: 'Developer Advocate',
     speakerDescription: `Grace is a Developer Advocate at IBM, working with Open Liberty and Reactive Technologies. She has

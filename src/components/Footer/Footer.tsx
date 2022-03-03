@@ -68,14 +68,14 @@ const StyledAbsoluteImg = styled.img`
   }
 `;
 
-const StyledFlexCol = styled.div`
-  width: 100;
+export const StyledFlexCol = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 
-const StyledFlexRow = styled.div<{ justify?: string }>`
+export const StyledFlexRow = styled.div<{ justify?: string }>`
   width: 100%;
   display: flex;
   align-items: center;

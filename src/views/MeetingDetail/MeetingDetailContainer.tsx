@@ -16,12 +16,14 @@ const MeetingDetailContainer: FC = ({}) => {
 
   let meetingData = findMeeting(name);
 
-  console.log(meetingData);
-
   return (
     <StyledContainer>
       <SectionWrapper color={COLOR_WHITE} marginTop={4}>
-        {meetingData ? <MeetingDetail /> : <NotFoundError message='Meeting' />}
+        {meetingData ? (
+          <MeetingDetail meeting={meetingData} />
+        ) : (
+          <NotFoundError message='Meeting' />
+        )}
       </SectionWrapper>
     </StyledContainer>
   );
