@@ -22,7 +22,7 @@ import { speakersData } from './SpeakersData';
 import styled from 'styled-components';
 import { useWindowSize } from 'react-use';
 
-const StyledSpeakersSection = styled.section`
+export const StyledSpeakersSection = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -36,7 +36,7 @@ const StyledSpeakersSection = styled.section`
   }
 `;
 
-const StyledLessIcon = styled.img`
+export const StyledLessIcon = styled.img`
   position: absolute;
   left: -1rem;
   top: 2rem;
@@ -47,7 +47,7 @@ const StyledLessIcon = styled.img`
   }
 `;
 
-const StyledMoreIcon = styled.img`
+export const StyledMoreIcon = styled.img`
   position: absolute;
   right: -1rem;
   top: 2rem;
