@@ -15,6 +15,8 @@ import {
 } from "../../constants/BreakPoints";
 import { useWindowSize } from "react-use";
 import styled from "styled-components";
+import { talksData } from "./TalksData";
+import { TalkCard } from "./components/TalkCard";
 
 const StyledWaveContainer = styled.div`
   background: ${COLOR_GREEN};
@@ -62,7 +64,9 @@ export const Talks: FC = () => {
         </svg>
       </StyledWaveContainer>
       <SectionWrapper color={COLOR_YELLOW} marginTop={1}>
-
+      { talksData.map((talk, index) => (
+          <TalkCard talk={talk} index={index}/>
+      ))}
       </SectionWrapper>
         
     </>
