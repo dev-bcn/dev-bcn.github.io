@@ -7,6 +7,9 @@ export interface IMeeting {
   speakerName: string;
   speakerTitle: string;
   speakerDescription: string;
+  speakerPhotoUrl: string;
+  speakerTwitterUrl: string;
+  speakerLinkedinUrl: string;
 }
 
 export const meetingDetailData: IMeeting[] = [
@@ -28,6 +31,10 @@ export const meetingDetailData: IMeeting[] = [
     and sample applications, and writes guides and tutorials. She is a regular presenter at international
     technology conferences and has recently authored a book on reactive systems. Grace also has a
     keen passion for encouraging more women into STEM and especially Technology careers.`,
+    speakerPhotoUrl:
+      'https://www.incimages.com/uploaded_files/image/1920x1080/amycuddyTED_100105-cc_100105.jpg',
+    speakerTwitterUrl: 'https://www.twitter.com',
+    speakerLinkedinUrl: 'https://www.linkedin.com',
   },
 ];
 

@@ -97,12 +97,12 @@ const StyledLink = styled.a`
   align-items: center;
 `;
 
-const StyledFooterIcon = styled.img`
+const StyledFooterIcon = styled.img<{ noMargin?: boolean }>`
   height: 1.5rem;
-  margin-right: 0.75rem;
+  margin-right: ${({ noMargin }) => (noMargin ? '0' : '0.75rem')};
 
   @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    margin-right: 0.5rem;
+    margin-right: ${({ noMargin }) => (noMargin ? '0' : '0.5rem')};
   }
 `;
 
