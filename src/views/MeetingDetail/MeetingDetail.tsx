@@ -350,7 +350,7 @@ const MeetingDetail: FC<IMeetingDetailProps> = ({ meeting }) => {
         ></iframe>
         <StyledVideoTagsContainer>
           {meeting.videoTags.map((tag) => (
-            <TagBadge text={tag} color={getRandomColor()} />
+            <TagBadge text={tag} color={getRandomColor()} key={tag} />
           ))}
         </StyledVideoTagsContainer>
       </StyledVideoContainer>
