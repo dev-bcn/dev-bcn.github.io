@@ -58,7 +58,7 @@ export const TalkCard: FC<TalkCardProps> = ({ talk, index }) => {
         <StyledTalkText textAlign={isOdd ? "left" : "right"}>
           Level: {talk.level}
         </StyledTalkText>
-        {/* aqui van los tags */}
+        {/* aqui va el mapeo de los tags */}
         <Link to="/">
           <StyledFaqDetailButton src={ReadMoreIcon} />
         </Link>
