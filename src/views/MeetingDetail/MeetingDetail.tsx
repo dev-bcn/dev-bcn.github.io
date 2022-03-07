@@ -17,6 +17,8 @@ import { IMeeting } from './MeetingDetailData';
 import LessThanIconWhite from '../../assets/images/LessThanIconWhite.svg';
 import LessThanRedIcon from '../../assets/images/LessThanRedIcon.svg';
 import MoreThanRedIcon from '../../assets/images/MoreThanRedIcon.svg';
+import OurSponsors from '../../components/OurSponsors/OurSponsors';
+import SectionWrapper from '../../components/SectionWrapper/SectionWrapper';
 import SlashesRed from '../../assets/images/SlashesRed.svg';
 import TagBadge from '../../components/TagBadge/TagBadge';
 import linkedinIcon from '../../assets/images/linkedinIcon.svg';
@@ -329,86 +331,95 @@ const MeetingDetail: FC<IMeetingDetailProps> = ({ meeting }) => {
   }
 
   return (
-    <StyledContainer className='MeetingDetail'>
-      <StyledMeetingTitleContainer className='TitleContainer'>
-        <StyledTitleImg src={LessThanRedIcon} />
-        <StyledFlexCol>
-          <StyledTitle>/ {meeting.meetingTitle}</StyledTitle>
-          <StyledDescription>{meeting.meetingDescription}</StyledDescription>
-        </StyledFlexCol>
-        <StyledTitleImg src={MoreThanRedIcon} />
-      </StyledMeetingTitleContainer>
-      <StyledVideoContainer>
-        <iframe
-          width='100%'
-          height={getVideoHeight(width)}
-          src='https://www.youtube.com/embed/IxqTPYeXk3k'
-          title='YouTube video player'
-          frameBorder='0'
-          allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-          allowFullScreen
-        ></iframe>
-        <StyledVideoTagsContainer>
-          {meeting.videoTags.map((tag) => (
-            <TagBadge text={tag} color={getRandomColor()} key={tag} />
-          ))}
-        </StyledVideoTagsContainer>
-      </StyledVideoContainer>
-      <StyledSpeakerDetailContainer className='DetailsContainer'>
-        <StyledLessThan src={LessThanIconWhite} />
-        <StyledDetailsContainer className='DetailsContainerInner'>
-          {width > BIG_BREAKPOINT && (
-            <StyledImageContainer>
-              <StyledSpeakerImgBorder>
-                <StyledSpeakerImg photo={meeting.speakerPhotoUrl} />
-              </StyledSpeakerImgBorder>
-              <StyledSocialMediaContainer>
-                <StyledLink href={meeting.speakerTwitterUrl} target={'_blank'}>
-                  <StyledSocialMediaIcon src={twitterIcon} />
-                </StyledLink>
-                <StyledLink href={meeting.speakerLinkedinUrl} target={'_blank'}>
-                  <StyledSocialMediaIcon src={linkedinIcon} noMargin />
-                </StyledLink>
-              </StyledSocialMediaContainer>
-            </StyledImageContainer>
-          )}
-          <StyledRightContainer>
-            <StyledNameContainer className='DetailsTitle'>
-              <StyledName>{meeting.speakerName}</StyledName>
-              {width < BIG_BREAKPOINT && (
-                <>
-                  <StyledSpeakerImgBorder>
-                    <StyledSpeakerImg photo={meeting.speakerPhotoUrl} />
-                  </StyledSpeakerImgBorder>
-                  <StyledSocialMediaContainer>
-                    <StyledLink
-                      href={meeting.speakerTwitterUrl}
-                      target={'_blank'}
-                    >
-                      <StyledSocialMediaIcon src={twitterIcon} />
-                    </StyledLink>
-                    <StyledLink
-                      href={meeting.speakerLinkedinUrl}
-                      target={'_blank'}
-                    >
-                      <StyledSocialMediaIcon src={linkedinIcon} noMargin />
-                    </StyledLink>
-                  </StyledSocialMediaContainer>
-                </>
-              )}
-              <StyledSlashes src={SlashesRed} />
-            </StyledNameContainer>
-            <StyledSpeakerTitle>{meeting.speakerTitle}</StyledSpeakerTitle>
-            <StyledSpeakerDescription>
-              {meeting.speakerDescription}
-            </StyledSpeakerDescription>
-          </StyledRightContainer>
-        </StyledDetailsContainer>
-        <StyledAbsoluteSlashes>
-          / / / / / / / / / / / / / / / / /
-        </StyledAbsoluteSlashes>
-      </StyledSpeakerDetailContainer>
-    </StyledContainer>
+    <SectionWrapper color={COLOR_WHITE}>
+      <StyledContainer className='MeetingDetail'>
+        <StyledMeetingTitleContainer className='TitleContainer'>
+          <StyledTitleImg src={LessThanRedIcon} />
+          <StyledFlexCol>
+            <StyledTitle>/ {meeting.meetingTitle}</StyledTitle>
+            <StyledDescription>{meeting.meetingDescription}</StyledDescription>
+          </StyledFlexCol>
+          <StyledTitleImg src={MoreThanRedIcon} />
+        </StyledMeetingTitleContainer>
+        <StyledVideoContainer>
+          <iframe
+            width='100%'
+            height={getVideoHeight(width)}
+            src='https://www.youtube.com/embed/IxqTPYeXk3k'
+            title='YouTube video player'
+            frameBorder='0'
+            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+            allowFullScreen
+          ></iframe>
+          <StyledVideoTagsContainer>
+            {meeting.videoTags.map((tag) => (
+              <TagBadge text={tag} color={getRandomColor()} key={tag} />
+            ))}
+          </StyledVideoTagsContainer>
+        </StyledVideoContainer>
+        <StyledSpeakerDetailContainer className='DetailsContainer'>
+          <StyledLessThan src={LessThanIconWhite} />
+          <StyledDetailsContainer className='DetailsContainerInner'>
+            {width > BIG_BREAKPOINT && (
+              <StyledImageContainer>
+                <StyledSpeakerImgBorder>
+                  <StyledSpeakerImg photo={meeting.speakerPhotoUrl} />
+                </StyledSpeakerImgBorder>
+                <StyledSocialMediaContainer>
+                  <StyledLink
+                    href={meeting.speakerTwitterUrl}
+                    target={'_blank'}
+                  >
+                    <StyledSocialMediaIcon src={twitterIcon} />
+                  </StyledLink>
+                  <StyledLink
+                    href={meeting.speakerLinkedinUrl}
+                    target={'_blank'}
+                  >
+                    <StyledSocialMediaIcon src={linkedinIcon} noMargin />
+                  </StyledLink>
+                </StyledSocialMediaContainer>
+              </StyledImageContainer>
+            )}
+            <StyledRightContainer>
+              <StyledNameContainer className='DetailsTitle'>
+                <StyledName>{meeting.speakerName}</StyledName>
+                {width < BIG_BREAKPOINT && (
+                  <>
+                    <StyledSpeakerImgBorder>
+                      <StyledSpeakerImg photo={meeting.speakerPhotoUrl} />
+                    </StyledSpeakerImgBorder>
+                    <StyledSocialMediaContainer>
+                      <StyledLink
+                        href={meeting.speakerTwitterUrl}
+                        target={'_blank'}
+                      >
+                        <StyledSocialMediaIcon src={twitterIcon} />
+                      </StyledLink>
+                      <StyledLink
+                        href={meeting.speakerLinkedinUrl}
+                        target={'_blank'}
+                      >
+                        <StyledSocialMediaIcon src={linkedinIcon} noMargin />
+                      </StyledLink>
+                    </StyledSocialMediaContainer>
+                  </>
+                )}
+                <StyledSlashes src={SlashesRed} />
+              </StyledNameContainer>
+              <StyledSpeakerTitle>{meeting.speakerTitle}</StyledSpeakerTitle>
+              <StyledSpeakerDescription>
+                {meeting.speakerDescription}
+              </StyledSpeakerDescription>
+            </StyledRightContainer>
+          </StyledDetailsContainer>
+          <StyledAbsoluteSlashes>
+            / / / / / / / / / / / / / / / / /
+          </StyledAbsoluteSlashes>
+        </StyledSpeakerDetailContainer>
+        <OurSponsors />
+      </StyledContainer>
+    </SectionWrapper>
   );
 };
 
