@@ -13,6 +13,7 @@ import styled from 'styled-components';
 const StyledAppWrapper = styled.div`
   position: relative;
   min-height: 100vh;
+  overflow-x: hidden;
 `;
 
 function App() {
