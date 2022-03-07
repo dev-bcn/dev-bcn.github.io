@@ -1,13 +1,17 @@
-import { FC } from "react";
-import styled from "styled-components";
-import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from "../../../constants/BreakPoints";
-import { COLOR_PINK, COLOR_WHITE } from "../../../styles/colors";
+import { FC } from 'react';
+import styled from 'styled-components';
+import {
+  MOBILE_BREAKPOINT,
+  TABLET_BREAKPOINT,
+} from '../../../constants/BreakPoints';
+import { COLOR_PINK, COLOR_WHITE } from '../../../styles/colors';
 
 type SpeakersCardProps = {
   speaker: {
     title: string;
     subtitle: string;
     text: string;
+    speakerImage: number;
   };
 };
 
@@ -71,10 +75,10 @@ export const SpeakerCard: FC<SpeakersCardProps> = ({ speaker }) => {
   return (
     <StyledSpeakerCard>
       <StyledSpeakerImageContainer>
-      <StyledSpeakerImage
-        src={require(`../../../assets/images/FaqsImage1.png`)}
-      />
-      <StyledImageAnimation />
+        <StyledSpeakerImage
+          src={require(`../../../assets/images/FaqsImage${speaker.speakerImage}.png`)}
+        />
+        <StyledImageAnimation />
       </StyledSpeakerImageContainer>
       <StyledSpeakerTitle>{speaker.title}</StyledSpeakerTitle>
       <StyledSpeakerSubtitle>{speaker.subtitle}</StyledSpeakerSubtitle>
