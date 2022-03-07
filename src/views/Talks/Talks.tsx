@@ -1,7 +1,13 @@
 import { FC } from "react";
 import TitleSection from "../../components/SectionTitle/TitleSection";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import { COLOR_BLACK_BLUE, COLOR_BLUE, COLOR_GREEN, COLOR_WHITE, COLOR_YELLOW } from "../../styles/colors";
+import {
+  COLOR_BLACK_BLUE,
+  COLOR_BLUE,
+  COLOR_GREEN,
+  COLOR_WHITE,
+  COLOR_YELLOW,
+} from "../../styles/colors";
 import LessThanBlueIcon from "../../assets/images/LessThanBlueIcon.svg";
 import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
 import {
@@ -17,6 +23,7 @@ import { useWindowSize } from "react-use";
 import styled from "styled-components";
 import { talksData } from "./TalksData";
 import { TalkCard } from "./components/TalkCard";
+import { StyledWrapperSection } from "../JobOffers/JobOffers";
 
 const StyledWaveContainer = styled.div`
   background: ${COLOR_GREEN};
@@ -64,11 +71,12 @@ export const Talks: FC = () => {
         </svg>
       </StyledWaveContainer>
       <SectionWrapper color={COLOR_YELLOW} marginTop={1}>
-      { talksData.map((talk, index) => (
-          <TalkCard talk={talk} index={index}/>
-      ))}
+        <StyledWrapperSection>
+          {talksData.map((talk, index) => (
+            <TalkCard talk={talk} index={index} />
+          ))}
+        </StyledWrapperSection>
       </SectionWrapper>
-        
     </>
   );
 };
