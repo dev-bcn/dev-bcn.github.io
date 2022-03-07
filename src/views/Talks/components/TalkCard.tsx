@@ -10,7 +10,8 @@ import {
   StyledFaqTitle,
 } from "../../Home/components/Faqs/components/FaqsCard";
 import { StyledJobsInfo } from "../../JobOffers/components/JobsCard";
-import ReadMoreIcon from '../../../assets/images/ReadMoreIcon.svg';
+import ReadMoreIcon from "../../../assets/images/ReadMoreIcon.svg";
+import { Tag } from "../../../components/Tag/Tag";
 
 type TalkCardProps = {
   talk: {
@@ -24,20 +25,27 @@ type TalkCardProps = {
   index: number;
 };
 
+const StyledTalkText = styled.div<{ textAlign: string }>`
+  color: ${COLOR_WHITE};
+  padding: 0.5rem 0rem;
+  @media (min-width: 800px) {
+    hyphens: auto;
+    word-wrap: break-word;
+    text-align: ${({ textAlign }) => {
+      return textAlign;
+    }};
+  }
+`;
+
+const StyledTagsWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: .5rem;
+`;
+
 export const TalkCard: FC<TalkCardProps> = ({ talk, index }) => {
   const isOdd = index % 2 === 0 ? true : false;
-
-  const StyledTalkText = styled.div<{ textAlign: string }>`
-    color: ${COLOR_WHITE};
-    padding: 0.5rem 0rem;
-    @media (min-width: 800px) {
-      hyphens: auto;
-      word-wrap: break-word;
-      text-align: ${({ textAlign }) => {
-        return textAlign;
-      }};
-    }
-  `;
 
   return (
     <StyledFaqCard direction={isOdd ? "row" : "row-reverse"}>
@@ -58,7 +66,11 @@ export const TalkCard: FC<TalkCardProps> = ({ talk, index }) => {
         <StyledTalkText textAlign={isOdd ? "left" : "right"}>
           Level: {talk.level}
         </StyledTalkText>
-        {/* aqui va el mapeo de los tags */}
+        <StyledTagsWrapper>
+          {talk.tags.map((tag) => (
+            <Tag text={tag} />
+          ))}
+        </StyledTagsWrapper>
         <Link to="/">
           <StyledFaqDetailButton src={ReadMoreIcon} />
         </Link>
