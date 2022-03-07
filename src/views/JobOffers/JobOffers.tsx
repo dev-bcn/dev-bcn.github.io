@@ -1,20 +1,21 @@
-import { FC } from 'react';
-import TitleSection from '../../components/SectionTitle/TitleSection';
-import SectionWrapper from '../../components/SectionWrapper/SectionWrapper';
-import { COLOR_BLACK_BLUE, COLOR_PINK, COLOR_WHITE } from '../../styles/colors';
-import styled from 'styled-components';
-import LessThanBlueIcon from '../../assets/images/LessThanBlueIcon.svg';
-import MoreThanBlueIcon from '../../assets/images/MoreThanBlueIcon.svg';
-import { useWindowSize } from 'react-use';
 import {
   BIG_BREAKPOINT,
   MOBILE_BREAKPOINT,
   TABLET_BREAKPOINT,
 } from '../../constants/BreakPoints';
-import JobsCard from './components/JobsCard';
+import { COLOR_BLACK_BLUE, COLOR_PINK, COLOR_WHITE } from '../../styles/colors';
 import { jobsAdevintaData, jobsMangoData, jobsWordlineData } from './JobsData';
+
+import { FC } from 'react';
+import JobsCard from './components/JobsCard';
 import { LeftHashWithText } from '../../components/LeftHashWithText/LeftHashWithText';
+import LessThanBlueIcon from '../../assets/images/LessThanBlueIcon.svg';
+import MoreThanBlueIcon from '../../assets/images/MoreThanBlueIcon.svg';
 import { RightHashWithText } from '../../components/RightHashWithText/RightHashWithText';
+import SectionWrapper from '../../components/SectionWrapper/SectionWrapper';
+import TitleSection from '../../components/SectionTitle/TitleSection';
+import styled from 'styled-components';
+import { useWindowSize } from 'react-use';
 
 const StyledJobsSection = styled.section`
   display: flex;
