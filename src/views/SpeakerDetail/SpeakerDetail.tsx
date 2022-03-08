@@ -138,12 +138,12 @@ const StyledSpeakerImgBorder = styled.div`
 
   @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
     padding: 0.2rem;
-    height: 200px;
+    height: 250px;
   }
 
   @media only screen and (min-width: ${LARGE_BREAKPOINT}px) {
     padding: 0.2rem;
-    height: 275px;
+    height: 325px;
   }
 `;
 
