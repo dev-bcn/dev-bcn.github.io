@@ -14,7 +14,6 @@ import {
 import { FC } from 'react';
 import LessThanBlueIcon from '../../assets/images/LessThanBlueIcon.svg';
 import MoreThanBlueIcon from '../../assets/images/MoreThanBlueIcon.svg';
-import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import SectionWrapper from '../../components/SectionWrapper/SectionWrapper';
 import { SpeakerCard } from './components/SpeakersCard';
 import TitleSection from '../../components/SectionTitle/TitleSection';

@@ -11,9 +11,9 @@ import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
 import {
   StyledLessIcon,
   StyledMoreIcon,
-  StyledSpeakersSection,
 } from "../Speakers/Speakers";
 import {
+  BIG_BREAKPOINT,
   MOBILE_BREAKPOINT,
   TABLET_BREAKPOINT,
 } from "../../constants/BreakPoints";
@@ -22,6 +22,19 @@ import styled from "styled-components";
 import { talksData } from "./TalksData";
 import { TalkCard } from "./components/TalkCard";
 import { StyledWrapperSection } from "../JobOffers/JobOffers";
+
+const StyledSpeakersSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+  padding-bottom: 20rem;
+
+  @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
+    padding-bottom: 10rem;
+  }
+`;
 
 const StyledWaveContainer = styled.div`
   background: ${COLOR_GREEN};

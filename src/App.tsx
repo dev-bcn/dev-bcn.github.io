@@ -23,8 +23,8 @@ function App() {
       <BrowserRouter>
         <Navigation />
         <Switch>
-          <PageWrapper>
             <Route path="/talks" component={Talks} />
+          <PageWrapper>
             <Route path="/jobOffers" component={JobOffers} />
             <Route path="/schedule" component={Schedule} />
             <Route path="/speakers" component={Speakers} />
