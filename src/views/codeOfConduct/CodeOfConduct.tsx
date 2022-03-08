@@ -6,7 +6,12 @@ import {
   MOBILE_BREAKPOINT,
   TABLET_BREAKPOINT,
 } from "../../constants/BreakPoints";
-import { COLOR_BLACK_BLUE, COLOR_PINK, COLOR_WHITE, COLOR_YELLOW } from "../../styles/colors";
+import {
+  COLOR_BLACK_BLUE,
+  COLOR_PINK,
+  COLOR_WHITE,
+  COLOR_YELLOW,
+} from "../../styles/colors";
 import {
   StyledSpeakersSection,
   StyledLessIcon,
@@ -22,8 +27,8 @@ import { CodeOfConductTags } from "./CodeOfConductData";
 import { Tag } from "../../components/Tag/Tag";
 import { StyledTagsWrapper } from "../Talks/components/TalkCard";
 import { StyledMarginBottom } from "../Talks/Talks";
-import MoreThanTransparentIcon from '../../assets/images/MoreThanTransparentIcon.svg';
-import LessThanTransparentIcon from '../../assets/images/LessThanTransparentIcon.svg';
+import MoreThanTransparentIcon from "../../assets/images/MoreThanTransparentIcon.svg";
+import LessThanTransparentIcon from "../../assets/images/LessThanTransparentIcon.svg";
 
 const StyledWaveContainer = styled.div`
   background: ${COLOR_PINK};
@@ -117,11 +122,11 @@ export const CodeOfConduct: FC = () => {
       <SectionWrapper color={COLOR_YELLOW} marginTop={0}>
         <RightHashWithText color={COLOR_PINK} text="CODE OF CONDUCT" />
         {width > MOBILE_BREAKPOINT && (
-            <>
-              <StyleMoreIcon src={LessThanTransparentIcon} />
-              <StyleLessIcon src={MoreThanTransparentIcon} />
-            </>
-          )}
+          <>
+            <StyleMoreIcon src={LessThanTransparentIcon} />
+            <StyleLessIcon src={MoreThanTransparentIcon} />
+          </>
+        )}
         <StyledSpeakersSection>
           <StyledConductText>
             Our conference is dedicated to providing a harassment-free

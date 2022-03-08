@@ -22,5 +22,5 @@ export const CodeOfConductTags = [
   "#Architecture",
   "#Testing",
   "#MArathon",
-  "#Kubernetes"
+  "#Kubernetes",
 ];

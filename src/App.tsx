@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import Footer from "./components/Footer/Footer";
 import { HomeWrapper } from "./views/Home/HomeWrapper";
@@ -11,7 +11,7 @@ import Speakers from "./views/Speakers/Speakers";
 import styled from "styled-components";
 import { Talks } from "./views/Talks/Talks";
 import { CodeOfConduct } from "./views/CodeOfConduct/CodeOfConduct";
-import SpeakerDetailContainer from './views/SpeakerDetail/SpeakerDetailContainer';
+import SpeakerDetailContainer from "./views/SpeakerDetail/SpeakerDetailContainer";
 
 const StyledAppWrapper = styled.div`
   position: relative;
@@ -21,25 +21,25 @@ const StyledAppWrapper = styled.div`
 
 function App() {
   return (
-    <StyledAppWrapper className='AppWrapperAll'>
+    <StyledAppWrapper className="AppWrapperAll">
       <BrowserRouter>
         <Navigation />
         <Switch>
-            <Route path="/talks" component={Talks} />
-            <Route path="/codeOfConduct" component={CodeOfConduct} />
+          <Route path="/talks" component={Talks} />
+          <Route path="/codeOfConduct" component={CodeOfConduct} />
           <PageWrapper>
-            <Route path='/jobOffers' component={JobOffers} />
-            <Route path='/schedule' component={Schedule} />
-            <Route path='/speakers' component={Speakers} />
+            <Route path="/jobOffers" component={JobOffers} />
+            <Route path="/schedule" component={Schedule} />
+            <Route path="/speakers" component={Speakers} />
             <Route
-              path='/meetingDetail/:name'
+              path="/meetingDetail/:name"
               component={MeetingDetailContainer}
             />
             <Route
-              path='/speakerDetail/:name'
+              path="/speakerDetail/:name"
               component={SpeakerDetailContainer}
             />
-            <Route path='/' component={HomeWrapper} exact />
+            <Route path="/" component={HomeWrapper} exact />
           </PageWrapper>
         </Switch>
       </BrowserRouter>

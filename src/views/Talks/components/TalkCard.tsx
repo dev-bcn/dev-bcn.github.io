@@ -41,7 +41,7 @@ export const StyledTagsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 `;
 
 export const TalkCard: FC<TalkCardProps> = ({ talk, index }) => {
