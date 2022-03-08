@@ -4,7 +4,6 @@ import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import {
   BIG_BREAKPOINT,
   MOBILE_BREAKPOINT,
-  TABLET_BREAKPOINT,
 } from "../../constants/BreakPoints";
 import {
   COLOR_BLACK_BLUE,

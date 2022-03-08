@@ -12,6 +12,7 @@ import styled from "styled-components";
 import { Talks } from "./views/Talks/Talks";
 import { CodeOfConduct } from "./views/CodeOfConduct/CodeOfConduct";
 import SpeakerDetailContainer from "./views/SpeakerDetail/SpeakerDetailContainer";
+import { About } from "./views/About/Abouts";
 
 const StyledAppWrapper = styled.div`
   position: relative;
@@ -31,6 +32,7 @@ function App() {
             <Route path="/jobOffers" component={JobOffers} />
             <Route path="/schedule" component={Schedule} />
             <Route path="/speakers" component={Speakers} />
+            <Route path="/aboutUs" component={About} />
             <Route
               path="/meetingDetail/:name"
               component={MeetingDetailContainer}
