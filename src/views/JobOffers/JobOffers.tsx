@@ -17,7 +17,7 @@ import TitleSection from '../../components/SectionTitle/TitleSection';
 import styled from 'styled-components';
 import { useWindowSize } from 'react-use';
 
-const StyledJobsSection = styled.section`
+export const StyledWrapperSection = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -63,7 +63,7 @@ const JobOffers: FC = () => {
 
   return (
     <SectionWrapper color={COLOR_WHITE} marginTop={6}>
-      <StyledJobsSection>
+      <StyledWrapperSection>
         <StyledTitleContainer>
           <TitleSection
             title='JOB OFFERS'
@@ -89,7 +89,7 @@ const JobOffers: FC = () => {
         {jobsWordlineData.map((item, index) => (
           <JobsCard item={item} index={index} key={index} />
         ))}
-      </StyledJobsSection>
+      </StyledWrapperSection>
     </SectionWrapper>
   );
 };

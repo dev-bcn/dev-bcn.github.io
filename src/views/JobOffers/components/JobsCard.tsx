@@ -27,7 +27,7 @@ export const StyledJobsInfo = styled(motion.div)<{align:string}>`
   color: ${COLOR_BLACK_BLUE};
   align-items: center;
   @media (min-width: 800px) {
-    width: 40%;
+    width: 60%;
     align-items: ${({align}) => {
       return align;
     }};
@@ -68,12 +68,12 @@ const JobsCard: FC<IJobsCardProps> = ({ item, index }) => {
         />
       </StyledFaqImageContainer>
       <StyledJobsInfo align={isOdd ? "flex-start" : "flex-end"}>
-        <StyledFaqTitle>{item.title}</StyledFaqTitle>
+        <StyledFaqTitle textAlign={isOdd ? "left" : "right"}>{item.title}</StyledFaqTitle>
         <StyledLocationContainer>
           <StyledLocationImage src={LocationIcon}/>
           <StyledLocationText>{item.location}</StyledLocationText>
         </StyledLocationContainer>
-        <StyledFaqText>{item.text}</StyledFaqText>
+        <StyledFaqText textAlign={isOdd ? "left" : "right"}>{item.text}</StyledFaqText>
         <Link to='/' className="link--text">
           <StyledJobsButton>
             <StyledJobsText>Apply</StyledJobsText>
