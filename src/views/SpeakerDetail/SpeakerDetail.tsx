@@ -11,11 +11,12 @@ import { ISpeakerDetail } from './SpeakerDetailData';
 import MoreThanGreenIcon from '../../assets/images/MoreThanGreenIcon.svg';
 import SlashesWhite from '../../assets/images/SlashesWhite.svg';
 import linkedinIcon from '../../assets/images/linkedinIcon.svg';
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import twitterIcon from '../../assets/images/twitterIcon.svg';
 import { useWindowSize } from 'react-use';
 
-const StyledSpeakerDetailContainer = styled.div`
+const StyledSpeakerDetailContainer = styled(motion.div)`
   display: flex;
   position: relative;
   justify-content: center;
@@ -47,7 +48,7 @@ const StyledDetailsContainer = styled.div`
   }
 `;
 
-const StyledImageContainer = styled.div`
+const StyledImageContainer = styled(motion.div)`
   flex-direction: column;
   width: 25%;
   padding: 0 1rem;
@@ -64,13 +65,13 @@ const StyledRightContainer = styled.div`
   flex: 1;
 `;
 
-const StyledInfoContainer = styled.div`
+const StyledInfoContainer = styled(motion.div)`
   width: 100%;
   display: flex;
   justify-content: space-between;
 `;
 
-export const StyledFlexCol = styled.div`
+export const StyledFlexCol = styled(motion.div)`
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -105,7 +106,7 @@ const StyledMoreThanIcon = styled.img`
   }
 `;
 
-const StyledNameContainer = styled.div`
+const StyledNameContainer = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -156,7 +157,7 @@ const StyledSpeakerImg = styled.div<{ photo: string }>`
   background-size: cover;
 `;
 
-const StyledSlashes = styled.img`
+const StyledSlashes = styled(motion.img)`
   width: 80%;
   margin-bottom: 0.75rem;
 
@@ -208,6 +209,53 @@ const StyledSocialMediaIcon = styled.img<{ noMargin?: boolean }>`
   }
 `;
 
+const rightVariants = {
+  initial: {
+    x: '100%',
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.7,
+    },
+  },
+};
+
+const leftVariants = {
+  initial: {
+    x: -100,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: { duration: 0.3 },
+  },
+};
+
+const downVariants = {
+  initial: {
+    y: 70,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.3 },
+  },
+};
+
+const noVariants = {
+  initial: {
+    x: 0,
+  },
+  animate: {
+    x: 0,
+  },
+};
+
 interface ISpeakerDetailProps {
   speaker: ISpeakerDetail;
 }
@@ -230,10 +278,19 @@ const SpeakerDetail: FC<ISpeakerDetailProps> = ({ speaker }) => {
 
   return (
     <>
-      <StyledSpeakerDetailContainer className='DetailsContainer'>
+      <StyledSpeakerDetailContainer
+        className='DetailsContainer'
+        initial='initial'
+        animate='animate'
+        variants={width < BIG_BREAKPOINT ? downVariants : noVariants}
+      >
         <StyledDetailsContainer className='DetailsContainerInner'>
           {width > BIG_BREAKPOINT && (
-            <StyledImageContainer>
+            <StyledImageContainer
+              initial='initial'
+              animate='animate'
+              variants={leftVariants}
+            >
               <StyledSpeakerImgBorder>
                 <StyledSpeakerImg photo={speaker.photoUrl} />
               </StyledSpeakerImgBorder>
@@ -248,7 +305,12 @@ const SpeakerDetail: FC<ISpeakerDetailProps> = ({ speaker }) => {
             </StyledImageContainer>
           )}
           <StyledRightContainer>
-            <StyledNameContainer className='DetailsTitle'>
+            <StyledNameContainer
+              className='DetailsTitle'
+              initial='initial'
+              animate='animate'
+              variants={width < BIG_BREAKPOINT ? noVariants : rightVariants}
+            >
               <StyledName>{speaker.name}</StyledName>
               {width < BIG_BREAKPOINT && (
                 <>
@@ -267,7 +329,11 @@ const SpeakerDetail: FC<ISpeakerDetailProps> = ({ speaker }) => {
               )}
               <StyledSlashes src={SlashesWhite} />
             </StyledNameContainer>
-            <StyledInfoContainer>
+            <StyledInfoContainer
+              initial='initial'
+              animate='animate'
+              variants={downVariants}
+            >
               <StyledFlexCol>
                 <StyledSpeakerTitle>{speaker.title1}</StyledSpeakerTitle>
                 <StyledSpeakerDescription>
