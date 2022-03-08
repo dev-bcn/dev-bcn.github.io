@@ -1,6 +1,6 @@
 export const navigationItems = [
   { id: 'HOME', link: '' },
-  { id: 'NEWS', link: '/news' },
+  { id: 'NEWS', link: '/codeOfConduct' },
   { id: 'SCHEDULE', link: '/schedule' },
   { id: 'TALKS', link: '/talks' },
   { id: 'WORKSHOPS', link: '/jobOffers' },

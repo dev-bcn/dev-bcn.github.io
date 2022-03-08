@@ -8,10 +8,7 @@ import {
 } from "../../styles/colors";
 import LessThanBlueIcon from "../../assets/images/LessThanBlueIcon.svg";
 import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
-import {
-  StyledLessIcon,
-  StyledMoreIcon,
-} from "../Speakers/Speakers";
+import { StyledLessIcon, StyledMoreIcon } from "../Speakers/Speakers";
 import {
   BIG_BREAKPOINT,
   MOBILE_BREAKPOINT,
@@ -44,6 +41,10 @@ const StyledWaveContainer = styled.div`
   @media (min-width: ${TABLET_BREAKPOINT}px) {
     height: 10rem;
   }
+`;
+
+export const StyledMarginBottom = styled.div`
+  margin-bottom: 20rem;
 `;
 
 export const Talks: FC = () => {
@@ -87,6 +88,7 @@ export const Talks: FC = () => {
             <TalkCard talk={talk} index={index} />
           ))}
         </StyledWrapperSection>
+        <StyledMarginBottom />
       </SectionWrapper>
     </>
   );

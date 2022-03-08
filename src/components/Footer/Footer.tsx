@@ -3,7 +3,6 @@ import { COLOR_GREEN, COLOR_WHITE } from '../../styles/colors';
 import { BIG_BREAKPOINT } from '../../constants/BreakPoints';
 import { FC } from 'react';
 import LessThanYellowIcon from '../../assets/images/LessThanYellowIcon.svg';
-import { Link } from 'react-router-dom';
 import emailIcon from '../../assets/images/emailIcon.svg';
 import eventsIcon from '../../assets/images/eventsIcon.svg';
 import facebookIcon from '../../assets/images/facebookIcon.svg';
