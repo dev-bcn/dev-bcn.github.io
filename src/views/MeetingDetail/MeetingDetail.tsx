@@ -10,7 +10,6 @@ import {
   COLOR_WHITE,
   COLOR_YELLOW,
 } from '../../styles/colors';
-import styled, { css } from 'styled-components';
 
 import { FC } from 'react';
 import { IMeeting } from './MeetingDetailData';
@@ -22,6 +21,8 @@ import SectionWrapper from '../../components/SectionWrapper/SectionWrapper';
 import SlashesRed from '../../assets/images/SlashesRed.svg';
 import TagBadge from '../../components/TagBadge/TagBadge';
 import linkedinIcon from '../../assets/images/linkedinIcon.svg';
+import { motion } from 'framer-motion';
+import styled from 'styled-components';
 import twitterIcon from '../../assets/images/twitterIcon.svg';
 import { useWindowSize } from 'react-use';
 
@@ -39,7 +40,7 @@ const StyledMeetingTitleContainer = styled.div`
   }
 `;
 
-const StyledTitleImg = styled.img`
+const StyledTitleImg = styled(motion.img)`
   display: none;
 
   @media (min-width: ${BIG_BREAKPOINT}px) {
@@ -49,7 +50,7 @@ const StyledTitleImg = styled.img`
   }
 `;
 
-const StyledTitle = styled.h1`
+const StyledTitle = styled(motion.h1)`
   font-weight: 600;
   font-size: 2rem;
   color: ${COLOR_PINK};
@@ -72,7 +73,7 @@ const StyledDescription = styled.p`
   }
 `;
 
-const StyledFlexCol = styled.div`
+const StyledFlexCol = styled(motion.div)`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -85,7 +86,7 @@ const StyledFlexCol = styled.div`
   }
 `;
 
-const StyledVideoContainer = styled.div`
+const StyledVideoContainer = styled(motion.div)`
   display: flex;
   flex-direction: column;
   padding: 0 1rem;
@@ -291,18 +292,50 @@ function getVideoHeight(windowWidth: number) {
   return videoHeight.toString();
 }
 
-function getRandomColor() {
-  const randomNum = Math.floor(Math.random() * 4);
+const leftVariants = {
+  initial: {
+    x: -100,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+  },
+};
 
-  const mappedColors: any = {
-    0: COLOR_PINK,
-    1: COLOR_YELLOW,
-    2: COLOR_GREEN,
-    3: COLOR_BLUE,
-  };
+const rightVariants = {
+  initial: {
+    x: 100,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+  },
+};
 
-  return mappedColors[randomNum];
-}
+const downVariants = {
+  initial: {
+    y: 100,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+  },
+};
+
+const opacityVariants = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+    transition: {
+      duration: 1,
+    },
+  },
+};
 interface IMeetingDetailProps {
   meeting: IMeeting;
 }
@@ -334,14 +367,32 @@ const MeetingDetail: FC<IMeetingDetailProps> = ({ meeting }) => {
     <SectionWrapper color={COLOR_WHITE}>
       <StyledContainer className='MeetingDetail'>
         <StyledMeetingTitleContainer className='TitleContainer'>
-          <StyledTitleImg src={LessThanRedIcon} />
-          <StyledFlexCol>
+          <StyledTitleImg
+            initial='initial'
+            animate='animate'
+            variants={leftVariants}
+            src={LessThanRedIcon}
+          />
+          <StyledFlexCol
+            initial='initial'
+            animate='animate'
+            variants={downVariants}
+          >
             <StyledTitle>/ {meeting.meetingTitle}</StyledTitle>
             <StyledDescription>{meeting.meetingDescription}</StyledDescription>
           </StyledFlexCol>
-          <StyledTitleImg src={MoreThanRedIcon} />
+          <StyledTitleImg
+            initial='initial'
+            animate='animate'
+            variants={rightVariants}
+            src={MoreThanRedIcon}
+          />
         </StyledMeetingTitleContainer>
-        <StyledVideoContainer>
+        <StyledVideoContainer
+          initial='initial'
+          animate='animate'
+          variants={opacityVariants}
+        >
           <iframe
             width='100%'
             height={getVideoHeight(width)}
