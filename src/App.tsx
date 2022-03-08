@@ -10,7 +10,7 @@ import Schedule from "./views/Schedule/Schedule";
 import Speakers from "./views/Speakers/Speakers";
 import styled from "styled-components";
 import { Talks } from "./views/Talks/Talks";
-import { CodeOfConduct } from "./views/codeOfConduct/CodeOfConduct";
+import { CodeOfConduct } from "./views/CodeOfConduct/CodeOfConduct";
 
 const StyledAppWrapper = styled.div`
   position: relative;
