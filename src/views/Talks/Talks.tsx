@@ -3,9 +3,7 @@ import TitleSection from "../../components/SectionTitle/TitleSection";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import {
   COLOR_BLACK_BLUE,
-  COLOR_BLUE,
   COLOR_GREEN,
-  COLOR_WHITE,
   COLOR_YELLOW,
 } from "../../styles/colors";
 import LessThanBlueIcon from "../../assets/images/LessThanBlueIcon.svg";

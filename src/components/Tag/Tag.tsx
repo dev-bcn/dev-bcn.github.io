@@ -39,7 +39,7 @@ const colorTagByText = (text:string) => {
       color = COLOR_WHITE
       break;
     default:
-      color = COLOR_PINK
+      color = COLOR_WHITE
       break;
   }
   return color

@@ -10,7 +10,7 @@ import {
   StyledFaqTitle,
 } from "../../Home/components/Faqs/components/FaqsCard";
 import { StyledJobsInfo } from "../../JobOffers/components/JobsCard";
-import ReadMoreIcon from "../../../assets/images/ReadMoreIcon.svg";
+import WatchIcon from "../../../assets/images/WatchIcon.svg";
 import { Tag } from "../../../components/Tag/Tag";
 
 type TalkCardProps = {
@@ -72,7 +72,7 @@ export const TalkCard: FC<TalkCardProps> = ({ talk, index }) => {
           ))}
         </StyledTagsWrapper>
         <Link to="/">
-          <StyledFaqDetailButton src={ReadMoreIcon} />
+          <StyledFaqDetailButton src={WatchIcon} />
         </Link>
       </StyledJobsInfo>
     </StyledFaqCard>

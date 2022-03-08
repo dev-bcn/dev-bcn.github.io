@@ -1,22 +1,23 @@
-import { FC } from 'react';
-import { motion } from 'framer-motion';
-import styled from 'styled-components';
-import HomeImage from '../../../../assets/images/HomeImage.jpg';
 import {
   COLOR_BLUE,
   COLOR_GREEN,
   COLOR_PINK,
   COLOR_WHITE,
 } from '../../../../styles/colors';
+
 import Countdown from 'react-countdown';
-import TimeCountDown from './components/TimeCountdown';
+import { FC } from 'react';
+import HomeImage from '../../../../assets/images/HomeImage.jpg';
 import LessThanYellowIcon from '../../../../assets/images/LessThanYellowIcon.svg';
-import { useWindowSize } from 'react-use';
-import { TABLET_BREAKPOINT } from '../../../../constants/BreakPoints';
 import SectionWrapper from '../../../../components/SectionWrapper/SectionWrapper';
+import { TABLET_BREAKPOINT } from '../../../../constants/BreakPoints';
+import TimeCountDown from './components/TimeCountdown';
+import { motion } from 'framer-motion';
+import styled from 'styled-components';
+import { useWindowSize } from 'react-use';
 
 const StyledHomaImage = styled.div`
-background-image: url(${HomeImage});
+  background-image: url(${HomeImage});
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -108,41 +109,43 @@ const StyledBlueSlash = styled(motion.p)`
 const Home: FC = () => {
   const { width } = useWindowSize();
   const startDay = '2022-05-26T00:00:00';
-  
+
   return (
     <StyledHomaImage>
-    <SectionWrapper color='transparent'>
-      <StyleHomeContainer>
-        <StyledTitleContainer>
-          <StyledTitle>JBCNConf 2022</StyledTitle>
-        </StyledTitleContainer>
-        <StyledSubtitle>27 - 28 - 29 May</StyledSubtitle>
-        <StyledSubtitle>JVM & Tech</StyledSubtitle>
-        <Countdown date={startDay} renderer={TimeCountDown} />
+      <SectionWrapper color='transparent'>
+        <StyleHomeContainer>
+          <StyledTitleContainer>
+            <StyledTitle>JBCNConf 2022</StyledTitle>
+          </StyledTitleContainer>
+          <StyledSubtitle>27 - 28 - 29 May</StyledSubtitle>
+          <StyledSubtitle>JVM & Tech</StyledSubtitle>
+          <Countdown date={startDay} renderer={TimeCountDown} />
 
-        {width > TABLET_BREAKPOINT && <StyledLessThan src={LessThanYellowIcon} />}
-        <StyledTopSlash
-          initial={{ x: '100%' }}
-          animate={{ x: 0 }}
-          transition={{ duration: 4 }}
-        >
-          <StyledGreenSlash>
-            / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
-            / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /{' '}
-          </StyledGreenSlash>
-        </StyledTopSlash>
-        <StyledBottomSlash
-          initial={{ x: '-100%' }}
-          animate={{ x: 0 }}
-          transition={{ duration: 6 }}
-        >
-          <StyledBlueSlash>
-            / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
-            / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /{' '}
-          </StyledBlueSlash>
-        </StyledBottomSlash>
-      </StyleHomeContainer>
-    </SectionWrapper>
+          {width > TABLET_BREAKPOINT && (
+            <StyledLessThan src={LessThanYellowIcon} />
+          )}
+          <StyledTopSlash
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            transition={{ duration: 4 }}
+          >
+            <StyledGreenSlash>
+              / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+              / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /{' '}
+            </StyledGreenSlash>
+          </StyledTopSlash>
+          <StyledBottomSlash
+            initial={{ x: '-100%' }}
+            animate={{ x: 0 }}
+            transition={{ duration: 6 }}
+          >
+            <StyledBlueSlash>
+              / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+              / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /{' '}
+            </StyledBlueSlash>
+          </StyledBottomSlash>
+        </StyleHomeContainer>
+      </SectionWrapper>
     </StyledHomaImage>
   );
 };
