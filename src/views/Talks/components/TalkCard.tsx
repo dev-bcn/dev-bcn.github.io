@@ -37,7 +37,7 @@ const StyledTalkText = styled.div<{ textAlign: string }>`
   }
 `;
 
-const StyledTagsWrapper = styled.div`
+export const StyledTagsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

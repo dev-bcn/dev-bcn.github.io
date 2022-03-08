@@ -10,6 +10,7 @@ import Schedule from "./views/Schedule/Schedule";
 import Speakers from "./views/Speakers/Speakers";
 import styled from "styled-components";
 import { Talks } from "./views/Talks/Talks";
+import { CodeOfConduct } from "./views/codeOfConduct/CodeOfConduct";
 
 const StyledAppWrapper = styled.div`
   position: relative;
@@ -24,6 +25,7 @@ function App() {
         <Navigation />
         <Switch>
             <Route path="/talks" component={Talks} />
+            <Route path="/codeOfConduct" component={CodeOfConduct} />
           <PageWrapper>
             <Route path="/jobOffers" component={JobOffers} />
             <Route path="/schedule" component={Schedule} />
