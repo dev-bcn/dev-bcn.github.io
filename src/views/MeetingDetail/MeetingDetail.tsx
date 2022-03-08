@@ -10,7 +10,6 @@ import {
   COLOR_WHITE,
   COLOR_YELLOW,
 } from '../../styles/colors';
-import styled, { css } from 'styled-components';
 
 import { FC } from 'react';
 import { IMeeting } from './MeetingDetailData';
@@ -22,6 +21,7 @@ import SectionWrapper from '../../components/SectionWrapper/SectionWrapper';
 import SlashesRed from '../../assets/images/SlashesRed.svg';
 import TagBadge from '../../components/TagBadge/TagBadge';
 import linkedinIcon from '../../assets/images/linkedinIcon.svg';
+import styled from 'styled-components';
 import twitterIcon from '../../assets/images/twitterIcon.svg';
 import { useWindowSize } from 'react-use';
 
@@ -291,18 +291,6 @@ function getVideoHeight(windowWidth: number) {
   return videoHeight.toString();
 }
 
-function getRandomColor() {
-  const randomNum = Math.floor(Math.random() * 4);
-
-  const mappedColors: any = {
-    0: COLOR_PINK,
-    1: COLOR_YELLOW,
-    2: COLOR_GREEN,
-    3: COLOR_BLUE,
-  };
-
-  return mappedColors[randomNum];
-}
 interface IMeetingDetailProps {
   meeting: IMeeting;
 }
