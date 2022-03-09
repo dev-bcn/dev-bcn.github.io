@@ -76,11 +76,11 @@ export const Talks: FC = () => {
           <StyledTitleContainer>
             <StyledTitleIcon src={LessThanBlueIcon} />
             <TitleSection
-              title='SPEAKERS'
+              title='TALKS'
               subtitle='Speakers coming from all corners of the world join us to
-            share their experience in various technologies and to
-            invite everyone to participate in Open Source
-            Technologies and in the JCP.'
+              share their experience in various technologies and to
+              invite everyone to participate in Open Source
+              Technologies and in the JCP.'
               color={COLOR_BLACK_BLUE}
             />
             <StyledTitleIcon src={MoreThanBlueIcon} />
