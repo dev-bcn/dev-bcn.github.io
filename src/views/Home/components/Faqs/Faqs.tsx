@@ -22,7 +22,7 @@ export const StyledFaqSection = styled(motion.section)`
   }
 `;
 
-const StyledWaveContainer = styled.div`
+export const StyledWaveContainer = styled.div`
   background: ${COLOR_PINK};
   overflow-y: hidden;
   height: 5rem;

@@ -1,40 +1,31 @@
-import { FC } from "react";
-import TitleSection from "../../components/SectionTitle/TitleSection";
-import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import {
-  BIG_BREAKPOINT,
-  MOBILE_BREAKPOINT,
-} from "../../constants/BreakPoints";
+import { FC } from 'react';
+import TitleSection from '../../components/SectionTitle/TitleSection';
+import SectionWrapper from '../../components/SectionWrapper/SectionWrapper';
+import { BIG_BREAKPOINT, MOBILE_BREAKPOINT } from '../../constants/BreakPoints';
 import {
   COLOR_BLACK_BLUE,
   COLOR_PINK,
   COLOR_WHITE,
   COLOR_YELLOW,
-} from "../../styles/colors";
+} from '../../styles/colors';
 import {
   StyledSpeakersSection,
   StyledLessIcon,
   StyledMoreIcon,
-} from "../Speakers/Speakers";
-import LessThanRedIcon from "../../assets/images/LessThanRedIcon.svg";
-import MoreThanRedIcon from "../../assets/images/MoreThanRedIcon.svg";
-import { useWindowSize } from "react-use";
-import styled from "styled-components";
-import { RightHashWithText } from "../../components/RightHashWithText/RightHashWithText";
-import { LeftHashWithText } from "../../components/LeftHashWithText/LeftHashWithText";
-import { CodeOfConductTags } from "./CodeOfConductData";
-import { Tag } from "../../components/Tag/Tag";
-import { StyledTagsWrapper } from "../Talks/components/TalkCard";
-import { StyledMarginBottom } from "../Talks/Talks";
-import MoreThanTransparentIcon from "../../assets/images/MoreThanTransparentIcon.svg";
-import LessThanTransparentIcon from "../../assets/images/LessThanTransparentIcon.svg";
-
-const StyledWaveContainer = styled.div`
-  background: ${COLOR_PINK};
-  overflow-y: hidden;
-  height: 3rem;
-  width: 100%;
-`;
+} from '../Speakers/Speakers';
+import LessThanRedIcon from '../../assets/images/LessThanRedIcon.svg';
+import MoreThanRedIcon from '../../assets/images/MoreThanRedIcon.svg';
+import { useWindowSize } from 'react-use';
+import styled from 'styled-components';
+import { RightHashWithText } from '../../components/RightHashWithText/RightHashWithText';
+import { LeftHashWithText } from '../../components/LeftHashWithText/LeftHashWithText';
+import { CodeOfConductTags } from './CodeOfConductData';
+import { Tag } from '../../components/Tag/Tag';
+import { StyledTagsWrapper } from '../Talks/components/TalkCard';
+import { StyledMarginBottom } from '../Talks/Talks';
+import MoreThanTransparentIcon from '../../assets/images/MoreThanTransparentIcon.svg';
+import LessThanTransparentIcon from '../../assets/images/LessThanTransparentIcon.svg';
+import { StyledWaveContainer } from '../Home/components/Faqs/Faqs';
 
 const StyledSectionsSeparator = styled.div`
   background: ${COLOR_WHITE};
@@ -77,12 +68,12 @@ export const CodeOfConduct: FC = () => {
       <SectionWrapper color={COLOR_WHITE} marginTop={5}>
         <StyledSpeakersSection>
           <TitleSection
-            title="CODE OF CONDUCT"
-            subtitle="The JBCNConf is the yearly event
+            title='CODE OF CONDUCT'
+            subtitle='The JBCNConf is the yearly event
             organised by the non-profit Java User
             Group Barcelona on 23rd of July 2021.
             Conference Talks will held on Friday
-            23rd of July 2021."
+            23rd of July 2021.'
             color={COLOR_PINK}
           />
           {width > MOBILE_BREAKPOINT && (
@@ -95,7 +86,7 @@ export const CodeOfConduct: FC = () => {
       </SectionWrapper>
       <StyledSectionsSeparator />
       <SectionWrapper color={COLOR_PINK} marginTop={0}>
-        <LeftHashWithText color={COLOR_YELLOW} text="TOPICS" />
+        <LeftHashWithText color={COLOR_YELLOW} text='TOPICS' />
         <StyledSpeakersSection>
           <StyledTagsWrapper>
             {CodeOfConductTags.map((tag) => (
@@ -107,19 +98,19 @@ export const CodeOfConduct: FC = () => {
 
       <StyledWaveContainer>
         <svg
-          viewBox="0 0 500 150"
-          preserveAspectRatio="none"
-          style={{ height: "100%", width: "100%" }}
+          viewBox='0 0 500 150'
+          preserveAspectRatio='none'
+          style={{ height: '100%', width: '100%' }}
         >
           <path
-            d="M-16.64,37.02 C233.92,117.94 330.41,-50.80 555.58,103.13 L500.00,150.00 L0.00,150.00 Z"
-            style={{ stroke: "none", fill: "#ffd166" }}
+            d='M-1.97,61.69 C252.54,152.47 282.44,-23.17 523.42,103.13 L500.00,150.00 L0.00,150.00 Z'
+            style={{ stroke: 'none', fill: '#ffd166' }}
           ></path>
         </svg>
       </StyledWaveContainer>
 
       <SectionWrapper color={COLOR_YELLOW} marginTop={0}>
-        <RightHashWithText color={COLOR_PINK} text="CODE OF CONDUCT" />
+        <RightHashWithText color={COLOR_PINK} text='CODE OF CONDUCT' />
         {width > MOBILE_BREAKPOINT && (
           <>
             <StyleMoreIcon src={LessThanTransparentIcon} />
