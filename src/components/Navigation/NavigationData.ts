@@ -10,6 +10,6 @@ export const navigationItems = [
   { id: 'TRAVEL', link: '/travel' },
   { id: 'DIVERSITY', link: '/diversity' },
   { id: 'VENUE', link: '/venue' },
-  { id: 'HACKERGARTEN', link: '/hackergarten' },
+  { id: 'ABOUT US', link: '/aboutUs' },
   { id: 'JBCN4KIDS', link: '/jbcn4kids' },
 ];
