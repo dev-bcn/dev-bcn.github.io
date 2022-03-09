@@ -1,24 +1,43 @@
-import { FC } from "react";
-import TitleSection from "../../components/SectionTitle/TitleSection";
-import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import {
-  COLOR_BLACK_BLUE,
-  COLOR_GREEN,
-  COLOR_YELLOW,
-} from "../../styles/colors";
-import LessThanBlueIcon from "../../assets/images/LessThanBlueIcon.svg";
-import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
-import { StyledLessIcon, StyledMoreIcon } from "../Speakers/Speakers";
 import {
   BIG_BREAKPOINT,
   MOBILE_BREAKPOINT,
   TABLET_BREAKPOINT,
-} from "../../constants/BreakPoints";
-import { useWindowSize } from "react-use";
-import styled from "styled-components";
-import { talksData } from "./TalksData";
-import { TalkCard } from "./components/TalkCard";
-import { StyledWrapperSection } from "../JobOffers/JobOffers";
+} from '../../constants/BreakPoints';
+import {
+  COLOR_BLACK_BLUE,
+  COLOR_GREEN,
+  COLOR_YELLOW,
+} from '../../styles/colors';
+import { StyledLessIcon, StyledMoreIcon } from '../Speakers/Speakers';
+
+import { FC } from 'react';
+import LessThanBlueIcon from '../../assets/images/LessThanBlueIcon.svg';
+import MoreThanBlueIcon from '../../assets/images/MoreThanBlueIcon.svg';
+import SectionWrapper from '../../components/SectionWrapper/SectionWrapper';
+import { StyledWrapperSection } from '../JobOffers/JobOffers';
+import { TalkCard } from './components/TalkCard';
+import TitleSection from '../../components/SectionTitle/TitleSection';
+import styled from 'styled-components';
+import { talksData } from './TalksData';
+import { useWindowSize } from 'react-use';
+
+const StyledTitleContainer = styled.div`
+  display: flex;
+  width: 100%;
+`;
+
+const StyledTitleDelimiter = styled.div`
+  width: 80%;
+`;
+
+const StyledTitleIcon = styled.img`
+  width: 8%;
+  display: none;
+
+  @media (min-width: ${BIG_BREAKPOINT}px) {
+    display: flex;
+  }
+`;
 
 const StyledSpeakersSection = styled.section`
   display: flex;
@@ -54,31 +73,29 @@ export const Talks: FC = () => {
     <>
       <SectionWrapper color={COLOR_GREEN} marginTop={5}>
         <StyledSpeakersSection>
-          <TitleSection
-            title="SPEAKERS"
-            subtitle="Speakers coming from all corners of the world join us to
+          <StyledTitleContainer>
+            <StyledTitleIcon src={LessThanBlueIcon} />
+            <TitleSection
+              title='SPEAKERS'
+              subtitle='Speakers coming from all corners of the world join us to
             share their experience in various technologies and to
             invite everyone to participate in Open Source
-            Technologies and in the JCP."
-            color={COLOR_BLACK_BLUE}
-          />
-          {width > MOBILE_BREAKPOINT && (
-            <>
-              <StyledLessIcon src={LessThanBlueIcon} />
-              <StyledMoreIcon src={MoreThanBlueIcon} />
-            </>
-          )}
+            Technologies and in the JCP.'
+              color={COLOR_BLACK_BLUE}
+            />
+            <StyledTitleIcon src={MoreThanBlueIcon} />
+          </StyledTitleContainer>
         </StyledSpeakersSection>
       </SectionWrapper>
       <StyledWaveContainer>
         <svg
-          viewBox="0 0 500 150"
-          preserveAspectRatio="none"
-          style={{ height: "100%", width: "100%" }}
+          viewBox='0 0 500 150'
+          preserveAspectRatio='none'
+          style={{ height: '100%', width: '100%' }}
         >
           <path
-            d="M-3.72,102.14 C177.43,5.44 270.54,146.54 508.12,51.80 L500.00,150.00 L0.00,150.00 Z"
-            style={{ stroke: "none", fill: "#ffd166" }}
+            d='M-3.72,102.14 C177.43,5.44 270.54,146.54 508.12,51.80 L500.00,150.00 L0.00,150.00 Z'
+            style={{ stroke: 'none', fill: '#ffd166' }}
           ></path>
         </svg>
       </StyledWaveContainer>
