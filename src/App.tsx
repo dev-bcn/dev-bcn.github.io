@@ -8,6 +8,7 @@ import MeetingDetailContainer from './views/MeetingDetail/MeetingDetailContainer
 import Navigation from './components/Navigation/Navigation';
 import PageWrapper from './components/PageWrapper/PageWrapper';
 import Schedule from './views/Schedule/Schedule';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import SpeakerDetailContainer from './views/SpeakerDetail/SpeakerDetailContainer';
 import Speakers from './views/Speakers/Speakers';
 import { Talks } from './views/Talks/Talks';
@@ -23,6 +24,7 @@ function App() {
   return (
     <StyledAppWrapper className='AppWrapperAll'>
       <BrowserRouter>
+        <ScrollToTop />
         <Navigation />
         <Switch>
           <Route path='/talks' component={Talks} />
