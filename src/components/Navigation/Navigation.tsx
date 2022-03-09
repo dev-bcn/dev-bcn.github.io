@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { COLOR_PINK, COLOR_YELLOW } from '../../styles/colors';
 import { FC, useState } from 'react';
 import { MAX_WIDTH, MOBILE_BREAKPOINT } from '../../constants/BreakPoints';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useHistory, useLocation } from 'react-router-dom';
 
 import BlueHamburgerIcon from '../../assets/images/BlueHamburgerIcon.svg';
 import CloseIcon from '../../assets/images/CloseIcon.svg';
@@ -51,6 +51,7 @@ const StyledBlueHamburger = styled(motion.img)`
 
 const StyledHeaderLogo = styled.img`
   height: 2.5rem;
+  cursor: pointer;
 `;
 
 export const StyledMenuIcon = styled(motion.img)`
@@ -128,6 +129,12 @@ const Navigation: FC = () => {
   const [isOpened, setIsOpen] = useState(false);
   const { pathname } = useLocation();
 
+  const history = useHistory();
+
+  function handleLogoClick() {
+    history.push('/');
+  }
+
   function handleSetMenu() {
     setIsOpen(!isOpened);
   }
@@ -145,7 +152,7 @@ const Navigation: FC = () => {
       ) : (
         <StyledHeaderWrapper>
           <StyledHeader>
-            <StyledHeaderLogo src={NavigationLogo} />
+            <StyledHeaderLogo src={NavigationLogo} onClick={handleLogoClick} />
 
             <StyledBlueHamburger
               src={BlueHamburgerIcon}

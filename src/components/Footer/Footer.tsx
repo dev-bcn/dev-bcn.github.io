@@ -11,6 +11,7 @@ import linkedinIcon from '../../assets/images/linkedinIcon.svg';
 import logo from '../../assets/images/NavigationLogo.svg';
 import styled from 'styled-components';
 import twitterIcon from '../../assets/images/twitterIcon.svg';
+import { useHistory } from 'react-router-dom';
 import { useWindowSize } from 'react-use';
 import youtubeIcon from '../../assets/images/youtubeIcon.svg';
 
@@ -108,6 +109,7 @@ const StyledFooterIcon = styled.img<{ noMargin?: boolean }>`
 
 const StyledImg = styled.img`
   height: 4.5rem;
+  cursor: pointer;
 `;
 
 const StyledSpan = styled.span`
@@ -116,6 +118,13 @@ const StyledSpan = styled.span`
 
 const Footer: FC = ({}) => {
   const { width } = useWindowSize();
+
+  const history = useHistory();
+
+  function handleLogoClick() {
+    history.push('/');
+    window.scrollTo(0, 0);
+  }
 
   return (
     <StyledFooterAbsoluteContainer className='Footer'>
@@ -153,7 +162,7 @@ const Footer: FC = ({}) => {
           </StyledFlexCol>
         </StyledFooterItem>
         <StyledFooterItem>
-          <StyledImg src={logo} />
+          <StyledImg src={logo} onClick={handleLogoClick} />
         </StyledFooterItem>
         <StyledFooterItem>
           <StyledFlexCol>
