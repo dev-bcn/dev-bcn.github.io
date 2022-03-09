@@ -11,6 +11,7 @@ import linkedinIcon from '../../assets/images/linkedinIcon.svg';
 import logo from '../../assets/images/NavigationLogo.svg';
 import styled from 'styled-components';
 import twitterIcon from '../../assets/images/twitterIcon.svg';
+import { useWindowSize } from 'react-use';
 import youtubeIcon from '../../assets/images/youtubeIcon.svg';
 
 const StyledFooterAbsoluteContainer = styled.div`
@@ -114,6 +115,8 @@ const StyledSpan = styled.span`
 `;
 
 const Footer: FC = ({}) => {
+  const { width } = useWindowSize();
+
   return (
     <StyledFooterAbsoluteContainer className='Footer'>
       <StyledFooterContainer>
@@ -122,7 +125,9 @@ const Footer: FC = ({}) => {
         </StyledFooterItem>
         <StyledFooterItem>
           <StyledFlexCol>
-            <StyledFlexRow justify='center'>
+            <StyledFlexRow
+              justify={width < BIG_BREAKPOINT ? 'center' : 'flex-start'}
+            >
               <StyledLink target={'_blank'} href='www.google.com'>
                 <StyledFooterIcon src={twitterIcon} />
               </StyledLink>
