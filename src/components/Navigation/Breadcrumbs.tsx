@@ -55,7 +55,7 @@ function getLinkData(page: string) {
 
     let talkOrMeetingName = tempName.join(' ');
 
-    returnValue = { name: talkOrMeetingName, urlParam: 'page' };
+    returnValue = { name: talkOrMeetingName, urlParam: page };
   }
 
   return returnValue;

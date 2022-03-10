@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
+import { About } from './views/About/About';
 import { CodeOfConduct } from './views/CodeOfConduct/CodeOfConduct';
 import Footer from './components/Footer/Footer';
 import { HomeWrapper } from './views/Home/HomeWrapper';
@@ -13,7 +14,6 @@ import SpeakerDetailContainer from './views/SpeakerDetail/SpeakerDetailContainer
 import Speakers from './views/Speakers/Speakers';
 import { Talks } from './views/Talks/Talks';
 import styled from 'styled-components';
-import { About } from './views/About/About';
 
 const StyledAppWrapper = styled.div`
   position: relative;
@@ -28,22 +28,22 @@ function App() {
         <ScrollToTop />
         <Navigation />
         <Switch>
-          <Route path='/talks' component={Talks} />
-          <Route path='/codeOfConduct' component={CodeOfConduct} />
+          <Route path='/jbcn-conf/talks' component={Talks} />
+          <Route path='/jbcn-conf/codeOfConduct' component={CodeOfConduct} />
           <PageWrapper>
-            <Route path='/jobOffers' component={JobOffers} />
-            <Route path='/schedule' component={Schedule} />
-            <Route path='/speakers' component={Speakers} />
-            <Route path='/aboutUs' component={About} />
+            <Route path='/jbcn-conf/jobOffers' component={JobOffers} />
+            <Route path='/jbcn-conf/schedule' component={Schedule} />
+            <Route path='/jbcn-conf/speakers' component={Speakers} />
+            <Route path='/jbcn-conf/aboutUs' component={About} />
             <Route
-              path='/meetingDetail/:name'
+              path='/jbcn-conf/meetingDetail/:name'
               component={MeetingDetailContainer}
             />
             <Route
-              path='/speakerDetail/:name'
+              path='/jbcn-conf/speakerDetail/:name'
               component={SpeakerDetailContainer}
             />
-            <Route path='/' component={HomeWrapper} exact />
+            <Route path='/jbcn-conf' component={HomeWrapper} exact />
           </PageWrapper>
         </Switch>
         <Footer />

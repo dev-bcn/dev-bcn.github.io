@@ -142,7 +142,7 @@ const Navigation: FC = () => {
 
   return (
     <>
-      {pathname === '/' ? (
+      {pathname === '/jbcn-conf' ? (
         <SectionWrapper color='transparent'>
           <StyledMenuIcon
             onClick={handleSetMenu}

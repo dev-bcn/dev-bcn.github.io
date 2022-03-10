@@ -1,19 +1,20 @@
-import { FC } from 'react';
-import TitleSection from '../../components/SectionTitle/TitleSection';
-import SectionWrapper from '../../components/SectionWrapper/SectionWrapper';
+import { BIG_BREAKPOINT, TABLET_BREAKPOINT } from '../../constants/BreakPoints';
 import {
   COLOR_BLACK_BLUE,
   COLOR_GREEN,
   COLOR_YELLOW,
 } from '../../styles/colors';
+
+import { FC } from 'react';
 import LessThanBlueIcon from '../../assets/images/LessThanBlueIcon.svg';
 import MoreThanBlueIcon from '../../assets/images/MoreThanBlueIcon.svg';
-import { BIG_BREAKPOINT, TABLET_BREAKPOINT } from '../../constants/BreakPoints';
-import { useWindowSize } from 'react-use';
+import SectionWrapper from '../../components/SectionWrapper/SectionWrapper';
+import { StyledWrapperSection } from '../JobOffers/JobOffers';
+import { TalkCard } from './components/TalkCard';
+import TitleSection from '../../components/SectionTitle/TitleSection';
 import styled from 'styled-components';
 import { talksData } from './TalksData';
-import { TalkCard } from './components/TalkCard';
-import { StyledWrapperSection } from '../JobOffers/JobOffers';
+import { useWindowSize } from 'react-use';
 
 const StyledTitleContainer = styled.div`
   display: flex;
@@ -35,11 +36,7 @@ const StyledSpeakersSection = styled.section`
   justify-content: center;
   align-items: center;
   padding: 0 2rem;
-  padding-bottom: 20rem;
-
-  @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    padding-bottom: 10rem;
-  }
+  padding-bottom: 1rem;
 `;
 
 const StyledWaveContainer = styled.div`
