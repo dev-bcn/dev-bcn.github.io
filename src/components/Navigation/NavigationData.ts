@@ -1,15 +1,19 @@
+import {
+  ROUTE_ABOUT_US,
+  ROUTE_CODE_OF_CONDUCT,
+  ROUTE_HOME,
+  ROUTE_JOB_OFFERS,
+  ROUTE_SCHEDULE,
+  ROUTE_SPEAKERS,
+  ROUTE_TALKS,
+} from '../../constants/routes';
+
 export const navigationItems = [
-  { id: 'HOME', link: '/' },
-  { id: 'CODE OF CONDUCT', link: '/codeOfConduct' },
-  { id: 'SCHEDULE', link: '/schedule' },
-  { id: 'TALKS', link: '/talks' },
-  { id: 'JOB OFFERS', link: '/jobOffers' },
-  { id: 'SPEAKERS', link: '/speakers' },
-  { id: 'SPONSORS', link: '/sponsors' },
-  { id: 'PRESS', link: '/press' },
-  { id: 'TRAVEL', link: '/travel' },
-  { id: 'DIVERSITY', link: '/diversity' },
-  { id: 'VENUE', link: '/venue' },
-  { id: 'ABOUT US', link: '/aboutUs' },
-  { id: 'JBCN4KIDS', link: '/jbcn4kids' },
+  { id: 'HOME', link: ROUTE_HOME },
+  { id: 'CODE OF CONDUCT', link: ROUTE_CODE_OF_CONDUCT },
+  { id: 'SCHEDULE', link: ROUTE_SCHEDULE },
+  { id: 'TALKS', link: ROUTE_TALKS },
+  { id: 'JOB OFFERS', link: ROUTE_JOB_OFFERS },
+  { id: 'SPEAKERS', link: ROUTE_SPEAKERS },
+  { id: 'ABOUT US', link: ROUTE_ABOUT_US },
 ];

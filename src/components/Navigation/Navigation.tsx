@@ -9,6 +9,7 @@ import Breadcrumbs from './Breadcrumbs';
 import CloseIcon from '../../assets/images/CloseIcon.svg';
 import HamburgerIcon from '../../assets/images/HamburgerIcon.svg';
 import NavigationLogo from '../../assets/images/NavigationLogo.svg';
+import { ROUTE_HOME } from '../../constants/routes';
 import SectionWrapper from '../SectionWrapper/SectionWrapper';
 import TicketsImage from '../../assets/images/TicketsImage.svg';
 import { navigationItems } from './NavigationData';
@@ -123,6 +124,7 @@ const StyledNavLinkHighlightedImage = styled.img`
 const StyledNavigationLogo = styled.img`
   height: 4rem;
   margin-bottom: 1rem;
+  cursor: pointer;
 `;
 
 const Navigation: FC = () => {
@@ -142,7 +144,7 @@ const Navigation: FC = () => {
 
   return (
     <>
-      {pathname === '/' ? (
+      {pathname === ROUTE_HOME ? (
         <SectionWrapper color='transparent'>
           <StyledMenuIcon
             onClick={handleSetMenu}
@@ -182,7 +184,13 @@ const Navigation: FC = () => {
                 onClick={handleSetMenu}
                 whileTap={{ scale: 0.8 }}
               />
-              <StyledNavigationLogo src={NavigationLogo} />
+              <StyledNavigationLogo
+                src={NavigationLogo}
+                onClick={() => {
+                  history.push(ROUTE_HOME);
+                  handleSetMenu();
+                }}
+              />
               {navigationItems.map((item) => (
                 <StyledLink
                   key={item.id}
