@@ -113,7 +113,7 @@ const StyledSpan = styled.span`
   font-weight: 600;
 `;
 
-const Footer: FC = ({}) => {
+const Footer: FC = () => {
   return (
     <StyledFooterAbsoluteContainer className='Footer'>
       <StyledFooterContainer>

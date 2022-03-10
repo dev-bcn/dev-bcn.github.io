@@ -249,7 +249,7 @@ type TIsHoveredState = {
   virtual: boolean;
 };
 
-const Sponsors: FC = ({}) => {
+const Sponsors: FC = () => {
   const { width } = useWindowSize();
 
   const [isHovered, setIsHovered] = useState<TIsHoveredState>({

@@ -21,7 +21,6 @@ import {
 import SpeakersWelcomer from '../../assets/images/SpeakersWelcomer.jpg';
 import SpeakersPlanning from '../../assets/images/SpeakersPlanning.jpg';
 import { Link } from 'react-router-dom';
-import ScheduleAvatar1 from '../../assets/images/ScheduleAvatar1.jpg';
 import { AvatarCard } from './components/AvatarCard';
 import { scheduleData1, scheduleData2, scheduleData3 } from './ScheduleData';
 

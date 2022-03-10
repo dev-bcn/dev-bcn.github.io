@@ -1,10 +1,5 @@
 import { BIG_BREAKPOINT, LARGE_BREAKPOINT } from '../../constants/BreakPoints';
-import {
-  COLOR_BLUE,
-  COLOR_GREEN,
-  COLOR_WHITE,
-  COLOR_YELLOW,
-} from '../../styles/colors';
+import { COLOR_BLUE, COLOR_WHITE, COLOR_YELLOW } from '../../styles/colors';
 
 import { FC } from 'react';
 import { ISpeakerDetail } from './SpeakerDetailData';

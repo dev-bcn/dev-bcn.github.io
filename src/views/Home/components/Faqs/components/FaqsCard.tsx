@@ -1,9 +1,9 @@
-import { FC } from "react";
-import styled from "styled-components";
-import { motion } from "framer-motion";
-import ReadMoreIcon from "../../../../../assets/images/ReadMoreIcon.svg";
-import { Link } from "react-router-dom";
-import { COLOR_WHITE } from "../../../../../styles/colors";
+import { FC } from 'react';
+import styled from 'styled-components';
+import { motion } from 'framer-motion';
+import ReadMoreIcon from '../../../../../assets/images/ReadMoreIcon.svg';
+import { Link } from 'react-router-dom';
+import { COLOR_WHITE } from '../../../../../styles/colors';
 
 type FaqCardType = {
   faq: {
@@ -44,22 +44,6 @@ export const StyledFaqImage = styled(motion.img)`
   display: block;
   height: 100%;
   width: 100%;
-`;
-
-export const StyledImageAnimation = styled.div`
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: 0.25s linear;
-  background-color: rgba(255, 209, 102, 0.5);
-  &:hover {
-    opacity: 1;
-  }
 `;
 
 export const StyledFaqInfo = styled(motion.div)<{ align: string }>`
@@ -106,21 +90,22 @@ const FaqCard: FC<FaqCardType> = ({ faq, index }) => {
   const isOdd = index % 2 === 0 ? true : false;
 
   return (
-    <StyledFaqCard direction={isOdd ? "row" : "row-reverse"}>
+    <StyledFaqCard direction={isOdd ? 'row' : 'row-reverse'}>
       <StyledFaqImageContainer
-        padding={isOdd ? "0 .75rem 0 0" : "0 0 0 .75rem"}
+        padding={isOdd ? '0 .75rem 0 0' : '0 0 0 .75rem'}
       >
         <StyledFaqImage
           src={require(`../../../../../assets/images/FaqsImage${index}.png`)}
         />
-        <StyledImageAnimation />
       </StyledFaqImageContainer>
-      <StyledFaqInfo align={isOdd ? "flex-start" : "flex-end"}>
-        <StyledFaqTitle textAlign={isOdd ? "left" : "right"}>
+      <StyledFaqInfo align={isOdd ? 'flex-start' : 'flex-end'}>
+        <StyledFaqTitle textAlign={isOdd ? 'left' : 'right'}>
           {faq.question}
         </StyledFaqTitle>
-        <StyledFaqText textAlign={isOdd ? "left" : "right"}>{faq.answer}</StyledFaqText>
-        <Link to="/">
+        <StyledFaqText textAlign={isOdd ? 'left' : 'right'}>
+          {faq.answer}
+        </StyledFaqText>
+        <Link to='/'>
           <StyledFaqDetailButton src={ReadMoreIcon} />
         </Link>
       </StyledFaqInfo>
