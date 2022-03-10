@@ -16,6 +16,8 @@ const MeetingDetailContainer: FC = () => {
 
   let meetingData = findMeeting(name);
 
+  console.log('carrego');
+
   return (
     <StyledContainer>
       <SectionWrapper color={COLOR_WHITE} marginTop={4}>

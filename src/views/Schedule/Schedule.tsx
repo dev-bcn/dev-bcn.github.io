@@ -1,6 +1,8 @@
-import { FC } from 'react';
-import TitleSection from '../../components/SectionTitle/TitleSection';
-import SectionWrapper from '../../components/SectionWrapper/SectionWrapper';
+import {
+  BIG_BREAKPOINT,
+  MOBILE_BREAKPOINT,
+  TABLET_BREAKPOINT,
+} from '../../constants/BreakPoints';
 import {
   COLOR_BLACK_BLUE,
   COLOR_BLUE,
@@ -9,20 +11,23 @@ import {
   COLOR_WHITE,
   COLOR_YELLOW,
 } from '../../styles/colors';
-import styled from 'styled-components';
-import MoreThanBlueWhiteIcon from '../../assets/images/LessThanBlueWhiteIcon.svg';
-import LessThanBlueWhiteIcon from '../../assets/images/MoreThanBlueWhiteIcon.svg';
-import { useWindowSize } from 'react-use';
 import {
-  BIG_BREAKPOINT,
-  MOBILE_BREAKPOINT,
-  TABLET_BREAKPOINT,
-} from '../../constants/BreakPoints';
-import SpeakersWelcomer from '../../assets/images/SpeakersWelcomer.jpg';
-import SpeakersPlanning from '../../assets/images/SpeakersPlanning.jpg';
-import { Link } from 'react-router-dom';
-import { AvatarCard } from './components/AvatarCard';
+  ROUTE_MEETING_DETAIL,
+  ROUTE_SPEAKER_DETAIL,
+} from '../../constants/routes';
 import { scheduleData1, scheduleData2, scheduleData3 } from './ScheduleData';
+
+import { AvatarCard } from './components/AvatarCard';
+import { FC } from 'react';
+import LessThanBlueWhiteIcon from '../../assets/images/MoreThanBlueWhiteIcon.svg';
+import { Link } from 'react-router-dom';
+import MoreThanBlueWhiteIcon from '../../assets/images/LessThanBlueWhiteIcon.svg';
+import SectionWrapper from '../../components/SectionWrapper/SectionWrapper';
+import SpeakersPlanning from '../../assets/images/SpeakersPlanning.jpg';
+import SpeakersWelcomer from '../../assets/images/SpeakersWelcomer.jpg';
+import TitleSection from '../../components/SectionTitle/TitleSection';
+import styled from 'styled-components';
+import { useWindowSize } from 'react-use';
 
 const StyledScheduleSection = styled.section`
   display: flex;
@@ -31,8 +36,11 @@ const StyledScheduleSection = styled.section`
   align-items: center;
   position: relative;
   padding: 0 2rem 0rem 2rem;
+  margin-bottom: 5rem;
+
   @media (min-width: ${TABLET_BREAKPOINT}px) {
     padding: 0 5rem 0rem 2rem;
+    margin-bottom: 10rem;
   }
   @media (min-width: ${BIG_BREAKPOINT}px) {
     padding: 0 10rem 0rem 10rem;
@@ -70,7 +78,13 @@ const StyledScheduleContainer = styled.div`
 const StyledTracksContainer = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: ${TABLET_BREAKPOINT}px) {
+    justify-content: space-between;
+    flex-direction: row;
+  }
 `;
 
 const StyledTrack = styled.div<{
@@ -138,9 +152,15 @@ const StyledPlanningImage = styled.div`
 `;
 
 export const StyledAvatarContainer = styled.div`
-  width: 30%;
+  width: 80%;
   margin-top: 1rem;
   position: relative;
+
+  @media only screen and (min-width: ${TABLET_BREAKPOINT}px) {
+    width: 30%;
+
+    position: relative;
+  }
 `;
 export const StyledAvatarImage = styled.img`
   width: 100%;
@@ -149,6 +169,9 @@ export const StyledAvatarImage = styled.img`
 
 const Schedule: FC = () => {
   const { width } = useWindowSize();
+
+  const meetingDetailUrl = ROUTE_MEETING_DETAIL('grace-jansen');
+  const speakerDetailUrl = ROUTE_SPEAKER_DETAIL('grace-jansen');
 
   return (
     <SectionWrapper color={COLOR_WHITE} marginTop={6}>
@@ -171,21 +194,21 @@ const Schedule: FC = () => {
         <StyledScheduleContainer>
           <StyledTracksContainer>
             <StyledTrack
-              width={'30%'}
+              width={width < BIG_BREAKPOINT ? '100%' : '30%'}
               background={COLOR_PINK}
               color={COLOR_WHITE}
             >
               TRACK 1
             </StyledTrack>
             <StyledTrack
-              width={'30%'}
+              width={width < BIG_BREAKPOINT ? '100%' : '30%'}
               background={COLOR_YELLOW}
               color={COLOR_BLUE}
             >
               TRACK 2
             </StyledTrack>
             <StyledTrack
-              width={'30%'}
+              width={width < BIG_BREAKPOINT ? '100%' : '30%'}
               background={COLOR_GREEN}
               color={COLOR_BLACK_BLUE}
             >
@@ -204,13 +227,13 @@ const Schedule: FC = () => {
           </StyledWelcomerImage>
           <StyledPlanningImage>
             <StyledWelcomerTextContainer>
-              <Link to='/meetingDetail' className='link--text'>
+              <Link to={meetingDetailUrl} className='link--text'>
                 <StyledWelcomerTextLink color={COLOR_BLUE}>
                   THE FUTURE IS <br />
                   KUBERNETES-NATIVE
                 </StyledWelcomerTextLink>
               </Link>
-              <Link to='/speakerDetail' className='link--text'>
+              <Link to={speakerDetailUrl} className='link--text'>
                 <StyledWelcomerTextLink color={COLOR_PINK}>
                   Grace Jansen
                 </StyledWelcomerTextLink>
@@ -273,13 +296,13 @@ const Schedule: FC = () => {
 
           <StyledPlanningImage>
             <StyledWelcomerTextContainer>
-              <Link to='/meetingDetail' className='link--text'>
+              <Link to={meetingDetailUrl} className='link--text'>
                 <StyledWelcomerTextLink color={COLOR_BLUE}>
                   THE FUTURE IS <br />
                   KUBERNETES-NATIVE
                 </StyledWelcomerTextLink>
               </Link>
-              <Link to='/speakerDetail' className='link--text'>
+              <Link to={speakerDetailUrl} className='link--text'>
                 <StyledWelcomerTextLink color={COLOR_PINK}>
                   Grace Jansen
                 </StyledWelcomerTextLink>

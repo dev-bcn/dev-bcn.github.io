@@ -1,12 +1,13 @@
-import { FC } from 'react';
-import { Link } from 'react-router-dom';
 import {
   StyledAvatarContainer,
   StyledAvatarImage,
+  StyledWelcomerText,
   StyledWelcomerTextContainer,
   StyledWelcomerTextLink,
-  StyledWelcomerText,
 } from '../Schedule';
+
+import { FC } from 'react';
+import { Link } from 'react-router-dom';
 
 type AvatarCardProps = {
   meet: {
@@ -23,7 +24,7 @@ type AvatarCardProps = {
 
 export const AvatarCard: FC<AvatarCardProps> = ({ meet }) => {
   return (
-    <StyledAvatarContainer>
+    <StyledAvatarContainer className='AvatarCard'>
       <StyledAvatarImage
         src={require(`../../../assets/images/ScheduleAvatar${meet.meetImageNumber}.jpg`)}
       />
