@@ -8,21 +8,39 @@ import {
 } from '../../styles/colors';
 import LessThanBlueIcon from '../../assets/images/LessThanBlueIcon.svg';
 import MoreThanBlueIcon from '../../assets/images/MoreThanBlueIcon.svg';
-import {
-  StyledLessIcon,
-  StyledMoreIcon,
-  StyledSpeakersSection,
-} from '../Speakers/Speakers';
-import {
-  BIG_BREAKPOINT,
-  MOBILE_BREAKPOINT,
-  TABLET_BREAKPOINT,
-} from '../../constants/BreakPoints';
+import { BIG_BREAKPOINT, TABLET_BREAKPOINT } from '../../constants/BreakPoints';
 import { useWindowSize } from 'react-use';
 import styled from 'styled-components';
 import { talksData } from './TalksData';
 import { TalkCard } from './components/TalkCard';
 import { StyledWrapperSection } from '../JobOffers/JobOffers';
+
+const StyledTitleContainer = styled.div`
+  display: flex;
+  width: 100%;
+`;
+
+const StyledTitleIcon = styled.img`
+  width: 8%;
+  display: none;
+
+  @media (min-width: ${BIG_BREAKPOINT}px) {
+    display: flex;
+  }
+`;
+
+const StyledSpeakersSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+  padding-bottom: 20rem;
+
+  @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
+    padding-bottom: 10rem;
+  }
+`;
 
 const StyledWaveContainer = styled.div`
   background: ${COLOR_GREEN};
@@ -39,26 +57,22 @@ export const StyledMarginBottom = styled.div`
 `;
 
 export const Talks: FC = () => {
-  const { width } = useWindowSize();
-
   return (
     <>
       <SectionWrapper color={COLOR_GREEN} marginTop={5}>
         <StyledSpeakersSection>
-          <TitleSection
-            title='SPEAKERS'
-            subtitle='Speakers coming from all corners of the world join us to
-            share their experience in various technologies and to
-            invite everyone to participate in Open Source
-            Technologies and in the JCP.'
-            color={COLOR_BLACK_BLUE}
-          />
-          {width > MOBILE_BREAKPOINT && (
-            <>
-              <StyledLessIcon src={LessThanBlueIcon} />
-              <StyledMoreIcon src={MoreThanBlueIcon} />
-            </>
-          )}
+          <StyledTitleContainer>
+            <StyledTitleIcon src={LessThanBlueIcon} />
+            <TitleSection
+              title='TALKS'
+              subtitle='Speakers coming from all corners of the world join us to
+              share their experience in various technologies and to
+              invite everyone to participate in Open Source
+              Technologies and in the JCP.'
+              color={COLOR_BLACK_BLUE}
+            />
+            <StyledTitleIcon src={MoreThanBlueIcon} />
+          </StyledTitleContainer>
         </StyledSpeakersSection>
       </SectionWrapper>
       <StyledWaveContainer>

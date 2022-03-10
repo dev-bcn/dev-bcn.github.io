@@ -2,9 +2,10 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { COLOR_PINK, COLOR_YELLOW } from '../../styles/colors';
 import { FC, useState } from 'react';
 import { MAX_WIDTH, MOBILE_BREAKPOINT } from '../../constants/BreakPoints';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useHistory, useLocation } from 'react-router-dom';
 
 import BlueHamburgerIcon from '../../assets/images/BlueHamburgerIcon.svg';
+import Breadcrumbs from './Breadcrumbs';
 import CloseIcon from '../../assets/images/CloseIcon.svg';
 import HamburgerIcon from '../../assets/images/HamburgerIcon.svg';
 import NavigationLogo from '../../assets/images/NavigationLogo.svg';
@@ -24,7 +25,7 @@ const StyledHeaderWrapper = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  z-index: 2;
+  z-index: 3;
 `;
 
 const StyledHeader = styled.header`
@@ -51,6 +52,7 @@ const StyledBlueHamburger = styled(motion.img)`
 
 const StyledHeaderLogo = styled.img`
   height: 2.5rem;
+  cursor: pointer;
 `;
 
 export const StyledMenuIcon = styled(motion.img)`
@@ -68,7 +70,7 @@ const StyledNavigationContainer = styled(motion.div)`
   top: 0;
   bottom: 0;
   display: flex;
-  z-index: 2;
+  z-index: 4;
   transform: translate3d(0px, 0px, 0px);
   transition: transform 0.5s ease 0s;
 `;
@@ -128,6 +130,12 @@ const Navigation: FC = () => {
   const [isOpened, setIsOpen] = useState(false);
   const { pathname } = useLocation();
 
+  const history = useHistory();
+
+  function handleLogoClick() {
+    history.push('/');
+  }
+
   function handleSetMenu() {
     setIsOpen(!isOpened);
   }
@@ -145,7 +153,7 @@ const Navigation: FC = () => {
       ) : (
         <StyledHeaderWrapper>
           <StyledHeader>
-            <StyledHeaderLogo src={NavigationLogo} />
+            <StyledHeaderLogo src={NavigationLogo} onClick={handleLogoClick} />
 
             <StyledBlueHamburger
               src={BlueHamburgerIcon}
@@ -153,6 +161,7 @@ const Navigation: FC = () => {
               onClick={handleSetMenu}
             />
           </StyledHeader>
+          <Breadcrumbs />
         </StyledHeaderWrapper>
       )}
       <AnimatePresence>

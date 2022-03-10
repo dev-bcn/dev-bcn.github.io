@@ -2,6 +2,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import './SpeakersCarousel.scss';
 
+import { Autoplay, Parallax } from 'swiper';
 import {
   COLOR_GREEN,
   COLOR_PINK,
@@ -10,7 +11,6 @@ import {
 } from '../../../../styles/colors';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { Autoplay } from 'swiper';
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import MoreThanRedIcon from '.././../../../assets/images/MoreThanRedIcon.svg';
@@ -102,9 +102,13 @@ const SpeakersCarousel: FC = () => {
         </StyledTitleWrapper>
         <Swiper
           autoplay={{
-            delay: 2500,
+            delay: 1,
             disableOnInteraction: true,
           }}
+          speed={3000}
+          parallax={true}
+          loop={true}
+          grabCursor={true}
           breakpoints={{
             340: {
               width: 640,
@@ -118,9 +122,297 @@ const SpeakersCarousel: FC = () => {
             },
           }}
           centeredSlides={true}
-          modules={[Autoplay]}
+          modules={[Autoplay, Parallax]}
           className='mySwiper'
         >
+          <SwiperSlide>
+            <StyledSlideImage
+              src={require(`../../../../assets/images/BlackAvatar1.jpg`)}
+              alt='Avatar'
+            />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
+          </SwiperSlide>
+          <SwiperSlide>
+            <StyledSlideImage
+              src={require(`../../../../assets/images/BlackAvatar2.jpg`)}
+              alt='Avatar'
+            />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
+          </SwiperSlide>
+          <SwiperSlide>
+            <StyledSlideImage
+              src={require(`../../../../assets/images/BlackAvatar1.jpg`)}
+              alt='Avatar'
+            />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
+          </SwiperSlide>
+          <SwiperSlide>
+            <StyledSlideImage
+              src={require(`../../../../assets/images/BlackAvatar2.jpg`)}
+              alt='Avatar'
+            />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
+          </SwiperSlide>
+          <SwiperSlide>
+            <StyledSlideImage
+              src={require(`../../../../assets/images/BlackAvatar1.jpg`)}
+              alt='Avatar'
+            />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
+          </SwiperSlide>
+          <SwiperSlide>
+            <StyledSlideImage
+              src={require(`../../../../assets/images/BlackAvatar2.jpg`)}
+              alt='Avatar'
+            />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
+          </SwiperSlide>
+          <SwiperSlide>
+            <StyledSlideImage
+              src={require(`../../../../assets/images/BlackAvatar1.jpg`)}
+              alt='Avatar'
+            />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
+          </SwiperSlide>
+          <SwiperSlide>
+            <StyledSlideImage
+              src={require(`../../../../assets/images/BlackAvatar2.jpg`)}
+              alt='Avatar'
+            />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
+          </SwiperSlide>
+          <SwiperSlide>
+            <StyledSlideImage
+              src={require(`../../../../assets/images/BlackAvatar1.jpg`)}
+              alt='Avatar'
+            />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
+          </SwiperSlide>
+          <SwiperSlide>
+            <StyledSlideImage
+              src={require(`../../../../assets/images/BlackAvatar2.jpg`)}
+              alt='Avatar'
+            />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
+          </SwiperSlide>
+          <SwiperSlide>
+            <StyledSlideImage
+              src={require(`../../../../assets/images/BlackAvatar1.jpg`)}
+              alt='Avatar'
+            />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
+          </SwiperSlide>
+          <SwiperSlide>
+            <StyledSlideImage
+              src={require(`../../../../assets/images/BlackAvatar2.jpg`)}
+              alt='Avatar'
+            />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
+          </SwiperSlide>
+          <SwiperSlide>
+            <StyledSlideImage
+              src={require(`../../../../assets/images/BlackAvatar1.jpg`)}
+              alt='Avatar'
+            />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
+          </SwiperSlide>
+          <SwiperSlide>
+            <StyledSlideImage
+              src={require(`../../../../assets/images/BlackAvatar2.jpg`)}
+              alt='Avatar'
+            />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
+          </SwiperSlide>
+          <SwiperSlide>
+            <StyledSlideImage
+              src={require(`../../../../assets/images/BlackAvatar1.jpg`)}
+              alt='Avatar'
+            />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
+          </SwiperSlide>
+          <SwiperSlide>
+            <StyledSlideImage
+              src={require(`../../../../assets/images/BlackAvatar2.jpg`)}
+              alt='Avatar'
+            />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
+          </SwiperSlide>
+          <SwiperSlide>
+            <StyledSlideImage
+              src={require(`../../../../assets/images/BlackAvatar1.jpg`)}
+              alt='Avatar'
+            />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
+          </SwiperSlide>
+          <SwiperSlide>
+            <StyledSlideImage
+              src={require(`../../../../assets/images/BlackAvatar2.jpg`)}
+              alt='Avatar'
+            />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
+          </SwiperSlide>
+          <SwiperSlide>
+            <StyledSlideImage
+              src={require(`../../../../assets/images/BlackAvatar1.jpg`)}
+              alt='Avatar'
+            />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
+          </SwiperSlide>
+          <SwiperSlide>
+            <StyledSlideImage
+              src={require(`../../../../assets/images/BlackAvatar2.jpg`)}
+              alt='Avatar'
+            />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
+          </SwiperSlide>
+          <SwiperSlide>
+            <StyledSlideImage
+              src={require(`../../../../assets/images/BlackAvatar1.jpg`)}
+              alt='Avatar'
+            />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
+          </SwiperSlide>
+          <SwiperSlide>
+            <StyledSlideImage
+              src={require(`../../../../assets/images/BlackAvatar2.jpg`)}
+              alt='Avatar'
+            />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
+          </SwiperSlide>
+          <SwiperSlide>
+            <StyledSlideImage
+              src={require(`../../../../assets/images/BlackAvatar1.jpg`)}
+              alt='Avatar'
+            />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
+          </SwiperSlide>
+          <SwiperSlide>
+            <StyledSlideImage
+              src={require(`../../../../assets/images/BlackAvatar2.jpg`)}
+              alt='Avatar'
+            />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
+          </SwiperSlide>
+          <SwiperSlide>
+            <StyledSlideImage
+              src={require(`../../../../assets/images/BlackAvatar1.jpg`)}
+              alt='Avatar'
+            />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
+          </SwiperSlide>
+          <SwiperSlide>
+            <StyledSlideImage
+              src={require(`../../../../assets/images/BlackAvatar2.jpg`)}
+              alt='Avatar'
+            />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
+          </SwiperSlide>
+          <SwiperSlide>
+            <StyledSlideImage
+              src={require(`../../../../assets/images/BlackAvatar1.jpg`)}
+              alt='Avatar'
+            />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
+          </SwiperSlide>
+          <SwiperSlide>
+            <StyledSlideImage
+              src={require(`../../../../assets/images/BlackAvatar2.jpg`)}
+              alt='Avatar'
+            />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
+          </SwiperSlide>
+          <SwiperSlide>
+            <StyledSlideImage
+              src={require(`../../../../assets/images/BlackAvatar1.jpg`)}
+              alt='Avatar'
+            />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
+          </SwiperSlide>
+          <SwiperSlide>
+            <StyledSlideImage
+              src={require(`../../../../assets/images/BlackAvatar2.jpg`)}
+              alt='Avatar'
+            />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
+          </SwiperSlide>
+          <SwiperSlide>
+            <StyledSlideImage
+              src={require(`../../../../assets/images/BlackAvatar1.jpg`)}
+              alt='Avatar'
+            />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
+          </SwiperSlide>
+          <SwiperSlide>
+            <StyledSlideImage
+              src={require(`../../../../assets/images/BlackAvatar2.jpg`)}
+              alt='Avatar'
+            />
+            <StyledSlideContain>
+              <StyledSlideText>Name Surname</StyledSlideText>
+            </StyledSlideContain>
+          </SwiperSlide>
           <SwiperSlide>
             <StyledSlideImage
               src={require(`../../../../assets/images/BlackAvatar1.jpg`)}

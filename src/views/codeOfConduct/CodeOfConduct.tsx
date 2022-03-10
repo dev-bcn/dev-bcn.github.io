@@ -9,23 +9,29 @@ import {
   COLOR_YELLOW,
 } from '../../styles/colors';
 import {
-  StyledSpeakersSection,
   StyledLessIcon,
   StyledMoreIcon,
+  StyledSpeakersSection,
 } from '../Speakers/Speakers';
-import LessThanRedIcon from '../../assets/images/LessThanRedIcon.svg';
-import MoreThanRedIcon from '../../assets/images/MoreThanRedIcon.svg';
-import { useWindowSize } from 'react-use';
-import styled from 'styled-components';
-import { RightHashWithText } from '../../components/RightHashWithText/RightHashWithText';
-import { LeftHashWithText } from '../../components/LeftHashWithText/LeftHashWithText';
 import { CodeOfConductTags } from './CodeOfConductData';
-import { Tag } from '../../components/Tag/Tag';
-import { StyledTagsWrapper } from '../Talks/components/TalkCard';
-import { StyledMarginBottom } from '../Talks/Talks';
-import MoreThanTransparentIcon from '../../assets/images/MoreThanTransparentIcon.svg';
+import { LeftHashWithText } from '../../components/LeftHashWithText/LeftHashWithText';
+import LessThanRedIcon from '../../assets/images/LessThanRedIcon.svg';
 import LessThanTransparentIcon from '../../assets/images/LessThanTransparentIcon.svg';
-import { StyledWaveContainer } from '../Home/components/Faqs/Faqs';
+import MoreThanRedIcon from '../../assets/images/MoreThanRedIcon.svg';
+import MoreThanTransparentIcon from '../../assets/images/MoreThanTransparentIcon.svg';
+import { RightHashWithText } from '../../components/RightHashWithText/RightHashWithText';
+import { StyledMarginBottom } from '../Talks/Talks';
+import { StyledTagsWrapper } from '../Talks/components/TalkCard';
+import { Tag } from '../../components/Tag/Tag';
+import styled from 'styled-components';
+import { useWindowSize } from 'react-use';
+
+const StyledWaveContainer = styled.div`
+  background: ${COLOR_PINK};
+  overflow-y: hidden;
+  height: 3rem;
+  width: 100%;
+`;
 
 const StyledSectionsSeparator = styled.div`
   background: ${COLOR_WHITE};

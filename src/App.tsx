@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
+import { CodeOfConduct } from './views/CodeOfConduct/CodeOfConduct';
 import Footer from './components/Footer/Footer';
 import { HomeWrapper } from './views/Home/HomeWrapper';
 import JobOffers from './views/JobOffers/JobOffers';
@@ -7,11 +8,11 @@ import MeetingDetailContainer from './views/MeetingDetail/MeetingDetailContainer
 import Navigation from './components/Navigation/Navigation';
 import PageWrapper from './components/PageWrapper/PageWrapper';
 import Schedule from './views/Schedule/Schedule';
-import Speakers from './views/Speakers/Speakers';
-import styled from 'styled-components';
-import { Talks } from './views/Talks/Talks';
-import { CodeOfConduct } from './views/CodeOfConduct/CodeOfConduct';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import SpeakerDetailContainer from './views/SpeakerDetail/SpeakerDetailContainer';
+import Speakers from './views/Speakers/Speakers';
+import { Talks } from './views/Talks/Talks';
+import styled from 'styled-components';
 import { About } from './views/About/About';
 
 const StyledAppWrapper = styled.div`
@@ -24,6 +25,7 @@ function App() {
   return (
     <StyledAppWrapper className='AppWrapperAll'>
       <BrowserRouter>
+        <ScrollToTop />
         <Navigation />
         <Switch>
           <Route path='/talks' component={Talks} />
@@ -44,8 +46,8 @@ function App() {
             <Route path='/' component={HomeWrapper} exact />
           </PageWrapper>
         </Switch>
+        <Footer />
       </BrowserRouter>
-      <Footer />
     </StyledAppWrapper>
   );
 }
