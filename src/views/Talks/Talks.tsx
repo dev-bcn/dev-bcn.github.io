@@ -1,33 +1,23 @@
-import {
-  BIG_BREAKPOINT,
-  MOBILE_BREAKPOINT,
-  TABLET_BREAKPOINT,
-} from '../../constants/BreakPoints';
+import { FC } from 'react';
+import TitleSection from '../../components/SectionTitle/TitleSection';
+import SectionWrapper from '../../components/SectionWrapper/SectionWrapper';
 import {
   COLOR_BLACK_BLUE,
   COLOR_GREEN,
   COLOR_YELLOW,
 } from '../../styles/colors';
-import { StyledLessIcon, StyledMoreIcon } from '../Speakers/Speakers';
-
-import { FC } from 'react';
 import LessThanBlueIcon from '../../assets/images/LessThanBlueIcon.svg';
 import MoreThanBlueIcon from '../../assets/images/MoreThanBlueIcon.svg';
-import SectionWrapper from '../../components/SectionWrapper/SectionWrapper';
-import { StyledWrapperSection } from '../JobOffers/JobOffers';
-import { TalkCard } from './components/TalkCard';
-import TitleSection from '../../components/SectionTitle/TitleSection';
+import { BIG_BREAKPOINT, TABLET_BREAKPOINT } from '../../constants/BreakPoints';
+import { useWindowSize } from 'react-use';
 import styled from 'styled-components';
 import { talksData } from './TalksData';
-import { useWindowSize } from 'react-use';
+import { TalkCard } from './components/TalkCard';
+import { StyledWrapperSection } from '../JobOffers/JobOffers';
 
 const StyledTitleContainer = styled.div`
   display: flex;
   width: 100%;
-`;
-
-const StyledTitleDelimiter = styled.div`
-  width: 80%;
 `;
 
 const StyledTitleIcon = styled.img`
@@ -67,8 +57,6 @@ export const StyledMarginBottom = styled.div`
 `;
 
 export const Talks: FC = () => {
-  const { width } = useWindowSize();
-
   return (
     <>
       <SectionWrapper color={COLOR_GREEN} marginTop={5}>

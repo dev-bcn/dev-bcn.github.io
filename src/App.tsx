@@ -13,6 +13,7 @@ import SpeakerDetailContainer from './views/SpeakerDetail/SpeakerDetailContainer
 import Speakers from './views/Speakers/Speakers';
 import { Talks } from './views/Talks/Talks';
 import styled from 'styled-components';
+import { About } from './views/About/About';
 
 const StyledAppWrapper = styled.div`
   position: relative;
@@ -33,6 +34,7 @@ function App() {
             <Route path='/jobOffers' component={JobOffers} />
             <Route path='/schedule' component={Schedule} />
             <Route path='/speakers' component={Speakers} />
+            <Route path='/aboutUs' component={About} />
             <Route
               path='/meetingDetail/:name'
               component={MeetingDetailContainer}

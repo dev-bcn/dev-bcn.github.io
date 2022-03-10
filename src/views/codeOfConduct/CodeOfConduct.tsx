@@ -1,8 +1,7 @@
-import {
-  BIG_BREAKPOINT,
-  MOBILE_BREAKPOINT,
-  TABLET_BREAKPOINT,
-} from '../../constants/BreakPoints';
+import { FC } from 'react';
+import TitleSection from '../../components/SectionTitle/TitleSection';
+import SectionWrapper from '../../components/SectionWrapper/SectionWrapper';
+import { BIG_BREAKPOINT, MOBILE_BREAKPOINT } from '../../constants/BreakPoints';
 import {
   COLOR_BLACK_BLUE,
   COLOR_PINK,
@@ -14,20 +13,16 @@ import {
   StyledMoreIcon,
   StyledSpeakersSection,
 } from '../Speakers/Speakers';
-
 import { CodeOfConductTags } from './CodeOfConductData';
-import { FC } from 'react';
 import { LeftHashWithText } from '../../components/LeftHashWithText/LeftHashWithText';
 import LessThanRedIcon from '../../assets/images/LessThanRedIcon.svg';
 import LessThanTransparentIcon from '../../assets/images/LessThanTransparentIcon.svg';
 import MoreThanRedIcon from '../../assets/images/MoreThanRedIcon.svg';
 import MoreThanTransparentIcon from '../../assets/images/MoreThanTransparentIcon.svg';
 import { RightHashWithText } from '../../components/RightHashWithText/RightHashWithText';
-import SectionWrapper from '../../components/SectionWrapper/SectionWrapper';
 import { StyledMarginBottom } from '../Talks/Talks';
 import { StyledTagsWrapper } from '../Talks/components/TalkCard';
 import { Tag } from '../../components/Tag/Tag';
-import TitleSection from '../../components/SectionTitle/TitleSection';
 import styled from 'styled-components';
 import { useWindowSize } from 'react-use';
 
@@ -114,7 +109,7 @@ export const CodeOfConduct: FC = () => {
           style={{ height: '100%', width: '100%' }}
         >
           <path
-            d='M-16.64,37.02 C233.92,117.94 330.41,-50.80 555.58,103.13 L500.00,150.00 L0.00,150.00 Z'
+            d='M-1.97,61.69 C252.54,152.47 282.44,-23.17 523.42,103.13 L500.00,150.00 L0.00,150.00 Z'
             style={{ stroke: 'none', fill: '#ffd166' }}
           ></path>
         </svg>

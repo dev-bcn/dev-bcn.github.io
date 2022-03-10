@@ -5,4 +5,11 @@ export const navigationItems = [
   { id: 'TALKS', link: '/talks' },
   { id: 'JOB OFFERS', link: '/jobOffers' },
   { id: 'SPEAKERS', link: '/speakers' },
+  { id: 'SPONSORS', link: '/sponsors' },
+  { id: 'PRESS', link: '/press' },
+  { id: 'TRAVEL', link: '/travel' },
+  { id: 'DIVERSITY', link: '/diversity' },
+  { id: 'VENUE', link: '/venue' },
+  { id: 'ABOUT US', link: '/aboutUs' },
+  { id: 'JBCN4KIDS', link: '/jbcn4kids' },
 ];

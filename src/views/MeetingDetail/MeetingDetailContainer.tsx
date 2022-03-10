@@ -11,7 +11,7 @@ const StyledContainer = styled.div`
   background-color: ${COLOR_WHITE};
 `;
 
-const MeetingDetailContainer: FC = ({}) => {
+const MeetingDetailContainer: FC = () => {
   const { name } = useParams<{ name: string }>();
 
   let meetingData = findMeeting(name);

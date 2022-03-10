@@ -116,7 +116,7 @@ const StyledSpan = styled.span`
   font-weight: 600;
 `;
 
-const Footer: FC = ({}) => {
+const Footer: FC = () => {
   const { width } = useWindowSize();
 
   const history = useHistory();
