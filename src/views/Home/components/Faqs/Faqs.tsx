@@ -1,4 +1,4 @@
-import { COLOR_PINK } from '../../../../styles/colors';
+import { Color } from '../../../../styles/colors';
 import { FC } from 'react';
 import FaqCard from './components/FaqsCard';
 import LessThanYellowIcon from '../../../../assets/images/LessThanYellowIcon.svg';
@@ -23,7 +23,7 @@ export const StyledFaqSection = styled(motion.section)`
 `;
 
 export const StyledWaveContainer = styled.div`
-  background: ${COLOR_PINK};
+  background: ${Color.PINK};
   overflow-y: hidden;
   height: 5rem;
   width: 100%;
@@ -53,7 +53,7 @@ const Faqs: FC = () => {
   const { width } = useWindowSize();
   return (
     <>
-      <SectionWrapper color={COLOR_PINK}>
+      <SectionWrapper color={Color.PINK}>
         <StyledFaqSection>
           {faqsData.map((faq, index) => (
             <FaqCard faq={faq} index={index} key={index} />

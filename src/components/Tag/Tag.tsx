@@ -1,10 +1,7 @@
 import { FC } from 'react';
 import styled from 'styled-components';
 import {
-  COLOR_BLUE,
-  COLOR_GREEN,
-  COLOR_PINK,
-  COLOR_WHITE,
+  Color
 } from '../../styles/colors';
 
 type TagProps = {
@@ -29,22 +26,22 @@ const StyledTagText = styled.p<{ color: string }>`
 `;
 
 const colorTagByText = (text: string) => {
-  let color = null;
+  let color;
   switch (text) {
     case 'Java':
-      color = COLOR_PINK;
+      color = Color.PINK;
       break;
     case 'TestContainers':
-      color = COLOR_BLUE;
+      color = Color.BLUE;
       break;
     case 'MicroShield testing':
-      color = COLOR_GREEN;
+      color = Color.GREEN;
       break;
-    case 'Kubernettes':
-      color = COLOR_WHITE;
+    case 'Kubernetes':
+      color = Color.WHITE;
       break;
     default:
-      color = COLOR_WHITE;
+      color = Color.WHITE;
       break;
   }
   return color;

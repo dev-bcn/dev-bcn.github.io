@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-import { COLOR_YELLOW } from '../../styles/colors';
+import { Color } from '../../styles/colors';
 import styled from 'styled-components';
 
 const StyledBreadcrumbsWrapper = styled.div`
@@ -14,7 +14,7 @@ const StyledBreadcrumbsWrapper = styled.div`
   left: 2rem;
   height: 1.5rem;
   background: rgba(255, 252, 249, 0.5);
-  color: ${COLOR_YELLOW};
+  color: ${Color.YELLOW};
   border-bottom-left-radius: 0.15rem;
   border-bottom-right-radius: 0.15rem;
 
@@ -26,7 +26,7 @@ const StyledBreadcrumbsWrapper = styled.div`
 `;
 
 const StyledLink = styled(Link)`
-  color: ${COLOR_YELLOW};
+  color: ${Color.YELLOW};
   text-decoration: none;
   margin-right: 0.25rem;
 `;
@@ -42,7 +42,7 @@ function getLinkData(page: string) {
     speakers: { name: 'Speakers', urlParam: 'speakers' },
   };
 
-  let returnValue = null;
+  let returnValue;
 
   returnValue = links[page];
 
@@ -61,9 +61,7 @@ function getLinkData(page: string) {
   return returnValue;
 }
 
-interface IBreadcrumbsProps {}
-
-const Breadcrumbs: FC<IBreadcrumbsProps> = ({}) => {
+const Breadcrumbs: FC = () => {
   const [pages, setPages] = useState<string[]>([]);
   const location = useLocation();
 

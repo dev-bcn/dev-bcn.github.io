@@ -1,33 +1,28 @@
 import {
-  BIG_BREAKPOINT,
-  MOBILE_BREAKPOINT,
-  TABLET_BREAKPOINT,
+    BIG_BREAKPOINT,
+    MOBILE_BREAKPOINT,
+    TABLET_BREAKPOINT,
 } from '../../constants/BreakPoints';
 import {
-  COLOR_BLACK_BLUE,
-  COLOR_BLUE,
-  COLOR_GREEN,
-  COLOR_PINK,
-  COLOR_WHITE,
-  COLOR_YELLOW,
+    Color
 } from '../../styles/colors';
 import {
-  ROUTE_MEETING_DETAIL,
-  ROUTE_SPEAKER_DETAIL,
+    ROUTE_MEETING_DETAIL,
+    ROUTE_SPEAKER_DETAIL,
 } from '../../constants/routes';
-import { scheduleData1, scheduleData2, scheduleData3 } from './ScheduleData';
+import {scheduleData1, scheduleData2, scheduleData3} from './ScheduleData';
 
-import { AvatarCard } from './components/AvatarCard';
-import { FC } from 'react';
+import {AvatarCard} from './components/AvatarCard';
+import {FC} from 'react';
 import LessThanBlueWhiteIcon from '../../assets/images/MoreThanBlueWhiteIcon.svg';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import MoreThanBlueWhiteIcon from '../../assets/images/LessThanBlueWhiteIcon.svg';
 import SectionWrapper from '../../components/SectionWrapper/SectionWrapper';
 import SpeakersPlanning from '../../assets/images/SpeakersPlanning.jpg';
-import SpeakersWelcomer from '../../assets/images/SpeakersWelcomer.jpg';
+import SpeakersWelcome from '../../assets/images/SpeakersWelcomer.jpg';
 import TitleSection from '../../components/SectionTitle/TitleSection';
 import styled from 'styled-components';
-import { useWindowSize } from 'react-use';
+import {useWindowSize} from 'react-use';
 
 const StyledScheduleSection = styled.section`
   display: flex;
@@ -35,15 +30,15 @@ const StyledScheduleSection = styled.section`
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 0 2rem 0rem 2rem;
+  padding: 0 2rem 0 2rem;
   margin-bottom: 5rem;
 
   @media (min-width: ${TABLET_BREAKPOINT}px) {
-    padding: 0 5rem 0rem 2rem;
+    padding: 0 5rem 0 2rem;
     margin-bottom: 10rem;
   }
   @media (min-width: ${BIG_BREAKPOINT}px) {
-    padding: 0 10rem 0rem 10rem;
+    padding: 0 10rem 0 10rem;
   }
 `;
 
@@ -88,28 +83,28 @@ const StyledTracksContainer = styled.div`
 `;
 
 const StyledTrack = styled.div<{
-  background: string;
-  color: string;
-  width: string;
+    background: string;
+    color: string;
+    width: string;
 }>`
-  width: ${({ width }) => {
+  width: ${({width}) => {
     return width;
   }};
   padding: 0.5rem 0;
-  background: ${({ background }) => {
+  background: ${({background}) => {
     return background;
   }};
-  color: ${({ color }) => {
+  color: ${({color}) => {
     return color;
   }};
-  font-family: SpaceGrotesk-Bold;
+  font-family: SpaceGrotesk-Bold, sans-serif;
   margin-top: 1rem;
 `;
 
 const StyledWelcomerImage = styled.div`
   width: 100%;
   height: 5rem;
-  background-image: url(${SpeakersWelcomer});
+  background-image: url(${SpeakersWelcome});
   background-size: cover;
   background-position: center center;
   position: relative;
@@ -123,19 +118,20 @@ export const StyledWelcomerTextContainer = styled.div`
 `;
 
 export const StyledWelcomerText = styled.p<{ color: string }>`
-  color: ${({ color }) => {
+  color: ${({color}) => {
     return color;
   }};
-  font-family: SpaceGrotesk-Bold;
+  font-family: SpaceGrotesk-Bold, sans-serif;
   text-align: start;
 `;
 
 export const StyledWelcomerTextLink = styled.p<{ color: string }>`
-  color: ${({ color }) => {
+  color: ${({color}) => {
     return color;
   }};
-  font-family: SpaceGrotesk-Bold;
+  font-family: SpaceGrotesk-Bold, sans-serif;
   text-align: start;
+
   &:hover {
     text-decoration: underline;
   }
@@ -168,218 +164,218 @@ export const StyledAvatarImage = styled.img`
 `;
 
 const Schedule: FC = () => {
-  const { width } = useWindowSize();
+    const {width} = useWindowSize();
 
-  const meetingDetailUrl = ROUTE_MEETING_DETAIL('grace-jansen');
-  const speakerDetailUrl = ROUTE_SPEAKER_DETAIL('grace-jansen');
+    const meetingDetailUrl = ROUTE_MEETING_DETAIL('grace-jansen');
+    const speakerDetailUrl = ROUTE_SPEAKER_DETAIL('grace-jansen');
 
-  return (
-    <SectionWrapper color={COLOR_WHITE} marginTop={6}>
-      <StyledScheduleSection>
-        <TitleSection
-          title='SCHEDULE'
-          subtitle='Speakers coming from all corners of the world join us to
+    return (
+        <SectionWrapper color={Color.WHITE} marginTop={6}>
+            <StyledScheduleSection>
+                <TitleSection
+                    title='SCHEDULE'
+                    subtitle='Speakers coming from all corners of the world join us to
             share their experience in various technologies and to
             invite everyone to participate in Open Source
             Technologies and in the JCP.'
-          color={COLOR_BLUE}
-        />
-        {width > MOBILE_BREAKPOINT && (
-          <>
-            <StyledLessIcon src={LessThanBlueWhiteIcon} />
-            <StyledMoreIcon src={MoreThanBlueWhiteIcon} />
-          </>
-        )}
+                    color={Color.BLUE}
+                />
+                {width > MOBILE_BREAKPOINT && (
+                    <>
+                        <StyledLessIcon src={LessThanBlueWhiteIcon}/>
+                        <StyledMoreIcon src={MoreThanBlueWhiteIcon}/>
+                    </>
+                )}
 
-        <StyledScheduleContainer>
-          <StyledTracksContainer>
-            <StyledTrack
-              width={width < BIG_BREAKPOINT ? '100%' : '30%'}
-              background={COLOR_PINK}
-              color={COLOR_WHITE}
-            >
-              TRACK 1
-            </StyledTrack>
-            <StyledTrack
-              width={width < BIG_BREAKPOINT ? '100%' : '30%'}
-              background={COLOR_YELLOW}
-              color={COLOR_BLUE}
-            >
-              TRACK 2
-            </StyledTrack>
-            <StyledTrack
-              width={width < BIG_BREAKPOINT ? '100%' : '30%'}
-              background={COLOR_GREEN}
-              color={COLOR_BLACK_BLUE}
-            >
-              TRACK 3
-            </StyledTrack>
-          </StyledTracksContainer>
-          <StyledWelcomerImage>
-            <StyledWelcomerTextContainer>
-              <StyledWelcomerText color={COLOR_YELLOW}>
-                WELCOME ALL!
-              </StyledWelcomerText>
-              <StyledWelcomerText color={COLOR_PINK}>
-                08:40 - 09:00
-              </StyledWelcomerText>
-            </StyledWelcomerTextContainer>
-          </StyledWelcomerImage>
-          <StyledPlanningImage>
-            <StyledWelcomerTextContainer>
-              <Link to={meetingDetailUrl} className='link--text'>
-                <StyledWelcomerTextLink color={COLOR_BLUE}>
-                  THE FUTURE IS <br />
-                  KUBERNETES-NATIVE
-                </StyledWelcomerTextLink>
-              </Link>
-              <Link to={speakerDetailUrl} className='link--text'>
-                <StyledWelcomerTextLink color={COLOR_PINK}>
-                  Grace Jansen
-                </StyledWelcomerTextLink>
-              </Link>
-              <StyledWelcomerText color={COLOR_BLUE}>
-                08:40 - 09:00
-              </StyledWelcomerText>
-            </StyledWelcomerTextContainer>
-          </StyledPlanningImage>
+                <StyledScheduleContainer>
+                    <StyledTracksContainer>
+                        <StyledTrack
+                            width={width < BIG_BREAKPOINT ? '100%' : '30%'}
+                            background={Color.PINK}
+                            color={Color.WHITE}
+                        >
+                            TRACK 1
+                        </StyledTrack>
+                        <StyledTrack
+                            width={width < BIG_BREAKPOINT ? '100%' : '30%'}
+                            background={Color.YELLOW}
+                            color={Color.BLUE}
+                        >
+                            TRACK 2
+                        </StyledTrack>
+                        <StyledTrack
+                            width={width < BIG_BREAKPOINT ? '100%' : '30%'}
+                            background={Color.GREEN}
+                            color={Color.BLACK_BLUE}
+                        >
+                            TRACK 3
+                        </StyledTrack>
+                    </StyledTracksContainer>
+                    <StyledWelcomerImage>
+                        <StyledWelcomerTextContainer>
+                            <StyledWelcomerText color={Color.YELLOW}>
+                                WELCOME ALL!
+                            </StyledWelcomerText>
+                            <StyledWelcomerText color={Color.PINK}>
+                                08:40 - 09:00
+                            </StyledWelcomerText>
+                        </StyledWelcomerTextContainer>
+                    </StyledWelcomerImage>
+                    <StyledPlanningImage>
+                        <StyledWelcomerTextContainer>
+                            <Link to={meetingDetailUrl} className='link--text'>
+                                <StyledWelcomerTextLink color={Color.BLUE}>
+                                    THE FUTURE IS <br/>
+                                    KUBERNETES-NATIVE
+                                </StyledWelcomerTextLink>
+                            </Link>
+                            <Link to={speakerDetailUrl} className='link--text'>
+                                <StyledWelcomerTextLink color={Color.PINK}>
+                                    Grace Jansen
+                                </StyledWelcomerTextLink>
+                            </Link>
+                            <StyledWelcomerText color={Color.BLUE}>
+                                08:40 - 09:00
+                            </StyledWelcomerText>
+                        </StyledWelcomerTextContainer>
+                    </StyledPlanningImage>
 
-          <StyledTrack
-            width={'100%'}
-            background={COLOR_GREEN}
-            color={COLOR_BLACK_BLUE}
-          >
-            BREAK
-          </StyledTrack>
+                    <StyledTrack
+                        width={'100%'}
+                        background={Color.GREEN}
+                        color={Color.BLACK_BLUE}
+                    >
+                        BREAK
+                    </StyledTrack>
 
-          <StyledTracksContainer>
-            {scheduleData1.map((meet, index) => (
-              <AvatarCard key={index} meet={meet} />
-            ))}
-          </StyledTracksContainer>
+                    <StyledTracksContainer>
+                        {scheduleData1.map((meet, index) => (
+                            <AvatarCard key={index} meet={meet}/>
+                        ))}
+                    </StyledTracksContainer>
 
-          <StyledTrack
-            width={'100%'}
-            background={COLOR_YELLOW}
-            color={COLOR_BLUE}
-          >
-            BREAK
-          </StyledTrack>
+                    <StyledTrack
+                        width={'100%'}
+                        background={Color.YELLOW}
+                        color={Color.BLUE}
+                    >
+                        BREAK
+                    </StyledTrack>
 
-          <StyledTracksContainer>
-            {scheduleData2.map((meet, index) => (
-              <AvatarCard key={index} meet={meet} />
-            ))}
-          </StyledTracksContainer>
+                    <StyledTracksContainer>
+                        {scheduleData2.map((meet, index) => (
+                            <AvatarCard key={index} meet={meet}/>
+                        ))}
+                    </StyledTracksContainer>
 
-          <StyledTrack
-            width={'100%'}
-            background={COLOR_PINK}
-            color={COLOR_WHITE}
-          >
-            LUNCH BREAK
-          </StyledTrack>
+                    <StyledTrack
+                        width={'100%'}
+                        background={Color.PINK}
+                        color={Color.WHITE}
+                    >
+                        LUNCH BREAK
+                    </StyledTrack>
 
-          <StyledTracksContainer>
-            {scheduleData3.map((meet, index) => (
-              <AvatarCard key={index} meet={meet} />
-            ))}
-          </StyledTracksContainer>
+                    <StyledTracksContainer>
+                        {scheduleData3.map((meet, index) => (
+                            <AvatarCard key={index} meet={meet}/>
+                        ))}
+                    </StyledTracksContainer>
 
-          <StyledTrack
-            width={'100%'}
-            background={COLOR_GREEN}
-            color={COLOR_BLACK_BLUE}
-          >
-            AFTERNOON BREAK
-          </StyledTrack>
+                    <StyledTrack
+                        width={'100%'}
+                        background={Color.GREEN}
+                        color={Color.BLACK_BLUE}
+                    >
+                        AFTERNOON BREAK
+                    </StyledTrack>
 
-          <StyledPlanningImage>
-            <StyledWelcomerTextContainer>
-              <Link to={meetingDetailUrl} className='link--text'>
-                <StyledWelcomerTextLink color={COLOR_BLUE}>
-                  THE FUTURE IS <br />
-                  KUBERNETES-NATIVE
-                </StyledWelcomerTextLink>
-              </Link>
-              <Link to={speakerDetailUrl} className='link--text'>
-                <StyledWelcomerTextLink color={COLOR_PINK}>
-                  Grace Jansen
-                </StyledWelcomerTextLink>
-              </Link>
-              <StyledWelcomerText color={COLOR_BLUE}>
-                08:40 - 09:00
-              </StyledWelcomerText>
-            </StyledWelcomerTextContainer>
-          </StyledPlanningImage>
+                    <StyledPlanningImage>
+                        <StyledWelcomerTextContainer>
+                            <Link to={meetingDetailUrl} className='link--text'>
+                                <StyledWelcomerTextLink color={Color.BLUE}>
+                                    THE FUTURE IS <br/>
+                                    KUBERNETES-NATIVE
+                                </StyledWelcomerTextLink>
+                            </Link>
+                            <Link to={speakerDetailUrl} className='link--text'>
+                                <StyledWelcomerTextLink color={Color.PINK}>
+                                    Grace Jansen
+                                </StyledWelcomerTextLink>
+                            </Link>
+                            <StyledWelcomerText color={Color.BLUE}>
+                                08:40 - 09:00
+                            </StyledWelcomerText>
+                        </StyledWelcomerTextContainer>
+                    </StyledPlanningImage>
 
-          <StyledTrack
-            width={'100%'}
-            background={COLOR_GREEN}
-            color={COLOR_BLACK_BLUE}
-          >
-            BREAK
-          </StyledTrack>
+                    <StyledTrack
+                        width={'100%'}
+                        background={Color.GREEN}
+                        color={Color.BLACK_BLUE}
+                    >
+                        BREAK
+                    </StyledTrack>
 
-          <StyledTracksContainer>
-            {scheduleData1.map((meet, index) => (
-              <AvatarCard key={index} meet={meet} />
-            ))}
-          </StyledTracksContainer>
+                    <StyledTracksContainer>
+                        {scheduleData1.map((meet, index) => (
+                            <AvatarCard key={index} meet={meet}/>
+                        ))}
+                    </StyledTracksContainer>
 
-          <StyledTrack
-            width={'100%'}
-            background={COLOR_YELLOW}
-            color={COLOR_BLUE}
-          >
-            BREAK
-          </StyledTrack>
+                    <StyledTrack
+                        width={'100%'}
+                        background={Color.YELLOW}
+                        color={Color.BLUE}
+                    >
+                        BREAK
+                    </StyledTrack>
 
-          <StyledTracksContainer>
-            {scheduleData2.map((meet, index) => (
-              <AvatarCard key={index} meet={meet} />
-            ))}
-          </StyledTracksContainer>
+                    <StyledTracksContainer>
+                        {scheduleData2.map((meet, index) => (
+                            <AvatarCard key={index} meet={meet}/>
+                        ))}
+                    </StyledTracksContainer>
 
-          <StyledTrack
-            width={'100%'}
-            background={COLOR_PINK}
-            color={COLOR_WHITE}
-          >
-            LUNCH BREAK
-          </StyledTrack>
+                    <StyledTrack
+                        width={'100%'}
+                        background={Color.PINK}
+                        color={Color.WHITE}
+                    >
+                        LUNCH BREAK
+                    </StyledTrack>
 
-          <StyledTracksContainer>
-            {scheduleData3.map((meet, index) => (
-              <AvatarCard key={index} meet={meet} />
-            ))}
-          </StyledTracksContainer>
+                    <StyledTracksContainer>
+                        {scheduleData3.map((meet, index) => (
+                            <AvatarCard key={index} meet={meet}/>
+                        ))}
+                    </StyledTracksContainer>
 
-          <StyledTrack
-            width={'100%'}
-            background={COLOR_PINK}
-            color={COLOR_WHITE}
-          >
-            BREAK
-          </StyledTrack>
+                    <StyledTrack
+                        width={'100%'}
+                        background={Color.PINK}
+                        color={Color.WHITE}
+                    >
+                        BREAK
+                    </StyledTrack>
 
-          <StyledTracksContainer>
-            {scheduleData1.map((meet, index) => (
-              <AvatarCard key={index} meet={meet} />
-            ))}
-          </StyledTracksContainer>
+                    <StyledTracksContainer>
+                        {scheduleData1.map((meet, index) => (
+                            <AvatarCard key={index} meet={meet}/>
+                        ))}
+                    </StyledTracksContainer>
 
-          <StyledTrack
-            width={'100%'}
-            background={COLOR_GREEN}
-            color={COLOR_BLACK_BLUE}
-          >
-            CLOSING CEREMONY
-          </StyledTrack>
-        </StyledScheduleContainer>
-      </StyledScheduleSection>
-    </SectionWrapper>
-  );
+                    <StyledTrack
+                        width={'100%'}
+                        background={Color.GREEN}
+                        color={Color.BLACK_BLUE}
+                    >
+                        CLOSING CEREMONY
+                    </StyledTrack>
+                </StyledScheduleContainer>
+            </StyledScheduleSection>
+        </SectionWrapper>
+    );
 };
 
 export default Schedule;

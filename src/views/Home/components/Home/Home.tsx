@@ -1,8 +1,5 @@
 import {
-  COLOR_BLUE,
-  COLOR_GREEN,
-  COLOR_PINK,
-  COLOR_WHITE,
+  Color
 } from '../../../../styles/colors';
 
 import Countdown from 'react-countdown';
@@ -34,20 +31,20 @@ const StyleHomeContainer = styled.div`
 `;
 
 const StyledTitleContainer = styled.div`
-  background-color: ${COLOR_GREEN};
+  background-color: ${Color.GREEN};
   width: fit-content;
   margin-bottom: 1rem;
 `;
 
 const StyledTitle = styled.h1`
   padding: 0.5rem 1rem;
-  color: ${COLOR_WHITE};
-  font-family: SpaceGrotesk;
+  color: ${Color.WHITE};
+  font-family: SpaceGrotesk,sans-serif;
 `;
 
 const StyledSubtitle = styled.h2`
-  color: ${COLOR_PINK};
-  font-family: SpaceGrotesk-Light;
+  color: ${Color.PINK};
+  font-family: SpaceGrotesk-Light,sans-serif;
   font-size: 1.25rem;
 `;
 
@@ -91,16 +88,16 @@ const StyledTopSlash = styled(motion.div)`
 `;
 
 const StyledGreenSlash = styled(motion.p)`
-  font-family: 'SpaceGrotesk-Bold';
-  color: ${COLOR_GREEN};
+  font-family: 'SpaceGrotesk-Bold', sans-serif;
+  color: ${Color.GREEN};
   font-size: 2rem;
   overflow-y: hidden;
   height: 100%;
 `;
 
 const StyledBlueSlash = styled(motion.p)`
-  font-family: 'SpaceGrotesk-Bold';
-  color: ${COLOR_BLUE};
+  font-family: 'SpaceGrotesk-Bold',sans-serif;
+  color: ${Color.BLUE};
   font-size: 2rem;
   overflow-y: hidden;
   height: 100%;
@@ -115,10 +112,10 @@ const Home: FC = () => {
       <SectionWrapper color='transparent'>
         <StyleHomeContainer>
           <StyledTitleContainer>
-            <StyledTitle>JBCNConf 2022</StyledTitle>
+            <StyledTitle>DevBcn 2023</StyledTitle>
           </StyledTitleContainer>
-          <StyledSubtitle>27 - 28 - 29 May</StyledSubtitle>
-          <StyledSubtitle>JVM & Tech</StyledSubtitle>
+          <StyledSubtitle>July 3rd-5th</StyledSubtitle>
+          <StyledSubtitle>Java, JVM, Native Languages, Cloud, DevOps, Kubernetes, Frontend, Agile, Big Data, Machine Learning & AI</StyledSubtitle>
           <Countdown date={startDay} renderer={TimeCountDown} />
 
           {width > TABLET_BREAKPOINT && (

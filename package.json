@@ -1,6 +1,6 @@
 {
-  "name": "jbcn-conf",
-  "homepage": "http://bikup-tech.github.io/jbcn-conf",
+  "name": "devbcn",
+  "homepage": "https://barcelonajug.github.io/devbcn",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

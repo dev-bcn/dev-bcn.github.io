@@ -4,11 +4,7 @@ import {
   MOBILE_BREAKPOINT,
 } from '../../constants/BreakPoints';
 import {
-  COLOR_BLUE,
-  COLOR_GREEN,
-  COLOR_PINK,
-  COLOR_WHITE,
-  COLOR_YELLOW,
+  Color
 } from '../../styles/colors';
 
 import { FC } from 'react';
@@ -32,7 +28,7 @@ const StyledContainer = styled.div`
 
 const StyledMeetingTitleContainer = styled.div`
   display: flex;
-  width: 100;
+  width: 100px;
   margin-bottom: 3rem;
 
   @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
@@ -53,7 +49,7 @@ const StyledTitleImg = styled(motion.img)`
 const StyledTitle = styled(motion.h1)`
   font-weight: 600;
   font-size: 2rem;
-  color: ${COLOR_PINK};
+  color: ${Color.PINK};
   text-align: center;
   margin-bottom: 1.5rem;
 
@@ -63,7 +59,7 @@ const StyledTitle = styled(motion.h1)`
 `;
 
 const StyledDescription = styled.p`
-  color: ${COLOR_PINK};
+  color: ${Color.PINK};
   text-align: center;
   width: 100%;
 
@@ -109,8 +105,8 @@ const StyledSpeakerDetailContainer = styled.div`
   display: flex;
   position: relative;
   justify-content: center;
-  background: ${COLOR_GREEN};
-  color: ${COLOR_WHITE};
+  background: ${Color.GREEN};
+  color: ${Color.WHITE};
   width: 100%;
   padding: 1.5rem;
   padding-bottom: 3rem;
@@ -119,9 +115,8 @@ const StyledSpeakerDetailContainer = styled.div`
 
   @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
     justify-content: start;
-    padding: 0;
     align-items: start;
-    padding-right: 0;
+    padding: 0;
   }
 `;
 
@@ -141,8 +136,7 @@ const StyledDetailsContainer = styled.div`
 
   @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
     flex-direction: row;
-    padding: 3rem;
-    padding-right: 0;
+    padding: 3rem 0 3rem 3rem;
   }
 `;
 
@@ -192,7 +186,7 @@ const StyledSpeakerImgBorder = styled.div`
   height: 300px;
   margin-bottom: 0.75rem;
   padding: 0.3rem;
-  border: 1px solid ${COLOR_YELLOW};
+  border: 1px solid ${Color.YELLOW};
 
   @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
     padding: 0.2rem;
@@ -250,7 +244,7 @@ const StyledSpeakerDescription = styled.p`
 
 const StyledLink = styled.a`
   text-decoration: none;
-  color: ${COLOR_WHITE};
+  color: ${Color.WHITE};
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -269,7 +263,7 @@ const StyledAbsoluteSlashes = styled.div`
   position: absolute;
   display: flex;
   align-items: center;
-  color: ${COLOR_PINK};
+  color: ${Color.PINK};
   font-size: 2rem;
   height: 2rem;
   font-weight: 900;
@@ -278,7 +272,7 @@ const StyledAbsoluteSlashes = styled.div`
 `;
 
 function getVideoHeight(windowWidth: number) {
-  let videoHeight = 0;
+  let videoHeight;
   if (windowWidth < MOBILE_BREAKPOINT) {
     videoHeight = 250;
   } else if (windowWidth >= MOBILE_BREAKPOINT && windowWidth < BIG_BREAKPOINT) {
@@ -354,17 +348,17 @@ const MeetingDetail: FC<IMeetingDetailProps> = ({ meeting }) => {
     previousColor = randomNum;
 
     const mappedColors: any = {
-      0: COLOR_PINK,
-      1: COLOR_YELLOW,
-      2: COLOR_GREEN,
-      3: COLOR_BLUE,
+      0: Color.PINK,
+      1: Color.YELLOW,
+      2: Color.GREEN,
+      3: Color.BLUE,
     };
 
     return mappedColors[randomNum];
   }
 
   return (
-    <SectionWrapper color={COLOR_WHITE}>
+    <SectionWrapper color={Color.WHITE}>
       <StyledContainer className='MeetingDetail'>
         <StyledMeetingTitleContainer className='TitleContainer'>
           <StyledTitleImg
@@ -398,7 +392,6 @@ const MeetingDetail: FC<IMeetingDetailProps> = ({ meeting }) => {
             height={getVideoHeight(width)}
             src='https://www.youtube.com/embed/IxqTPYeXk3k'
             title='YouTube video player'
-            frameBorder='0'
             allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
             allowFullScreen
           ></iframe>

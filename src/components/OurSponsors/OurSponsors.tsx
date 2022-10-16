@@ -1,7 +1,7 @@
 import { BIG_BREAKPOINT, LARGE_BREAKPOINT } from '../../constants/BreakPoints';
 import { FC, useEffect, useState } from 'react';
 
-import { COLOR_BLUE } from '../../styles/colors';
+import { Color } from '../../styles/colors';
 import RedHatLogo from '../../assets/images/RedHatLogo.svg';
 import { SponsorsList } from './OurSponsorsData';
 import styled from 'styled-components';
@@ -19,7 +19,7 @@ const StyledTitleContainer = styled.div`
   align-items: center;
   width: 100%;
   justify-content: space-between;
-  color: ${COLOR_BLUE};
+  color: ${Color.BLUE};
   font-weight: 900;
 
   font-size: 1.2rem;
@@ -73,8 +73,7 @@ const StyledSmallLogosContainer = styled.div`
 
 const StyledSmallLogo = styled.img`
   height: 1.5rem;
-  margin: 0 0.75rem;
-  margin-bottom: 2rem;
+  margin: 0 0.75rem 2rem;
 
   @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
     height: 2rem;
@@ -119,7 +118,7 @@ const OurSponsors: FC = () => {
         <StyledBigLogo src={RedHatLogo} />
       </StyledFlexRow>
       <StyledSmallLogosContainer>
-        {SponsorsList.map((logo, index) => (
+        {SponsorsList.map((logo) => (
           <StyledSmallLogo src={logo} />
         ))}
       </StyledSmallLogosContainer>

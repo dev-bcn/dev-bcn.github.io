@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import styled from 'styled-components';
-import { COLOR_WHITE, COLOR_YELLOW } from '../../../../../styles/colors';
+import { Color,  } from '../../../../../styles/colors';
 
 const TimeCountDownContainer = styled.div`
   display: flex;
@@ -10,20 +10,20 @@ const TimeCountDownContainer = styled.div`
 
 const StyledTimerContainer = styled.div`
   border-radius: 3rem;
-  border: 1.5px solid ${COLOR_YELLOW};
+  border: 1.5px solid ${Color.YELLOW};
   height: 4.5rem;
   width: 4.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  font-family: SpaceGrotesk-Light;
-  color: ${COLOR_WHITE};
+  font-family: SpaceGrotesk-Light,sans-serif;
+  color: ${Color.WHITE};
 `;
 
 const StyleLine = styled.div`
   width: 0.75rem;
-  background: ${COLOR_YELLOW};
+  background: ${Color.YELLOW};
   height: 1.5px;
 `;
 

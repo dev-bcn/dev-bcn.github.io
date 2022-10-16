@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import ReadMoreIcon from '../../../../../assets/images/ReadMoreIcon.svg';
 import { Link } from 'react-router-dom';
-import { COLOR_WHITE } from '../../../../../styles/colors';
+import { Color } from '../../../../../styles/colors';
 
 type FaqCardType = {
   faq: {
@@ -49,7 +49,7 @@ export const StyledFaqImage = styled(motion.img)`
 export const StyledFaqInfo = styled(motion.div)<{ align: string }>`
   display: flex;
   flex-direction: column;
-  color: ${COLOR_WHITE};
+  color: ${Color.WHITE};
   @media (min-width: 800px) {
     width: 60%;
     align-items: ${({ align }) => {
@@ -69,7 +69,7 @@ export const StyledFaqTitle = styled.h2<{ textAlign: string }>`
 `;
 
 export const StyledFaqText = styled.p<{ textAlign: string }>`
-  padding: 0.5rem 0rem;
+  padding: 0.5rem 0;
   @media (min-width: 800px) {
     hyphens: auto;
     word-wrap: break-word;
@@ -87,7 +87,7 @@ export const StyledFaqDetailButton = styled.img`
 `;
 
 const FaqCard: FC<FaqCardType> = ({ faq, index }) => {
-  const isOdd = index % 2 === 0 ? true : false;
+  const isOdd = index % 2 === 0;
 
   return (
     <StyledFaqCard direction={isOdd ? 'row' : 'row-reverse'}>

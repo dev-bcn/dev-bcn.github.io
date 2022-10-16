@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import { COLOR_PINK, COLOR_YELLOW } from '../../styles/colors';
+import { Color  } from '../../styles/colors';
 import { FC, useState } from 'react';
 import { MAX_WIDTH, MOBILE_BREAKPOINT } from '../../constants/BreakPoints';
 import { NavLink, useHistory, useLocation } from 'react-router-dom';
@@ -17,7 +17,7 @@ import styled from 'styled-components';
 import { useWindowSize } from 'react-use';
 
 const StyledHeaderWrapper = styled.div`
-  background: ${COLOR_YELLOW};
+  background: ${Color.YELLOW};
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -30,7 +30,7 @@ const StyledHeaderWrapper = styled.div`
 `;
 
 const StyledHeader = styled.header`
-  background: ${COLOR_YELLOW};
+  background: ${Color.YELLOW};
   height: 3rem;
   max-width: ${MAX_WIDTH}px;
   width: 100%;
@@ -78,7 +78,7 @@ const StyledNavigationContainer = styled(motion.div)`
 
 const StyledNavigation = styled(motion.nav)`
   width: 100vw;
-  background: ${COLOR_PINK};
+  background: ${Color.PINK};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -89,19 +89,19 @@ const StyledNavigation = styled(motion.nav)`
 const StyledClipPath = styled(motion.div)`
   clip-path: polygon(100% 0, 0 0, 0 100%);
   width: 40vw;
-  background: ${COLOR_PINK};
+  background: ${Color.PINK};
 `;
 
 const StyledLink = styled(NavLink)`
   padding: 0.5rem;
-  color: ${COLOR_YELLOW};
+  color: ${Color.YELLOW};
   text-decoration: none;
   cursor: pointer;
-  font-family: SpaceGrotesk-Bold;
+  font-family: SpaceGrotesk-Bold,sans-serif;
   &.${(props) => props.activeClassName} {
     &:before {
       content: '/   ';
-      font-family: SpaceGrotesk-Bold;
+      font-family: SpaceGrotesk-Bold,sans-serif;
     }
   }
   @media (min-width: ${MOBILE_BREAKPOINT}px) {

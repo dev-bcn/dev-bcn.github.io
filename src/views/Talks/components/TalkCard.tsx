@@ -1,7 +1,7 @@
-import { FC } from "react";
-import { Link } from "react-router-dom";
+import {FC} from "react";
+import {Link} from "react-router-dom";
 import styled from "styled-components";
-import { COLOR_WHITE } from "../../../styles/colors";
+import {Color} from "../../../styles/colors";
 import {
   StyledFaqCard,
   StyledFaqDetailButton,
@@ -9,9 +9,9 @@ import {
   StyledFaqImageContainer,
   StyledFaqTitle,
 } from "../../Home/components/Faqs/components/FaqsCard";
-import { StyledJobsInfo } from "../../JobOffers/components/JobsCard";
+import {StyledJobsInfo} from "../../JobOffers/components/JobsCard";
 import WatchIcon from "../../../assets/images/WatchIcon.svg";
-import { Tag } from "../../../components/Tag/Tag";
+import {Tag} from "../../../components/Tag/Tag";
 
 type TalkCardProps = {
   talk: {
@@ -26,8 +26,8 @@ type TalkCardProps = {
 };
 
 const StyledTalkText = styled.div<{ textAlign: string }>`
-  color: ${COLOR_WHITE};
-  padding: 0.5rem 0rem;
+  color: ${Color.WHITE};
+  padding: 0.5rem 0;
   @media (min-width: 800px) {
     hyphens: auto;
     word-wrap: break-word;
@@ -45,7 +45,7 @@ export const StyledTagsWrapper = styled.div`
 `;
 
 export const TalkCard: FC<TalkCardProps> = ({ talk, index }) => {
-  const isOdd = index % 2 === 0 ? true : false;
+  const isOdd = index % 2 === 0;
 
   return (
     <StyledFaqCard direction={isOdd ? "row" : "row-reverse"}>

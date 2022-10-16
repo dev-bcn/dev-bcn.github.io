@@ -1,4 +1,4 @@
-import { COLOR_GREEN, COLOR_WHITE } from '../../styles/colors';
+import { Color } from '../../styles/colors';
 
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
@@ -24,7 +24,7 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   cursor: pointer;
   padding: 1rem;
-  background: ${COLOR_GREEN};
+  background: ${Color.GREEN};
   font-weight: 600;
   width: fit-content;
 `;
@@ -35,7 +35,7 @@ interface INotFoundErrorProps {
 
 const NotFoundError: FC<INotFoundErrorProps> = ({ message }) => {
   return (
-    <SectionWrapper color={COLOR_WHITE}>
+    <SectionWrapper color={Color.WHITE}>
       <StyledContainer className='Error404'>
         <StyledTitle>Error 404. {message} not found</StyledTitle>
         <StyledLink to={'/'}>Back to home</StyledLink>

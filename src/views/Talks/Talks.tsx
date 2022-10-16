@@ -1,20 +1,15 @@
-import { BIG_BREAKPOINT, TABLET_BREAKPOINT } from '../../constants/BreakPoints';
-import {
-  COLOR_BLACK_BLUE,
-  COLOR_GREEN,
-  COLOR_YELLOW,
-} from '../../styles/colors';
+import {BIG_BREAKPOINT, TABLET_BREAKPOINT} from '../../constants/BreakPoints';
 
-import { FC } from 'react';
+import {FC} from 'react';
 import LessThanBlueIcon from '../../assets/images/LessThanBlueIcon.svg';
 import MoreThanBlueIcon from '../../assets/images/MoreThanBlueIcon.svg';
 import SectionWrapper from '../../components/SectionWrapper/SectionWrapper';
-import { StyledWrapperSection } from '../JobOffers/JobOffers';
-import { TalkCard } from './components/TalkCard';
+import {StyledWrapperSection} from '../JobOffers/JobOffers';
+import {TalkCard} from './components/TalkCard';
 import TitleSection from '../../components/SectionTitle/TitleSection';
 import styled from 'styled-components';
-import { talksData } from './TalksData';
-import { useWindowSize } from 'react-use';
+import {talksData} from './TalksData';
+import {Color} from "../../styles/colors";
 
 const StyledTitleContainer = styled.div`
   display: flex;
@@ -35,12 +30,11 @@ const StyledSpeakersSection = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 2rem;
-  padding-bottom: 1rem;
+  padding: 0 2rem 1rem;
 `;
 
 const StyledWaveContainer = styled.div`
-  background: ${COLOR_GREEN};
+  background: ${Color.GREEN};
   overflow-y: hidden;
   height: 8rem;
   width: 100%;
@@ -56,7 +50,7 @@ export const StyledMarginBottom = styled.div`
 export const Talks: FC = () => {
   return (
     <>
-      <SectionWrapper color={COLOR_GREEN} marginTop={5}>
+      <SectionWrapper color={Color.GREEN} marginTop={5}>
         <StyledSpeakersSection>
           <StyledTitleContainer>
             <StyledTitleIcon src={LessThanBlueIcon} />
@@ -66,7 +60,7 @@ export const Talks: FC = () => {
               share their experience in various technologies and to
               invite everyone to participate in Open Source
               Technologies and in the JCP.'
-              color={COLOR_BLACK_BLUE}
+              color={Color.BLACK_BLUE}
             />
             <StyledTitleIcon src={MoreThanBlueIcon} />
           </StyledTitleContainer>
@@ -84,7 +78,7 @@ export const Talks: FC = () => {
           ></path>
         </svg>
       </StyledWaveContainer>
-      <SectionWrapper color={COLOR_YELLOW} marginTop={1}>
+      <SectionWrapper color={Color.YELLOW} marginTop={1}>
         <StyledWrapperSection>
           {talksData.map((talk, index) => (
             <TalkCard talk={talk} index={index} />

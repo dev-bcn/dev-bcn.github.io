@@ -8,7 +8,7 @@ import {
   StyledFaqTitle,
 } from '../../Home/components/Faqs/components/FaqsCard';
 import styled from 'styled-components';
-import { COLOR_BLACK_BLUE, COLOR_PINK, COLOR_WHITE } from '../../../styles/colors';
+import { Color } from '../../../styles/colors';
 import { motion } from 'framer-motion';
 import LocationIcon from '../../../assets/images/LocationIcon.svg';
 
@@ -24,7 +24,7 @@ type IJobsCardProps = {
 export const StyledJobsInfo = styled(motion.div)<{align:string}>`
   display: flex;
   flex-direction: column;
-  color: ${COLOR_BLACK_BLUE};
+  color: ${Color.BLACK_BLUE};
   align-items: center;
   @media (min-width: 800px) {
     width: 60%;
@@ -49,16 +49,16 @@ const StyledLocationText = styled.p`
 `;
 
 const StyledJobsButton = styled.div`
-  background: ${COLOR_PINK};
+  background: ${Color.PINK};
   padding: 0.25rem 0.75rem;
 `;
 
 const StyledJobsText = styled.p`
-  color: ${COLOR_WHITE};
+  color: ${Color.WHITE};
 `;
 
 const JobsCard: FC<IJobsCardProps> = ({ item, index }) => {
-  const isOdd = index % 2 === 0 ? true : false;
+  const isOdd = index % 2 === 0;
 
   return (
     <StyledFaqCard direction={isOdd ? 'row' : 'row-reverse'}>

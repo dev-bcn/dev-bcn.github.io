@@ -3,7 +3,7 @@ import {
   MOBILE_BREAKPOINT,
   TABLET_BREAKPOINT,
 } from '../../constants/BreakPoints';
-import { COLOR_BLACK_BLUE, COLOR_PINK, COLOR_WHITE } from '../../styles/colors';
+import { Color } from '../../styles/colors';
 import { jobsAdevintaData, jobsMangoData, jobsWordlineData } from './JobsData';
 
 import { FC } from 'react';
@@ -43,7 +43,7 @@ const StyledLessIcon = styled.img`
   height: 5rem;
   @media (min-width: ${BIG_BREAKPOINT}px) {
     height: 10rem;
-    top: 0rem;
+    top: 0;
   }
 `;
 
@@ -54,7 +54,7 @@ const StyledMoreIcon = styled.img`
   height: 5rem;
   @media (min-width: ${BIG_BREAKPOINT}px) {
     height: 10rem;
-    top: 0rem;
+    top: 0;
   }
 `;
 
@@ -62,13 +62,13 @@ const JobOffers: FC = () => {
   const { width } = useWindowSize();
 
   return (
-    <SectionWrapper color={COLOR_WHITE} marginTop={6}>
+    <SectionWrapper color={Color.WHITE} marginTop={6}>
       <StyledWrapperSection>
         <StyledTitleContainer>
           <TitleSection
             title='JOB OFFERS'
             subtitle='Have a look at some opportunities'
-            color={COLOR_BLACK_BLUE}
+            color={Color.BLACK_BLUE}
           />
         </StyledTitleContainer>
         {width > MOBILE_BREAKPOINT && (
@@ -77,15 +77,15 @@ const JobOffers: FC = () => {
             <StyledMoreIcon src={MoreThanBlueIcon} />
           </>
         )}
-        <RightHashWithText color={COLOR_PINK} text='ADEVINTA' />
+        <RightHashWithText color={Color.PINK} text='ADEVINTA' />
         {jobsAdevintaData.map((item, index) => (
           <JobsCard item={item} index={index} key={index} />
         ))}
-        <LeftHashWithText color={COLOR_PINK} text='MANGO' />
+        <LeftHashWithText color={Color.PINK} text='MANGO' />
         {jobsMangoData.map((item, index) => (
           <JobsCard item={item} index={index} key={index} />
         ))}
-        <RightHashWithText color={COLOR_PINK} text='WORDLINE' />
+        <RightHashWithText color={Color.PINK} text='WORDLINE' />
         {jobsWordlineData.map((item, index) => (
           <JobsCard item={item} index={index} key={index} />
         ))}

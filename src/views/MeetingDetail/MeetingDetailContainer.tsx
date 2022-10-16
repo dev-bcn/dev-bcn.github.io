@@ -1,4 +1,4 @@
-import { COLOR_WHITE } from '../../styles/colors';
+import { Color } from '../../styles/colors';
 import { FC } from 'react';
 import MeetingDetail from './MeetingDetail';
 import NotFoundError from '../../components/NotFoundError/NotFoundError';
@@ -8,7 +8,7 @@ import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
 
 const StyledContainer = styled.div`
-  background-color: ${COLOR_WHITE};
+  background-color: ${Color.WHITE};
 `;
 
 const MeetingDetailContainer: FC = () => {
@@ -18,7 +18,7 @@ const MeetingDetailContainer: FC = () => {
 
   return (
     <StyledContainer>
-      <SectionWrapper color={COLOR_WHITE} marginTop={4}>
+      <SectionWrapper color={Color.WHITE} marginTop={4}>
         {meetingData ? (
           <MeetingDetail meeting={meetingData} />
         ) : (

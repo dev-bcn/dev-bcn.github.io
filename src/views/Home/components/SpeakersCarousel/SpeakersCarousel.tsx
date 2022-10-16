@@ -4,10 +4,7 @@ import './SpeakersCarousel.scss';
 
 import { Autoplay, Parallax } from 'swiper';
 import {
-  COLOR_GREEN,
-  COLOR_PINK,
-  COLOR_WHITE,
-  COLOR_YELLOW,
+  Color
 } from '../../../../styles/colors';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -21,7 +18,7 @@ import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
 const StyledSpeakersContainer = styled.section`
-  background-color: ${COLOR_GREEN};
+  background-color: ${Color.GREEN};
   position: relative;
   display: flex;
   flex-direction: column;
@@ -40,8 +37,8 @@ const StyledSlideImage = styled.img`
 
 const StyledSlideContain = styled.div`
   position: absolute;
-  bottom: 0px;
-  background: ${COLOR_PINK};
+  bottom: 0;
+  background: ${Color.PINK};
   padding: 0.5rem 0.25rem;
 `;
 
@@ -61,7 +58,7 @@ const StyledLink = styled.div`
 `;
 
 const StyledSubtitle = styled.h2`
-  color: ${COLOR_PINK};
+  color: ${Color.PINK};
   padding-right: 0.75rem;
 `;
 
@@ -78,8 +75,8 @@ export const StyledBottomSlash = styled(motion.div)`
 `;
 
 const StyledYellowSlash = styled(motion.p)`
-  font-family: 'SpaceGrotesk-Bold';
-  color: ${COLOR_YELLOW};
+  font-family: 'SpaceGrotesk-Bold',sans-serif;
+  color: ${Color.YELLOW};
   font-size: 2rem;
   overflow-y: hidden;
   height: 100%;
@@ -87,7 +84,7 @@ const StyledYellowSlash = styled(motion.p)`
 
 const SpeakersCarousel: FC = () => {
   return (
-    <SectionWrapper color={COLOR_GREEN}>
+    <SectionWrapper color={Color.GREEN}>
       <StyledSpeakersContainer>
         <StyledTitleWrapper>
           <TitleSection
@@ -97,7 +94,7 @@ const SpeakersCarousel: FC = () => {
         priceless opportunity to participate in the first big Java
         and JVM conference in Spain, to pr mote your company
         and to support technological communities.'
-            color={COLOR_WHITE}
+            color={Color.WHITE}
           />
         </StyledTitleWrapper>
         <Swiper

@@ -2,7 +2,6 @@ import { FC } from 'react';
 import TitleSection from '../../components/SectionTitle/TitleSection';
 import SectionWrapper from '../../components/SectionWrapper/SectionWrapper';
 import { MOBILE_BREAKPOINT } from '../../constants/BreakPoints';
-import { COLOR_WHITE, COLOR_BLUE } from '../../styles/colors';
 import {
   StyledSpeakersSection,
   StyledLessIcon,
@@ -15,6 +14,7 @@ import { aboutData } from './AboutData';
 import { AboutCard } from './components/AboutCard';
 import styled from 'styled-components';
 import { StyledMarginBottom } from '../Talks/Talks';
+import {Color} from "../../styles/colors";
 
 const StyledUsersWrapper = styled.div`
   padding-top: 5rem;
@@ -28,7 +28,7 @@ export const About: FC = () => {
 
   return (
     <>
-      <SectionWrapper color={COLOR_WHITE} marginTop={8}>
+      <SectionWrapper color={Color.WHITE} marginTop={8}>
         <StyledSpeakersSection>
           <TitleSection
             title='ABOUT US'
@@ -38,7 +38,7 @@ export const About: FC = () => {
             meetups focused on Java topics, looking forward to spin
             this technology from our hometown to the rest of the
             world.'
-            color={COLOR_BLUE}
+            color={Color.BLUE}
           />
           {width > MOBILE_BREAKPOINT && (
             <>

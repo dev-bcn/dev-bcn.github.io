@@ -1,5 +1,5 @@
 import { BIG_BREAKPOINT, LARGE_BREAKPOINT } from '../../constants/BreakPoints';
-import { COLOR_WHITE } from '../../styles/colors';
+import { Color } from '../../styles/colors';
 import { FC } from 'react';
 import styled from 'styled-components';
 
@@ -33,8 +33,8 @@ const StyledTitleContainer = styled.div`
 `;
 
 const StyledTitle = styled.h1`
-  color: ${(props) => (props.color ? props.color : COLOR_WHITE)};
-  font-family: SpaceGrotesk;
+  color: ${(props) => (props.color ? props.color : Color.WHITE)};
+  font-family: SpaceGrotesk,sans-serif;
   padding-bottom: 1.5rem;
   text-align: center;
   @media (min-width: ${BIG_BREAKPOINT}px) {
@@ -45,7 +45,7 @@ const StyledTitle = styled.h1`
 `;
 
 const StyledSubTitle = styled.p`
-  color: ${(props) => (props.color ? props.color : COLOR_WHITE)};
+  color: ${(props) => (props.color ? props.color : Color.WHITE)};
   @media (min-width: 480px) {
     width: 40%;
   }

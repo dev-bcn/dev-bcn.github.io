@@ -4,7 +4,7 @@ import {
   MOBILE_BREAKPOINT,
   TABLET_BREAKPOINT,
 } from '../../../constants/BreakPoints';
-import { COLOR_PINK, COLOR_WHITE } from '../../../styles/colors';
+import { Color } from '../../../styles/colors';
 
 type SpeakersCardProps = {
   speaker: {
@@ -58,16 +58,16 @@ const StyledImageAnimation = styled.div`
 `;
 
 const StyledSpeakerTitle = styled.h5`
-  color: ${COLOR_WHITE};
+  color: ${Color.WHITE};
 `;
 
 const StyledSpeakerSubtitle = styled.h5`
-  color: ${COLOR_PINK};
+  color: ${Color.PINK};
   text-align: left;
 `;
 
 const StyledSpeakerText = styled.p`
-  color: ${COLOR_WHITE};
+  color: ${Color.WHITE};
   text-align: left;
 `;
 

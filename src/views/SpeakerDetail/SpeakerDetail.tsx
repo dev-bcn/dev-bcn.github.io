@@ -1,5 +1,5 @@
 import { BIG_BREAKPOINT, LARGE_BREAKPOINT } from '../../constants/BreakPoints';
-import { COLOR_BLUE, COLOR_WHITE, COLOR_YELLOW } from '../../styles/colors';
+import { Color } from '../../styles/colors';
 
 import { FC } from 'react';
 import { ISpeakerDetail } from './SpeakerDetailData';
@@ -15,19 +15,17 @@ const StyledSpeakerDetailContainer = styled(motion.div)`
   display: flex;
   position: relative;
   justify-content: center;
-  background: ${COLOR_BLUE};
-  color: ${COLOR_WHITE};
+  background: ${Color.BLUE};
+  color: ${Color.WHITE};
   width: 100%;
-  padding: 1.5rem;
-  padding-bottom: 3rem;
+  padding: 1.5rem 1.5rem 3rem;
 
   margin-bottom: 2rem;
 
   @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
     justify-content: start;
-    padding: 0;
     align-items: start;
-    padding-right: 0;
+    padding: 0;
   }
 `;
 
@@ -38,8 +36,7 @@ const StyledDetailsContainer = styled.div`
 
   @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
     flex-direction: row;
-    padding: 3rem;
-    padding-right: 0;
+    padding: 3rem 0 3rem 3rem;
   }
 `;
 
@@ -130,7 +127,7 @@ const StyledSpeakerImgBorder = styled.div`
   height: 300px;
   margin-bottom: 0.75rem;
   padding: 0.3rem;
-  border: 1px solid ${COLOR_YELLOW};
+  border: 1px solid ${Color.YELLOW};
 
   @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
     padding: 0.2rem;
@@ -189,7 +186,7 @@ const StyledSpeakerDescription = styled.p`
 
 const StyledLink = styled.a`
   text-decoration: none;
-  color: ${COLOR_WHITE};
+  color: ${Color.WHITE};
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -257,20 +254,6 @@ interface ISpeakerDetailProps {
 
 const SpeakerDetail: FC<ISpeakerDetailProps> = ({ speaker }) => {
   const { width } = useWindowSize();
-
-  function buildSlashes(module: number) {
-    const slashesElement = document.getElementById('Slashes');
-
-    const slashesWidth = slashesElement?.offsetWidth || 0;
-
-    let slashes = '';
-    for (let index = 0; index < slashesWidth; index++) {
-      if (index % module === 0) slashes += '/ ';
-    }
-
-    return slashes;
-  }
-
   return (
     <>
       <StyledSpeakerDetailContainer

@@ -1,73 +1,32 @@
-import {
-  COLOR_BLACK_BLUE,
-  COLOR_BLUE,
-  COLOR_GREEN,
-  COLOR_PINK,
-  COLOR_YELLOW,
-} from '../../styles/colors';
+import {Color} from '../../styles/colors';
 
-export const aboutData = [
-  {
-    imageNumber: 1,
-    name: 'JOSÉ PÉREZ',
-    nameColor: COLOR_BLUE,
-    job: 'Java developer',
-    jobColor: COLOR_PINK,
-    twitterUrl: 'https://twitter.com/',
-    linkedinUrl: 'https://linkedin.com/',
-  },
-  {
-    imageNumber: 1,
-    name: 'MARIO LÒPEZ',
-    nameColor: COLOR_GREEN,
-    job: 'Java engineer',
-    jobColor: COLOR_BLUE,
-    twitterUrl: 'https://twitter.com/',
-    linkedinUrl: 'https://linkedin.com/',
-  },
-  {
-    imageNumber: 1,
-    name: 'JORDI PI',
-    nameColor: COLOR_BLACK_BLUE,
-    job: 'Software engineer',
-    jobColor: COLOR_YELLOW,
-    twitterUrl: 'https://twitter.com/',
-    linkedinUrl: 'https://linkedin.com/',
-  },
-  {
-    imageNumber: 1,
-    name: 'MARC GARCÍA',
-    nameColor: COLOR_BLUE,
-    job: 'Java developer',
-    jobColor: COLOR_PINK,
-    twitterUrl: 'https://twitter.com/',
-    linkedinUrl: 'https://linkedin.com/',
-  },
-  {
-    imageNumber: 1,
-    name: 'JOSÉ PÉREZ',
-    nameColor: COLOR_BLUE,
-    job: 'Java developer',
-    jobColor: COLOR_PINK,
-    twitterUrl: 'https://twitter.com/',
-    linkedinUrl: 'https://linkedin.com/',
-  },
-  {
-    imageNumber: 1,
-    name: 'JOSÉ PÉREZ',
-    nameColor: COLOR_BLUE,
-    job: 'Java developer',
-    jobColor: COLOR_PINK,
-    twitterUrl: 'https://twitter.com/',
-    linkedinUrl: 'https://linkedin.com/',
-  },
-  {
-    imageNumber: 1,
-    name: 'JOSÉ PÉREZ',
-    nameColor: COLOR_BLUE,
-    job: 'Java developer',
-    jobColor: COLOR_PINK,
-    twitterUrl: 'https://twitter.com/',
-    linkedinUrl: 'https://linkedin.com/',
-  },
+type Member = {
+    imageNumber: number;
+    name: string;
+    nameColor: Color;
+    job: string;
+    jobColor: Color;
+    twitterUrl: URL;
+    linkedinUrl: URL;
+}
+
+export const aboutData: Member[] = [
+    {
+        imageNumber: 1,
+        name: 'Jonathan Vila',
+        nameColor: Color.BLUE,
+        job: 'Java developer',
+        jobColor: Color.PINK,
+        twitterUrl: new URL('https://twitter.com/vilojona'),
+        linkedinUrl: new URL('https://linkedin.com/vilojona'),
+    },
+    {
+        imageNumber: 1,
+        name: 'Nacho Cougil',
+        nameColor: Color.GREEN,
+        job: 'Java engineer',
+        jobColor: Color.BLUE,
+        twitterUrl: new URL('https://twitter.com/icougil'),
+        linkedinUrl: new URL('https://linkedin.com/icougil'),
+    }
 ];

@@ -4,11 +4,7 @@ import {
   TABLET_BREAKPOINT,
 } from '../../constants/BreakPoints';
 import {
-  COLOR_BLUE,
-  COLOR_GREEN,
-  COLOR_PINK,
-  COLOR_WHITE,
-  COLOR_YELLOW,
+  Color
 } from '../../styles/colors';
 
 import { FC } from 'react';
@@ -95,7 +91,7 @@ const StyledContainerRightSlash = styled(motion.div)<{
 `;
 
 const StyledSlash = styled(motion.p)<{ color: string }>`
-  font-family: 'SpaceGrotesk-Bold';
+  font-family: 'SpaceGrotesk-Bold',sans-serif;
   color: ${({ color }) => {
     return color;
   }};
@@ -105,7 +101,7 @@ const StyledSlash = styled(motion.p)<{ color: string }>`
 `;
 
 const StyledWaveContainer = styled.div`
-  background: ${COLOR_WHITE};
+  background: ${Color.WHITE};
   overflow-y: hidden;
   height: 8rem;
   width: 100%;
@@ -119,7 +115,7 @@ const Speakers: FC = () => {
 
   return (
     <>
-      <SectionWrapper color={COLOR_GREEN} marginTop={5}>
+      <SectionWrapper color={Color.GREEN} marginTop={5}>
         <StyledSpeakersSection>
           <TitleSection
             title='SPEAKERS'
@@ -127,7 +123,7 @@ const Speakers: FC = () => {
             share their experience in various technologies and to
             invite everyone to participate in Open Source
             Technologies and in the JCP.'
-            color={COLOR_WHITE}
+            color={Color.WHITE}
           />
           {width > MOBILE_BREAKPOINT && (
             <>
@@ -146,7 +142,7 @@ const Speakers: FC = () => {
             transition={{ duration: 4 }}
             positionPercentage='20%'
           >
-            <StyledSlash color={COLOR_YELLOW}>
+            <StyledSlash color={Color.YELLOW}>
               / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
               / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /{' '}
             </StyledSlash>
@@ -158,7 +154,7 @@ const Speakers: FC = () => {
             transition={{ duration: 4 }}
             positionPercentage='40%'
           >
-            <StyledSlash color={COLOR_PINK}>
+            <StyledSlash color={Color.PINK}>
               / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
               / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /{' '}
             </StyledSlash>
@@ -170,7 +166,7 @@ const Speakers: FC = () => {
             transition={{ duration: 4 }}
             positionPercentage='60%'
           >
-            <StyledSlash color={COLOR_BLUE}>
+            <StyledSlash color={Color.BLUE}>
               / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
               / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /{' '}
             </StyledSlash>
@@ -182,7 +178,7 @@ const Speakers: FC = () => {
             transition={{ duration: 4 }}
             positionPercentage='80%'
           >
-            <StyledSlash color={COLOR_YELLOW}>
+            <StyledSlash color={Color.YELLOW}>
               / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
               / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /{' '}
             </StyledSlash>

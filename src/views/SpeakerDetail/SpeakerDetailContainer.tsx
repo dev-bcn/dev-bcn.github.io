@@ -1,4 +1,4 @@
-import { COLOR_BLUE, COLOR_WHITE } from '../../styles/colors';
+import { Color } from '../../styles/colors';
 
 import { FC } from 'react';
 import NotFoundError from '../../components/NotFoundError/NotFoundError';
@@ -10,11 +10,11 @@ import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
 
 const StyledContainer = styled.div`
-  background-color: ${COLOR_BLUE};
+  background-color: ${Color.BLUE};
 `;
 
 const StyledWaveContainer = styled.div`
-  background: ${COLOR_WHITE};
+  background: ${Color.WHITE};
   overflow-y: hidden;
   height: 8rem;
   width: 100%;
@@ -29,7 +29,7 @@ const SpeakerDetailContainer: FC = () => {
   let speakerData = findSpeaker(name);
   return (
     <StyledContainer>
-      <SectionWrapper color={COLOR_BLUE} marginTop={4}>
+      <SectionWrapper color={Color.BLUE} marginTop={4}>
         {speakerData ? (
           <SpeakerDetail speaker={speakerData} />
         ) : (
