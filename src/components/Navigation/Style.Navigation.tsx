@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {motion} from "framer-motion";
 import {Color} from "../../styles/colors";
 import {NavLink} from "react-router-dom";
-import {MOBILE_BREAKPOINT} from "../../constants/BreakPoints";
+import {MAX_WIDTH, MOBILE_BREAKPOINT} from "../../constants/BreakPoints";
 
 export const StyledBlueHamburger = styled(motion.img)`
   height: 2.5rem;
@@ -78,4 +78,31 @@ export const StyledNavigationLogo = styled.img`
   height: 4rem;
   margin-bottom: 1rem;
   cursor: pointer;
+`;
+
+export const StyledHeaderWrapper = styled.div`
+  background: ${Color.YELLOW};
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+`;
+export const StyledHeader = styled.header`
+  background: ${Color.YELLOW};
+  height: 3rem;
+  max-width: ${MAX_WIDTH}px;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  @media (min-width: 480px) {
+    height: 4rem;
+  }
 `;
