@@ -31,7 +31,7 @@ const StyledLink = styled(Link)`
   margin-right: 0.25rem;
 `;
 
-function getLinkData(page: string) {
+const getLinkData = (page: string) => {
   const links: any = {
     codeOfConduct: { name: 'Code Of Conduct', urlParam: 'codeOfConduct' },
     schedule: { name: 'Schedule', urlParam: 'schedule' },
@@ -59,7 +59,7 @@ function getLinkData(page: string) {
   }
 
   return returnValue;
-}
+};
 
 const Breadcrumbs: FC = () => {
   const [pages, setPages] = useState<string[]>([]);
