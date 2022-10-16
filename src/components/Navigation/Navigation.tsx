@@ -8,7 +8,7 @@ import BlueHamburgerIcon from '../../assets/images/BlueHamburgerIcon.svg';
 import Breadcrumbs from './Breadcrumbs';
 import CloseIcon from '../../assets/images/CloseIcon.svg';
 import HamburgerIcon from '../../assets/images/HamburgerIcon.svg';
-import NavigationLogo from '../../assets/images/NavigationLogo.svg';
+import NavigationLogo from '../../assets/images/devBcn.png';
 import { ROUTE_HOME } from '../../constants/routes';
 import SectionWrapper from '../SectionWrapper/SectionWrapper';
 import TicketsImage from '../../assets/images/TicketsImage.svg';
