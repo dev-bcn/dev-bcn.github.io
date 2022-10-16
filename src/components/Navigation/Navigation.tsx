@@ -1,20 +1,32 @@
-import { AnimatePresence, motion } from 'framer-motion';
-import { Color  } from '../../styles/colors';
-import { FC, useState } from 'react';
-import { MAX_WIDTH, MOBILE_BREAKPOINT } from '../../constants/BreakPoints';
-import { NavLink, useHistory, useLocation } from 'react-router-dom';
+import {AnimatePresence} from 'framer-motion';
+import {Color} from '../../styles/colors';
+import {FC, useState} from 'react';
+import {MAX_WIDTH, MOBILE_BREAKPOINT} from '../../constants/BreakPoints';
+import {useHistory, useLocation} from 'react-router-dom';
 
 import BlueHamburgerIcon from '../../assets/images/BlueHamburgerIcon.svg';
 import Breadcrumbs from './Breadcrumbs';
 import CloseIcon from '../../assets/images/CloseIcon.svg';
 import HamburgerIcon from '../../assets/images/HamburgerIcon.svg';
 import NavigationLogo from '../../assets/images/devBcn.png';
-import { ROUTE_HOME } from '../../constants/routes';
+import {ROUTE_HOME} from '../../constants/routes';
 import SectionWrapper from '../SectionWrapper/SectionWrapper';
 import TicketsImage from '../../assets/images/TicketsImage.svg';
-import { navigationItems } from './NavigationData';
+import {navigationItems} from './NavigationData';
 import styled from 'styled-components';
-import { useWindowSize } from 'react-use';
+import {useWindowSize} from 'react-use';
+import {
+  StyledBlueHamburger,
+  StyledClipPath,
+  StyledHeaderLogo,
+  StyledLink,
+  StyledMenuIcon,
+  StyledNavigation,
+  StyledNavigationContainer,
+  StyledNavigationLogo,
+  StyledNavLinkHighlighted,
+  StyledNavLinkHighlightedImage
+} from "./Style.Navigation";
 
 const StyledHeaderWrapper = styled.div`
   background: ${Color.YELLOW};
@@ -42,89 +54,6 @@ const StyledHeader = styled.header`
   @media (min-width: 480px) {
     height: 4rem;
   }
-`;
-
-const StyledBlueHamburger = styled(motion.img)`
-  height: 2.5rem;
-  @media (min-width: 480px) {
-    height: 3rem;
-  }
-`;
-
-const StyledHeaderLogo = styled.img`
-  height: 2.5rem;
-  cursor: pointer;
-`;
-
-export const StyledMenuIcon = styled(motion.img)`
-  position: absolute;
-  top: 2rem;
-  right: 3rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  cursor: pointer;
-  z-index: 1;
-`;
-
-const StyledNavigationContainer = styled(motion.div)`
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  display: flex;
-  z-index: 4;
-  transform: translate3d(0px, 0px, 0px);
-  transition: transform 0.5s ease 0s;
-`;
-
-const StyledNavigation = styled(motion.nav)`
-  width: 100vw;
-  background: ${Color.PINK};
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-`;
-
-const StyledClipPath = styled(motion.div)`
-  clip-path: polygon(100% 0, 0 0, 0 100%);
-  width: 40vw;
-  background: ${Color.PINK};
-`;
-
-const StyledLink = styled(NavLink)`
-  padding: 0.5rem;
-  color: ${Color.YELLOW};
-  text-decoration: none;
-  cursor: pointer;
-  font-family: SpaceGrotesk-Bold,sans-serif;
-  &.${(props) => props.activeClassName} {
-    &:before {
-      content: '/   ';
-      font-family: SpaceGrotesk-Bold,sans-serif;
-    }
-  }
-  @media (min-width: ${MOBILE_BREAKPOINT}px) {
-    font-size: 1.125rem;
-  }
-`;
-
-const StyledNavLinkHighlighted = styled(motion.a)`
-  text-decoration: none;
-  margin: 0.5rem;
-  display: flex;
-  cursor: pointer;
-`;
-
-const StyledNavLinkHighlightedImage = styled.img`
-  width: 9rem;
-  height: auto;
-`;
-
-const StyledNavigationLogo = styled.img`
-  height: 4rem;
-  margin-bottom: 1rem;
-  cursor: pointer;
 `;
 
 const Navigation: FC = () => {
