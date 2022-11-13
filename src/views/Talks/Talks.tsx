@@ -8,8 +8,8 @@ import {StyledWrapperSection} from '../JobOffers/JobOffers';
 import {TalkCard} from './components/TalkCard';
 import TitleSection from '../../components/SectionTitle/TitleSection';
 import styled from 'styled-components';
-import {talksData} from './TalksData';
 import {Color} from "../../styles/colors";
+import data from "../../data/2023.json";
 
 const StyledTitleContainer = styled.div`
   display: flex;
@@ -48,6 +48,7 @@ export const StyledMarginBottom = styled.div`
 `;
 
 export const Talks: FC = () => {
+    const currentYearTalks = data.talks;
   return (
     <>
       <SectionWrapper color={Color.GREEN} marginTop={5}>
@@ -80,7 +81,7 @@ export const Talks: FC = () => {
       </StyledWaveContainer>
       <SectionWrapper color={Color.YELLOW} marginTop={1}>
         <StyledWrapperSection>
-          {talksData.map((talk, index) => (
+          {currentYearTalks.map((talk, index) => (
             <TalkCard talk={talk} index={index} />
           ))}
         </StyledWrapperSection>

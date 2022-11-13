@@ -1,16 +1,6 @@
-import {
-    BIG_BREAKPOINT,
-    MOBILE_BREAKPOINT,
-    TABLET_BREAKPOINT,
-} from '../../constants/BreakPoints';
-import {
-    Color
-} from '../../styles/colors';
-import {
-    ROUTE_MEETING_DETAIL,
-    ROUTE_SPEAKER_DETAIL,
-} from '../../constants/routes';
-import {scheduleData1, scheduleData2, scheduleData3} from './ScheduleData';
+import {BIG_BREAKPOINT, MOBILE_BREAKPOINT, TABLET_BREAKPOINT,} from '../../constants/BreakPoints';
+import {Color} from '../../styles/colors';
+import {ROUTE_MEETING_DETAIL, ROUTE_SPEAKER_DETAIL,} from '../../constants/routes';
 
 import {AvatarCard} from './components/AvatarCard';
 import {FC} from 'react';
@@ -23,6 +13,7 @@ import SpeakersWelcome from '../../assets/images/SpeakersWelcomer.jpg';
 import TitleSection from '../../components/SectionTitle/TitleSection';
 import styled from 'styled-components';
 import {useWindowSize} from 'react-use';
+import data from "../../data/2023.json";
 
 const StyledScheduleSection = styled.section`
   display: flex;
@@ -168,6 +159,9 @@ const Schedule: FC = () => {
 
     const meetingDetailUrl = ROUTE_MEETING_DETAIL('grace-jansen');
     const speakerDetailUrl = ROUTE_SPEAKER_DETAIL('grace-jansen');
+    const scheduleDay1 = data.schedule.day_one;
+    const scheduleDay2 = data.schedule.day_two;
+    const scheduleDay3 = data.schedule.day_three;
 
     return (
         <SectionWrapper color={Color.WHITE} marginTop={6}>
@@ -249,7 +243,7 @@ const Schedule: FC = () => {
                     </StyledTrack>
 
                     <StyledTracksContainer>
-                        {scheduleData1.map((meet, index) => (
+                        {scheduleDay1.map((meet, index) => (
                             <AvatarCard key={index} meet={meet}/>
                         ))}
                     </StyledTracksContainer>
@@ -263,7 +257,7 @@ const Schedule: FC = () => {
                     </StyledTrack>
 
                     <StyledTracksContainer>
-                        {scheduleData2.map((meet, index) => (
+                        {scheduleDay2.map((meet, index) => (
                             <AvatarCard key={index} meet={meet}/>
                         ))}
                     </StyledTracksContainer>
@@ -277,7 +271,7 @@ const Schedule: FC = () => {
                     </StyledTrack>
 
                     <StyledTracksContainer>
-                        {scheduleData3.map((meet, index) => (
+                        {scheduleDay3.map((meet, index) => (
                             <AvatarCard key={index} meet={meet}/>
                         ))}
                     </StyledTracksContainer>
@@ -318,7 +312,7 @@ const Schedule: FC = () => {
                     </StyledTrack>
 
                     <StyledTracksContainer>
-                        {scheduleData1.map((meet, index) => (
+                        {scheduleDay1.map((meet, index) => (
                             <AvatarCard key={index} meet={meet}/>
                         ))}
                     </StyledTracksContainer>
@@ -332,7 +326,7 @@ const Schedule: FC = () => {
                     </StyledTrack>
 
                     <StyledTracksContainer>
-                        {scheduleData2.map((meet, index) => (
+                        {scheduleDay2.map((meet, index) => (
                             <AvatarCard key={index} meet={meet}/>
                         ))}
                     </StyledTracksContainer>
@@ -346,7 +340,7 @@ const Schedule: FC = () => {
                     </StyledTrack>
 
                     <StyledTracksContainer>
-                        {scheduleData3.map((meet, index) => (
+                        {scheduleDay2.map((meet, index) => (
                             <AvatarCard key={index} meet={meet}/>
                         ))}
                     </StyledTracksContainer>
@@ -360,7 +354,7 @@ const Schedule: FC = () => {
                     </StyledTrack>
 
                     <StyledTracksContainer>
-                        {scheduleData1.map((meet, index) => (
+                        {scheduleDay3.map((meet, index) => (
                             <AvatarCard key={index} meet={meet}/>
                         ))}
                     </StyledTracksContainer>

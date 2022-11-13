@@ -6,5 +6,23 @@
   "youtube": "https://www.youtube.com/dev_bcn",
   "facebook": "https://facebook.com/devbcn",
   "github": "https://github.com/devbcn",
-  "linkedin": "https://www.linkedin.com/company/devbcn"
+  "linkedin": "https://www.linkedin.com/company/devbcn",
+  "carrousel": {
+    "enabled": false
+  },
+  "sponsors": {
+    "top": [],
+    "premium": [],
+    "regular": [],
+    "basic": [],
+    "startup": [],
+    "virtual": []
+  },
+  "speakers": [],
+  "talks": [],
+  "schedule": {
+    "day_one": [],
+    "day_two": [],
+    "day_three": []
+  }
 }

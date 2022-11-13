@@ -1,22 +1,16 @@
-import {
-  BIG_BREAKPOINT,
-  MOBILE_BREAKPOINT,
-  TABLET_BREAKPOINT,
-} from '../../constants/BreakPoints';
-import {
-  Color
-} from '../../styles/colors';
+import {BIG_BREAKPOINT, MOBILE_BREAKPOINT, TABLET_BREAKPOINT,} from '../../constants/BreakPoints';
+import {Color} from '../../styles/colors';
 
-import { FC } from 'react';
+import {FC} from 'react';
 import LessThanBlueIcon from '../../assets/images/LessThanBlueIcon.svg';
 import MoreThanBlueIcon from '../../assets/images/MoreThanBlueIcon.svg';
 import SectionWrapper from '../../components/SectionWrapper/SectionWrapper';
-import { SpeakerCard } from './components/SpeakersCard';
+import {SpeakerCard} from './components/SpeakersCard';
 import TitleSection from '../../components/SectionTitle/TitleSection';
-import { motion } from 'framer-motion';
-import { speakersData } from './SpeakersData';
+import {motion} from 'framer-motion';
 import styled from 'styled-components';
-import { useWindowSize } from 'react-use';
+import {useWindowSize} from 'react-use';
+import data from "../../data/2023.json";
 
 export const StyledSpeakersSection = styled.section`
   display: flex;
@@ -70,12 +64,13 @@ const StyledContainerLeftSlash = styled(motion.div)<{
   positionPercentage: string;
 }>`
   position: absolute;
-  top: ${({ positionPercentage }) => {
+  top: ${({positionPercentage}) => {
     return positionPercentage;
   }};
   left: 0;
   height: 2rem;
   width: 50%;
+  opacity: 0.2;
 `;
 
 const StyledContainerRightSlash = styled(motion.div)<{
@@ -88,6 +83,7 @@ const StyledContainerRightSlash = styled(motion.div)<{
   right: 0;
   height: 2rem;
   width: 50%;
+  opacity: 0.2;
 `;
 
 const StyledSlash = styled(motion.p)<{ color: string }>`
@@ -112,6 +108,7 @@ const StyledWaveContainer = styled.div`
 
 const Speakers: FC = () => {
   const { width } = useWindowSize();
+  const speakersCurrentYear = data.speakers;
 
   return (
     <>
@@ -132,7 +129,7 @@ const Speakers: FC = () => {
             </>
           )}
           <SpeakersCardsContainer>
-            {speakersData.map((speaker, index) => (
+            {speakersCurrentYear.map((speaker, index) => (
               <SpeakerCard key={index} speaker={speaker} />
             ))}
           </SpeakersCardsContainer>
