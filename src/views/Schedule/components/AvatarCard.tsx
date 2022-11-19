@@ -1,13 +1,12 @@
-import {
-  StyledAvatarContainer,
-  StyledAvatarImage,
-  StyledWelcomerText,
-  StyledWelcomerTextContainer,
-  StyledWelcomerTextLink,
-} from '../Schedule';
-
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
+import {
+    StyledAvatarContainer,
+    StyledAvatarImage,
+    StyledWelcomerText,
+    StyledWelcomerTextContainer,
+    StyledWelcomerTextLink
+} from "../Schedule.style";
 
 type AvatarCardProps = {
   meet: {
