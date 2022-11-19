@@ -1,27 +1,12 @@
-import { Color } from '../../styles/colors';
+import {Color} from '../../styles/colors';
 
-import { FC } from 'react';
+import {FC} from 'react';
 import NotFoundError from '../../components/NotFoundError/NotFoundError';
 import SectionWrapper from '../../components/SectionWrapper/SectionWrapper';
 import SpeakerDetail from './SpeakerDetail';
-import { TABLET_BREAKPOINT } from '../../constants/BreakPoints';
-import { findSpeaker } from './SpeakerDetailData';
-import styled from 'styled-components';
-import { useParams } from 'react-router-dom';
-
-const StyledContainer = styled.div`
-  background-color: ${Color.BLUE};
-`;
-
-const StyledWaveContainer = styled.div`
-  background: ${Color.WHITE};
-  overflow-y: hidden;
-  height: 8rem;
-  width: 100%;
-  @media (min-width: ${TABLET_BREAKPOINT}px) {
-    height: 10rem;
-  }
-`;
+import {findSpeaker} from './SpeakerDetailData';
+import {useParams} from 'react-router-dom';
+import {StyledContainer, StyledWaveContainer} from "./SpeakerDetail.style";
 
 const SpeakerDetailContainer: FC = () => {
   const { name } = useParams<{ name: string }>();

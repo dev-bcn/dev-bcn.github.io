@@ -36,12 +36,9 @@ export const About: FC = () => {
                 <StyledSpeakersSection>
                     <TitleSection
                         title='ABOUT US'
-                        subtitle='The Barcelona Java User Group is a non profit association
-            with a great team and a broad experience in Java
-            technologies. Since 2012, we are organizing talks and
-            meetups focused on Java topics, looking forward to spin
-            this technology from our hometown to the rest of the
-            world.'
+                        subtitle='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ultricies sapien ante, quis pharetra magna luctus ullamcorper. Mauris porttitor nisl in elit consequat, a pellentesque tortor rhoncus. Quisque vel commodo sapien, eget aliquet ligula. Curabitur ac gravida sem, eget pulvinar tellus. Nunc porttitor id metus in commodo. Etiam ultrices eleifend turpis vel convallis. Fusce at feugiat libero, quis fringilla leo. Praesent rutrum sodales blandit. Integer aliquet ultrices nunc ut blandit. Curabitur condimentum molestie urna, sodales pretium lacus tempor ac. Pellentesque sodales libero vel ligula porta dignissim.
+
+'
                         color={Color.BLUE}
                     />
                     {width > MOBILE_BREAKPOINT && (
