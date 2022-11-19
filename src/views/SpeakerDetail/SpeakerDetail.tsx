@@ -1,252 +1,36 @@
-import { BIG_BREAKPOINT, LARGE_BREAKPOINT } from '../../constants/BreakPoints';
-import { Color } from '../../styles/colors';
+import {BIG_BREAKPOINT} from '../../constants/BreakPoints';
 
-import { FC } from 'react';
-import { ISpeakerDetail } from './SpeakerDetailData';
+import {FC} from 'react';
+import {ISpeakerDetail} from './SpeakerDetailData';
 import MoreThanGreenIcon from '../../assets/images/MoreThanGreenIcon.svg';
 import SlashesWhite from '../../assets/images/SlashesWhite.svg';
 import linkedinIcon from '../../assets/images/linkedinIcon.svg';
-import { motion } from 'framer-motion';
-import styled from 'styled-components';
 import twitterIcon from '../../assets/images/twitterIcon.svg';
-import { useWindowSize } from 'react-use';
-
-const StyledSpeakerDetailContainer = styled(motion.div)`
-  display: flex;
-  position: relative;
-  justify-content: center;
-  background: ${Color.BLUE};
-  color: ${Color.WHITE};
-  width: 100%;
-  padding: 1.5rem 1.5rem 3rem;
-
-  margin-bottom: 2rem;
-
-  @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    justify-content: start;
-    align-items: start;
-    padding: 0;
-  }
-`;
-
-const StyledDetailsContainer = styled.div`
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-
-  @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    flex-direction: row;
-    padding: 3rem 0 3rem 3rem;
-  }
-`;
-
-const StyledImageContainer = styled(motion.div)`
-  flex-direction: column;
-  width: 25%;
-  padding: 0 1rem;
-  display: none;
-
-  @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    display: flex;
-  }
-`;
-
-const StyledRightContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-`;
-
-const StyledInfoContainer = styled(motion.div)`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-`;
-
-export const StyledFlexCol = styled(motion.div)`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    align-items: flex-start;
-  }
-`;
-
-const StyledMorethanIconContainer = styled.div`
-  display: none;
-
-  @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    display: flex;
-    align-items: flex-end;
-    padding-bottom: 2.5rem;
-    width: 18%;
-  }
-
-  @media only screen and (min-width: ${LARGE_BREAKPOINT}px) {
-    padding-bottom: 1.5rem;
-  }
-`;
-
-const StyledMoreThanIcon = styled.img`
-  display: none;
-
-  @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    display: flex;
-    width: 100%;
-  }
-`;
-
-const StyledNameContainer = styled(motion.div)`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    flex-direction: row;
-    margin-bottom: 1rem;
-  }
-`;
-
-const StyledName = styled.h3`
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 1.5rem;
-  margin-bottom: 0.75rem;
-
-  @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    width: 25%;
-    margin-bottom: 0;
-    text-align: left;
-  }
-`;
-
-const StyledSpeakerImgBorder = styled.div`
-  width: 100%;
-  height: 300px;
-  margin-bottom: 0.75rem;
-  padding: 0.3rem;
-  border: 1px solid ${Color.YELLOW};
-
-  @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    padding: 0.2rem;
-    height: 250px;
-  }
-
-  @media only screen and (min-width: ${LARGE_BREAKPOINT}px) {
-    padding: 0.2rem;
-    height: 325px;
-  }
-`;
-
-const StyledSpeakerImg = styled.div<{ photo: string }>`
-  width: 100%;
-  height: 100%;
-  background-image: url(${({ photo }) => photo});
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-`;
-
-const StyledSlashes = styled(motion.img)`
-  width: 80%;
-  margin-bottom: 0.75rem;
-
-  @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    margin-bottom: 0;
-    width: 75%;
-  }
-`;
-
-const StyledSpeakerTitle = styled.h4`
-  font-size: 1.15rem;
-  margin-bottom: 1rem;
-
-  @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    text-align: left;
-  }
-`;
-
-const StyledSocialMediaContainer = styled.div`
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  margin-bottom: 0.75rem;
-`;
-
-const StyledSpeakerDescription = styled.p`
-  text-align: justify;
-  margin-bottom: 1.5rem;
-
-  @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    padding-right: 4rem;
-  }
-`;
-
-const StyledLink = styled.a`
-  text-decoration: none;
-  color: ${Color.WHITE};
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-`;
-
-const StyledSocialMediaIcon = styled.img<{ noMargin?: boolean }>`
-  height: 1.5rem;
-  margin-right: ${({ noMargin }) => (noMargin ? '0' : '0.75rem')};
-
-  @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    margin-right: ${({ noMargin }) => (noMargin ? '0' : '0.5rem')};
-  }
-`;
-
-const rightVariants = {
-  initial: {
-    x: '100%',
-    opacity: 0,
-  },
-  animate: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.7,
-    },
-  },
-};
-
-const leftVariants = {
-  initial: {
-    x: -100,
-    opacity: 0,
-  },
-  animate: {
-    x: 0,
-    opacity: 1,
-    transition: { duration: 0.3 },
-  },
-};
-
-const downVariants = {
-  initial: {
-    y: 70,
-    opacity: 0,
-  },
-  animate: {
-    y: 0,
-    opacity: 1,
-    transition: { duration: 0.3 },
-  },
-};
-
-const noVariants = {
-  initial: {
-    x: 0,
-  },
-  animate: {
-    x: 0,
-  },
-};
+import {useWindowSize} from 'react-use';
+import {
+  downVariants,
+  leftVariants,
+  noVariants,
+  rightVariants,
+  StyledDetailsContainer,
+  StyledFlexCol,
+  StyledImageContainer,
+  StyledInfoContainer,
+  StyledLink,
+  StyledMoreThanIcon,
+  StyledMorethanIconContainer,
+  StyledName,
+  StyledNameContainer,
+  StyledRightContainer,
+  StyledSlashes,
+  StyledSocialMediaContainer,
+  StyledSocialMediaIcon,
+  StyledSpeakerDescription,
+  StyledSpeakerDetailContainer,
+  StyledSpeakerImg,
+  StyledSpeakerImgBorder,
+  StyledSpeakerTitle
+} from "./SpeakerDetail.style";
 
 interface ISpeakerDetailProps {
   speaker: ISpeakerDetail;

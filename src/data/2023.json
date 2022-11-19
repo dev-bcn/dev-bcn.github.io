@@ -8,21 +8,363 @@
   "github": "https://github.com/devbcn",
   "linkedin": "https://www.linkedin.com/company/devbcn",
   "carrousel": {
-    "enabled": false
+    "enabled": true
   },
   "sponsors": {
-    "top": [],
-    "premium": [],
-    "regular": [],
-    "basic": [],
-    "startup": [],
-    "virtual": []
+    "top": [
+      {
+        "name": "red hat"
+      }
+    ],
+    "premium": [{},{},{},{},{}],
+    "regular": [{},{},{},{},{}],
+    "basic": [{},{},{},{},{}],
+    "startup": [{},{},{},{},{}],
+    "virtual": [{},{},{},{},{}]
   },
-  "speakers": [],
-  "talks": [],
+  "speakers": [
+    {
+      "title": "ANTÓN RODRÍGUEZ",
+      "subtitle": "Principal Software engineer",
+      "speakerImage": 1,
+      "text": "Kafka y Pulsar: una comparación gentil"
+    },
+    {
+      "title": "MALA GUPTA",
+      "subtitle": "Developer Advocate @JetBrains, Published Author",
+      "speakerImage": 1,
+      "text": "IntelliJ IDEA and Keeping Pace with the New Java Language Features"
+    },
+    {
+      "title": "DAVID GÓMEZ G.",
+      "subtitle": "Developer Advocate",
+      "speakerImage": 1,
+      "text": "Construyendo aplicaciones monolíticas que puedan escalar a micro servicios"
+    },
+    {
+      "title": "AUREA MUNOZ",
+      "subtitle": "Software Engineer",
+      "speakerImage": 1,
+      "text": "Despliega en Kubernetes usando Dekorate"
+    },
+    {
+      "title": "ANA-MARIA MIHALCEANU",
+      "subtitle": "Architect",
+      "speakerImage": 1,
+      "text": "Techniques for maintainable Quarkus Applications"
+    },
+    {
+      "title": "THOMAS VITALE",
+      "subtitle": "Senior Software Engineer",
+      "speakerImage": 1,
+      "text": "Event-driven and serverless with Spring Cloud and Spring Native"
+    },
+    {
+      "title": "ANTÓN RODRÍGUEZ",
+      "subtitle": "Principal Software engineer",
+      "speakerImage": 1,
+      "text": "Kafka y Pulsar: una comparación gentil"
+    },
+    {
+      "title": "ANTÓN RODRÍGUEZ",
+      "subtitle": "Principal Software engineer",
+      "speakerImage": 1,
+      "text": "Kafka y Pulsar: una comparación gentil"
+    },
+    {
+      "title": "MALA GUPTA",
+      "subtitle": "Developer Advocate @JetBrains, Published Author",
+      "speakerImage": 1,
+      "text": "IntelliJ IDEA and Keeping Pace with the New Java Language Features"
+    },
+    {
+      "title": "DAVID GÓMEZ G.",
+      "subtitle": "Developer Advocate",
+      "speakerImage": 1,
+      "text": "Construyendo aplicaciones monolíticas que puedan escalar a micro servicios"
+    },
+    {
+      "title": "AUREA MUNOZ",
+      "subtitle": "Software Engineer",
+      "speakerImage": 1,
+      "text": "Despliega en Kubernetes usando Dekorate"
+    },
+    {
+      "title": "ANA-MARIA MIHALCEANU",
+      "subtitle": "Architect",
+      "speakerImage": 1,
+      "text": "Techniques for maintainable Quarkus Applications"
+    },
+    {
+      "title": "THOMAS VITALE",
+      "subtitle": "Senior Software Engineer",
+      "speakerImage": 1,
+      "text": "Event-driven and serverless with Spring Cloud and Spring Native"
+    },
+    {
+      "title": "ANTÓN RODRÍGUEZ",
+      "subtitle": "Principal Software engineer",
+      "speakerImage": 1,
+      "text": "Kafka y Pulsar: una comparación gentil"
+    },
+    {
+      "title": "ANTÓN RODRÍGUEZ",
+      "subtitle": "Principal Software engineer",
+      "speakerImage": 1,
+      "text": "Kafka y Pulsar: una comparación gentil"
+    },
+    {
+      "title": "MALA GUPTA",
+      "subtitle": "Developer Advocate @JetBrains, Published Author",
+      "speakerImage": 1,
+      "text": "IntelliJ IDEA and Keeping Pace with the New Java Language Features"
+    },
+    {
+      "title": "DAVID GÓMEZ G.",
+      "subtitle": "Developer Advocate",
+      "speakerImage": 1,
+      "text": "Construyendo aplicaciones monolíticas que puedan escalar a micro servicios"
+    },
+    {
+      "title": "AUREA MUNOZ",
+      "subtitle": "Software Engineer",
+      "speakerImage": 1,
+      "text": "Despliega en Kubernetes usando Dekorate"
+    },
+    {
+      "title": "ANA-MARIA MIHALCEANU",
+      "subtitle": "Architect",
+      "speakerImage": 1,
+      "text": "Techniques for maintainable Quarkus Applications"
+    },
+    {
+      "title": "THOMAS VITALE",
+      "subtitle": "Senior Software Engineer",
+      "speakerImage": 1,
+      "text": "Event-driven and serverless with Spring Cloud and Spring Native"
+    },
+    {
+      "title": "ANTÓN RODRÍGUEZ",
+      "subtitle": "Principal Software engineer",
+      "speakerImage": 1,
+      "text": "Kafka y Pulsar: una comparación gentil"
+    }
+  ],
+  "talks": [
+    {
+      "title": "EVENT-DRIVEN AND SERVERLESS WITH SPRING CLOUD AND SPRING NATIVE",
+      "talkImage": 1,
+      "presenter": "Edson Yaga",
+      "level": "middle",
+      "link": "https://www.google.it/",
+      "tags": [
+        "Java",
+        "TestContainers",
+        "MicroShield testing",
+        "Kubernetes"
+      ]
+    },
+    {
+      "title": "EVENT-DRIVEN AND SERVERLESS WITH SPRING CLOUD AND SPRING NATIVE",
+      "talkImage": 1,
+      "presenter": "Edson Yaga",
+      "level": "middle",
+      "link": "https://www.google.it/",
+      "tags": [
+        "Java",
+        "TestContainers",
+        "MicroShield testing",
+        "Kubernetes"
+      ]
+    },
+    {
+      "title": "EVENT-DRIVEN AND SERVERLESS WITH SPRING CLOUD AND SPRING NATIVE",
+      "talkImage": 1,
+      "presenter": "Edson Yaga",
+      "level": "middle",
+      "link": "https://www.google.it/",
+      "tags": [
+        "Java",
+        "TestContainers",
+        "MicroShield testing",
+        "Kubernetes"
+      ]
+    },
+    {
+      "title": "EVENT-DRIVEN AND SERVERLESS WITH SPRING CLOUD AND SPRING NATIVE",
+      "talkImage": 1,
+      "presenter": "Edson Yaga",
+      "level": "middle",
+      "link": "https://www.google.it/",
+      "tags": [
+        "Java",
+        "TestContainers",
+        "MicroShield testing",
+        "Kubernetes"
+      ]
+    },
+    {
+      "title": "EVENT-DRIVEN AND SERVERLESS WITH SPRING CLOUD AND SPRING NATIVE",
+      "talkImage": 1,
+      "presenter": "Edson Yaga",
+      "level": "middle",
+      "link": "https://www.google.it/",
+      "tags": [
+        "Java",
+        "TestContainers",
+        "MicroShield testing",
+        "Kubernetes"
+      ]
+    },
+    {
+      "title": "EVENT-DRIVEN AND SERVERLESS WITH SPRING CLOUD AND SPRING NATIVE",
+      "talkImage": 1,
+      "presenter": "Edson Yaga",
+      "level": "middle",
+      "link": "https://www.google.it/",
+      "tags": [
+        "Java",
+        "TestContainers",
+        "MicroShield testing",
+        "Kubernetes"
+      ]
+    },
+    {
+      "title": "EVENT-DRIVEN AND SERVERLESS WITH SPRING CLOUD AND SPRING NATIVE",
+      "talkImage": 1,
+      "presenter": "Edson Yaga",
+      "level": "middle",
+      "link": "https://www.google.it/",
+      "tags": [
+        "Java",
+        "TestContainers",
+        "MicroShield testing",
+        "Kubernetes"
+      ]
+    },
+    {
+      "title": "EVENT-DRIVEN AND SERVERLESS WITH SPRING CLOUD AND SPRING NATIVE",
+      "talkImage": 1,
+      "presenter": "Edson Yaga",
+      "level": "middle",
+      "link": "https://www.google.it/",
+      "tags": [
+        "Java",
+        "TestContainers",
+        "MicroShield testing",
+        "Kubernetes"
+      ]
+    },
+    {
+      "title": "EVENT-DRIVEN AND SERVERLESS WITH SPRING CLOUD AND SPRING NATIVE",
+      "talkImage": 1,
+      "presenter": "Edson Yaga",
+      "level": "middle",
+      "link": "https://www.google.it/",
+      "tags": [
+        "Java",
+        "TestContainers",
+        "MicroShield testing",
+        "Kubernetes"
+      ]
+    }
+  ],
   "schedule": {
-    "day_one": [],
-    "day_two": [],
-    "day_three": []
+    "day_one": [
+      {
+        "title": "THE FUTURE IS KUBERNETES-NATIVE",
+        "author": "Grace Jansen",
+        "date": "08:40 - 09:00",
+        "meetingLink": "/meetingDetail/grace-jansen",
+        "authorProfile": "/speakerDetail",
+        "meetImageNumber": 1,
+        "titleAndDateColor": "Color.PINK",
+        "authorNameColor": "Color.BLUE"
+      },
+      {
+        "title": "THE FUTURE IS KUBERNETES-NATIVE",
+        "author": "Grace Jansen",
+        "date": "08:40 - 09:00",
+        "meetingLink": "/meetingDetail/grace-jansen",
+        "authorProfile": "/speakerDetail",
+        "meetImageNumber": 1,
+        "titleAndDateColor": "Color.BLUE",
+        "authorNameColor": "Color.PINK"
+      },
+      {
+        "title": "THE FUTURE IS KUBERNETES-NATIVE",
+        "author": "Grace Jansen",
+        "date": "08:40 - 09:00",
+        "meetingLink": "/meetingDetail/grace-jansen",
+        "authorProfile": "/speakerDetail",
+        "meetImageNumber": 1,
+        "titleAndDateColor": "Color.GREEN",
+        "authorNameColor": "Color.PINK"
+      }
+    ],
+    "day_two": [
+      {
+        "title": "THE FUTURE IS KUBERNETES-NATIVE",
+        "author": "Grace Jansen",
+        "date": "08:40 - 09:00",
+        "meetingLink": "/meetingDetail/grace-jansen",
+        "authorProfile": "/speakerDetail",
+        "meetImageNumber": 1,
+        "titleAndDateColor": "Color.PINK",
+        "authorNameColor": "Color.BLUE"
+      },
+      {
+        "title": "THE FUTURE IS KUBERNETES-NATIVE",
+        "author": "Grace Jansen",
+        "date": "08:40 - 09:00",
+        "meetingLink": "/meetingDetail/grace-jansen",
+        "authorProfile": "/speakerDetail",
+        "meetImageNumber": 1,
+        "titleAndDateColor": "Color.BLUE",
+        "authorNameColor": "Color.PINK"
+      },
+      {
+        "title": "THE FUTURE IS KUBERNETES-NATIVE",
+        "author": "Grace Jansen",
+        "date": "08:40 - 09:00",
+        "meetingLink": "/meetingDetail/grace-jansen",
+        "authorProfile": "/speakerDetail",
+        "meetImageNumber": 1,
+        "titleAndDateColor": "Color.GREEN",
+        "authorNameColor": "Color.PINK"
+      }
+    ],
+    "day_three": [
+      {
+        "title": "THE FUTURE IS KUBERNETES-NATIVE",
+        "author": "Grace Jansen",
+        "date": "08:40 - 09:00",
+        "meetingLink": "/meetingDetail/grace-jansen",
+        "authorProfile": "/speakerDetail",
+        "meetImageNumber": 1,
+        "titleAndDateColor": "Color.PINK",
+        "authorNameColor": "Color.BLUE"
+      },
+      {
+        "title": "THE FUTURE IS KUBERNETES-NATIVE",
+        "author": "Grace Jansen",
+        "date": "08:40 - 09:00",
+        "meetingLink": "/meetingDetail/grace-jansen",
+        "authorProfile": "/speakerDetail",
+        "meetImageNumber": 1,
+        "titleAndDateColor": "Color.BLUE",
+        "authorNameColor": "Color.PINK"
+      },
+      {
+        "title": "THE FUTURE IS KUBERNETES-NATIVE",
+        "author": "Grace Jansen",
+        "date": "08:40 - 09:00",
+        "meetingLink": "/meetingDetail/grace-jansen",
+        "authorProfile": "/speakerDetail",
+        "meetImageNumber": 1,
+        "titleAndDateColor": "Color.GREEN",
+        "authorNameColor": "Color.PINK"
+      }
+    ]
   }
 }
