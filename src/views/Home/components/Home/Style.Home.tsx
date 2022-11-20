@@ -21,7 +21,7 @@ export const StyleHomeContainer = styled.div`
 `;
 
 export const StyledTitleContainer = styled.div`
-  background-color: ${Color.GREEN};
+  background-color: ${Color.DARK_BLUE};
   width: fit-content;
   margin-bottom: 1rem;
 `;
@@ -33,7 +33,7 @@ export const StyledTitle = styled.h1`
 `;
 
 export const StyledSubtitle = styled.h2`
-  color: ${Color.PINK};
+  color: ${Color.DARK_BLUE};
   font-family: SpaceGrotesk-Light,sans-serif;
   font-size: 1.25rem;
 `;
@@ -79,7 +79,7 @@ export const StyledTopSlash = styled(motion.div)`
 
 export const StyledGreenSlash = styled(motion.p)`
   font-family: 'SpaceGrotesk-Bold', sans-serif;
-  color: ${Color.GREEN};
+  color: ${Color.DARK_BLUE};
   font-size: 2rem;
   overflow-y: hidden;
   height: 100%;

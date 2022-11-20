@@ -77,15 +77,15 @@ const JobOffers: FC = () => {
             <StyledMoreIcon src={MoreThanBlueIcon} />
           </>
         )}
-        <RightHashWithText color={Color.PINK} text='ADEVINTA' />
+        <RightHashWithText color={Color.DARK_BLUE} text='ADEVINTA' />
         {jobsAdevintaData.map((item, index) => (
           <JobsCard item={item} index={index} key={index} />
         ))}
-        <LeftHashWithText color={Color.PINK} text='MANGO' />
+        <LeftHashWithText color={Color.DARK_BLUE} text='MANGO' />
         {jobsMangoData.map((item, index) => (
           <JobsCard item={item} index={index} key={index} />
         ))}
-        <RightHashWithText color={Color.PINK} text='WORDLINE' />
+        <RightHashWithText color={Color.DARK_BLUE} text='WORDLINE' />
         {jobsWordlineData.map((item, index) => (
           <JobsCard item={item} index={index} key={index} />
         ))}

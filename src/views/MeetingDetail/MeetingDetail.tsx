@@ -116,9 +116,9 @@ const MeetingDetail: FC<IMeetingDetailProps> = ({ meeting }) => {
     previousColor = randomNum;
 
     const mappedColors: any = {
-      0: Color.PINK,
+      0: Color.DARK_BLUE,
       1: Color.YELLOW,
-      2: Color.GREEN,
+      2: Color.DARK_BLUE,
       3: Color.BLUE,
     };
 

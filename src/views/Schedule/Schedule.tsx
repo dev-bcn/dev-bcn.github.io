@@ -56,7 +56,7 @@ const Schedule: FC = () => {
                     <StyledTracksContainer>
                         <StyledTrack
                             width={width < BIG_BREAKPOINT ? '100%' : '30%'}
-                            background={Color.PINK}
+                            background={Color.DARK_BLUE}
                             color={Color.WHITE}
                         >
                             TRACK 1
@@ -70,7 +70,7 @@ const Schedule: FC = () => {
                         </StyledTrack>
                         <StyledTrack
                             width={width < BIG_BREAKPOINT ? '100%' : '30%'}
-                            background={Color.GREEN}
+                            background={Color.DARK_BLUE}
                             color={Color.BLACK_BLUE}
                         >
                             TRACK 3
@@ -81,7 +81,7 @@ const Schedule: FC = () => {
                             <StyledWelcomerText color={Color.YELLOW}>
                                 WELCOME ALL!
                             </StyledWelcomerText>
-                            <StyledWelcomerText color={Color.PINK}>
+                            <StyledWelcomerText color={Color.DARK_BLUE}>
                                 08:40 - 09:00
                             </StyledWelcomerText>
                         </StyledWelcomerTextContainer>
@@ -95,7 +95,7 @@ const Schedule: FC = () => {
                                 </StyledWelcomerTextLink>
                             </Link>
                             <Link to={speakerDetailUrl} className='link--text'>
-                                <StyledWelcomerTextLink color={Color.PINK}>
+                                <StyledWelcomerTextLink color={Color.DARK_BLUE}>
                                     Grace Jansen
                                 </StyledWelcomerTextLink>
                             </Link>
@@ -107,7 +107,7 @@ const Schedule: FC = () => {
 
                     <StyledTrack
                         width={'100%'}
-                        background={Color.GREEN}
+                        background={Color.DARK_BLUE}
                         color={Color.BLACK_BLUE}
                     >
                         BREAK
@@ -135,7 +135,7 @@ const Schedule: FC = () => {
 
                     <StyledTrack
                         width={'100%'}
-                        background={Color.PINK}
+                        background={Color.DARK_BLUE}
                         color={Color.WHITE}
                     >
                         LUNCH BREAK
@@ -149,7 +149,7 @@ const Schedule: FC = () => {
 
                     <StyledTrack
                         width={'100%'}
-                        background={Color.GREEN}
+                        background={Color.DARK_BLUE}
                         color={Color.BLACK_BLUE}
                     >
                         AFTERNOON BREAK
@@ -164,7 +164,7 @@ const Schedule: FC = () => {
                                 </StyledWelcomerTextLink>
                             </Link>
                             <Link to={speakerDetailUrl} className='link--text'>
-                                <StyledWelcomerTextLink color={Color.PINK}>
+                                <StyledWelcomerTextLink color={Color.DARK_BLUE}>
                                     Grace Jansen
                                 </StyledWelcomerTextLink>
                             </Link>
@@ -176,7 +176,7 @@ const Schedule: FC = () => {
 
                     <StyledTrack
                         width={'100%'}
-                        background={Color.GREEN}
+                        background={Color.DARK_BLUE}
                         color={Color.BLACK_BLUE}
                     >
                         BREAK
@@ -204,7 +204,7 @@ const Schedule: FC = () => {
 
                     <StyledTrack
                         width={'100%'}
-                        background={Color.PINK}
+                        background={Color.DARK_BLUE}
                         color={Color.WHITE}
                     >
                         LUNCH BREAK
@@ -218,7 +218,7 @@ const Schedule: FC = () => {
 
                     <StyledTrack
                         width={'100%'}
-                        background={Color.PINK}
+                        background={Color.DARK_BLUE}
                         color={Color.WHITE}
                     >
                         BREAK
@@ -232,7 +232,7 @@ const Schedule: FC = () => {
 
                     <StyledTrack
                         width={'100%'}
-                        background={Color.GREEN}
+                        background={Color.DARK_BLUE}
                         color={Color.BLACK_BLUE}
                     >
                         CLOSING CEREMONY

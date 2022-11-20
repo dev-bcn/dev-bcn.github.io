@@ -34,7 +34,7 @@ export const StyledNavigationContainer = styled(motion.div)`
 `;
 export const StyledNavigation = styled(motion.nav)`
   width: 100vw;
-  background: ${Color.PINK};
+  background: ${Color.DARK_BLUE};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -44,11 +44,11 @@ export const StyledNavigation = styled(motion.nav)`
 export const StyledClipPath = styled(motion.div)`
   clip-path: polygon(100% 0, 0 0, 0 100%);
   width: 40vw;
-  background: ${Color.PINK};
+  background: ${Color.LIGHT_BLUE};
 `;
 export const StyledLink = styled(NavLink)`
   padding: 0.5rem;
-  color: ${Color.YELLOW};
+  color: ${Color.LIGHT_BLUE};
   text-decoration: none;
   cursor: pointer;
   font-family: SpaceGrotesk-Bold, sans-serif;
@@ -81,7 +81,7 @@ export const StyledNavigationLogo = styled.img`
 `;
 
 export const StyledHeaderWrapper = styled.div`
-  background: ${Color.YELLOW};
+  background: ${Color.LIGHT_BLUE};
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -93,7 +93,7 @@ export const StyledHeaderWrapper = styled.div`
   z-index: 3;
 `;
 export const StyledHeader = styled.header`
-  background: ${Color.YELLOW};
+  background: ${Color.LIGHT_BLUE};
   height: 3rem;
   max-width: ${MAX_WIDTH}px;
   width: 100%;

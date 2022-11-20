@@ -23,7 +23,7 @@ export const StyledFaqSection = styled(motion.section)`
 `;
 
 export const StyledWaveContainer = styled.div`
-  background: ${Color.PINK};
+  background: ${Color.DARK_BLUE};
   overflow-y: hidden;
   height: 5rem;
   width: 100%;
@@ -53,7 +53,7 @@ const Faqs: FC = () => {
   const { width } = useWindowSize();
   return (
     <>
-      <SectionWrapper color={Color.PINK}>
+      <SectionWrapper color={Color.DARK_BLUE}>
         <StyledFaqSection>
           {faqsData.map((faq, index) => (
             <FaqCard faq={faq} index={index} key={index} />

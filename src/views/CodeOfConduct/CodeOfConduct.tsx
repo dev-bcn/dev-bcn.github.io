@@ -5,11 +5,6 @@ import { BIG_BREAKPOINT, MOBILE_BREAKPOINT } from '../../constants/BreakPoints';
 import {
   Color,
 } from '../../styles/colors';
-import {
-  StyledLessIcon,
-  StyledMoreIcon,
-  StyledSpeakersSection,
-} from '../Speakers/Speakers';
 import { CodeOfConductTags } from './CodeOfConductData';
 import { LeftHashWithText } from '../../components/LeftHashWithText/LeftHashWithText';
 import LessThanRedIcon from '../../assets/images/LessThanRedIcon.svg';
@@ -17,14 +12,15 @@ import LessThanTransparentIcon from '../../assets/images/LessThanTransparentIcon
 import MoreThanRedIcon from '../../assets/images/MoreThanRedIcon.svg';
 import MoreThanTransparentIcon from '../../assets/images/MoreThanTransparentIcon.svg';
 import { RightHashWithText } from '../../components/RightHashWithText/RightHashWithText';
-import { StyledMarginBottom } from '../Talks/Talks';
 import { StyledTagsWrapper } from '../Talks/components/TalkCard';
 import { Tag } from '../../components/Tag/Tag';
 import styled from 'styled-components';
 import { useWindowSize } from 'react-use';
+import {StyledLessIcon, StyledMoreIcon, StyledSpeakersSection} from "../Speakers/Speakers.style";
+import {StyledMarginBottom} from "../Talks/Talks.style";
 
 const StyledWaveContainer = styled.div`
-  background: ${Color.PINK};
+  background: ${Color.DARK_BLUE};
   overflow-y: hidden;
   height: 3rem;
   width: 100%;
@@ -76,7 +72,7 @@ export const CodeOfConduct: FC = () => {
             organised by TBD.
             Conference Talks will held on Friday
             23rd of July 2021.'
-            color={Color.PINK}
+            color={Color.DARK_BLUE}
           />
           {width > MOBILE_BREAKPOINT && (
             <>
@@ -87,7 +83,7 @@ export const CodeOfConduct: FC = () => {
         </StyledSpeakersSection>
       </SectionWrapper>
       <StyledSectionsSeparator />
-      <SectionWrapper color={Color.PINK} marginTop={0}>
+      <SectionWrapper color={Color.DARK_BLUE} marginTop={0}>
         <LeftHashWithText color={Color.YELLOW} text='TOPICS' />
         <StyledSpeakersSection>
           <StyledTagsWrapper>
@@ -112,7 +108,7 @@ export const CodeOfConduct: FC = () => {
       </StyledWaveContainer>
 
       <SectionWrapper color={Color.YELLOW} marginTop={0}>
-        <RightHashWithText color={Color.PINK} text='CODE OF CONDUCT' />
+        <RightHashWithText color={Color.DARK_BLUE} text='CODE OF CONDUCT' />
         {width > MOBILE_BREAKPOINT && (
           <>
             <StyleMoreIcon src={LessThanTransparentIcon} />

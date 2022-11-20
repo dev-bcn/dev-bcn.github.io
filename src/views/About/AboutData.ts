@@ -18,7 +18,7 @@ export const aboutData: Member[] = [
         name: 'Jonathan Vila',
         nameColor: Color.BLUE,
         job: 'Java developer',
-        jobColor: Color.PINK,
+        jobColor: Color.DARK_BLUE,
         profileUrl: new URL('https://avatars.githubusercontent.com/u/1836434?v=4'),
         twitterUrl: new URL('https://twitter.com/vilojona'),
         linkedinUrl: new URL('https://www.linkedin.com/in/jonathanvila'),
@@ -26,7 +26,7 @@ export const aboutData: Member[] = [
     {
         imageNumber: 1,
         name: 'Nacho Cougil',
-        nameColor: Color.GREEN,
+        nameColor: Color.DARK_BLUE,
         job: 'Java engineer',
         jobColor: Color.BLUE,
         profileUrl: new URL('https://pbs.twimg.com/profile_images/1376512940984123393/BvU6hkHj_400x400.jpg'),

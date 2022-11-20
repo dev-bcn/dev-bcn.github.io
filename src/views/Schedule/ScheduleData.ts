@@ -8,7 +8,7 @@ export const scheduleData1 = [
     meetingLink: '/meetingDetail/grace-jansen',
     authorProfile: '/speakerDetail',
     meetImageNumber: 1,
-    titleAndDateColor: Color.PINK,
+    titleAndDateColor: Color.DARK_BLUE,
     authorNameColor: Color.BLUE,
   },
   {
@@ -19,7 +19,7 @@ export const scheduleData1 = [
     authorProfile: '/speakerDetail',
     meetImageNumber: 1,
     titleAndDateColor: Color.BLUE,
-    authorNameColor: Color.PINK,
+    authorNameColor: Color.DARK_BLUE,
   },
   {
     title: 'THE FUTURE IS KUBERNETES-NATIVE',
@@ -28,8 +28,8 @@ export const scheduleData1 = [
     meetingLink: '/meetingDetail/grace-jansen',
     authorProfile: '/speakerDetail',
     meetImageNumber: 1,
-    titleAndDateColor: Color.GREEN,
-    authorNameColor: Color.PINK,
+    titleAndDateColor: Color.DARK_BLUE,
+    authorNameColor: Color.DARK_BLUE,
   },
 ];
 
@@ -41,7 +41,7 @@ export const scheduleData2 = [
     meetingLink: '/meetingDetail/grace-jansen',
     authorProfile: '/speakerDetail',
     meetImageNumber: 1,
-    titleAndDateColor: Color.PINK,
+    titleAndDateColor: Color.DARK_BLUE,
     authorNameColor: Color.BLUE,
   },
   {
@@ -52,7 +52,7 @@ export const scheduleData2 = [
     authorProfile: '/speakerDetail',
     meetImageNumber: 1,
     titleAndDateColor: Color.BLUE,
-    authorNameColor: Color.PINK,
+    authorNameColor: Color.DARK_BLUE,
   },
   {
     title: 'THE FUTURE IS KUBERNETES-NATIVE',
@@ -61,8 +61,8 @@ export const scheduleData2 = [
     meetingLink: '/meetingDetail/grace-jansen',
     authorProfile: '/speakerDetail',
     meetImageNumber: 1,
-    titleAndDateColor: Color.GREEN,
-    authorNameColor: Color.PINK,
+    titleAndDateColor: Color.DARK_BLUE,
+    authorNameColor: Color.DARK_BLUE,
   },
 ];
 
@@ -74,7 +74,7 @@ export const scheduleData3 = [
     meetingLink: '/meetingDetail/grace-jansen',
     authorProfile: '/speakerDetail',
     meetImageNumber: 1,
-    titleAndDateColor: Color.PINK,
+    titleAndDateColor: Color.DARK_BLUE,
     authorNameColor: Color.BLUE,
   },
   {
@@ -85,7 +85,7 @@ export const scheduleData3 = [
     authorProfile: '/speakerDetail',
     meetImageNumber: 1,
     titleAndDateColor: Color.BLUE,
-    authorNameColor: Color.PINK,
+    authorNameColor: Color.DARK_BLUE,
   },
   {
     title: 'THE FUTURE IS KUBERNETES-NATIVE',
@@ -94,7 +94,7 @@ export const scheduleData3 = [
     meetingLink: '/meetingDetail/grace-jansen',
     authorProfile: '/speakerDetail',
     meetImageNumber: 1,
-    titleAndDateColor: Color.GREEN,
-    authorNameColor: Color.PINK,
+    titleAndDateColor: Color.DARK_BLUE,
+    authorNameColor: Color.DARK_BLUE,
   },
 ];

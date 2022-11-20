@@ -14,7 +14,7 @@ const StyledBreadcrumbsWrapper = styled.div`
   left: 2rem;
   height: 1.5rem;
   background: rgba(255, 252, 249, 0.5);
-  color: ${Color.YELLOW};
+  color: ${Color.DARK_BLUE};
   border-bottom-left-radius: 0.15rem;
   border-bottom-right-radius: 0.15rem;
 
@@ -26,7 +26,7 @@ const StyledBreadcrumbsWrapper = styled.div`
 `;
 
 const StyledLink = styled(Link)`
-  color: ${Color.YELLOW};
+  color: ${Color.DARK_BLUE};
   text-decoration: none;
   margin-right: 0.25rem;
 `;

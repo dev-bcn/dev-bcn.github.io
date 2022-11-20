@@ -16,7 +16,7 @@ export const StyledFooterContainer = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 1rem;
-  background-color: ${Color.GREEN};
+  background-color: ${Color.DARK_BLUE};
   position: relative;
   overflow: hidden;
   color: ${Color.WHITE};

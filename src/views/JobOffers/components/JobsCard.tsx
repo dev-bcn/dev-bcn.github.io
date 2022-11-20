@@ -49,7 +49,7 @@ const StyledLocationText = styled.p`
 `;
 
 const StyledJobsButton = styled.div`
-  background: ${Color.PINK};
+  background: ${Color.DARK_BLUE};
   padding: 0.25rem 0.75rem;
 `;
 
