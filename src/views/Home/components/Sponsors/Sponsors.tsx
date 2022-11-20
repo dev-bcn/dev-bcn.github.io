@@ -1,236 +1,34 @@
-import {BIG_BREAKPOINT, LARGE_BREAKPOINT,} from '../../../../constants/BreakPoints';
+import {BIG_BREAKPOINT,} from '../../../../constants/BreakPoints';
 import {Color} from '../../../../styles/colors';
 import {FC, useEffect, useState} from 'react';
 
-import LessThanRedIcon from '../../../../assets/images/LessThanRedIcon.svg';
+import LessThanBlueIcon from '../../../../assets/images/MoreThanBlueWhiteIcon.svg';
 import LessThanBlueWhiteIcon from '../../../../assets/images/LessThanBlueWhiteIcon.svg';
-import whiteBg from "../../../../assets/images/white-blue-bg.png";
 import SectionWrapper from '../../../../components/SectionWrapper/SectionWrapper';
 import SponsorBadge from './SponsorBadge';
 import TitleSection from '../../../../components/SectionTitle/TitleSection';
 import redhatLogo from '../../../../assets/sponsorIcons/redhatLogo.svg';
-import styled from 'styled-components';
 import {useWindowSize} from 'react-use';
 import data from "../../../../data/2023.json";
-
-const SponsorMargin = 11;
-const sponsorMarginDesktop = 18;
-
-const StyledSponsorsContainer = styled.div`
-  position: relative;
-  padding-top: 4rem;
-  background-image: url(${whiteBg});
-`;
-
-const StyledTitleContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 4rem;
-`;
-
-const StyledTitleImg = styled.img`
-  height: 4rem;
-  @media (min-width: 800px) {
-    height: 10rem;
-  }
-`;
-
-const StyledSponsorItemContainer = styled.div`
-  position: relative;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  font-size: 1.75rem;
-  padding: 11.5rem 0 1rem;
-  z-index: 1;
-
-  @media (min-width: ${BIG_BREAKPOINT}px) {
-    margin-bottom: 3rem;
-  }
-`;
-
-const StyledSponsorTitleContainer = styled.div`
-  width: 100%;
-  display: flex;
-  position: absolute;
-  top: 1rem;
-  z-index: 2;
-  background: none;
-`;
-
-const StyledSponsorTitleMargin = styled.div`
-  width: 10%;
-
-  @media (min-width: ${BIG_BREAKPOINT}px) {
-    width: ${sponsorMarginDesktop}%;
-  }
-`;
-
-const StyledSponsorTitleSlashesContainer = styled.div<{ color: string }>`
-  display: flex;
-  flex-wrap: nowrap;
-  width: 90%;
-  font-family: 'SpaceGrotesk-Bold', sans-serif;
-  color: ${({color}) => color};
-  height: 2.75rem;
-  line-height: 2.75rem;
-  white-space: nowrap;
-
-  overflow: hidden;
-
-  z-index: 2;
-
-  transition: all 0.2s linear;
-
-  @media (min-width: ${BIG_BREAKPOINT}px) {
-    width: 41%;
-  }
-`;
-
-const StyledSlashes = styled.div`
-  white-space: nowrap;
-  overflow: hidden;
-  clip-path: polygon(0 0, 100% 0, 97% 100%, 0% 100%);
-`;
-
-const StyledSponsorLogosContainer = styled.div`
-  display: flex;
-  position: absolute;
-  width: 100%;
-  top: 4.75rem;
-  z-index: 2;
-  background: none;
-
-  @media (min-width: ${BIG_BREAKPOINT}px) {
-    top: 5rem;
-  }
-`;
-
-const StyledLogos = styled.div<{ position?: 'left' | 'right' }>`
-  display: flex;
-  width: 100%;
-
-  padding-left: ${({position}) =>
-          position === 'right' ? 0 : SponsorMargin}%;
-  padding-right: ${({position}) =>
-          position === 'right' ? SponsorMargin : 0}%;
-
-  flex-wrap: wrap;
-  justify-content: center;
-
-  @media (min-width: ${BIG_BREAKPOINT}px) {
-    justify-content: center;
-    padding-left: ${({position}) =>
-            position === 'right' ? 0 : sponsorMarginDesktop}%;
-    padding-right: ${({position}) =>
-            position === 'right' ? sponsorMarginDesktop : 0}%;
-    top: 5rem;
-    flex-wrap: wrap;
-    width: ${({position}) => (position === 'right' ? 59 : 55)}%;
-  }
-
-  @media (min-width: ${LARGE_BREAKPOINT}px) {
-    justify-content: ${({position}) =>
-            position === 'right' ? 'flex-end' : 'flex-start'};
-    padding-left: ${({position}) =>
-            position === 'right' ? 0 : sponsorMarginDesktop}%;
-    padding-right: ${({position}) =>
-            position === 'right' ? sponsorMarginDesktop : 0}%;
-    top: 5rem;
-  }
-`;
-
-const StyledFlexGrow = styled.div`
-  flex: 1;
-  display: none;
-
-  @media (min-width: ${BIG_BREAKPOINT}px) {
-    display: flex;
-  }
-`;
-
-const StyledSeparator = styled.div`
-  width: 7rem;
-
-  @media (min-width: ${BIG_BREAKPOINT}px) {
-    width: 4rem;
-  }
-`;
-
-const StyledSponsorIconBig = styled.img`
-  height: 5rem;
-
-  @media (min-width: ${BIG_BREAKPOINT}px) {
-    height: 7rem;
-  }
-`;
-
-const StyledSponsorIconNormal = styled.img`
-  height: 2.75rem;
-  margin-left: 0.5rem;
-
-  @media (min-width: ${BIG_BREAKPOINT}px) {
-    height: 3.5rem;
-    margin-left: 2rem;
-  }
-
-  @media (min-width: ${LARGE_BREAKPOINT}px) {
-    height: 5rem;
-    margin-left: 2.5rem;
-  }
-`;
-
-const StyledSponsorIconSmall = styled.img`
-  height: 2.35rem;
-  margin-right: 0.5rem;
-  margin-bottom: 1rem;
-
-  @media (min-width: ${BIG_BREAKPOINT}px) {
-    height: 3rem;
-    margin-right: 2rem;
-    margin-bottom: 0.75rem;
-  }
-
-  @media (min-width: ${LARGE_BREAKPOINT}px) {
-    height: 3.25rem;
-    margin-right: 2rem;
-    margin-bottom: 0;
-  }
-`;
-
-const StyledSponsorIconNano = styled.img`
-  height: 1.5rem;
-  margin-bottom: 1rem;
-
-  margin-left: 0.75rem;
-
-  @media (min-width: ${BIG_BREAKPOINT}px) {
-    height: 1.75rem;
-    margin-left: 1rem;
-  }
-
-  @media (min-width: ${LARGE_BREAKPOINT}px) {
-    height: 2rem;
-    margin-left: 2.5rem;
-  }
-`;
-
-const StyledSponsorIconMicro = styled.img`
-  height: 1.5rem;
-  margin-bottom: 1rem;
-
-  margin-left: 0.75rem;
-
-  @media (min-width: ${BIG_BREAKPOINT}px) {
-    height: 1.25rem;
-    margin-left: 1rem;
-  }
-
-  @media (min-width: ${LARGE_BREAKPOINT}px) {
-    height: 1.75rem;
-    margin-left: 2.5rem;
-  }
-`;
+import {
+    StyledFlexGrow,
+    StyledLogos,
+    StyledSeparator,
+    StyledSlashes,
+    StyledSponsorIconBig,
+    StyledSponsorIconMicro,
+    StyledSponsorIconNano,
+    StyledSponsorIconNormal,
+    StyledSponsorIconSmall,
+    StyledSponsorItemContainer,
+    StyledSponsorLogosContainer,
+    StyledSponsorsContainer,
+    StyledSponsorTitleContainer,
+    StyledSponsorTitleMargin,
+    StyledSponsorTitleSlashesContainer,
+    StyledTitleContainer,
+    StyledTitleImg
+} from "./Sponsors.style";
 
 type TSponsorName = 'top' | 'premium' | 'regular' | 'startup' | 'virtual';
 
@@ -289,10 +87,10 @@ const Sponsors: FC = () => {
     }
 
     return (
-        <SectionWrapper color={Color.WHITE}>
+        <SectionWrapper color={Color.PINK}>
             <StyledSponsorsContainer>
                 <StyledTitleContainer className='TitleContainer'>
-                    <StyledTitleImg src={LessThanRedIcon}/>
+                    <StyledTitleImg src={LessThanBlueIcon}/>
                     <TitleSection
                         title='SPONSORS'
                         subtitle='Are you a technology company? Interested in meeting

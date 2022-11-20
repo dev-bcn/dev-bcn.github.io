@@ -10,7 +10,7 @@ const TimeCountDownContainer = styled.div`
 
 const StyledTimerContainer = styled.div`
   border-radius: 3rem;
-  border: 1.5px solid ${Color.YELLOW};
+  border: 1.5px solid ${Color.DARK_BLUE};
   height: 4.5rem;
   width: 4.5rem;
   display: flex;
@@ -18,12 +18,13 @@ const StyledTimerContainer = styled.div`
   justify-content: center;
   flex-direction: column;
   font-family: SpaceGrotesk-Light,sans-serif;
+  box-shadow: 1px 1px 1px ${Color.LIGHT_BLUE};
   color: ${Color.WHITE};
 `;
 
 const StyleLine = styled.div`
   width: 0.75rem;
-  background: ${Color.YELLOW};
+  background: ${Color.DARK_BLUE};
   height: 1.5px;
 `;
 

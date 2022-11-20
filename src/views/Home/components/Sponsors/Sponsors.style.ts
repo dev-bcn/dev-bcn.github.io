@@ -1,162 +1,13 @@
 import styled from "styled-components";
 import {BIG_BREAKPOINT, LARGE_BREAKPOINT} from "../../../../constants/BreakPoints";
-import {motion} from "framer-motion";
+import whiteBg from "../../../../assets/images/white-blue-bg.png";
 
-export const SponsorsStyle = styled.div`
-  width: 7rem;
-
-  @media (min-width: ${BIG_BREAKPOINT}px) {
-    width: 4rem;
-  }
-`;
-export const StyledSponsorIconBig = styled.img`
-  height: 5rem;
-
-  @media (min-width: ${BIG_BREAKPOINT}px) {
-    height: 7rem;
-  }
-`;
-export const StyledSponsorIconNormal = styled.img`
-  height: 2.75rem;
-  margin-left: 0.5rem;
-
-  @media (min-width: ${BIG_BREAKPOINT}px) {
-    height: 3.5rem;
-    margin-left: 2rem;
-  }
-
-  @media (min-width: ${LARGE_BREAKPOINT}px) {
-    height: 5rem;
-    margin-left: 2.5rem;
-  }
-`;
-export const StyledSponsorIconSmall = styled.img`
-  height: 2.35rem;
-  margin-right: 0.5rem;
-  margin-bottom: 1rem;
-
-  @media (min-width: ${BIG_BREAKPOINT}px) {
-    height: 3rem;
-    margin-right: 2rem;
-    margin-bottom: 0.75rem;
-  }
-
-  @media (min-width: ${LARGE_BREAKPOINT}px) {
-    height: 3.25rem;
-    margin-right: 2rem;
-    margin-bottom: 0;
-  }
-`;
-export const StyledSponsorIconNano = styled.img`
-  height: 1.5rem;
-  margin-bottom: 1rem;
-
-  margin-left: 0.75rem;
-
-  @media (min-width: ${BIG_BREAKPOINT}px) {
-    height: 1.75rem;
-    margin-left: 1rem;
-  }
-
-  @media (min-width: ${LARGE_BREAKPOINT}px) {
-    height: 2rem;
-    margin-left: 2.5rem;
-  }
-`;
-export const StyledSponsorIconMicro = styled.img`
-  height: 1.5rem;
-  margin-bottom: 1rem;
-
-  margin-left: 0.75rem;
-
-  @media (min-width: ${BIG_BREAKPOINT}px) {
-    height: 1.25rem;
-    margin-left: 1rem;
-  }
-
-  @media (min-width: ${LARGE_BREAKPOINT}px) {
-    height: 1.75rem;
-    margin-left: 2.5rem;
-  }
-`;
-export const StyledSponsorBadgeLeft = styled(motion.div)<{
-    color: string;
-    position: 'left' | 'right';
-}>`
-  display: none;
-  position: absolute;
-  width: ${({position}) => (position === 'left' ? '60%' : '62%')};
-  clip-path: ${({position}) => {
-    if (position === 'left') {
-      return 'polygon(0 0, 100% 0, 92% 100%, 0% 100%)';
-    } else {
-      return 'polygon(6% 0, 100% 0, 100% 100%, 0 100%)';
-    }
-  }};
-  top: 0;
-  bottom: 0;
-  background-color: ${({color}) => color};
-
-  left: ${({position}) => {
-    if (position === 'left') {
-      return '0';
-    } else {
-      return 'unset';
-    }
-  }};
-
-  right: ${({position}) => {
-    if (position === 'right') {
-      return '0';
-    } else {
-      return 'unset';
-    }
-  }};
-  z-index: 1;
-
-  @media (min-width: ${BIG_BREAKPOINT}px) {
-    display: flex;
-  }
-`;
-export const leftVariants = {
-    initial: {
-        x: -700,
-    },
-    animate: {
-        x: 0,
-        transition: {
-            duration: 0.2,
-        },
-    },
-    exit: {
-        x: -700,
-        transition: {
-            duration: 0.2,
-        },
-    },
-};
-export const rightVariants = {
-    initial: {
-        x: 1000,
-    },
-    animate: {
-        x: 0,
-        transition: {
-            duration: 0.2,
-        },
-    },
-    exit: {
-        x: 1000,
-        transition: {
-            duration: 0.2,
-        },
-    },
-};
 const SponsorMargin = 11;
 const sponsorMarginDesktop = 18;
 export const StyledSponsorsContainer = styled.div`
   position: relative;
   padding-top: 4rem;
+  background-image: url(${whiteBg});
 `;
 export const StyledTitleContainer = styled.div`
   display: flex;
@@ -175,8 +26,7 @@ export const StyledSponsorItemContainer = styled.div`
   display: flex;
   flex-direction: column;
   font-size: 1.75rem;
-  padding: 1rem 0;
-  padding-top: 11.5rem;
+  padding: 11.5rem 0 1rem;
   z-index: 1;
 
   @media (min-width: ${BIG_BREAKPOINT}px) {
@@ -274,5 +124,82 @@ export const StyledFlexGrow = styled.div`
 
   @media (min-width: ${BIG_BREAKPOINT}px) {
     display: flex;
+  }
+`;
+export const StyledSeparator = styled.div`
+  width: 7rem;
+
+  @media (min-width: ${BIG_BREAKPOINT}px) {
+    width: 4rem;
+  }
+`;
+export const StyledSponsorIconBig = styled.img`
+  height: 5rem;
+
+  @media (min-width: ${BIG_BREAKPOINT}px) {
+    height: 7rem;
+  }
+`;
+export const StyledSponsorIconNormal = styled.img`
+  height: 2.75rem;
+  margin-left: 0.5rem;
+
+  @media (min-width: ${BIG_BREAKPOINT}px) {
+    height: 3.5rem;
+    margin-left: 2rem;
+  }
+
+  @media (min-width: ${LARGE_BREAKPOINT}px) {
+    height: 5rem;
+    margin-left: 2.5rem;
+  }
+`;
+export const StyledSponsorIconSmall = styled.img`
+  height: 2.35rem;
+  margin-right: 0.5rem;
+  margin-bottom: 1rem;
+
+  @media (min-width: ${BIG_BREAKPOINT}px) {
+    height: 3rem;
+    margin-right: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  @media (min-width: ${LARGE_BREAKPOINT}px) {
+    height: 3.25rem;
+    margin-right: 2rem;
+    margin-bottom: 0;
+  }
+`;
+export const StyledSponsorIconNano = styled.img`
+  height: 1.5rem;
+  margin-bottom: 1rem;
+
+  margin-left: 0.75rem;
+
+  @media (min-width: ${BIG_BREAKPOINT}px) {
+    height: 1.75rem;
+    margin-left: 1rem;
+  }
+
+  @media (min-width: ${LARGE_BREAKPOINT}px) {
+    height: 2rem;
+    margin-left: 2.5rem;
+  }
+`;
+export const StyledSponsorIconMicro = styled.img`
+  height: 1.5rem;
+  margin-bottom: 1rem;
+
+  margin-left: 0.75rem;
+
+  @media (min-width: ${BIG_BREAKPOINT}px) {
+    height: 1.25rem;
+    margin-left: 1rem;
+  }
+
+  @media (min-width: ${LARGE_BREAKPOINT}px) {
+    height: 1.75rem;
+    margin-left: 2.5rem;
   }
 `;

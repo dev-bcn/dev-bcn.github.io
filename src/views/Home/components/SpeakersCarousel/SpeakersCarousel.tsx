@@ -8,7 +8,7 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 
 import {FC} from 'react';
 import {Link} from 'react-router-dom';
-import LessThanBlueWhiteIcon from '.././../../../assets/images/LessThanBlueWhiteIcon.svg';
+import LessThanBlueWhiteIcon from '.././../../../assets/images/MoreThanBlueIcon.svg';
 import SectionWrapper from '../../../../components/SectionWrapper/SectionWrapper';
 import {TABLET_BREAKPOINT} from '../../../../constants/BreakPoints';
 import TitleSection from '../../../../components/SectionTitle/TitleSection';
@@ -18,7 +18,7 @@ import data from "../../../../data/2023.json";
 import {ROUTE_SPEAKERS} from "../../../../constants/routes";
 
 const StyledSpeakersContainer = styled.section`
-  background-color: ${Color.DARK_BLUE};
+  background-color: ${Color.LIGHT_BLUE};
   position: relative;
   display: flex;
   flex-direction: column;
@@ -58,7 +58,7 @@ const StyledLink = styled.div`
 `;
 
 const StyledSubtitle = styled.h2`
-  color: ${Color.LIGHT_BLUE};
+  color: ${Color.DARK_BLUE};
   padding-right: 0.75rem;
 `;
 
@@ -84,7 +84,7 @@ const StyledYellowSlash = styled(motion.p)`
 
 const SpeakersCarousel: FC = () => {
     return (
-        <SectionWrapper color={Color.LIGHT_BLUE}>
+        <SectionWrapper color={Color.PINK}>
             <StyledSpeakersContainer>
                 <StyledTitleWrapper>
                     <TitleSection
