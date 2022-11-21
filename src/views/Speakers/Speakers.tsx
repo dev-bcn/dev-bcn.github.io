@@ -104,7 +104,7 @@ const Speakers: FC = () => {
         >
           <path
             d='M-8.17,75.50 C207.95,-129.75 329.85,202.80 500.27,5.45 L501.41,-5.41 L0.00,0.00 Z'
-            style={{ stroke: 'none', fill: '#06d6a0' }}
+            style={{ stroke: 'none', fill: '#002454' }}
           ></path>
         </svg>
       </StyledWaveContainer>

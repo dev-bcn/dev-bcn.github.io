@@ -13,7 +13,7 @@ const colorTagByText = (text: string) => {
       color = Color.DARK_BLUE;
       break;
     case 'TestContainers':
-      color = Color.BLUE;
+      color = Color.BLACK_BLUE;
       break;
     case 'MicroShield testing':
       color = Color.DARK_BLUE;

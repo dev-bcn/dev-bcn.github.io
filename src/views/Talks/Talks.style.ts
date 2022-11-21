@@ -22,7 +22,7 @@ export const StyledSpeakersSection = styled.section`
   padding: 0 2rem 1rem;
 `;
 export const StyledWaveContainer = styled.div`
-  background: ${Color.LIGHT_BLUE};
+  background: ${Color.DARK_BLUE};
   overflow-y: hidden;
   height: 8rem;
   width: 100%;
