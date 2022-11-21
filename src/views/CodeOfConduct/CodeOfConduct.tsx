@@ -7,9 +7,9 @@ import {
 } from '../../styles/colors';
 import { CodeOfConductTags } from './CodeOfConductData';
 import { LeftHashWithText } from '../../components/LeftHashWithText/LeftHashWithText';
-import LessThanRedIcon from '../../assets/images/LessThanRedIcon.svg';
+import LessThanBlue from '../../assets/images/MoreThanBlueWhiteIcon.svg';
 import LessThanTransparentIcon from '../../assets/images/LessThanTransparentIcon.svg';
-import MoreThanRedIcon from '../../assets/images/MoreThanRedIcon.svg';
+import MoreThanBlue from '../../assets/images/LessThanBlueWhiteIcon.svg';
 import MoreThanTransparentIcon from '../../assets/images/MoreThanTransparentIcon.svg';
 import { RightHashWithText } from '../../components/RightHashWithText/RightHashWithText';
 import { StyledTagsWrapper } from '../Talks/components/TalkCard';
@@ -76,15 +76,15 @@ export const CodeOfConduct: FC = () => {
           />
           {width > MOBILE_BREAKPOINT && (
             <>
-              <StyledLessIcon src={LessThanRedIcon} />
-              <StyledMoreIcon src={MoreThanRedIcon} />
+              <StyledLessIcon src={LessThanBlue} />
+              <StyledMoreIcon src={MoreThanBlue} />
             </>
           )}
         </StyledSpeakersSection>
       </SectionWrapper>
       <StyledSectionsSeparator />
       <SectionWrapper color={Color.DARK_BLUE} marginTop={0}>
-        <LeftHashWithText color={Color.YELLOW} text='TOPICS' />
+        <LeftHashWithText color={Color.WHITE} text='TOPICS' />
         <StyledSpeakersSection>
           <StyledTagsWrapper>
             {CodeOfConductTags.map((tag) => (
@@ -102,12 +102,12 @@ export const CodeOfConduct: FC = () => {
         >
           <path
             d='M-1.97,61.69 C252.54,152.47 282.44,-23.17 523.42,103.13 L500.00,150.00 L0.00,150.00 Z'
-            style={{ stroke: 'none', fill: '#ffd166' }}
+            style={{ stroke: 'none', fill: '#FFFFFF' }}
           ></path>
         </svg>
       </StyledWaveContainer>
 
-      <SectionWrapper color={Color.YELLOW} marginTop={0}>
+      <SectionWrapper color={Color.WHITE} marginTop={0}>
         <RightHashWithText color={Color.DARK_BLUE} text='CODE OF CONDUCT' />
         {width > MOBILE_BREAKPOINT && (
           <>
