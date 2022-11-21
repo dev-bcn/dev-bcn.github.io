@@ -87,7 +87,7 @@ const Sponsors: FC = () => {
     }
 
     return (
-        <SectionWrapper color={Color.PINK}>
+        <SectionWrapper color={Color.WHITE}>
             <StyledSponsorsContainer>
                 <StyledTitleContainer className='TitleContainer'>
                     <StyledTitleImg src={LessThanBlueIcon}/>

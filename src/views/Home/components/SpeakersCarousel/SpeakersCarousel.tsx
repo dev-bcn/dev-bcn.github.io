@@ -84,7 +84,7 @@ const StyledBlueSlash = styled(motion.p)`
 
 const SpeakersCarousel: FC = () => {
     return (
-        <SectionWrapper color={Color.PINK}>
+        <SectionWrapper color={Color.WHITE}>
             <StyledSpeakersContainer>
                 <StyledTitleWrapper>
                     <TitleSection

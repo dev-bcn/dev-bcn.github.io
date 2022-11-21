@@ -33,9 +33,10 @@ export const StyledTitle = styled.h1`
 `;
 
 export const StyledSubtitle = styled.h2`
-  color: ${Color.DARK_BLUE};
+  color: ${Color.WHITE};
   font-family: SpaceGrotesk-Light,sans-serif;
   font-size: 1.25rem;
+  text-shadow: 1px 1px 1px black;
 `;
 
 export const StyledLessThan = styled(motion.img)`
