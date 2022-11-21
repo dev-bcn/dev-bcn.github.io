@@ -74,9 +74,9 @@ export const StyledBottomSlash = styled(motion.div)`
   height: 2rem;
 `;
 
-const StyledYellowSlash = styled(motion.p)`
+const StyledBlueSlash = styled(motion.p)`
   font-family: 'SpaceGrotesk-Bold', sans-serif;
-  color: ${Color.YELLOW};
+  color: ${Color.DARK_BLUE};
   font-size: 2rem;
   overflow-y: hidden;
   height: 100%;
@@ -567,10 +567,10 @@ const SpeakersCarousel: FC = () => {
                     animate={{x: 0}}
                     transition={{duration: 6}}
                 >
-                    <StyledYellowSlash>
+                    <StyledBlueSlash>
                         / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
                         / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /{' '}
-                    </StyledYellowSlash>
+                    </StyledBlueSlash>
                 </StyledBottomSlash>
             </StyledSpeakersContainer>
         </SectionWrapper>

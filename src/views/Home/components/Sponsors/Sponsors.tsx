@@ -262,13 +262,13 @@ const Sponsors: FC = () => {
                     }}
                 >
                     <SponsorBadge
-                        color={Color.YELLOW}
+                        color={Color.DARK_BLUE}
                         position='right'
                         isVisible={isHovered.startup}
                     />
                     <StyledSponsorTitleContainer className='SponsorTitle'>
                         <StyledSponsorTitleSlashesContainer
-                            color={Color.YELLOW}
+                            color={Color.DARK_BLUE}
                             id='Slashes'
                         >
                             <StyledSlashes>{slashes}</StyledSlashes>
@@ -281,7 +281,7 @@ const Sponsors: FC = () => {
                                 color={
                                     isHovered.startup && width >= BIG_BREAKPOINT
                                         ? Color.WHITE
-                                        : Color.YELLOW
+                                        : Color.DARK_BLUE
                                 }
                             >
                                 <StyledSlashes>{slashes}</StyledSlashes>
