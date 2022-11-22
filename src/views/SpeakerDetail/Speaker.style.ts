@@ -1,96 +1,28 @@
 import styled from "styled-components";
-import {BIG_BREAKPOINT, LARGE_BREAKPOINT} from "../../constants/BreakPoints";
-import {motion} from "framer-motion";
 import {Color} from "../../styles/colors";
+import {BIG_BREAKPOINT, LARGE_BREAKPOINT, TABLET_BREAKPOINT} from "../../constants/BreakPoints";
+import {motion} from "framer-motion";
 
 export const StyledContainer = styled.div`
-  padding-top: 2rem;
+  background-color: ${Color.BLUE};
 `;
-
-export const StyledMeetingTitleContainer = styled.div`
-  display: flex;
-  width: 100px;
-  margin-bottom: 3rem;
-
-  @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    justify-content: space-between;
-  }
-`;
-
-export const StyledTitleImg = styled(motion.img)`
-  display: none;
-
-  @media (min-width: ${BIG_BREAKPOINT}px) {
-    width: 10%;
-    display: flex;
-    align-items: end;
-  }
-`;
-
-export const StyledTitle = styled(motion.h1)`
-  font-weight: 600;
-  font-size: 2rem;
-  color: ${Color.DARK_BLUE};
-  text-align: center;
-  margin-bottom: 1.5rem;
-
-  @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    text-align: left;
-  }
-`;
-
-export const StyledDescription = styled.p`
-  color: ${Color.DARK_BLUE};
-  text-align: center;
+export const StyledWaveContainer = styled.div`
+  background: ${Color.WHITE};
+  overflow-y: hidden;
+  height: 8rem;
   width: 100%;
-
-  @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    text-align: right;
-    padding-left: 30%;
+  @media (min-width: ${TABLET_BREAKPOINT}px) {
+    height: 10rem;
   }
 `;
-
-export const StyledFlexCol = styled(motion.div)`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 2rem;
-
-  @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    align-items: start;
-    padding: 0 4rem;
-  }
-`;
-
-export const StyledVideoContainer = styled(motion.div)`
-  display: flex;
-  flex-direction: column;
-  padding: 0 1rem;
-  margin-bottom: 2rem;
-
-  @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    align-items: start;
-    padding: 0 calc(10% + 4rem);
-  }
-`;
-
-export const StyledVideoTagsContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-`;
-
-export const StyledSpeakerDetailContainer = styled.div`
+export const StyledSpeakerDetailContainer = styled(motion.div)`
   display: flex;
   position: relative;
   justify-content: center;
-  background: ${Color.DARK_BLUE};
+  background: ${Color.BLUE};
   color: ${Color.WHITE};
   width: 100%;
-  padding: 1.5rem;
-  padding-bottom: 3rem;
+  padding: 1.5rem 1.5rem 3rem;
 
   margin-bottom: 2rem;
 
@@ -100,16 +32,6 @@ export const StyledSpeakerDetailContainer = styled.div`
     padding: 0;
   }
 `;
-
-export const StyledLessThan = styled.img`
-  display: none;
-
-  @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    display: flex;
-    width: 10%;
-  }
-`;
-
 export const StyledDetailsContainer = styled.div`
   display: flex;
   width: 100%;
@@ -120,8 +42,7 @@ export const StyledDetailsContainer = styled.div`
     padding: 3rem 0 3rem 3rem;
   }
 `;
-
-export const StyledImageContainer = styled.div`
+export const StyledImageContainer = styled(motion.div)`
   flex-direction: column;
   width: 25%;
   padding: 0 1rem;
@@ -131,14 +52,49 @@ export const StyledImageContainer = styled.div`
     display: flex;
   }
 `;
-
 export const StyledRightContainer = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
 `;
+export const StyledInfoContainer = styled(motion.div)`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+`;
+export const StyledFlexCol = styled(motion.div)`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-export const StyledNameContainer = styled.div`
+  @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
+    align-items: flex-start;
+  }
+`;
+export const StyledMoreThanIconContainer = styled.div`
+  display: none;
+
+  @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 2.5rem;
+    width: 18%;
+  }
+
+  @media only screen and (min-width: ${LARGE_BREAKPOINT}px) {
+    padding-bottom: 1.5rem;
+  }
+`;
+export const StyledMoreThanIcon = styled.img`
+  display: none;
+
+  @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
+    display: flex;
+    width: 100%;
+  }
+`;
+export const StyledNameContainer = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -148,7 +104,6 @@ export const StyledNameContainer = styled.div`
     margin-bottom: 1rem;
   }
 `;
-
 export const StyledName = styled.h3`
   text-transform: uppercase;
   font-weight: 600;
@@ -161,7 +116,6 @@ export const StyledName = styled.h3`
     text-align: left;
   }
 `;
-
 export const StyledSpeakerImgBorder = styled.div`
   width: 100%;
   height: 300px;
@@ -171,25 +125,23 @@ export const StyledSpeakerImgBorder = styled.div`
 
   @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
     padding: 0.2rem;
-    height: 200px;
+    height: 250px;
   }
 
   @media only screen and (min-width: ${LARGE_BREAKPOINT}px) {
     padding: 0.2rem;
-    height: 275px;
+    height: 325px;
   }
 `;
-
 export const StyledSpeakerImg = styled.div<{ photo: string }>`
   width: 100%;
   height: 100%;
-  background-image: url(${({ photo }) => photo});
+  background-image: url(${({photo}) => photo});
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 `;
-
-export const StyledSlashes = styled.img`
+export const StyledSlashes = styled(motion.img)`
   width: 80%;
   margin-bottom: 0.75rem;
 
@@ -198,7 +150,6 @@ export const StyledSlashes = styled.img`
     width: 75%;
   }
 `;
-
 export const StyledSpeakerTitle = styled.h4`
   font-size: 1.15rem;
   margin-bottom: 1rem;
@@ -207,22 +158,20 @@ export const StyledSpeakerTitle = styled.h4`
     text-align: left;
   }
 `;
-
 export const StyledSocialMediaContainer = styled.div`
   display: flex;
   width: 100%;
   justify-content: center;
   margin-bottom: 0.75rem;
 `;
-
 export const StyledSpeakerDescription = styled.p`
   text-align: justify;
+  margin-bottom: 1.5rem;
 
   @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
     padding-right: 4rem;
   }
 `;
-
 export const StyledLink = styled.a`
   text-decoration: none;
   color: ${Color.WHITE};
@@ -230,24 +179,54 @@ export const StyledLink = styled.a`
   display: flex;
   align-items: center;
 `;
-
 export const StyledSocialMediaIcon = styled.img<{ noMargin?: boolean }>`
   height: 1.5rem;
-  margin-right: ${({ noMargin }) => (noMargin ? '0' : '0.75rem')};
+  margin-right: ${({noMargin}) => (noMargin ? '0' : '0.75rem')};
 
   @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    margin-right: ${({ noMargin }) => (noMargin ? '0' : '0.5rem')};
+    margin-right: ${({noMargin}) => (noMargin ? '0' : '0.5rem')};
   }
 `;
-
-export const StyledAbsoluteSlashes = styled.div`
-  position: absolute;
-  display: flex;
-  align-items: center;
-  color: ${Color.DARK_BLUE};
-  font-size: 2rem;
-  height: 2rem;
-  font-weight: 900;
-  bottom: -0.65rem;
-  left: 0;
-`;
+export const rightVariants = {
+    initial: {
+        x: '100%',
+        opacity: 0,
+    },
+    animate: {
+        x: 0,
+        opacity: 1,
+        transition: {
+            duration: 0.7,
+        },
+    },
+};
+export const leftVariants = {
+    initial: {
+        x: -100,
+        opacity: 0,
+    },
+    animate: {
+        x: 0,
+        opacity: 1,
+        transition: {duration: 0.3},
+    },
+};
+export const downVariants = {
+    initial: {
+        y: 70,
+        opacity: 0,
+    },
+    animate: {
+        y: 0,
+        opacity: 1,
+        transition: {duration: 0.3},
+    },
+};
+export const noVariants = {
+    initial: {
+        x: 0,
+    },
+    animate: {
+        x: 0,
+    },
+};

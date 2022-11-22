@@ -1,67 +1,35 @@
-import {BIG_BREAKPOINT, TABLET_BREAKPOINT} from '../../constants/BreakPoints';
-
 import {FC} from 'react';
-import LessThanBlueIcon from '../../assets/images/LessThanBlueIcon.svg';
+import LessThanDarkBlueIcon from '../../assets/images/LessThanDarkBlueIcon.svg';
 import MoreThanBlueIcon from '../../assets/images/MoreThanBlueIcon.svg';
 import SectionWrapper from '../../components/SectionWrapper/SectionWrapper';
 import {StyledWrapperSection} from '../JobOffers/JobOffers';
 import {TalkCard} from './components/TalkCard';
 import TitleSection from '../../components/SectionTitle/TitleSection';
-import styled from 'styled-components';
 import {Color} from "../../styles/colors";
 import data from "../../data/2023.json";
-
-const StyledTitleContainer = styled.div`
-  display: flex;
-  width: 100%;
-`;
-
-const StyledTitleIcon = styled.img`
-  width: 8%;
-  display: none;
-
-  @media (min-width: ${BIG_BREAKPOINT}px) {
-    display: flex;
-  }
-`;
-
-const StyledSpeakersSection = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0 2rem 1rem;
-`;
-
-const StyledWaveContainer = styled.div`
-  background: ${Color.GREEN};
-  overflow-y: hidden;
-  height: 8rem;
-  width: 100%;
-  @media (min-width: ${TABLET_BREAKPOINT}px) {
-    height: 10rem;
-  }
-`;
-
-export const StyledMarginBottom = styled.div`
-  margin-bottom: 20rem;
-`;
+import {
+    StyledMarginBottom,
+    StyledSpeakersSection,
+    StyledTitleContainer,
+    StyledTitleIcon,
+    StyledWaveContainer
+} from "./Talks.style";
 
 export const Talks: FC = () => {
     const currentYearTalks = data.talks;
   return (
     <>
-      <SectionWrapper color={Color.GREEN} marginTop={5}>
+      <SectionWrapper color={Color.DARK_BLUE} marginTop={5}>
         <StyledSpeakersSection>
           <StyledTitleContainer>
-            <StyledTitleIcon src={LessThanBlueIcon} />
+            <StyledTitleIcon src={LessThanDarkBlueIcon} />
             <TitleSection
               title='TALKS'
               subtitle='Speakers coming from all corners of the world join us to
               share their experience in various technologies and to
               invite everyone to participate in Open Source
               Technologies and in the JCP.'
-              color={Color.BLACK_BLUE}
+              color={Color.WHITE}
             />
             <StyledTitleIcon src={MoreThanBlueIcon} />
           </StyledTitleContainer>
@@ -75,11 +43,11 @@ export const Talks: FC = () => {
         >
           <path
             d='M-3.72,102.14 C177.43,5.44 270.54,146.54 508.12,51.80 L500.00,150.00 L0.00,150.00 Z'
-            style={{ stroke: 'none', fill: '#ffd166' }}
+            style={{ stroke: 'none', fill: '#4798CA' }}
           ></path>
         </svg>
       </StyledWaveContainer>
-      <SectionWrapper color={Color.YELLOW} marginTop={1}>
+      <SectionWrapper color={Color.LIGHT_BLUE} marginTop={1}>
         <StyledWrapperSection>
           {currentYearTalks.map((talk, index) => (
             <TalkCard talk={talk} index={index} />

@@ -18,7 +18,7 @@ import {
   StyledInfoContainer,
   StyledLink,
   StyledMoreThanIcon,
-  StyledMorethanIconContainer,
+  StyledMoreThanIconContainer,
   StyledName,
   StyledNameContainer,
   StyledRightContainer,
@@ -30,7 +30,7 @@ import {
   StyledSpeakerImg,
   StyledSpeakerImgBorder,
   StyledSpeakerTitle
-} from "./SpeakerDetail.style";
+} from "./Speaker.style";
 
 interface ISpeakerDetailProps {
   speaker: ISpeakerDetail;
@@ -107,9 +107,9 @@ const SpeakerDetail: FC<ISpeakerDetailProps> = ({ speaker }) => {
                   {speaker.description2}
                 </StyledSpeakerDescription>
               </StyledFlexCol>
-              <StyledMorethanIconContainer>
+              <StyledMoreThanIconContainer>
                 <StyledMoreThanIcon src={MoreThanGreenIcon} />
-              </StyledMorethanIconContainer>
+              </StyledMoreThanIconContainer>
             </StyledInfoContainer>
           </StyledRightContainer>
         </StyledDetailsContainer>

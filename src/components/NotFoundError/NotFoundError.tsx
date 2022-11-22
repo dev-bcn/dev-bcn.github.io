@@ -24,7 +24,7 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   cursor: pointer;
   padding: 1rem;
-  background: ${Color.GREEN};
+  background: ${Color.DARK_BLUE};
   font-weight: 600;
   width: fit-content;
 `;

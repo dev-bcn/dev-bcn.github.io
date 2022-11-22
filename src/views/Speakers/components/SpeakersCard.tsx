@@ -62,7 +62,7 @@ const StyledSpeakerTitle = styled.h5`
 `;
 
 const StyledSpeakerSubtitle = styled.h5`
-  color: ${Color.PINK};
+  color: ${Color.DARK_BLUE};
   text-align: left;
 `;
 

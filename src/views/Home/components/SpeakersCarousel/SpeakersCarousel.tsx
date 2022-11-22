@@ -8,7 +8,7 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 
 import {FC} from 'react';
 import {Link} from 'react-router-dom';
-import MoreThanRedIcon from '.././../../../assets/images/MoreThanRedIcon.svg';
+import LessThanBlueWhiteIcon from '.././../../../assets/images/MoreThanBlueIcon.svg';
 import SectionWrapper from '../../../../components/SectionWrapper/SectionWrapper';
 import {TABLET_BREAKPOINT} from '../../../../constants/BreakPoints';
 import TitleSection from '../../../../components/SectionTitle/TitleSection';
@@ -18,7 +18,7 @@ import data from "../../../../data/2023.json";
 import {ROUTE_SPEAKERS} from "../../../../constants/routes";
 
 const StyledSpeakersContainer = styled.section`
-  background-color: ${Color.GREEN};
+  background-color: ${Color.LIGHT_BLUE};
   position: relative;
   display: flex;
   flex-direction: column;
@@ -38,7 +38,7 @@ const StyledSlideImage = styled.img`
 const StyledSlideContain = styled.div`
   position: absolute;
   bottom: 0;
-  background: ${Color.PINK};
+  background: ${Color.DARK_BLUE};
   padding: 0.5rem 0.25rem;
 `;
 
@@ -58,7 +58,7 @@ const StyledLink = styled.div`
 `;
 
 const StyledSubtitle = styled.h2`
-  color: ${Color.PINK};
+  color: ${Color.DARK_BLUE};
   padding-right: 0.75rem;
 `;
 
@@ -74,9 +74,9 @@ export const StyledBottomSlash = styled(motion.div)`
   height: 2rem;
 `;
 
-const StyledYellowSlash = styled(motion.p)`
+const StyledBlueSlash = styled(motion.p)`
   font-family: 'SpaceGrotesk-Bold', sans-serif;
-  color: ${Color.YELLOW};
+  color: ${Color.DARK_BLUE};
   font-size: 2rem;
   overflow-y: hidden;
   height: 100%;
@@ -84,7 +84,7 @@ const StyledYellowSlash = styled(motion.p)`
 
 const SpeakersCarousel: FC = () => {
     return (
-        <SectionWrapper color={Color.GREEN}>
+        <SectionWrapper color={Color.WHITE}>
             <StyledSpeakersContainer>
                 <StyledTitleWrapper>
                     <TitleSection
@@ -559,7 +559,7 @@ const SpeakersCarousel: FC = () => {
                 <StyledLink>
                     <Link to={ROUTE_SPEAKERS} className='link--text'>
                         <StyledSubtitle> View all speakers</StyledSubtitle>
-                        <StyledLessThanRed src={MoreThanRedIcon}/>
+                        <StyledLessThanRed src={LessThanBlueWhiteIcon}/>
                     </Link>
                 </StyledLink>
                 <StyledBottomSlash
@@ -567,10 +567,10 @@ const SpeakersCarousel: FC = () => {
                     animate={{x: 0}}
                     transition={{duration: 6}}
                 >
-                    <StyledYellowSlash>
+                    <StyledBlueSlash>
                         / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
                         / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /{' '}
-                    </StyledYellowSlash>
+                    </StyledBlueSlash>
                 </StyledBottomSlash>
             </StyledSpeakersContainer>
         </SectionWrapper>

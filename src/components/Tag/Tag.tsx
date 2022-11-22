@@ -10,13 +10,13 @@ const colorTagByText = (text: string) => {
   let color;
   switch (text) {
     case 'Java':
-      color = Color.PINK;
+      color = Color.DARK_BLUE;
       break;
     case 'TestContainers':
-      color = Color.BLUE;
+      color = Color.BLACK_BLUE;
       break;
     case 'MicroShield testing':
-      color = Color.GREEN;
+      color = Color.DARK_BLUE;
       break;
     case 'Kubernetes':
       color = Color.WHITE;

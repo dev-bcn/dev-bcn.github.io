@@ -16,11 +16,31 @@
         "name": "red hat"
       }
     ],
-    "premium": [{},{},{},{},{}],
-    "regular": [{},{},{},{},{}],
-    "basic": [{},{},{},{},{}],
-    "startup": [{},{},{},{},{}],
-    "virtual": [{},{},{},{},{}]
+    "premium": [
+      {
+        "name": "GFT"
+      }
+    ],
+    "regular": [
+      {
+        "name": "GFT"
+      }
+    ],
+    "basic": [
+      {
+        "name": "GFT"
+      }
+    ],
+    "startup": [
+      {
+        "name": "GFT"
+      }
+    ],
+    "virtual": [
+      {
+        "name": "GFT"
+      }
+    ]
   },
   "speakers": [
     {

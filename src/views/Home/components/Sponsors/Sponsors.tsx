@@ -2,8 +2,8 @@ import {BIG_BREAKPOINT,} from '../../../../constants/BreakPoints';
 import {Color} from '../../../../styles/colors';
 import {FC, useEffect, useState} from 'react';
 
-import LessThanRedIcon from '../../../../assets/images/LessThanRedIcon.svg';
-import MoreThanRedIcon from '../../../../assets/images/MoreThanRedIcon.svg';
+import LessThanBlueIcon from '../../../../assets/images/MoreThanBlueWhiteIcon.svg';
+import LessThanBlueWhiteIcon from '../../../../assets/images/LessThanBlueWhiteIcon.svg';
 import SectionWrapper from '../../../../components/SectionWrapper/SectionWrapper';
 import SponsorBadge from './SponsorBadge';
 import TitleSection from '../../../../components/SectionTitle/TitleSection';
@@ -11,19 +11,23 @@ import redhatLogo from '../../../../assets/sponsorIcons/redhatLogo.svg';
 import {useWindowSize} from 'react-use';
 import data from "../../../../data/2023.json";
 import {
-    SponsorsStyle,
     StyledFlexGrow,
     StyledLogos,
+    StyledSeparator,
     StyledSlashes,
     StyledSponsorIconBig,
     StyledSponsorIconMicro,
     StyledSponsorIconNano,
     StyledSponsorIconNormal,
-    StyledSponsorIconSmall, StyledSponsorItemContainer,
-    StyledSponsorLogosContainer, StyledSponsorsContainer,
+    StyledSponsorIconSmall,
+    StyledSponsorItemContainer,
+    StyledSponsorLogosContainer,
+    StyledSponsorsContainer,
     StyledSponsorTitleContainer,
     StyledSponsorTitleMargin,
-    StyledSponsorTitleSlashesContainer, StyledTitleContainer, StyledTitleImg
+    StyledSponsorTitleSlashesContainer,
+    StyledTitleContainer,
+    StyledTitleImg
 } from "./Sponsors.style";
 
 type TSponsorName = 'top' | 'premium' | 'regular' | 'startup' | 'virtual';
@@ -86,7 +90,7 @@ const Sponsors: FC = () => {
         <SectionWrapper color={Color.WHITE}>
             <StyledSponsorsContainer>
                 <StyledTitleContainer className='TitleContainer'>
-                    <StyledTitleImg src={LessThanRedIcon}/>
+                    <StyledTitleImg src={LessThanBlueIcon}/>
                     <TitleSection
                         title='SPONSORS'
                         subtitle='Are you a technology company? Interested in meeting
@@ -94,9 +98,9 @@ const Sponsors: FC = () => {
           priceless opportunity to participate in the first big Java
           and JVM conference in Spain, to pr mote your company
           and to support technological communities.'
-                        color={Color.PINK}
+                        color={Color.DARK_BLUE}
                     />
-                    <StyledTitleImg src={MoreThanRedIcon}/>
+                    <StyledTitleImg src={LessThanBlueWhiteIcon}/>
                 </StyledTitleContainer>
                 {data.sponsors.top.length > 0 &&
                     <StyledSponsorItemContainer
@@ -124,7 +128,7 @@ const Sponsors: FC = () => {
                                 id='Slashes'
                             >
                                 TOP
-                                <SponsorsStyle/>
+                                <StyledSeparator/>
                                 <StyledSlashes>{slashes}</StyledSlashes>
                             </StyledSponsorTitleSlashesContainer>
                             {width >= BIG_BREAKPOINT && (
@@ -155,17 +159,17 @@ const Sponsors: FC = () => {
                         }}
                     >
                         <SponsorBadge
-                            color={Color.GREEN}
+                            color={Color.DARK_BLUE}
                             position='right'
                             isVisible={isHovered.premium}
                         />
                         <StyledSponsorTitleContainer className='SponsorTitle'>
                             <StyledSponsorTitleSlashesContainer
-                                color={Color.GREEN}
+                                color={Color.DARK_BLUE}
                                 id='Slashes'
                             >
                                 <StyledSlashes>{slashes}</StyledSlashes>
-                                <SponsorsStyle/>
+                                <StyledSeparator/>
 
                                 {width < BIG_BREAKPOINT && 'PREMIUM'}
                             </StyledSponsorTitleSlashesContainer>
@@ -174,7 +178,7 @@ const Sponsors: FC = () => {
                                     color={
                                         isHovered.premium && width >= BIG_BREAKPOINT
                                             ? Color.WHITE
-                                            : Color.GREEN
+                                            : Color.DARK_BLUE
                                     }
                                 >
                                     <StyledSlashes>{slashes}</StyledSlashes>
@@ -207,7 +211,7 @@ const Sponsors: FC = () => {
                     }}
                 >
                     <SponsorBadge
-                        color={Color.PINK}
+                        color={Color.DARK_BLUE}
                         position='left'
                         isVisible={isHovered.regular}
                     />
@@ -217,16 +221,16 @@ const Sponsors: FC = () => {
                             color={
                                 isHovered.regular && width >= BIG_BREAKPOINT
                                     ? Color.WHITE
-                                    : Color.PINK
+                                    : Color.DARK_BLUE
                             }
                             id='Slashes'
                         >
                             REGULAR
-                            <SponsorsStyle/>
+                            <StyledSeparator/>
                             <StyledSlashes>{slashes}</StyledSlashes>
                         </StyledSponsorTitleSlashesContainer>
                         {width >= BIG_BREAKPOINT && (
-                            <StyledSponsorTitleSlashesContainer color={Color.PINK}>
+                            <StyledSponsorTitleSlashesContainer color={Color.DARK_BLUE}>
                                 <StyledSlashes>{slashes}</StyledSlashes>
                             </StyledSponsorTitleSlashesContainer>
                         )}
@@ -258,17 +262,17 @@ const Sponsors: FC = () => {
                     }}
                 >
                     <SponsorBadge
-                        color={Color.YELLOW}
+                        color={Color.DARK_BLUE}
                         position='right'
                         isVisible={isHovered.startup}
                     />
                     <StyledSponsorTitleContainer className='SponsorTitle'>
                         <StyledSponsorTitleSlashesContainer
-                            color={Color.YELLOW}
+                            color={Color.DARK_BLUE}
                             id='Slashes'
                         >
                             <StyledSlashes>{slashes}</StyledSlashes>
-                            <SponsorsStyle/>
+                            <StyledSeparator/>
 
                             {width < BIG_BREAKPOINT && 'STARTUP'}
                         </StyledSponsorTitleSlashesContainer>
@@ -277,7 +281,7 @@ const Sponsors: FC = () => {
                                 color={
                                     isHovered.startup && width >= BIG_BREAKPOINT
                                         ? Color.WHITE
-                                        : Color.YELLOW
+                                        : Color.DARK_BLUE
                                 }
                             >
                                 <StyledSlashes>{slashes}</StyledSlashes>
@@ -328,7 +332,7 @@ const Sponsors: FC = () => {
                     }}
                 >
                     <SponsorBadge
-                        color={Color.GREEN}
+                        color={Color.DARK_BLUE}
                         position='left'
                         isVisible={isHovered.virtual}
                     />
@@ -338,16 +342,16 @@ const Sponsors: FC = () => {
                             color={
                                 isHovered.virtual && width >= BIG_BREAKPOINT
                                     ? Color.WHITE
-                                    : Color.GREEN
+                                    : Color.DARK_BLUE
                             }
                             id='Slashes'
                         >
                             VIRTUAL
-                            <SponsorsStyle/>
+                            <StyledSeparator/>
                             <StyledSlashes>{slashes}</StyledSlashes>
                         </StyledSponsorTitleSlashesContainer>
                         {width >= BIG_BREAKPOINT && (
-                            <StyledSponsorTitleSlashesContainer color={Color.GREEN}>
+                            <StyledSponsorTitleSlashesContainer color={Color.DARK_BLUE}>
                                 <StyledSlashes>{slashes}</StyledSlashes>
                             </StyledSponsorTitleSlashesContainer>
                         )}

@@ -1,8 +1,8 @@
 import { Color } from '../../../../styles/colors';
 import { FC } from 'react';
 import FaqCard from './components/FaqsCard';
-import LessThanYellowIcon from '../../../../assets/images/LessThanYellowIcon.svg';
-import MoreThanIcon from '../../../../assets/images/MoreThanIcon.svg';
+import LessThanIcon from '../../../../assets/images/LessThanBlueIcon.svg';
+import MoreThanIcon from '../../../../assets/images/LessThanBlueWhiteIcon.svg';
 import SectionWrapper from '../../../../components/SectionWrapper/SectionWrapper';
 import { faqsData } from './FaqsData';
 import { motion } from 'framer-motion';
@@ -23,7 +23,7 @@ export const StyledFaqSection = styled(motion.section)`
 `;
 
 export const StyledWaveContainer = styled.div`
-  background: ${Color.PINK};
+  background: ${Color.DARK_BLUE};
   overflow-y: hidden;
   height: 5rem;
   width: 100%;
@@ -53,7 +53,7 @@ const Faqs: FC = () => {
   const { width } = useWindowSize();
   return (
     <>
-      <SectionWrapper color={Color.PINK}>
+      <SectionWrapper color={Color.DARK_BLUE}>
         <StyledFaqSection>
           {faqsData.map((faq, index) => (
             <FaqCard faq={faq} index={index} key={index} />
@@ -61,7 +61,7 @@ const Faqs: FC = () => {
           {width > MOBILE_BREAKPOINT && (
             <>
               <StyleMoreIcon src={MoreThanIcon} />
-              <StyleLessIcon src={LessThanYellowIcon} />
+              <StyleLessIcon src={LessThanIcon} />
             </>
           )}
         </StyledFaqSection>
@@ -74,7 +74,7 @@ const Faqs: FC = () => {
         >
           <path
             d='M0.00,49.98 C335.50,45.89 358.63,106.09 501.41,81.42 L500.00,150.00 L0.00,150.00 Z'
-            style={{ stroke: 'none', fill: '#06d6a0' }}
+            style={{ stroke: 'none', fill: '#4798CA' }}
           ></path>
         </svg>
       </StyledWaveContainer>

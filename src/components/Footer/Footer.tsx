@@ -1,6 +1,6 @@
 import {BIG_BREAKPOINT} from '../../constants/BreakPoints';
 import {FC} from 'react';
-import LessThanYellowIcon from '../../assets/images/LessThanYellowIcon.svg';
+import LessThanBlueIcon from '../../assets/images/LessThanBlueIcon.svg';
 import emailIcon from '../../assets/images/emailIcon.svg';
 import eventsIcon from '../../assets/images/eventsIcon.svg';
 import facebookIcon from '../../assets/images/facebookIcon.svg';
@@ -37,7 +37,7 @@ const Footer: FC = () => {
         <StyledFooterAbsoluteContainer className='Footer'>
             <StyledFooterContainer>
                 <StyledFooterItem>
-                    <StyledAbsoluteImg src={LessThanYellowIcon}/>
+                    <StyledAbsoluteImg src={LessThanBlueIcon}/>
                 </StyledFooterItem>
                 <StyledFooterItem>
                     <StyledFlexCol>

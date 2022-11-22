@@ -6,7 +6,7 @@ import SectionWrapper from '../../components/SectionWrapper/SectionWrapper';
 import SpeakerDetail from './SpeakerDetail';
 import {findSpeaker} from './SpeakerDetailData';
 import {useParams} from 'react-router-dom';
-import {StyledContainer, StyledWaveContainer} from "./SpeakerDetail.style";
+import {StyledContainer, StyledWaveContainer} from "./Speaker.style";
 
 const SpeakerDetailContainer: FC = () => {
   const { name } = useParams<{ name: string }>();
