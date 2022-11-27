@@ -1,4 +1,5 @@
 export const ROUTE_HOME = '/';
+export const ROUTE_HOME_ALTERNATE = '/website';
 export const ROUTE_TALKS = '/talks';
 export const ROUTE_CODE_OF_CONDUCT = '/codeOfConduct';
 export const ROUTE_JOB_OFFERS = '/jobOffers';

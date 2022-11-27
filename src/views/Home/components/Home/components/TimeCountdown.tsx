@@ -9,17 +9,19 @@ const TimeCountDownContainer = styled.div`
 `;
 
 const StyledTimerContainer = styled.div`
+  align-items: center;
+  background-color: rgba(50, 50, 50, 0.5);
   border-radius: 3rem;
   border: 1.5px solid ${Color.DARK_BLUE};
-  height: 4.5rem;
-  width: 4.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  font-family: SpaceGrotesk-Light,sans-serif;
   box-shadow: 1px 1px 1px ${Color.LIGHT_BLUE};
-  color: ${Color.WHITE};
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-family: SpaceGrotesk-Light, sans-serif;
+  font-size: 1.5em;
+  height: 5rem;
+  justify-content: center;
+  width: 5rem;
 `;
 
 const StyleLine = styled.div`

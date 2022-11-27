@@ -18,7 +18,15 @@ import {
     StyledTopSlash,
     StyleHomeContainer
 } from "./Style.Home";
+import logo from "../../../../assets/images/logo.png";
+import ActionButtons from "../ActionButtons/ActionButtons";
+import styled from "styled-components";
 
+
+const StyledLogo = styled.img`
+margin: 20px;
+width: 600px;  
+`;
 const Home: FC = () => {
     const {width} = useWindowSize();
     const startDay = data.startDay;
@@ -27,12 +35,14 @@ const Home: FC = () => {
         <StyledHomaImage>
             <SectionWrapper color='transparent'>
                 <StyleHomeContainer>
+                    <StyledLogo src={logo} alt="DevBcn logo"/>
                     <StyledTitleContainer>
                         <StyledTitle>DevBcn 2023</StyledTitle>
                     </StyledTitleContainer>
                     <StyledSubtitle>July 3rd-5th</StyledSubtitle>
                     <StyledSubtitle>{data.tracks}</StyledSubtitle>
                     <Countdown date={startDay} renderer={TimeCountDown}/>
+                    <ActionButtons/>
 
                     {width > TABLET_BREAKPOINT && (
                         <StyledLessThan src={LessThanYellowIcon}/>

@@ -8,7 +8,7 @@ import {
   ROUTE_SCHEDULE,
   ROUTE_SPEAKERS,
   ROUTE_SPEAKER_DETAIL_PLAIN,
-  ROUTE_TALKS,
+  ROUTE_TALKS, ROUTE_HOME_ALTERNATE,
 } from './constants/routes';
 
 import { About } from './views/About/About';
@@ -55,6 +55,7 @@ function App() {
               component={SpeakerDetailContainer}
             />
             <Route path={ROUTE_HOME} component={HomeWrapper} exact />
+            <Route path={ROUTE_HOME_ALTERNATE} component={HomeWrapper} exact />
           </PageWrapper>
         </Switch>
         <Footer />
