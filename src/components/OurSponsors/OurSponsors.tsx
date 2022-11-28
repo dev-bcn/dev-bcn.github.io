@@ -118,8 +118,8 @@ const OurSponsors: FC = () => {
         <StyledBigLogo src={RedHatLogo} />
       </StyledFlexRow>
       <StyledSmallLogosContainer>
-        {SponsorsList.map((logo) => (
-          <StyledSmallLogo src={logo} />
+        {SponsorsList.map((logo,index) => (
+          <StyledSmallLogo src={logo} key={index} />
         ))}
       </StyledSmallLogosContainer>
     </StyledSponsors>

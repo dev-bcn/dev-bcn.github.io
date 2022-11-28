@@ -2,7 +2,6 @@ import {BIG_BREAKPOINT} from '../../constants/BreakPoints';
 import {FC} from 'react';
 import LessThanBlueIcon from '../../assets/images/LessThanBlueIcon.svg';
 import emailIcon from '../../assets/images/emailIcon.svg';
-import eventsIcon from '../../assets/images/eventsIcon.svg';
 import facebookIcon from '../../assets/images/facebookIcon.svg';
 import githubIcon from '../../assets/images/githubIcon.svg';
 import linkedinIcon from '../../assets/images/linkedinIcon.svg';
@@ -13,13 +12,15 @@ import {useWindowSize} from 'react-use';
 import data from "../../data/2023.json";
 import youtubeIcon from '../../assets/images/youtubeIcon.svg';
 import {
-    StyledAbsoluteImg, StyledFlexCol,
+    StyledAbsoluteImg,
+    StyledFlexCol,
     StyledFlexRow,
-    StyledFooterAbsoluteContainer, StyledFooterContainer,
+    StyledFooterAbsoluteContainer,
+    StyledFooterContainer,
     StyledFooterIcon,
     StyledFooterItem,
     StyledImg,
-    StyledLink, StyledSpan
+    StyledLink
 } from "./Styles.Footer";
 import {ROUTE_HOME} from "../../constants/routes";
 
@@ -41,9 +42,8 @@ const Footer: FC = () => {
                 </StyledFooterItem>
                 <StyledFooterItem>
                     <StyledFlexCol>
-                        <StyledFlexRow
-                            justify={width < BIG_BREAKPOINT ? 'center' : 'flex-start'}
-                        >
+                        <StyledFlexRow>SOCIAL MEDIA</StyledFlexRow>
+                        <StyledFlexRow justify={width < BIG_BREAKPOINT ? 'center' : 'flex-start'}>
                             <StyledLink target={'_blank'} href={data.twitter}>
                                 <StyledFooterIcon src={twitterIcon}/>
                             </StyledLink>
@@ -60,12 +60,7 @@ const Footer: FC = () => {
                                 <StyledFooterIcon src={linkedinIcon}/>
                             </StyledLink>
                         </StyledFlexRow>
-                        <StyledFlexRow>
-                            <StyledLink href={`mailto: ${data.email}`}>
-                                <StyledFooterIcon src={emailIcon}/>
-                                {data.email}
-                            </StyledLink>
-                        </StyledFlexRow>
+                        <StyledFlexRow>&nbsp;</StyledFlexRow>
                     </StyledFlexCol>
                 </StyledFooterItem>
                 <StyledFooterItem>
@@ -73,20 +68,14 @@ const Footer: FC = () => {
                 </StyledFooterItem>
                 <StyledFooterItem>
                     <StyledFlexCol>
+                        <StyledFlexRow>CONTACT</StyledFlexRow>
                         <StyledFlexRow>
-                            <StyledFooterIcon src={eventsIcon}/>
-                            <StyledSpan>EVENTS</StyledSpan>
-                        </StyledFlexRow>
-                        <StyledFlexRow>
-                            <StyledLink target={'_blank'} href='https://meetup.com/BarcelonaJUG'>
-                                meetup.com/BarcelonaJUG
+                            <StyledLink href={`mailto: ${data.email}`}>
+                                <StyledFooterIcon src={emailIcon}/>
+                                {data.email}
                             </StyledLink>
                         </StyledFlexRow>
-                        <StyledFlexRow>
-                            <StyledLink target={'_blank'} href='https://barcelonajug.org'>
-                                barcelonajug.org
-                            </StyledLink>
-                        </StyledFlexRow>
+                        <StyledFlexRow>&nbsp;</StyledFlexRow>
                     </StyledFlexCol>
                 </StyledFooterItem>
                 <StyledFooterItem></StyledFooterItem>

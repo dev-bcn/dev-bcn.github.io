@@ -1,4 +1,5 @@
 {
+  "edition": "2023",
   "startDay": "2023-05-03T00:00:00",
   "endDay": "2023-06-03T00:00:00",
   "tracks": "Java, JVM, Native Languages,\n Cloud, DevOps, Kubernetes, Frontend, \n Agile, Big Data, Machine Learning & AI",

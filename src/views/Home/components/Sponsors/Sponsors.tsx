@@ -53,7 +53,7 @@ const Sponsors: FC = () => {
 
     const [slashes, setSlashes] = useState('');
 
-    function buildSlashes(module: number) {
+    const buildSlashes = (module: number) => {
         const slashesElement = document.getElementById('Slashes');
 
         const slashesWidth = slashesElement?.offsetWidth || 0;
@@ -64,7 +64,7 @@ const Sponsors: FC = () => {
         }
 
         return slashes;
-    }
+    };
 
     useEffect(() => {
         const newSlashes = buildSlashes(2);
@@ -72,19 +72,19 @@ const Sponsors: FC = () => {
         setSlashes(newSlashes);
     }, [width]);
 
-    function handleHoverSponsor(name: TSponsorName) {
+    const handleHoverSponsor = (name: TSponsorName) => {
         setIsHovered({
             ...isHovered,
             [name]: true,
         });
-    }
+    };
 
-    function handleUnHoverSponsor(name: TSponsorName) {
+    const handleUnHoverSponsor = (name: TSponsorName) => {
         setIsHovered({
             ...isHovered,
             [name]: false,
         });
-    }
+    };
 
     return (
         <SectionWrapper color={Color.WHITE}>

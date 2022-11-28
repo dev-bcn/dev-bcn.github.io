@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import {BIG_BREAKPOINT, LARGE_BREAKPOINT} from "../../../../constants/BreakPoints";
-import whiteBg from "../../../../assets/images/white-blue-bg.png";
 import {motion} from "framer-motion";
 
 const SponsorMargin = 11;
@@ -8,7 +7,6 @@ const sponsorMarginDesktop = 18;
 export const StyledSponsorsContainer = styled.div`
   position: relative;
   padding-top: 4rem;
-  background-image: url(${whiteBg});
 `;
 export const StyledTitleContainer = styled.div`
   display: flex;

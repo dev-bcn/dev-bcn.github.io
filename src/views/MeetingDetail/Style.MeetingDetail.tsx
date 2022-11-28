@@ -9,7 +9,7 @@ export const StyledContainer = styled.div`
 
 export const StyledMeetingTitleContainer = styled.div`
   display: flex;
-  width: 100px;
+  width: 100%;
   margin-bottom: 3rem;
 
   @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
@@ -38,6 +38,7 @@ export const StyledTitle = styled(motion.h1)`
     text-align: left;
   }
 `;
+
 
 export const StyledDescription = styled.p`
   color: ${Color.DARK_BLUE};

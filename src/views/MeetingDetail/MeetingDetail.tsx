@@ -4,11 +4,11 @@ import {Color} from '../../styles/colors';
 import {FC} from 'react';
 import {IMeeting} from './MeetingDetailData';
 import LessThanIconWhite from '../../assets/images/LessThanIconWhite.svg';
-import LessThanRedIcon from '../../assets/images/LessThanRedIcon.svg';
-import MoreThanRedIcon from '../../assets/images/MoreThanRedIcon.svg';
+import LessThanIcon from '../../assets/images/LessThanBlueIcon.svg';
+import MoreThanIcon from '../../assets/images/MoreThanBlueIcon.svg';
 import OurSponsors from '../../components/OurSponsors/OurSponsors';
 import SectionWrapper from '../../components/SectionWrapper/SectionWrapper';
-import SlashesRed from '../../assets/images/SlashesRed.svg';
+import Slashes from '../../assets/images/SlashesWhite.svg';
 import TagBadge from '../../components/TagBadge/TagBadge';
 import linkedinIcon from '../../assets/images/linkedinIcon.svg';
 import twitterIcon from '../../assets/images/twitterIcon.svg';
@@ -107,7 +107,7 @@ const MeetingDetail: FC<IMeetingDetailProps> = ({ meeting }) => {
 
   let previousColor = 0;
 
-  function getRandomColor() {
+  const getRandomColor = () => {
     let randomNum = 0;
     do {
       randomNum = Math.floor(Math.random() * 4);
@@ -123,7 +123,7 @@ const MeetingDetail: FC<IMeetingDetailProps> = ({ meeting }) => {
     };
 
     return mappedColors[randomNum];
-  }
+  };
 
   return (
     <SectionWrapper color={Color.WHITE}>
@@ -133,7 +133,7 @@ const MeetingDetail: FC<IMeetingDetailProps> = ({ meeting }) => {
             initial='initial'
             animate='animate'
             variants={leftVariants}
-            src={LessThanRedIcon}
+            src={LessThanIcon}
           />
           <StyledFlexCol
             initial='initial'
@@ -147,7 +147,7 @@ const MeetingDetail: FC<IMeetingDetailProps> = ({ meeting }) => {
             initial='initial'
             animate='animate'
             variants={rightVariants}
-            src={MoreThanRedIcon}
+            src={MoreThanIcon}
           />
         </StyledMeetingTitleContainer>
         <StyledVideoContainer
@@ -217,7 +217,7 @@ const MeetingDetail: FC<IMeetingDetailProps> = ({ meeting }) => {
                     </StyledSocialMediaContainer>
                   </>
                 )}
-                <StyledSlashes src={SlashesRed} />
+                <StyledSlashes src={Slashes} />
               </StyledNameContainer>
               <StyledSpeakerTitle>{meeting.speakerTitle}</StyledSpeakerTitle>
               <StyledSpeakerDescription>
