@@ -2,6 +2,7 @@ import {FC} from "react";
 import data from "../../../../data/2023.json";
 import Button from "./Button";
 import styled from "styled-components";
+import ReactGa from "react-ga";
 
 const StyledActionDiv = styled.div`
   display: flex;`
@@ -14,19 +15,25 @@ const ActionButtons: FC = () => {
     const sponsorshipStartDay = new Date(data.tickets.startDay);
     const sponsorshipEndDay = new Date(data.tickets.endDay);
     const today = new Date();
-    console.info("Action buttons", ticketStartDay, ticketEndDay);
 
     const isBetween = (startDay: Date, endDay: Date): boolean => {
-        console.info("comparing", startDay, new Date().getDate(), endDay);
         return startDay < new Date() && endDay > today;
     }
+    const analyticsEventsTracker = (category = "action") => {
+        return (action = "", label = "") => {
+            ReactGa.event({category, action, label});
+        };
+    }
+    const gaEventTracker = analyticsEventsTracker("links");
 
     return (
         <StyledActionDiv>
-            {isBetween(ticketStartDay, ticketEndDay) && <Button text="🎟️ Buy Tickets" link="https://ticket.com"/>}
-            {isBetween(CFPStartDay, CFPEndDay) && <Button text="📢 CFP" link="https://cfp.com"/>}
+            {isBetween(ticketStartDay, ticketEndDay) &&
+                <Button onClick={() => gaEventTracker("tickets")} text="🎟️ Buy Tickets" link="https://ticket.com/"/>}
+            {isBetween(CFPStartDay, CFPEndDay) &&
+                <Button onClick={() => gaEventTracker("cfp")} text="📢 CFP" link="https://cfp.com/"/>}
             {isBetween(sponsorshipStartDay, sponsorshipEndDay) &&
-                <Button text="🤝 Sponsorship" link="https://sponsor.com"/>}
+                <Button onClick={() => gaEventTracker("sponsors")} text="🤝 Sponsorship" link="https://sponsor.com/"/>}
         </StyledActionDiv>
     )
 }

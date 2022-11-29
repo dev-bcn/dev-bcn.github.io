@@ -32,7 +32,6 @@ const StyledLink = styled(Link)`
 `;
 
 const getLinkData = (page: string) => {
-  debugger
   const links: any = {
     codeOfConduct: { name: 'Code Of Conduct', urlParam: 'codeOfConduct' },
     schedule: { name: 'Schedule', urlParam: 'schedule' },

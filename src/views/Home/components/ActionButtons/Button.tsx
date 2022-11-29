@@ -1,11 +1,11 @@
 import {FC} from "react";
-import {Link} from "react-router-dom";
 import styled from "styled-components";
 import {Color} from "../../../../styles/colors";
 
 interface ButtonProps {
     text: string;
     link: string;
+    onClick: any;
 }
 
 const StyledActionButton = styled.div`
@@ -37,9 +37,9 @@ const StyledActionButton = styled.div`
   }
 `;
 
-const Button: FC<ButtonProps> = ({text, link}) => {
+const Button: FC<ButtonProps> = ({text, link, onClick}) => {
     return (<StyledActionButton className="hvr-bounce-in">
-        <Link to={link}>{text}</Link>
+        <a onClick={onClick} href={link} target="_blank" rel="noreferrer nofollo">{text}</a>
     </StyledActionButton>)
 }
 export default Button;
