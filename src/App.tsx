@@ -8,7 +8,7 @@ import {
     ROUTE_SCHEDULE,
     ROUTE_SPEAKERS,
     ROUTE_SPEAKER_DETAIL_PLAIN,
-    ROUTE_TALKS, ROUTE_HOME_ALTERNATE,
+    ROUTE_TALKS, ROUTE_HOME_ALTERNATE, ROUTE_DIVERSITY,
 } from './constants/routes';
 
 import {About} from './views/About/About';
@@ -26,6 +26,7 @@ import Speakers from './views/Speakers/Speakers';
 import {Talks} from './views/Talks/Talks';
 import styled from 'styled-components';
 import ReactGa from "react-ga";
+import {Diversity} from "./views/Diversity/Diversity";
 
 const StyledAppWrapper = styled.div`
   position: relative;
@@ -47,6 +48,7 @@ const App = () => {
                     <Route path={ROUTE_TALKS} component={Talks}/>
                     <Route path={ROUTE_CODE_OF_CONDUCT} component={CodeOfConduct}/>
                     <PageWrapper>
+                        <Route path={ROUTE_DIVERSITY} component={Diversity}/>
                         <Route path={ROUTE_JOB_OFFERS} component={JobOffers}/>
                         <Route path={ROUTE_SCHEDULE} component={Schedule}/>
                         <Route path={ROUTE_SPEAKERS} component={Speakers}/>
