@@ -44,7 +44,7 @@ const StyleLessIcon = styled.img`
   left: -1rem;
   top: 12rem;
   height: 5rem;
-  @media (min-width: 800px) {
+  @media (min-width: ${BIG_BREAKPOINT}px) {
     height: 10rem;
   }
 `;

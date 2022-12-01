@@ -3,9 +3,16 @@ import data from "../../../../data/2023.json";
 import Button from "./Button";
 import styled from "styled-components";
 import ReactGa from "react-ga";
+import {BIG_BREAKPOINT} from "../../../../constants/BreakPoints";
 
 const StyledActionDiv = styled.div`
-  display: flex;`
+  display: flex;
+
+  @media (max-width: ${BIG_BREAKPOINT}px) {
+    flex-direction: column;
+    width: 75%;
+  }
+`
 
 const ActionButtons: FC = () => {
     const ticketStartDay = new Date(data.tickets.startDay);

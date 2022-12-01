@@ -1,6 +1,7 @@
 import {FC} from "react";
 import styled from "styled-components";
 import {Color} from "../../../../styles/colors";
+import {BIG_BREAKPOINT} from "../../../../constants/BreakPoints";
 
 interface ButtonProps {
     text: string;
@@ -20,6 +21,10 @@ const StyledActionButton = styled.div`
   transform: perspective(1px) translateZ(0);
   transition-duration: 0.5s;
   vertical-align: middle;
+
+  @media (max-width: ${BIG_BREAKPOINT}px) {
+  margin: 5px 1px;
+  }
 
   :hover, :focus, :active {
     background-color: ${Color.DARK_BLUE};
