@@ -3,7 +3,7 @@ import {Color} from '../../styles/colors';
 import {ROUTE_MEETING_DETAIL, ROUTE_SPEAKER_DETAIL,} from '../../constants/routes';
 
 import {AvatarCard} from './components/AvatarCard';
-import {FC} from 'react';
+import React, {FC} from 'react';
 import LessThanBlueWhiteIcon from '../../assets/images/MoreThanBlueWhiteIcon.svg';
 import {Link} from 'react-router-dom';
 import MoreThanBlueWhiteIcon from '../../assets/images/LessThanBlueWhiteIcon.svg';
@@ -33,6 +33,10 @@ const Schedule: FC = () => {
     const scheduleDay1 = data.schedule.day_one;
     const scheduleDay2 = data.schedule.day_two;
     const scheduleDay3 = data.schedule.day_three;
+
+    React.useEffect(() => {
+        document.title = `Schedule - DevBcn - ${data.edition}`;
+    }, []);
 
     return (
         <SectionWrapper color={Color.WHITE} marginTop={6}>

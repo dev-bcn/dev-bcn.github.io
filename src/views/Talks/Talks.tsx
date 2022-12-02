@@ -1,4 +1,4 @@
-import {FC} from 'react';
+import React, {FC} from 'react';
 import LessThanDarkBlueIcon from '../../assets/images/LessThanDarkBlueIcon.svg';
 import MoreThanBlueIcon from '../../assets/images/MoreThanBlueIcon.svg';
 import SectionWrapper from '../../components/SectionWrapper/SectionWrapper';
@@ -17,6 +17,10 @@ import {
 
 export const Talks: FC = () => {
     const currentYearTalks = data.talks;
+    React.useEffect(() => {
+        document.title = `Talks - DevBcn - ${data.edition}`;
+    }, []);
+
   return (
     <>
       <SectionWrapper color={Color.DARK_BLUE} marginTop={5}>

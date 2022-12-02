@@ -24,7 +24,7 @@ const Speakers: FC = () => {
     const speakersCurrentYear = data.speakers;
 
     useEffect(() => {
-        document.title = ` DevBcn ${data.edition} - Speakers`;
+        document.title = `Speakers - DevBcn ${data.edition}`;
     });
 
     return (

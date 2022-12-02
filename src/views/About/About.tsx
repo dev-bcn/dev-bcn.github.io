@@ -11,6 +11,7 @@ import styled from 'styled-components';
 import {Color} from "../../styles/colors";
 import {StyledLessIcon, StyledMoreIcon, StyledSpeakersSection} from "../Speakers/Speakers.style";
 import {StyledMarginBottom} from "../Talks/Talks.style";
+import data from "../../data/2023.json";
 
 const StyledUsersWrapper = styled.div`
   padding-top: 5rem;
@@ -23,7 +24,7 @@ export const About: FC = () => {
     const {width} = useWindowSize();
 
     React.useEffect(() => {
-        document.title = "DevBcn - About us";
+        document.title = `About us - DevBcn - ${data.edition}`;
     }, []);
 
     return (
