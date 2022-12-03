@@ -12,6 +12,7 @@
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
     "framer-motion": "^6.2.6",
+    "google-map-react": "^2.2.0",
     "moment": "^2.29.4",
     "react": "^17.0.2",
     "react-countdown": "^2.3.2",
@@ -52,9 +53,11 @@
     ]
   },
   "devDependencies": {
+    "@types/google-map-react": "^2.1.7",
     "@types/react-router-dom": "^5.3.3",
     "@types/styled-components": "^5.1.22",
     "gh-pages": "^3.2.3",
+    "prettier": "^2.8.0",
     "react-ga": "^3.3.1"
   }
 }
