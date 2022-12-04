@@ -28,7 +28,6 @@ import SpeakerDetailContainer from "./views/SpeakerDetail/SpeakerDetailContainer
 import Speakers from "./views/Speakers/Speakers";
 import { Talks } from "./views/Talks/Talks";
 import styled from "styled-components";
-import ReactGa from "react-ga";
 import { Diversity } from "./views/Diversity/Diversity";
 import { Travel } from "./views/Travel/Travel";
 
@@ -39,9 +38,6 @@ const StyledAppWrapper = styled.div`
 `;
 
 const App = () => {
-  const tracking_ID = process.env.REACT_APP_GOOGLE_ANALYTICS_API_KEY || "";
-  ReactGa.initialize(tracking_ID);
-
   return (
     <StyledAppWrapper className="AppWrapperAll">
       <BrowserRouter>

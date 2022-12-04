@@ -19,6 +19,12 @@ const StyledAccommodation = styled.div`
     width: 20%;
   }
 
+  @media (max-width: 767px) {
+    ul li {
+      width: 80%;
+    }
+  }
+
   ul a {
     text-decoration: none;
     margin-left: 10px;

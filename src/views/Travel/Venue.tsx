@@ -22,6 +22,7 @@ const StyledVenue = styled.div`
     text-align: left;
     max-width: ${MAX_WIDTH}px;
     margin: 0 auto;
+    padding-bottom: 50px;
   }
 
   .image {
@@ -149,8 +150,7 @@ export const Venue: FC = () => {
           </p>
           <p>🚇 Metro: Parada Rambla Just Oliveras Autobús: Líneas L12 – LH2</p>
           <p>
-            🚝 <img src={FGC} alt="FGC" width="20" />
-            FGC: Estación Sant Josep
+            🚝 <img src={FGC} alt="FGC" width="20" /> FGC: Estación Sant Josep
           </p>
           <p>🚌 Bus: Line L12 - LH2</p>
           <p>
