@@ -55,12 +55,16 @@ const Home: FC = () => {
             </StyledSubtitle>
           </StyledTitleContainer>
           <StyledTitleContainer color={Color.LIGHT_BLUE}>
-            <StyledSubtitle>July 3rd-5th, 2023</StyledSubtitle>
-            <StyledSubtitle>La Farga, Hospitalet, Barcelona</StyledSubtitle>
+            <StyledSubtitle color={Color.DARK_BLUE}>
+              July 3rd-5th, 2023
+            </StyledSubtitle>
+            <StyledSubtitle color={Color.DARK_BLUE}>
+              La Farga, Hospitalet, Barcelona
+            </StyledSubtitle>
           </StyledTitleContainer>
           <StyledSubtitle>{data.tracks}</StyledSubtitle>
           <Countdown date={startDay} renderer={TimeCountDown} />
-          <ActionButtons />
+          {data.actionButtons && <ActionButtons />}
 
           {width > LARGE_BREAKPOINT && <StyledLessThan src={LessThanIcon} />}
           <StyledTopSlash

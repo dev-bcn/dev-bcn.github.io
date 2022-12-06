@@ -35,6 +35,7 @@ export const StyledTitleContainer = styled.div`
   border-radius: 40px;
   width: 55%;
   margin-bottom: 1rem;
+  padding: 10px 5px;
 `;
 
 export const StyledTitle = styled.h1`
@@ -44,7 +45,7 @@ export const StyledTitle = styled.h1`
 `;
 
 export const StyledSubtitle = styled.h2`
-  color: ${Color.WHITE};
+  color: ${(props) => props.color || Color.WHITE};
   font-family: SpaceGrotesk-Light, sans-serif;
   font-size: 1.25rem;
   text-shadow: 1px 1px 1px black;
