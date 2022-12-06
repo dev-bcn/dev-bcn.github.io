@@ -1,11 +1,10 @@
 {
   "files": {
     "main.css": "/website/static/css/main.06180faf.css",
-    "main.js": "/website/static/js/main.a609bd10.js",
+    "main.js": "/website/static/js/main.e9991015.js",
     "static/js/787.1d18e5ca.chunk.js": "/website/static/js/787.1d18e5ca.chunk.js",
     "static/media/after-hours.jpg": "/website/static/media/after-hours.732647c87982d3461fe6.jpg",
     "static/media/la-farga.png": "/website/static/media/la-farga.bdd2098b891600a22ce8.png",
-    "static/media/HomeImage.jpg": "/website/static/media/HomeImage.50326be83ba5b4d96884.jpg",
     "static/media/SpeakersWelcomer.jpg": "/website/static/media/SpeakersWelcomer.877ee5c39a5d6817eae3.jpg",
     "static/media/FaqsImage2.png": "/website/static/media/FaqsImage2.59bd286aad75b228d6c7.png",
     "static/media/ScheduleAvatar1.jpg": "/website/static/media/ScheduleAvatar1.47b5070a5dabfbd56c3d.jpg",
@@ -22,7 +21,6 @@
     "static/media/SpaceGrotesk-Bold.ttf": "/website/static/media/SpaceGrotesk-Bold.25a5e7fd63d35d7f6448.ttf",
     "static/media/logo.png": "/website/static/media/logo.c3beed00a94a2de3f6bc.png",
     "static/media/best_front_maritim.webp": "/website/static/media/best_front_maritim.d60c0c223df43f68470d.webp",
-    "static/media/ReadMoreIcon.svg": "/website/static/media/ReadMoreIcon.d967787cbe78ddbf8cff9a6ebff258a0.svg",
     "static/media/SlashesWhite.svg": "/website/static/media/SlashesWhite.f558ff3ee9c9d5c571002489a216fb3a.svg",
     "static/media/WatchIcon.svg": "/website/static/media/WatchIcon.33f580824c218f8d970c8d76d4dc9727.svg",
     "static/media/RedHatLogo.svg": "/website/static/media/RedHatLogo.df9550eff0aa0722505a97265adf191f.svg",
@@ -48,11 +46,11 @@
     "static/media/MoreThanBlueIcon.svg": "/website/static/media/MoreThanBlueIcon.80b146cc5d88641337b61ea66402a531.svg",
     "static/media/MoreThanBlueWhiteIcon.svg": "/website/static/media/MoreThanBlueWhiteIcon.4e0508c1662edcaf4a1d5cf4b17c33be.svg",
     "main.06180faf.css.map": "/website/static/css/main.06180faf.css.map",
-    "main.a609bd10.js.map": "/website/static/js/main.a609bd10.js.map",
+    "main.e9991015.js.map": "/website/static/js/main.e9991015.js.map",
     "787.1d18e5ca.chunk.js.map": "/website/static/js/787.1d18e5ca.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.06180faf.css",
-    "static/js/main.a609bd10.js"
+    "static/js/main.e9991015.js"
   ]
 }
