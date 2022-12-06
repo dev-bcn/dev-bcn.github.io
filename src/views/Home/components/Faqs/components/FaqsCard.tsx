@@ -1,9 +1,7 @@
-import { FC } from 'react';
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
-import ReadMoreIcon from '../../../../../assets/images/ReadMoreIcon.svg';
-import { Link } from 'react-router-dom';
-import { Color } from '../../../../../styles/colors';
+import { FC } from "react";
+import styled from "styled-components";
+import { motion } from "framer-motion";
+import { Color } from "../../../../../styles/colors";
 
 type FaqCardType = {
   faq: {
@@ -90,24 +88,21 @@ const FaqCard: FC<FaqCardType> = ({ faq, index }) => {
   const isOdd = index % 2 === 0;
 
   return (
-    <StyledFaqCard direction={isOdd ? 'row' : 'row-reverse'}>
+    <StyledFaqCard direction={isOdd ? "row" : "row-reverse"}>
       <StyledFaqImageContainer
-        padding={isOdd ? '0 .75rem 0 0' : '0 0 0 .75rem'}
+        padding={isOdd ? "0 .75rem 0 0" : "0 0 0 .75rem"}
       >
         <StyledFaqImage
           src={require(`../../../../../assets/images/FaqsImage${index}.png`)}
         />
       </StyledFaqImageContainer>
-      <StyledFaqInfo align={isOdd ? 'flex-start' : 'flex-end'}>
-        <StyledFaqTitle textAlign={isOdd ? 'left' : 'right'}>
+      <StyledFaqInfo align={isOdd ? "flex-start" : "flex-end"}>
+        <StyledFaqTitle textAlign={isOdd ? "left" : "right"}>
           {faq.question}
         </StyledFaqTitle>
-        <StyledFaqText textAlign={isOdd ? 'left' : 'right'}>
+        <StyledFaqText textAlign={isOdd ? "left" : "right"}>
           {faq.answer}
         </StyledFaqText>
-        <Link to='/'>
-          <StyledFaqDetailButton src={ReadMoreIcon} />
-        </Link>
       </StyledFaqInfo>
     </StyledFaqCard>
   );

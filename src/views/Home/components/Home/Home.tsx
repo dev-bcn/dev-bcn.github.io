@@ -36,9 +36,25 @@ const Home: FC = () => {
         <StyleHomeContainer>
           <StyledLogo src={logo} alt="DevBcn logo" />
           <StyledTitleContainer>
-            <StyledTitle>DevBcn 2023</StyledTitle>
+            <StyledTitle>The Developers Conference 2023</StyledTitle>
+            <StyledSubtitle>
+              Former{" "}
+              <a
+                href="https://www.jbcnconf.com/2022/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                JBCNConf
+              </a>{" "}
+            </StyledSubtitle>
+            <StyledSubtitle>
+              Multidisciplinary conference made for Developers and by
+              Developers, to learn and share on the different modern software
+              technologies used across the companies
+            </StyledSubtitle>
           </StyledTitleContainer>
-          <StyledSubtitle>July 3rd-5th</StyledSubtitle>
+          <StyledSubtitle>July 3rd-5th, 2023</StyledSubtitle>
+          <StyledSubtitle>La Farga, Hospitalet, Barcelona</StyledSubtitle>
           <StyledSubtitle>{data.tracks}</StyledSubtitle>
           <Countdown date={startDay} renderer={TimeCountDown} />
           <ActionButtons />

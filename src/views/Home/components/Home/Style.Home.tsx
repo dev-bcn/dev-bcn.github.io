@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import HomeImage from "../../../../assets/images/HomeImage.jpg";
-import {Color} from "../../../../styles/colors";
-import {motion} from "framer-motion";
+import { Color } from "../../../../styles/colors";
+import { motion } from "framer-motion";
 
 export const StyledHomaImage = styled.div`
   background-image: url(${HomeImage});
@@ -22,21 +22,26 @@ export const StyleHomeContainer = styled.div`
 
 export const StyledTitleContainer = styled.div`
   background-color: ${Color.DARK_BLUE};
-  width: fit-content;
+  width: 55%;
   margin-bottom: 1rem;
 `;
 
 export const StyledTitle = styled.h1`
   padding: 0.5rem 1rem;
   color: ${Color.WHITE};
-  font-family: SpaceGrotesk,sans-serif;
+  font-family: SpaceGrotesk, sans-serif;
 `;
 
 export const StyledSubtitle = styled.h2`
   color: ${Color.WHITE};
-  font-family: SpaceGrotesk-Light,sans-serif;
+  font-family: SpaceGrotesk-Light, sans-serif;
   font-size: 1.25rem;
   text-shadow: 1px 1px 1px black;
+
+  a {
+    text-decoration: none;
+    color: ${Color.LIGHT_BLUE};
+  }
 `;
 
 export const StyledLessThan = styled(motion.img)`
@@ -79,7 +84,7 @@ export const StyledTopSlash = styled(motion.div)`
 `;
 
 export const StyledGreenSlash = styled(motion.p)`
-  font-family: 'SpaceGrotesk-Bold', sans-serif;
+  font-family: "SpaceGrotesk-Bold", sans-serif;
   color: ${Color.DARK_BLUE};
   font-size: 2rem;
   overflow-y: hidden;
@@ -87,7 +92,7 @@ export const StyledGreenSlash = styled(motion.p)`
 `;
 
 export const StyledBlueSlash = styled(motion.p)`
-  font-family: 'SpaceGrotesk-Bold',sans-serif;
+  font-family: "SpaceGrotesk-Bold", sans-serif;
   color: ${Color.BLUE};
   font-size: 2rem;
   overflow-y: hidden;

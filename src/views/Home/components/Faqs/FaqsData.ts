@@ -1,17 +1,13 @@
 export const faqsData = [
   {
-    question: 'WHAT IS THE JAVA & JVM BARCELONA CONFERENCE?',
+    question: "WHAT IS THE DEVELOPERS CONFERENCE?",
     answer:
-      'Three days to share knowledge and experiences, meet enthusiasts and geeks and learn about new technologies related to the JVM in English.',
+      "Three days to share knowledge and experiences, meet enthusiasts and geeks and learn about new technologies related to Backend and frontend development, Agile, DevOps, Cloud, and many others.",
   },
   {
-    question: 'WHY SHOULD I PARTICIPATE?',
+    question: "WHY SHOULD I PARTICIPATE?",
     answer:
-      'This conference is the perfect stage to discover how others are using your favourite VM. There is something interesting for any kind of tech passionate: from(Java) .to(Scala) .or(Groovy) .in(Open_Source) .or(JCP)',
-  },
-  {
-    question: 'WHAT ARE WE CELEBRATING THIS YEAR?',
-    answer:
-      'This year we dedicate the conference to honor women in computing. Ada Lovelace, Margaret Hamilton and Carol Shawn are just three examples of pioneering women in the world of programming. We want to remind some of them and their amazing successes.',
+      "This conference is the perfect stage to discover how others are using your favourite technology. " +
+      "There is something interesting for any kind of tech passionate: on the backend Java & JVM, Python, Rust, Go, to Frontend with JavaScript, TypeScript ans Web assembly; Also, Cloud, Kubernetes, and DevOps, Agile, Big Data, Machine Learning and more",
   },
 ];
