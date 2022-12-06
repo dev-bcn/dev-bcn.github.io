@@ -54,7 +54,7 @@ const Home: FC = () => {
               technologies used across the companies
             </StyledSubtitle>
           </StyledTitleContainer>
-          <StyledTitleContainer color={Color.GREEN}>
+          <StyledTitleContainer color={Color.LIGHT_BLUE}>
             <StyledSubtitle>July 3rd-5th, 2023</StyledSubtitle>
             <StyledSubtitle>La Farga, Hospitalet, Barcelona</StyledSubtitle>
           </StyledTitleContainer>
