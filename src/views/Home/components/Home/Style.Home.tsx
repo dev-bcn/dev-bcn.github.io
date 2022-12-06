@@ -1,14 +1,24 @@
 import styled from "styled-components";
-import HomeImage from "../../../../assets/images/HomeImage.jpg";
 import { Color } from "../../../../styles/colors";
 import { motion } from "framer-motion";
 
 export const StyledHomaImage = styled.div`
-  background-image: url(${HomeImage});
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  height: 100vh;
+  height: 90vh;
+  background: linear-gradient(-45deg, ${Color.LIGHT_BLUE}, ${Color.MAGENTA}, ${Color.DARK_BLUE}, ${Color.GREEN});
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
 `;
 export const StyleHomeContainer = styled.div`
   position: relative;
@@ -21,7 +31,8 @@ export const StyleHomeContainer = styled.div`
 `;
 
 export const StyledTitleContainer = styled.div`
-  background-color: ${Color.DARK_BLUE};
+  background-color: ${(props) => props.color || Color.DARK_BLUE};
+  border-radius: 40px;
   width: 55%;
   margin-bottom: 1rem;
 `;
@@ -77,7 +88,7 @@ export const StyledBottomSlash = styled(motion.div)`
 
 export const StyledTopSlash = styled(motion.div)`
   position: absolute;
-  bottom: 48%;
+  bottom: 25%;
   right: 0;
   height: 2rem;
   width: 25%;
