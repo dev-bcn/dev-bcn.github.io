@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import {motion} from "framer-motion";
-import {Color} from "../../styles/colors";
-import {NavLink} from "react-router-dom";
-import {MAX_WIDTH, MOBILE_BREAKPOINT} from "../../constants/BreakPoints";
+import { motion } from "framer-motion";
+import { Color } from "../../styles/colors";
+import { NavLink } from "react-router-dom";
+import { MAX_WIDTH, MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
 
 export const StyledBlueHamburger = styled(motion.img)`
   height: 2.5rem;
@@ -55,7 +55,7 @@ export const StyledLink = styled(NavLink)`
 
   &.${(props) => props.activeClassName} {
     &:before {
-      content: '/   ';
+      content: "/   ";
       font-family: SpaceGrotesk-Bold, sans-serif;
     }
   }
@@ -104,5 +104,30 @@ export const StyledHeader = styled.header`
   padding: 0 2rem;
   @media (min-width: 480px) {
     height: 4rem;
+  }
+
+  .horizontal-navigation {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 0 50px;
+
+    a {
+      color: ${Color.DARK_BLUE};
+      text-decoration: none;
+      padding: 0 5px;
+      font-size: 0.75em;
+      text-transform: uppercase;
+      font-family: SpaceGrotesk-Bold, sans-serif;
+
+      @media (min-width: 1024px) {
+        font-size: 1em;
+      }
+    }
+
+    &:hover {
+      color: ${Color.MAGENTA};
+      transition: color ease 0.5s;
+    }
   }
 `;

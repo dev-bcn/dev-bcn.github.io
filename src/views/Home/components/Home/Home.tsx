@@ -21,6 +21,7 @@ import {
 import logo from "../../../../assets/images/logo.png";
 import ActionButtons from "../ActionButtons/ActionButtons";
 import styled from "styled-components";
+import { Color } from "../../../../styles/colors";
 
 const StyledLogo = styled.img`
   margin: 20px;
@@ -53,11 +54,17 @@ const Home: FC = () => {
               technologies used across the companies
             </StyledSubtitle>
           </StyledTitleContainer>
-          <StyledSubtitle>July 3rd-5th, 2023</StyledSubtitle>
-          <StyledSubtitle>La Farga, Hospitalet, Barcelona</StyledSubtitle>
+          <StyledTitleContainer color={Color.LIGHT_BLUE}>
+            <StyledSubtitle color={Color.DARK_BLUE}>
+              July 3rd-5th, 2023
+            </StyledSubtitle>
+            <StyledSubtitle color={Color.DARK_BLUE}>
+              La Farga, Hospitalet, Barcelona
+            </StyledSubtitle>
+          </StyledTitleContainer>
           <StyledSubtitle>{data.tracks}</StyledSubtitle>
           <Countdown date={startDay} renderer={TimeCountDown} />
-          <ActionButtons />
+          {data.actionButtons && <ActionButtons />}
 
           {width > LARGE_BREAKPOINT && <StyledLessThan src={LessThanIcon} />}
           <StyledTopSlash

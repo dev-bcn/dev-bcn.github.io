@@ -1,12 +1,13 @@
-import {FC} from "react";
+import { FC } from "react";
 import styled from "styled-components";
-import {Color} from "../../../../styles/colors";
-import {BIG_BREAKPOINT} from "../../../../constants/BreakPoints";
+import { Color } from "../../../../styles/colors";
+import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
 
 interface ButtonProps {
-    text: string;
-    link: string;
-    onClick: any;
+  text: string;
+  link: string;
+  onClick: any;
+  disabled?: boolean;
 }
 
 const StyledActionButton = styled.div`
@@ -23,14 +24,16 @@ const StyledActionButton = styled.div`
   vertical-align: middle;
 
   @media (max-width: ${BIG_BREAKPOINT}px) {
-  margin: 5px 1px;
+    margin: 5px 1px;
   }
 
-  :hover, :focus, :active {
+  :hover,
+  :focus,
+  :active {
     background-color: ${Color.DARK_BLUE};
     transform: scale(1.2);
     transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
-    margin:20px 50px;
+    margin: 20px 50px;
   }
 
   a {
@@ -39,12 +42,28 @@ const StyledActionButton = styled.div`
     color: white;
     display: block;
     text-transform: uppercase;
+    vertical-align: middle;
+  }
+
+  small {
+    font-weight: lighter;
+    font-size: 0.5em;
   }
 `;
 
-const Button: FC<ButtonProps> = ({text, link, onClick}) => {
-    return (<StyledActionButton className="hvr-bounce-in">
-        <a onClick={onClick} href={link} target="_blank" rel="noreferrer nofollo">{text}</a>
-    </StyledActionButton>)
-}
+const Button: FC<ButtonProps> = ({ text, link, onClick, disabled }) => {
+  return (
+    <StyledActionButton className="hvr-bounce-in">
+      <a onClick={onClick} href={link} target="_blank" rel="noreferrer nofollo">
+        {text}
+        {disabled && (
+          <>
+            <br />
+            <small>opening January 1st</small>
+          </>
+        )}
+      </a>
+    </StyledActionButton>
+  );
+};
 export default Button;
