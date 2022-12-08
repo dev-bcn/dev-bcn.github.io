@@ -64,7 +64,7 @@ export const StyledLink = styled(NavLink)`
     font-size: 1.125rem;
   }
 `;
-export const StyledNavLinkHighlighted = styled(motion.a)`
+export const StyledTicketLink = styled(motion.a)`
   text-decoration: none;
   margin: 0.5rem;
   display: flex;

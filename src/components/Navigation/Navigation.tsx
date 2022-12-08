@@ -1,11 +1,11 @@
 import { AnimatePresence } from "framer-motion";
 import { FC, useState } from "react";
 import { MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import Breadcrumbs from "./Breadcrumbs";
 import CloseIcon from "../../assets/images/CloseIcon.svg";
 import NavigationLogo from "../../assets/images/devBcn.png";
-import { ROUTE_HOME } from "../../constants/routes";
+import { ROUTE_HOME, ROUTE_HOME_ALTERNATE } from "../../constants/routes";
 import TicketsImage from "../../assets/images/TicketsImage.svg";
 import { navigationItems } from "./NavigationData";
 import { useWindowSize } from "react-use";
@@ -19,8 +19,8 @@ import {
   StyledNavigation,
   StyledNavigationContainer,
   StyledNavigationLogo,
-  StyledNavLinkHighlighted,
   StyledNavLinkHighlightedImage,
+  StyledTicketLink,
 } from "./Style.Navigation";
 import { HorizontalMenu } from "./HorizontalMenu";
 import { HamburgerMenu } from "./HamburgerMenu";
@@ -28,13 +28,16 @@ import { HamburgerMenu } from "./HamburgerMenu";
 const Navigation: FC = () => {
   const { width } = useWindowSize();
   const [isOpened, setIsOpen] = useState(false);
-
+  const { pathname } = useLocation();
   const history = useHistory();
   const handleLogoClick = () => {
     history.push(ROUTE_HOME);
   };
   const handleSetMenu = () => {
     setIsOpen(!isOpened);
+  };
+  const isHomePage = () => {
+    return pathname === ROUTE_HOME || pathname === ROUTE_HOME_ALTERNATE;
   };
 
   return (
@@ -45,7 +48,8 @@ const Navigation: FC = () => {
           <HorizontalMenu />
           <HamburgerMenu onClick={handleSetMenu} />
         </StyledHeader>
-        <Breadcrumbs />
+
+        {!isHomePage() && <Breadcrumbs />}
       </StyledHeaderWrapper>
 
       <AnimatePresence>
@@ -84,12 +88,9 @@ const Navigation: FC = () => {
                   {item.id}
                 </StyledLink>
               ))}
-              <StyledNavLinkHighlighted
-                href="https://www.google.es/"
-                target="_blank"
-              >
+              <StyledTicketLink href="#" target="_blank" rel="noreferrer">
                 <StyledNavLinkHighlightedImage src={TicketsImage} />
-              </StyledNavLinkHighlighted>
+              </StyledTicketLink>
             </StyledNavigation>
             {width > MOBILE_BREAKPOINT && <StyledClipPath />}
           </StyledNavigationContainer>

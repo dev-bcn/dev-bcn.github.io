@@ -16,6 +16,7 @@ import flickr from "../../../../assets/images/flickr.svg";
 import youtube from "../../../../assets/images/youtube.svg";
 import jbcnconf from "../../../../assets/images/jbcnconf-1.jpg";
 import jbcnconf2 from "../../../../assets/images/jbcnconf-2.jpg";
+import slides from "../../../../assets/images/slides.png";
 
 export const StyledFaqSection = styled(motion.section)`
   display: flex;
@@ -96,7 +97,7 @@ const Faqs: FC = () => {
               Check for videos/photos and summary of the JBCNConf - 2022 edition
             </StyledP>
             <a
-              href="https://www.flickr.com/photos/barcelonajug/albums"
+              href="https://www.flickr.com/photos/barcelonajug/collections/72157720937175671/"
               rel="noreferrer"
               target="_blank"
             >
@@ -108,6 +109,13 @@ const Faqs: FC = () => {
               target="_blank"
             >
               <img src={youtube} alt="Youtube" height="32" />
+            </a>
+            <a
+              href="https://docs.google.com/presentation/d/1t1RnYOqcoP8Bo1GVyiGyW-mY_2bBpUspnW8nqXDUbGI/edit?usp=sharing"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <img src={slides} alt="Summary Slides" height="32" />
             </a>
           </div>
           {width > MOBILE_BREAKPOINT && (
