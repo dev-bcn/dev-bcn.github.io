@@ -3,7 +3,7 @@ import { Color } from "../../../../styles/colors";
 import { motion } from "framer-motion";
 
 export const StyledHomaImage = styled.div`
-  height: 90vh;
+  padding: 70px 0 40px;
   background: linear-gradient(-45deg, ${Color.LIGHT_BLUE}, ${Color.MAGENTA}, ${Color.DARK_BLUE}, ${Color.GREEN});
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;

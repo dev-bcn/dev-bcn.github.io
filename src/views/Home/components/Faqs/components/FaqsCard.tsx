@@ -19,9 +19,7 @@ export const StyledFaqCard = styled.div<{ direction: string }>`
   margin-bottom: 3rem;
   @media (min-width: 800px) {
     align-items: flex-start;
-    flex-direction: ${({ direction }) => {
-      return direction;
-    }};
+    flex-direction: ${({ direction }) => direction};
     max-width: 900px;
     margin-bottom: 4rem;
   }

@@ -1,16 +1,20 @@
-import React, {FC} from 'react';
-import TitleSection from '../../components/SectionTitle/TitleSection';
-import SectionWrapper from '../../components/SectionWrapper/SectionWrapper';
-import {MOBILE_BREAKPOINT} from '../../constants/BreakPoints';
-import LessThanBlueWhiteIcon from '../../assets/images/LessThanBlueWhiteIcon.svg';
-import MoreThanBlueWhiteIcon from '../../assets/images/MoreThanBlueWhiteIcon.svg';
-import {useWindowSize} from 'react-use';
-import {aboutData} from './AboutData';
-import {AboutCard} from './components/AboutCard';
-import styled from 'styled-components';
-import {Color} from "../../styles/colors";
-import {StyledLessIcon, StyledMoreIcon, StyledSpeakersSection} from "../Speakers/Speakers.style";
-import {StyledMarginBottom} from "../Talks/Talks.style";
+import React, { FC } from "react";
+import TitleSection from "../../components/SectionTitle/TitleSection";
+import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
+import { MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
+import LessThanBlueWhiteIcon from "../../assets/images/LessThanBlueWhiteIcon.svg";
+import MoreThanBlueWhiteIcon from "../../assets/images/MoreThanBlueWhiteIcon.svg";
+import { useWindowSize } from "react-use";
+import { aboutData } from "./AboutData";
+import { AboutCard } from "./components/AboutCard";
+import styled from "styled-components";
+import { Color } from "../../styles/colors";
+import {
+  StyledLessIcon,
+  StyledMoreIcon,
+  StyledSpeakersSection,
+} from "../Speakers/Speakers.style";
+import { StyledMarginBottom } from "../Talks/Talks.style";
 import data from "../../data/2023.json";
 
 const StyledUsersWrapper = styled.div`
@@ -20,38 +24,60 @@ const StyledUsersWrapper = styled.div`
   justify-content: center;
 `;
 
+const StyledLink = styled.a`
+  display: block;
+  background-color: ${Color.DARK_BLUE};
+  color: ${Color.LIGHT_BLUE};
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 50px;
+  padding: 10px 20px;
+  border-radius: 20px;
+
+  &:hover {
+    color: ${Color.MAGENTA};
+  }
+`;
+
 export const About: FC = () => {
-    const {width} = useWindowSize();
+  const { width } = useWindowSize();
 
-    React.useEffect(() => {
-        document.title = `About us - DevBcn - ${data.edition}`;
-    }, []);
+  React.useEffect(() => {
+    document.title = `About us - DevBcn - ${data.edition}`;
+  }, []);
 
-    return (
-        <>
-            <SectionWrapper color={Color.WHITE} marginTop={8}>
-                <StyledSpeakersSection>
-                    <TitleSection
-                        title='ABOUT US'
-                        subtitle='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ultricies sapien ante, quis pharetra magna luctus ullamcorper. Mauris porttitor nisl in elit consequat, a pellentesque tortor rhoncus. Quisque vel commodo sapien, eget aliquet ligula. Curabitur ac gravida sem, eget pulvinar tellus. Nunc porttitor id metus in commodo. Etiam ultrices eleifend turpis vel convallis. Fusce at feugiat libero, quis fringilla leo. Praesent rutrum sodales blandit. Integer aliquet ultrices nunc ut blandit. Curabitur condimentum molestie urna, sodales pretium lacus tempor ac. Pellentesque sodales libero vel ligula porta dignissim.
-
-'
-                        color={Color.BLUE}
-                    />
-                    {width > MOBILE_BREAKPOINT && (
-                        <>
-                            <StyledLessIcon src={MoreThanBlueWhiteIcon}/>
-                            <StyledMoreIcon src={LessThanBlueWhiteIcon}/>
-                        </>
-                    )}
-                    <StyledUsersWrapper>
-                        {aboutData.map((person) => (
-                            <AboutCard person={person}/>
-                        ))}
-                    </StyledUsersWrapper>
-                    <StyledMarginBottom/>
-                </StyledSpeakersSection>
-            </SectionWrapper>
-        </>
-    );
+  return (
+    <>
+      <SectionWrapper color={Color.WHITE} marginTop={8}>
+        <StyledSpeakersSection>
+          <TitleSection
+            title="ABOUT US"
+            subtitle="The Developers conference - Barcelona edition"
+            color={Color.BLUE}
+          />
+          {width > MOBILE_BREAKPOINT && (
+            <>
+              <StyledLessIcon src={MoreThanBlueWhiteIcon} />
+              <StyledMoreIcon src={LessThanBlueWhiteIcon} />
+            </>
+          )}
+          <StyledUsersWrapper>
+            {aboutData.map((person) => (
+              <AboutCard person={person} />
+            ))}
+          </StyledUsersWrapper>
+          <p>
+            <StyledLink
+              href="https://eepurl.com/ifxXl9"
+              rel="noreferrer"
+              target="_blank"
+            >
+              📨 Subscribe to our news here
+            </StyledLink>
+          </p>
+          <StyledMarginBottom />
+        </StyledSpeakersSection>
+      </SectionWrapper>
+    </>
+  );
 };

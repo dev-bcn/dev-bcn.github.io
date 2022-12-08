@@ -20,7 +20,6 @@ import {
   StyledSpeakersSection,
 } from "../Speakers/Speakers.style";
 import { StyledMarginBottom } from "../Talks/Talks.style";
-import DigitalFems from "../../assets/images/digitalfems.png";
 import data from "../../data/2023.json";
 import moment from "moment";
 
@@ -291,21 +290,6 @@ export const CodeOfConduct: FC = () => {
               Attribution-ShareAlike license. Portions of text derived from the
               Django Code of Conduct, JornadasDar or Geek Feminism
               Anti-Harassment Policy.
-            </p>
-
-            <a href="https://digitalfems.org/" rel="noreferrer" target="_blank">
-              <img alt="DigitalFems" src={DigitalFems} />
-            </a>
-
-            <p>
-              Somos una entidad que diseña proyectos para aumentar la presencia
-              de mujeres en entornos tecnológicos. Creemos que para el buen
-              diseño de productos y servicios tecnológicos es necesario contar
-              con equipos plurales y diversos. La tecnología que cuenta con
-              perspectivas diferentes es más justa y más eficaz. Por eso,
-              trabajamos en el diseño de servicios que incluyan más mujeres en
-              entornos tech y en la creación de productos que muestran el
-              talento de mujeres tecnólogas
             </p>
           </StyledConductText>
         </StyledSpeakersSection>

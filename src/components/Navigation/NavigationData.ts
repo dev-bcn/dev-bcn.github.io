@@ -1,7 +1,6 @@
 import {
   ROUTE_ABOUT_US,
   ROUTE_CODE_OF_CONDUCT,
-  ROUTE_DIVERSITY,
   ROUTE_HOME,
   ROUTE_JOB_OFFERS,
   ROUTE_SCHEDULE,
@@ -13,7 +12,7 @@ import {
 export const navigationItems = [
   { id: "HOME", link: ROUTE_HOME },
   { id: "CODE OF CONDUCT", link: ROUTE_CODE_OF_CONDUCT },
-  { id: "DIVERSITY", link: ROUTE_DIVERSITY },
+  //{ id: "DIVERSITY", link: ROUTE_DIVERSITY },
   { id: "SCHEDULE", link: ROUTE_SCHEDULE },
   { id: "TALKS", link: ROUTE_TALKS },
   { id: "JOB OFFERS", link: ROUTE_JOB_OFFERS },
