@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/website/static/css/main.06180faf.css",
-    "main.js": "/website/static/js/main.bc51ce5e.js",
+    "main.js": "/website/static/js/main.f317720b.js",
     "static/js/787.1d18e5ca.chunk.js": "/website/static/js/787.1d18e5ca.chunk.js",
     "static/media/after-hours.jpg": "/website/static/media/after-hours.732647c87982d3461fe6.jpg",
     "static/media/la-farga.png": "/website/static/media/la-farga.bdd2098b891600a22ce8.png",
@@ -19,16 +19,19 @@
     "static/media/SpaceGrotesk-Regular.ttf": "/website/static/media/SpaceGrotesk-Regular.0af8901c66919168e22b.ttf",
     "static/media/SpaceGrotesk-SemiBold.ttf": "/website/static/media/SpaceGrotesk-SemiBold.ed2db1918ac205ac4d40.ttf",
     "static/media/SpaceGrotesk-Bold.ttf": "/website/static/media/SpaceGrotesk-Bold.25a5e7fd63d35d7f6448.ttf",
+    "static/media/jbcnconf-2.jpg": "/website/static/media/jbcnconf-2.7e22324dede08c13238a.jpg",
+    "static/media/jbcnconf-1.jpg": "/website/static/media/jbcnconf-1.368597071322a0b54019.jpg",
     "static/media/logo.png": "/website/static/media/logo.c3beed00a94a2de3f6bc.png",
     "static/media/best_front_maritim.webp": "/website/static/media/best_front_maritim.d60c0c223df43f68470d.webp",
+    "static/media/youtube.svg": "/website/static/media/youtube.66d963fd0a8b78de212b85c566528187.svg",
     "static/media/SlashesWhite.svg": "/website/static/media/SlashesWhite.f558ff3ee9c9d5c571002489a216fb3a.svg",
+    "static/media/flickr.svg": "/website/static/media/flickr.1a7bcc6ce9080ed2eac4aa2e379f4cbd.svg",
     "static/media/WatchIcon.svg": "/website/static/media/WatchIcon.33f580824c218f8d970c8d76d4dc9727.svg",
     "static/media/RedHatLogo.svg": "/website/static/media/RedHatLogo.df9550eff0aa0722505a97265adf191f.svg",
     "static/media/redhatLogo.svg": "/website/static/media/redhatLogo.10b21158dc374c26dbcf4ad2b2d510a0.svg",
     "static/media/TicketsImage.svg": "/website/static/media/TicketsImage.8eedecc906d2817b643a1e29aaf214fe.svg",
     "index.html": "/website/index.html",
     "static/media/LocationIcon.svg": "/website/static/media/LocationIcon.20528fd9bc2d91e6963ed4d22bf51947.svg",
-    "static/media/githubIcon.svg": "/website/static/media/githubIcon.5488971c209b2abd01009d55b5b07c64.svg",
     "static/media/twitterIcon.svg": "/website/static/media/twitterIcon.4a405feb0870ba0f01fad887385d28f9.svg",
     "static/media/CloseIcon.svg": "/website/static/media/CloseIcon.bf26a3515a108fcc014b565d4ffb8c5e.svg",
     "static/media/BlueHamburgerIcon.svg": "/website/static/media/BlueHamburgerIcon.76c2a5611783748c9bbec041308ecf46.svg",
@@ -45,11 +48,11 @@
     "static/media/MoreThanBlueIcon.svg": "/website/static/media/MoreThanBlueIcon.80b146cc5d88641337b61ea66402a531.svg",
     "static/media/MoreThanBlueWhiteIcon.svg": "/website/static/media/MoreThanBlueWhiteIcon.4e0508c1662edcaf4a1d5cf4b17c33be.svg",
     "main.06180faf.css.map": "/website/static/css/main.06180faf.css.map",
-    "main.bc51ce5e.js.map": "/website/static/js/main.bc51ce5e.js.map",
+    "main.f317720b.js.map": "/website/static/js/main.f317720b.js.map",
     "787.1d18e5ca.chunk.js.map": "/website/static/js/787.1d18e5ca.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.06180faf.css",
-    "static/js/main.bc51ce5e.js"
+    "static/js/main.f317720b.js"
   ]
 }
