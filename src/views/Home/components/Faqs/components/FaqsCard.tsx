@@ -37,8 +37,11 @@ export const StyledFaqImageContainer = styled.div<{ padding: string }>`
   }
 `;
 export const StyledFaqImage = styled(motion.img)`
+  border: 1px solid ${Color.YELLOW};
   display: block;
   height: 100%;
+  margin: 3px;
+  padding: 5px;
   width: 100%;
 `;
 
