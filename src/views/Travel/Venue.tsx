@@ -2,7 +2,6 @@ import { FC } from "react";
 import venue from "../../assets/images/la-farga.png";
 import GoogleMapReact from "google-map-react";
 import "./map.css";
-import Logo from "../../assets/images/logo.png";
 import FGC from "../../assets/images/fgc.png";
 import styled from "styled-components";
 import TitleSection from "../../components/SectionTitle/TitleSection";
@@ -15,6 +14,7 @@ import {
 import LessThanBlue from "../../assets/images/MoreThanBlueWhiteIcon.svg";
 import MoreThanBlue from "../../assets/images/LessThanBlueWhiteIcon.svg";
 import { useWindowSize } from "react-use";
+import LocationIcon from "../../assets/images/LocationIcon.svg";
 
 const StyledVenue = styled.div`
    {
@@ -98,17 +98,44 @@ interface LocationProps {
   text: string;
 }
 
-const LocationPin: FC = () => {
-  return (
-    <div>
-      <img src={Logo} alt="DevBCN" width="100" />
-    </div>
-  );
-};
+const AnyReactComponent: FC<LocationProps> = ({ text }) => (
+  <div
+    style={{
+      color: Color.WHITE,
+      background: Color.LIGHT_BLUE,
+      padding: "15px 10px",
+      display: "inline-flex",
+      textAlign: "center",
+      alignItems: "center",
+      justifyContent: "center",
+      borderRadius: "25%",
+      width: "100px",
+      height: "70px",
+      boxShadow: "1px 1px 1px darkgrey",
+      transform: "translate(-50%, -50%)",
+    }}
+  >
+    <a
+      style={{
+        textDecoration: "none",
+        fontWeight: "bold",
+        color: Color.WHITE,
+        fontSize: "1.3em",
+      }}
+      href="https://goo.gl/maps/qaT5mCmi8ZkgCmteA"
+      rel="noreferrer"
+      target="_blank"
+    >
+      <img src={LocationIcon} alt="La Farga" height={24} />
+      {text}
+    </a>
+  </div>
+);
+
 export const Venue: FC = () => {
   const { width } = useWindowSize();
   const location: LocationProps = {
-    text: "La Farga Gestió d'Equipaments Municipals",
+    text: "La Farga",
     lat: 41.362,
     lng: 2.1044,
   };
@@ -152,9 +179,9 @@ export const Venue: FC = () => {
           <p>
             🚝 <img src={FGC} alt="FGC" width="20" /> FGC: Estación Sant Josep
           </p>
-          <p>🚌 Bus: Line L12 - LH2</p>
           <p>
-            🚙 Access by <strong>car:</strong> via C-31 (20 minutes)
+            🚙 Access by <strong>car:</strong> via C-31 (20 minutes from Plaça
+            Catalunya)
           </p>
           <h4>Paid parking options</h4>
           <p>
@@ -173,7 +200,11 @@ export const Venue: FC = () => {
             defaultCenter={location}
             defaultZoom={16}
           >
-            <LocationPin />
+            <AnyReactComponent
+              lat={location.lat}
+              lng={location.lng}
+              text={location.text}
+            />
           </GoogleMapReact>
         </div>
       </section>
