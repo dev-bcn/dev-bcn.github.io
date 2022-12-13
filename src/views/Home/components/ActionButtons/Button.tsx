@@ -47,7 +47,8 @@ const StyledActionButton = styled.div`
 
   small {
     font-weight: lighter;
-    font-size: 0.5em;
+    font-size: 0.7em;
+    color: dimgray;
   }
 `;
 
