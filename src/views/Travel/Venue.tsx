@@ -180,8 +180,8 @@ export const Venue: FC = () => {
             🚝 <img src={FGC} alt="FGC" width="20" /> FGC: Estación Sant Josep
           </p>
           <p>
-            🚙 Access by <strong>car:</strong> via C-31 (20 minutes from Plaça
-            Catalunya)
+            🚙 Access by <strong>car:</strong> via C-31 (20 minutes from the
+            Airport)
           </p>
           <h4>Paid parking options</h4>
           <p>
