@@ -46,9 +46,10 @@ const StyledActionButton = styled.div`
   }
 
   small {
-    font-weight: lighter;
+    font-weight: bold;
     font-size: 0.7em;
-    color: dimgray;
+    color: ${Color.MAGENTA};
+    text-shadow: none;
   }
 `;
 
