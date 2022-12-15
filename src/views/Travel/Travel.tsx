@@ -1,7 +1,6 @@
 import { FC, useEffect } from "react";
 import { Venue } from "./Venue";
 import { ToBarcelona } from "./ToBarcelona";
-import { Accommodation } from "./Accommodation";
 import data from "../../data/2023.json";
 import { StyledWaveContainer } from "../Speakers/Speakers.style";
 import styled from "styled-components";
@@ -35,18 +34,6 @@ export const Travel: FC = () => {
     <StyledTravel>
       <section>
         <Venue />
-      </section>
-      <section>
-        <Accommodation />
-        <div
-          style={{
-            backgroundColor: Color.LIGHT_BLUE,
-            borderTopColor: Color.LIGHT_BLUE,
-          }}
-        >
-          <div className="top">&nbsp;</div>
-          <div className="bottom">&nbsp;</div>
-        </div>
       </section>
       <section className="to-barcelona">
         <ToBarcelona />

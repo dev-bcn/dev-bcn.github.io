@@ -5,10 +5,24 @@
     <link href="%PUBLIC_URL%/favicon.ico" rel="icon"/>
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <meta content="#002454" name="theme-color"/>
-    <meta
-            content="DevBcn conference - July 3rd - 5th 2023"
-            name="description"
-    />
+    <meta content="DevBcn conference - July 3rd - 5th 2023" name="description" />
+    <meta name="keywords" content="conference, barcelona, frontend, backend, java, agile, kubernetes">
+    <!-- start: Facebook Open Graph -->
+    <meta property="og:title" content="DevBcn - The Developers Conference in Spain">
+    <meta property="og:description" content="3rd to 5th of July 2023, will be the date for a day to share knowledge and experiences, meet enthusiasts and geeks and learn about new technologies.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.devbcn.com/static/media/devBcn.6fcf59c81c4b4d39a554.png">
+    <meta property="og:url" content="https://www.devbcn.com">
+    <!-- end: Facebook Open Graph -->
+    <!-- start: Twitter cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="https://www.devbcn.com/">
+    <meta property="twitter:url" content="https://www.devbcn.com/">
+    <meta name="twitter:site" content="@dev_bcn" />
+    <meta name="twitter:creator" content="@dev_bcn" />
+    <meta name="twitter:image" content="https://www.devbcn.com/static/media/devBcn.6fcf59c81c4b4d39a554.png"/>
+    <meta name="twitter:image:alt" content="JBCNConf - The developers conference in Spain"/>
+    <!-- end: Twitter cards -->
     <link href="%PUBLIC_URL%/apple-touch-icon.png" rel="apple-touch-icon"/>
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -41,6 +55,7 @@
           var decoded = l.search.slice(1).split('&').map(function (s) {
             return s.replace(/~and~/g, '&')
           }).join('?');
+          console.log("decoded", decoded);
           window.history.replaceState(null, null,
                   l.pathname.slice(0, -1) + decoded + l.hash
           );

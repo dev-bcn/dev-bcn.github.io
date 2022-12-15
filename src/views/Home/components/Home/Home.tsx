@@ -62,7 +62,12 @@ const Home: FC = () => {
               La Farga, Hospitalet, Barcelona
             </StyledSubtitle>
           </StyledTitleContainer>
-          <StyledSubtitle>{data.tracks}</StyledSubtitle>
+          <StyledTitleContainer color={Color.DARK_BLUE}>
+            <StyledSubtitle>
+              7 tracks with the following topics: <br />
+              {data.tracks}
+            </StyledSubtitle>
+          </StyledTitleContainer>
           <Countdown date={startDay} renderer={TimeCountDown} />
           {data.actionButtons && <ActionButtons />}
 

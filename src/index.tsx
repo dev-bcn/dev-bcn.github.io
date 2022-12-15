@@ -6,7 +6,7 @@ import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
 import ReactGa from "react-ga";
 
-const tracking_ID = process.env.REACT_APP_GOOGLE_ANALYTICS_API_KEY || "";
+const tracking_ID = process.env.REACT_APP_GOOGLE_ANALYTICS_API_KEY || "G-0BG1LNPT11";
 ReactGa.initialize(tracking_ID);
 
 ReactDOM.render(
