@@ -63,7 +63,10 @@ const Home: FC = () => {
             </StyledSubtitle>
           </StyledTitleContainer>
           <StyledTitleContainer color={Color.DARK_BLUE}>
-            <StyledSubtitle>{data.tracks}</StyledSubtitle>
+            <StyledSubtitle>
+              7 tracks with the following topics: <br />
+              {data.tracks}
+            </StyledSubtitle>
           </StyledTitleContainer>
           <Countdown date={startDay} renderer={TimeCountDown} />
           {data.actionButtons && <ActionButtons />}
