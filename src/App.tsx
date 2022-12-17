@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import {
   ROUTE_ABOUT_US,
   ROUTE_CODE_OF_CONDUCT,
+  ROUTE_CONDITIONS,
   ROUTE_DIVERSITY,
   ROUTE_HOME,
   ROUTE_HOME_ALTERNATE,
@@ -30,6 +31,7 @@ import { Talks } from "./views/Talks/Talks";
 import styled from "styled-components";
 import { Diversity } from "./views/Diversity/Diversity";
 import { Travel } from "./views/Travel/Travel";
+import { Conditions } from "./views/Conditions/Conditions";
 
 const StyledAppWrapper = styled.div`
   position: relative;
@@ -47,6 +49,7 @@ const App = () => {
           <Route path={ROUTE_TALKS} component={Talks} />
           <Route path={ROUTE_CODE_OF_CONDUCT} component={CodeOfConduct} />
           <PageWrapper>
+            <Route path={ROUTE_CONDITIONS} component={Conditions} />
             <Route path={ROUTE_DIVERSITY} component={Diversity} />
             <Route path={ROUTE_JOB_OFFERS} component={JobOffers} />
             <Route path={ROUTE_SCHEDULE} component={Schedule} />
