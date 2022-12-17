@@ -35,6 +35,7 @@ import NotFoundError from "./components/NotFoundError/NotFoundError";
 import { Conditions } from "./views/Conditions/Conditions";
 import { CookieConsent } from "react-cookie-consent";
 import { Color } from "./styles/colors";
+import { Conditions } from "./views/Conditions/Conditions";
 
 const StyledAppWrapper = styled.div`
   position: relative;
