@@ -33,6 +33,7 @@ import React from "react";
 import NotFoundError from "./components/NotFoundError/NotFoundError";
 import { CookieConsent } from "react-cookie-consent";
 import { Color } from "./styles/colors";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 const StyledAppWrapper = styled.div`
   position: relative;
@@ -41,32 +42,34 @@ const StyledAppWrapper = styled.div`
 `;
 
 const App = () => {
+  const queryClient = new QueryClient();
   return (
     <StyledAppWrapper className="AppWrapperAll">
-      <ScrollToTop />
-      <Navigation />
-      <Switch>
-        <Route path={ROUTE_TALKS} component={Talks} />
-        <Route path={ROUTE_CODE_OF_CONDUCT} component={CodeOfConduct} />
-        <Route path={ROUTE_DIVERSITY} component={Diversity} />
-        <Route path={ROUTE_JOB_OFFERS} component={JobOffers} />
-        <Route path={ROUTE_SCHEDULE} component={Schedule} />
-        <Route path={ROUTE_SPEAKERS} component={Speakers} />
-        <Route path={ROUTE_ABOUT_US} component={About} />
-        <Route path={ROUTE_TRAVEL} component={Travel} />
-        <Route
-          path={ROUTE_MEETING_DETAIL_PLAIN}
-          component={MeetingDetailContainer}
-        />
-        <Route
-          path={ROUTE_SPEAKER_DETAIL_PLAIN}
-          component={SpeakerDetailContainer}
-        />
-        <Route path={ROUTE_HOME} component={HomeWrapper} exact />
-        <Route path={ROUTE_HOME_ALTERNATE} component={HomeWrapper} exact />
-        <Route path="*" component={NotFoundError} />
-      </Switch>
-      <CookieConsent
+      <QueryClientProvider client={queryClient}>
+        <ScrollToTop />
+        <Navigation />
+        <Switch>
+          <Route path={ROUTE_TALKS} component={Talks} />
+          <Route path={ROUTE_CODE_OF_CONDUCT} component={CodeOfConduct} />
+          <Route path={ROUTE_DIVERSITY} component={Diversity} />
+          <Route path={ROUTE_JOB_OFFERS} component={JobOffers} />
+          <Route path={ROUTE_SCHEDULE} component={Schedule} />
+          <Route path={ROUTE_SPEAKERS} component={Speakers} />
+          <Route path={ROUTE_ABOUT_US} component={About} />
+          <Route path={ROUTE_TRAVEL} component={Travel} />
+          <Route
+            path={ROUTE_MEETING_DETAIL_PLAIN}
+            component={MeetingDetailContainer}
+          />
+          <Route
+            path={ROUTE_SPEAKER_DETAIL_PLAIN}
+            component={SpeakerDetailContainer}
+          />
+          <Route path={ROUTE_HOME} component={HomeWrapper} exact />
+          <Route path={ROUTE_HOME_ALTERNATE} component={HomeWrapper} exact />
+          <Route path="*" component={NotFoundError} />
+        </Switch>
+        <CookieConsent
         debug={true}
         enableDeclineButton={true}
         cookieName="DevBcnCookie"
@@ -84,6 +87,7 @@ const App = () => {
         This website uses cookies to enhance the user experience.
       </CookieConsent>
       <Footer />
+      </QueryClientProvider>
     </StyledAppWrapper>
   );
 };
