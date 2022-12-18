@@ -1,9 +1,9 @@
-import { Color } from '../../styles/colors';
+import { Color } from "../../styles/colors";
 
-import { FC } from 'react';
-import { Link } from 'react-router-dom';
-import SectionWrapper from '../SectionWrapper/SectionWrapper';
-import styled from 'styled-components';
+import { FC } from "react";
+import { Link } from "react-router-dom";
+import SectionWrapper from "../SectionWrapper/SectionWrapper";
+import styled from "styled-components";
 
 const StyledContainer = styled.div`
   display: flex;
@@ -30,15 +30,15 @@ const StyledLink = styled(Link)`
 `;
 
 interface INotFoundErrorProps {
-  message: string;
+  message?: string;
 }
 
-const NotFoundError: FC<INotFoundErrorProps> = ({ message }) => {
+const NotFoundError: FC<INotFoundErrorProps> = ({ message = "Page" }) => {
   return (
     <SectionWrapper color={Color.WHITE}>
-      <StyledContainer className='Error404'>
+      <StyledContainer className="Error404">
         <StyledTitle>Error 404. {message} not found</StyledTitle>
-        <StyledLink to={'/'}>Back to home</StyledLink>
+        <StyledLink to={"/"}>Back to home</StyledLink>
       </StyledContainer>
     </SectionWrapper>
   );
