@@ -1,18 +1,14 @@
-import { FC } from 'react';
-import styled from 'styled-components';
+import { FC } from "react";
+import styled from "styled-components";
 import {
   MOBILE_BREAKPOINT,
   TABLET_BREAKPOINT,
-} from '../../../constants/BreakPoints';
-import { Color } from '../../../styles/colors';
+} from "../../../constants/BreakPoints";
+import { Color } from "../../../styles/colors";
+import { ISpeaker } from "../Speakers";
 
 type SpeakersCardProps = {
-  speaker: {
-    title: string;
-    subtitle: string;
-    text: string;
-    speakerImage: number;
-  };
+  speaker: ISpeaker;
 };
 
 const StyledSpeakerCard = styled.div`
@@ -52,6 +48,7 @@ const StyledImageAnimation = styled.div`
   opacity: 0;
   transition: 0.25s linear;
   background-color: rgba(239, 71, 111, 0.5);
+
   &:hover {
     opacity: 1;
   }
@@ -59,11 +56,6 @@ const StyledImageAnimation = styled.div`
 
 const StyledSpeakerTitle = styled.h5`
   color: ${Color.WHITE};
-`;
-
-const StyledSpeakerSubtitle = styled.h5`
-  color: ${Color.DARK_BLUE};
-  text-align: left;
 `;
 
 const StyledSpeakerText = styled.p`
@@ -75,13 +67,10 @@ export const SpeakerCard: FC<SpeakersCardProps> = ({ speaker }) => {
   return (
     <StyledSpeakerCard>
       <StyledSpeakerImageContainer>
-        <StyledSpeakerImage
-          src={require(`../../../assets/images/FaqsImage${speaker.speakerImage}.png`)}
-        />
+        <StyledSpeakerImage src={speaker.speakerImage} />
         <StyledImageAnimation />
       </StyledSpeakerImageContainer>
       <StyledSpeakerTitle>{speaker.title}</StyledSpeakerTitle>
-      <StyledSpeakerSubtitle>{speaker.subtitle}</StyledSpeakerSubtitle>
       <StyledSpeakerText>{speaker.text}</StyledSpeakerText>
     </StyledSpeakerCard>
   );
