@@ -1,13 +1,12 @@
 import { MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
 import { Color } from "../../styles/colors";
-import { FC, useEffect } from "react";
+import { FC, Key, useEffect } from "react";
 import LessThanBlueIcon from "../../assets/images/LessThanBlueIcon.svg";
 import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import { SpeakerCard } from "./components/SpeakersCard";
 import TitleSection from "../../components/SectionTitle/TitleSection";
 import { useWindowSize } from "react-use";
-import data from "../../data/2023.json";
 import {
   SpeakersCardsContainer,
   StyledContainerLeftSlash,
@@ -18,13 +17,61 @@ import {
   StyledSpeakersSection,
   StyledWaveContainer,
 } from "./Speakers.style";
+import { useQuery } from "react-query";
+import axios from "axios";
+import webData from "../../data/2023.json";
+
+export interface ISpeaker {
+  title: string;
+  subtitle: string;
+  text: string;
+  speakerImage: string;
+}
+
+export interface IResponse {
+  fullName: string;
+  tagLine: string;
+  bio: string;
+  profilePicture: string;
+}
+
+const LessThanGreaterThan = (props: { width: number }) => (
+  <>
+    {props.width > MOBILE_BREAKPOINT && (
+      <>
+        <StyledLessIcon src={LessThanBlueIcon} />
+        <StyledMoreIcon src={MoreThanBlueIcon} />
+      </>
+    )}
+  </>
+);
+
+const speakerAdapter = (response: IResponse[]): ISpeaker[] =>
+  response.map((response) => {
+    return {
+      title: response.fullName,
+      speakerImage: response.profilePicture,
+      text: response.tagLine,
+      subtitle: response.bio,
+    };
+  });
 
 const Speakers: FC = () => {
   const { width } = useWindowSize();
-  const speakersCurrentYear = data.speakers;
+
+  const { isLoading, error, data } = useQuery("speakers", async () => {
+    const serverResponse = await axios.get(
+      "https://sessionize.com/api/v2/ttsitynd/view/Speakers"
+    );
+    return speakerAdapter(serverResponse.data);
+  });
+
+  if (error) {
+    console.error("Error fetching speakers", error);
+  }
 
   useEffect(() => {
-    document.title = `Speakers - DevBcn ${data.edition}`;
+    document.title = `Speakers - DevBcn ${webData.edition}`;
   });
 
   return (
@@ -39,22 +86,19 @@ const Speakers: FC = () => {
             Technologies and in the JCP."
             color={Color.WHITE}
           />
-          {width > MOBILE_BREAKPOINT && (
-            <>
-              <StyledLessIcon src={LessThanBlueIcon} />
-              <StyledMoreIcon src={MoreThanBlueIcon} />
-            </>
-          )}
+          <LessThanGreaterThan width={width} />
           <SpeakersCardsContainer>
-            {speakersCurrentYear.length === 0 && (
+            {isLoading && <p>Loading...</p>}
+            {data && data.length === 0 && (
               <p style={{ color: Color.WHITE }}>
                 No selected speakers yet. Keep in touch in our social media for
                 upcoming announcements
               </p>
             )}
-            {speakersCurrentYear.map((speaker, index) => (
-              <SpeakerCard key={index} speaker={speaker} />
-            ))}
+            {data &&
+              data.map((speaker: ISpeaker, index: Key) => (
+                <SpeakerCard key={index} speaker={speaker} />
+              ))}
           </SpeakersCardsContainer>
           <StyledContainerRightSlash
             initial={{ x: "100%" }}
