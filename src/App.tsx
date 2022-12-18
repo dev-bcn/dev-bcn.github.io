@@ -30,6 +30,7 @@ import { Talks } from "./views/Talks/Talks";
 import styled from "styled-components";
 import { Diversity } from "./views/Diversity/Diversity";
 import { Travel } from "./views/Travel/Travel";
+import NotFoundError from "./components/NotFoundError/NotFoundError";
 
 const StyledAppWrapper = styled.div`
   position: relative;
@@ -64,6 +65,7 @@ const App = () => {
             <Route path={ROUTE_HOME} component={HomeWrapper} exact />
             <Route path={ROUTE_HOME_ALTERNATE} component={HomeWrapper} exact />
           </PageWrapper>
+          <Route path={"*"} component={NotFoundError} />
         </Switch>
         <Footer />
       </BrowserRouter>
