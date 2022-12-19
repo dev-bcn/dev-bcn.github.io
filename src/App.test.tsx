@@ -3,6 +3,9 @@ import { Router } from "react-router-dom";
 import App from "./App";
 import { createMemoryHistory } from "history";
 import {
+  ROUTE_ABOUT_US,
+  ROUTE_CODE_OF_CONDUCT,
+  ROUTE_DIVERSITY,
   ROUTE_HOME,
   ROUTE_JOB_OFFERS,
   ROUTE_SPEAKERS,
@@ -22,11 +25,14 @@ describe("navigation pages", () => {
     expect(
       screen.getByText(/The Developers Conference 2023/i)
     ).toBeInTheDocument();
+
     expect(screen.getByText(/July 3rd-5th, 2023/i)).toBeInTheDocument();
     expect(
       screen.getByText(/7 tracks with the following topics:/i)
     ).toBeInTheDocument();
+
     expect(screen.getByText(/🎟️ Buy Tickets/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/Interested in meeting/i)).toHaveLength(2);
   });
 
   test("it render the travel page", () => {
@@ -88,5 +94,54 @@ describe("navigation pages", () => {
       </Router>
     );
     expect(screen.getByText("Error 404. Page not found")).toBeInTheDocument();
+  });
+
+  test("it renders the about us page", () => {
+    const history = createMemoryHistory();
+    history.push(ROUTE_ABOUT_US);
+    render(
+      <Router history={history}>
+        <App />
+      </Router>
+    );
+    expect(screen.getByText(/Jonathan Vila/i)).toBeInTheDocument();
+    expect(screen.getByText(/Nacho Cougil/i)).toBeInTheDocument();
+  });
+
+  test("it renders the code of conduct page", () => {
+    const history = createMemoryHistory();
+    history.push(ROUTE_CODE_OF_CONDUCT);
+    render(
+      <Router history={history}>
+        <App />
+      </Router>
+    );
+    expect(
+      screen.getByText(/The DevBcn is the yearly event/i)
+    ).toBeInTheDocument();
+  });
+
+  test("it renders the talks page", () => {
+    const history = createMemoryHistory();
+    history.push(ROUTE_TALKS);
+    render(
+      <Router history={history}>
+        <App />
+      </Router>
+    );
+    expect(screen.getByText(/No talks selected yet/i)).toBeInTheDocument();
+  });
+
+  test("it renders the diversity page", () => {
+    const history = createMemoryHistory();
+    history.push(ROUTE_DIVERSITY);
+    render(
+      <Router history={history}>
+        <App />
+      </Router>
+    );
+    expect(
+      screen.getByText(/diversity sponsorship for DevBcn 2023/i)
+    ).toBeInTheDocument();
   });
 });
