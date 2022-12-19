@@ -341,8 +341,8 @@ export const Conditions: FC = () => {
         <strong>NIF : B72617129</strong>
       </p>
       <p>
-        <a href="mailto:info@devbcn.com" target="_blank" rel="noreferrer">
-          info@devbcn.com.
+        <a href="mailto:tickets@devbcn.com" target="_blank" rel="noreferrer">
+          tickets@devbcn.com.
         </a>
       </p>
     </StyledDiv>
