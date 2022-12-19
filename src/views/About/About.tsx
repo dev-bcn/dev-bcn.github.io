@@ -62,8 +62,8 @@ export const About: FC = () => {
             </>
           )}
           <StyledUsersWrapper>
-            {aboutData.map((person) => (
-              <AboutCard person={person} />
+            {aboutData.map((person, index) => (
+              <AboutCard person={person} key={index} />
             ))}
           </StyledUsersWrapper>
           <p>

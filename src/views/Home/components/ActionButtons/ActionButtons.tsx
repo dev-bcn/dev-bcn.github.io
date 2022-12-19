@@ -7,6 +7,7 @@ import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
 
 const StyledActionDiv = styled.div`
   display: flex;
+  text-align: center;
 
   @media (max-width: ${BIG_BREAKPOINT}px) {
     flex-direction: column;
