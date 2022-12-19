@@ -113,8 +113,8 @@ export const CodeOfConduct: FC = () => {
         <LeftHashWithText color={Color.WHITE} text="TOPICS" />
         <StyledSpeakersSection>
           <StyledTagsWrapper>
-            {CodeOfConductTags.map((tag) => (
-              <Tag text={tag} />
+            {CodeOfConductTags.map((tag, index) => (
+              <Tag text={tag} key={index} />
             ))}
           </StyledTagsWrapper>
         </StyledSpeakersSection>
