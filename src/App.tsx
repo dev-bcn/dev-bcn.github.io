@@ -49,7 +49,6 @@ const App = () => {
         <Route path={ROUTE_TALKS} component={Talks} />
         <Route path={ROUTE_CODE_OF_CONDUCT} component={CodeOfConduct} />
         <Route path={ROUTE_CONDITIONS} component={Conditions} />
-        <Route path={ROUTE_CONDITIONS} component={Conditions} />
         <Route path={ROUTE_DIVERSITY} component={Diversity} />
         <Route path={ROUTE_JOB_OFFERS} component={JobOffers} />
         <Route path={ROUTE_SCHEDULE} component={Schedule} />
