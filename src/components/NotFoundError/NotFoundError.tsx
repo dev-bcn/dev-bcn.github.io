@@ -1,16 +1,17 @@
-import { Color } from '../../styles/colors';
+import { Color } from "../../styles/colors";
 
-import { FC } from 'react';
-import { Link } from 'react-router-dom';
-import SectionWrapper from '../SectionWrapper/SectionWrapper';
-import styled from 'styled-components';
+import { FC } from "react";
+import { Link } from "react-router-dom";
+import SectionWrapper from "../SectionWrapper/SectionWrapper";
+import styled from "styled-components";
+import ActionButtons from "../../views/Home/components/ActionButtons/ActionButtons";
 
 const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding-top: 3rem;
+  padding-top: 8rem;
 `;
 
 const StyledTitle = styled.p`
@@ -30,15 +31,16 @@ const StyledLink = styled(Link)`
 `;
 
 interface INotFoundErrorProps {
-  message: string;
+  message?: string;
 }
 
-const NotFoundError: FC<INotFoundErrorProps> = ({ message }) => {
+const NotFoundError: FC<INotFoundErrorProps> = ({ message = "Page" }) => {
   return (
     <SectionWrapper color={Color.WHITE}>
-      <StyledContainer className='Error404'>
+      <StyledContainer className="Error404">
         <StyledTitle>Error 404. {message} not found</StyledTitle>
-        <StyledLink to={'/'}>Back to home</StyledLink>
+        <StyledLink to={"/"}>Back to home</StyledLink>
+        <ActionButtons />
       </StyledContainer>
     </SectionWrapper>
   );

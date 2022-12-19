@@ -1,17 +1,28 @@
 import "./index.scss";
-
+import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import React from "react";
 import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
 import ReactGa from "react-ga";
+import { BrowserTracing } from "@sentry/tracing";
+import * as Sentry from "@sentry/react";
 
-const tracking_ID = process.env.REACT_APP_GOOGLE_ANALYTICS_API_KEY || "G-0BG1LNPT11";
+const tracking_ID =
+  process.env.REACT_APP_GOOGLE_ANALYTICS_API_KEY || "G-0BG1LNPT11";
 ReactGa.initialize(tracking_ID);
+
+Sentry.init({
+  dsn: "https://fdfaeed3901d43a299b95c534e42a4c1@o194303.ingest.sentry.io/4504348314435584",
+  integrations: [new BrowserTracing()],
+  tracesSampleRate: 1.0,
+});
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );
