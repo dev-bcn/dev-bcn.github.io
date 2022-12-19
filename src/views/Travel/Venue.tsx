@@ -18,11 +18,10 @@ import LocationIcon from "../../assets/images/LocationIcon.svg";
 
 const StyledVenue = styled.div`
    {
-    padding-top: 100px;
+    padding: 100px 10rem 50px;
     text-align: left;
     max-width: ${MAX_WIDTH}px;
     margin: 0 auto;
-    padding-bottom: 50px;
   }
 
   .image {
