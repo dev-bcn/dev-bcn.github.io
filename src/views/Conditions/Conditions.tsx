@@ -245,8 +245,8 @@ export const Conditions: FC = () => {
         If you have the impression that your data is not properly secured or
         there are indications of abuse, please contact our customer service or
         via{" "}
-        <a href="mailto:tickets@devbcn.com" target="_blank" rel="noreferrer">
-          tickets@devbcn.com.
+        <a href="mailto:customers@devbcn.com" target="_blank" rel="noreferrer">
+          customers@devbcn.com.
         </a>
       </p>
       <h3>
@@ -257,8 +257,8 @@ export const Conditions: FC = () => {
         The Regulation provides you with various rights regarding the processing
         of your personal data. If you wish to invoke your privacy rights, please
         contact{" "}
-        <a href="mailto:tickets@devbcn.com" target="_blank" rel="noreferrer">
-          tickets@devbcn.com.
+        <a href="mailto:customers@devbcn.com" target="_blank" rel="noreferrer">
+          customers@devbcn.com.
         </a>
         . We will normally respond to your request within 30 days. This period
         can be extended by a further two months if the request is complex or if
@@ -341,8 +341,8 @@ export const Conditions: FC = () => {
         <strong>NIF : B72617129</strong>
       </p>
       <p>
-        <a href="mailto:tickets@devbcn.com" target="_blank" rel="noreferrer">
-          tickets@devbcn.com.
+        <a href="mailto:customers@devbcn.com" target="_blank" rel="noreferrer">
+          customers@devbcn.com.
         </a>
       </p>
     </StyledDiv>
