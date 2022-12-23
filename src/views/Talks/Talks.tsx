@@ -2,10 +2,9 @@ import React, { FC } from "react";
 import LessThanDarkBlueIcon from "../../assets/images/LessThanDarkBlueIcon.svg";
 import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import { TalkCard } from "./components/TalkCard";
 import TitleSection from "../../components/SectionTitle/TitleSection";
 import { Color } from "../../styles/colors";
-import data from "../../data/2023.json";
+import conferenceData from "../../data/2023.json";
 import {
   StyledMarginBottom,
   StyledSpeakersSection,
@@ -14,11 +13,17 @@ import {
   StyledWaveContainer,
 } from "./Talks.style";
 import { StyledWrapperSection } from "../JobOffers/JobOffers.Style";
+import TrackInformation from "./components/TrackInformation";
+import { useFetchTalks } from "./UseFetchTalks";
 
 export const Talks: FC = () => {
-  const currentYearTalks = data.talks;
+  const { isLoading, error, data } = useFetchTalks();
+
+  if (error) {
+    console.error("Error fetching speakers", error);
+  }
   React.useEffect(() => {
-    document.title = `Talks - DevBcn - ${data.edition}`;
+    document.title = `Talks - DevBcn - ${conferenceData.edition}`;
   }, []);
 
   return (
@@ -53,15 +58,17 @@ export const Talks: FC = () => {
       </StyledWaveContainer>
       <SectionWrapper color={Color.LIGHT_BLUE} marginTop={1}>
         <StyledWrapperSection>
-          {currentYearTalks.length === 0 && (
+          {isLoading && <h1>Loading </h1>}
+          {data && data.length === 0 && (
             <p style={{ color: Color.WHITE }}>
               No talks selected yet. Keep in touch in our social media for
               upcoming announcements
             </p>
           )}
-          {currentYearTalks.map((talk, index) => (
-            <TalkCard talk={talk} index={index} />
-          ))}
+          {data &&
+            data.map((track, index) => (
+              <TrackInformation key={index} track={track} />
+            ))}
         </StyledWrapperSection>
         <StyledMarginBottom />
       </SectionWrapper>
