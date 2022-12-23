@@ -15,7 +15,7 @@ const SpeakerDetailContainer: FC = () => {
   const { isLoading, error, data } = useFetchSpeakers(id);
 
   if (error) {
-    console.error("Error fetching speaker" + id, error);
+    console.error(`Error fetching speaker${id}`, error);
   }
   React.useEffect(() => {
     if (data) {
