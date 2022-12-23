@@ -32,9 +32,9 @@ import {
 } from "./Speaker.style";
 import { ROUTE_SPEAKERS, ROUTE_TALK_DETAIL } from "../../constants/routes";
 import { StyledTalkDescription } from "./SpeakerDetail.style";
-import { ISpeaker } from "../Speakers/Speakers";
 import { Link } from "react-router-dom";
 import { Color } from "../../styles/colors";
+import { ISpeaker } from "../Speakers/Speaker.types";
 
 interface ISpeakerDetailProps {
   speaker: ISpeaker;

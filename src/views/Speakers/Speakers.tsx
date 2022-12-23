@@ -17,41 +17,9 @@ import {
   StyledSpeakersSection,
   StyledWaveContainer,
 } from "./Speakers.style";
-import { useQuery } from "react-query";
-import axios from "axios";
 import webData from "../../data/2023.json";
-
-interface Session {
-  id: number;
-  name: string;
-}
-
-interface Link {
-  title: string;
-  url: string;
-  linkType: string;
-}
-export interface ISpeaker {
-  id: string;
-  fullName: string;
-  bio: string;
-  tagLine: string;
-  speakerImage: string;
-  twitterUrl?: Link;
-  linkedInUrl?: Link;
-  sessions?: Session[];
-}
-
-export interface IResponse {
-  id: string;
-  fullName: string;
-  tagLine: string;
-  bio: string;
-  profilePicture: string;
-  sessions: Session[];
-
-  links: Link[];
-}
+import { useFetchSpeakers } from "./UseFetchSpeakers";
+import { ISpeaker } from "./Speaker.types";
 
 const LessThanGreaterThan = (props: { width: number }) => (
   <>
@@ -63,37 +31,6 @@ const LessThanGreaterThan = (props: { width: number }) => (
     )}
   </>
 );
-
-export const useFetchSpeakers = (id?: string) => {
-  return useQuery("speakers", async () => {
-    const serverResponse = await axios.get(
-      "https://sessionize.com/api/v2/ttsitynd/view/Speakers"
-    );
-    let returnData;
-    if (id != null) {
-      returnData = serverResponse.data.filter(
-        (speaker: { id: string }) => speaker.id === id
-      );
-    } else {
-      returnData = serverResponse.data;
-    }
-    return speakerAdapter(returnData);
-  });
-};
-
-const speakerAdapter = (response: IResponse[]): ISpeaker[] =>
-  response.map((response) => ({
-    id: response.id,
-    fullName: response.fullName,
-    speakerImage: response.profilePicture,
-    tagLine: response.tagLine,
-    bio: response.bio,
-    sessions: response.sessions,
-    twitterUrl: response.links.filter((link) => link.linkType === "Twitter")[0],
-    linkedInUrl: response.links.filter(
-      (link) => link.linkType === "LinkedIn"
-    )[0],
-  }));
 
 const Speakers: FC = () => {
   const { width } = useWindowSize();

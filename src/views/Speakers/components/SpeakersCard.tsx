@@ -1,5 +1,4 @@
 import { FC } from "react";
-import { ISpeaker } from "../Speakers";
 import {
   StyledImageAnimation,
   StyledSpeakerCard,
@@ -10,6 +9,7 @@ import {
 } from "./SpeakerCard.Style";
 import { Link } from "react-router-dom";
 import { ROUTE_SPEAKER_DETAIL } from "../../../constants/routes";
+import { ISpeaker } from "../Speaker.types";
 
 type SpeakersCardProps = {
   speaker: ISpeaker;
