@@ -6,8 +6,8 @@ import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import SpeakerDetail from "./SpeakerDetail";
 import { useParams } from "react-router-dom";
 import { StyledContainer, StyledWaveContainer } from "./Speaker.style";
-import { useFetchSpeakers } from "../Speakers/Speakers";
 import conferenceData from "../../data/2023.json";
+import { useFetchSpeakers } from "../Speakers/UseFetchSpeakers";
 
 const SpeakerDetailContainer: FC = () => {
   const { id } = useParams<{ id: string }>();
