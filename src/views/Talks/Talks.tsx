@@ -15,6 +15,7 @@ import {
 import TrackInformation from "./components/TrackInformation";
 import { useFetchTalks } from "./UseFetchTalks";
 import styled from "styled-components";
+import * as Sentry from "@sentry/react";
 
 export const StyledSessionSection = styled.section`
   display: flex;
@@ -28,7 +29,7 @@ export const Talks: FC = () => {
   const { isLoading, error, data } = useFetchTalks();
 
   if (error) {
-    console.error("Error fetching speakers", error);
+    Sentry.captureException(error);
   }
   React.useEffect(() => {
     document.title = `Talks - DevBcn - ${conferenceData.edition}`;
