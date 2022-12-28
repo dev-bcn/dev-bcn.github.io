@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useCallback } from "react";
 import data from "../../../../data/2023.json";
 import Button from "./Button";
 import styled from "styled-components";
@@ -24,35 +24,40 @@ const ActionButtons: FC = () => {
   const sponsorshipEndDay = new Date(data.tickets.endDay);
   const today = new Date();
 
-  const isBetween = (startDay: Date, endDay: Date): boolean => {
-    return startDay < new Date() && endDay > today;
-  };
-  const analyticsEventsTracker = (category = "action") => {
-    return (action = "", label = "") => {
+  const isBetween = (startDay: Date, endDay: Date): boolean => startDay < new Date() && endDay > today;
+  const analyticsEventsTracker = (category = "action") =>
+    (action = "", label = "") => {
       ReactGa.event({ category, action, label });
     };
-  };
   const gaEventTracker = analyticsEventsTracker("links");
-  const doNothing = (event: MouseEvent) => {
-    event.preventDefault();
-  };
+
+  const trackSponsorshipInfo = useCallback(() => {
+    gaEventTracker("sponsorship", "sponsorship");
+  }, [gaEventTracker]);
+
+  const trackTickets = useCallback(() => {
+    gaEventTracker("ticket", "tickets");
+  }, [gaEventTracker]);
+
+  const trackCFP = useCallback(() => {
+    gaEventTracker("CFP", "CFP");
+  }, [gaEventTracker]);
 
   return (
     <StyledActionDiv>
       {isBetween(ticketStartDay, ticketEndDay) && (
         <Button
-          onClick={doNothing}
+          onClick={trackTickets}
           text="🎟️ Buy Tickets"
-          link="#"
-          disabled={true}
+          link="https://tickets.devbcn.com/event/devbcn-2023"
         />
       )}
       {isBetween(CFPStartDay, CFPEndDay) && (
-        <Button onClick={doNothing} text="📢 CFP" disabled={true} link="#" />
+        <Button onClick={trackCFP} text="📢 CFP" link="https://sessionize.com/devbcn23/" />
       )}
       {isBetween(sponsorshipStartDay, sponsorshipEndDay) && (
         <Button
-          onClick={() => gaEventTracker("sponsors")}
+          onClick={trackSponsorshipInfo}
           text="🤝 Sponsorship"
           link="mailto:sponsors@devbcn.com?subject=devBcn sponsorship"
         />
