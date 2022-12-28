@@ -29,7 +29,7 @@ import { Talks } from "./views/Talks/Talks";
 import styled from "styled-components";
 import { Diversity } from "./views/Diversity/Diversity";
 import { Travel } from "./views/Travel/Travel";
-import React from "react";
+import React, { FC } from "react";
 import NotFoundError from "./components/NotFoundError/NotFoundError";
 import { QueryClient, QueryClientProvider } from "react-query";
 
@@ -39,7 +39,7 @@ const StyledAppWrapper = styled.div`
   overflow-x: hidden;
 `;
 
-const App = () => {
+const App: FC = () => {
   const queryClient = new QueryClient();
   return (
     <StyledAppWrapper className="AppWrapperAll">

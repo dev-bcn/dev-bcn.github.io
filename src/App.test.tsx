@@ -129,7 +129,7 @@ describe("navigation pages", () => {
         <App />
       </Router>
     );
-    expect(screen.getByText(/No talks selected yet/i)).toBeInTheDocument();
+    expect(screen.getByText(/Loading/i)).toBeInTheDocument();
   });
 
   test("it renders the diversity page", () => {

@@ -14,7 +14,7 @@ export interface SessionCategory {
   categoryItems: CategoryItem[];
 }
 
-interface Session {
+export interface Session {
   id: number;
   title: string;
   description: string;
@@ -23,6 +23,7 @@ interface Session {
   speakers: SessionSpeaker[];
   categories: SessionCategory[];
   questionAnswers: QuestionAnswers[];
+  recordingUrl?: string;
 }
 
 export interface IGroup {
