@@ -8,7 +8,7 @@ export const useFetchSpeakers = (id?: string) => {
       "https://sessionize.com/api/v2/ttsitynd/view/Speakers"
     );
     let returnData;
-    if (id !== null) {
+    if (id !== undefined) {
       returnData = serverResponse.data.filter(
         (speaker: { id: string }) => speaker.id === id
       );
@@ -18,7 +18,7 @@ export const useFetchSpeakers = (id?: string) => {
     return speakerAdapter(returnData);
   });
 };
-const speakerAdapter = (response: IResponse[]): ISpeaker[] =>
+export const speakerAdapter = (response: IResponse[]): ISpeaker[] =>
   response.map((response) => ({
     id: response.id,
     fullName: response.fullName,

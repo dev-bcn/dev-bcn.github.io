@@ -2,10 +2,7 @@ import { FC } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Color } from "../../../styles/colors";
-import {
-  StyledFaqCard,
-  StyledFaqTitle,
-} from "../../Home/components/Faqs/components/FaqsCard";
+import { StyledFaqTitle } from "../../Home/components/Faqs/components/FaqsCard";
 import { StyledJobsInfo } from "../../JobOffers/components/JobsCard";
 import { Tag } from "../../../components/Tag/Tag";
 import { ROUTE_TALK_DETAIL } from "../../../constants/routes";
@@ -14,6 +11,7 @@ import {
   SessionCategory,
   SessionSpeaker,
 } from "../Talk.types";
+import { extractSessionLevel, extractSessionTags } from "../UseFetchTalks";
 
 interface TalkCardProps {
   index: number;
@@ -28,9 +26,10 @@ interface TalkCardProps {
     categories: SessionCategory[];
     questionAnswers: QuestionAnswers[];
   };
+  key: number;
 }
 
-const StyledTalkText = styled.div`
+const StyledSessionText = styled.div`
   color: ${Color.WHITE};
   padding: 0.5rem 0;
   @media (min-width: 800px) {
@@ -40,10 +39,25 @@ const StyledTalkText = styled.div`
   }
 `;
 
+export const StyledSessionCard = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-width: 20%;
+  max-width: 90%;
+  margin-bottom: 3rem;
+  @media (min-width: 800px) {
+    align-items: flex-start;
+    flex-direction: row;
+    max-width: 900px;
+    margin-bottom: 4rem;
+  }
+`;
+
 export const StyledTagsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   margin-bottom: 0.5rem;
 `;
 
@@ -57,37 +71,18 @@ export const StyledMoreInfoLink = styled(Link)`
 `;
 
 export const TalkCard: FC<TalkCardProps> = ({ talk }) => {
-  const extractSessionTags = (
-    questionAnswers: QuestionAnswers[]
-  ): string[] | undefined => {
-    let tags = questionAnswers
-      .filter((question) => question.question === "Tags/Topics")
-      .map((question) => question.answer)
-      .at(0);
-    return tags?.split(",");
-  };
-  const extractSessionLevel = (
-    categories: SessionCategory[]
-  ): string | undefined =>
-    categories
-      .filter((category) => category.name === "Level")
-      .map((categories) => categories.categoryItems)
-      .flat(1)
-      .map((item) => item.name)
-      .at(0);
-
   return (
-    <StyledFaqCard direction={"row"}>
+    <StyledSessionCard>
       <StyledJobsInfo align={"flex-start"}>
         <StyledFaqTitle>{talk.title}</StyledFaqTitle>
-        <StyledTalkText>
+        <StyledSessionText>
           {talk.speakers.map((speaker: SessionSpeaker) => (
-            <p>{speaker.name}</p>
+            <p key={speaker.id}>{speaker.name}</p>
           ))}
-        </StyledTalkText>
-        <StyledTalkText>
+        </StyledSessionText>
+        <StyledSessionText>
           Level: {extractSessionLevel(talk.categories)}
-        </StyledTalkText>
+        </StyledSessionText>
         <StyledTagsWrapper>
           {extractSessionTags(talk.questionAnswers)?.map((tag, index) => {
             return <Tag key={index} text={tag} />;
@@ -97,6 +92,6 @@ export const TalkCard: FC<TalkCardProps> = ({ talk }) => {
           More info +
         </StyledMoreInfoLink>
       </StyledJobsInfo>
-    </StyledFaqCard>
+    </StyledSessionCard>
   );
 };

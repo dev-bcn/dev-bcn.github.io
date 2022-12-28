@@ -126,7 +126,7 @@ const SpeakerDetail: FC<ISpeakerDetailProps> = ({ speaker }) => {
                     speaker.sessions.map((session, index) => (
                       <li key={index}>
                         <StyledTalkDescription
-                          to={ROUTE_TALK_DETAIL + session.id}
+                          to={`${ROUTE_TALK_DETAIL}/${session.id}`}
                         >
                           <StyledSpeakerTitle>
                             {session.name}
@@ -139,12 +139,12 @@ const SpeakerDetail: FC<ISpeakerDetailProps> = ({ speaker }) => {
                 <Link
                   to={ROUTE_SPEAKERS}
                   style={{
-                    color: Color.MAGENTA,
+                    color: Color.BLACK_BLUE,
                     fontWeight: "bold",
                     textDecoration: "none",
                   }}
                 >
-                  🔙 Go back
+                  Go back
                 </Link>
               </StyledFlexCol>
               <StyledMoreThanIconContainer>
