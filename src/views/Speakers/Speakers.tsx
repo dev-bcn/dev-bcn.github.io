@@ -20,6 +20,7 @@ import {
 import webData from "../../data/2023.json";
 import { useFetchSpeakers } from "./UseFetchSpeakers";
 import { ISpeaker } from "./Speaker.types";
+import * as Sentry from "@sentry/react";
 
 const LessThanGreaterThan = (props: { width: number }) => (
   <>
@@ -38,7 +39,7 @@ const Speakers: FC = () => {
   const { isLoading, error, data } = useFetchSpeakers();
 
   if (error) {
-    console.error("Error fetching speakers", error);
+    Sentry.captureException(error);
   }
 
   useEffect(() => {
