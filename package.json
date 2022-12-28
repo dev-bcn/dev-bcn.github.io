@@ -57,7 +57,7 @@
     "@testing-library/react-hooks": "^8.0.1",
     "@testing-library/user-event": "^13.5.0",
     "@types/google-map-react": "^2.1.7",
-    "@types/jest": "^27.4.0",
+    "@types/jest": "^29.2.4",
     "@types/react-router-dom": "^5.3.3",
     "@types/styled-components": "^5.1.22",
     "gh-pages": "^3.2.3",
