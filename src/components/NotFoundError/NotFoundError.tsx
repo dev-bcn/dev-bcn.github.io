@@ -1,6 +1,6 @@
 import { Color } from "../../styles/colors";
 
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { Link } from "react-router-dom";
 import SectionWrapper from "../SectionWrapper/SectionWrapper";
 import styled from "styled-components";
@@ -35,6 +35,10 @@ interface INotFoundErrorProps {
 }
 
 const NotFoundError: FC<INotFoundErrorProps> = ({ message = "Page" }) => {
+  useEffect(() => {
+    document.title = "DevBcn - page not Found";
+  });
+
   return (
     <SectionWrapper color={Color.WHITE}>
       <StyledContainer className="Error404">

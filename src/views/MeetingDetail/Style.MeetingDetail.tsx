@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import {BIG_BREAKPOINT, LARGE_BREAKPOINT} from "../../constants/BreakPoints";
-import {motion} from "framer-motion";
-import {Color} from "../../styles/colors";
+import { BIG_BREAKPOINT, LARGE_BREAKPOINT } from "../../constants/BreakPoints";
+import { motion } from "framer-motion";
+import { Color } from "../../styles/colors";
 
 export const StyledContainer = styled.div`
   padding-top: 2rem;
@@ -38,7 +38,6 @@ export const StyledTitle = styled(motion.h1)`
     text-align: left;
   }
 `;
-
 
 export const StyledDescription = styled.p`
   color: ${Color.DARK_BLUE};
@@ -144,6 +143,11 @@ export const StyledNameContainer = styled.div`
   flex-direction: column;
   align-items: center;
 
+  & a {
+    text-decoration: none;
+    color: ${Color.LIGHT_BLUE};
+  }
+
   @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
     flex-direction: row;
     margin-bottom: 1rem;
@@ -234,10 +238,10 @@ export const StyledLink = styled.a`
 
 export const StyledSocialMediaIcon = styled.img<{ noMargin?: boolean }>`
   height: 1.5rem;
-  margin-right: ${({ noMargin }) => (noMargin ? '0' : '0.75rem')};
+  margin-right: ${({ noMargin }) => (noMargin ? "0" : "0.75rem")};
 
   @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    margin-right: ${({ noMargin }) => (noMargin ? '0' : '0.5rem')};
+    margin-right: ${({ noMargin }) => (noMargin ? "0" : "0.5rem")};
   }
 `;
 

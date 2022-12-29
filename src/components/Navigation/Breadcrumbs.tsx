@@ -1,8 +1,8 @@
-import { FC, useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { FC, useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
-import { Color } from '../../styles/colors';
-import styled from 'styled-components';
+import { Color } from "../../styles/colors";
+import styled from "styled-components";
 
 const StyledBreadcrumbsWrapper = styled.div`
   display: flex;
@@ -33,27 +33,27 @@ const StyledLink = styled(Link)`
 
 const getLinkData = (page: string) => {
   const links: any = {
-    codeOfConduct: { name: 'Code Of Conduct', urlParam: 'codeOfConduct' },
-    schedule: { name: 'Schedule', urlParam: 'schedule' },
-    meetingDetail: { name: 'Meetings', urlParam: 'schedule' },
-    speakerDetail: { name: 'Talks', urlParam: 'talks' },
-    talks: { name: 'Talks', urlParam: 'talks' },
-    jobOffers: { name: 'Job Offers', urlParam: 'jobOffers' },
-    speakers: { name: 'Speakers', urlParam: 'speakers' },
+    codeOfConduct: { name: "Code Of Conduct", urlParam: "codeOfConduct" },
+    schedule: { name: "Schedule", urlParam: "schedule" },
+    meetingDetail: { name: "Meetings", urlParam: "schedule" },
+    speakerDetail: { name: "Talks", urlParam: "talks" },
+    talks: { name: "Talks", urlParam: "talks" },
+    jobOffers: { name: "Job Offers", urlParam: "jobOffers" },
+    speakers: { name: "Speakers", urlParam: "speakers" },
   };
 
   let returnValue;
 
   returnValue = links[page];
 
-  if (page === '') {
-    returnValue = { name: 'Home', urlParam: '' };
+  if (page === "") {
+    returnValue = { name: "Home", urlParam: "" };
   }
 
   if (!returnValue) {
-    const tempName = page.split('-');
+    const tempName = page.split("-");
 
-    let talkOrMeetingName = tempName.join(' ');
+    let talkOrMeetingName = tempName.join(" ");
 
     returnValue = { name: talkOrMeetingName, urlParam: page };
   }
@@ -66,7 +66,11 @@ const Breadcrumbs: FC = () => {
   const location = useLocation();
 
   useEffect(() => {
-    const pages = location.pathname.split('/');
+    const pages = location.pathname.split("/");
+
+    if (pages.length > 2) {
+      pages.pop();
+    }
 
     setPages(pages);
   }, [location]);
