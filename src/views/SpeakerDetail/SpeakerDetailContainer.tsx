@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 import { StyledContainer, StyledWaveContainer } from "./Speaker.style";
 import conferenceData from "../../data/2023.json";
 import { useFetchSpeakers } from "../Speakers/UseFetchSpeakers";
+import * as Sentry from "@sentry/react";
 
 const SpeakerDetailContainer: FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -15,7 +16,7 @@ const SpeakerDetailContainer: FC = () => {
   const { isLoading, error, data } = useFetchSpeakers(id);
 
   if (error) {
-    console.error(`Error fetching speaker${id}`, error);
+    Sentry.captureException(error);
   }
   React.useEffect(() => {
     if (data) {

@@ -31,6 +31,8 @@ import { Diversity } from "./views/Diversity/Diversity";
 import { Travel } from "./views/Travel/Travel";
 import React, { FC } from "react";
 import NotFoundError from "./components/NotFoundError/NotFoundError";
+import { CookieConsent } from "react-cookie-consent";
+import { Color } from "./styles/colors";
 import { QueryClient, QueryClientProvider } from "react-query";
 
 const StyledAppWrapper = styled.div`
@@ -67,7 +69,24 @@ const App: FC = () => {
           <Route path={ROUTE_HOME_ALTERNATE} component={HomeWrapper} exact />
           <Route path="*" component={NotFoundError} />
         </Switch>
-        <Footer />
+        <CookieConsent
+        debug={true}
+        enableDeclineButton={true}
+        cookieName="DevBcnCookie"
+        style={{ backgroundColor: Color.DARK_BLUE }}
+        buttonStyle={{
+          backgroundColor: Color.LIGHT_BLUE,
+          color: Color.WHITE,
+          fontWeight: "bold",
+        }}
+        declineButtonStyle={{
+          fontWeight: "bold",
+          backgroundColor: Color.MAGENTA,
+        }}
+      >
+        This website uses cookies to enhance the user experience.
+      </CookieConsent>
+      <Footer />
       </QueryClientProvider>
     </StyledAppWrapper>
   );
