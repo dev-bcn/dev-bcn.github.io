@@ -24,4 +24,5 @@ jobs:
       run: |
         git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
         npm i
-        npx gh-pages --branch main -u "github-actions-bot <support+actions@github.com>"
+        npm run build
+        npx gh-pages --branch main --dist dist -u "github-actions-bot <support+actions@github.com>"
