@@ -1,8 +1,9 @@
-import { Route, Switch } from "react-router-dom";
+import { Link, Route, Switch } from "react-router-dom";
 import {
   ROUTE_ABOUT_US,
   ROUTE_CODE_OF_CONDUCT,
   ROUTE_CONDITIONS,
+  ROUTE_COOKIES,
   ROUTE_DIVERSITY,
   ROUTE_HOME,
   ROUTE_HOME_ALTERNATE,
@@ -35,6 +36,7 @@ import NotFoundError from "./components/NotFoundError/NotFoundError";
 import { Conditions } from "./views/Conditions/Conditions";
 import { CookieConsent } from "react-cookie-consent";
 import { Color } from "./styles/colors";
+import Cookies from "./views/Cookies/Cookies";
 
 const StyledAppWrapper = styled.div`
   position: relative;
@@ -51,6 +53,7 @@ const App = () => {
         <Route path={ROUTE_TALKS} component={Talks} />
         <Route path={ROUTE_CODE_OF_CONDUCT} component={CodeOfConduct} />
         <Route path={ROUTE_CONDITIONS} component={Conditions} />
+        <Route path={ROUTE_COOKIES} component={Cookies} />
         <Route path={ROUTE_DIVERSITY} component={Diversity} />
         <Route path={ROUTE_JOB_OFFERS} component={JobOffers} />
         <Route path={ROUTE_SCHEDULE} component={Schedule} />
@@ -84,7 +87,10 @@ const App = () => {
           backgroundColor: Color.MAGENTA,
         }}
       >
-        This website uses cookies to enhance the user experience.
+        This website uses cookies to enhance the user experience.{" "}
+        <Link to={ROUTE_COOKIES} style={{ color: "white", fontWeight: "bold" }}>
+          Read here
+        </Link>
       </CookieConsent>
       <Footer />
     </StyledAppWrapper>
