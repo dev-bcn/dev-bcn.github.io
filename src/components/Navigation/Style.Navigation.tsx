@@ -12,6 +12,7 @@ export const StyledBlueHamburger = styled(motion.img)`
 `;
 export const StyledHeaderLogo = styled.img`
   height: 2.5rem;
+  width: 78px;
   cursor: pointer;
 `;
 export const StyledMenuIcon = styled(motion.img)`

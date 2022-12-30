@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, Suspense } from "react";
 import LinkedinIcon from "../../../components/Icons/Linkedin";
 import TwitterIcon from "../../../components/Icons/Twitter";
 import {
@@ -24,7 +24,9 @@ type AboutCardProps = {
 
 export const AboutCard: FC<AboutCardProps> = ({ person }) => (
   <StyledAboutCard>
-    <StyledAboutImage src={person.profileUrl.href} />
+    <Suspense fallback={<span>Loading</span>}>
+      <StyledAboutImage src={person.profileUrl.href} />
+    </Suspense>
     <StyledAboutName color={person.nameColor}>{person.name}</StyledAboutName>
     <StyledAboutJob color={person.jobColor}>{person.job}</StyledAboutJob>
     <StyledSocialIconsWrapper>

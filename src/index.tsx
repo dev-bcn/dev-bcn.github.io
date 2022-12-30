@@ -20,9 +20,11 @@ Sentry.init({
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <React.Suspense fallback={<span>Loading...</span>}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </React.Suspense>
   </React.StrictMode>,
   document.getElementById("root")
 );

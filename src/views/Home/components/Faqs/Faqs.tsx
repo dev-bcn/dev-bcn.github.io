@@ -1,5 +1,5 @@
 import { Color } from "../../../../styles/colors";
-import { FC } from "react";
+import { FC, Suspense } from "react";
 import FaqCard from "./components/FaqsCard";
 import LessThanIcon from "../../../../assets/images/LessThanBlueIcon.svg";
 import MoreThanIcon from "../../../../assets/images/LessThanBlueWhiteIcon.svg";
@@ -87,8 +87,12 @@ const Faqs: FC = () => {
           ))}
           <div style={{ width: "55%" }}>
             <StyledH2>Check last JBCNConf edition</StyledH2>
-            <StyledImage src={jbcnconf} alt="JBCNConf" />
-            <StyledImage src={jbcnconf2} alt="JBCNConf - Keynote" />
+            <Suspense fallback={<span>Loading</span>}>
+              <StyledImage src={jbcnconf} alt="JBCNConf" />
+            </Suspense>
+            <Suspense fallback={<span>Loading</span>}>
+              <StyledImage src={jbcnconf2} alt="JBCNConf - Keynote" />
+            </Suspense>
             <StyledP>
               DevBcn is the rebranding of the biggest Java & JVM conference in
               Spain, now including more technologies and tracks.
@@ -101,21 +105,21 @@ const Faqs: FC = () => {
               rel="noreferrer"
               target="_blank"
             >
-              <img src={flickr} alt="flickr" height="32" />
+              <img src={flickr} alt="flickr" height={32} width={32} />
             </a>
             <a
               href="https://www.youtube.com/watch?v=zFPpwRyl4Iw&list=PLo0fJV3LkR3z42GevLgXlQfNFP2qfgtrq"
               rel="noreferrer"
               target="_blank"
             >
-              <img src={youtube} alt="Youtube" height="32" />
+              <img src={youtube} alt="Youtube" height={32} width={32} />
             </a>
             <a
               href="https://docs.google.com/presentation/d/1t1RnYOqcoP8Bo1GVyiGyW-mY_2bBpUspnW8nqXDUbGI/edit?usp=sharing"
               rel="noreferrer"
               target="_blank"
             >
-              <img src={slides} alt="Summary Slides" height="32" />
+              <img src={slides} alt="Summary Slides" height={32} width={32} />
             </a>
           </div>
           {width > MOBILE_BREAKPOINT && (

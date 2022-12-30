@@ -10,26 +10,31 @@
 @font-face {
   font-family: 'SpaceGrotesk';
   src: url('./fonts/SpaceGrotesk-Regular.ttf');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'SpaceGrotesk-Medium';
   src: url('./fonts/SpaceGrotesk-Medium.ttf');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'SpaceGrotesk-Bold';
   src: url('./fonts/SpaceGrotesk-Bold.ttf');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'SpaceGrotesk-SemiBold';
   src: url('./fonts/SpaceGrotesk-SemiBold.ttf');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'SpaceGrotesk-Light';
   src: url('./fonts/SpaceGrotesk-Light.ttf');
+  font-display: swap;
 }
 
 html {
@@ -38,7 +43,7 @@ html {
 
 body {
   margin: 0;
-  font-family: 'SpaceGrotesk';
+  font-family: 'SpaceGrotesk', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

@@ -15,7 +15,7 @@ import {
 } from "./Talks.style";
 import { StyledWrapperSection } from "../JobOffers/JobOffers.Style";
 
-export const Talks: FC = () => {
+const Talks: FC = () => {
   const currentYearTalks = data.talks;
   React.useEffect(() => {
     document.title = `Talks - DevBcn - ${data.edition}`;
@@ -68,3 +68,5 @@ export const Talks: FC = () => {
     </>
   );
 };
+
+export default Talks;

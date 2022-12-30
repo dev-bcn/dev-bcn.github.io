@@ -16,27 +16,17 @@ import {
   ROUTE_TRAVEL,
 } from "./constants/routes";
 
-import { About } from "./views/About/About";
-import { CodeOfConduct } from "./views/CodeOfConduct/CodeOfConduct";
 import Footer from "./components/Footer/Footer";
 import { HomeWrapper } from "./views/Home/HomeWrapper";
-import JobOffers from "./views/JobOffers/JobOffers";
 import MeetingDetailContainer from "./views/MeetingDetail/MeetingDetailContainer";
 import Navigation from "./components/Navigation/Navigation";
-import Schedule from "./views/Schedule/Schedule";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import SpeakerDetailContainer from "./views/SpeakerDetail/SpeakerDetailContainer";
-import Speakers from "./views/Speakers/Speakers";
-import { Talks } from "./views/Talks/Talks";
 import styled from "styled-components";
-import { Diversity } from "./views/Diversity/Diversity";
-import { Travel } from "./views/Travel/Travel";
 import React from "react";
 import NotFoundError from "./components/NotFoundError/NotFoundError";
-import { Conditions } from "./views/Conditions/Conditions";
 import { CookieConsent } from "react-cookie-consent";
 import { Color } from "./styles/colors";
-import Cookies from "./views/Cookies/Cookies";
 
 const StyledAppWrapper = styled.div`
   position: relative;
@@ -50,16 +40,48 @@ const App = () => {
       <ScrollToTop />
       <Navigation />
       <Switch>
-        <Route path={ROUTE_TALKS} component={Talks} />
-        <Route path={ROUTE_CODE_OF_CONDUCT} component={CodeOfConduct} />
-        <Route path={ROUTE_CONDITIONS} component={Conditions} />
-        <Route path={ROUTE_COOKIES} component={Cookies} />
-        <Route path={ROUTE_DIVERSITY} component={Diversity} />
-        <Route path={ROUTE_JOB_OFFERS} component={JobOffers} />
-        <Route path={ROUTE_SCHEDULE} component={Schedule} />
-        <Route path={ROUTE_SPEAKERS} component={Speakers} />
-        <Route path={ROUTE_ABOUT_US} component={About} />
-        <Route path={ROUTE_TRAVEL} component={Travel} />
+        <Route
+          path={ROUTE_TALKS}
+          component={React.lazy(() => import("./views/Talks/Talks"))}
+        />
+        <Route
+          path={ROUTE_CODE_OF_CONDUCT}
+          component={React.lazy(
+            () => import("./views/CodeOfConduct/CodeOfConduct")
+          )}
+        />
+        <Route
+          path={ROUTE_CONDITIONS}
+          component={React.lazy(() => import("./views/Conditions/Conditions"))}
+        />
+        <Route
+          path={ROUTE_COOKIES}
+          component={React.lazy(() => import("./views/Cookies/Cookies"))}
+        />
+        <Route
+          path={ROUTE_DIVERSITY}
+          component={React.lazy(() => import("./views/Diversity/Diversity"))}
+        />
+        <Route
+          path={ROUTE_JOB_OFFERS}
+          component={React.lazy(() => import("./views/JobOffers/JobOffers"))}
+        />
+        <Route
+          path={ROUTE_SCHEDULE}
+          component={React.lazy(() => import("./views/Schedule/Schedule"))}
+        />
+        <Route
+          path={ROUTE_SPEAKERS}
+          component={React.lazy(() => import("./views/Speakers/Speakers"))}
+        />
+        <Route
+          path={ROUTE_ABOUT_US}
+          component={React.lazy(() => import("./views/About/About"))}
+        />
+        <Route
+          path={ROUTE_TRAVEL}
+          component={React.lazy(() => import("./views/Travel/Travel"))}
+        />
         <Route
           path={ROUTE_MEETING_DETAIL_PLAIN}
           component={MeetingDetailContainer}
