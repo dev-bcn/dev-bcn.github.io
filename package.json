@@ -37,7 +37,17 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "overrides": [
+      {
+        "extends": [
+          "plugin:testing-library/react"
+        ],
+        "files": [
+          "**/__tests__/**/*.[jt]s?(x)",
+          "**/?(*.)+(spec|test).[jt]s?(x)"
+        ]
+      }]
   },
   "browserslist": {
     "production": [
@@ -60,6 +70,7 @@
     "@types/jest": "^29.2.4",
     "@types/react-router-dom": "^5.3.3",
     "@types/styled-components": "^5.1.22",
+    "eslint": "^8.30.0",
     "gh-pages": "^4.0.0",
     "prettier": "^2.8.0",
     "react-ga": "^3.3.1",
