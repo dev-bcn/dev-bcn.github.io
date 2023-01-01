@@ -1,6 +1,6 @@
 ![](src/assets/images/1500x500.jpeg)
 
-# DevBcn Conference 
+# Barcelona Developers Conference - DevBcn  
 
 ## Getting Started with Create React App
 
