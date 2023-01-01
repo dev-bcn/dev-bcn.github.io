@@ -50,7 +50,7 @@ export const StyledBottomSlash = styled(motion.div)`
 `;
 
 const StyledBlueSlash = styled(motion.p)`
-  font-family: "SpaceGrotesk-Bold", sans-serif;
+  font-family: "Square 721 Regular", sans-serif;
   color: ${Color.DARK_BLUE};
   font-size: 2rem;
   overflow-y: hidden;
