@@ -66,7 +66,7 @@ const SpeakersCarousel: FC = () => {
             title="SPEAKERS"
             subtitle="Are you a technology company? Interested in meeting
         enthusiasts and geek people for technology? This is a
-        priceless opportunity to participate in the first Developers Conference in Spain, to pr mote your company
+        priceless opportunity to participate in the first Barcelona Developers Conference in Spain, to pr mote your company
         and to support technological communities."
             color={Color.WHITE}
           />

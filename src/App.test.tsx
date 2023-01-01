@@ -23,7 +23,7 @@ describe("navigation pages", () => {
       </Router>
     );
     expect(
-      screen.getByText(/The Developers Conference 2023/i)
+      screen.getByText(/The Barcelona Developers Conference 2023/i)
     ).toBeInTheDocument();
 
     expect(screen.getByText(/July 3rd-5th, 2023/i)).toBeInTheDocument();

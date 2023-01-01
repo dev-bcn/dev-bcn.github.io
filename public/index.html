@@ -1,34 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <link href="%PUBLIC_URL%/favicon.ico" rel="icon"/>
-    <meta content="width=device-width, initial-scale=1" name="viewport"/>
-    <meta content="#002454" name="theme-color"/>
-    <meta content="DevBcn conference - July 3rd - 5th 2023" name="description" />
-    <meta name="keywords" content="conference, barcelona, frontend, backend, java, agile, kubernetes">
+    <meta charset="utf-8" />
+    <link href="%PUBLIC_URL%/favicon.ico" rel="icon" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="#002454" name="theme-color" />
+    <meta
+      content="DevBcn - Barcelona Developers Conference - July 3rd - 5th 2023"
+      name="description"
+    />
+    <meta
+      name="keywords"
+      content="conference, barcelona, frontend, backend, java, agile, kubernetes"
+    />
     <!-- start: Facebook Open Graph -->
-    <meta property="og:title" content="DevBcn - The Barcelona Developers Conference in Spain">
-    <meta property="og:description" content="3rd to 5th of July 2023, will be the date for a day to share knowledge and experiences, meet enthusiasts and geeks and learn about new technologies.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://www.devbcn.com/static/media/devBcn.6fcf59c81c4b4d39a554.png">
-    <meta property="og:url" content="https://www.devbcn.com">
+    <meta
+      property="og:title"
+      content="DevBcn - Barcelona Developers Conference in Spain"
+    />
+    <meta
+      property="og:description"
+      content="3rd to 5th of July 2023, will be the date for a day to share knowledge and experiences, meet enthusiasts and geeks and learn about new technologies."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://www.devbcn.com/static/media/devBcn.6fcf59c81c4b4d39a554.png"
+    />
+    <meta property="og:url" content="https://www.devbcn.com" />
     <!-- end: Facebook Open Graph -->
     <!-- start: Twitter cards -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:domain" content="https://www.devbcn.com/">
-    <meta property="twitter:url" content="https://www.devbcn.com/">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="https://www.devbcn.com/" />
+    <meta property="twitter:url" content="https://www.devbcn.com/" />
     <meta name="twitter:site" content="@dev_bcn" />
     <meta name="twitter:creator" content="@dev_bcn" />
-    <meta name="twitter:image" content="https://www.devbcn.com/static/media/devBcn.6fcf59c81c4b4d39a554.png"/>
-    <meta name="twitter:image:alt" content="JBCNConf - The Barcelona Developers Conference in Spain"/>
+    <meta
+      name="twitter:image"
+      content="https://www.devbcn.com/static/media/devBcn.6fcf59c81c4b4d39a554.png"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="DevBcn - Barcelona Developers Conference in Spain"
+    />
     <!-- end: Twitter cards -->
-    <link href="%PUBLIC_URL%/apple-touch-icon.png" rel="apple-touch-icon"/>
+    <link href="%PUBLIC_URL%/apple-touch-icon.png" rel="apple-touch-icon" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link href="%PUBLIC_URL%/manifest.json" rel="manifest"/>
+    <link href="%PUBLIC_URL%/manifest.json" rel="manifest" />
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -50,20 +71,29 @@
       // When the single page app is loaded further down in this file,
       // the correct url will be waiting in the browser's history for
       // the single page app to route accordingly.
-      (function(l) {
-        if (l.search[1] === '/') {
-          var decoded = l.search.slice(1).split('&').map(function (s) {
-            return s.replace(/~and~/g, '&')
-          }).join('?');
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
           console.log("decoded", decoded);
-          window.history.replaceState(null, null,
-                  l.pathname.slice(0, -1) + decoded + l.hash
+          window.history.replaceState(
+            null,
+            null,
+            l.pathname.slice(0, -1) + decoded + l.hash
           );
         }
-      }(window.location))
+      })(window.location);
     </script>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0BG1LNPT11"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-0BG1LNPT11"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
 
@@ -71,9 +101,9 @@
         dataLayer.push(arguments);
       }
 
-      gtag('js', new Date());
+      gtag("js", new Date());
 
-      gtag('config', 'G-0BG1LNPT11');
+      gtag("config", "G-0BG1LNPT11");
     </script>
   </head>
   <body>
