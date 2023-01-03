@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, Suspense } from "react";
 import venue from "../../assets/images/la-farga.png";
 import GoogleMapReact from "google-map-react";
 import "./map.css";
@@ -15,6 +15,8 @@ import LessThanBlue from "../../assets/images/MoreThanBlueWhiteIcon.svg";
 import MoreThanBlue from "../../assets/images/LessThanBlueWhiteIcon.svg";
 import { useWindowSize } from "react-use";
 import LocationIcon from "../../assets/images/LocationIcon.svg";
+import Logo from "../../assets/images/logo.svg";
+import { StyledLoadingImage } from "../../components/Loading/Loading";
 
 const StyledVenue = styled.div`
    {
@@ -155,7 +157,9 @@ export const Venue: FC = () => {
       )}
       <section className="venue">
         <div className="image">
-          <img src={venue} alt="La Farga" className="venue" />
+          <Suspense fallback={<StyledLoadingImage src={Logo} />}>
+            <img src={venue} alt="La Farga" className="venue" />
+          </Suspense>
           <a
             href="https://www.lafarga.com/corporatiu/lafarga-hospitalet//"
             rel="noreferrer"

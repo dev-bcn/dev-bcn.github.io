@@ -2,6 +2,8 @@ import { FC, Suspense } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { Color } from "../../../../../styles/colors";
+import Logo from "../../../../../assets/images/logo.svg";
+import { StyledLoadingImage } from "../../../../../components/Loading/Loading";
 
 type FaqCardType = {
   faq: {
@@ -93,7 +95,7 @@ const FaqCard: FC<FaqCardType> = ({ faq, index }) => {
       <StyledFaqImageContainer
         padding={isOdd ? "0 .75rem 0 0" : "0 0 0 .75rem"}
       >
-        <Suspense fallback={<span>Loading</span>}>
+        <Suspense fallback={<StyledLoadingImage src={Logo} />}>
           <StyledFaqImage
             src={require(`../../../../../assets/images/FaqsImage${index}.png`)}
           />

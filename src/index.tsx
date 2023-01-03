@@ -7,6 +7,7 @@ import reportWebVitals from "./reportWebVitals";
 import ReactGa from "react-ga";
 import { BrowserTracing } from "@sentry/tracing";
 import * as Sentry from "@sentry/react";
+import Loading from "./components/Loading/Loading";
 
 const tracking_ID =
   process.env.REACT_APP_GOOGLE_ANALYTICS_API_KEY || "G-0BG1LNPT11";
@@ -20,7 +21,7 @@ Sentry.init({
 
 ReactDOM.render(
   <React.StrictMode>
-    <React.Suspense fallback={<span>Loading...</span>}>
+    <React.Suspense fallback={<Loading />}>
       <BrowserRouter>
         <App />
       </BrowserRouter>

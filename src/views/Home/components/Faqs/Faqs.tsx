@@ -17,6 +17,8 @@ import youtube from "../../../../assets/images/youtube.svg";
 import jbcnconf from "../../../../assets/images/jbcnconf-1.jpg";
 import jbcnconf2 from "../../../../assets/images/jbcnconf-2.jpg";
 import slides from "../../../../assets/images/slides.png";
+import Logo from "../../../../assets/images/logo.svg";
+import { StyledLoadingImage } from "../../../../components/Loading/Loading";
 
 export const StyledFaqSection = styled(motion.section)`
   display: flex;
@@ -87,10 +89,10 @@ const Faqs: FC = () => {
           ))}
           <div style={{ width: "55%" }}>
             <StyledH2>Check last JBCNConf edition</StyledH2>
-            <Suspense fallback={<span>Loading</span>}>
+            <Suspense fallback={<StyledLoadingImage src={Logo} />}>
               <StyledImage src={jbcnconf} alt="JBCNConf" />
             </Suspense>
-            <Suspense fallback={<span>Loading</span>}>
+            <Suspense fallback={<StyledLoadingImage src={Logo} />}>
               <StyledImage src={jbcnconf2} alt="JBCNConf - Keynote" />
             </Suspense>
             <StyledP>

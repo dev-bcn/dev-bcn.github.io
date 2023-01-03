@@ -27,6 +27,7 @@ import React from "react";
 import NotFoundError from "./components/NotFoundError/NotFoundError";
 import { CookieConsent } from "react-cookie-consent";
 import { Color } from "./styles/colors";
+import Loading from "./components/Loading/Loading";
 
 const StyledAppWrapper = styled.div`
   position: relative;
@@ -37,6 +38,7 @@ const StyledAppWrapper = styled.div`
 const App = () => {
   return (
     <StyledAppWrapper className="AppWrapperAll">
+      <Route path="/loading" component={Loading} />
       <ScrollToTop />
       <Navigation />
       <Switch>

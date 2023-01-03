@@ -8,6 +8,8 @@ import {
   StyledAboutName,
   StyledSocialIconsWrapper,
 } from "./Style.AboutCard";
+import { StyledLoadingImage } from "../../../components/Loading/Loading";
+import Logo from "../../../assets/images/logo.svg";
 
 type AboutCardProps = {
   person: {
@@ -24,7 +26,7 @@ type AboutCardProps = {
 
 export const AboutCard: FC<AboutCardProps> = ({ person }) => (
   <StyledAboutCard>
-    <Suspense fallback={<span>Loading</span>}>
+    <Suspense fallback={<StyledLoadingImage src={Logo} />}>
       <StyledAboutImage src={person.profileUrl.href} />
     </Suspense>
     <StyledAboutName color={person.nameColor}>{person.name}</StyledAboutName>
