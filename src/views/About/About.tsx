@@ -39,7 +39,7 @@ const StyledLink = styled.a`
   }
 `;
 
-export const About: FC = () => {
+const About: FC = () => {
   const { width } = useWindowSize();
 
   React.useEffect(() => {
@@ -81,3 +81,5 @@ export const About: FC = () => {
     </>
   );
 };
+
+export default About;

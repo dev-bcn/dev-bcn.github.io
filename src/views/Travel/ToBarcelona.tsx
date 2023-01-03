@@ -1,7 +1,9 @@
-import { FC } from "react";
+import { FC, Suspense } from "react";
 import Photo from "../../assets/images/after-hours.jpg";
 import styled from "styled-components";
 import { Color } from "../../styles/colors";
+import Logo from "../../assets/images/logo.svg";
+import { StyledLoadingImage } from "../../components/Loading/Loading";
 
 const StyledSection = styled.div`
    {
@@ -50,7 +52,9 @@ export const ToBarcelona: FC = () => {
         repertoire, rendering it a prime location for technology and attracting
         increasing numbers of international talent to its shores.
       </p>
-      <img src={Photo} alt="Barcelona beach" />
+      <Suspense fallback={<StyledLoadingImage src={Logo} />}>
+        <img src={Photo} alt="Barcelona beach" />
+      </Suspense>
       <h2>Where to go after-hours?</h2>
       <h3>Plaça de Catalunya & El Barri Gòtic</h3>
       <p>

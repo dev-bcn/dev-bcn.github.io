@@ -26,7 +26,7 @@ const StyledTravel = styled.div`
   }
 `;
 
-export const Travel: FC = () => {
+const Travel: FC = () => {
   useEffect(() => {
     document.title = `Travel - DevBcn ${data.edition}`;
   }, []);
@@ -53,3 +53,4 @@ export const Travel: FC = () => {
     </StyledTravel>
   );
 };
+export default Travel;

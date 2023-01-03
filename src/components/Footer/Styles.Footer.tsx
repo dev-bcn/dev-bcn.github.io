@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import {Color} from "../../styles/colors";
-import {BIG_BREAKPOINT} from "../../constants/BreakPoints";
+import { Color } from "../../styles/colors";
+import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
 
 export const StyledFooterAbsoluteContainer = styled.div`
   position: absolute;
@@ -72,7 +72,7 @@ export const StyledFlexRow = styled.div<{ justify?: string }>`
 
   @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
     justify-content: ${({ justify }) =>
-    justify === 'center' ? 'center' : 'start'};
+      justify === "center" ? "center" : "start"};
     margin-bottom: 0.25rem;
   }
 `;
@@ -86,11 +86,12 @@ export const StyledLink = styled.a`
 `;
 
 export const StyledFooterIcon = styled.img<{ noMargin?: boolean }>`
-  height: 1.5rem;
-  margin-right: ${({ noMargin }) => (noMargin ? '0' : '0.75rem')};
+  height: 24px;
+  width: 24px;
+  margin-right: ${({ noMargin }) => (noMargin ? "0" : "0.75rem")};
 
   @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    margin-right: ${({ noMargin }) => (noMargin ? '0' : '0.5rem')};
+    margin-right: ${({ noMargin }) => (noMargin ? "0" : "0.5rem")};
   }
 `;
 

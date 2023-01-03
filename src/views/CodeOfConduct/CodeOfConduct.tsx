@@ -80,7 +80,7 @@ const StyleMoreIcon = styled.img`
   }
 `;
 
-export const CodeOfConduct: FC = () => {
+const CodeOfConduct: FC = () => {
   const { width } = useWindowSize();
   const conferenceDate = moment(data.startDay);
 
@@ -298,3 +298,5 @@ export const CodeOfConduct: FC = () => {
     </>
   );
 };
+
+export default CodeOfConduct;

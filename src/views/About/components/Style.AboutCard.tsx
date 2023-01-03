@@ -9,17 +9,18 @@ export const StyledAboutCard = styled.div`
 export const StyledAboutImage = styled.img`
   width: 100%;
   max-height: 20rem;
+  border-radius: 10px;
 `;
 export const StyledAboutName = styled.h4<{ color: string }>`
   padding-top: 0.25rem;
-  color: ${({color}) => {
+  color: ${({ color }) => {
     return color;
-}};
+  }};
 `;
 export const StyledAboutJob = styled.p<{ color: string }>`
-  color: ${({color}) => {
+  color: ${({ color }) => {
     return color;
-}};
+  }};
   font-size: 0.75rem;
 `;
 export const StyledSocialIconsWrapper = styled.div`
