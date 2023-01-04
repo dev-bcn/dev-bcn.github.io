@@ -52,7 +52,7 @@ export const About: FC = () => {
         <StyledSpeakersSection>
           <TitleSection
             title="ABOUT US"
-            subtitle="The Developers conference - Barcelona edition"
+            subtitle="The Barcelona Developers Conference - DevBcn"
             color={Color.BLUE}
           />
           {width > MOBILE_BREAKPOINT && (

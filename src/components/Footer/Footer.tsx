@@ -46,30 +46,61 @@ const Footer: FC = () => {
               justify={width < BIG_BREAKPOINT ? "center" : "flex-start"}
             >
               <StyledLink target={"_blank"} href={data.twitter}>
-                <StyledFooterIcon src={twitterIcon} />
+                <StyledFooterIcon
+                  alt="twitter"
+                  src={twitterIcon}
+                  height={24}
+                  width={24}
+                />
               </StyledLink>
               <StyledLink target={"_blank"} href={data.youtube}>
-                <StyledFooterIcon src={youtubeIcon} />
+                <StyledFooterIcon
+                  src={youtubeIcon}
+                  alt="youtube"
+                  height={24}
+                  width={24}
+                />
               </StyledLink>
               <StyledLink target={"_blank"} href={data.facebook}>
-                <StyledFooterIcon src={facebookIcon} />
+                <StyledFooterIcon
+                  src={facebookIcon}
+                  alt="facebook"
+                  height={24}
+                  width={24}
+                />
               </StyledLink>
               <StyledLink target={"_blank"} href={data.linkedin}>
-                <StyledFooterIcon src={linkedinIcon} />
+                <StyledFooterIcon
+                  src={linkedinIcon}
+                  alt="facebook"
+                  height={24}
+                  width={24}
+                />
               </StyledLink>
             </StyledFlexRow>
             <StyledFlexRow>&nbsp;</StyledFlexRow>
           </StyledFlexCol>
         </StyledFooterItem>
         <StyledFooterItem>
-          <StyledImg src={logo} onClick={handleLogoClick} />
+          <StyledImg
+            alt="DevBcn"
+            src={logo}
+            width={140}
+            height={72}
+            onClick={handleLogoClick}
+          />
         </StyledFooterItem>
         <StyledFooterItem>
           <StyledFlexCol>
             <StyledFlexRow>CONTACT</StyledFlexRow>
             <StyledFlexRow>
               <StyledLink href={`mailto: ${data.email}`}>
-                <StyledFooterIcon src={emailIcon} />
+                <StyledFooterIcon
+                  src={emailIcon}
+                  alt="email"
+                  height={24}
+                  width={24}
+                />
                 {data.email}
               </StyledLink>
             </StyledFlexRow>

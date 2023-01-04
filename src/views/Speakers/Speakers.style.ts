@@ -61,7 +61,7 @@ export const StyledContainerRightSlash = styled(motion.div)<{
   opacity: 0.2;
 `;
 export const StyledSlash = styled(motion.p)<{ color: string }>`
-  font-family: 'SpaceGrotesk-Bold', sans-serif;
+  font-family: "Square 721 Regular", sans-serif;
   color: ${({color}) => {
     return color;
   }};

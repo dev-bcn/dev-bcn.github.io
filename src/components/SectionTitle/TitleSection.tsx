@@ -34,7 +34,7 @@ const StyledTitleContainer = styled.div`
 
 const StyledTitle = styled.h1`
   color: ${(props) => (props.color ? props.color : Color.WHITE)};
-  font-family: SpaceGrotesk,sans-serif;
+  font-family: "Square 721 Regular",sans-serif;
   padding-bottom: 1.5rem;
   text-align: center;
   @media (min-width: ${BIG_BREAKPOINT}px) {

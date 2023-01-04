@@ -17,7 +17,7 @@ const StyledTimerContainer = styled.div`
   color: white;
   display: flex;
   flex-direction: column;
-  font-family: SpaceGrotesk-Light, sans-serif;
+  font-family: "Square 721 Regular", sans-serif;
   font-size: 1.5em;
   height: 5rem;
   justify-content: center;
