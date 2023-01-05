@@ -8,6 +8,6 @@ export const faqsData = [
     question: "Why should i participate?",
     answer:
       "This conference is the perfect stage to discover how others are using your favourite technology. " +
-      "There is something interesting for any kind of tech passionate: on the backend Java & JVM, Python, Rust, Go, to Frontend with JavaScript, TypeScript ans Web assembly; Also, Cloud, Kubernetes, and DevOps, Agile, Big Data, Machine Learning and more",
+      "There is something interesting for any kind of tech passionate: on the backend Java & JVM, Python, Rust, Go, to Frontend with JavaScript, TypeScript and Web assembly; Also, Cloud, Kubernetes, and DevOps, Agile, Big Data, Machine Learning and more",
   },
 ];
