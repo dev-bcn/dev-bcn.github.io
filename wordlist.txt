@@ -13,9 +13,11 @@ http
 https
 https
 ico
+js
 json
 localhost
 minified
+npm
 robotstxt
 webfonts
 webpack
