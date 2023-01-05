@@ -2,7 +2,7 @@
 matrix:
   - name: JavaScript
     sources:
-      - '**/*.ts'
+      - '**/*.ts|!setupTests.ts'
     expect_match: false
     aspell:
       lang: en
