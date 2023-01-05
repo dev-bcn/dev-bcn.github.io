@@ -1,0 +1,18 @@
+name: check spelling
+on:
+  pull_request:
+    paths:
+    - '**.ts'
+    - '**.tsx'
+    - '**.txt'
+    - '**.html'
+    - '**.md'
+jobs:
+  spelling:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.head_ref }}
+    - name: Check spelling
+      uses: UnicornGlobal/spellcheck-github-actions@master
