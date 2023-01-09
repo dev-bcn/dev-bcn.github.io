@@ -37,7 +37,7 @@ const Home: FC = () => {
         <StyleHomeContainer>
           <StyledLogo src={logo} alt="DevBcn logo" />
           <StyledTitleContainer>
-            <StyledTitle>The Developers Conference 2023</StyledTitle>
+            <StyledTitle>The Barcelona Developers Conference 2023</StyledTitle>
             <StyledSubtitle>
               Former{" "}
               <a

@@ -51,7 +51,7 @@ export const StyledSponsorTitleSlashesContainer = styled.div<{ color: string }>`
   display: flex;
   flex-wrap: nowrap;
   width: 90%;
-  font-family: 'SpaceGrotesk-Bold', sans-serif;
+  font-family: 'Square 721 Regular', sans-serif;
   color: ${({color}) => color};
   height: 2.75rem;
   line-height: 2.75rem;
