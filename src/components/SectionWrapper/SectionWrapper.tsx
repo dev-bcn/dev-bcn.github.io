@@ -1,6 +1,6 @@
-import { FC } from 'react';
-import { MAX_WIDTH } from '../../constants/BreakPoints';
-import styled from 'styled-components';
+import { FC, ReactNode } from "react";
+import { MAX_WIDTH } from "../../constants/BreakPoints";
+import styled from "styled-components";
 
 const StyledSectionWrapper = styled.div<{ color: string }>`
   display: flex;
@@ -26,6 +26,8 @@ const StyledInnerWrapper = styled.div<{ marginTop: number }>`
 interface ISectionWrapperProps {
   color: string;
   marginTop?: number;
+
+  children: ReactNode;
 }
 
 const SectionWrapper: FC<ISectionWrapperProps> = ({
@@ -34,8 +36,8 @@ const SectionWrapper: FC<ISectionWrapperProps> = ({
   marginTop = 0,
 }) => {
   return (
-    <StyledSectionWrapper color={color} className='SectionWrapper'>
-      <StyledInnerWrapper marginTop={marginTop} className='InnerSectionWrapper'>
+    <StyledSectionWrapper color={color} className="SectionWrapper">
+      <StyledInnerWrapper marginTop={marginTop} className="InnerSectionWrapper">
         {children}
       </StyledInnerWrapper>
     </StyledSectionWrapper>
