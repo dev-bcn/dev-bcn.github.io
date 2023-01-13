@@ -1,6 +1,6 @@
 import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
 import { Color } from "../../../../styles/colors";
-import { FC, useEffect, useState } from "react";
+import { FC, useCallback, useEffect, useState } from "react";
 
 import LessThanBlueIcon from "../../../../assets/images/MoreThanBlueWhiteIcon.svg";
 import LessThanBlueWhiteIcon from "../../../../assets/images/LessThanBlueWhiteIcon.svg";
@@ -30,8 +30,6 @@ import {
   StyledTitleImg,
 } from "./Sponsors.style";
 
-type TSponsorName = "top" | "premium" | "regular" | "startup" | "virtual";
-
 type TIsHoveredState = {
   top: boolean;
   premium: boolean;
@@ -40,6 +38,18 @@ type TIsHoveredState = {
   virtual: boolean;
 };
 
+const buildSlashes = (module: number) => {
+  const slashesElement = document.getElementById("Slashes");
+
+  const slashesWidth = slashesElement?.offsetWidth || 0;
+
+  let slashes = "";
+  for (let index = 0; index < slashesWidth; index++) {
+    if (index % module === 0) slashes += "/ ";
+  }
+
+  return slashes;
+};
 const Sponsors: FC = () => {
   const { width } = useWindowSize();
 
@@ -53,38 +63,56 @@ const Sponsors: FC = () => {
 
   const [slashes, setSlashes] = useState("");
 
-  const buildSlashes = (module: number) => {
-    const slashesElement = document.getElementById("Slashes");
-
-    const slashesWidth = slashesElement?.offsetWidth || 0;
-
-    let slashes = "";
-    for (let index = 0; index < slashesWidth; index++) {
-      if (index % module === 0) slashes += "/ ";
-    }
-
-    return slashes;
-  };
-
   useEffect(() => {
     const newSlashes = buildSlashes(2);
 
     setSlashes(newSlashes);
   }, [width]);
 
-  const handleHoverSponsor = (name: TSponsorName) => {
-    setIsHovered({
-      ...isHovered,
-      [name]: true,
-    });
-  };
+  const handleHoverSponsorTop = useCallback(
+    () => setIsHovered({ ...isHovered, top: true }),
+    [isHovered]
+  );
+  const handleUnHoverSponsorTop = useCallback(
+    () => setIsHovered({ ...isHovered, top: false }),
+    [isHovered]
+  );
 
-  const handleUnHoverSponsor = (name: TSponsorName) => {
-    setIsHovered({
-      ...isHovered,
-      [name]: false,
-    });
-  };
+  const handleHoverSponsorPremium = useCallback(
+    () => setIsHovered({ ...isHovered, premium: true }),
+    [isHovered]
+  );
+  const handleUnHoverSponsorPremium = useCallback(
+    () => setIsHovered({ ...isHovered, premium: false }),
+    [isHovered]
+  );
+
+  const handleHoverSponsorRegular = useCallback(
+    () => setIsHovered({ ...isHovered, regular: true }),
+    [isHovered]
+  );
+  const handleUnHoverSponsorRegular = useCallback(
+    () => setIsHovered({ ...isHovered, regular: false }),
+    [isHovered]
+  );
+
+  const handleHoverSponsorStartup = useCallback(
+    () => setIsHovered({ ...isHovered, startup: true }),
+    [isHovered]
+  );
+  const handleUnHoverSponsorStartup = useCallback(
+    () => setIsHovered({ ...isHovered, startup: false }),
+    [isHovered]
+  );
+
+  const handleHoverSponsorVirtual = useCallback(
+    () => setIsHovered({ ...isHovered, virtual: true }),
+    [isHovered]
+  );
+  const handleUnHoverSponsorVirtual = useCallback(
+    () => setIsHovered({ ...isHovered, virtual: false }),
+    [isHovered]
+  );
 
   return (
     <SectionWrapper color={Color.WHITE}>
@@ -96,8 +124,7 @@ const Sponsors: FC = () => {
             title="SPONSORS"
             subtitle="Are you a technology company? Interested in meeting
           enthusiasts and geek people for technology? This is a
-          priceless opportunity to participate in the first big Java
-          and JVM conference in Spain, to pr mote your company
+          priceless opportunity to participate in the first big physical multi-language conference in Barcelona, to promote your company
           and to support technological communities."
             color={Color.DARK_BLUE}
           />
@@ -106,12 +133,8 @@ const Sponsors: FC = () => {
         {data.sponsors.top.length > 0 && (
           <StyledSponsorItemContainer
             className="SponsorItem top"
-            onMouseEnter={() => {
-              handleHoverSponsor("top");
-            }}
-            onMouseLeave={() => {
-              handleUnHoverSponsor("top");
-            }}
+            onMouseEnter={handleHoverSponsorTop}
+            onMouseLeave={handleUnHoverSponsorTop}
           >
             <SponsorBadge
               color={Color.BLUE}
@@ -141,9 +164,7 @@ const Sponsors: FC = () => {
 
             <StyledSponsorLogosContainer className="SponsorLogos">
               <StyledLogos>
-                <StyledSponsorIconBig
-                  src={isHovered.top ? redhatLogo : redhatLogo}
-                />
+                <StyledSponsorIconBig src={redhatLogo} />
               </StyledLogos>
               <StyledFlexGrow />
             </StyledSponsorLogosContainer>
@@ -153,12 +174,8 @@ const Sponsors: FC = () => {
         {data.sponsors.premium.length > 0 && (
           <StyledSponsorItemContainer
             className="SponsorItem premium"
-            onMouseEnter={() => {
-              handleHoverSponsor("premium");
-            }}
-            onMouseLeave={() => {
-              handleUnHoverSponsor("premium");
-            }}
+            onMouseEnter={handleHoverSponsorPremium}
+            onMouseLeave={handleUnHoverSponsorPremium}
           >
             <SponsorBadge
               color={Color.DARK_BLUE}
@@ -193,12 +210,8 @@ const Sponsors: FC = () => {
             <StyledSponsorLogosContainer className="SponsorLogos">
               <StyledFlexGrow />
               <StyledLogos position="right">
-                <StyledSponsorIconNormal
-                  src={isHovered.premium ? redhatLogo : redhatLogo}
-                />
-                <StyledSponsorIconNormal
-                  src={isHovered.premium ? redhatLogo : redhatLogo}
-                />
+                <StyledSponsorIconNormal src={redhatLogo} />
+                <StyledSponsorIconNormal src={redhatLogo} />
               </StyledLogos>
             </StyledSponsorLogosContainer>
           </StyledSponsorItemContainer>
@@ -207,12 +220,8 @@ const Sponsors: FC = () => {
         {data.sponsors.regular.length > 0 && (
           <StyledSponsorItemContainer
             className="SponsorItem regular"
-            onMouseEnter={() => {
-              handleHoverSponsor("regular");
-            }}
-            onMouseLeave={() => {
-              handleUnHoverSponsor("regular");
-            }}
+            onMouseEnter={handleHoverSponsorRegular}
+            onMouseLeave={handleUnHoverSponsorRegular}
           >
             <SponsorBadge
               color={Color.DARK_BLUE}
@@ -242,15 +251,9 @@ const Sponsors: FC = () => {
 
             <StyledSponsorLogosContainer className="SponsorLogos">
               <StyledLogos>
-                <StyledSponsorIconSmall
-                  src={isHovered.regular ? redhatLogo : redhatLogo}
-                />
-                <StyledSponsorIconSmall
-                  src={isHovered.regular ? redhatLogo : redhatLogo}
-                />
-                <StyledSponsorIconSmall
-                  src={isHovered.regular ? redhatLogo : redhatLogo}
-                />
+                <StyledSponsorIconSmall src={redhatLogo} />
+                <StyledSponsorIconSmall src={redhatLogo} />
+                <StyledSponsorIconSmall src={redhatLogo} />
               </StyledLogos>
               <StyledFlexGrow />
             </StyledSponsorLogosContainer>
@@ -260,12 +263,8 @@ const Sponsors: FC = () => {
         {data.sponsors.startup.length > 0 && (
           <StyledSponsorItemContainer
             className="SponsorItem startup"
-            onMouseEnter={() => {
-              handleHoverSponsor("startup");
-            }}
-            onMouseLeave={() => {
-              handleUnHoverSponsor("startup");
-            }}
+            onMouseEnter={handleHoverSponsorStartup}
+            onMouseLeave={handleUnHoverSponsorStartup}
           >
             <SponsorBadge
               color={Color.DARK_BLUE}
@@ -300,30 +299,14 @@ const Sponsors: FC = () => {
             <StyledSponsorLogosContainer className="SponsorLogos">
               <StyledFlexGrow />
               <StyledLogos position="right">
-                <StyledSponsorIconNano
-                  src={isHovered.startup ? redhatLogo : redhatLogo}
-                />
-                <StyledSponsorIconNano
-                  src={isHovered.startup ? redhatLogo : redhatLogo}
-                />
-                <StyledSponsorIconNano
-                  src={isHovered.startup ? redhatLogo : redhatLogo}
-                />
-                <StyledSponsorIconNano
-                  src={isHovered.startup ? redhatLogo : redhatLogo}
-                />
-                <StyledSponsorIconNano
-                  src={isHovered.startup ? redhatLogo : redhatLogo}
-                />
-                <StyledSponsorIconNano
-                  src={isHovered.startup ? redhatLogo : redhatLogo}
-                />
-                <StyledSponsorIconNano
-                  src={isHovered.startup ? redhatLogo : redhatLogo}
-                />
-                <StyledSponsorIconNano
-                  src={isHovered.startup ? redhatLogo : redhatLogo}
-                />
+                <StyledSponsorIconNano src={redhatLogo} />
+                <StyledSponsorIconNano src={redhatLogo} />
+                <StyledSponsorIconNano src={redhatLogo} />
+                <StyledSponsorIconNano src={redhatLogo} />
+                <StyledSponsorIconNano src={redhatLogo} />
+                <StyledSponsorIconNano src={redhatLogo} />
+                <StyledSponsorIconNano src={redhatLogo} />
+                <StyledSponsorIconNano src={redhatLogo} />
               </StyledLogos>
             </StyledSponsorLogosContainer>
           </StyledSponsorItemContainer>
@@ -332,12 +315,8 @@ const Sponsors: FC = () => {
         {data.sponsors.virtual.length > 0 && (
           <StyledSponsorItemContainer
             className="SponsorItem virtual"
-            onMouseEnter={() => {
-              handleHoverSponsor("virtual");
-            }}
-            onMouseLeave={() => {
-              handleUnHoverSponsor("virtual");
-            }}
+            onMouseEnter={handleHoverSponsorVirtual}
+            onMouseLeave={handleUnHoverSponsorVirtual}
           >
             <SponsorBadge
               color={Color.DARK_BLUE}
@@ -367,36 +346,16 @@ const Sponsors: FC = () => {
 
             <StyledSponsorLogosContainer className="SponsorLogos">
               <StyledLogos>
-                <StyledSponsorIconMicro
-                  src={isHovered.virtual ? redhatLogo : redhatLogo}
-                />
-                <StyledSponsorIconMicro
-                  src={isHovered.virtual ? redhatLogo : redhatLogo}
-                />
-                <StyledSponsorIconMicro
-                  src={isHovered.virtual ? redhatLogo : redhatLogo}
-                />
-                <StyledSponsorIconMicro
-                  src={isHovered.virtual ? redhatLogo : redhatLogo}
-                />
-                <StyledSponsorIconMicro
-                  src={isHovered.virtual ? redhatLogo : redhatLogo}
-                />
-                <StyledSponsorIconMicro
-                  src={isHovered.virtual ? redhatLogo : redhatLogo}
-                />
-                <StyledSponsorIconMicro
-                  src={isHovered.virtual ? redhatLogo : redhatLogo}
-                />
-                <StyledSponsorIconMicro
-                  src={isHovered.virtual ? redhatLogo : redhatLogo}
-                />
-                <StyledSponsorIconMicro
-                  src={isHovered.virtual ? redhatLogo : redhatLogo}
-                />
-                <StyledSponsorIconMicro
-                  src={isHovered.virtual ? redhatLogo : redhatLogo}
-                />
+                <StyledSponsorIconMicro src={redhatLogo} />
+                <StyledSponsorIconMicro src={redhatLogo} />
+                <StyledSponsorIconMicro src={redhatLogo} />
+                <StyledSponsorIconMicro src={redhatLogo} />
+                <StyledSponsorIconMicro src={redhatLogo} />
+                <StyledSponsorIconMicro src={redhatLogo} />
+                <StyledSponsorIconMicro src={redhatLogo} />
+                <StyledSponsorIconMicro src={redhatLogo} />
+                <StyledSponsorIconMicro src={redhatLogo} />
+                <StyledSponsorIconMicro src={redhatLogo} />
               </StyledLogos>
               <StyledFlexGrow />
             </StyledSponsorLogosContainer>
