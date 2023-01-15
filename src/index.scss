@@ -8,33 +8,26 @@
 }
 
 @font-face {
-  font-family: 'SpaceGrotesk';
-  src: url('./fonts/SpaceGrotesk-Regular.ttf');
+  font-family: "Square 721 Regular";
+  src: url('./fonts/Square 721 Regular.otf');
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'SpaceGrotesk-Medium';
-  src: url('./fonts/SpaceGrotesk-Medium.ttf');
+  font-family: 'DejaVu Sans Bold';
+  src: url('./fonts/DejaVu Sans Bold.ttf');
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'SpaceGrotesk-Bold';
-  src: url('./fonts/SpaceGrotesk-Bold.ttf');
+  font-family: 'DejaVu Sans Condensed Bold';
+  src: url('./fonts/DejaVu Sans Condensed Bold.ttf');
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'SpaceGrotesk-SemiBold';
-  src: url('./fonts/SpaceGrotesk-SemiBold.ttf');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SpaceGrotesk-Light';
-  src: url('./fonts/SpaceGrotesk-Light.ttf');
-  font-display: swap;
+  font-family: 'DejaVu Sans ExtraLight';
+  src: url('./fonts/DejaVu Sans ExtraLight.ttf');
 }
 
 html {
@@ -43,7 +36,7 @@ html {
 
 body {
   margin: 0;
-  font-family: 'SpaceGrotesk', sans-serif;
+  font-family: '"Square 721 Regular"', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

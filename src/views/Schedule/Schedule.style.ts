@@ -71,7 +71,7 @@ export const StyledTrack = styled.div<{
   color: ${({color}) => {
     return color;
   }};
-  font-family: SpaceGrotesk-Bold, sans-serif;
+  font-family: "Square 721 Regular", sans-serif;
   margin-top: 1rem;
 `;
 export const StyledWelcomerImage = styled.div`
@@ -92,14 +92,14 @@ export const StyledWelcomerText = styled.p<{ color: string }>`
   color: ${({color}) => {
     return color;
 }};
-  font-family: SpaceGrotesk-Bold, sans-serif;
+  font-family: "Square 721 Regular", sans-serif;
   text-align: start;
 `;
 export const StyledWelcomerTextLink = styled.p<{ color: string }>`
   color: ${({color}) => {
     return color;
 }};
-  font-family: SpaceGrotesk-Bold, sans-serif;
+  font-family: "Square 721 Regular", sans-serif;
   text-align: start;
 
   &:hover {

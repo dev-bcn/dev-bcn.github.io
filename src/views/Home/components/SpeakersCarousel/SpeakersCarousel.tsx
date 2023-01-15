@@ -50,7 +50,7 @@ export const StyledBottomSlash = styled(motion.div)`
 `;
 
 const StyledBlueSlash = styled(motion.p)`
-  font-family: "SpaceGrotesk-Bold", sans-serif;
+  font-family: "Square 721 Regular", sans-serif;
   color: ${Color.DARK_BLUE};
   font-size: 2rem;
   overflow-y: hidden;
@@ -66,7 +66,7 @@ const SpeakersCarousel: FC = () => {
             title="SPEAKERS"
             subtitle="Are you a technology company? Interested in meeting
         enthusiasts and geek people for technology? This is a
-        priceless opportunity to participate in the first Developers Conference in Spain, to pr mote your company
+        priceless opportunity to participate in the first Barcelona Developers Conference in Spain, to pr mote your company
         and to support technological communities."
             color={Color.WHITE}
           />

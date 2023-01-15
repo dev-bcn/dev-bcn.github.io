@@ -26,7 +26,7 @@ describe("navigation pages", () => {
       </React.Suspense>
     );
     expect(
-      await screen.findByText(/The Developers Conference 2023/i)
+      await screen.findByText(/The Barcelona Developers Conference 2023/i)
     ).toBeInTheDocument();
 
     expect(await screen.findByText(/July 3rd-5th, 2023/i)).toBeInTheDocument();

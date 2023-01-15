@@ -41,12 +41,12 @@ export const StyledTitleContainer = styled.div`
 export const StyledTitle = styled.h1`
   padding: 0.5rem 1rem;
   color: ${Color.WHITE};
-  font-family: SpaceGrotesk, sans-serif;
+  font-family: "Square 721 Regular", sans-serif;
 `;
 
 export const StyledSubtitle = styled.h2`
   color: ${(props) => props.color || Color.WHITE};
-  font-family: SpaceGrotesk-Light, sans-serif;
+  font-family: "DejaVu Sans ExtraLight", sans-serif;
   font-size: 1.25rem;
   text-shadow: 1px 1px 1px black;
 
@@ -96,7 +96,7 @@ export const StyledTopSlash = styled(motion.div)`
 `;
 
 export const StyledGreenSlash = styled(motion.p)`
-  font-family: "SpaceGrotesk-Bold", sans-serif;
+  font-family: "Square 721 Regular", sans-serif;
   color: ${Color.DARK_BLUE};
   font-size: 2rem;
   overflow-y: hidden;
@@ -104,7 +104,7 @@ export const StyledGreenSlash = styled(motion.p)`
 `;
 
 export const StyledBlueSlash = styled(motion.p)`
-  font-family: "SpaceGrotesk-Bold", sans-serif;
+  font-family: "Square 721 Regular", sans-serif;
   color: ${Color.BLUE};
   font-size: 2rem;
   overflow-y: hidden;
