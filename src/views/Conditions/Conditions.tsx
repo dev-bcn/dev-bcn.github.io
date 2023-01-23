@@ -33,7 +33,7 @@ const StyledDiv = styled.div`
   }
 `;
 
-export const Conditions: FC = () => {
+const Conditions: FC = () => {
   return (
     <StyledDiv>
       <h1>TERMS AND CONDITIONS</h1>
@@ -348,3 +348,5 @@ export const Conditions: FC = () => {
     </StyledDiv>
   );
 };
+
+export default Conditions;
