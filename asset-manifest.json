@@ -1,8 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.e0f194b7.css",
-    "main.js": "/static/js/main.d686f33e.js",
+    "main.css": "/static/css/main.6b4d5794.css",
+    "main.js": "/static/js/main.b3f0242d.js",
+    "static/js/45.5170dd9a.chunk.js": "/static/js/45.5170dd9a.chunk.js",
+    "static/js/594.cf91d516.chunk.js": "/static/js/594.cf91d516.chunk.js",
+    "static/js/81.531b0bb7.chunk.js": "/static/js/81.531b0bb7.chunk.js",
+    "static/js/933.48de435a.chunk.js": "/static/js/933.48de435a.chunk.js",
+    "static/js/446.47343db3.chunk.js": "/static/js/446.47343db3.chunk.js",
+    "static/js/395.413c42ff.chunk.js": "/static/js/395.413c42ff.chunk.js",
+    "static/js/971.f00c5728.chunk.js": "/static/js/971.f00c5728.chunk.js",
+    "static/js/178.16eda17b.chunk.js": "/static/js/178.16eda17b.chunk.js",
+    "static/js/346.0546a3f9.chunk.js": "/static/js/346.0546a3f9.chunk.js",
+    "static/css/773.60a9e292.chunk.css": "/static/css/773.60a9e292.chunk.css",
+    "static/js/773.9b53b8ef.chunk.js": "/static/js/773.9b53b8ef.chunk.js",
     "static/js/496.43e5f7cf.chunk.js": "/static/js/496.43e5f7cf.chunk.js",
+    "static/js/40.b947d56d.chunk.js": "/static/js/40.b947d56d.chunk.js",
+    "static/js/426.3564b086.chunk.js": "/static/js/426.3564b086.chunk.js",
     "static/media/after-hours.jpg": "/static/media/after-hours.732647c87982d3461fe6.jpg",
     "static/media/la-farga.png": "/static/media/la-farga.bdd2098b891600a22ce8.png",
     "static/media/DejaVu Sans Bold.ttf": "/static/media/DejaVu Sans Bold.766ec7f37f27362a3922.ttf",
@@ -19,6 +32,7 @@
     "static/media/jbcnconf-1.jpg": "/static/media/jbcnconf-1.368597071322a0b54019.jpg",
     "static/media/Square 721 Regular.otf": "/static/media/Square 721 Regular.c7768dfb3197d6cd8b5e.otf",
     "static/media/logo.png": "/static/media/logo.c3beed00a94a2de3f6bc.png",
+    "static/media/logo.svg": "/static/media/logo.2c9f559ea55275a050159753db1a607a.svg",
     "static/media/youtube.svg": "/static/media/youtube.66d963fd0a8b78de212b85c566528187.svg",
     "static/media/SlashesWhite.svg": "/static/media/SlashesWhite.f558ff3ee9c9d5c571002489a216fb3a.svg",
     "static/media/flickr.svg": "/static/media/flickr.1a7bcc6ce9080ed2eac4aa2e379f4cbd.svg",
@@ -43,12 +57,25 @@
     "static/media/LessThanBlueWhiteIcon.svg": "/static/media/LessThanBlueWhiteIcon.561b80c71175f05affaa02e97739e6af.svg",
     "static/media/MoreThanBlueIcon.svg": "/static/media/MoreThanBlueIcon.80b146cc5d88641337b61ea66402a531.svg",
     "static/media/MoreThanBlueWhiteIcon.svg": "/static/media/MoreThanBlueWhiteIcon.4e0508c1662edcaf4a1d5cf4b17c33be.svg",
-    "main.e0f194b7.css.map": "/static/css/main.e0f194b7.css.map",
-    "main.d686f33e.js.map": "/static/js/main.d686f33e.js.map",
-    "496.43e5f7cf.chunk.js.map": "/static/js/496.43e5f7cf.chunk.js.map"
+    "main.6b4d5794.css.map": "/static/css/main.6b4d5794.css.map",
+    "main.b3f0242d.js.map": "/static/js/main.b3f0242d.js.map",
+    "45.5170dd9a.chunk.js.map": "/static/js/45.5170dd9a.chunk.js.map",
+    "594.cf91d516.chunk.js.map": "/static/js/594.cf91d516.chunk.js.map",
+    "81.531b0bb7.chunk.js.map": "/static/js/81.531b0bb7.chunk.js.map",
+    "933.48de435a.chunk.js.map": "/static/js/933.48de435a.chunk.js.map",
+    "446.47343db3.chunk.js.map": "/static/js/446.47343db3.chunk.js.map",
+    "395.413c42ff.chunk.js.map": "/static/js/395.413c42ff.chunk.js.map",
+    "971.f00c5728.chunk.js.map": "/static/js/971.f00c5728.chunk.js.map",
+    "178.16eda17b.chunk.js.map": "/static/js/178.16eda17b.chunk.js.map",
+    "346.0546a3f9.chunk.js.map": "/static/js/346.0546a3f9.chunk.js.map",
+    "773.60a9e292.chunk.css.map": "/static/css/773.60a9e292.chunk.css.map",
+    "773.9b53b8ef.chunk.js.map": "/static/js/773.9b53b8ef.chunk.js.map",
+    "496.43e5f7cf.chunk.js.map": "/static/js/496.43e5f7cf.chunk.js.map",
+    "40.b947d56d.chunk.js.map": "/static/js/40.b947d56d.chunk.js.map",
+    "426.3564b086.chunk.js.map": "/static/js/426.3564b086.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e0f194b7.css",
-    "static/js/main.d686f33e.js"
+    "static/css/main.6b4d5794.css",
+    "static/js/main.b3f0242d.js"
   ]
 }
