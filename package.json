@@ -70,7 +70,7 @@
     "@types/jest": "^29.2.4",
     "@types/react-router-dom": "^5.3.3",
     "@types/styled-components": "^5.1.26",
-    "eslint": "^8.30.0",
+    "eslint": "^8.33.0",
     "gh-pages": "^4.0.0",
     "prettier": "^2.8.0",
     "react-ga": "^3.3.1",
