@@ -1,0 +1,89 @@
+import data from "../../../../data/2023.json";
+import {
+  StyledFlexGrow,
+  StyledLogos,
+  StyledSeparator,
+  StyledSlashes,
+  StyledSponsorIconSmall,
+  StyledSponsorItemContainer,
+  StyledSponsorLogosContainer,
+  StyledSponsorTitleContainer,
+  StyledSponsorTitleMargin,
+  StyledSponsorTitleSlashesContainer,
+} from "./Sponsors.style";
+import SponsorBadge from "./SponsorBadge";
+import { Color } from "../../../../styles/colors";
+import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
+import { buildSlashes } from "./Sponsors";
+import { useWindowSize } from "react-use";
+import { useCallback, useEffect, useState } from "react";
+
+export const RegularSponsors = () => {
+  const { width } = useWindowSize();
+  const [slashes, setSlashes] = useState("");
+  const [isHovered, setIsHovered] = useState<boolean>(false);
+
+  useEffect(() => {
+    const newSlashes = buildSlashes(2);
+
+    setSlashes(newSlashes);
+  }, [width]);
+
+  const handleHoverSponsorRegular = useCallback(() => setIsHovered(true), []);
+  const handleUnHoverSponsorRegular = useCallback(
+    () => setIsHovered(false),
+    []
+  );
+  let regularSponsors = data.sponsors.regular || [];
+  return (
+    <>
+      {regularSponsors.length > 0 && (
+        <StyledSponsorItemContainer
+          className="SponsorItem regular"
+          onMouseEnter={handleHoverSponsorRegular}
+          onMouseLeave={handleUnHoverSponsorRegular}
+        >
+          <SponsorBadge
+            color={Color.DARK_BLUE}
+            position="left"
+            isVisible={isHovered}
+          />
+          <StyledSponsorTitleContainer className="SponsorTitle">
+            <StyledSponsorTitleMargin />
+            <StyledSponsorTitleSlashesContainer
+              color={
+                isHovered && width >= BIG_BREAKPOINT
+                  ? Color.WHITE
+                  : Color.DARK_BLUE
+              }
+              id="Slashes"
+            >
+              REGULAR
+              <StyledSeparator />
+              <StyledSlashes>{slashes}</StyledSlashes>
+            </StyledSponsorTitleSlashesContainer>
+            {width >= BIG_BREAKPOINT && (
+              <StyledSponsorTitleSlashesContainer color={Color.DARK_BLUE}>
+                <StyledSlashes>{slashes}</StyledSlashes>
+              </StyledSponsorTitleSlashesContainer>
+            )}
+          </StyledSponsorTitleContainer>
+
+          <StyledSponsorLogosContainer className="SponsorLogos">
+            <StyledLogos>
+              {regularSponsors.map((sponsor) => (
+                <a href={sponsor.website} target="_blank" rel={"noreferrer"}>
+                  <StyledSponsorIconSmall
+                    key={sponsor.name}
+                    src={sponsor.image}
+                  />
+                </a>
+              ))}
+            </StyledLogos>
+            <StyledFlexGrow />
+          </StyledSponsorLogosContainer>
+        </StyledSponsorItemContainer>
+      )}
+    </>
+  );
+};

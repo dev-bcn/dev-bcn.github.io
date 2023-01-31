@@ -22,9 +22,21 @@
     "enabled": false
   },
   "sponsors": {
-    "top": [],
+    "top": [
+      {
+        "name": "Barcelona JUG",
+        "image": "images/sponsors/bcn-jug.png",
+        "website": "https://www.barcelonajug.org"
+      }
+    ],
     "premium": [],
-    "regular": [],
+    "regular": [
+      {
+        "name": "Adaptive",
+        "image": "images/sponsors/adaptive.png",
+        "website": "https://www.weareadaptive.com/"
+      }
+    ],
     "basic": [],
     "startup": [],
     "virtual": []

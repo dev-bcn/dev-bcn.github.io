@@ -14,7 +14,7 @@ export const StyledSponsorsContainer = styled.div`
 export const StyledTitleContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 15rem;
+  margin-bottom: 1rem;
 `;
 export const StyledTitleImg = styled.img`
   height: 4rem;
