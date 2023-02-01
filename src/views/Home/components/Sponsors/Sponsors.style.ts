@@ -161,6 +161,10 @@ export const StyledSponsorIconSmall = styled.img`
   margin-right: 0.5rem;
   margin-bottom: 1rem;
 
+  &:hover {
+    filter: invert(100%) hue-rotate(90deg);
+  }
+
   @media (min-width: ${BIG_BREAKPOINT}px) {
     height: 3rem;
     margin-right: 2rem;

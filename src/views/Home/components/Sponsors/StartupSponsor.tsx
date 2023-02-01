@@ -1,4 +1,3 @@
-import data from "../../../../data/2023.json";
 import {
   StyledFlexGrow,
   StyledLogos,
@@ -17,6 +16,7 @@ import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
 import { buildSlashes } from "./Sponsors";
 import { useWindowSize } from "react-use";
 import { useCallback, useEffect, useState } from "react";
+import { sponsors } from "./SponsorsData";
 
 export const StartupSponsor = () => {
   const { width } = useWindowSize();
@@ -34,11 +34,11 @@ export const StartupSponsor = () => {
     () => setIsHovered(false),
     []
   );
-  let startupSponsors = data.sponsors.startup || [];
 
+  let startupSponsors = sponsors.startup;
   return (
     <>
-      {data.sponsors.startup.length > 0 && (
+      {startupSponsors !== null && startupSponsors.length > 0 && (
         <StyledSponsorItemContainer
           className="SponsorItem startup"
           onMouseEnter={handleHoverSponsorStartup}

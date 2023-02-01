@@ -1,4 +1,3 @@
-import data from "../../../../data/2023.json";
 import {
   StyledFlexGrow,
   StyledLogos,
@@ -17,11 +16,13 @@ import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
 import { FC, useCallback, useEffect, useState } from "react";
 import { useWindowSize } from "react-use";
 import { buildSlashes } from "./Sponsors";
+import { sponsors } from "./SponsorsData";
 
 export const TopSponsors: FC = () => {
   const { width } = useWindowSize();
   const [slashes, setSlashes] = useState("");
   const [isHovered, setIsHovered] = useState<boolean>(false);
+  const topSponsors = sponsors.top;
 
   useEffect(() => {
     const newSlashes = buildSlashes(2);
@@ -34,7 +35,7 @@ export const TopSponsors: FC = () => {
 
   return (
     <>
-      {data.sponsors.top.length > 0 && (
+      {topSponsors !== null && topSponsors.length > 0 && (
         <StyledSponsorItemContainer
           className="SponsorItem top"
           onMouseEnter={handleHoverSponsorTop}
@@ -66,7 +67,7 @@ export const TopSponsors: FC = () => {
 
           <StyledSponsorLogosContainer className="SponsorLogos">
             <StyledLogos>
-              {data.sponsors.top.map((sponsor) => (
+              {topSponsors.map((sponsor) => (
                 <a href={sponsor.website} target="_blank" rel={"noreferrer"}>
                   <StyledSponsorIconBig
                     key={sponsor.name}

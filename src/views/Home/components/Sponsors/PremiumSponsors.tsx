@@ -1,4 +1,3 @@
-import data from "../../../../data/2023.json";
 import {
   StyledFlexGrow,
   StyledLogos,
@@ -17,11 +16,13 @@ import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
 import { useWindowSize } from "react-use";
 import { useCallback, useEffect, useState } from "react";
 import { buildSlashes } from "./Sponsors";
+import { sponsors } from "./SponsorsData";
 
 export const PremiumSponsors = () => {
   const { width } = useWindowSize();
   const [slashes, setSlashes] = useState("");
   const [isHovered, setIsHovered] = useState<boolean>(false);
+  const premiumSponsors = sponsors.premium;
 
   useEffect(() => {
     const newSlashes = buildSlashes(2);
@@ -34,10 +35,9 @@ export const PremiumSponsors = () => {
     () => setIsHovered(false),
     []
   );
-  let premiumSponsors = data.sponsors.premium || [];
   return (
     <>
-      {premiumSponsors.length > 0 && (
+      {premiumSponsors !== null && premiumSponsors.length > 0 && (
         <StyledSponsorItemContainer
           className="SponsorItem premium"
           onMouseEnter={handleHoverSponsorPremium}

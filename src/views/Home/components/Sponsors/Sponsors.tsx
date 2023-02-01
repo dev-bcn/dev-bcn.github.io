@@ -12,6 +12,9 @@ import {
 } from "./Sponsors.style";
 import { TopSponsors } from "./TopSponsors";
 import { RegularSponsors } from "./RegularSponsors";
+import { PremiumSponsors } from "./PremiumSponsors";
+import { StartupSponsor } from "./StartupSponsor";
+import { VirtualSponsors } from "./VirtualSponsors";
 
 export type TIsHoveredState = {
   top: boolean;
@@ -50,7 +53,10 @@ const Sponsors: FC = () => (
         <StyledTitleImg src={LessThanBlueWhiteIcon} />
       </StyledTitleContainer>
       <TopSponsors />
+      <PremiumSponsors />
       <RegularSponsors />
+      <StartupSponsor />
+      <VirtualSponsors />
     </StyledSponsorsContainer>
   </SectionWrapper>
 );

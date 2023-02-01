@@ -1,4 +1,3 @@
-import data from "../../../../data/2023.json";
 import {
   StyledFlexGrow,
   StyledLogos,
@@ -17,11 +16,13 @@ import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
 import { buildSlashes } from "./Sponsors";
 import { useWindowSize } from "react-use";
 import { useCallback, useEffect, useState } from "react";
+import { sponsors } from "./SponsorsData";
 
 export function VirtualSponsors() {
   const { width } = useWindowSize();
   const [slashes, setSlashes] = useState("");
   const [isHovered, setIsHovered] = useState<boolean>(false);
+  const virtualSponsors = sponsors.virtual;
 
   useEffect(() => {
     const newSlashes = buildSlashes(2);
@@ -34,10 +35,9 @@ export function VirtualSponsors() {
     () => setIsHovered(false),
     []
   );
-  let virtualSponsors = data.sponsors.virtual || [];
   return (
     <>
-      {virtualSponsors.length > 0 && (
+      {virtualSponsors !== null && virtualSponsors.length > 0 && (
         <StyledSponsorItemContainer
           className="SponsorItem virtual"
           onMouseEnter={handleHoverSponsorVirtual}
