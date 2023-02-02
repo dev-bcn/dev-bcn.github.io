@@ -77,10 +77,15 @@ export const PremiumSponsors = () => {
             <StyledFlexGrow />
             <StyledLogos position="right">
               {premiumSponsors.map((sponsor) => (
-                <a href={sponsor.website} target="_blank" rel={"noreferrer"}>
+                <a href={sponsor.website} target="_blank" rel="noreferrer">
                   <StyledSponsorIconBig
                     key={sponsor.name}
                     src={sponsor.image}
+                    style={{
+                      filter: isHovered
+                        ? "sepia(100%) grayscale(100%)"
+                        : "drop-shadow(6px 6px 6px #002454)",
+                    }}
                   />
                 </a>
               ))}

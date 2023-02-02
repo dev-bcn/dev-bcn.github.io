@@ -22,6 +22,7 @@ export const RegularSponsors = () => {
   const { width } = useWindowSize();
   const [slashes, setSlashes] = useState("");
   const [isHovered, setIsHovered] = useState<boolean>(false);
+  const regularSponsors = sponsors.regular;
 
   useEffect(() => {
     const newSlashes = buildSlashes(2);
@@ -34,7 +35,6 @@ export const RegularSponsors = () => {
     () => setIsHovered(false),
     []
   );
-  let regularSponsors = sponsors.regular;
   return (
     <>
       {regularSponsors !== null && regularSponsors.length > 0 && (
@@ -72,10 +72,15 @@ export const RegularSponsors = () => {
           <StyledSponsorLogosContainer className="SponsorLogos">
             <StyledLogos>
               {regularSponsors.map((sponsor) => (
-                <a href={sponsor.website} target="_blank" rel={"noreferrer"}>
+                <a href={sponsor.website} target="_blank" rel="noreferrer">
                   <StyledSponsorIconSmall
                     key={sponsor.name}
                     src={sponsor.image}
+                    style={{
+                      filter: isHovered
+                        ? "invert(100%) grayscale(100%)"
+                        : "drop-shadow(6px 6px 6px #002454)",
+                    }}
                   />
                 </a>
               ))}
