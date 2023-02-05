@@ -13,9 +13,6 @@ const tracking_ID =
   process.env.REACT_APP_GOOGLE_ANALYTICS_API_KEY || "G-0BG1LNPT11";
 ReactGa.initialize(tracking_ID);
 
-console.info(`app version: ${process.env.npm_package_version}`);
-console.info(process.env);
-
 Sentry.init({
   dsn: "https://fdfaeed3901d43a299b95c534e42a4c1@o194303.ingest.sentry.io/4504348314435584",
   integrations: [new BrowserTracing()],
