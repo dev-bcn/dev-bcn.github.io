@@ -1,9 +1,9 @@
 import {
+  RegularSponsorImage,
   StyledFlexGrow,
   StyledLogos,
   StyledSeparator,
   StyledSlashes,
-  StyledSponsorIconSmall,
   StyledSponsorItemContainer,
   StyledSponsorLogosContainer,
   StyledSponsorTitleContainer,
@@ -72,9 +72,13 @@ export const RegularSponsors = () => {
           <StyledSponsorLogosContainer className="SponsorLogos">
             <StyledLogos>
               {regularSponsors.map((sponsor) => (
-                <a href={sponsor.website} target="_blank" rel="noreferrer">
-                  <StyledSponsorIconSmall
-                    key={sponsor.name}
+                <a
+                  key={sponsor.name}
+                  href={sponsor.website}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <RegularSponsorImage
                     src={sponsor.image}
                     style={{
                       filter: isHovered

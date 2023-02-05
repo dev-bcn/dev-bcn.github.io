@@ -1,9 +1,9 @@
 import {
+  PremiumSponsorImage,
   StyledFlexGrow,
   StyledLogos,
   StyledSeparator,
   StyledSlashes,
-  StyledSponsorIconBig,
   StyledSponsorItemContainer,
   StyledSponsorLogosContainer,
   StyledSponsorTitleContainer,
@@ -69,10 +69,7 @@ export const TopSponsors: FC = () => {
             <StyledLogos>
               {topSponsors.map((sponsor) => (
                 <a href={sponsor.website} target="_blank" rel={"noreferrer"}>
-                  <StyledSponsorIconBig
-                    key={sponsor.name}
-                    src={sponsor.image}
-                  />
+                  <PremiumSponsorImage key={sponsor.name} src={sponsor.image} />
                 </a>
               ))}
             </StyledLogos>
