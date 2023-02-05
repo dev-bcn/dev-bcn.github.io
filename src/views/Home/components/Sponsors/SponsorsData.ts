@@ -18,7 +18,7 @@ export const sponsors: Sponsors = {
     {
       name: "Barcelona JUG",
       image: "images/sponsors/bcn-jug.png",
-      website: "https://www.barcelonajug.org",
+      website: "https://www.meetup.com/barcelonajug/",
     },
   ],
   regular: [
