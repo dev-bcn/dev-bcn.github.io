@@ -10,8 +10,8 @@ import data from "../../data/2023.json";
 const StyledContainer = styled.div`
   padding-bottom: 10rem;
 
-  @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    padding-bottom: 10rem;
+  @media only screen and (max-width: ${BIG_BREAKPOINT}px) {
+    padding-bottom: 20rem;
   }
 `;
 
@@ -20,7 +20,7 @@ export const HomeWrapper: FC = () => {
     document.title = `Home - DevBcn - ${data.edition}`;
   }, []);
   return (
-    <StyledContainer>
+    <StyledContainer id="home-wrapper">
       <Home />
       <Faqs />
       <SpeakersCarousel />
