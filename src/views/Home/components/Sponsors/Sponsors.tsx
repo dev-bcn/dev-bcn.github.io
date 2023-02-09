@@ -38,7 +38,7 @@ export const buildSlashes = (module: number) => {
 
 const Sponsors: FC = () => (
   <SectionWrapper color={Color.WHITE}>
-    <StyledSponsorsContainer>
+    <StyledSponsorsContainer id="sponsors">
       <StyledTitleContainer className="TitleContainer">
         <StyledTitleImg src={LessThanBlueIcon} />
         <TitleSection
