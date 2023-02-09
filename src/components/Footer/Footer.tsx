@@ -21,7 +21,6 @@ import {
   StyledImg,
   StyledLink,
 } from "./Styles.Footer";
-import { ROUTE_HOME } from "../../constants/routes";
 
 const Footer: FC = () => {
   const { width } = useWindowSize();
@@ -29,7 +28,7 @@ const Footer: FC = () => {
   const history = useHistory();
 
   const handleLogoClick = () => {
-    history.push("/" + ROUTE_HOME);
+    history.push("/");
     window.scrollTo(0, 0);
   };
 
