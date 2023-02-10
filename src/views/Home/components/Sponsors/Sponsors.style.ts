@@ -14,7 +14,7 @@ export const StyledSponsorsContainer = styled.div`
 export const StyledTitleContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 15rem;
+  margin-bottom: 1rem;
 `;
 export const StyledTitleImg = styled.img`
   height: 4rem;
@@ -135,11 +135,11 @@ export const StyledSeparator = styled.div`
     width: 4rem;
   }
 `;
-export const StyledSponsorIconBig = styled.img`
-  height: 5rem;
+export const PremiumSponsorImage = styled.img`
+  height: 7.5rem;
 
   @media (min-width: ${BIG_BREAKPOINT}px) {
-    height: 7rem;
+    height: 7.5rem;
   }
 `;
 export const StyledSponsorIconNormal = styled.img`
@@ -156,13 +156,13 @@ export const StyledSponsorIconNormal = styled.img`
     margin-left: 2.5rem;
   }
 `;
-export const StyledSponsorIconSmall = styled.img`
-  height: 2.35rem;
+export const RegularSponsorImage = styled.img`
+  height: 3.25rem;
   margin-right: 0.5rem;
   margin-bottom: 1rem;
 
   @media (min-width: ${BIG_BREAKPOINT}px) {
-    height: 3rem;
+    height: 3.25rem;
     margin-right: 2rem;
     margin-bottom: 0.75rem;
   }

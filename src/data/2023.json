@@ -21,14 +21,6 @@
   "carrousel": {
     "enabled": false
   },
-  "sponsors": {
-    "top": [],
-    "premium": [],
-    "regular": [],
-    "basic": [],
-    "startup": [],
-    "virtual": []
-  },
   "speakers": [],
   "talks": [],
   "schedule": {
