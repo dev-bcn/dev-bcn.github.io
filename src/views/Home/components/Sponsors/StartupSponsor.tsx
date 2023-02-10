@@ -40,6 +40,7 @@ export const StartupSponsor = () => {
     <>
       {startupSponsors !== null && startupSponsors.length > 0 && (
         <StyledSponsorItemContainer
+          id="startup-sponsors"
           className="SponsorItem startup"
           onMouseEnter={handleHoverSponsorStartup}
           onMouseLeave={handleUnHoverSponsorStartup}

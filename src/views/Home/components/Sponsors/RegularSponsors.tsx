@@ -39,6 +39,7 @@ export const RegularSponsors = () => {
     <>
       {regularSponsors !== null && regularSponsors.length > 0 && (
         <StyledSponsorItemContainer
+          id="regular-sponsors"
           className="SponsorItem regular"
           onMouseEnter={handleHoverSponsorRegular}
           onMouseLeave={handleUnHoverSponsorRegular}

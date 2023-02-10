@@ -39,6 +39,7 @@ export const PremiumSponsors = () => {
     <>
       {premiumSponsors !== null && premiumSponsors.length > 0 && (
         <StyledSponsorItemContainer
+          id="premium-sponsors"
           className="SponsorItem premium"
           onMouseEnter={handleHoverSponsorPremium}
           onMouseLeave={handleUnHoverSponsorPremium}

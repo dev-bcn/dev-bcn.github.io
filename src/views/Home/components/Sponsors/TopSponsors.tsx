@@ -37,6 +37,7 @@ export const TopSponsors: FC = () => {
     <>
       {topSponsors !== null && topSponsors.length > 0 && (
         <StyledSponsorItemContainer
+          id="top-sponsors"
           className="SponsorItem top"
           onMouseEnter={handleHoverSponsorTop}
           onMouseLeave={handleUnHoverSponsorTop}

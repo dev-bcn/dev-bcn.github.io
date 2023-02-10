@@ -40,6 +40,7 @@ export function VirtualSponsors() {
       {virtualSponsors !== null && virtualSponsors.length > 0 && (
         <StyledSponsorItemContainer
           className="SponsorItem virtual"
+          id="virtual-sponsors"
           onMouseEnter={handleHoverSponsorVirtual}
           onMouseLeave={handleUnHoverSponsorVirtual}
         >
