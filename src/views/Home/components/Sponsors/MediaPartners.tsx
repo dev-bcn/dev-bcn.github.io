@@ -1,9 +1,9 @@
 import {
-  PremiumSponsorImage,
   StyledFlexGrow,
   StyledLogos,
   StyledSeparator,
   StyledSlashes,
+  StyledSponsorIconMicro,
   StyledSponsorItemContainer,
   StyledSponsorLogosContainer,
   StyledSponsorTitleContainer,
@@ -13,16 +13,16 @@ import {
 import SponsorBadge from "./SponsorBadge";
 import { Color } from "../../../../styles/colors";
 import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
+import { buildSlashes } from "./Sponsors";
 import { useWindowSize } from "react-use";
 import { FC, useCallback, useEffect, useState } from "react";
-import { buildSlashes } from "./Sponsors";
 import { sponsors } from "./SponsorsData";
 
-export const PremiumSponsors: FC = () => {
+export const MediaPartners: FC = () => {
   const { width } = useWindowSize();
   const [slashes, setSlashes] = useState("");
   const [isHovered, setIsHovered] = useState<boolean>(false);
-  const premiumSponsors = sponsors.premium;
+  const mediaPartners = sponsors.media_partners;
 
   useEffect(() => {
     const newSlashes = buildSlashes(2);
@@ -30,72 +30,68 @@ export const PremiumSponsors: FC = () => {
     setSlashes(newSlashes);
   }, [width]);
 
-  const handleHoverSponsorPremium = useCallback(() => setIsHovered(true), []);
-  const handleUnHoverSponsorPremium = useCallback(
+  const handleHoverMediaPartner = useCallback(() => setIsHovered(true), []);
+  const handleUnHoverMediaPartner = useCallback(
     () => setIsHovered(false),
     []
   );
   return (
     <>
-      {premiumSponsors !== null && premiumSponsors.length > 0 && (
+      {mediaPartners !== null && mediaPartners.length > 0 && (
         <StyledSponsorItemContainer
-          id="premium-sponsors"
-          className="SponsorItem premium"
-          onMouseEnter={handleHoverSponsorPremium}
-          onMouseLeave={handleUnHoverSponsorPremium}
+          className="SponsorItem virtual"
+          id="virtual-sponsors"
+          onMouseEnter={handleHoverMediaPartner}
+          onMouseLeave={handleUnHoverMediaPartner}
         >
           <SponsorBadge
             color={Color.DARK_BLUE}
-            position="right"
+            position="left"
             isVisible={isHovered}
           />
           <StyledSponsorTitleContainer className="SponsorTitle">
+            <StyledSponsorTitleMargin />
             <StyledSponsorTitleSlashesContainer
-              color={Color.DARK_BLUE}
+              color={
+                isHovered && width >= BIG_BREAKPOINT
+                  ? Color.WHITE
+                  : Color.DARK_BLUE
+              }
               id="Slashes"
             >
-              <StyledSlashes>{slashes}</StyledSlashes>
+              MEDIA PARTNERS
               <StyledSeparator />
-
-              {width < BIG_BREAKPOINT && "PREMIUM"}
+              <StyledSlashes>{slashes}</StyledSlashes>
             </StyledSponsorTitleSlashesContainer>
             {width >= BIG_BREAKPOINT && (
-              <StyledSponsorTitleSlashesContainer
-                color={
-                  isHovered && width >= BIG_BREAKPOINT
-                    ? Color.WHITE
-                    : Color.DARK_BLUE
-                }
-              >
+              <StyledSponsorTitleSlashesContainer color={Color.DARK_BLUE}>
                 <StyledSlashes>{slashes}</StyledSlashes>
-                PREMIUM
               </StyledSponsorTitleSlashesContainer>
             )}
-            <StyledSponsorTitleMargin />
           </StyledSponsorTitleContainer>
 
           <StyledSponsorLogosContainer className="SponsorLogos">
-            <StyledFlexGrow />
-            <StyledLogos position="right">
-              {premiumSponsors.map((sponsor) => (
+            <StyledLogos>
+              {mediaPartners.map((sponsor) => (
                 <a
                   key={sponsor.name}
                   href={sponsor.website}
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <PremiumSponsorImage
-                    alt={sponsor.name}
-                    src={sponsor.image}
+                  <StyledSponsorIconMicro
                     style={{
                       filter: isHovered
                         ? "sepia(100%) grayscale(100%)"
-                        : "drop-shadow(6px 6px 6px #002454)",
+                        : "drop-shadow(3px 3px 3px #002454)"
                     }}
+                    alt={sponsor.name}
+                    src={sponsor.image}
                   />
                 </a>
               ))}
             </StyledLogos>
+            <StyledFlexGrow />
           </StyledSponsorLogosContainer>
         </StyledSponsorItemContainer>
       )}

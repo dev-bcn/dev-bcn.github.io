@@ -5,24 +5,14 @@ import LessThanBlueIcon from "../../../../assets/images/MoreThanBlueWhiteIcon.sv
 import LessThanBlueWhiteIcon from "../../../../assets/images/LessThanBlueWhiteIcon.svg";
 import SectionWrapper from "../../../../components/SectionWrapper/SectionWrapper";
 import TitleSection from "../../../../components/SectionTitle/TitleSection";
-import {
-  StyledSponsorsContainer,
-  StyledTitleContainer,
-  StyledTitleImg,
-} from "./Sponsors.style";
+import { StyledSponsorsContainer, StyledTitleContainer, StyledTitleImg } from "./Sponsors.style";
 import { TopSponsors } from "./TopSponsors";
 import { RegularSponsors } from "./RegularSponsors";
 import { PremiumSponsors } from "./PremiumSponsors";
 import { StartupSponsor } from "./StartupSponsor";
 import { VirtualSponsors } from "./VirtualSponsors";
+import { MediaPartners } from "./MediaPartners";
 
-export type TIsHoveredState = {
-  top: boolean;
-  premium: boolean;
-  regular: boolean;
-  startup: boolean;
-  virtual: boolean;
-};
 export const buildSlashes = (module: number) => {
   const slashesElement = document.getElementById("Slashes");
 
@@ -57,6 +47,7 @@ const Sponsors: FC = () => (
       <RegularSponsors />
       <StartupSponsor />
       <VirtualSponsors />
+      <MediaPartners />
     </StyledSponsorsContainer>
   </SectionWrapper>
 );
