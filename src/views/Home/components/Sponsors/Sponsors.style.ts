@@ -1,6 +1,9 @@
 import styled from "styled-components";
-import {BIG_BREAKPOINT, LARGE_BREAKPOINT} from "../../../../constants/BreakPoints";
-import {motion} from "framer-motion";
+import {
+  BIG_BREAKPOINT,
+  LARGE_BREAKPOINT,
+} from "../../../../constants/BreakPoints";
+import { motion } from "framer-motion";
 
 const SponsorMargin = 11;
 const sponsorMarginDesktop = 18;
@@ -11,7 +14,7 @@ export const StyledSponsorsContainer = styled.div`
 export const StyledTitleContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
 `;
 export const StyledTitleImg = styled.img`
   height: 4rem;
@@ -51,8 +54,8 @@ export const StyledSponsorTitleSlashesContainer = styled.div<{ color: string }>`
   display: flex;
   flex-wrap: nowrap;
   width: 90%;
-  font-family: 'SpaceGrotesk-Bold', sans-serif;
-  color: ${({color}) => color};
+  font-family: "Square 721 Regular", sans-serif;
+  color: ${({ color }) => color};
   height: 2.75rem;
   line-height: 2.75rem;
   white-space: nowrap;
@@ -84,36 +87,36 @@ export const StyledSponsorLogosContainer = styled.div`
     top: 5rem;
   }
 `;
-export const StyledLogos = styled.div<{ position?: 'left' | 'right' }>`
+export const StyledLogos = styled.div<{ position?: "left" | "right" }>`
   display: flex;
   width: 100%;
 
-  padding-left: ${({position}) =>
-          position === 'right' ? 0 : SponsorMargin}%;
-  padding-right: ${({position}) =>
-          position === 'right' ? SponsorMargin : 0}%;
+  padding-left: ${({ position }) =>
+    position === "right" ? 0 : SponsorMargin}%;
+  padding-right: ${({ position }) =>
+    position === "right" ? SponsorMargin : 0}%;
 
   flex-wrap: wrap;
   justify-content: center;
 
   @media (min-width: ${BIG_BREAKPOINT}px) {
     justify-content: center;
-    padding-left: ${({position}) =>
-            position === 'right' ? 0 : sponsorMarginDesktop}%;
-    padding-right: ${({position}) =>
-            position === 'right' ? sponsorMarginDesktop : 0}%;
+    padding-left: ${({ position }) =>
+      position === "right" ? 0 : sponsorMarginDesktop}%;
+    padding-right: ${({ position }) =>
+      position === "right" ? sponsorMarginDesktop : 0}%;
     top: 5rem;
     flex-wrap: wrap;
-    width: ${({position}) => (position === 'right' ? 59 : 55)}%;
+    width: ${({ position }) => (position === "right" ? 59 : 55)}%;
   }
 
   @media (min-width: ${LARGE_BREAKPOINT}px) {
-    justify-content: ${({position}) =>
-            position === 'right' ? 'flex-end' : 'flex-start'};
-    padding-left: ${({position}) =>
-            position === 'right' ? 0 : sponsorMarginDesktop}%;
-    padding-right: ${({position}) =>
-            position === 'right' ? sponsorMarginDesktop : 0}%;
+    justify-content: ${({ position }) =>
+      position === "right" ? "flex-end" : "flex-start"};
+    padding-left: ${({ position }) =>
+      position === "right" ? 0 : sponsorMarginDesktop}%;
+    padding-right: ${({ position }) =>
+      position === "right" ? sponsorMarginDesktop : 0}%;
     top: 5rem;
   }
 `;
@@ -132,11 +135,11 @@ export const StyledSeparator = styled.div`
     width: 4rem;
   }
 `;
-export const StyledSponsorIconBig = styled.img`
-  height: 5rem;
+export const PremiumSponsorImage = styled.img`
+  height: 7.5rem;
 
   @media (min-width: ${BIG_BREAKPOINT}px) {
-    height: 7rem;
+    height: 7.5rem;
   }
 `;
 export const StyledSponsorIconNormal = styled.img`
@@ -153,13 +156,13 @@ export const StyledSponsorIconNormal = styled.img`
     margin-left: 2.5rem;
   }
 `;
-export const StyledSponsorIconSmall = styled.img`
-  height: 2.35rem;
+export const RegularSponsorImage = styled.img`
+  height: 3.25rem;
   margin-right: 0.5rem;
   margin-bottom: 1rem;
 
   @media (min-width: ${BIG_BREAKPOINT}px) {
-    height: 3rem;
+    height: 3.25rem;
     margin-right: 2rem;
     margin-bottom: 0.75rem;
   }
@@ -204,38 +207,38 @@ export const StyledSponsorIconMicro = styled.img`
 `;
 
 export const StyledSponsorBadgeLeft = styled(motion.div)<{
-    color: string;
-    position: 'left' | 'right';
+  color: string;
+  position: "left" | "right";
 }>`
   display: none;
   position: absolute;
-  width: ${({ position }) => (position === 'left' ? '60%' : '62%')};
+  width: ${({ position }) => (position === "left" ? "60%" : "62%")};
   clip-path: ${({ position }) => {
-    if (position === 'left') {
-        return 'polygon(0 0, 100% 0, 92% 100%, 0% 100%)';
+    if (position === "left") {
+      return "polygon(0 0, 100% 0, 92% 100%, 0% 100%)";
     } else {
-        return 'polygon(6% 0, 100% 0, 100% 100%, 0 100%)';
+      return "polygon(6% 0, 100% 0, 100% 100%, 0 100%)";
     }
-}};
+  }};
   top: 0;
   bottom: 0;
   background-color: ${({ color }) => color};
 
   left: ${({ position }) => {
-    if (position === 'left') {
-        return '0';
+    if (position === "left") {
+      return "0";
     } else {
-        return 'unset';
+      return "unset";
     }
-}};
+  }};
 
   right: ${({ position }) => {
-    if (position === 'right') {
-        return '0';
+    if (position === "right") {
+      return "0";
     } else {
-        return 'unset';
+      return "unset";
     }
-}};
+  }};
   z-index: 1;
 
   @media (min-width: ${BIG_BREAKPOINT}px) {
@@ -244,37 +247,37 @@ export const StyledSponsorBadgeLeft = styled(motion.div)<{
 `;
 
 export const leftVariants = {
-    initial: {
-        x: -700,
+  initial: {
+    x: -700,
+  },
+  animate: {
+    x: 0,
+    transition: {
+      duration: 0.2,
     },
-    animate: {
-        x: 0,
-        transition: {
-            duration: 0.2,
-        },
+  },
+  exit: {
+    x: -700,
+    transition: {
+      duration: 0.2,
     },
-    exit: {
-        x: -700,
-        transition: {
-            duration: 0.2,
-        },
-    },
+  },
 };
 
 export const rightVariants = {
-    initial: {
-        x: 1000,
+  initial: {
+    x: 1000,
+  },
+  animate: {
+    x: 0,
+    transition: {
+      duration: 0.2,
     },
-    animate: {
-        x: 0,
-        transition: {
-            duration: 0.2,
-        },
+  },
+  exit: {
+    x: 1000,
+    transition: {
+      duration: 0.2,
     },
-    exit: {
-        x: 1000,
-        transition: {
-            duration: 0.2,
-        },
-    },
+  },
 };

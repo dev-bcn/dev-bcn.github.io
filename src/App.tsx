@@ -1,7 +1,9 @@
-import { Route, Switch } from "react-router-dom";
+import { Link, Route, Switch } from "react-router-dom";
 import {
   ROUTE_ABOUT_US,
   ROUTE_CODE_OF_CONDUCT,
+  ROUTE_CONDITIONS,
+  ROUTE_COOKIES,
   ROUTE_DIVERSITY,
   ROUTE_HOME,
   ROUTE_HOME_ALTERNATE,
@@ -14,25 +16,18 @@ import {
   ROUTE_TRAVEL,
 } from "./constants/routes";
 
-import { About } from "./views/About/About";
-import { CodeOfConduct } from "./views/CodeOfConduct/CodeOfConduct";
 import Footer from "./components/Footer/Footer";
 import { HomeWrapper } from "./views/Home/HomeWrapper";
-import JobOffers from "./views/JobOffers/JobOffers";
 import MeetingDetailContainer from "./views/MeetingDetail/MeetingDetailContainer";
 import Navigation from "./components/Navigation/Navigation";
-import Schedule from "./views/Schedule/Schedule";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import SpeakerDetailContainer from "./views/SpeakerDetail/SpeakerDetailContainer";
-import Speakers from "./views/Speakers/Speakers";
-import { Talks } from "./views/Talks/Talks";
 import styled from "styled-components";
-import { Diversity } from "./views/Diversity/Diversity";
-import { Travel } from "./views/Travel/Travel";
 import React, { FC } from "react";
 import NotFoundError from "./components/NotFoundError/NotFoundError";
 import { CookieConsent } from "react-cookie-consent";
 import { Color } from "./styles/colors";
+import Loading from "./components/Loading/Loading";
 import { QueryClient, QueryClientProvider } from "react-query";
 
 const StyledAppWrapper = styled.div`
@@ -46,30 +41,65 @@ const App: FC = () => {
   return (
     <StyledAppWrapper className="AppWrapperAll">
       <QueryClientProvider client={queryClient}>
-        <ScrollToTop />
-        <Navigation />
-        <Switch>
-          <Route path={ROUTE_TALKS} component={Talks} />
-          <Route path={ROUTE_CODE_OF_CONDUCT} component={CodeOfConduct} />
-          <Route path={ROUTE_DIVERSITY} component={Diversity} />
-          <Route path={ROUTE_JOB_OFFERS} component={JobOffers} />
-          <Route path={ROUTE_SCHEDULE} component={Schedule} />
-          <Route path={ROUTE_SPEAKERS} component={Speakers} />
-          <Route path={ROUTE_ABOUT_US} component={About} />
-          <Route path={ROUTE_TRAVEL} component={Travel} />
-          <Route
-            path={ROUTE_MEETING_DETAIL_PLAIN}
-            component={MeetingDetailContainer}
-          />
-          <Route
-            path={ROUTE_SPEAKER_DETAIL_PLAIN}
-            component={SpeakerDetailContainer}
-          />
-          <Route path={ROUTE_HOME} component={HomeWrapper} exact />
-          <Route path={ROUTE_HOME_ALTERNATE} component={HomeWrapper} exact />
-          <Route path="*" component={NotFoundError} />
-        </Switch>
-        <CookieConsent
+      <Route path="/loading" component={Loading} />
+      <ScrollToTop />
+      <Navigation />
+      <Switch>
+        <Route
+          path={ROUTE_TALKS}
+          component={React.lazy(() => import("./views/Talks/Talks"))}
+        />
+        <Route
+          path={ROUTE_CODE_OF_CONDUCT}
+          component={React.lazy(
+            () => import("./views/CodeOfConduct/CodeOfConduct")
+          )}
+        />
+        <Route
+          path={ROUTE_CONDITIONS}
+          component={React.lazy(() => import("./views/Conditions/Conditions"))}
+        />
+        <Route
+          path={ROUTE_COOKIES}
+          component={React.lazy(() => import("./views/Cookies/Cookies"))}
+        />
+        <Route
+          path={ROUTE_DIVERSITY}
+          component={React.lazy(() => import("./views/Diversity/Diversity"))}
+        />
+        <Route
+          path={ROUTE_JOB_OFFERS}
+          component={React.lazy(() => import("./views/JobOffers/JobOffers"))}
+        />
+        <Route
+          path={ROUTE_SCHEDULE}
+          component={React.lazy(() => import("./views/Schedule/Schedule"))}
+        />
+        <Route
+          path={ROUTE_SPEAKERS}
+          component={React.lazy(() => import("./views/Speakers/Speakers"))}
+        />
+        <Route
+          path={ROUTE_ABOUT_US}
+          component={React.lazy(() => import("./views/About/About"))}
+        />
+        <Route
+          path={ROUTE_TRAVEL}
+          component={React.lazy(() => import("./views/Travel/Travel"))}
+        />
+        <Route
+          path={ROUTE_MEETING_DETAIL_PLAIN}
+          component={MeetingDetailContainer}
+        />
+        <Route
+          path={ROUTE_SPEAKER_DETAIL_PLAIN}
+          component={SpeakerDetailContainer}
+        />
+        <Route path={ROUTE_HOME} component={HomeWrapper} exact />
+        <Route path={ROUTE_HOME_ALTERNATE} component={HomeWrapper} exact />
+        <Route path="*" component={NotFoundError} />
+      </Switch>
+      <CookieConsent
         debug={true}
         enableDeclineButton={true}
         cookieName="DevBcnCookie"
@@ -84,7 +114,10 @@ const App: FC = () => {
           backgroundColor: Color.MAGENTA,
         }}
       >
-        This website uses cookies to enhance the user experience.
+        This website uses cookies to enhance the user experience.{" "}
+        <Link to={ROUTE_COOKIES} style={{ color: "white", fontWeight: "bold" }}>
+          Read here
+        </Link>
       </CookieConsent>
       <Footer />
       </QueryClientProvider>

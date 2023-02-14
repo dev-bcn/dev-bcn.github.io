@@ -1,7 +1,9 @@
-import { FC } from "react";
+import { FC, Suspense } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { Color } from "../../../../../styles/colors";
+import Logo from "../../../../../assets/images/logo.svg";
+import { StyledLoadingImage } from "../../../../../components/Loading/Loading";
 
 type FaqCardType = {
   faq: {
@@ -39,10 +41,10 @@ export const StyledFaqImageContainer = styled.div<{ padding: string }>`
 export const StyledFaqImage = styled(motion.img)`
   border: 1px solid ${Color.YELLOW};
   display: block;
-  height: 100%;
+  height: 242px;
   margin: 3px;
   padding: 5px;
-  width: 100%;
+  width: 360px;
 `;
 
 export const StyledFaqInfo = styled(motion.div)<{ align: string }>`
@@ -82,9 +84,11 @@ const FaqCard: FC<FaqCardType> = ({ faq, index }) => {
       <StyledFaqImageContainer
         padding={isOdd ? "0 .75rem 0 0" : "0 0 0 .75rem"}
       >
-        <StyledFaqImage
-          src={require(`../../../../../assets/images/FaqsImage${index}.png`)}
-        />
+        <Suspense fallback={<StyledLoadingImage src={Logo} />}>
+          <StyledFaqImage
+            src={require(`../../../../../assets/images/FaqsImage${index}.png`)}
+          />
+        </Suspense>
       </StyledFaqImageContainer>
       <StyledFaqInfo align={isOdd ? "flex-start" : "flex-end"}>
         <StyledFaqTitle>{faq.question}</StyledFaqTitle>

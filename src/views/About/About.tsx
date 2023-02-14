@@ -39,7 +39,7 @@ const StyledLink = styled.a`
   }
 `;
 
-export const About: FC = () => {
+const About: FC = () => {
   const { width } = useWindowSize();
 
   React.useEffect(() => {
@@ -52,7 +52,7 @@ export const About: FC = () => {
         <StyledSpeakersSection>
           <TitleSection
             title="ABOUT US"
-            subtitle="The Developers conference - Barcelona edition"
+            subtitle="The Barcelona Developers Conference - DevBcn"
             color={Color.BLUE}
           />
           {width > MOBILE_BREAKPOINT && (
@@ -81,3 +81,5 @@ export const About: FC = () => {
     </>
   );
 };
+
+export default About;

@@ -12,6 +12,7 @@ import {
 export const navigationItems = [
   { id: "HOME", link: ROUTE_HOME },
   { id: "CODE OF CONDUCT", link: ROUTE_CODE_OF_CONDUCT },
+  { id: "SPONSORS", link: "/#sponsors" },
   //{ id: "DIVERSITY", link: ROUTE_DIVERSITY },
   { id: "SCHEDULE", link: ROUTE_SCHEDULE },
   { id: "TALKS", link: ROUTE_TALKS },

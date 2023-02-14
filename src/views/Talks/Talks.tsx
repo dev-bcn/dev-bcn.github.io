@@ -25,7 +25,7 @@ export const StyledSessionSection = styled.section`
   overflow-x: hidden;
 `;
 
-export const Talks: FC = () => {
+const Talks: FC = () => {
   const { isLoading, error, data } = useFetchTalks();
 
   if (error) {
@@ -84,3 +84,5 @@ export const Talks: FC = () => {
     </>
   );
 };
+
+export default Talks;

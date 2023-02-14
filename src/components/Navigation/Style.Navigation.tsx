@@ -12,6 +12,7 @@ export const StyledBlueHamburger = styled(motion.img)`
 `;
 export const StyledHeaderLogo = styled.img`
   height: 2.5rem;
+  width: 78px;
   cursor: pointer;
 `;
 export const StyledMenuIcon = styled(motion.img)`
@@ -51,12 +52,12 @@ export const StyledLink = styled(NavLink)`
   color: ${Color.LIGHT_BLUE};
   text-decoration: none;
   cursor: pointer;
-  font-family: SpaceGrotesk-Bold, sans-serif;
+  font-family: "Square 721 Regular", sans-serif;
 
   &.${(props) => props.activeClassName} {
     &:before {
       content: "/   ";
-      font-family: SpaceGrotesk-Bold, sans-serif;
+      font-family: "Square 721 Regular", sans-serif;
     }
   }
 
@@ -118,7 +119,7 @@ export const StyledHeader = styled.header`
       padding: 0 5px;
       font-size: 0.75em;
       text-transform: uppercase;
-      font-family: SpaceGrotesk-Bold, sans-serif;
+      font-family: "Square 721 Regular", sans-serif;
 
       @media (min-width: 1024px) {
         font-size: 1em;

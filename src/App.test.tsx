@@ -12,136 +12,161 @@ import {
   ROUTE_TALKS,
   ROUTE_TRAVEL,
 } from "./constants/routes";
+import React from "react";
 
 describe("navigation pages", () => {
-  test("it render the home page", () => {
+  test("it render the home page", async () => {
     const history = createMemoryHistory();
     history.push(ROUTE_HOME);
     render(
-      <Router history={history}>
-        <App />
-      </Router>
+      <React.Suspense fallback={<span>Loading...</span>}>
+        <Router history={history}>
+          <App />
+        </Router>
+      </React.Suspense>
     );
     expect(
-      screen.getByText(/The Developers Conference 2023/i)
+      await screen.findByText(/The Barcelona Developers Conference 2023/i)
     ).toBeInTheDocument();
 
-    expect(screen.getByText(/July 3rd-5th, 2023/i)).toBeInTheDocument();
+    expect(await screen.findByText(/July 3rd-5th, 2023/i)).toBeInTheDocument();
     expect(
-      screen.getByText(/7 tracks with the following topics:/i)
+      await screen.findByText(/7 tracks with the following topics:/i)
     ).toBeInTheDocument();
 
-    expect(screen.getByText(/🎟️ Buy Tickets/i)).toBeInTheDocument();
+    expect(await screen.findByText(/🎟️ Buy Tickets/i)).toBeInTheDocument();
     expect(screen.getAllByText(/Interested in meeting/i)).toHaveLength(2);
   });
 
-  test("it render the travel page", () => {
+  test("it render the travel page", async () => {
     const history = createMemoryHistory();
     history.push(ROUTE_TRAVEL);
     render(
-      <Router history={history}>
-        <App />
-      </Router>
+      <React.Suspense fallback={<span>Loading...</span>}>
+        <Router history={history}>
+          <App />
+        </Router>
+      </React.Suspense>
     );
     expect(
-      screen.getByText(/La Farga Centre d'Activitats/i)
+      await screen.findByText(/La Farga Centre d'Activitats/i)
     ).toBeInTheDocument();
   });
 
-  test("it render the speakers page", () => {
+  test("it render the speakers page", async () => {
     const history = createMemoryHistory();
     history.push(ROUTE_SPEAKERS);
     render(
-      <Router history={history}>
-        <App />
-      </Router>
+      <React.Suspense fallback={<span>Loading...</span>}>
+        <Router history={history}>
+          <App />
+        </Router>
+      </React.Suspense>
     );
     expect(
-      screen.getByText(/Speakers coming from all corners of the world/i)
+      await screen.findByText(/Speakers coming from all corners of the world/i)
     ).toBeInTheDocument();
   });
 
-  test("it render the talks page", () => {
+  test("it render the talks page", async () => {
     const history = createMemoryHistory();
     history.push(ROUTE_TALKS);
     render(
-      <Router history={history}>
-        <App />
-      </Router>
+      <React.Suspense fallback={<span>Loading...</span>}>
+        <Router history={history}>
+          <App />
+        </Router>
+      </React.Suspense>
     );
-    expect(screen.getByText("/ TALKS")).toBeInTheDocument();
+    expect(await screen.findByText("/ TALKS")).toBeInTheDocument();
   });
 
-  test("it render the Job Offers page", () => {
+  test("it render the Job Offers page", async () => {
     const history = createMemoryHistory();
     history.push(ROUTE_JOB_OFFERS);
     render(
-      <Router history={history}>
-        <App />
-      </Router>
+      <React.Suspense fallback={<span>Loading...</span>}>
+        <Router history={history}>
+          <App />
+        </Router>
+      </React.Suspense>
     );
     expect(
-      screen.getByText("Have a look at some opportunities")
+      await screen.findByText("Have a look at some opportunities")
     ).toBeInTheDocument();
   });
 
-  test("it render the 404 page", () => {
+  test("it render the 404 page", async () => {
     const history = createMemoryHistory();
     history.push("/some-test");
     render(
-      <Router history={history}>
-        <App />
-      </Router>
-    );
-    expect(screen.getByText("Error 404. Page not found")).toBeInTheDocument();
-  });
-
-  test("it renders the about us page", () => {
-    const history = createMemoryHistory();
-    history.push(ROUTE_ABOUT_US);
-    render(
-      <Router history={history}>
-        <App />
-      </Router>
-    );
-    expect(screen.getByText(/Jonathan Vila/i)).toBeInTheDocument();
-    expect(screen.getByText(/Nacho Cougil/i)).toBeInTheDocument();
-  });
-
-  test("it renders the code of conduct page", () => {
-    const history = createMemoryHistory();
-    history.push(ROUTE_CODE_OF_CONDUCT);
-    render(
-      <Router history={history}>
-        <App />
-      </Router>
+      <React.Suspense fallback={<span>Loading...</span>}>
+        <Router history={history}>
+          <App />
+        </Router>
+      </React.Suspense>
     );
     expect(
-      screen.getByText(/The DevBcn is the yearly event/i)
+      await screen.findByText("Error 404. Page not found")
     ).toBeInTheDocument();
   });
 
-  test("it renders the talks page", () => {
+  test("it renders the about us page", async () => {
+    const history = createMemoryHistory();
+    history.push(ROUTE_ABOUT_US);
+    render(
+      <React.Suspense fallback={<span>Loading...</span>}>
+        <Router history={history}>
+          <App />
+        </Router>
+      </React.Suspense>
+    );
+    expect(await screen.findByText(/Jonathan Vila/i)).toBeInTheDocument();
+    expect(await screen.findByText(/Nacho Cougil/i)).toBeInTheDocument();
+  });
+
+  test("it renders the code of conduct page", async () => {
+    const history = createMemoryHistory();
+    history.push(ROUTE_CODE_OF_CONDUCT);
+    render(
+      <React.Suspense fallback={<span>Loading...</span>}>
+        <Router history={history}>
+          <App />
+        </Router>
+      </React.Suspense>
+    );
+    expect(
+      await screen.findByText(/The DevBcn is the yearly event/i)
+    ).toBeInTheDocument();
+  });
+
+  test("it renders the talks page", async () => {
     const history = createMemoryHistory();
     history.push(ROUTE_TALKS);
     render(
-      <Router history={history}>
-        <App />
-      </Router>
+      <React.Suspense fallback={<span>Loading...</span>}>
+        <Router history={history}>
+          <App />
+        </Router>
+      </React.Suspense>
     );
-    expect(screen.getByText(/Loading/i)).toBeInTheDocument();
+    expect(
+      await screen.findByText(/No talks selected yet/i)
+    ).toBeInTheDocument();
   });
 
-  test("it renders the diversity page", () => {
+  test("it renders the diversity page", async () => {
     const history = createMemoryHistory();
     history.push(ROUTE_DIVERSITY);
     render(
-      <Router history={history}>
-        <App />
-      </Router>
+      <React.Suspense fallback={<span>Loading...</span>}>
+        <Router history={history}>
+          <App />
+        </Router>
+      </React.Suspense>
     );
     expect(
-      screen.getByText(/diversity sponsorship for DevBcn 2023/i)
+      await screen.findByText(/diversity sponsorship for DevBcn 2023/i)
     ).toBeInTheDocument();
   });
 });

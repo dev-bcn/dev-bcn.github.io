@@ -56,7 +56,7 @@ const StyledP = styled.p`
     margin-top: 50px;
   }
 `;
-export const Diversity: FC = () => {
+const Diversity: FC = () => {
   useEffect(() => {
     document.title = `Diversity - DevBcn ${data.edition}`;
   });
@@ -99,3 +99,4 @@ export const Diversity: FC = () => {
     </StyledSection>
   );
 };
+export default Diversity;
