@@ -68,7 +68,7 @@ const Talks: FC = () => {
         <StyledSessionSection>
           {isLoading && <h1>Loading </h1>}
           {data && data.length === 0 && (
-            <p style={{ color: Color.WHITE }}>
+            <p style={{ color: Color.WHITE, textAlign: "center" }}>
               No talks selected yet. Keep in touch in our social media for
               upcoming announcements
             </p>
