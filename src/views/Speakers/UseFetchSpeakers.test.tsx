@@ -3,16 +3,20 @@ import { renderHook } from "@testing-library/react-hooks";
 import { FC } from "react";
 import { speakerAdapter, useFetchSpeakers } from "./UseFetchSpeakers";
 import { beforeEach, describe, expect, it } from "@jest/globals";
-import axios, { AxiosResponse } from "axios";
+import axios, { AxiosHeaders, AxiosResponse } from "axios";
 import { IResponse } from "./Speaker.types";
 
 jest.mock("axios");
 const mockedAxios = axios as jest.Mocked<typeof axios>;
+const axiosHeaders = new AxiosHeaders();
+
 const payload: AxiosResponse<IResponse[]> = {
   status: 200,
   statusText: "OK",
   headers: {},
-  config: {},
+  config: {
+    headers: axiosHeaders,
+  },
   data: [
     {
       id: "1",
