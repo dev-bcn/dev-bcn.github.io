@@ -1,51 +1,51 @@
-import { FC } from 'react';
-import { Link } from 'react-router-dom';
+import { FC } from "react";
+import { Link } from "react-router-dom";
 import {
   StyledFaqCard,
   StyledFaqImage,
   StyledFaqImageContainer,
   StyledFaqText,
   StyledFaqTitle,
-} from '../../Home/components/Faqs/components/FaqsCard';
-import styled from 'styled-components';
-import { Color } from '../../../styles/colors';
-import { motion } from 'framer-motion';
-import LocationIcon from '../../../assets/images/LocationIcon.svg';
+} from "../../Home/components/Faqs/components/FaqsCard";
+import styled from "styled-components";
+import { Color } from "../../../styles/colors";
+import { motion } from "framer-motion";
+import LocationIcon from "../../../assets/images/LocationIcon.svg";
 
 type IJobsCardProps = {
   item: {
     title: string;
-    location:string;
+    location: string;
     text: string;
   };
   index: number;
 };
 
-export const StyledJobsInfo = styled(motion.div)<{align:string}>`
+export const StyledJobsInfo = styled(motion.div)<{ align: string }>`
   display: flex;
   flex-direction: column;
   color: ${Color.BLACK_BLUE};
   align-items: center;
   @media (min-width: 800px) {
     width: 60%;
-    align-items: ${({align}) => {
+    align-items: ${({ align }) => {
       return align;
     }};
   }
 `;
 
-const StyledLocationContainer= styled.div`
+const StyledLocationContainer = styled.div`
   display: flex;
-  padding-top: .25rem;
+  padding-top: 0.25rem;
 `;
 
 const StyledLocationImage = styled.img`
-  height: .75rem;
+  height: 0.75rem;
 `;
 
 const StyledLocationText = styled.p`
-  font-size: .75rem;
-  padding-left: .25rem;
+  font-size: 0.75rem;
+  padding-left: 0.25rem;
 `;
 
 const StyledJobsButton = styled.div`
@@ -61,20 +61,22 @@ const JobsCard: FC<IJobsCardProps> = ({ item, index }) => {
   const isOdd = index % 2 === 0;
 
   return (
-    <StyledFaqCard direction={isOdd ? 'row' : 'row-reverse'}>
-      <StyledFaqImageContainer padding={isOdd ? '0 .75rem 0 0' : '0 0 0 .75rem'}>
+    <StyledFaqCard direction={isOdd ? "row" : "row-reverse"}>
+      <StyledFaqImageContainer
+        padding={isOdd ? "0 .75rem 0 0" : "0 0 0 .75rem"}
+      >
         <StyledFaqImage
           src={require(`../../../assets/images/FaqsImage1.png`)}
         />
       </StyledFaqImageContainer>
       <StyledJobsInfo align={isOdd ? "flex-start" : "flex-end"}>
-        <StyledFaqTitle textAlign={isOdd ? "left" : "right"}>{item.title}</StyledFaqTitle>
+        <StyledFaqTitle>{item.title}</StyledFaqTitle>
         <StyledLocationContainer>
-          <StyledLocationImage src={LocationIcon}/>
+          <StyledLocationImage src={LocationIcon} />
           <StyledLocationText>{item.location}</StyledLocationText>
         </StyledLocationContainer>
-        <StyledFaqText textAlign={isOdd ? "left" : "right"}>{item.text}</StyledFaqText>
-        <Link to='/' className="link--text">
+        <StyledFaqText>{item.text}</StyledFaqText>
+        <Link to="/" className="link--text">
           <StyledJobsButton>
             <StyledJobsText>Apply</StyledJobsText>
           </StyledJobsButton>

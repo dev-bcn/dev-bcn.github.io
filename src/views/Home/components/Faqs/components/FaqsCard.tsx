@@ -59,31 +59,20 @@ export const StyledFaqInfo = styled(motion.div)<{ align: string }>`
   }
 `;
 
-export const StyledFaqTitle = styled.h2<{ textAlign: string }>`
+export const StyledFaqTitle = styled.h2`
   padding-top: 1rem;
   @media (min-width: 800px) {
-    text-align: ${({ textAlign }) => {
-      return textAlign;
-    }};
+    text-align: left;
     padding-top: unset;
   }
 `;
 
-export const StyledFaqText = styled.p<{ textAlign: string }>`
+export const StyledFaqText = styled.p`
   padding: 0.5rem 0;
   @media (min-width: 800px) {
     hyphens: auto;
     word-wrap: break-word;
-    text-align: ${({ textAlign }) => {
-      return textAlign;
-    }};
-  }
-`;
-
-export const StyledFaqDetailButton = styled.img`
-  width: 6rem;
-  @media (min-width: 800px) {
-    width: 7rem;
+    text-align: left;
   }
 `;
 
@@ -102,12 +91,8 @@ const FaqCard: FC<FaqCardType> = ({ faq, index }) => {
         </Suspense>
       </StyledFaqImageContainer>
       <StyledFaqInfo align={isOdd ? "flex-start" : "flex-end"}>
-        <StyledFaqTitle textAlign={isOdd ? "left" : "right"}>
-          {faq.question}
-        </StyledFaqTitle>
-        <StyledFaqText textAlign={isOdd ? "left" : "right"}>
-          {faq.answer}
-        </StyledFaqText>
+        <StyledFaqTitle>{faq.question}</StyledFaqTitle>
+        <StyledFaqText>{faq.answer}</StyledFaqText>
       </StyledFaqInfo>
     </StyledFaqCard>
   );

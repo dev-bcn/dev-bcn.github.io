@@ -23,11 +23,12 @@ import Navigation from "./components/Navigation/Navigation";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import SpeakerDetailContainer from "./views/SpeakerDetail/SpeakerDetailContainer";
 import styled from "styled-components";
-import React from "react";
+import React, { FC } from "react";
 import NotFoundError from "./components/NotFoundError/NotFoundError";
 import { CookieConsent } from "react-cookie-consent";
 import { Color } from "./styles/colors";
 import Loading from "./components/Loading/Loading";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 const StyledAppWrapper = styled.div`
   position: relative;
@@ -35,9 +36,11 @@ const StyledAppWrapper = styled.div`
   overflow-x: hidden;
 `;
 
-const App = () => {
+const App: FC = () => {
+  const queryClient = new QueryClient();
   return (
     <StyledAppWrapper className="AppWrapperAll">
+      <QueryClientProvider client={queryClient}>
       <Route path="/loading" component={Loading} />
       <ScrollToTop />
       <Navigation />
@@ -117,6 +120,7 @@ const App = () => {
         </Link>
       </CookieConsent>
       <Footer />
+      </QueryClientProvider>
     </StyledAppWrapper>
   );
 };

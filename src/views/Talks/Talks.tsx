@@ -2,10 +2,9 @@ import React, { FC } from "react";
 import LessThanDarkBlueIcon from "../../assets/images/LessThanDarkBlueIcon.svg";
 import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import { TalkCard } from "./components/TalkCard";
 import TitleSection from "../../components/SectionTitle/TitleSection";
 import { Color } from "../../styles/colors";
-import data from "../../data/2023.json";
+import conferenceData from "../../data/2023.json";
 import {
   StyledMarginBottom,
   StyledSpeakersSection,
@@ -13,14 +12,28 @@ import {
   StyledTitleIcon,
   StyledWaveContainer,
 } from "./Talks.style";
-import { StyledWrapperSection } from "../JobOffers/JobOffers.Style";
+import TrackInformation from "./components/TrackInformation";
+import { useHardCodedTalks } from "./UseFetchTalks";
+import styled from "styled-components";
+import * as Sentry from "@sentry/react";
+
+export const StyledSessionSection = styled.section`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow-x: hidden;
+`;
 
 const Talks: FC = () => {
-  const currentYearTalks = data.talks;
-  React.useEffect(() => {
-    document.title = `Talks - DevBcn - ${data.edition}`;
-  }, []);
+  const { isLoading, error, data } = useHardCodedTalks();
 
+  if (error) {
+    Sentry.captureException(error);
+  }
+  React.useEffect(() => {
+    document.title = `Talks - DevBcn - ${conferenceData.edition}`;
+  }, []);
   return (
     <>
       <SectionWrapper color={Color.DARK_BLUE} marginTop={5}>
@@ -52,17 +65,20 @@ const Talks: FC = () => {
         </svg>
       </StyledWaveContainer>
       <SectionWrapper color={Color.LIGHT_BLUE} marginTop={1}>
-        <StyledWrapperSection>
-          {currentYearTalks.length === 0 && (
-            <p style={{ color: Color.WHITE }}>
+        <StyledSessionSection>
+          {isLoading && <h1>Loading </h1>}
+          {data && data.length === 0 && (
+            <p style={{ color: Color.WHITE, textAlign: "center" }}>
               No talks selected yet. Keep in touch in our social media for
               upcoming announcements
             </p>
           )}
-          {currentYearTalks.map((talk, index) => (
-            <TalkCard talk={talk} index={index} />
-          ))}
-        </StyledWrapperSection>
+          {data &&
+            Array.isArray(data) &&
+            data.map((track, index) => (
+              <TrackInformation key={index} track={track} />
+            ))}
+        </StyledSessionSection>
         <StyledMarginBottom />
       </SectionWrapper>
     </>

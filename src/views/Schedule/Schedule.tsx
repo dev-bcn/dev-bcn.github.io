@@ -1,9 +1,5 @@
 import { BIG_BREAKPOINT, MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
 import { Color } from "../../styles/colors";
-import {
-  ROUTE_MEETING_DETAIL,
-  ROUTE_SPEAKER_DETAIL,
-} from "../../constants/routes";
 
 import { AvatarCard } from "./components/AvatarCard";
 import React, { FC } from "react";
@@ -31,8 +27,8 @@ import {
 const Schedule: FC = () => {
   const { width } = useWindowSize();
 
-  const meetingDetailUrl = ROUTE_MEETING_DETAIL("grace-jansen");
-  const speakerDetailUrl = ROUTE_SPEAKER_DETAIL("grace-jansen");
+  const meetingDetailUrl = "grace-jansen";
+  const speakerDetailUrl = "grace-jansen";
   const scheduleDay1 = data.schedule.day_one;
   const scheduleDay2 = data.schedule.day_two;
   const scheduleDay3 = data.schedule.day_three;
