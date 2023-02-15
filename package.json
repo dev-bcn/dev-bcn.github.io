@@ -52,7 +52,7 @@
           "**/__tests__/**/*.[jt]s?(x)",
           "**/?(*.)+(spec|test).[jt]s?(x)"
         ]
-      }]
+      }
     ],
     "rules": {
       "no-console": "error"
