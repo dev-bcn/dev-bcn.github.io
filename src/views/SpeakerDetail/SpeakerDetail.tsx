@@ -1,16 +1,12 @@
 import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
 
-import { FC } from "react";
+import { FC, Suspense } from "react";
 import MoreThanIcon from "../../assets/images/MoreThanBlueIcon.svg";
 import SlashesWhite from "../../assets/images/SlashesWhite.svg";
 import linkedinIcon from "../../assets/images/linkedinIcon.svg";
 import twitterIcon from "../../assets/images/twitterIcon.svg";
 import { useWindowSize } from "react-use";
 import {
-  downVariants,
-  leftVariants,
-  noVariants,
-  rightVariants,
   StyledDetailsContainer,
   StyledFlexCol,
   StyledImageContainer,
@@ -27,7 +23,6 @@ import {
   StyledSpeakerDescription,
   StyledSpeakerDetailContainer,
   StyledSpeakerImg,
-  StyledSpeakerImgBorder,
   StyledSpeakerTitle,
 } from "./Speaker.style";
 import { ROUTE_SPEAKERS, ROUTE_TALK_DETAIL } from "../../constants/routes";
@@ -42,24 +37,22 @@ interface ISpeakerDetailProps {
 
 const SpeakerDetail: FC<ISpeakerDetailProps> = ({ speaker }) => {
   const { width } = useWindowSize();
+
+  const hasSessions = (): boolean =>
+    (speaker.sessions && speaker.sessions.length > 0) || false;
+
   return (
     <>
-      <StyledSpeakerDetailContainer
-        className="DetailsContainer"
-        initial="initial"
-        animate="animate"
-        variants={width < BIG_BREAKPOINT ? downVariants : noVariants}
-      >
+      <StyledSpeakerDetailContainer className="DetailsContainer">
         <StyledDetailsContainer className="DetailsContainerInner">
           {width > BIG_BREAKPOINT && (
-            <StyledImageContainer
-              initial="initial"
-              animate="animate"
-              variants={leftVariants}
-            >
-              <StyledSpeakerImgBorder>
-                <StyledSpeakerImg photo={speaker.speakerImage} />
-              </StyledSpeakerImgBorder>
+            <StyledImageContainer>
+              <Suspense fallback={<p>loading</p>}>
+                <StyledSpeakerImg
+                  src={speaker.speakerImage}
+                  alt={speaker.fullName}
+                />
+              </Suspense>
               <StyledSocialMediaContainer>
                 {speaker.twitterUrl && (
                   <StyledLink href={speaker.twitterUrl.url} target={"_blank"}>
@@ -75,18 +68,16 @@ const SpeakerDetail: FC<ISpeakerDetailProps> = ({ speaker }) => {
             </StyledImageContainer>
           )}
           <StyledRightContainer>
-            <StyledNameContainer
-              className="DetailsTitle"
-              initial="initial"
-              animate="animate"
-              variants={width < BIG_BREAKPOINT ? noVariants : rightVariants}
-            >
+            <StyledNameContainer>
               <StyledName>{speaker.fullName}</StyledName>
               {width < BIG_BREAKPOINT && (
                 <>
-                  <StyledSpeakerImgBorder>
-                    <StyledSpeakerImg photo={speaker.speakerImage} />
-                  </StyledSpeakerImgBorder>
+                  <Suspense fallback={<p>loading</p>}>
+                    <StyledSpeakerImg
+                      src={speaker.speakerImage}
+                      alt={speaker.fullName}
+                    />
+                  </Suspense>
                   <StyledSocialMediaContainer>
                     {speaker.twitterUrl && (
                       <StyledLink
@@ -109,32 +100,32 @@ const SpeakerDetail: FC<ISpeakerDetailProps> = ({ speaker }) => {
               )}
               <StyledSlashes src={SlashesWhite} />
             </StyledNameContainer>
-            <StyledInfoContainer
-              initial="initial"
-              animate="animate"
-              variants={downVariants}
-            >
+            <StyledInfoContainer>
               <StyledFlexCol>
                 <StyledSpeakerTitle>{speaker.tagLine}</StyledSpeakerTitle>
                 <StyledSpeakerDescription>
                   {speaker.bio}
                 </StyledSpeakerDescription>
 
-                {speaker.sessions && <h2>Sessions</h2>}
-                <ul style={{ paddingLeft: "40px", paddingTop: "20px" }}>
-                  {speaker.sessions &&
-                    speaker.sessions.map((session, index) => (
-                      <li key={index}>
-                        <StyledTalkDescription
-                          to={`${ROUTE_TALK_DETAIL}/${session.id}`}
-                        >
-                          <StyledSpeakerTitle>
-                            {session.name}
-                          </StyledSpeakerTitle>
-                        </StyledTalkDescription>
-                      </li>
-                    ))}
-                </ul>
+                {hasSessions() && (
+                  <>
+                    <h2>Sessions</h2>
+                    <ul style={{ paddingLeft: "40px", paddingTop: "20px" }}>
+                      {speaker.sessions &&
+                        speaker.sessions.map((session, index) => (
+                          <li key={index}>
+                            <StyledTalkDescription
+                              to={`${ROUTE_TALK_DETAIL}/${session.id}`}
+                            >
+                              <StyledSpeakerTitle>
+                                {session.name}
+                              </StyledSpeakerTitle>
+                            </StyledTalkDescription>
+                          </li>
+                        ))}
+                    </ul>
+                  </>
+                )}
 
                 <Link
                   to={ROUTE_SPEAKERS}

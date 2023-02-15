@@ -1,7 +1,11 @@
 import styled from "styled-components";
-import {Color} from "../../styles/colors";
-import {BIG_BREAKPOINT, LARGE_BREAKPOINT, TABLET_BREAKPOINT} from "../../constants/BreakPoints";
-import {motion} from "framer-motion";
+import { Color } from "../../styles/colors";
+import {
+  BIG_BREAKPOINT,
+  LARGE_BREAKPOINT,
+  TABLET_BREAKPOINT,
+} from "../../constants/BreakPoints";
+import { motion } from "framer-motion";
 
 export const StyledContainer = styled.div`
   background-color: ${Color.BLUE};
@@ -24,12 +28,13 @@ export const StyledSpeakerDetailContainer = styled(motion.div)`
   width: 100%;
   padding: 1.5rem 1.5rem 3rem;
 
-  margin-bottom: 2rem;
+  margin-bottom: 8rem;
 
   @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
     justify-content: start;
     align-items: start;
     padding: 0;
+    margin-bottom: 2rem;
   }
 `;
 export const StyledDetailsContainer = styled.div`
@@ -46,11 +51,7 @@ export const StyledImageContainer = styled(motion.div)`
   flex-direction: column;
   width: 25%;
   padding: 0 1rem;
-  display: none;
-
-  @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    display: flex;
-  }
+  display: flex;
 `;
 export const StyledRightContainer = styled.div`
   display: flex;
@@ -133,13 +134,15 @@ export const StyledSpeakerImgBorder = styled.div`
     height: 325px;
   }
 `;
-export const StyledSpeakerImg = styled.div<{ photo: string }>`
-  width: 100%;
-  height: 100%;
-  background-image: url(${({photo}) => photo});
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+export const StyledSpeakerImg = styled.img`
+  border-radius: 10px;
+  padding: 5px;
+  border: 1px solid ${Color.YELLOW};
+  margin-bottom: 15px;
+
+  @media only screen and (max-width: ${BIG_BREAKPOINT}px) {
+    width: 80%;
+  }
 `;
 export const StyledSlashes = styled(motion.img)`
   width: 80%;
@@ -181,52 +184,22 @@ export const StyledLink = styled.a`
 `;
 export const StyledSocialMediaIcon = styled.img<{ noMargin?: boolean }>`
   height: 1.5rem;
-  margin-right: ${({noMargin}) => (noMargin ? '0' : '0.75rem')};
+  margin-right: ${({ noMargin }) => (noMargin ? "0" : "0.75rem")};
 
   @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    margin-right: ${({noMargin}) => (noMargin ? '0' : '0.5rem')};
+    margin-right: ${({ noMargin }) => (noMargin ? "0" : "0.5rem")};
   }
 `;
 export const rightVariants = {
-    initial: {
-        x: '100%',
-        opacity: 0,
+  initial: {
+    x: "100%",
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.7,
     },
-    animate: {
-        x: 0,
-        opacity: 1,
-        transition: {
-            duration: 0.7,
-        },
-    },
-};
-export const leftVariants = {
-    initial: {
-        x: -100,
-        opacity: 0,
-    },
-    animate: {
-        x: 0,
-        opacity: 1,
-        transition: {duration: 0.3},
-    },
-};
-export const downVariants = {
-    initial: {
-        y: 70,
-        opacity: 0,
-    },
-    animate: {
-        y: 0,
-        opacity: 1,
-        transition: {duration: 0.3},
-    },
-};
-export const noVariants = {
-    initial: {
-        x: 0,
-    },
-    animate: {
-        x: 0,
-    },
+  },
 };

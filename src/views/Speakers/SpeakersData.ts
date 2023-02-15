@@ -98,7 +98,7 @@ export const speakersData: ISpeaker[] = [
     id: "victor",
     speakerImage: "/images/speakers/victor-rentea.jpg",
     tagLine: "Technical trainer and coach",
-    bio: "JAva Champion - Technical trainer and coach",
+    bio: "Java Champion - Technical trainer and coach",
     fullName: "Victor Rentea",
     linkedInUrl: {
       url: "https://www.linkedin.com/in/victoRentea",
