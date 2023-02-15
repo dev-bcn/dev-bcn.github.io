@@ -11,6 +11,7 @@ export const StyledSpeakerCard = styled.div`
   align-items: flex-start;
   width: 10rem;
   padding: 0 1rem 1rem 1rem;
+
   @media (min-width: ${TABLET_BREAKPOINT}px) {
     width: 12rem;
   }
@@ -27,6 +28,7 @@ export const StyledSpeakerImage = styled.img`
   width: 100%;
   height: auto;
   display: block;
+  border-radius: 10px;
 `;
 export const StyledImageAnimation = styled.div`
   position: absolute;
@@ -45,9 +47,15 @@ export const StyledImageAnimation = styled.div`
   }
 `;
 export const StyledSpeakerTitle = styled.h5`
-  color: ${Color.WHITE};
+  font-family: "DejaVu Sans ExtraLight", sans-serif;
+  font-weight: bold;
+  color: ${Color.LIGHT_BLUE};
+  font-size: 1.1em;
+  padding: 5px 0 1px;
 `;
 export const StyledSpeakerText = styled.p`
   color: ${Color.WHITE};
+  font-family: "Square 721 Regular", sans-serif;
   text-align: left;
+  font-size: 0.9em;
 `;

@@ -1,6 +1,6 @@
 import { MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
 import { Color } from "../../styles/colors";
-import { FC, useCallback, Key, useEffect } from "react";
+import { FC, useCallback, useEffect } from "react";
 import LessThanBlueIcon from "../../assets/images/LessThanBlueIcon.svg";
 import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
@@ -37,7 +37,6 @@ const LessThanGreaterThan = (props: { width: number }) => (
 
 const Speakers: FC = () => {
   const { width } = useWindowSize();
-  const speakersCurrentYear = data.speakers;
   const today = new Date();
   const isBetween = (startDay: Date, endDay: Date): boolean =>
     startDay < new Date() && endDay > today;
@@ -56,8 +55,8 @@ const Speakers: FC = () => {
     document.title = `Speakers - DevBcn ${webData.edition}`;
   });
 
-  const CFPStartDay = new Date(data.tickets.startDay);
-  const CFPEndDay = new Date(data.tickets.endDay);
+  const CFPStartDay = new Date(webData.tickets.startDay);
+  const CFPEndDay = new Date(webData.tickets.endDay);
 
   return (
     <>
@@ -96,8 +95,8 @@ const Speakers: FC = () => {
               </p>
             )}
             {data &&
-              data.map((speaker: ISpeaker, index: Key) => (
-                <SpeakerCard key={index} speaker={speaker} />
+              data.map((speaker: ISpeaker) => (
+                <SpeakerCard key={speaker.id} speaker={speaker} />
               ))}
           </SpeakersCardsContainer>
           <StyledContainerRightSlash

@@ -121,7 +121,7 @@ const SpeakerDetail: FC<ISpeakerDetailProps> = ({ speaker }) => {
                 </StyledSpeakerDescription>
 
                 {speaker.sessions && <h2>Sessions</h2>}
-                <ul>
+                <ul style={{ paddingLeft: "40px", paddingTop: "20px" }}>
                   {speaker.sessions &&
                     speaker.sessions.map((session, index) => (
                       <li key={index}>
