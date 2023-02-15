@@ -8,7 +8,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-
     steps:
     - name: checkout
       uses: actions/checkout@v3
@@ -17,10 +16,26 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 18.x
+        
+    - name: Cache node modules
+      id: cache-npm
+      uses: actions/cache@v3
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-build-${{ env.cache-name }}-
+          ${{ runner.os }}-build-
+          ${{ runner.os }}-
 
     - name: Build & deploy
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        REACT_APP_NAME: ${{ secrets.REACT_APP_VERSION }}
+        SENTRY_ENVIRONMENT: ${{ secrets.SENTRY_ENVIRONMENT}}
+        REACT_APP_VERSION: ${{ secrets.REACT_APP_VERSION }}
+        REACT_APP_MAP_API_KEY: ${{ secrets.REACT_APP_MAP_API_KEY }}
+        REACT_APP_GOOGLE_ANALYTICS_API_KEY: ${{ secrets.REACT_APP_GOOGLE_ANALYTICS_API_KEY}}
       run: |
         git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
         npm i
