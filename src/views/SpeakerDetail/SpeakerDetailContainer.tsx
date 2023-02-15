@@ -7,14 +7,13 @@ import SpeakerDetail from "./SpeakerDetail";
 import { useParams } from "react-router-dom";
 import { StyledContainer, StyledWaveContainer } from "./Speaker.style";
 import conferenceData from "../../data/2023.json";
-import { useFetchSpeakers } from "../Speakers/UseFetchSpeakers";
+import { useHardCodedSpeakers } from "../Speakers/UseFetchSpeakers";
 import * as Sentry from "@sentry/react";
 
 const SpeakerDetailContainer: FC = () => {
   const { id } = useParams<{ id: string }>();
 
-  const { isLoading, error, data } = useFetchSpeakers(id);
-
+  const { isLoading, error, data } = useHardCodedSpeakers(id);
   if (error) {
     Sentry.captureException(error);
   }

@@ -1,8 +1,9 @@
-import { useQuery } from "react-query";
+import { useQuery, UseQueryResult } from "react-query";
 import axios from "axios";
 import { IResponse, ISpeaker } from "./Speaker.types";
+import { speakersData } from "./SpeakersData";
 
-export const useFetchSpeakers = (id?: string) => {
+export const useFetchSpeakers = (id?: string): UseQueryResult<ISpeaker[]> => {
   return useQuery("speakers", async () => {
     const serverResponse = await axios.get(
       "https://sessionize.com/api/v2/ttsitynd/view/Speakers"
@@ -31,3 +32,12 @@ export const speakerAdapter = (response: IResponse[]): ISpeaker[] =>
       (link) => link.linkType === "LinkedIn"
     )[0],
   }));
+
+export const useHardCodedSpeakers = (id?: string): UseQueryResult<ISpeaker[]> =>
+  useQuery("speakers", async () => {
+    let result = speakersData;
+    if (id !== undefined) {
+      result = speakersData.filter((speaker) => speaker.id === id);
+    }
+    return Promise.resolve(result);
+  });

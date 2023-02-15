@@ -13,7 +13,7 @@ import {
   StyledWaveContainer,
 } from "./Talks.style";
 import TrackInformation from "./components/TrackInformation";
-import { useFetchTalks } from "./UseFetchTalks";
+import { useHardCodedTalks } from "./UseFetchTalks";
 import styled from "styled-components";
 import * as Sentry from "@sentry/react";
 
@@ -26,7 +26,7 @@ export const StyledSessionSection = styled.section`
 `;
 
 const Talks: FC = () => {
-  const { isLoading, error, data } = useFetchTalks();
+  const { isLoading, error, data } = useHardCodedTalks();
 
   if (error) {
     Sentry.captureException(error);
