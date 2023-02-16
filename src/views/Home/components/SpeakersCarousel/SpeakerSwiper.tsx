@@ -5,8 +5,6 @@ import styled from "styled-components";
 import { speakersData } from "../../../Speakers/SpeakersData";
 import { Color } from "../../../../styles/colors";
 import "swiper/swiper-bundle.min.css";
-import "swiper/modules/pagination/pagination.min.css";
-import "swiper/modules/autoplay/autoplay.min.css";
 import "./SpeakersCarousel.scss";
 import { Link } from "react-router-dom";
 import { ROUTE_SPEAKER_DETAIL } from "../../../../constants/routes";
