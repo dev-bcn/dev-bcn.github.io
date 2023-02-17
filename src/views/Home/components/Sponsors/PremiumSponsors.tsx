@@ -88,8 +88,8 @@ export const PremiumSponsors = () => {
                     src={sponsor.image}
                     style={{
                       filter: isHovered
-                        ? "sepia(100%) grayscale(100%)"
-                        : "drop-shadow(6px 6px 6px #002454)",
+                        ? `drop-shadow(6px 6px 3px ${Color.LIGHT_BLUE})`
+                        : `drop-shadow(3px 3px 3px ${Color.DARK_BLUE})`,
                     }}
                   />
                 </a>

@@ -13,7 +13,7 @@ import {
 import { TopSponsors } from "./TopSponsors";
 import { RegularSponsors } from "./RegularSponsors";
 import { PremiumSponsors } from "./PremiumSponsors";
-import { StartupSponsor } from "./StartupSponsor";
+import { BasicSponsor } from "./BasicSponsor";
 import { VirtualSponsors } from "./VirtualSponsors";
 
 export type TIsHoveredState = {
@@ -55,7 +55,7 @@ const Sponsors: FC = () => (
       <TopSponsors />
       <PremiumSponsors />
       <RegularSponsors />
-      <StartupSponsor />
+      <BasicSponsor />
       <VirtualSponsors />
     </StyledSponsorsContainer>
   </SectionWrapper>

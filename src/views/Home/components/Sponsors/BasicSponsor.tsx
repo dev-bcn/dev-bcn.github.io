@@ -18,7 +18,7 @@ import { useWindowSize } from "react-use";
 import { useCallback, useEffect, useState } from "react";
 import { sponsors } from "./SponsorsData";
 
-export const StartupSponsor = () => {
+export const BasicSponsor = () => {
   const { width } = useWindowSize();
   const [slashes, setSlashes] = useState("");
   const [isHovered, setIsHovered] = useState<boolean>(false);
@@ -29,21 +29,18 @@ export const StartupSponsor = () => {
     setSlashes(newSlashes);
   }, [width]);
 
-  const handleHoverSponsorStartup = useCallback(() => setIsHovered(true), []);
-  const handleUnHoverSponsorStartup = useCallback(
-    () => setIsHovered(false),
-    []
-  );
+  const handleHoverSponsorBasic = useCallback(() => setIsHovered(true), []);
+  const handleUnHoverSponsorBasic = useCallback(() => setIsHovered(false), []);
 
-  let startupSponsors = sponsors.startup;
+  let basicSponsors = sponsors.basic;
   return (
     <>
-      {startupSponsors !== null && startupSponsors.length > 0 && (
+      {basicSponsors !== null && basicSponsors.length > 0 && (
         <StyledSponsorItemContainer
-          id="startup-sponsors"
-          className="SponsorItem startup"
-          onMouseEnter={handleHoverSponsorStartup}
-          onMouseLeave={handleUnHoverSponsorStartup}
+          id="basic-sponsors"
+          className="SponsorItem basic"
+          onMouseEnter={handleHoverSponsorBasic}
+          onMouseLeave={handleUnHoverSponsorBasic}
         >
           <SponsorBadge
             color={Color.DARK_BLUE}
@@ -58,7 +55,7 @@ export const StartupSponsor = () => {
               <StyledSlashes>{slashes}</StyledSlashes>
               <StyledSeparator />
 
-              {width < BIG_BREAKPOINT && "STARTUP"}
+              {width < BIG_BREAKPOINT && "BASIC"}
             </StyledSponsorTitleSlashesContainer>
             {width >= BIG_BREAKPOINT && (
               <StyledSponsorTitleSlashesContainer
@@ -69,7 +66,7 @@ export const StartupSponsor = () => {
                 }
               >
                 <StyledSlashes>{slashes}</StyledSlashes>
-                STARTUP
+                BASIC
               </StyledSponsorTitleSlashesContainer>
             )}
             <StyledSponsorTitleMargin />
@@ -78,11 +75,20 @@ export const StartupSponsor = () => {
           <StyledSponsorLogosContainer className="SponsorLogos">
             <StyledFlexGrow />
             <StyledLogos position="right">
-              {startupSponsors.map((sponsor) => (
-                <a href={sponsor.website} target="_blank" rel={"noreferrer"}>
+              {basicSponsors.map((sponsor) => (
+                <a
+                  key={sponsor.name}
+                  href={sponsor.website}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <StyledSponsorIconNano
-                    key={sponsor.name}
                     src={sponsor.image}
+                    style={{
+                      filter: isHovered
+                        ? `drop-shadow(6px 6px 3px ${Color.LIGHT_BLUE})`
+                        : `drop-shadow(3px 3px 3px ${Color.DARK_BLUE})`,
+                    }}
                   />
                 </a>
               ))}
