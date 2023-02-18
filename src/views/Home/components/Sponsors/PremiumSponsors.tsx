@@ -8,7 +8,7 @@ import {
   StyledSponsorLogosContainer,
   StyledSponsorTitleContainer,
   StyledSponsorTitleMargin,
-  StyledSponsorTitleSlashesContainer
+  StyledSponsorTitleSlashesContainer,
 } from "./Sponsors.style";
 import SponsorBadge from "./SponsorBadge";
 import { Color } from "../../../../styles/colors";
@@ -89,8 +89,8 @@ export const PremiumSponsors: FC = () => {
                     src={sponsor.image}
                     style={{
                       filter: isHovered
-                        ? "sepia(100%) grayscale(100%)"
-                        : "drop-shadow(6px 6px 6px #002454)",
+                        ? `drop-shadow(2px 2px 2px ${Color.LIGHT_BLUE})`
+                        : `drop-shadow(3px 3px 3px ${Color.DARK_BLUE})`,
                     }}
                   />
                 </a>

@@ -8,7 +8,7 @@ import {
   StyledSponsorLogosContainer,
   StyledSponsorTitleContainer,
   StyledSponsorTitleMargin,
-  StyledSponsorTitleSlashesContainer
+  StyledSponsorTitleSlashesContainer,
 } from "./Sponsors.style";
 import SponsorBadge from "./SponsorBadge";
 import { Color } from "../../../../styles/colors";
@@ -31,10 +31,7 @@ export const MediaPartners: FC = () => {
   }, [width]);
 
   const handleHoverMediaPartner = useCallback(() => setIsHovered(true), []);
-  const handleUnHoverMediaPartner = useCallback(
-    () => setIsHovered(false),
-    []
-  );
+  const handleUnHoverMediaPartner = useCallback(() => setIsHovered(false), []);
   return (
     <>
       {mediaPartners !== null && mediaPartners.length > 0 && (
@@ -82,8 +79,8 @@ export const MediaPartners: FC = () => {
                   <StyledSponsorIconMicro
                     style={{
                       filter: isHovered
-                        ? "sepia(100%) grayscale(100%)"
-                        : "drop-shadow(3px 3px 3px #002454)"
+                        ? `drop-shadow(2px 2px 2px ${Color.LIGHT_BLUE})`
+                        : `drop-shadow(3px 3px 3px ${Color.DARK_BLUE})`,
                     }}
                     alt={sponsor.name}
                     src={sponsor.image}
