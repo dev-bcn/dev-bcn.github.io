@@ -101,12 +101,12 @@ export const speakersData: ISpeaker[] = [
     bio: "Java Champion - Technical trainer and coach",
     fullName: "Victor Rentea",
     linkedInUrl: {
-      url: "https://www.linkedin.com/in/victoRentea",
+      url: "https://www.linkedin.com/in/victor-rentea-trainer",
       linkType: "LinkedIn",
       title: "LinkedIn",
     },
     twitterUrl: {
-      url: "https://www.twitter.com/victoRentea",
+      url: "https://www.twitter.com/victorRentea",
       linkType: "Twitter",
       title: "Twitter",
     },
