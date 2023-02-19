@@ -8,7 +8,7 @@ export const speakersData: ISpeaker[] = [
     bio: "Java Champion - Agile Coach - renowned author",
     fullName: "Venkat Subramaniam",
     linkedInUrl: {
-      url: "https://www.linkedin.com/in/venkat",
+      url: "https://www.linkedin.com/in/vsubramaniam",
       linkType: "LinkedIn",
       title: "LinkedIn",
     },
@@ -26,14 +26,14 @@ export const speakersData: ISpeaker[] = [
     bio: "Ana is a Java Champion Alumni, Developer Advocate for the Java Platform Group at Oracle, guest author of the book 'DevOps tools for Java Developers', and a constant adopter of challenging technical scenarios involving Java-based frameworks and multiple cloud providers. She actively supports technical communities' growth through knowledge sharing and enjoys curating content for conferences as a program committee member.",
     fullName: "Ana Maria Mihalceanu",
     linkedInUrl: {
-      url: "https://www.linkedin.com/in/venkat",
+      url: "https://www.linkedin.com/in/ana-maria-mihalceanu-1508/",
       linkType: "LinkedIn",
-      title: "Linkedn",
+      title: "LinkedIn",
     },
     twitterUrl: {
       url: "https://www.twitter.com/ammbra1508",
       linkType: "Twitter",
-      title: "Twittr",
+      title: "Twitter",
     },
     sessions: [],
   },
@@ -47,12 +47,12 @@ export const speakersData: ISpeaker[] = [
     linkedInUrl: {
       url: "https://www.linkedin.com/in/salaboy",
       linkType: "LinkedIn",
-      title: "Linkedn",
+      title: "LinkedIn",
     },
     twitterUrl: {
       url: "https://www.twitter.com/salaboy",
       linkType: "Twitter",
-      title: "Twittr",
+      title: "Twitter",
     },
     sessions: [],
   },
@@ -66,12 +66,12 @@ export const speakersData: ISpeaker[] = [
     linkedInUrl: {
       url: "https://www.linkedin.com/in/AnfibiaCreativa",
       linkType: "LinkedIn",
-      title: "Linkedn",
+      title: "LinkedIn",
     },
     twitterUrl: {
       url: "https://www.twitter.com/AnfibiaCreativa",
       linkType: "Twitter",
-      title: "Twittr",
+      title: "Twitter",
     },
     sessions: [],
   },
@@ -85,12 +85,12 @@ export const speakersData: ISpeaker[] = [
     linkedInUrl: {
       url: "https://www.linkedin.com/in/carlosble",
       linkType: "LinkedIn",
-      title: "Linkedn",
+      title: "LinkedIn",
     },
     twitterUrl: {
       url: "https://www.twitter.com/carlosble",
       linkType: "Twitter",
-      title: "Twittr",
+      title: "Twitter",
     },
     sessions: [],
   },
@@ -103,12 +103,12 @@ export const speakersData: ISpeaker[] = [
     linkedInUrl: {
       url: "https://www.linkedin.com/in/victoRentea",
       linkType: "LinkedIn",
-      title: "Linkedn",
+      title: "LinkedIn",
     },
     twitterUrl: {
       url: "https://www.twitter.com/victoRentea",
       linkType: "Twitter",
-      title: "Twittr",
+      title: "Twitter",
     },
     sessions: [],
   },
