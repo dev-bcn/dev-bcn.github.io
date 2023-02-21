@@ -14,11 +14,11 @@ import SponsorBadge from "./SponsorBadge";
 import { Color } from "../../../../styles/colors";
 import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
 import { useWindowSize } from "react-use";
-import { useCallback, useEffect, useState } from "react";
+import { FC, useCallback, useEffect, useState } from "react";
 import { buildSlashes } from "./Sponsors";
 import { sponsors } from "./SponsorsData";
 
-export const PremiumSponsors = () => {
+export const PremiumSponsors: FC = () => {
   const { width } = useWindowSize();
   const [slashes, setSlashes] = useState("");
   const [isHovered, setIsHovered] = useState<boolean>(false);
@@ -85,11 +85,12 @@ export const PremiumSponsors = () => {
                   rel="noreferrer"
                 >
                   <PremiumSponsorImage
+                    alt={sponsor.name}
                     src={sponsor.image}
                     style={{
                       filter: isHovered
-                        ? "sepia(100%) grayscale(100%)"
-                        : "drop-shadow(6px 6px 6px #002454)",
+                        ? `drop-shadow(2px 2px 2px ${Color.LIGHT_BLUE})`
+                        : `drop-shadow(3px 3px 3px ${Color.DARK_BLUE})`,
                     }}
                   />
                 </a>

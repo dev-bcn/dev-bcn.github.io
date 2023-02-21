@@ -1,9 +1,9 @@
 import {
-  RegularSponsorImage,
   StyledFlexGrow,
   StyledLogos,
   StyledSeparator,
   StyledSlashes,
+  StyledSponsorIconMicro,
   StyledSponsorItemContainer,
   StyledSponsorLogosContainer,
   StyledSponsorTitleContainer,
@@ -15,14 +15,14 @@ import { Color } from "../../../../styles/colors";
 import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
 import { buildSlashes } from "./Sponsors";
 import { useWindowSize } from "react-use";
-import { useCallback, useEffect, useState } from "react";
+import { FC, useCallback, useEffect, useState } from "react";
 import { sponsors } from "./SponsorsData";
 
-export const RegularSponsors = () => {
+export const MediaPartners: FC = () => {
   const { width } = useWindowSize();
   const [slashes, setSlashes] = useState("");
   const [isHovered, setIsHovered] = useState<boolean>(false);
-  const regularSponsors = sponsors.regular;
+  const mediaPartners = sponsors.media_partners;
 
   useEffect(() => {
     const newSlashes = buildSlashes(2);
@@ -30,19 +30,16 @@ export const RegularSponsors = () => {
     setSlashes(newSlashes);
   }, [width]);
 
-  const handleHoverSponsorRegular = useCallback(() => setIsHovered(true), []);
-  const handleUnHoverSponsorRegular = useCallback(
-    () => setIsHovered(false),
-    []
-  );
+  const handleHoverMediaPartner = useCallback(() => setIsHovered(true), []);
+  const handleUnHoverMediaPartner = useCallback(() => setIsHovered(false), []);
   return (
     <>
-      {regularSponsors !== null && regularSponsors.length > 0 && (
+      {mediaPartners !== null && mediaPartners.length > 0 && (
         <StyledSponsorItemContainer
-          id="regular-sponsors"
-          className="SponsorItem regular"
-          onMouseEnter={handleHoverSponsorRegular}
-          onMouseLeave={handleUnHoverSponsorRegular}
+          className="SponsorItem virtual"
+          id="virtual-sponsors"
+          onMouseEnter={handleHoverMediaPartner}
+          onMouseLeave={handleUnHoverMediaPartner}
         >
           <SponsorBadge
             color={Color.DARK_BLUE}
@@ -59,7 +56,7 @@ export const RegularSponsors = () => {
               }
               id="Slashes"
             >
-              REGULAR
+              MEDIA PARTNERS
               <StyledSeparator />
               <StyledSlashes>{slashes}</StyledSlashes>
             </StyledSponsorTitleSlashesContainer>
@@ -72,20 +69,21 @@ export const RegularSponsors = () => {
 
           <StyledSponsorLogosContainer className="SponsorLogos">
             <StyledLogos>
-              {regularSponsors.map((sponsor) => (
+              {mediaPartners.map((sponsor) => (
                 <a
                   key={sponsor.name}
                   href={sponsor.website}
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <RegularSponsorImage
-                    src={sponsor.image}
+                  <StyledSponsorIconMicro
                     style={{
                       filter: isHovered
                         ? `drop-shadow(2px 2px 2px ${Color.LIGHT_BLUE})`
                         : `drop-shadow(3px 3px 3px ${Color.DARK_BLUE})`,
                     }}
+                    alt={sponsor.name}
+                    src={sponsor.image}
                   />
                 </a>
               ))}
