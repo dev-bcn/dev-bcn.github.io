@@ -150,9 +150,7 @@ describe("navigation pages", () => {
         </Router>
       </React.Suspense>
     );
-    expect(
-      await screen.findByText(/No talks selected yet/i)
-    ).toBeInTheDocument();
+    expect(await screen.findByText("TALKS")).toBeInTheDocument();
   });
 
   test("it renders the diversity page", async () => {

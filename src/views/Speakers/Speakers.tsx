@@ -7,7 +7,6 @@ import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import { SpeakerCard } from "./components/SpeakersCard";
 import TitleSection from "../../components/SectionTitle/TitleSection";
 import { useWindowSize } from "react-use";
-import data from "../../data/2023.json";
 import {
   SpeakersCardsContainer,
   StyledContainerLeftSlash,
@@ -18,26 +17,46 @@ import {
   StyledSpeakersSection,
   StyledWaveContainer,
 } from "./Speakers.style";
+import webData from "../../data/2023.json";
 import Button from "../../components/UI/Button";
 import { gaEventTracker } from "../../components/analytics/Analytics";
+import { useHardCodedSpeakers } from "./UseFetchSpeakers";
+import { ISpeaker } from "./Speaker.types";
+import * as Sentry from "@sentry/react";
+
+const LessThanGreaterThan = (props: { width: number }) => (
+  <>
+    {props.width > MOBILE_BREAKPOINT && (
+      <>
+        <StyledLessIcon src={LessThanBlueIcon} />
+        <StyledMoreIcon src={MoreThanBlueIcon} />
+      </>
+    )}
+  </>
+);
 
 const Speakers: FC = () => {
   const { width } = useWindowSize();
-  const speakersCurrentYear = data.speakers;
   const today = new Date();
   const isBetween = (startDay: Date, endDay: Date): boolean =>
     startDay < new Date() && endDay > today;
+
+  const { isLoading, error, data } = useHardCodedSpeakers();
+
+  if (error) {
+    Sentry.captureException(error);
+  }
 
   const trackCFP = useCallback(() => {
     gaEventTracker("CFP", "CFP");
   }, []);
 
   useEffect(() => {
-    document.title = `Speakers - DevBcn ${data.edition}`;
+    document.title = `Speakers - DevBcn ${webData.edition}`;
   });
 
-  const CFPStartDay = new Date(data.tickets.startDay);
-  const CFPEndDay = new Date(data.tickets.endDay);
+  const CFPStartDay = new Date(webData.tickets.startDay);
+  const CFPEndDay = new Date(webData.tickets.endDay);
 
   return (
     <>
@@ -51,13 +70,9 @@ const Speakers: FC = () => {
             Technologies and in the JCP."
             color={Color.WHITE}
           />
-          {width > MOBILE_BREAKPOINT && (
-            <>
-              <StyledLessIcon src={LessThanBlueIcon} />
-              <StyledMoreIcon src={MoreThanBlueIcon} />
-            </>
-          )}
+          <LessThanGreaterThan width={width} />
           <SpeakersCardsContainer>
+            {isLoading && <p>Loading...</p>}
             {isBetween(CFPStartDay, CFPEndDay) && (
               <div
                 style={{
@@ -73,15 +88,16 @@ const Speakers: FC = () => {
                 />
               </div>
             )}
-            {speakersCurrentYear.length === 0 && (
+            {data && data.length === 0 && (
               <p style={{ color: Color.WHITE }}>
                 No selected speakers yet. Keep in touch in our social media for
                 upcoming announcements
               </p>
             )}
-            {speakersCurrentYear.map((speaker, index) => (
-              <SpeakerCard key={index} speaker={speaker} />
-            ))}
+            {data &&
+              data.map((speaker: ISpeaker) => (
+                <SpeakerCard key={speaker.id} speaker={speaker} />
+              ))}
           </SpeakersCardsContainer>
           <StyledContainerRightSlash
             initial={{ x: "100%" }}

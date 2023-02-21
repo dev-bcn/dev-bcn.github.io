@@ -1,80 +1,97 @@
-import {FC} from "react";
-import {Link} from "react-router-dom";
+import { FC } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-import {Color} from "../../../styles/colors";
+import { Color } from "../../../styles/colors";
+import { StyledFaqTitle } from "../../Home/components/Faqs/components/FaqsCard";
+import { StyledJobsInfo } from "../../JobOffers/components/JobsCard";
+import { Tag } from "../../../components/Tag/Tag";
+import { ROUTE_TALK_DETAIL } from "../../../constants/routes";
 import {
-  StyledFaqCard,
-  StyledFaqDetailButton,
-  StyledFaqImage,
-  StyledFaqImageContainer,
-  StyledFaqTitle,
-} from "../../Home/components/Faqs/components/FaqsCard";
-import {StyledJobsInfo} from "../../JobOffers/components/JobsCard";
-import WatchIcon from "../../../assets/images/WatchIcon.svg";
-import {Tag} from "../../../components/Tag/Tag";
+  QuestionAnswers,
+  SessionCategory,
+  SessionSpeaker,
+} from "../Talk.types";
+import { extractSessionLevel, extractSessionTags } from "../UseFetchTalks";
 
-type TalkCardProps = {
-  talk: {
-    title: string;
-    talkImage: number;
-    presenter: string;
-    level: string;
-    link: string;
-    tags: string[];
-  };
+interface TalkCardProps {
   index: number;
-};
+  talk: {
+    id: number;
+    title: string;
+    talkImage?: number;
+    speakers: SessionSpeaker[];
+    level?: string;
+    link?: string;
+    tags?: string[];
+    categories: SessionCategory[];
+    questionAnswers: QuestionAnswers[];
+  };
+  key: number;
+}
 
-const StyledTalkText = styled.div<{ textAlign: string }>`
+const StyledSessionText = styled.div`
   color: ${Color.WHITE};
   padding: 0.5rem 0;
   @media (min-width: 800px) {
     hyphens: auto;
     word-wrap: break-word;
-    text-align: ${({ textAlign }) => {
-      return textAlign;
-    }};
+    text-align: left;
+  }
+`;
+
+export const StyledSessionCard = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-width: 20%;
+  max-width: 90%;
+  margin-bottom: 3rem;
+  @media (min-width: 800px) {
+    align-items: flex-start;
+    flex-direction: row;
+    max-width: 900px;
+    margin-bottom: 4rem;
   }
 `;
 
 export const StyledTagsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   margin-bottom: 0.5rem;
 `;
 
-export const TalkCard: FC<TalkCardProps> = ({ talk, index }) => {
-  const isOdd = index % 2 === 0;
+export const StyledMoreInfoLink = styled(Link)`
+  background-color: ${Color.DARK_BLUE};
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  padding: 3px 5px;
+  border-radius: 3px;
+`;
 
+export const TalkCard: FC<TalkCardProps> = ({ talk }) => {
   return (
-    <StyledFaqCard direction={isOdd ? "row" : "row-reverse"}>
-      <StyledFaqImageContainer
-        padding={isOdd ? "0 .75rem 0 0" : "0 0 0 .75rem"}
-      >
-        <StyledFaqImage
-          src={require(`../../../assets/images/FaqsImage1.png`)}
-        />
-      </StyledFaqImageContainer>
-      <StyledJobsInfo align={isOdd ? "flex-start" : "flex-end"}>
-        <StyledFaqTitle textAlign={isOdd ? "left" : "right"}>
-          {talk.title}
-        </StyledFaqTitle>
-        <StyledTalkText textAlign={isOdd ? "left" : "right"}>
-          {talk.presenter}
-        </StyledTalkText>
-        <StyledTalkText textAlign={isOdd ? "left" : "right"}>
-          Level: {talk.level}
-        </StyledTalkText>
-        <StyledTagsWrapper>
-          {talk.tags.map((tag) => (
-            <Tag text={tag} />
+    <StyledSessionCard>
+      <StyledJobsInfo align={"flex-start"}>
+        <StyledFaqTitle>{talk.title}</StyledFaqTitle>
+        <StyledSessionText>
+          {talk.speakers.map((speaker: SessionSpeaker) => (
+            <p key={speaker.id}>{speaker.name}</p>
           ))}
+        </StyledSessionText>
+        <StyledSessionText>
+          Level: {extractSessionLevel(talk.categories)}
+        </StyledSessionText>
+        <StyledTagsWrapper>
+          {extractSessionTags(talk.questionAnswers)?.map((tag, index) => {
+            return <Tag key={index} text={tag} />;
+          })}
         </StyledTagsWrapper>
-        <Link to="/">
-          <StyledFaqDetailButton src={WatchIcon} />
-        </Link>
+        <StyledMoreInfoLink to={ROUTE_TALK_DETAIL + "/" + talk.id}>
+          More info +
+        </StyledMoreInfoLink>
       </StyledJobsInfo>
-    </StyledFaqCard>
+    </StyledSessionCard>
   );
 };

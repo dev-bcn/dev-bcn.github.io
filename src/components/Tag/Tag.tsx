@@ -1,28 +1,33 @@
-import {FC} from 'react';
-import {Color} from '../../styles/colors';
-import {StyledTagText, StyledTagWrapper} from "./Style.Tag";
+import { FC } from "react";
+import { Color } from "../../styles/colors";
+import { StyledTagText, StyledTagWrapper } from "./Style.Tag";
 
 type TagProps = {
   text: string;
 };
 
+const tagColors = Object.keys(Color).filter((item) => {
+  // @ts-ignore
+  return isNaN(item);
+});
+
 const colorTagByText = (text: string) => {
   let color;
   switch (text) {
-    case 'Java':
+    case "Java":
       color = Color.DARK_BLUE;
       break;
-    case 'TestContainers':
+    case "Cloud":
       color = Color.BLACK_BLUE;
       break;
-    case 'MicroShield testing':
-      color = Color.DARK_BLUE;
+    case "JVM":
+      color = Color.MAGENTA;
       break;
-    case 'Kubernetes':
-      color = Color.WHITE;
+    case "Kubernetes":
+      color = Color.GREEN;
       break;
     default:
-      color = Color.WHITE;
+      color = tagColors[Math.floor(Math.random() * tagColors.length)];
       break;
   }
   return color;
