@@ -73,10 +73,19 @@ export function VirtualSponsors() {
           <StyledSponsorLogosContainer className="SponsorLogos">
             <StyledLogos>
               {virtualSponsors.map((sponsor) => (
-                <a href={sponsor.website} target="_blank" rel={"noreferrer"}>
+                <a
+                  href={sponsor.website}
+                  target="_blank"
+                  key={sponsor.name}
+                  rel="noreferrer"
+                >
                   <StyledSponsorIconMicro
-                    key={sponsor.name}
                     src={sponsor.image}
+                    style={{
+                      filter: isHovered
+                        ? `drop-shadow(2px 2px 2px ${Color.LIGHT_BLUE})`
+                        : `drop-shadow(3px 3px 3px ${Color.DARK_BLUE})`,
+                    }}
                   />
                 </a>
               ))}

@@ -69,8 +69,20 @@ export const TopSponsors: FC = () => {
           <StyledSponsorLogosContainer className="SponsorLogos">
             <StyledLogos>
               {topSponsors.map((sponsor) => (
-                <a href={sponsor.website} target="_blank" rel={"noreferrer"}>
-                  <PremiumSponsorImage key={sponsor.name} src={sponsor.image} />
+                <a
+                  href={sponsor.website}
+                  target="_blank"
+                  key={sponsor.name}
+                  rel="noreferrer"
+                >
+                  <PremiumSponsorImage
+                    src={sponsor.image}
+                    style={{
+                      filter: isHovered
+                        ? `drop-shadow(2px 2px 2px ${Color.LIGHT_BLUE})`
+                        : `drop-shadow(3px 3px 3px ${Color.DARK_BLUE})`,
+                    }}
+                  />
                 </a>
               ))}
             </StyledLogos>
