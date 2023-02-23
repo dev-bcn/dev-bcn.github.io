@@ -1,7 +1,7 @@
-import { BIG_BREAKPOINT, LARGE_BREAKPOINT } from '../../constants/BreakPoints';
-import { Color } from '../../styles/colors';
-import { FC } from 'react';
-import styled from 'styled-components';
+import { BIG_BREAKPOINT, LARGE_BREAKPOINT } from "../../constants/BreakPoints";
+import { Color } from "../../styles/colors";
+import { FC } from "react";
+import styled from "styled-components";
 
 interface ISectionTitleProps {
   title: string;
@@ -34,7 +34,7 @@ const StyledTitleContainer = styled.div`
 
 const StyledTitle = styled.h1`
   color: ${(props) => (props.color ? props.color : Color.WHITE)};
-  font-family: "Square 721 Regular",sans-serif;
+  font-family: "Square 721 Regular", sans-serif;
   padding-bottom: 1.5rem;
   text-align: center;
   @media (min-width: ${BIG_BREAKPOINT}px) {
@@ -47,7 +47,7 @@ const StyledTitle = styled.h1`
 const StyledSubTitle = styled.p`
   color: ${(props) => (props.color ? props.color : Color.WHITE)};
   @media (min-width: 480px) {
-    width: 40%;
+    width: 70%;
   }
 `;
 
