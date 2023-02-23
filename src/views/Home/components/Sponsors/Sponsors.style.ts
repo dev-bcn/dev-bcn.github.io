@@ -1,8 +1,5 @@
 import styled from "styled-components";
-import {
-  BIG_BREAKPOINT,
-  LARGE_BREAKPOINT,
-} from "../../../../constants/BreakPoints";
+import { BIG_BREAKPOINT, LARGE_BREAKPOINT } from "../../../../constants/BreakPoints";
 import { motion } from "framer-motion";
 
 const SponsorMargin = 11;
@@ -190,18 +187,18 @@ export const StyledSponsorIconNano = styled.img`
   }
 `;
 export const StyledSponsorIconMicro = styled.img`
-  height: 1.5rem;
+  height: 2.5rem;
   margin-bottom: 1rem;
 
   margin-left: 0.75rem;
 
   @media (min-width: ${BIG_BREAKPOINT}px) {
-    height: 1.25rem;
+    height: 2.25rem;
     margin-left: 1rem;
   }
 
   @media (min-width: ${LARGE_BREAKPOINT}px) {
-    height: 1.75rem;
+    height: 2.75rem;
     margin-left: 2.5rem;
   }
 `;

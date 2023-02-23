@@ -71,8 +71,8 @@ export const TopSponsors: FC = () => {
               {topSponsors.map((sponsor) => (
                 <a
                   href={sponsor.website}
-                  key={sponsor.name}
                   target="_blank"
+                  key={sponsor.name}
                   rel="noreferrer"
                 >
                   <PremiumSponsorImage

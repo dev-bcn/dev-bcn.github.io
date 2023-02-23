@@ -9,6 +9,7 @@ import TitleSection from "../../../../components/SectionTitle/TitleSection";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import { ROUTE_SPEAKERS } from "../../../../constants/routes";
+import SpeakerSwiper from "./SpeakerSwiper";
 
 const StyledSpeakersContainer = styled.section`
   background-color: ${Color.LIGHT_BLUE};
@@ -71,6 +72,7 @@ const SpeakersCarousel: FC = () => {
             color={Color.WHITE}
           />
         </StyledTitleWrapper>
+        <SpeakerSwiper />
         <StyledLink>
           <Link to={ROUTE_SPEAKERS} className="link--text">
             <StyledSubtitle> View all speakers</StyledSubtitle>

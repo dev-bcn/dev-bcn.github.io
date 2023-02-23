@@ -4,6 +4,7 @@ export interface Sponsors {
   regular: Sponsor[] | null;
   virtual: Sponsor[] | null;
   basic: Sponsor[] | null;
+  media_partners: Sponsor[] | null;
 }
 
 export interface Sponsor {
@@ -18,15 +19,15 @@ export const sponsors: Sponsors = {
     {
       name: "Barcelona JUG",
       image: "images/sponsors/bcn-jug.png",
-      website: "https://www.meetup.com/barcelonajug/",
-    },
+      website: "https://www.meetup.com/barcelonajug/"
+    }
   ],
   regular: [
     {
       name: "Adaptive",
       image: "images/sponsors/adaptive.png",
-      website: "https://www.weareadaptive.com/",
-    },
+      website: "https://www.weareadaptive.com/"
+    }
   ],
   basic: [
     {
@@ -35,5 +36,17 @@ export const sponsors: Sponsors = {
       image: "images/sponsors/caixabank.png",
     },
   ],
-  virtual: null,
+  virtual: [],
+  media_partners: [
+    {
+      name: "Kube events",
+      image: "images/sponsors/kube-events.png",
+      website: "https://kube.events/"
+    },
+    {
+      name: "Kube careers",
+      image: "images/sponsors/kube-career.png",
+      website: "https://kube.careers//"
+    }
+  ]
 };
