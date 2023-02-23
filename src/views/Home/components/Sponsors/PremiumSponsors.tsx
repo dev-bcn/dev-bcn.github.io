@@ -90,7 +90,7 @@ export const PremiumSponsors: FC = () => {
                     style={{
                       filter: isHovered
                         ? `drop-shadow(2px 2px 2px ${Color.LIGHT_BLUE})`
-                        : `drop-shadow(3px 3px 3px ${Color.DARK_BLUE})`,
+                        : `none`,
                     }}
                   />
                 </a>

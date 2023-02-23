@@ -3,7 +3,7 @@ export interface Sponsors {
   premium: Sponsor[] | null;
   regular: Sponsor[] | null;
   virtual: Sponsor[] | null;
-  startup: Sponsor[] | null;
+  basic: Sponsor[] | null;
   media_partners: Sponsor[] | null;
 }
 
@@ -29,7 +29,13 @@ export const sponsors: Sponsors = {
       website: "https://www.weareadaptive.com/"
     }
   ],
-  startup: null,
+  basic: [
+    {
+      name: "Caixabank Tech",
+      website: "https://www.peoplexperiencehub.com/caixabanktech",
+      image: "images/sponsors/caixabank.png",
+    },
+  ],
   virtual: [],
   media_partners: [
     {

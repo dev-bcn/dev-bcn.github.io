@@ -79,8 +79,8 @@ export const MediaPartners: FC = () => {
                   <StyledSponsorIconMicro
                     style={{
                       filter: isHovered
-                        ? `drop-shadow(2px 2px 2px ${Color.LIGHT_BLUE})`
-                        : `drop-shadow(3px 3px 3px ${Color.DARK_BLUE})`,
+                        ? `drop-shadow(1px 1px 1px ${Color.LIGHT_BLUE})`
+                        : `none`,
                     }}
                     alt={sponsor.name}
                     src={sponsor.image}

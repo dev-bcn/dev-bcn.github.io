@@ -9,7 +9,7 @@ import { StyledSponsorsContainer, StyledTitleContainer, StyledTitleImg } from ".
 import { TopSponsors } from "./TopSponsors";
 import { RegularSponsors } from "./RegularSponsors";
 import { PremiumSponsors } from "./PremiumSponsors";
-import { StartupSponsor } from "./StartupSponsor";
+import { BasicSponsor } from "./BasicSponsor";
 import { VirtualSponsors } from "./VirtualSponsors";
 import { MediaPartners } from "./MediaPartners";
 
@@ -45,7 +45,7 @@ const Sponsors: FC = () => (
       <TopSponsors />
       <PremiumSponsors />
       <RegularSponsors />
-      <StartupSponsor />
+      <BasicSponsor />
       <VirtualSponsors />
       <MediaPartners />
     </StyledSponsorsContainer>
