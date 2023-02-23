@@ -1,5 +1,8 @@
 import styled from "styled-components";
-import { BIG_BREAKPOINT, LARGE_BREAKPOINT } from "../../../../constants/BreakPoints";
+import {
+  BIG_BREAKPOINT,
+  LARGE_BREAKPOINT,
+} from "../../../../constants/BreakPoints";
 import { motion } from "framer-motion";
 
 const SponsorMargin = 11;
@@ -134,6 +137,12 @@ export const StyledSeparator = styled.div`
 `;
 export const PremiumSponsorImage = styled.img`
   height: 7.5rem;
+  transition: height ease-in 0.25s;
+
+  &:hover {
+    height: 8rem;
+    filter: drop-shadow(1px 1px 1px #fff) !important;
+  }
 
   @media (min-width: ${BIG_BREAKPOINT}px) {
     height: 7.5rem;
@@ -157,6 +166,12 @@ export const RegularSponsorImage = styled.img`
   height: 3.25rem;
   margin-right: 0.5rem;
   margin-bottom: 1rem;
+  transition: height ease-in 0.25s;
+
+  &:hover {
+    height: 3.5rem;
+    filter: drop-shadow(1px 1px 1px #fff) !important;
+  }
 
   @media (min-width: ${BIG_BREAKPOINT}px) {
     height: 3.25rem;
@@ -171,10 +186,16 @@ export const RegularSponsorImage = styled.img`
   }
 `;
 export const StyledSponsorIconNano = styled.img`
-  height: 1.5rem;
+  height: 1.8rem;
   margin-bottom: 1rem;
 
   margin-left: 0.75rem;
+  transition: height ease-in 0.25s;
+
+  &:hover {
+    height: 2.5rem;
+    filter: drop-shadow(1px 1px 1px #fff) !important;
+  }
 
   @media (min-width: ${BIG_BREAKPOINT}px) {
     height: 1.75rem;
@@ -182,15 +203,20 @@ export const StyledSponsorIconNano = styled.img`
   }
 
   @media (min-width: ${LARGE_BREAKPOINT}px) {
-    height: 2rem;
+    height: 2.3rem;
     margin-left: 2.5rem;
   }
 `;
 export const StyledSponsorIconMicro = styled.img`
   height: 2.5rem;
   margin-bottom: 1rem;
-
+  transition: height ease-in 0.25s;
   margin-left: 0.75rem;
+
+  &:hover {
+    height: 3rem;
+    filter: drop-shadow(1px 1px 1px #fff) !important;
+  }
 
   @media (min-width: ${BIG_BREAKPOINT}px) {
     height: 2.25rem;
