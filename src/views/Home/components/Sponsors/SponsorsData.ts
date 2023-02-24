@@ -14,20 +14,26 @@ export interface Sponsor {
 }
 
 export const sponsors: Sponsors = {
-  top: null,
+  top: [
+    {
+      name: "GFT",
+      website: "https://www.gft.com/es/es/",
+      image: "images/sponsors/GFT.jpg",
+    },
+  ],
   premium: [
     {
       name: "Barcelona JUG",
       image: "images/sponsors/bcn-jug.png",
-      website: "https://www.meetup.com/barcelonajug/"
-    }
+      website: "https://www.meetup.com/barcelonajug/",
+    },
   ],
   regular: [
     {
       name: "Adaptive",
       image: "images/sponsors/adaptive.png",
-      website: "https://www.weareadaptive.com/"
-    }
+      website: "https://www.weareadaptive.com/",
+    },
   ],
   basic: [
     {
@@ -41,12 +47,12 @@ export const sponsors: Sponsors = {
     {
       name: "Kube events",
       image: "images/sponsors/kube-events.png",
-      website: "https://kube.events/"
+      website: "https://kube.events/",
     },
     {
       name: "Kube careers",
       image: "images/sponsors/kube-career.png",
-      website: "https://kube.careers//"
-    }
-  ]
+      website: "https://kube.careers//",
+    },
+  ],
 };
