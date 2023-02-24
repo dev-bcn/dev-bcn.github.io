@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Color } from "../../../../../styles/colors";
 import Logo from "../../../../../assets/images/logo.svg";
 import { StyledLoadingImage } from "../../../../../components/Loading/Loading";
+import { BIG_BREAKPOINT } from "../../../../../constants/BreakPoints";
 
 type FaqCardType = {
   faq: {
@@ -28,11 +29,10 @@ export const StyledFaqCard = styled.div<{ direction: string }>`
 `;
 
 export const StyledFaqImageContainer = styled.div<{ padding: string }>`
-  height: 10rem;
   position: relative;
   @media (min-width: 800px) {
     height: auto;
-    width: 40%;
+
     padding: ${({ padding }) => {
       return padding;
     }};
@@ -45,6 +45,11 @@ export const StyledFaqImage = styled(motion.img)`
   margin: 3px;
   padding: 5px;
   width: 360px;
+  border-radius: 5px;
+
+  @media (max-width: ${BIG_BREAKPOINT}px) {
+    width: 95%;
+  }
 `;
 
 export const StyledFaqInfo = styled(motion.div)<{ align: string }>`
@@ -81,9 +86,7 @@ const FaqCard: FC<FaqCardType> = ({ faq, index }) => {
 
   return (
     <StyledFaqCard direction={isOdd ? "row" : "row-reverse"}>
-      <StyledFaqImageContainer
-        padding={isOdd ? "0 .75rem 0 0" : "0 0 0 .75rem"}
-      >
+      <StyledFaqImageContainer padding={isOdd ? "0 1rem 0 0" : "0 0 0 1rem"}>
         <Suspense fallback={<StyledLoadingImage src={Logo} />}>
           <StyledFaqImage
             src={require(`../../../../../assets/images/FaqsImage${index}.png`)}

@@ -63,6 +63,7 @@ const StyledImage = styled.img`
   margin: 3px;
   padding: 5px;
   border: 1px solid ${Color.YELLOW};
+  border-radius: 5px;
 
   @media (max-width: ${BIG_BREAKPOINT}px) {
     width: 100%;

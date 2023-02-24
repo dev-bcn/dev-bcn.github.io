@@ -24,6 +24,10 @@ const StyledVenue = styled.div`
     text-align: left;
     max-width: ${MAX_WIDTH}px;
     margin: 0 auto;
+
+    @media (max-width: ${BIG_BREAKPOINT}px) {
+      padding: 100px 1rem 50px;
+    }
   }
 
   .image {
