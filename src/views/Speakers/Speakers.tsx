@@ -20,7 +20,7 @@ import {
 import webData from "../../data/2023.json";
 import Button from "../../components/UI/Button";
 import { gaEventTracker } from "../../components/analytics/Analytics";
-import { useHardCodedSpeakers } from "./UseFetchSpeakers";
+import { useFetchSpeakers, useHardCodedSpeakers } from "./UseFetchSpeakers";
 import { ISpeaker } from "./Speaker.types";
 import * as Sentry from "@sentry/react";
 
@@ -41,10 +41,19 @@ const Speakers: FC = () => {
   const isBetween = (startDay: Date, endDay: Date): boolean =>
     startDay < new Date() && endDay > today;
 
-  const { isLoading, error, data } = useHardCodedSpeakers();
+  const { isLoading, error, data: hardCodedSpeakers } = useHardCodedSpeakers();
+  const { error: apiError, data: apiSpeakers } = useFetchSpeakers();
+
+  const mergedSpeakers: ISpeaker[] = [
+    ...(hardCodedSpeakers?.length ? hardCodedSpeakers : []),
+    ...(apiSpeakers?.length ? apiSpeakers : []),
+  ];
 
   if (error) {
     Sentry.captureException(error);
+  }
+  if (apiError) {
+    Sentry.captureException(apiError);
   }
 
   const trackCFP = useCallback(() => {
@@ -88,14 +97,14 @@ const Speakers: FC = () => {
                 />
               </div>
             )}
-            {data && data.length === 0 && (
+            {mergedSpeakers && mergedSpeakers.length === 0 && (
               <p style={{ color: Color.WHITE }}>
                 No selected speakers yet. Keep in touch in our social media for
                 upcoming announcements
               </p>
             )}
-            {data &&
-              data.map((speaker: ISpeaker) => (
+            {mergedSpeakers &&
+              mergedSpeakers.map((speaker: ISpeaker) => (
                 <SpeakerCard key={speaker.id} speaker={speaker} />
               ))}
           </SpeakersCardsContainer>

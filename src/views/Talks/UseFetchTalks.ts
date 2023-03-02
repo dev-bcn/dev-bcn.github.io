@@ -8,7 +8,7 @@ import {
 import axios from "axios";
 
 export const useFetchTalks = (): UseQueryResult<IGroup[]> =>
-  useQuery("talks", async () => {
+  useQuery("api-talks", async () => {
     let data = await axios.get(
       "https://sessionize.com/api/v2/ttsitynd/view/Sessions"
     );
@@ -16,7 +16,7 @@ export const useFetchTalks = (): UseQueryResult<IGroup[]> =>
   });
 
 export const useHardCodedTalks = (): UseQueryResult<IGroup[]> =>
-  useQuery("talks", async () => {
+  useQuery("hardcoded-talks", async () => {
     return [];
   });
 
