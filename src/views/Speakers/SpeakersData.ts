@@ -38,25 +38,6 @@ export const speakersData: ISpeaker[] = [
     sessions: [],
   },
   {
-    id: "mauricio",
-    speakerImage: "/images/speakers/mauricio-salatino.jpg",
-    tagLine:
-      "Software Engineer  @diagridio   @daprdev  / Steering committee #knative & WG Co-lead #knative functions / Author: http://mng.bz/jjKP #dapr #oss #kubernetes",
-    bio: "Mauricio is currently working at the Knative OSS Project as part of the VMWare MAPBU team. He is the author of the Continuous Delivery for Kubernetes book for Manning, and he is passionate about Open Source, Cloud Native and Kubernetes.",
-    fullName: "Mauricio Salatino",
-    linkedInUrl: {
-      url: "https://www.linkedin.com/in/salaboy",
-      linkType: "LinkedIn",
-      title: "LinkedIn",
-    },
-    twitterUrl: {
-      url: "https://www.twitter.com/salaboy",
-      linkType: "Twitter",
-      title: "Twitter",
-    },
-    sessions: [],
-  },
-  {
     id: "natalia",
     speakerImage: "/images/speakers/natalia-venditto.png",
     tagLine:

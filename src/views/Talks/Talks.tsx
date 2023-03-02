@@ -13,20 +13,21 @@ import {
   StyledWaveContainer,
 } from "./Talks.style";
 import TrackInformation from "./components/TrackInformation";
-import { useHardCodedTalks } from "./UseFetchTalks";
+import { useFetchTalks, useHardCodedTalks } from "./UseFetchTalks";
 import styled from "styled-components";
 import * as Sentry from "@sentry/react";
+import { IGroup } from "./Talk.types";
 
-export const StyledSessionSection = styled.section`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-  overflow-x: hidden;
-`;
+export const StyledSessionSection = styled.section``;
 
 const Talks: FC = () => {
-  const { isLoading, error, data } = useHardCodedTalks();
+  const { data } = useHardCodedTalks();
+  const { isLoading, error, data: apiTalks } = useFetchTalks();
+
+  const mergedTalks: IGroup[] = [
+    ...(data?.length ? data : []),
+    ...(apiTalks?.length ? apiTalks : []),
+  ];
 
   if (error) {
     Sentry.captureException(error);
@@ -67,16 +68,16 @@ const Talks: FC = () => {
       <SectionWrapper color={Color.LIGHT_BLUE} marginTop={1}>
         <StyledSessionSection>
           {isLoading && <h1>Loading </h1>}
-          {data && data.length === 0 && (
+          {mergedTalks && mergedTalks?.length === 0 && (
             <p style={{ color: Color.WHITE, textAlign: "center" }}>
               No talks selected yet. Keep in touch in our social media for
               upcoming announcements
             </p>
           )}
-          {data &&
-            Array.isArray(data) &&
-            data.map((track, index) => (
-              <TrackInformation key={index} track={track} />
+          {mergedTalks &&
+            Array.isArray(mergedTalks) &&
+            mergedTalks.map((track) => (
+              <TrackInformation key={track.groupId} track={track} />
             ))}
         </StyledSessionSection>
         <StyledMarginBottom />

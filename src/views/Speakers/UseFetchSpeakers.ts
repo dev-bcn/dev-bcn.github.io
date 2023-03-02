@@ -4,7 +4,7 @@ import { IResponse, ISpeaker } from "./Speaker.types";
 import { speakersData } from "./SpeakersData";
 
 export const useFetchSpeakers = (id?: string): UseQueryResult<ISpeaker[]> => {
-  return useQuery("speakers", async () => {
+  return useQuery("api-speakers", async () => {
     const serverResponse = await axios.get(
       "https://sessionize.com/api/v2/ttsitynd/view/Speakers"
     );
@@ -34,7 +34,7 @@ export const speakerAdapter = (response: IResponse[]): ISpeaker[] =>
   }));
 
 export const useHardCodedSpeakers = (id?: string): UseQueryResult<ISpeaker[]> =>
-  useQuery("speakers", async () => {
+  useQuery("hardcoded-speakers", async () => {
     let result = speakersData;
     if (id !== undefined) {
       result = speakersData.filter((speaker) => speaker.id === id);
