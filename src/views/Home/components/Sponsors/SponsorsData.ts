@@ -34,6 +34,11 @@ export const sponsors: Sponsors = {
       image: "images/sponsors/adaptive.png",
       website: "https://www.weareadaptive.com/",
     },
+    {
+      name: "Capitol",
+      image: "images/sponsors/capitole.png",
+      website: "https://capitole-consulting.com/es/",
+    },
   ],
   basic: [
     {
