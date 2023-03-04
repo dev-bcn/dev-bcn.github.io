@@ -2,24 +2,6 @@ import { ISpeaker } from "./Speaker.types";
 
 export const speakersData: ISpeaker[] = [
   {
-    id: "venkat",
-    speakerImage: "/images/speakers/venkat-subramaniam.jpg",
-    tagLine: "Java Champion - Agile Coach - renowned author",
-    bio: "Java Champion - Agile Coach - renowned author",
-    fullName: "Venkat Subramaniam",
-    linkedInUrl: {
-      url: "https://www.linkedin.com/in/vsubramaniam",
-      linkType: "LinkedIn",
-      title: "LinkedIn",
-    },
-    twitterUrl: {
-      url: "https://www.twitter.com/venkat_s",
-      linkType: "Twitter",
-      title: "Twitter",
-    },
-    sessions: [],
-  },
-  {
     id: "ana-maria",
     speakerImage: "/images/speakers/ana-maria-mihalceanu.jpg",
     tagLine: "Java Champion Alumni, Certified Architect",
