@@ -1,35 +1,40 @@
 import { Color } from "../../styles/colors";
 
 import React, { FC } from "react";
-import NotFoundError from "../../components/NotFoundError/NotFoundError";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import SpeakerDetail from "./SpeakerDetail";
 import { useParams } from "react-router-dom";
 import { StyledContainer, StyledWaveContainer } from "./Speaker.style";
 import conferenceData from "../../data/2023.json";
-import { useHardCodedSpeakers } from "../Speakers/UseFetchSpeakers";
+import {
+  useFetchSpeakers,
+  useHardCodedSpeakers,
+} from "../Speakers/UseFetchSpeakers";
 import * as Sentry from "@sentry/react";
 
 const SpeakerDetailContainer: FC = () => {
   const { id } = useParams<{ id: string }>();
 
-  const { isLoading, error, data } = useHardCodedSpeakers(id);
+  const { data } = useHardCodedSpeakers(id);
+  const { isLoading, error, data: apiSpeaker } = useFetchSpeakers(id);
+
+  const speakerDetail = data?.length ? data : apiSpeaker;
   if (error) {
     Sentry.captureException(error);
   }
   React.useEffect(() => {
-    if (data) {
-      document.title = `${data[0].fullName} - DevBcn - ${conferenceData.edition}`;
+    if (speakerDetail) {
+      document.title = `${speakerDetail[0]?.fullName} - DevBcn - ${conferenceData.edition}`;
     }
-  }, [id, data]);
+  }, [id, speakerDetail]);
   return (
     <StyledContainer>
       <SectionWrapper color={Color.BLUE} marginTop={4}>
         {isLoading && <h2>Loading</h2>}
-        {data && data.length > 0 ? (
-          <SpeakerDetail speaker={data[0]} />
+        {!isLoading && speakerDetail && speakerDetail.length > 0 ? (
+          <SpeakerDetail speaker={speakerDetail[0]} />
         ) : (
-          <NotFoundError message="Speaker" />
+          "not found"
         )}
       </SectionWrapper>
       <StyledWaveContainer>
