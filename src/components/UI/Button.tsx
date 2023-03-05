@@ -56,7 +56,12 @@ const StyledActionButton = styled.div`
 const Button: FC<ButtonProps> = ({ text, link, onClick, disabled }) => {
   return (
     <StyledActionButton className="hvr-bounce-in">
-      <a onClick={onClick} href={link} target="_blank" rel="noreferrer nofollo">
+      <a
+        onClick={onClick}
+        href={link}
+        target="_blank"
+        rel="noreferrer nofollow"
+      >
         {text}
         {disabled && (
           <>

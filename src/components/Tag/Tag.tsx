@@ -15,10 +15,11 @@ const colorTagByText = (text: string) => {
   let color;
   switch (text) {
     case "Java":
-      color = Color.DARK_BLUE;
+    case "java":
+      color = Color.LIGHT_BLUE;
       break;
     case "Cloud":
-      color = Color.BLACK_BLUE;
+      color = Color.YELLOW;
       break;
     case "JVM":
       color = Color.MAGENTA;
@@ -37,7 +38,7 @@ export const Tag: FC<TagProps> = ({ text }) => {
   const color = colorTagByText(text);
   return (
     <StyledTagWrapper borderColor={color}>
-      <StyledTagText color={color}>{text}</StyledTagText>
+      <StyledTagText color={Color.DARK_BLUE}>{text}</StyledTagText>
     </StyledTagWrapper>
   );
 };

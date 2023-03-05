@@ -66,6 +66,8 @@ export const StyledFaqInfo = styled(motion.div)<{ align: string }>`
 
 export const StyledFaqTitle = styled.h2`
   padding-top: 1rem;
+  color: ${Color.YELLOW};
+  font-size: 1.3em;
   @media (min-width: 800px) {
     text-align: left;
     padding-top: unset;
