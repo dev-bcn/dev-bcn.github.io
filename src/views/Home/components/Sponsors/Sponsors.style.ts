@@ -107,7 +107,7 @@ export const StyledLogos = styled.div<{ position?: "left" | "right" }>`
       position === "right" ? sponsorMarginDesktop : 0}%;
     top: 5rem;
     flex-wrap: wrap;
-    width: ${({ position }) => (position === "right" ? 59 : 55)}%;
+    width: ${({ position }) => (position === "right" ? 59 : 100)}%;
   }
 
   @media (min-width: ${LARGE_BREAKPOINT}px) {
@@ -138,6 +138,7 @@ export const StyledSeparator = styled.div`
 export const PremiumSponsorImage = styled.img`
   height: 7.5rem;
   transition: height ease-in 0.25s;
+  max-width: 100%;
 
   &:hover {
     height: 8rem;
