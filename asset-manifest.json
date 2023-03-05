@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.6a184878.css",
-    "main.js": "/static/js/main.5904b3bf.js",
+    "main.js": "/static/js/main.e4538c60.js",
     "static/js/535.90b25b60.chunk.js": "/static/js/535.90b25b60.chunk.js",
     "static/js/594.e082e442.chunk.js": "/static/js/594.e082e442.chunk.js",
     "static/js/81.531b0bb7.chunk.js": "/static/js/81.531b0bb7.chunk.js",
@@ -56,7 +56,7 @@
     "static/media/MoreThanBlueIcon.svg": "/static/media/MoreThanBlueIcon.80b146cc5d88641337b61ea66402a531.svg",
     "static/media/MoreThanBlueWhiteIcon.svg": "/static/media/MoreThanBlueWhiteIcon.4e0508c1662edcaf4a1d5cf4b17c33be.svg",
     "main.6a184878.css.map": "/static/css/main.6a184878.css.map",
-    "main.5904b3bf.js.map": "/static/js/main.5904b3bf.js.map",
+    "main.e4538c60.js.map": "/static/js/main.e4538c60.js.map",
     "535.90b25b60.chunk.js.map": "/static/js/535.90b25b60.chunk.js.map",
     "594.e082e442.chunk.js.map": "/static/js/594.e082e442.chunk.js.map",
     "81.531b0bb7.chunk.js.map": "/static/js/81.531b0bb7.chunk.js.map",
@@ -74,6 +74,6 @@
   },
   "entrypoints": [
     "static/css/main.6a184878.css",
-    "static/js/main.5904b3bf.js"
+    "static/js/main.e4538c60.js"
   ]
 }
