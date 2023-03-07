@@ -2,24 +2,6 @@ import { ISpeaker } from "./Speaker.types";
 
 export const speakersData: ISpeaker[] = [
   {
-    id: "ana-maria",
-    speakerImage: "/images/speakers/ana-maria-mihalceanu.jpg",
-    tagLine: "Java Champion Alumni, Certified Architect",
-    bio: "Ana is a Java Champion Alumni, Developer Advocate for the Java Platform Group at Oracle, guest author of the book 'DevOps tools for Java Developers', and a constant adopter of challenging technical scenarios involving Java-based frameworks and multiple cloud providers. She actively supports technical communities' growth through knowledge sharing and enjoys curating content for conferences as a program committee member.",
-    fullName: "Ana Maria Mihalceanu",
-    linkedInUrl: {
-      url: "https://www.linkedin.com/in/ana-maria-mihalceanu-1508/",
-      linkType: "LinkedIn",
-      title: "LinkedIn",
-    },
-    twitterUrl: {
-      url: "https://www.twitter.com/ammbra1508",
-      linkType: "Twitter",
-      title: "Twitter",
-    },
-    sessions: [],
-  },
-  {
     id: "natalia",
     speakerImage: "/images/speakers/natalia-venditto.png",
     tagLine:
