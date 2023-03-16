@@ -89,7 +89,7 @@ const Faqs: FC = () => {
             <FaqCard faq={faq} index={index} key={index} />
           ))}
           <div style={{ width: "55%" }}>
-            <StyledH2>Check last JBCNConf edition</StyledH2>
+            <StyledH2 id="last-jbcnconf">Check last JBCNConf edition</StyledH2>
             <Suspense fallback={<StyledLoadingImage src={Logo} />}>
               <StyledImage src={jbcnconf} alt="JBCNConf" />
             </Suspense>
