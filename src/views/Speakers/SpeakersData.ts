@@ -21,25 +21,6 @@ export const speakersData: ISpeaker[] = [
     sessions: [],
   },
   {
-    id: "carlos",
-    speakerImage: "/images/speakers/carlos-ble.png",
-    tagLine:
-      "Leading Lean Mind to boost tech organizations aiming to change the world. | Accompanying teams, supporting people/WASM.",
-    bio: "",
-    fullName: "Carlos Ble",
-    linkedInUrl: {
-      url: "https://www.linkedin.com/in/carlosble",
-      linkType: "LinkedIn",
-      title: "LinkedIn",
-    },
-    twitterUrl: {
-      url: "https://www.twitter.com/carlosble",
-      linkType: "Twitter",
-      title: "Twitter",
-    },
-    sessions: [],
-  },
-  {
     id: "victor",
     speakerImage: "/images/speakers/victor-rentea.jpg",
     tagLine: "Technical trainer and coach",
