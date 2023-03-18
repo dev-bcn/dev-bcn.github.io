@@ -3,6 +3,13 @@ export interface SessionSpeaker {
   name: string;
 }
 
+export enum CategoryItemEnum {
+  Language = "Language",
+  Track = "Track",
+  Format = "Session format",
+  Level = "Level",
+}
+
 interface CategoryItem {
   id: number;
   name: string;
@@ -10,7 +17,7 @@ interface CategoryItem {
 
 export interface SessionCategory {
   id: number;
-  name: string;
+  name: CategoryItemEnum;
   categoryItems: CategoryItem[];
 }
 
