@@ -4,41 +4,56 @@ import { StyledTagText, StyledTagWrapper } from "./Style.Tag";
 
 type TagProps = {
   text: string;
+  textColor?: string;
 };
 
-const tagColors = Object.keys(Color).filter((item) => {
-  // @ts-ignore
-  return isNaN(item);
-});
+type ColorMap = {
+  [key: string]: string;
+};
 
-const colorTagByText = (text: string) => {
-  let color;
-  switch (text) {
-    case "Java":
-    case "java":
-      color = Color.LIGHT_BLUE;
-      break;
-    case "Cloud":
-      color = Color.YELLOW;
-      break;
-    case "JVM":
-      color = Color.MAGENTA;
-      break;
-    case "Kubernetes":
-      color = Color.GREEN;
-      break;
-    default:
-      color = tagColors[Math.floor(Math.random() * tagColors.length)];
-      break;
+const colorMap: ColorMap = {
+  java: Color.DARK_BLUE,
+  jvm: Color.DARK_BLUE,
+  jdk: Color.DARK_BLUE,
+  scala: Color.DARK_BLUE,
+  groovy: Color.DARK_BLUE,
+  kotlin: Color.DARK_BLUE,
+  cloud: Color.YELLOW,
+  kubernetes: Color.MAGENTA,
+  agile: Color.GREEN,
+  agility: Color.GREEN,
+  microservices: Color.GREEN,
+  javascript: Color.YELLOW,
+  devops: Color.PINK,
+  testing: Color.GRAY,
+  tdd: Color.GRAY,
+  ai: Color.BROWN,
+  machine: Color.PURPLE,
+  observability: Color.SKY_BLUE,
+  go: Color.WHITE,
+  rust: Color.WHITE,
+  python: Color.WHITE,
+  coding: Color.RED,
+  code: Color.RED,
+};
+
+export const colorTagByText = (text: string): string => {
+  const lowercaseText = text.toLowerCase();
+  for (const [key, value] of Object.entries(colorMap)) {
+    if (lowercaseText.includes(key)) {
+      return value;
+    }
   }
-  return color;
+  return "#000000";
 };
 
-export const Tag: FC<TagProps> = ({ text }) => {
+export const Tag: FC<TagProps> = ({ text, textColor }) => {
   const color = colorTagByText(text);
   return (
     <StyledTagWrapper borderColor={color}>
-      <StyledTagText color={Color.DARK_BLUE}>{text}</StyledTagText>
+      <StyledTagText color={textColor ? textColor : color}>
+        {text}
+      </StyledTagText>
     </StyledTagWrapper>
   );
 };
