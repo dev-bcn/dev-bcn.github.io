@@ -41,12 +41,22 @@ export const StyledTitle = styled(motion.h1)`
 
 export const StyledDescription = styled.p`
   color: ${Color.DARK_BLUE};
-  text-align: center;
+  text-align: left;
   width: 100%;
+  padding-top: 10px;
 
   @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    text-align: right;
-    padding-left: 30%;
+    padding-left: 10px;
+  }
+`;
+
+export const StyledExtraInfo = styled.p`
+   {
+    margin-top: 10px;
+    color: ${Color.LIGHT_BLUE};
+  }
+  & strong {
+    color: ${Color.DARK_BLUE};
   }
 `;
 

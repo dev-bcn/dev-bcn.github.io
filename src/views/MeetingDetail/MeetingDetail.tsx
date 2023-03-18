@@ -18,6 +18,7 @@ import {
   StyledContainer,
   StyledDescription,
   StyledDetailsContainer,
+  StyledExtraInfo,
   StyledFlexCol,
   StyledLessThan,
   StyledMeetingTitleContainer,
@@ -122,7 +123,17 @@ const MeetingDetail: FC<IMeetingDetailProps> = ({ meeting }) => {
             variants={downVariants}
           >
             <StyledTitle>/ {meeting.title}</StyledTitle>
+            <h4>Description</h4>
             <StyledDescription>{meeting.description}</StyledDescription>
+            <StyledExtraInfo>
+              <strong>Level: </strong> {meeting.level}
+              <strong> Language: </strong>
+              {meeting.language}
+              <strong> Session type: </strong>
+              {meeting.type}
+              <strong> Track: </strong>
+              {meeting.track}
+            </StyledExtraInfo>
           </StyledFlexCol>
           <StyledTitleImg
             initial="initial"
