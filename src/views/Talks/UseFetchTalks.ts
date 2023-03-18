@@ -1,11 +1,13 @@
 import { useQuery, UseQueryResult } from "react-query";
 import {
+  CategoryItemEnum,
   IGroup,
   QuestionAnswers,
   Session,
   SessionCategory,
 } from "./Talk.types";
 import axios from "axios";
+import { IMeeting } from "../MeetingDetail/MeetingDetail.Type";
 
 export const useFetchTalks = (): UseQueryResult<IGroup[]> =>
   useQuery("api-talks", async () => {
@@ -39,12 +41,34 @@ export const extractSessionTags = (
     .at(0);
   return tags?.split(",");
 };
-export const extractSessionLevel = (
-  categories: SessionCategory[]
+export const extractSessionCategoryInfo = (
+  categories: SessionCategory[],
+  item: string = CategoryItemEnum.Level
 ): string | undefined =>
   categories
-    .filter((category) => category.name === "Level")
+    .filter((category) => category.name === item)
     .map((categories) => categories.categoryItems)
     .flat(1)
     .map((item) => item.name)
     .at(0);
+export const sessionAdapter = (session: Session | undefined): IMeeting => {
+  return {
+    description: session?.description || "",
+    title: session?.title || "",
+    speakers: session?.speakers,
+    videoUrl: session?.recordingUrl,
+    videoTags:
+      session?.questionAnswers && extractSessionTags(session.questionAnswers),
+    level:
+      session?.categories && extractSessionCategoryInfo(session?.categories),
+    language:
+      session?.categories &&
+      extractSessionCategoryInfo(session.categories, CategoryItemEnum.Language),
+    type:
+      session?.categories &&
+      extractSessionCategoryInfo(session.categories, CategoryItemEnum.Format),
+    track:
+      session?.categories &&
+      extractSessionCategoryInfo(session.categories, CategoryItemEnum.Track),
+  };
+};

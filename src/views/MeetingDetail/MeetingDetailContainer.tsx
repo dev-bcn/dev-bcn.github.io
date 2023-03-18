@@ -5,32 +5,13 @@ import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import styled from "styled-components";
 import { useParams } from "react-router-dom";
 import conferenceData from "../../data/2023.json";
-import {
-  extractSessionLevel,
-  extractSessionTags,
-  useFetchTalksById,
-} from "../Talks/UseFetchTalks";
-import { Session } from "../Talks/Talk.types";
-import { IMeeting } from "./MeetingDetail.Type";
+import { sessionAdapter, useFetchTalksById } from "../Talks/UseFetchTalks";
 import MeetingDetail from "./MeetingDetail";
 import * as Sentry from "@sentry/react";
 
 const StyledContainer = styled.div`
   background-color: ${Color.WHITE};
 `;
-
-const sessionAdapter = (session: Session | undefined): IMeeting => {
-  return {
-    description: session?.description || "",
-    title: session?.title || "",
-    speakers: session?.speakers,
-    videoUrl: session?.recordingUrl,
-    videoTags:
-      session?.questionAnswers && extractSessionTags(session.questionAnswers),
-    level: session?.categories && extractSessionLevel(session?.categories),
-  };
-};
-
 const MeetingDetailContainer: FC = () => {
   const { id } = useParams<{ id: string }>();
   const { isLoading, error, data } = useFetchTalksById(id);

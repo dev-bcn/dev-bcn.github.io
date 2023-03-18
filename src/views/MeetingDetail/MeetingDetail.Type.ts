@@ -13,4 +13,7 @@ export interface IMeeting {
   speakerTwitterUrl?: string;
   speakerLinkedinUrl?: string;
   level?: string;
+  type?: string;
+  language?: string;
+  track?: string;
 }
