@@ -8,6 +8,8 @@ import conferenceData from "../../data/2023.json";
 import { sessionAdapter, useFetchTalksById } from "../Talks/UseFetchTalks";
 import MeetingDetail from "./MeetingDetail";
 import * as Sentry from "@sentry/react";
+import { useFetchSpeakers } from "../Speakers/UseFetchSpeakers";
+import { ISpeaker } from "../Speakers/Speaker.types";
 
 const StyledContainer = styled.div`
   background-color: ${Color.WHITE};
@@ -15,6 +17,15 @@ const StyledContainer = styled.div`
 const MeetingDetailContainer: FC = () => {
   const { id } = useParams<{ id: string }>();
   const { isLoading, error, data } = useFetchTalksById(id);
+  const { data: speakerData } = useFetchSpeakers();
+
+  const talkSpeakers: String[] = data?.[0].speakers.map(
+    (speaker) => speaker.id
+  ) || [""];
+
+  const sessionSpeakers: ISpeaker[] | undefined = speakerData?.filter(
+    (speaker) => talkSpeakers.includes(speaker.id)
+  );
 
   React.useEffect(() => {
     document.title = `${data?.at(0)?.title} - DevBcn - ${
@@ -31,7 +42,10 @@ const MeetingDetailContainer: FC = () => {
       <SectionWrapper color={Color.WHITE} marginTop={4}>
         {isLoading && <h2>Loading</h2>}
         {!isLoading && data ? (
-          <MeetingDetail meeting={sessionAdapter(data?.at(0))} />
+          <MeetingDetail
+            speakers={sessionSpeakers}
+            meeting={sessionAdapter(data?.at(0))}
+          />
         ) : (
           <NotFoundError message="Session" />
         )}
