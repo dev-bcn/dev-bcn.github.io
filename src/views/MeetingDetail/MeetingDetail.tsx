@@ -4,17 +4,14 @@ import {
   MOBILE_BREAKPOINT,
 } from "../../constants/BreakPoints";
 import { Color } from "../../styles/colors";
-
 import { FC, useEffect } from "react";
 import { IMeeting } from "./MeetingDetail.Type";
 import LessThanIconWhite from "../../assets/images/LessThanIconWhite.svg";
 import LessThanIcon from "../../assets/images/LessThanBlueIcon.svg";
 import MoreThanIcon from "../../assets/images/MoreThanBlueIcon.svg";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import Slashes from "../../assets/images/SlashesWhite.svg";
 import { useWindowSize } from "react-use";
 import {
-  StyledAbsoluteSlashes,
   StyledContainer,
   StyledDescription,
   StyledDetailsContainer,
@@ -25,7 +22,6 @@ import {
   StyledName,
   StyledNameContainer,
   StyledRightContainer,
-  StyledSlashes,
   StyledSpeakerDetailContainer,
   StyledTitle,
   StyledTitleImg,
@@ -36,6 +32,7 @@ import { Link } from "react-router-dom";
 import { ROUTE_SPEAKER_DETAIL, ROUTE_TALKS } from "../../constants/routes";
 import conferenceData from "../../data/2023.json";
 import { Tag } from "../../components/Tag/Tag";
+import { ISpeaker } from "../Speakers/Speaker.types";
 
 const getVideoHeight = (windowWidth: number) => {
   let videoHeight;
@@ -99,9 +96,10 @@ const opacityVariants = {
 
 interface IMeetingDetailProps {
   meeting: IMeeting;
+  speakers?: ISpeaker[];
 }
 
-const MeetingDetail: FC<IMeetingDetailProps> = ({ meeting }) => {
+const MeetingDetail: FC<IMeetingDetailProps> = ({ meeting, speakers }) => {
   const { width } = useWindowSize();
   useEffect(() => {
     document.title = `${meeting.title} - DevBcn ${conferenceData.edition}`;
@@ -167,19 +165,28 @@ const MeetingDetail: FC<IMeetingDetailProps> = ({ meeting }) => {
           <StyledLessThan src={LessThanIconWhite} />
           <StyledDetailsContainer className="DetailsContainerInner">
             <StyledRightContainer>
+              {speakers &&
+                speakers.map((speaker) => (
+                  <img
+                    key={speaker.id}
+                    src={speaker.speakerImage}
+                    alt={speaker.fullName}
+                    style={{
+                      width: "128px",
+                      margin: "10px",
+                      borderRadius: "12px",
+                    }}
+                  />
+                ))}
               {meeting.speakers?.map((speaker) => (
                 <StyledNameContainer className="DetailsTitle" key={speaker.id}>
                   <Link to={`${ROUTE_SPEAKER_DETAIL}/${speaker.id}`}>
                     <StyledName>{speaker.name}</StyledName>
                   </Link>
-                  <StyledSlashes src={Slashes} />
                 </StyledNameContainer>
               ))}
             </StyledRightContainer>
           </StyledDetailsContainer>
-          <StyledAbsoluteSlashes>
-            / / / / / / / / / / / / / / / / /
-          </StyledAbsoluteSlashes>
         </StyledSpeakerDetailContainer>
         <div>
           <Link
