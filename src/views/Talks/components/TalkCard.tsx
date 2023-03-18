@@ -12,7 +12,10 @@ import {
   SessionCategory,
   SessionSpeaker,
 } from "../Talk.types";
-import { extractSessionLevel, extractSessionTags } from "../UseFetchTalks";
+import {
+  extractSessionCategoryInfo,
+  extractSessionTags,
+} from "../UseFetchTalks";
 import {
   StyledMoreInfoLink,
   StyledSessionCard,
@@ -52,7 +55,7 @@ export const TalkCard: FC<TalkCardProps> = ({ talk }) => {
           ))}
         </StyledSessionText>
         <StyledSessionText>
-          Level: {extractSessionLevel(talk.categories)}
+          Level: {extractSessionCategoryInfo(talk.categories)}
         </StyledSessionText>
         <StyledTagsWrapper>
           {extractSessionTags(talk.questionAnswers)?.map((tag, index) => {

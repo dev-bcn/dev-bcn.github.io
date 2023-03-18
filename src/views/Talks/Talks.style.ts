@@ -53,8 +53,8 @@ export const StyledSessionCard = styled.div`
   margin: 5px 3rem 3rem;
   background: linear-gradient(
     90deg,
-    rgba(0, 36, 84, 0.5) 0%,
-    rgba(71, 152, 202, 0.5) 100%
+    rgba(0, 36, 84, 0.2) 0%,
+    rgba(71, 152, 202, 0.2) 100%
   );
   border-radius: 10px;
   padding: 5px 15px;
