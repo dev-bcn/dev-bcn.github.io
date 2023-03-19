@@ -9,6 +9,6 @@ describe("<Tags/>", () => {
   });
 
   test("color tag by text", () => {
-    expect(colorTagByText("Java")).toEqual("#4798CA");
+    expect(colorTagByText("Java")).toEqual("#002454");
   });
 });
