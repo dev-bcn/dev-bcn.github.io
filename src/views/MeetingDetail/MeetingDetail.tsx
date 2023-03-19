@@ -4,7 +4,7 @@ import {
   MOBILE_BREAKPOINT,
 } from "../../constants/BreakPoints";
 import { Color } from "../../styles/colors";
-import { FC, useEffect } from "react";
+import { FC, Suspense, useEffect } from "react";
 import { IMeeting } from "./MeetingDetail.Type";
 import LessThanIconWhite from "../../assets/images/LessThanIconWhite.svg";
 import LessThanIcon from "../../assets/images/LessThanBlueIcon.svg";
@@ -99,11 +99,33 @@ interface IMeetingDetailProps {
   speakers?: ISpeaker[];
 }
 
-const MeetingDetail: FC<IMeetingDetailProps> = ({ meeting, speakers }) => {
+type MyType = {
+  urlName?: string;
+  videoUrl?: string;
+  level?: string;
+  videoTags?: string[];
+  speakers?: ISpeaker[];
+  description: string;
+  language?: string;
+  title: string;
+  type?: string;
+  track?: string;
+};
+
+const MeetingDetail: FC<IMeetingDetailProps> = ({
+  meeting,
+  speakers: mySpeakers,
+}) => {
   const { width } = useWindowSize();
+
   useEffect(() => {
     document.title = `${meeting.title} - DevBcn ${conferenceData.edition}`;
   }, [meeting.title]);
+
+  const finalMeetingInfo: MyType = {
+    ...meeting,
+    speakers: mySpeakers,
+  };
 
   return (
     <SectionWrapper color={Color.WHITE}>
@@ -161,28 +183,28 @@ const MeetingDetail: FC<IMeetingDetailProps> = ({ meeting, speakers }) => {
             ))}
           </StyledVideoTagsContainer>
         </StyledVideoContainer>
-        <StyledSpeakerDetailContainer className="DetailsContainer">
+        <StyledSpeakerDetailContainer className="speaker-details-Container">
           <StyledLessThan src={LessThanIconWhite} />
-          <StyledDetailsContainer className="DetailsContainerInner">
+          <StyledDetailsContainer className="details-container-inner">
             <StyledRightContainer>
-              {speakers &&
-                speakers.map((speaker) => (
-                  <img
-                    key={speaker.id}
-                    src={speaker.speakerImage}
-                    alt={speaker.fullName}
-                    style={{
-                      width: "128px",
-                      margin: "10px",
-                      borderRadius: "12px",
-                    }}
-                  />
-                ))}
-              {meeting.speakers?.map((speaker) => (
+              {finalMeetingInfo.speakers?.map((speaker) => (
                 <StyledNameContainer className="DetailsTitle" key={speaker.id}>
-                  <Link to={`${ROUTE_SPEAKER_DETAIL}/${speaker.id}`}>
-                    <StyledName>{speaker.name}</StyledName>
-                  </Link>
+                  <Suspense fallback={<h1>loading</h1>}>
+                    <img
+                      src={speaker.speakerImage}
+                      alt={speaker.fullName}
+                      style={{
+                        width: "128px",
+                        margin: "10px",
+                        borderRadius: "12px",
+                      }}
+                    />
+                  </Suspense>
+                  <StyledName>
+                    <Link to={`${ROUTE_SPEAKER_DETAIL}/${speaker.id}`}>
+                      {speaker.fullName}
+                    </Link>
+                  </StyledName>
                 </StyledNameContainer>
               ))}
             </StyledRightContainer>

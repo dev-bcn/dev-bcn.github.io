@@ -6,12 +6,7 @@ export interface IMeeting {
   description: string;
   videoUrl?: string;
   videoTags?: string[];
-  speakers?: SessionSpeaker[];
-  speakerTitle?: string;
-  speakerDescription?: string;
-  speakerPhotoUrl?: string;
-  speakerTwitterUrl?: string;
-  speakerLinkedinUrl?: string;
+  speakers: SessionSpeaker[];
   level?: string;
   type?: string;
   language?: string;
