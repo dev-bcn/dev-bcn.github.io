@@ -13,17 +13,7 @@ import { IMeeting } from "../MeetingDetail/MeetingDetail.Type";
 
 describe("sessionAdapter", () => {
   test("returns empty strings when session is undefined", () => {
-    expect(sessionAdapter(undefined)).toEqual({
-      description: "",
-      title: "",
-      speakers: undefined,
-      videoUrl: undefined,
-      videoTags: undefined,
-      level: undefined,
-      language: undefined,
-      type: undefined,
-      track: undefined,
-    });
+    expect(sessionAdapter(undefined)).toBeUndefined();
   });
 
   test("returns the expected output when session is defined", () => {

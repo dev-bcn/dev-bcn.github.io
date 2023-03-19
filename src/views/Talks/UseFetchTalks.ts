@@ -51,24 +51,30 @@ export const extractSessionCategoryInfo = (
     .flat(1)
     .map((item) => item.name)
     .at(0);
-export const sessionAdapter = (session: Session | undefined): IMeeting => {
+export const sessionAdapter = (
+  session: Session | undefined
+): IMeeting | undefined => {
+  if (session === undefined) {
+    return undefined;
+  }
   return {
-    description: session?.description || "",
-    title: session?.title || "",
-    speakers: session?.speakers,
-    videoUrl: session?.recordingUrl,
-    videoTags:
-      session?.questionAnswers && extractSessionTags(session.questionAnswers),
-    level:
-      session?.categories && extractSessionCategoryInfo(session?.categories),
-    language:
-      session?.categories &&
-      extractSessionCategoryInfo(session.categories, CategoryItemEnum.Language),
-    type:
-      session?.categories &&
-      extractSessionCategoryInfo(session.categories, CategoryItemEnum.Format),
-    track:
-      session?.categories &&
-      extractSessionCategoryInfo(session.categories, CategoryItemEnum.Track),
+    description: session.description,
+    title: session.title,
+    speakers: session.speakers,
+    videoUrl: session.recordingUrl,
+    videoTags: extractSessionTags(session.questionAnswers),
+    level: extractSessionCategoryInfo(session?.categories),
+    language: extractSessionCategoryInfo(
+      session.categories,
+      CategoryItemEnum.Language
+    ),
+    type: extractSessionCategoryInfo(
+      session.categories,
+      CategoryItemEnum.Format
+    ),
+    track: extractSessionCategoryInfo(
+      session.categories,
+      CategoryItemEnum.Track
+    ),
   };
 };
