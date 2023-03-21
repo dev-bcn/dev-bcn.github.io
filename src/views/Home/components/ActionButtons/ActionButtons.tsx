@@ -18,8 +18,8 @@ const StyledActionDiv = styled.div`
 const ActionButtons: FC = () => {
   const ticketStartDay = new Date(data.tickets.startDay);
   const ticketEndDay = new Date(data.tickets.endDay);
-  const CFPStartDay = new Date(data.tickets.startDay);
-  const CFPEndDay = new Date(data.tickets.endDay);
+  const CFPStartDay = new Date(data.cfp.startDay);
+  const CFPEndDay = new Date(data.cfp.endDay);
   const sponsorshipStartDay = new Date(data.tickets.startDay);
   const sponsorshipEndDay = new Date(data.tickets.endDay);
   const today = new Date();
