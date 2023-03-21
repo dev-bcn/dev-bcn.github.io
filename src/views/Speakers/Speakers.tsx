@@ -64,9 +64,8 @@ const Speakers: FC = () => {
     document.title = `Speakers - DevBcn ${webData.edition}`;
   });
 
-  const CFPStartDay = new Date(webData.tickets.startDay);
-  const CFPEndDay = new Date(webData.tickets.endDay);
-
+  const CFPStartDay = new Date(webData.cfp.startDay);
+  const CFPEndDay = new Date(webData.cfp.endDay);
   return (
     <>
       <SectionWrapper color={Color.DARK_BLUE} marginTop={5}>
