@@ -20,22 +20,4 @@ export const speakersData: ISpeaker[] = [
     },
     sessions: [],
   },
-  {
-    id: "victor",
-    speakerImage: "/images/speakers/victor-rentea.jpg",
-    tagLine: "Technical trainer and coach",
-    bio: "Java Champion - Technical trainer and coach",
-    fullName: "Victor Rentea",
-    linkedInUrl: {
-      url: "https://www.linkedin.com/in/victor-rentea-trainer",
-      linkType: "LinkedIn",
-      title: "LinkedIn",
-    },
-    twitterUrl: {
-      url: "https://www.twitter.com/victorRentea",
-      linkType: "Twitter",
-      title: "Twitter",
-    },
-    sessions: [],
-  },
 ];
