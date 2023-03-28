@@ -22,16 +22,9 @@ const MeetingDetailContainer: FC = () => {
 
   const getTalkSpeakers = (
     data: Session[] | undefined
-  ): String[] | undefined => {
-    if (
-      data !== undefined &&
-      Array.isArray(data) &&
-      data.length > 0 &&
-      data[0].speakers !== undefined &&
-      data[0].speakers.length > 0
-    ) {
-      return data[0].speakers.map((speaker) => speaker.id);
-    }
+  ): string[] | undefined => {
+    const speakers = data?.[0]?.speakers;
+    return speakers?.map((speaker) => speaker.id);
   };
 
   const talkSpeakers: String[] | undefined = getTalkSpeakers(data);
@@ -56,14 +49,18 @@ const MeetingDetailContainer: FC = () => {
       <SectionWrapper color={Color.WHITE} marginTop={4}>
         {isLoading && <h2>Loading</h2>}
         {!isLoading &&
-        sessionSpeakers !== undefined &&
-        Array.isArray(sessionSpeakers) &&
-        sessionSpeakers.length > 0 &&
-        adaptedMeeting !== undefined ? (
-          <MeetingDetail speakers={sessionSpeakers} meeting={adaptedMeeting} />
-        ) : (
-          <NotFoundError message="Session" />
-        )}
+          sessionSpeakers !== undefined &&
+          sessionSpeakers.length > 0 &&
+          adaptedMeeting !== undefined && (
+            <MeetingDetail
+              speakers={sessionSpeakers}
+              meeting={adaptedMeeting}
+            />
+          )}
+        {!isLoading &&
+          (!sessionSpeakers ||
+            sessionSpeakers.length === 0 ||
+            !adaptedMeeting) && <NotFoundError message="Session" />}
       </SectionWrapper>
     </StyledContainer>
   );
