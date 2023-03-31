@@ -4,7 +4,7 @@
   "version": "0.1.2",
   "private": true,
   "dependencies": {
-    "@sentry/react": "^7.36.0",
+    "@sentry/react": "^7.46.0",
     "@sentry/tracing": "^7.36.0",
     "@types/node": "^18.15.3",
     "@types/react": "^17.0.39",
