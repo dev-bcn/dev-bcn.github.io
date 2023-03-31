@@ -1,6 +1,6 @@
+import React, { FC } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
-import { renderHook } from "@testing-library/react-hooks";
-import { FC } from "react";
+import { renderHook, waitFor } from "@testing-library/react";
 import { speakerAdapter, useFetchSpeakers } from "./UseFetchSpeakers";
 import { beforeEach, describe, expect, it } from "@jest/globals";
 import axios, { AxiosHeaders, AxiosResponse } from "axios";
@@ -67,49 +67,13 @@ const payload: AxiosResponse<IResponse[]> = {
 };
 describe("fetch speaker hook and speaker adapter", () => {
   beforeEach(() => {
-    jest.clearAllMocks();
-  });
-
-  it("should adapt from server response", async () => {
-    const queryClient = new QueryClient();
-
-    mockedAxios.get.mockResolvedValue(payload);
-    const wrapper: FC = ({ children }) => {
-      return (
-        <QueryClientProvider client={queryClient}>
-          {children}
-        </QueryClientProvider>
-      );
-    };
-
-    const { result, waitFor } = renderHook(() => useFetchSpeakers(), {
-      wrapper,
-    });
-
-    await waitFor(() => result.current.isSuccess);
-
-    expect(result.current.data).toEqual(speakerAdapter(payload.data));
-    expect(mockedAxios.get).toHaveBeenCalled();
+    //jest.clearAllMocks();
   });
 
   it("should adapt from server response a query with id", async () => {
+    //Given
     const queryClient = new QueryClient();
-
     mockedAxios.get.mockResolvedValue(payload);
-    const wrapper: FC = ({ children }) => {
-      return (
-        <QueryClientProvider client={queryClient}>
-          {children}
-        </QueryClientProvider>
-      );
-    };
-
-    const { result, waitFor } = renderHook(() => useFetchSpeakers("1"), {
-      wrapper,
-    });
-
-    await waitFor(() => result.current.isSuccess);
-
     const expectedPayload: IResponse[] = [
       {
         id: "1",
@@ -132,8 +96,44 @@ describe("fetch speaker hook and speaker adapter", () => {
         sessions: [{ id: 4567, name: "sample session" }],
       },
     ];
+    const wrapper: FC<React.PropsWithChildren<{}>> = ({ children }) => {
+      return (
+        <QueryClientProvider client={queryClient}>
+          {children}
+        </QueryClientProvider>
+      );
+    };
 
+    //When
+    const { result } = renderHook(() => useFetchSpeakers("1"), {
+      wrapper,
+    });
+    await waitFor(() => result.current.isSuccess);
+
+    //then
+    expect(mockedAxios.get).toHaveBeenCalled();
     expect(result.current.data).toEqual(speakerAdapter(expectedPayload));
+  });
+
+  it("should adapt from server response", async () => {
+    const queryClient = new QueryClient();
+
+    mockedAxios.get.mockResolvedValue(payload);
+    const wrapper: FC<React.PropsWithChildren<{}>> = ({ children }) => {
+      return (
+        <QueryClientProvider client={queryClient}>
+          {children}
+        </QueryClientProvider>
+      );
+    };
+
+    const { result } = renderHook(() => useFetchSpeakers(), {
+      wrapper,
+    });
+
+    await waitFor(() => result.current.isSuccess, {});
+
+    expect(result.current.data).toEqual(speakerAdapter(payload.data));
     expect(mockedAxios.get).toHaveBeenCalled();
   });
 });
