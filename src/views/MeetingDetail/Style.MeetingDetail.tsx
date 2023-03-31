@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import {BIG_BREAKPOINT, LARGE_BREAKPOINT} from "../../constants/BreakPoints";
-import {motion} from "framer-motion";
-import {Color} from "../../styles/colors";
+import { BIG_BREAKPOINT, LARGE_BREAKPOINT } from "../../constants/BreakPoints";
+import { motion } from "framer-motion";
+import { Color } from "../../styles/colors";
 
 export const StyledContainer = styled.div`
   padding-top: 2rem;
@@ -10,7 +10,7 @@ export const StyledContainer = styled.div`
 export const StyledMeetingTitleContainer = styled.div`
   display: flex;
   width: 100%;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 
   @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
     justify-content: space-between;
@@ -39,15 +39,24 @@ export const StyledTitle = styled(motion.h1)`
   }
 `;
 
-
 export const StyledDescription = styled.p`
   color: ${Color.DARK_BLUE};
-  text-align: center;
+  text-align: left;
   width: 100%;
+  padding-top: 10px;
 
   @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    text-align: right;
-    padding-left: 30%;
+    padding-left: 10px;
+  }
+`;
+
+export const StyledExtraInfo = styled.p`
+   {
+    margin-top: 10px;
+    color: ${Color.LIGHT_BLUE};
+  }
+  & strong {
+    color: ${Color.DARK_BLUE};
   }
 `;
 
@@ -90,8 +99,7 @@ export const StyledSpeakerDetailContainer = styled.div`
   background: ${Color.DARK_BLUE};
   color: ${Color.WHITE};
   width: 100%;
-  padding: 1.5rem;
-  padding-bottom: 3rem;
+  padding: 1.5rem 1.5rem 3rem;
 
   margin-bottom: 2rem;
 
@@ -99,6 +107,10 @@ export const StyledSpeakerDetailContainer = styled.div`
     justify-content: start;
     align-items: start;
     padding: 0;
+  }
+
+  @media only screen and (max-width: ${BIG_BREAKPOINT}px) {
+    margin-bottom: 25rem;
   }
 `;
 
@@ -135,17 +147,22 @@ export const StyledImageContainer = styled.div`
 
 export const StyledRightContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex: 1;
+  flex-wrap: wrap;
 `;
 
 export const StyledNameContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+   {
+    width: 50%;
+    text-align: center;
+  }
+  & a {
+    text-decoration: none;
+    color: ${Color.LIGHT_BLUE};
+  }
 
   @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    flex-direction: row;
     margin-bottom: 1rem;
   }
 `;
@@ -157,9 +174,7 @@ export const StyledName = styled.h3`
   margin-bottom: 0.75rem;
 
   @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    width: 25%;
     margin-bottom: 0;
-    text-align: left;
   }
 `;
 
@@ -234,10 +249,10 @@ export const StyledLink = styled.a`
 
 export const StyledSocialMediaIcon = styled.img<{ noMargin?: boolean }>`
   height: 1.5rem;
-  margin-right: ${({ noMargin }) => (noMargin ? '0' : '0.75rem')};
+  margin-right: ${({ noMargin }) => (noMargin ? "0" : "0.75rem")};
 
   @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    margin-right: ${({ noMargin }) => (noMargin ? '0' : '0.5rem')};
+    margin-right: ${({ noMargin }) => (noMargin ? "0" : "0.5rem")};
   }
 `;
 

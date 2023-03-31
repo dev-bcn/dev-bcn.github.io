@@ -1,9 +1,9 @@
 import { FC, useCallback } from "react";
 import data from "../../../../data/2023.json";
-import Button from "./Button";
+import Button from "../../../../components/UI/Button";
 import styled from "styled-components";
-import ReactGa from "react-ga";
 import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
+import { gaEventTracker } from "../../../../components/analytics/Analytics";
 
 const StyledActionDiv = styled.div`
   display: flex;
@@ -18,30 +18,26 @@ const StyledActionDiv = styled.div`
 const ActionButtons: FC = () => {
   const ticketStartDay = new Date(data.tickets.startDay);
   const ticketEndDay = new Date(data.tickets.endDay);
-  const CFPStartDay = new Date(data.tickets.startDay);
-  const CFPEndDay = new Date(data.tickets.endDay);
+  const CFPStartDay = new Date(data.cfp.startDay);
+  const CFPEndDay = new Date(data.cfp.endDay);
   const sponsorshipStartDay = new Date(data.tickets.startDay);
   const sponsorshipEndDay = new Date(data.tickets.endDay);
   const today = new Date();
 
-  const isBetween = (startDay: Date, endDay: Date): boolean => startDay < new Date() && endDay > today;
-  const analyticsEventsTracker = (category = "action") =>
-    (action = "", label = "") => {
-      ReactGa.event({ category, action, label });
-    };
-  const gaEventTracker = analyticsEventsTracker("links");
+  const isBetween = (startDay: Date, endDay: Date): boolean =>
+    startDay < new Date() && endDay > today;
 
   const trackSponsorshipInfo = useCallback(() => {
     gaEventTracker("sponsorship", "sponsorship");
-  }, [gaEventTracker]);
+  }, []);
 
   const trackTickets = useCallback(() => {
     gaEventTracker("ticket", "tickets");
-  }, [gaEventTracker]);
+  }, []);
 
   const trackCFP = useCallback(() => {
     gaEventTracker("CFP", "CFP");
-  }, [gaEventTracker]);
+  }, []);
 
   return (
     <StyledActionDiv>
@@ -53,7 +49,11 @@ const ActionButtons: FC = () => {
         />
       )}
       {isBetween(CFPStartDay, CFPEndDay) && (
-        <Button onClick={trackCFP} text="📢 CFP" link="https://sessionize.com/devbcn23/" />
+        <Button
+          onClick={trackCFP}
+          text="📢 Call For Papers"
+          link="https://sessionize.com/devbcn23/"
+        />
       )}
       {isBetween(sponsorshipStartDay, sponsorshipEndDay) && (
         <Button

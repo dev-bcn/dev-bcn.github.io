@@ -1,7 +1,7 @@
 import { FC } from "react";
 import styled from "styled-components";
-import { Color } from "../../../../styles/colors";
-import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
+import { Color } from "../../styles/colors";
+import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
 
 interface ButtonProps {
   text: string;
@@ -18,7 +18,7 @@ const StyledActionButton = styled.div`
   margin: 20px 1px;
   border-radius: 5px;
   box-shadow: 1px 1px 1px #000;
-  padding: 10px 0;
+  padding: 10px 15px;
   transform: perspective(1px) translateZ(0);
   transition-duration: 0.5s;
   vertical-align: middle;
@@ -56,7 +56,12 @@ const StyledActionButton = styled.div`
 const Button: FC<ButtonProps> = ({ text, link, onClick, disabled }) => {
   return (
     <StyledActionButton className="hvr-bounce-in">
-      <a onClick={onClick} href={link} target="_blank" rel="noreferrer nofollo">
+      <a
+        onClick={onClick}
+        href={link}
+        target="_blank"
+        rel="noreferrer nofollow"
+      >
         {text}
         {disabled && (
           <>

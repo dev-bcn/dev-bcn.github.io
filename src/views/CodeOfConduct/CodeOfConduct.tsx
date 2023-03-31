@@ -10,7 +10,6 @@ import LessThanTransparentIcon from "../../assets/images/LessThanTransparentIcon
 import MoreThanBlue from "../../assets/images/LessThanBlueWhiteIcon.svg";
 import MoreThanTransparentIcon from "../../assets/images/MoreThanTransparentIcon.svg";
 import { RightHashWithText } from "../../components/RightHashWithText/RightHashWithText";
-import { StyledTagsWrapper } from "../Talks/components/TalkCard";
 import { Tag } from "../../components/Tag/Tag";
 import styled from "styled-components";
 import { useWindowSize } from "react-use";
@@ -19,7 +18,7 @@ import {
   StyledMoreIcon,
   StyledSpeakersSection,
 } from "../Speakers/Speakers.style";
-import { StyledMarginBottom } from "../Talks/Talks.style";
+import { StyledMarginBottom, StyledTagsWrapper } from "../Talks/Talks.style";
 import data from "../../data/2023.json";
 import moment from "moment";
 
@@ -80,7 +79,7 @@ const StyleMoreIcon = styled.img`
   }
 `;
 
-export const CodeOfConduct: FC = () => {
+const CodeOfConduct: FC = () => {
   const { width } = useWindowSize();
   const conferenceDate = moment(data.startDay);
 
@@ -298,3 +297,5 @@ export const CodeOfConduct: FC = () => {
     </>
   );
 };
+
+export default CodeOfConduct;

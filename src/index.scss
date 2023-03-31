@@ -5,21 +5,26 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 @font-face {
   font-family: "Square 721 Regular";
   src: url('./fonts/Square 721 Regular.otf');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'DejaVu Sans Bold';
   src: url('./fonts/DejaVu Sans Bold.ttf');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'DejaVu Sans Condensed Bold';
   src: url('./fonts/DejaVu Sans Condensed Bold.ttf');
+  font-display: swap;
 }
 
 @font-face {

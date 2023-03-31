@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Color } from "../../../../styles/colors";
 import { motion } from "framer-motion";
+import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
 
 export const StyledHomaImage = styled.div`
   padding: 70px 0 40px;
@@ -32,10 +33,14 @@ export const StyleHomeContainer = styled.div`
 
 export const StyledTitleContainer = styled.div`
   background-color: ${(props) => props.color || Color.DARK_BLUE};
-  border-radius: 40px;
-  width: 55%;
+  border-radius: 20px;
+  width: 70%;
   margin-bottom: 1rem;
   padding: 10px 5px;
+
+  @media (max-width: ${BIG_BREAKPOINT}px) {
+    width: 80%;
+  }
 `;
 
 export const StyledTitle = styled.h1`

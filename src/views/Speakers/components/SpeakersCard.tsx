@@ -1,88 +1,37 @@
-import { FC } from 'react';
-import styled from 'styled-components';
+import { FC, Suspense } from "react";
 import {
-  MOBILE_BREAKPOINT,
-  TABLET_BREAKPOINT,
-} from '../../../constants/BreakPoints';
-import { Color } from '../../../styles/colors';
+  StyledImageAnimation,
+  StyledSpeakerCard,
+  StyledSpeakerImage,
+  StyledSpeakerImageContainer,
+  StyledSpeakerText,
+  StyledSpeakerTitle,
+} from "./SpeakerCard.Style";
+import { Link } from "react-router-dom";
+import { ROUTE_SPEAKER_DETAIL } from "../../../constants/routes";
+import { ISpeaker } from "../Speaker.types";
+import Loading from "../../../assets/images/logo.png";
 
 type SpeakersCardProps = {
-  speaker: {
-    title: string;
-    subtitle: string;
-    text: string;
-    speakerImage: number;
-  };
+  speaker: ISpeaker;
 };
-
-const StyledSpeakerCard = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 10rem;
-  padding: 0 1rem 1rem 1rem;
-  @media (min-width: ${TABLET_BREAKPOINT}px) {
-    width: 12rem;
-  }
-  @media (min-width: ${MOBILE_BREAKPOINT}px) {
-    width: 15rem;
-  }
-`;
-
-const StyledSpeakerImageContainer = styled.div`
-  width: 100%;
-  height: auto;
-  position: relative;
-`;
-
-const StyledSpeakerImage = styled.img`
-  width: 100%;
-  height: auto;
-  display: block;
-`;
-
-const StyledImageAnimation = styled.div`
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: 0.25s linear;
-  background-color: rgba(239, 71, 111, 0.5);
-  &:hover {
-    opacity: 1;
-  }
-`;
-
-const StyledSpeakerTitle = styled.h5`
-  color: ${Color.WHITE};
-`;
-
-const StyledSpeakerSubtitle = styled.h5`
-  color: ${Color.DARK_BLUE};
-  text-align: left;
-`;
-
-const StyledSpeakerText = styled.p`
-  color: ${Color.WHITE};
-  text-align: left;
-`;
 
 export const SpeakerCard: FC<SpeakersCardProps> = ({ speaker }) => {
   return (
     <StyledSpeakerCard>
-      <StyledSpeakerImageContainer>
-        <StyledSpeakerImage
-          src={require(`../../../assets/images/FaqsImage${speaker.speakerImage}.png`)}
-        />
-        <StyledImageAnimation />
-      </StyledSpeakerImageContainer>
-      <StyledSpeakerTitle>{speaker.title}</StyledSpeakerTitle>
-      <StyledSpeakerSubtitle>{speaker.subtitle}</StyledSpeakerSubtitle>
-      <StyledSpeakerText>{speaker.text}</StyledSpeakerText>
+      <Link
+        to={`${ROUTE_SPEAKER_DETAIL}/${speaker.id}`}
+        style={{ textDecoration: "none" }}
+      >
+        <StyledSpeakerImageContainer>
+          <Suspense fallback={Loading}>
+            <StyledSpeakerImage src={speaker.speakerImage} />
+          </Suspense>
+          <StyledImageAnimation />
+        </StyledSpeakerImageContainer>
+        <StyledSpeakerTitle>{speaker.fullName}</StyledSpeakerTitle>
+        <StyledSpeakerText>{speaker.tagLine}</StyledSpeakerText>
+      </Link>
     </StyledSpeakerCard>
   );
 };

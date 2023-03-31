@@ -1,44 +1,39 @@
-import {BIG_BREAKPOINT, LARGE_BREAKPOINT, MOBILE_BREAKPOINT,} from '../../constants/BreakPoints';
-import {Color} from '../../styles/colors';
-
-import {FC} from 'react';
-import {IMeeting} from './MeetingDetailData';
-import LessThanIconWhite from '../../assets/images/LessThanIconWhite.svg';
-import LessThanIcon from '../../assets/images/LessThanBlueIcon.svg';
-import MoreThanIcon from '../../assets/images/MoreThanBlueIcon.svg';
-import OurSponsors from '../../components/OurSponsors/OurSponsors';
-import SectionWrapper from '../../components/SectionWrapper/SectionWrapper';
-import Slashes from '../../assets/images/SlashesWhite.svg';
-import TagBadge from '../../components/TagBadge/TagBadge';
-import linkedinIcon from '../../assets/images/linkedinIcon.svg';
-import twitterIcon from '../../assets/images/twitterIcon.svg';
-import {useWindowSize} from 'react-use';
 import {
-  StyledAbsoluteSlashes,
+  BIG_BREAKPOINT,
+  LARGE_BREAKPOINT,
+  MOBILE_BREAKPOINT,
+} from "../../constants/BreakPoints";
+import { Color } from "../../styles/colors";
+import { FC, Suspense, useEffect } from "react";
+import { IMeeting } from "./MeetingDetail.Type";
+import LessThanIconWhite from "../../assets/images/LessThanIconWhite.svg";
+import LessThanIcon from "../../assets/images/LessThanBlueIcon.svg";
+import MoreThanIcon from "../../assets/images/MoreThanBlueIcon.svg";
+import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
+import { useWindowSize } from "react-use";
+import {
   StyledContainer,
   StyledDescription,
   StyledDetailsContainer,
+  StyledExtraInfo,
   StyledFlexCol,
-  StyledImageContainer,
   StyledLessThan,
-  StyledLink,
   StyledMeetingTitleContainer,
   StyledName,
   StyledNameContainer,
   StyledRightContainer,
-  StyledSlashes,
-  StyledSocialMediaContainer,
-  StyledSocialMediaIcon,
-  StyledSpeakerDescription,
   StyledSpeakerDetailContainer,
-  StyledSpeakerImg,
-  StyledSpeakerImgBorder,
-  StyledSpeakerTitle,
   StyledTitle,
   StyledTitleImg,
   StyledVideoContainer,
-  StyledVideoTagsContainer
+  StyledVideoTagsContainer,
 } from "./Style.MeetingDetail";
+import { Link } from "react-router-dom";
+import { ROUTE_SPEAKER_DETAIL, ROUTE_TALKS } from "../../constants/routes";
+import conferenceData from "../../data/2023.json";
+import { Tag } from "../../components/Tag/Tag";
+import { ISpeaker } from "../Speakers/Speaker.types";
+
 const getVideoHeight = (windowWidth: number) => {
   let videoHeight;
   if (windowWidth < MOBILE_BREAKPOINT) {
@@ -98,138 +93,136 @@ const opacityVariants = {
     },
   },
 };
+
 interface IMeetingDetailProps {
   meeting: IMeeting;
+  speakers?: ISpeaker[];
 }
 
-const MeetingDetail: FC<IMeetingDetailProps> = ({ meeting }) => {
+type MyType = {
+  urlName?: string;
+  videoUrl?: string;
+  level?: string;
+  videoTags?: string[];
+  speakers?: ISpeaker[];
+  description: string;
+  language?: string;
+  title: string;
+  type?: string;
+  track?: string;
+};
+
+const MeetingDetail: FC<IMeetingDetailProps> = ({
+  meeting,
+  speakers: mySpeakers,
+}) => {
   const { width } = useWindowSize();
 
-  let previousColor = 0;
+  useEffect(() => {
+    document.title = `${meeting.title} - DevBcn ${conferenceData.edition}`;
+  }, [meeting.title]);
 
-  const getRandomColor = () => {
-    let randomNum = 0;
-    do {
-      randomNum = Math.floor(Math.random() * 4);
-    } while (randomNum === previousColor);
-
-    previousColor = randomNum;
-
-    const mappedColors: any = {
-      0: Color.DARK_BLUE,
-      1: Color.YELLOW,
-      2: Color.DARK_BLUE,
-      3: Color.BLUE,
-    };
-
-    return mappedColors[randomNum];
+  const finalMeetingInfo: MyType = {
+    ...meeting,
+    speakers: mySpeakers,
   };
 
   return (
     <SectionWrapper color={Color.WHITE}>
-      <StyledContainer className='MeetingDetail'>
-        <StyledMeetingTitleContainer className='TitleContainer'>
+      <StyledContainer className="MeetingDetail">
+        <StyledMeetingTitleContainer className="TitleContainer">
           <StyledTitleImg
-            initial='initial'
-            animate='animate'
+            initial="initial"
+            animate="animate"
             variants={leftVariants}
             src={LessThanIcon}
           />
           <StyledFlexCol
-            initial='initial'
-            animate='animate'
+            initial="initial"
+            animate="animate"
             variants={downVariants}
           >
-            <StyledTitle>/ {meeting.meetingTitle}</StyledTitle>
-            <StyledDescription>{meeting.meetingDescription}</StyledDescription>
+            <StyledTitle>/ {meeting.title}</StyledTitle>
+            <h4>Description</h4>
+            <StyledDescription>{meeting.description}</StyledDescription>
+            <StyledExtraInfo>
+              <strong>Level: </strong> {meeting.level}
+              <strong> Language: </strong>
+              {meeting.language}
+              <strong> Session type: </strong>
+              {meeting.type}
+              <strong> Track: </strong>
+              {meeting.track}
+            </StyledExtraInfo>
           </StyledFlexCol>
           <StyledTitleImg
-            initial='initial'
-            animate='animate'
+            initial="initial"
+            animate="animate"
             variants={rightVariants}
             src={MoreThanIcon}
           />
         </StyledMeetingTitleContainer>
         <StyledVideoContainer
-          initial='initial'
-          animate='animate'
+          initial="initial"
+          animate="animate"
           variants={opacityVariants}
         >
-          <iframe
-            width='100%'
-            height={getVideoHeight(width)}
-            src='https://www.youtube.com/embed/IxqTPYeXk3k'
-            title='YouTube video player'
-            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-            allowFullScreen
-          ></iframe>
+          {meeting.videoUrl && (
+            <iframe
+              width="100%"
+              height={getVideoHeight(width)}
+              src="https://www.youtube.com/embed/IxqTPYeXk3k"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          )}
           <StyledVideoTagsContainer>
-            {meeting.videoTags.map((tag) => (
-              <TagBadge text={tag} color={getRandomColor()} key={tag} />
+            {meeting.videoTags?.map((tag) => (
+              <Tag text={tag} key={tag} />
             ))}
           </StyledVideoTagsContainer>
         </StyledVideoContainer>
-        <StyledSpeakerDetailContainer className='DetailsContainer'>
+        <StyledSpeakerDetailContainer className="speaker-details-Container">
           <StyledLessThan src={LessThanIconWhite} />
-          <StyledDetailsContainer className='DetailsContainerInner'>
-            {width > BIG_BREAKPOINT && (
-              <StyledImageContainer>
-                <StyledSpeakerImgBorder>
-                  <StyledSpeakerImg photo={meeting.speakerPhotoUrl} />
-                </StyledSpeakerImgBorder>
-                <StyledSocialMediaContainer>
-                  <StyledLink
-                    href={meeting.speakerTwitterUrl}
-                    target={'_blank'}
-                  >
-                    <StyledSocialMediaIcon src={twitterIcon} />
-                  </StyledLink>
-                  <StyledLink
-                    href={meeting.speakerLinkedinUrl}
-                    target={'_blank'}
-                  >
-                    <StyledSocialMediaIcon src={linkedinIcon} noMargin />
-                  </StyledLink>
-                </StyledSocialMediaContainer>
-              </StyledImageContainer>
-            )}
+          <StyledDetailsContainer className="details-container-inner">
             <StyledRightContainer>
-              <StyledNameContainer className='DetailsTitle'>
-                <StyledName>{meeting.speakerName}</StyledName>
-                {width < BIG_BREAKPOINT && (
-                  <>
-                    <StyledSpeakerImgBorder>
-                      <StyledSpeakerImg photo={meeting.speakerPhotoUrl} />
-                    </StyledSpeakerImgBorder>
-                    <StyledSocialMediaContainer>
-                      <StyledLink
-                        href={meeting.speakerTwitterUrl}
-                        target={'_blank'}
-                      >
-                        <StyledSocialMediaIcon src={twitterIcon} />
-                      </StyledLink>
-                      <StyledLink
-                        href={meeting.speakerLinkedinUrl}
-                        target={'_blank'}
-                      >
-                        <StyledSocialMediaIcon src={linkedinIcon} noMargin />
-                      </StyledLink>
-                    </StyledSocialMediaContainer>
-                  </>
-                )}
-                <StyledSlashes src={Slashes} />
-              </StyledNameContainer>
-              <StyledSpeakerTitle>{meeting.speakerTitle}</StyledSpeakerTitle>
-              <StyledSpeakerDescription>
-                {meeting.speakerDescription}
-              </StyledSpeakerDescription>
+              {finalMeetingInfo.speakers?.map((speaker) => (
+                <StyledNameContainer className="DetailsTitle" key={speaker.id}>
+                  <Suspense fallback={<h1>loading</h1>}>
+                    <img
+                      src={speaker.speakerImage}
+                      alt={speaker.fullName}
+                      style={{
+                        width: "128px",
+                        margin: "10px",
+                        borderRadius: "12px",
+                      }}
+                    />
+                  </Suspense>
+                  <StyledName>
+                    <Link to={`${ROUTE_SPEAKER_DETAIL}/${speaker.id}`}>
+                      {speaker.fullName}
+                    </Link>
+                  </StyledName>
+                </StyledNameContainer>
+              ))}
             </StyledRightContainer>
           </StyledDetailsContainer>
-          <StyledAbsoluteSlashes>
-            / / / / / / / / / / / / / / / / /
-          </StyledAbsoluteSlashes>
         </StyledSpeakerDetailContainer>
-        <OurSponsors />
+        <div>
+          <Link
+            to={ROUTE_TALKS}
+            style={{
+              color: Color.MAGENTA,
+              fontWeight: "bold",
+              textAlign: "center",
+              textDecoration: "none",
+            }}
+          >
+            Go back
+          </Link>{" "}
+        </div>
       </StyledContainer>
     </SectionWrapper>
   );

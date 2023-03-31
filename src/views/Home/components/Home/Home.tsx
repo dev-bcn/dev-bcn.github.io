@@ -3,7 +3,10 @@ import { FC } from "react";
 import data from "../../../../data/2023.json";
 import LessThanIcon from "../../../../assets/images/MoreThanBlueWhiteIcon.svg";
 import SectionWrapper from "../../../../components/SectionWrapper/SectionWrapper";
-import { LARGE_BREAKPOINT } from "../../../../constants/BreakPoints";
+import {
+  BIG_BREAKPOINT,
+  LARGE_BREAKPOINT,
+} from "../../../../constants/BreakPoints";
 import TimeCountDown from "./components/TimeCountdown";
 import { useWindowSize } from "react-use";
 import {
@@ -26,6 +29,9 @@ import { Color } from "../../../../styles/colors";
 const StyledLogo = styled.img`
   margin: 20px;
   width: 600px;
+  @media (max-width: ${BIG_BREAKPOINT}px) {
+    width: 80%;
+  }
 `;
 const Home: FC = () => {
   const { width } = useWindowSize();

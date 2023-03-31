@@ -1,13 +1,12 @@
 import { MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
 import { Color } from "../../styles/colors";
-import { FC, useEffect } from "react";
+import { FC, useCallback, useEffect } from "react";
 import LessThanBlueIcon from "../../assets/images/LessThanBlueIcon.svg";
 import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import { SpeakerCard } from "./components/SpeakersCard";
 import TitleSection from "../../components/SectionTitle/TitleSection";
 import { useWindowSize } from "react-use";
-import data from "../../data/2023.json";
 import {
   SpeakersCardsContainer,
   StyledContainerLeftSlash,
@@ -18,15 +17,55 @@ import {
   StyledSpeakersSection,
   StyledWaveContainer,
 } from "./Speakers.style";
+import webData from "../../data/2023.json";
+import Button from "../../components/UI/Button";
+import { gaEventTracker } from "../../components/analytics/Analytics";
+import { useFetchSpeakers, useHardCodedSpeakers } from "./UseFetchSpeakers";
+import { ISpeaker } from "./Speaker.types";
+import * as Sentry from "@sentry/react";
+
+const LessThanGreaterThan = (props: { width: number }) => (
+  <>
+    {props.width > MOBILE_BREAKPOINT && (
+      <>
+        <StyledLessIcon src={LessThanBlueIcon} />
+        <StyledMoreIcon src={MoreThanBlueIcon} />
+      </>
+    )}
+  </>
+);
 
 const Speakers: FC = () => {
   const { width } = useWindowSize();
-  const speakersCurrentYear = data.speakers;
+  const today = new Date();
+  const isBetween = (startDay: Date, endDay: Date): boolean =>
+    startDay < new Date() && endDay > today;
+
+  const { isLoading, error, data: hardCodedSpeakers } = useHardCodedSpeakers();
+  const { error: apiError, data: apiSpeakers } = useFetchSpeakers();
+
+  const mergedSpeakers: ISpeaker[] = [
+    ...(hardCodedSpeakers?.length ? hardCodedSpeakers : []),
+    ...(apiSpeakers?.length ? apiSpeakers : []),
+  ];
+
+  if (error) {
+    Sentry.captureException(error);
+  }
+  if (apiError) {
+    Sentry.captureException(apiError);
+  }
+
+  const trackCFP = useCallback(() => {
+    gaEventTracker("CFP", "CFP");
+  }, []);
 
   useEffect(() => {
-    document.title = `Speakers - DevBcn ${data.edition}`;
+    document.title = `Speakers - DevBcn ${webData.edition}`;
   });
 
+  const CFPStartDay = new Date(webData.cfp.startDay);
+  const CFPEndDay = new Date(webData.cfp.endDay);
   return (
     <>
       <SectionWrapper color={Color.DARK_BLUE} marginTop={5}>
@@ -39,22 +78,34 @@ const Speakers: FC = () => {
             Technologies and in the JCP."
             color={Color.WHITE}
           />
-          {width > MOBILE_BREAKPOINT && (
-            <>
-              <StyledLessIcon src={LessThanBlueIcon} />
-              <StyledMoreIcon src={MoreThanBlueIcon} />
-            </>
-          )}
+          <LessThanGreaterThan width={width} />
           <SpeakersCardsContainer>
-            {speakersCurrentYear.length === 0 && (
+            {isLoading && <p>Loading...</p>}
+            {isBetween(CFPStartDay, CFPEndDay) && (
+              <div
+                style={{
+                  width: "100%",
+                  textAlign: "center",
+                  padding: "20px 30%",
+                }}
+              >
+                <Button
+                  onClick={trackCFP}
+                  text="📢 Apply to be a Speaker"
+                  link="https://sessionize.com/devbcn23/"
+                />
+              </div>
+            )}
+            {mergedSpeakers && mergedSpeakers.length === 0 && (
               <p style={{ color: Color.WHITE }}>
                 No selected speakers yet. Keep in touch in our social media for
                 upcoming announcements
               </p>
             )}
-            {speakersCurrentYear.map((speaker, index) => (
-              <SpeakerCard key={index} speaker={speaker} />
-            ))}
+            {mergedSpeakers &&
+              mergedSpeakers.map((speaker: ISpeaker) => (
+                <SpeakerCard key={speaker.id} speaker={speaker} />
+              ))}
           </SpeakersCardsContainer>
           <StyledContainerRightSlash
             initial={{ x: "100%" }}

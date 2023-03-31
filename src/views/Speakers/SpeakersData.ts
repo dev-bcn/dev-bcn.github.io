@@ -1,128 +1,23 @@
-export const speakersData = [
+import { ISpeaker } from "./Speaker.types";
+
+export const speakersData: ISpeaker[] = [
   {
-    title: 'ANTÓN RODRÍGUEZ',
-    subtitle: 'Principal Software engineer',
-    speakerImage: 1,
-    text: 'Kafka y Pulsar: una comparación gentil',
-  },
-  {
-    title: 'MALA GUPTA',
-    subtitle: 'Developer Advocate @JetBrains, Published Author',
-    speakerImage: 1,
-    text: 'IntelliJ IDEA and Keeping Pace with the New Java Language Features',
-  },
-  {
-    title: 'DAVID GÓMEZ G.',
-    subtitle: 'Developer Advocate',
-    speakerImage: 1,
-    text: 'Construyendo aplicaciones monolíticas que puedan escalar a micro servicios',
-  },
-  {
-    title: 'AUREA MUNOZ',
-    subtitle: 'Software Engineer',
-    speakerImage: 1,
-    text: 'Despliega en Kubernetes usando Dekorate',
-  },
-  {
-    title: 'ANA-MARIA MIHALCEANU',
-    subtitle: 'Architect',
-    speakerImage: 1,
-    text: 'Techniques for maintainable Quarkus Applications',
-  },
-  {
-    title: 'THOMAS VITALE',
-    subtitle: 'Senior Software Engineer',
-    speakerImage: 1,
-    text: 'Event-driven and serverless with Spring Cloud and Spring Native',
-  },
-  {
-    title: 'ANTÓN RODRÍGUEZ',
-    subtitle: 'Principal Software engineer',
-    speakerImage: 1,
-    text: 'Kafka y Pulsar: una comparación gentil',
-  },
-  {
-    title: 'ANTÓN RODRÍGUEZ',
-    subtitle: 'Principal Software engineer',
-    speakerImage: 1,
-    text: 'Kafka y Pulsar: una comparación gentil',
-  },
-  {
-    title: 'MALA GUPTA',
-    subtitle: 'Developer Advocate @JetBrains, Published Author',
-    speakerImage: 1,
-    text: 'IntelliJ IDEA and Keeping Pace with the New Java Language Features',
-  },
-  {
-    title: 'DAVID GÓMEZ G.',
-    subtitle: 'Developer Advocate',
-    speakerImage: 1,
-    text: 'Construyendo aplicaciones monolíticas que puedan escalar a micro servicios',
-  },
-  {
-    title: 'AUREA MUNOZ',
-    subtitle: 'Software Engineer',
-    speakerImage: 1,
-    text: 'Despliega en Kubernetes usando Dekorate',
-  },
-  {
-    title: 'ANA-MARIA MIHALCEANU',
-    subtitle: 'Architect',
-    speakerImage: 1,
-    text: 'Techniques for maintainable Quarkus Applications',
-  },
-  {
-    title: 'THOMAS VITALE',
-    subtitle: 'Senior Software Engineer',
-    speakerImage: 1,
-    text: 'Event-driven and serverless with Spring Cloud and Spring Native',
-  },
-  {
-    title: 'ANTÓN RODRÍGUEZ',
-    subtitle: 'Principal Software engineer',
-    speakerImage: 1,
-    text: 'Kafka y Pulsar: una comparación gentil',
-  },
-  {
-    title: 'ANTÓN RODRÍGUEZ',
-    subtitle: 'Principal Software engineer',
-    speakerImage: 1,
-    text: 'Kafka y Pulsar: una comparación gentil',
-  },
-  {
-    title: 'MALA GUPTA',
-    subtitle: 'Developer Advocate @JetBrains, Published Author',
-    speakerImage: 1,
-    text: 'IntelliJ IDEA and Keeping Pace with the New Java Language Features',
-  },
-  {
-    title: 'DAVID GÓMEZ G.',
-    subtitle: 'Developer Advocate',
-    speakerImage: 1,
-    text: 'Construyendo aplicaciones monolíticas que puedan escalar a micro servicios',
-  },
-  {
-    title: 'AUREA MUNOZ',
-    subtitle: 'Software Engineer',
-    speakerImage: 1,
-    text: 'Despliega en Kubernetes usando Dekorate',
-  },
-  {
-    title: 'ANA-MARIA MIHALCEANU',
-    subtitle: 'Architect',
-    speakerImage: 1,
-    text: 'Techniques for maintainable Quarkus Applications',
-  },
-  {
-    title: 'THOMAS VITALE',
-    subtitle: 'Senior Software Engineer',
-    speakerImage: 1,
-    text: 'Event-driven and serverless with Spring Cloud and Spring Native',
-  },
-  {
-    title: 'ANTÓN RODRÍGUEZ',
-    subtitle: 'Principal Software engineer',
-    speakerImage: 1,
-    text: 'Kafka y Pulsar: una comparación gentil',
+    id: "natalia",
+    speakerImage: "/images/speakers/natalia-venditto.png",
+    tagLine:
+      "Principal #JavaScript e2e Lead for #DX  @Microsoft   @Azure  #DevDiv x-  @MongoDB  Architect. ❤️#Devtools, #Serverless, #OSS, Frontend, DBs & Edge/WASM.",
+    bio: "",
+    fullName: "Natalia Venditto",
+    linkedInUrl: {
+      url: "https://www.linkedin.com/in/AnfibiaCreativa",
+      linkType: "LinkedIn",
+      title: "LinkedIn",
+    },
+    twitterUrl: {
+      url: "https://www.twitter.com/AnfibiaCreativa",
+      linkType: "Twitter",
+      title: "Twitter",
+    },
+    sessions: [],
   },
 ];

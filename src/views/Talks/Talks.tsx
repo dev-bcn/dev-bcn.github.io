@@ -2,10 +2,9 @@ import React, { FC } from "react";
 import LessThanDarkBlueIcon from "../../assets/images/LessThanDarkBlueIcon.svg";
 import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import { TalkCard } from "./components/TalkCard";
 import TitleSection from "../../components/SectionTitle/TitleSection";
 import { Color } from "../../styles/colors";
-import data from "../../data/2023.json";
+import conferenceData from "../../data/2023.json";
 import {
   StyledMarginBottom,
   StyledSpeakersSection,
@@ -13,14 +12,29 @@ import {
   StyledTitleIcon,
   StyledWaveContainer,
 } from "./Talks.style";
-import { StyledWrapperSection } from "../JobOffers/JobOffers.Style";
+import TrackInformation from "./components/TrackInformation";
+import { useFetchTalks, useHardCodedTalks } from "./UseFetchTalks";
+import styled from "styled-components";
+import * as Sentry from "@sentry/react";
+import { IGroup } from "./Talk.types";
 
-export const Talks: FC = () => {
-  const currentYearTalks = data.talks;
+export const StyledSessionSection = styled.section``;
+
+const Talks: FC = () => {
+  const { data } = useHardCodedTalks();
+  const { isLoading, error, data: apiTalks } = useFetchTalks();
+
+  const mergedTalks: IGroup[] = [
+    ...(data?.length ? data : []),
+    ...(apiTalks?.length ? apiTalks : []),
+  ];
+
+  if (error) {
+    Sentry.captureException(error);
+  }
   React.useEffect(() => {
-    document.title = `Talks - DevBcn - ${data.edition}`;
+    document.title = `Talks - DevBcn - ${conferenceData.edition}`;
   }, []);
-
   return (
     <>
       <SectionWrapper color={Color.DARK_BLUE} marginTop={5}>
@@ -52,19 +66,24 @@ export const Talks: FC = () => {
         </svg>
       </StyledWaveContainer>
       <SectionWrapper color={Color.LIGHT_BLUE} marginTop={1}>
-        <StyledWrapperSection>
-          {currentYearTalks.length === 0 && (
-            <p style={{ color: Color.WHITE }}>
+        <StyledSessionSection>
+          {isLoading && <h1>Loading </h1>}
+          {mergedTalks && mergedTalks?.length === 0 && (
+            <p style={{ color: Color.WHITE, textAlign: "center" }}>
               No talks selected yet. Keep in touch in our social media for
               upcoming announcements
             </p>
           )}
-          {currentYearTalks.map((talk, index) => (
-            <TalkCard talk={talk} index={index} />
-          ))}
-        </StyledWrapperSection>
+          {mergedTalks &&
+            Array.isArray(mergedTalks) &&
+            mergedTalks.map((track) => (
+              <TrackInformation key={track.groupId} track={track} />
+            ))}
+        </StyledSessionSection>
         <StyledMarginBottom />
       </SectionWrapper>
     </>
   );
 };
+
+export default Talks;

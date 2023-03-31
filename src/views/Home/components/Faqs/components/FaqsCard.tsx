@@ -1,7 +1,10 @@
-import { FC } from "react";
+import { FC, Suspense } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { Color } from "../../../../../styles/colors";
+import Logo from "../../../../../assets/images/logo.svg";
+import { StyledLoadingImage } from "../../../../../components/Loading/Loading";
+import { BIG_BREAKPOINT } from "../../../../../constants/BreakPoints";
 
 type FaqCardType = {
   faq: {
@@ -26,11 +29,10 @@ export const StyledFaqCard = styled.div<{ direction: string }>`
 `;
 
 export const StyledFaqImageContainer = styled.div<{ padding: string }>`
-  height: 10rem;
   position: relative;
   @media (min-width: 800px) {
     height: auto;
-    width: 40%;
+
     padding: ${({ padding }) => {
       return padding;
     }};
@@ -39,10 +41,15 @@ export const StyledFaqImageContainer = styled.div<{ padding: string }>`
 export const StyledFaqImage = styled(motion.img)`
   border: 1px solid ${Color.YELLOW};
   display: block;
-  height: 100%;
+  height: 242px;
   margin: 3px;
   padding: 5px;
-  width: 100%;
+  width: 360px;
+  border-radius: 5px;
+
+  @media (max-width: ${BIG_BREAKPOINT}px) {
+    width: 95%;
+  }
 `;
 
 export const StyledFaqInfo = styled(motion.div)<{ align: string }>`
@@ -57,31 +64,22 @@ export const StyledFaqInfo = styled(motion.div)<{ align: string }>`
   }
 `;
 
-export const StyledFaqTitle = styled.h2<{ textAlign: string }>`
+export const StyledFaqTitle = styled.h2`
   padding-top: 1rem;
+  color: ${Color.YELLOW};
+  font-size: 1.3em;
   @media (min-width: 800px) {
-    text-align: ${({ textAlign }) => {
-      return textAlign;
-    }};
+    text-align: left;
     padding-top: unset;
   }
 `;
 
-export const StyledFaqText = styled.p<{ textAlign: string }>`
+export const StyledFaqText = styled.p`
   padding: 0.5rem 0;
   @media (min-width: 800px) {
     hyphens: auto;
     word-wrap: break-word;
-    text-align: ${({ textAlign }) => {
-      return textAlign;
-    }};
-  }
-`;
-
-export const StyledFaqDetailButton = styled.img`
-  width: 6rem;
-  @media (min-width: 800px) {
-    width: 7rem;
+    text-align: left;
   }
 `;
 
@@ -90,20 +88,16 @@ const FaqCard: FC<FaqCardType> = ({ faq, index }) => {
 
   return (
     <StyledFaqCard direction={isOdd ? "row" : "row-reverse"}>
-      <StyledFaqImageContainer
-        padding={isOdd ? "0 .75rem 0 0" : "0 0 0 .75rem"}
-      >
-        <StyledFaqImage
-          src={require(`../../../../../assets/images/FaqsImage${index}.png`)}
-        />
+      <StyledFaqImageContainer padding={isOdd ? "0 1rem 0 0" : "0 0 0 1rem"}>
+        <Suspense fallback={<StyledLoadingImage src={Logo} />}>
+          <StyledFaqImage
+            src={require(`../../../../../assets/images/FaqsImage${index}.png`)}
+          />
+        </Suspense>
       </StyledFaqImageContainer>
       <StyledFaqInfo align={isOdd ? "flex-start" : "flex-end"}>
-        <StyledFaqTitle textAlign={isOdd ? "left" : "right"}>
-          {faq.question}
-        </StyledFaqTitle>
-        <StyledFaqText textAlign={isOdd ? "left" : "right"}>
-          {faq.answer}
-        </StyledFaqText>
+        <StyledFaqTitle>{faq.question}</StyledFaqTitle>
+        <StyledFaqText>{faq.answer}</StyledFaqText>
       </StyledFaqInfo>
     </StyledFaqCard>
   );
