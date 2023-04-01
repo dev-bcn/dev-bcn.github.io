@@ -77,7 +77,7 @@ describe("fetch speaker hook and speaker adapter", () => {
   it("should adapt from  a server response", async () => {
     const queryClient = new QueryClient();
 
-    axios.get.mockImplementation(() => Promise.resolve(payload));
+    mockedAxios.get.mockImplementation(() => Promise.resolve(payload));
     const wrapper: FC<React.PropsWithChildren<{}>> = ({ children }) => {
       return (
         <QueryClientProvider client={queryClient}>
