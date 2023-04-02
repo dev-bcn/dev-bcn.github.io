@@ -1,9 +1,13 @@
-import {AnimatePresence} from 'framer-motion';
-import {FC} from 'react';
-import {leftVariants, rightVariants, StyledSponsorBadgeLeft} from "./Sponsors.style";
+import { AnimatePresence } from "framer-motion";
+import { FC } from "react";
+import {
+  leftVariants,
+  rightVariants,
+  StyledSponsorBadgeLeft,
+} from "./Sponsors.style";
 
 interface ISponsorBadgeProps {
-  position: 'left' | 'right';
+  position: "left" | "right";
   color: string;
   isVisible: boolean;
 }
@@ -19,10 +23,10 @@ const SponsorBadge: FC<ISponsorBadgeProps> = ({
         <StyledSponsorBadgeLeft
           color={color}
           position={position}
-          initial='initial'
-          animate='animate'
-          exit='exit'
-          variants={position === 'left' ? leftVariants : rightVariants}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          variants={position === "left" ? leftVariants : rightVariants}
         />
       )}
     </AnimatePresence>

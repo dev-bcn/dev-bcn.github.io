@@ -51,7 +51,6 @@ const Navigation: FC = () => {
 
         {!isHomePage() && <Breadcrumbs />}
       </StyledHeaderWrapper>
-
       <AnimatePresence>
         {isOpened && (
           <StyledNavigationContainer
