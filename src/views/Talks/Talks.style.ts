@@ -93,6 +93,7 @@ export const StyledTrackInfo = styled.h2`
    {
     color: ${Color.DARK_BLUE};
     margin-left: 40px;
+    margin-bottom: 20px;
   }
 `;
 export const StyledSessionSection = styled.section`

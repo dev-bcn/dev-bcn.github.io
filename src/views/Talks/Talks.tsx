@@ -22,16 +22,37 @@ export const StyledSessionSection = styled.section``;
 
 const Talks: FC = () => {
   const { data } = useHardCodedTalks();
+  const [selectedGroupId, setSelectedGroupId] = React.useState<
+    number | undefined
+  >();
+
   const { isLoading, error, data: apiTalks } = useFetchTalks();
 
-  const mergedTalks: IGroup[] = [
-    ...(data?.length ? data : []),
-    ...(apiTalks?.length ? apiTalks : []),
-  ];
+  const mergedTalks: IGroup[] = [...(data ?? []), ...(apiTalks ?? [])];
+
+  const handleChangeGroup = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedGroupId(Number.parseInt(event.target.value));
+  };
 
   if (error) {
     Sentry.captureException(error);
   }
+
+  interface TrackInfo {
+    id: number;
+    name: string;
+  }
+
+  const groupMap: TrackInfo[] = mergedTalks.map((group) => {
+    return {
+      id: group.groupId,
+      name: group.groupName,
+    };
+  });
+
+  const filteredTalks = mergedTalks.filter(
+    (talk) => !selectedGroupId || talk.groupId === selectedGroupId
+  );
   React.useEffect(() => {
     document.title = `Talks - DevBcn - ${conferenceData.edition}`;
   }, []);
@@ -74,11 +95,34 @@ const Talks: FC = () => {
               upcoming announcements
             </p>
           )}
-          {mergedTalks &&
-            Array.isArray(mergedTalks) &&
-            mergedTalks.map((track) => (
-              <TrackInformation key={track.groupId} track={track} />
-            ))}
+          {mergedTalks && Array.isArray(mergedTalks) && (
+            <>
+              <div style={{ margin: "10px" }}>
+                <label htmlFor="group-id-select">
+                  <strong>Filter by Track:</strong>
+                </label>
+                <select
+                  id="group-id-select"
+                  value={selectedGroupId}
+                  onChange={handleChangeGroup}
+                  style={{
+                    padding: "5px",
+                    color: "#002454",
+                    backgroundColor: "#4798CA",
+                    border: "none",
+                  }}
+                >
+                  <option value="">All tracks</option>
+                  {groupMap.map((group) => (
+                    <option value={group.id}>{group.name}</option>
+                  ))}
+                </select>
+              </div>
+              {filteredTalks.map((track) => (
+                <TrackInformation key={track.groupId} track={track} />
+              ))}
+            </>
+          )}
         </StyledSessionSection>
         <StyledMarginBottom />
       </SectionWrapper>
