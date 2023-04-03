@@ -1,6 +1,5 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
-import { StyledFaqTitle } from "../../Home/components/Faqs/components/FaqsCard";
 import { StyledJobsInfo } from "../../JobOffers/components/JobsCard";
 import { Tag } from "../../../components/Tag/Tag";
 import {
@@ -17,11 +16,11 @@ import {
   extractSessionTags,
 } from "../UseFetchTalks";
 import {
-  StyledMoreInfoLink,
   StyledSessionCard,
   StyledSessionText,
   StyledTagsWrapper,
   StyledTalkSpeaker,
+  StyledTalkTitle,
 } from "../Talks.style";
 
 interface TalkCardProps {
@@ -44,7 +43,9 @@ export const TalkCard: FC<TalkCardProps> = ({ talk }) => {
   return (
     <StyledSessionCard>
       <StyledJobsInfo align={"flex-start"}>
-        <StyledFaqTitle>{talk.title}</StyledFaqTitle>
+        <StyledTalkTitle to={`${ROUTE_TALK_DETAIL}/${talk.id}`}>
+          {talk.title}
+        </StyledTalkTitle>
         <StyledSessionText>
           {talk.speakers.map((speaker: SessionSpeaker) => (
             <StyledTalkSpeaker key={speaker.id}>
@@ -58,13 +59,10 @@ export const TalkCard: FC<TalkCardProps> = ({ talk }) => {
           Level: {extractSessionCategoryInfo(talk.categories)}
         </StyledSessionText>
         <StyledTagsWrapper>
-          {extractSessionTags(talk.questionAnswers)?.map((tag, index) => {
-            return <Tag key={index} text={tag} />;
+          {extractSessionTags(talk.questionAnswers)?.map((tag) => {
+            return <Tag key={tag} text={tag} />;
           })}
         </StyledTagsWrapper>
-        <StyledMoreInfoLink to={`${ROUTE_TALK_DETAIL}/${talk.id}`}>
-          More info +
-        </StyledMoreInfoLink>
       </StyledJobsInfo>
     </StyledSessionCard>
   );
