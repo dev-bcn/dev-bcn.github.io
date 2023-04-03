@@ -44,6 +44,10 @@ const Talks: FC = () => {
   const { isLoading, error, data } = useFetchTalks();
   //endregion
 
+  const handleChangeGroup = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedGroupId(Number.parseInt(event.target.value));
+  };
+
   if (error) {
     Sentry.captureException(error);
   }
