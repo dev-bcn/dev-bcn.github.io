@@ -56,7 +56,7 @@ export const StyledSessionCard = styled.div`
     rgba(71, 152, 202, 0.2) 100%
   );
   border-radius: 10px;
-  padding: 5px 15px;
+  padding: 15px;
   @media (min-width: 800px) {
     text-align: left;
     max-width: 900px;
