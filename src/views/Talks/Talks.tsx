@@ -20,6 +20,11 @@ import { IGroup } from "./Talk.types";
 
 export const StyledSessionSection = styled.section``;
 
+interface TrackInfo {
+  id: number;
+  name: string;
+}
+
 const Talks: FC = () => {
   const sessionSelectedGroupId = sessionStorage.getItem("selectedGroupId");
 
@@ -40,11 +45,6 @@ const Talks: FC = () => {
 
   if (error) {
     Sentry.captureException(error);
-  }
-
-  interface TrackInfo {
-    id: number;
-    name: string;
   }
 
   const groupMap: TrackInfo[] = mergedTalks.map((group) => {
