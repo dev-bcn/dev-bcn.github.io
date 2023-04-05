@@ -21,6 +21,8 @@ import { IGroup } from "./Talk.types";
 export const StyledSessionSection = styled.section``;
 
 const Talks: FC = () => {
+  const sessionSelectedGroupId = sessionStorage.getItem("selectedGroupId");
+
   const { data } = useHardCodedTalks();
   const [selectedGroupId, setSelectedGroupId] = React.useState<
     number | undefined
@@ -32,6 +34,8 @@ const Talks: FC = () => {
 
   const handleChangeGroup = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedGroupId(Number.parseInt(event.target.value));
+    const SESSION_SELECTED_GROUP_ID = "selectedGroupId";
+    sessionStorage.setItem(SESSION_SELECTED_GROUP_ID, event.target.value);
   };
 
   if (error) {
@@ -55,7 +59,10 @@ const Talks: FC = () => {
   );
   React.useEffect(() => {
     document.title = `Talks - DevBcn - ${conferenceData.edition}`;
-  }, []);
+    if (sessionSelectedGroupId !== "" && sessionSelectedGroupId !== null) {
+      setSelectedGroupId(Number.parseInt(sessionSelectedGroupId));
+    }
+  }, [sessionSelectedGroupId]);
   return (
     <>
       <SectionWrapper color={Color.DARK_BLUE} marginTop={5}>
@@ -114,7 +121,9 @@ const Talks: FC = () => {
                 >
                   <option value="">All tracks</option>
                   {groupMap.map((group) => (
-                    <option value={group.id}>{group.name}</option>
+                    <option key={group.id} value={group.id}>
+                      {group.name}
+                    </option>
                   ))}
                 </select>
               </div>
