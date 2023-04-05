@@ -7,6 +7,7 @@ import {
   ROUTE_TALK_DETAIL,
 } from "../../../constants/routes";
 import {
+  CategoryItemEnum,
   QuestionAnswers,
   SessionCategory,
   SessionSpeaker,
@@ -56,7 +57,9 @@ export const TalkCard: FC<TalkCardProps> = ({ talk }) => {
           ))}
         </StyledSessionText>
         <StyledSessionText>
-          Level: {extractSessionCategoryInfo(talk.categories)}
+          <strong>Format:</strong>{" "}
+          {extractSessionCategoryInfo(talk.categories, CategoryItemEnum.Format)}
+          <strong> Level:</strong> {extractSessionCategoryInfo(talk.categories)}{" "}
         </StyledSessionText>
         <StyledTagsWrapper>
           {extractSessionTags(talk.questionAnswers)?.map((tag) => {
