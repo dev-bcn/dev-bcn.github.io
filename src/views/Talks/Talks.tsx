@@ -46,6 +46,8 @@ const Talks: FC = () => {
 
   const handleChangeGroup = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedGroupId(Number.parseInt(event.target.value));
+    const SESSION_SELECTED_GROUP_ID = "selectedGroupId";
+    sessionStorage.setItem(SESSION_SELECTED_GROUP_ID, event.target.value);
   };
 
   if (error) {
