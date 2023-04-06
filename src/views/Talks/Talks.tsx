@@ -17,31 +17,28 @@ import { useFetchTalks, useHardCodedTalks } from "./UseFetchTalks";
 import styled from "styled-components";
 import * as Sentry from "@sentry/react";
 import { IGroup } from "./Talk.types";
+import { Dropdown, DropdownChangeEvent } from "primereact/dropdown";
+import "primereact/resources/themes/lara-light-indigo/theme.css";
+import "../../styles/theme.css";
+import "primereact/resources/primereact.min.css";
 
 export const StyledSessionSection = styled.section``;
 
 interface TrackInfo {
-  id: number;
   name: string;
+  code: string;
 }
 
-const Talks: FC = () => {
-  const sessionSelectedGroupId = sessionStorage.getItem("selectedGroupId");
+const sessionSelectedGroupId = sessionStorage.getItem("selectedGroupId");
 
+const Talks: FC = () => {
   const { data } = useHardCodedTalks();
-  const [selectedGroupId, setSelectedGroupId] = React.useState<
-    number | undefined
-  >();
+  const [selectedGroupId, setSelectedGroupId] =
+    React.useState<TrackInfo | null>();
 
   const { isLoading, error, data: apiTalks } = useFetchTalks();
 
   const mergedTalks: IGroup[] = [...(data ?? []), ...(apiTalks ?? [])];
-
-  const handleChangeGroup = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedGroupId(Number.parseInt(event.target.value));
-    const SESSION_SELECTED_GROUP_ID = "selectedGroupId";
-    sessionStorage.setItem(SESSION_SELECTED_GROUP_ID, event.target.value);
-  };
 
   if (error) {
     Sentry.captureException(error);
@@ -49,18 +46,22 @@ const Talks: FC = () => {
 
   const groupMap: TrackInfo[] = mergedTalks.map((group) => {
     return {
-      id: group.groupId,
+      code: group.groupId.toString(),
       name: group.groupName,
     };
   });
 
   const filteredTalks = mergedTalks.filter(
-    (talk) => !selectedGroupId || talk.groupId === selectedGroupId
+    (talk) =>
+      !selectedGroupId || talk.groupId.toString() === selectedGroupId.code
   );
   React.useEffect(() => {
     document.title = `Talks - DevBcn - ${conferenceData.edition}`;
     if (sessionSelectedGroupId !== "" && sessionSelectedGroupId !== null) {
-      setSelectedGroupId(Number.parseInt(sessionSelectedGroupId));
+      setSelectedGroupId({
+        name: "session",
+        code: sessionSelectedGroupId,
+      });
     }
   }, [sessionSelectedGroupId]);
   return (
@@ -106,26 +107,18 @@ const Talks: FC = () => {
             <>
               <div style={{ margin: "10px" }}>
                 <label htmlFor="group-id-select">
-                  <strong>Filter by Track:</strong>
+                  <strong>Filter by Track: </strong>
                 </label>
-                <select
-                  id="group-id-select"
+                <Dropdown
                   value={selectedGroupId}
-                  onChange={handleChangeGroup}
-                  style={{
-                    padding: "5px",
-                    color: "#002454",
-                    backgroundColor: "#4798CA",
-                    border: "none",
-                  }}
-                >
-                  <option value="">All tracks</option>
-                  {groupMap.map((group) => (
-                    <option key={group.id} value={group.id}>
-                      {group.name}
-                    </option>
-                  ))}
-                </select>
+                  onChange={(e: DropdownChangeEvent) =>
+                    setSelectedGroupId(e.value)
+                  }
+                  options={groupMap}
+                  optionLabel="name"
+                  placeholder="Select a Track"
+                  className="w-full md:w-14rem"
+                />
               </div>
               {filteredTalks.map((track) => (
                 <TrackInformation key={track.groupId} track={track} />

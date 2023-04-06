@@ -112,3 +112,15 @@ export const StyledTalkSpeaker = styled.p`
     color: ${Color.DARK_BLUE};
   }
 `;
+
+export const StyledSelectTrack = styled.select`
+   {
+    padding: 5px;
+    color: ${Color.YELLOW};
+    background-color: ${Color.LIGHT_BLUE};
+    font-family: "Square 721 Regular", sans-serif;
+    border: none;
+    font-size: 1.2em;
+    max-width: 15%;
+  }
+`;
