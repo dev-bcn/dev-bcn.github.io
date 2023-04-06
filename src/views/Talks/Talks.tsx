@@ -63,7 +63,7 @@ const Talks: FC = () => {
         code: sessionSelectedGroupId,
       });
     }
-  }, [sessionSelectedGroupId]);
+  }, []);
   return (
     <>
       <SectionWrapper color={Color.DARK_BLUE} marginTop={5}>
