@@ -9,7 +9,7 @@
     --text-color-secondary: #ffd166;
     --primary-color: #4798ca;
     --primary-color-text: #121212;
-    --font-family: "Square 721 Regular", sans-serif;
+    --font-family: 'Square 721 Regular', sans-serif;
     --surface-0: #0e1315;
     --surface-50: #262b2c;
     --surface-100: #3e4244;
@@ -7119,11 +7119,11 @@
 }
 
 .p-accordion .p-accordion-toggle-icon.pi-chevron-right::before {
-    content: "mamalo"
+    content: ""
 }
 
 .p-accordion .p-accordion-toggle-icon.pi-chevron-down::before {
-    content: "mamalo"
+    content: ""
 }
 
 .p-accordion .p-accordion-header.p-highlight .p-accordion-header-link {
@@ -7189,11 +7189,11 @@
 }
 
 .p-panelmenu .p-panelmenu-icon.pi-chevron-right::before {
-    content: "mamalo"
+    content: ""
 }
 
 .p-panelmenu .p-panelmenu-icon.pi-chevron-down::before {
-    content: "mamalo"
+    content: ""
 }
 
 .p-panelmenu .p-panelmenu-header.p-highlight > a {

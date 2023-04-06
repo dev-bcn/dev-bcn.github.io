@@ -38,17 +38,12 @@ const Talks: FC = () => {
   const sessionSelectedGroupCode = useSessionStorage("selectedGroupCode");
   const sessionSelectedGroupName = useSessionStorage("selectedGroupName");
 
+const Talks: FC = () => {
   const [selectedGroupId, setSelectedGroupId] =
     React.useState<TrackInfo | null>();
 
   const { isLoading, error, data } = useFetchTalks();
   //endregion
-
-  const handleChangeGroup = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedGroupId(Number.parseInt(event.target.value));
-    const SESSION_SELECTED_GROUP_ID = "selectedGroupId";
-    sessionStorage.setItem(SESSION_SELECTED_GROUP_ID, event.target.value);
-  };
 
   if (error) {
     Sentry.captureException(error);
