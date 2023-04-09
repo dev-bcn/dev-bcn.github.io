@@ -81,7 +81,7 @@
     "eslint": "^8.37.0",
     "gh-pages": "^5.0.0",
     "history": "^4.10.1",
-    "prettier": "^2.8.4",
+    "prettier": "^2.8.7",
     "react-ga": "^3.3.1",
     "react-test-renderer": "^18.2.0"
   }
