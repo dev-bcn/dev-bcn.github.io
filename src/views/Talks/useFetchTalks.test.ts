@@ -100,9 +100,9 @@ describe("sessionAdapter", () => {
       ],
       videoUrl: "https://example.com/video.mp4",
       videoTags: ["java", "openjdk"],
-      level: "Introductory and overview",
-      language: "English",
-      type: "Session",
+      level: "Introductory and overview ⭐",
+      language: "English 🇬🇧",
+      type: "Session 🗣",
       track: "Java ( core frameworks & libraries )",
     };
 
