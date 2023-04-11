@@ -82,7 +82,7 @@ export const extractSessionCategoryInfo = (
     return `${info} 🇬🇧`;
   }
 
-  return `${info}🤷🏽‍♀️`;
+  return `${info}`;
 };
 
 export const sessionAdapter = (
