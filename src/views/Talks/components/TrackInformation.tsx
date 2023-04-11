@@ -17,8 +17,6 @@ const useGenerateAnchorName = (trackName: string) => {
 };
 
 const TrackInformation: FC<TrackInfoProps> = ({ track }) => {
-  // eslint-disable-next-line no-console
-  console.log(`Track information ${track.groupName} rendered`);
   const anchorName = useGenerateAnchorName(track.groupName);
 
   return (
