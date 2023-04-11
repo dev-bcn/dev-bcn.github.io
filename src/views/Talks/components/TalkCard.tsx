@@ -57,9 +57,11 @@ export const TalkCard: FC<TalkCardProps> = ({ talk }) => {
           ))}
         </StyledSessionText>
         <StyledSessionText>
-          <strong>Format:</strong>{" "}
-          {extractSessionCategoryInfo(talk.categories, CategoryItemEnum.Format)}
-          <strong> Level:</strong> {extractSessionCategoryInfo(talk.categories)}{" "}
+          {`${extractSessionCategoryInfo(
+            talk.categories,
+            CategoryItemEnum.Format
+          )} `}
+          {extractSessionCategoryInfo(talk.categories)}{" "}
         </StyledSessionText>
         <StyledTagsWrapper>
           {extractSessionTags(talk.questionAnswers)?.map((tag) => {

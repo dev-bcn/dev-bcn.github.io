@@ -37,7 +37,7 @@ export const StyledMarginBottom = styled.div`
 export const StyledSessionText = styled.div`
   color: ${Color.WHITE};
   padding: 0.5rem 0;
-  font-size: 0.9em;
+  font-size: 0.8em;
   @media (min-width: 800px) {
     hyphens: auto;
     word-wrap: break-word;

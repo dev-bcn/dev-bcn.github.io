@@ -44,7 +44,7 @@ describe("Talks", () => {
         <Talks />
       </QueryClientProvider>
     );
-    const dropdownElement = screen.getByLabelText(/filter by track/i);
+    const dropdownElement = screen.getByText(/Filter by Track/i);
     expect(dropdownElement).toBeInTheDocument();
   });
 

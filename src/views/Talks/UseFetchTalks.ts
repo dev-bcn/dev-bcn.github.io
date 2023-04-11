@@ -32,6 +32,7 @@ export const useFetchTalksById = (id: string): UseQueryResult<Session[]> =>
       .flat(1)
       .filter((session: { id: string }) => session.id === id);
   });
+
 export const extractSessionTags = (
   questionAnswers: QuestionAnswers[]
 ): string[] | undefined => {
@@ -41,16 +42,49 @@ export const extractSessionTags = (
     .at(0);
   return tags?.split(",");
 };
+
+const sessionEmojis: Record<string, string> = {
+  Session: "🗣",
+  Workshop: "💻",
+  "Lightning talk": "⚡️",
+};
+
+const sessionLevel: Record<string, string> = {
+  "Introductory and overview": "⭐",
+  Intermediate: "⭐⭐",
+  Advanced: "⭐⭐⭐",
+};
+
 export const extractSessionCategoryInfo = (
   categories: SessionCategory[],
-  item: string = CategoryItemEnum.Level
-): string | undefined =>
-  categories
-    .filter((category) => category.name === item)
-    .map((categories) => categories.categoryItems)
-    .flat(1)
-    .map((item) => item.name)
-    .at(0);
+  item: CategoryItemEnum = CategoryItemEnum.Level
+): string | undefined => {
+  const info = categories.find((category) => category.name === item)
+    ?.categoryItems?.[0]?.name;
+
+  if (!info) {
+    return undefined;
+  }
+
+  const emojis =
+    item === CategoryItemEnum.Format ? sessionEmojis : sessionLevel;
+
+  for (const [key, value] of Object.entries(emojis)) {
+    if (info.includes(key)) {
+      return `${info} ${value}`;
+    }
+  }
+
+  if (item === CategoryItemEnum.Language && info === "Spanish") {
+    return `${info} 🇪🇸`;
+  }
+  if (item === CategoryItemEnum.Language && info === "English") {
+    return `${info} 🇬🇧`;
+  }
+
+  return `${info}🤷🏽‍♀️`;
+};
+
 export const sessionAdapter = (
   session: Session | undefined
 ): IMeeting | undefined => {

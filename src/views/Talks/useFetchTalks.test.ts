@@ -170,7 +170,7 @@ describe("extractSessionCategoryInfo", () => {
       id: 4,
       name: CategoryItemEnum.Level,
       categoryItems: [
-        { id: 1, name: "Beginner" },
+        { id: 1, name: "Introductory and overview" },
         { id: 2, name: "Intermediate" },
       ],
     },
@@ -185,20 +185,26 @@ describe("extractSessionCategoryInfo", () => {
   ];
 
   test("returns undefined when categories is empty", () => {
-    expect(extractSessionCategoryInfo([], "Level")).toBeUndefined();
+    expect(
+      extractSessionCategoryInfo([], CategoryItemEnum.Level)
+    ).toBeUndefined();
   });
 
   test("returns undefined when the requested item is not present in categories", () => {
-    expect(extractSessionCategoryInfo(categories, "Track")).toBeUndefined();
+    expect(
+      extractSessionCategoryInfo(categories, CategoryItemEnum.Track)
+    ).toBeUndefined();
   });
 
   test("returns the expected output when the requested item is present in categories", () => {
-    expect(extractSessionCategoryInfo(categories, "Level")).toEqual("Beginner");
+    expect(
+      extractSessionCategoryInfo(categories, CategoryItemEnum.Level)
+    ).toEqual("Introductory and overview ⭐");
   });
 
   test("returns the expected output when the requested item is present in categories with a different name", () => {
-    expect(extractSessionCategoryInfo(categories, "Language")).toEqual(
-      "English"
-    );
+    expect(
+      extractSessionCategoryInfo(categories, CategoryItemEnum.Language)
+    ).toEqual("English 🇬🇧");
   });
 });
