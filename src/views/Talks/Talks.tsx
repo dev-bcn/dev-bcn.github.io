@@ -39,6 +39,10 @@ const Talks: FC = () => {
   const sessionSelectedGroupName = useSessionStorage("selectedGroupName");
 
 const Talks: FC = () => {
+  //region Initialization
+  const sessionSelectedGroupCode = useSessionStorage("selectedGroupCode");
+  const sessionSelectedGroupName = useSessionStorage("selectedGroupName");
+  const { data } = useHardCodedTalks();
   const [selectedGroupId, setSelectedGroupId] =
     React.useState<TrackInfo | null>();
 
