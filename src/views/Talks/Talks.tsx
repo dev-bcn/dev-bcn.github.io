@@ -26,17 +26,23 @@ export const StyledSessionSection = styled.section``;
 
 interface TrackInfo {
   name: string;
-  code: string;
+  code?: string;
 }
 
-const sessionSelectedGroupId = sessionStorage.getItem("selectedGroupId");
+const useSessionStorage = (key: string) => {
+  return sessionStorage.getItem(key);
+};
 
 const Talks: FC = () => {
+  //region Initialization
+  const sessionSelectedGroupCode = useSessionStorage("selectedGroupCode");
+  const sessionSelectedGroupName = useSessionStorage("selectedGroupName");
   const { data } = useHardCodedTalks();
   const [selectedGroupId, setSelectedGroupId] =
     React.useState<TrackInfo | null>();
 
   const { isLoading, error, data: apiTalks } = useFetchTalks();
+  //endregion
 
   const mergedTalks: IGroup[] = [...(data ?? []), ...(apiTalks ?? [])];
 
@@ -44,26 +50,54 @@ const Talks: FC = () => {
     Sentry.captureException(error);
   }
 
-  const groupMap: TrackInfo[] = mergedTalks.map((group) => {
-    return {
+  const dropDownOptions: TrackInfo[] = [
+    {
+      name: "All Tracks",
+      code: undefined,
+    },
+    ...mergedTalks.map((group) => ({
       code: group.groupId.toString(),
       name: group.groupName,
-    };
-  });
+    })),
+  ];
 
-  const filteredTalks = mergedTalks.filter(
-    (talk) =>
-      !selectedGroupId || talk.groupId.toString() === selectedGroupId.code
-  );
+  const filteredTalks: IGroup[] =
+    selectedGroupId !== null && selectedGroupId?.code !== undefined
+      ? mergedTalks.filter(
+          (talk) => talk.groupId.toString() === selectedGroupId.code
+        )
+      : mergedTalks;
+
+  // eslint-disable-next-line no-console
+  console.log(` selected group id: ${selectedGroupId?.code}`);
+  // eslint-disable-next-line no-console
+  console.log(` filtered talks: ${filteredTalks.length}`);
+  // eslint-disable-next-line no-console
+  console.log(` merged talks: ${mergedTalks.length}`);
+
   React.useEffect(() => {
     document.title = `Talks - DevBcn - ${conferenceData.edition}`;
-    if (sessionSelectedGroupId !== "" && sessionSelectedGroupId !== null) {
+    if (
+      sessionSelectedGroupCode !== "" &&
+      sessionSelectedGroupCode !== null &&
+      sessionSelectedGroupName !== null &&
+      sessionSelectedGroupName !== ""
+    ) {
+      // eslint-disable-next-line no-console
+      console.log(
+        `== initial load == ${sessionSelectedGroupCode} ${sessionSelectedGroupName}`
+      );
       setSelectedGroupId({
-        name: "session",
-        code: sessionSelectedGroupId,
+        name: sessionSelectedGroupName,
+        code: sessionSelectedGroupCode,
       });
     }
-  }, []);
+  }, [sessionSelectedGroupCode, sessionSelectedGroupName]);
+  const onChangeSelectedTrack = (e: DropdownChangeEvent) => {
+    setSelectedGroupId(e.value);
+    sessionStorage.setItem("selectedGroupCode", e.value.code);
+    sessionStorage.setItem("selectedGroupName", e.value.name);
+  };
   return (
     <>
       <SectionWrapper color={Color.DARK_BLUE} marginTop={5}>
@@ -111,12 +145,10 @@ const Talks: FC = () => {
                 </label>
                 <Dropdown
                   value={selectedGroupId}
-                  onChange={(e: DropdownChangeEvent) =>
-                    setSelectedGroupId(e.value)
-                  }
-                  options={groupMap}
+                  onChange={onChangeSelectedTrack}
+                  options={dropDownOptions}
+                  placeholder="Select Track"
                   optionLabel="name"
-                  placeholder="Select a Track"
                   className="w-full md:w-14rem"
                 />
               </div>
