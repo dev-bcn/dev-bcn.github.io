@@ -1,7 +1,7 @@
 export const ROUTE_ABOUT_US = "/aboutUs";
 export const ROUTE_CONDITIONS = "/conditions";
 export const ROUTE_CODE_OF_CONDUCT = "/codeOfConduct";
-
+export const ROUTE_CFP = "/cfp";
 export const ROUTE_COOKIES = "/cookies";
 export const ROUTE_DIVERSITY = "/diversity";
 export const ROUTE_HOME = "/";
