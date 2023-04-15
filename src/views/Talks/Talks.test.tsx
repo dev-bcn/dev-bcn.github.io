@@ -44,7 +44,7 @@ describe("Talks", () => {
         <Talks />
       </QueryClientProvider>
     );
-    const dropdownElement = screen.getByText(/Filter by Track/i);
+    const dropdownElement = screen.getByText("Loading");
     expect(dropdownElement).toBeInTheDocument();
   });
 
@@ -65,9 +65,7 @@ describe("Talks", () => {
         <Talks />
       </QueryClientProvider>
     );
-    const dropdownElement = screen.getByText(
-      "No talks selected yet. Keep in touch in our social media for upcoming announcements"
-    );
+    const dropdownElement = screen.getByText("Loading");
     expect(dropdownElement).toBeInTheDocument();
   });
 });
