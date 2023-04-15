@@ -16,9 +16,10 @@ import TrackInformation from "./components/TrackInformation";
 import { useFetchTalks } from "./UseFetchTalks";
 import * as Sentry from "@sentry/react";
 import { Dropdown, DropdownChangeEvent } from "primereact/dropdown";
+import "primereact/resources/primereact.min.css";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "../../styles/theme.css";
-import "primereact/resources/primereact.min.css";
+import styled from "styled-components";
 
 interface TrackInfo {
   name: string;
