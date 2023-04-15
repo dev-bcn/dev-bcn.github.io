@@ -19,7 +19,6 @@ import { Dropdown, DropdownChangeEvent } from "primereact/dropdown";
 import "primereact/resources/primereact.min.css";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "../../styles/theme.css";
-import styled from "styled-components";
 
 interface TrackInfo {
   name: string;
