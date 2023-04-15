@@ -17,11 +17,6 @@ export const useFetchTalks = (): UseQueryResult<IGroup[]> =>
     return data.data;
   });
 
-export const useHardCodedTalks = (): UseQueryResult<IGroup[]> =>
-  useQuery("hardcoded-talks", async () => {
-    return [];
-  });
-
 export const useFetchTalksById = (id: string): UseQueryResult<Session[]> =>
   useQuery("talks", async () => {
     const serverResponse = await axios.get(

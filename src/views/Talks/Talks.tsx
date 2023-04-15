@@ -13,7 +13,7 @@ import {
   StyledWaveContainer,
 } from "./Talks.style";
 import TrackInformation from "./components/TrackInformation";
-import { useFetchTalks, useHardCodedTalks } from "./UseFetchTalks";
+import { useFetchTalks } from "./UseFetchTalks";
 import styled from "styled-components";
 import * as Sentry from "@sentry/react";
 import { IGroup } from "./Talk.types";
@@ -37,14 +37,12 @@ const Talks: FC = () => {
   //region Initialization
   const sessionSelectedGroupCode = useSessionStorage("selectedGroupCode");
   const sessionSelectedGroupName = useSessionStorage("selectedGroupName");
-  const { data } = useHardCodedTalks();
+
   const [selectedGroupId, setSelectedGroupId] =
     React.useState<TrackInfo | null>();
 
-  const { isLoading, error, data: apiTalks } = useFetchTalks();
+  const { isLoading, error, data } = useFetchTalks();
   //endregion
-
-  const mergedTalks: IGroup[] = [...(data ?? []), ...(apiTalks ?? [])];
 
   if (error) {
     Sentry.captureException(error);
@@ -55,7 +53,7 @@ const Talks: FC = () => {
       name: "All Tracks",
       code: undefined,
     },
-    ...mergedTalks.map((group) => ({
+    ...data.map((group) => ({
       code: group.groupId.toString(),
       name: group.groupName,
     })),
@@ -63,17 +61,17 @@ const Talks: FC = () => {
 
   const filteredTalks: IGroup[] =
     selectedGroupId !== null && selectedGroupId?.code !== undefined
-      ? mergedTalks.filter(
+      ? data.filter(
           (talk) => talk.groupId.toString() === selectedGroupId.code
         )
-      : mergedTalks;
+      : data;
 
   // eslint-disable-next-line no-console
   console.log(` selected group id: ${selectedGroupId?.code}`);
   // eslint-disable-next-line no-console
   console.log(` filtered talks: ${filteredTalks.length}`);
   // eslint-disable-next-line no-console
-  console.log(` merged talks: ${mergedTalks.length}`);
+  console.log(` merged talks: ${data.length}`);
 
   React.useEffect(() => {
     document.title = `Talks - DevBcn - ${conferenceData.edition}`;
@@ -131,13 +129,13 @@ const Talks: FC = () => {
       <SectionWrapper color={Color.LIGHT_BLUE} marginTop={1}>
         <StyledSessionSection>
           {isLoading && <h1>Loading </h1>}
-          {mergedTalks && mergedTalks?.length === 0 && (
+          {data && data?.length === 0 && (
             <p style={{ color: Color.WHITE, textAlign: "center" }}>
               No talks selected yet. Keep in touch in our social media for
               upcoming announcements
             </p>
           )}
-          {mergedTalks && Array.isArray(mergedTalks) && (
+          {data && Array.isArray(data) && (
             <>
               <div style={{ margin: "10px" }}>
                 <label htmlFor="group-id-select">
