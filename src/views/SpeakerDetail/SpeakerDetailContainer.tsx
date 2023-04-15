@@ -6,33 +6,28 @@ import SpeakerDetail from "./SpeakerDetail";
 import { useParams } from "react-router-dom";
 import { StyledContainer, StyledWaveContainer } from "./Speaker.style";
 import conferenceData from "../../data/2023.json";
-import {
-  useFetchSpeakers,
-  useHardCodedSpeakers,
-} from "../Speakers/UseFetchSpeakers";
+import { useFetchSpeakers } from "../Speakers/UseFetchSpeakers";
 import * as Sentry from "@sentry/react";
 
 const SpeakerDetailContainer: FC = () => {
   const { id } = useParams<{ id: string }>();
 
-  const { data } = useHardCodedSpeakers(id);
-  const { isLoading, error, data: apiSpeaker } = useFetchSpeakers(id);
+  const { isLoading, error, data } = useFetchSpeakers(id);
 
-  const speakerDetail = data?.length ? data : apiSpeaker;
   if (error) {
     Sentry.captureException(error);
   }
   React.useEffect(() => {
-    if (speakerDetail) {
-      document.title = `${speakerDetail[0]?.fullName} - DevBcn - ${conferenceData.edition}`;
+    if (data) {
+      document.title = `${data[0]?.fullName} - DevBcn - ${conferenceData.edition}`;
     }
-  }, [id, speakerDetail]);
+  }, [id, data]);
   return (
     <StyledContainer>
       <SectionWrapper color={Color.BLUE} marginTop={4}>
         {isLoading && <h2>Loading</h2>}
-        {!isLoading && speakerDetail && speakerDetail.length > 0 ? (
-          <SpeakerDetail speaker={speakerDetail[0]} />
+        {!isLoading && data && data.length > 0 ? (
+          <SpeakerDetail speaker={data[0]} />
         ) : (
           "not found"
         )}
