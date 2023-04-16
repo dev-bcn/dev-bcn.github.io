@@ -22,16 +22,7 @@ type IJobsCardProps = {
 };
 
 export const StyledJobsInfo = styled(motion.div)<{ align: string }>`
-  display: flex;
-  flex-direction: column;
   color: ${Color.BLACK_BLUE};
-  align-items: center;
-  @media (min-width: 800px) {
-    width: 60%;
-    align-items: ${({ align }) => {
-      return align;
-    }};
-  }
 `;
 
 const StyledLocationContainer = styled.div`

@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useEffect, useState } from "react";
 import LessThanDarkBlueIcon from "../../assets/images/LessThanDarkBlueIcon.svg";
 import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
@@ -14,20 +14,63 @@ import {
 } from "./Talks.style";
 import TrackInformation from "./components/TrackInformation";
 import { useFetchTalks } from "./UseFetchTalks";
-import styled from "styled-components";
 import * as Sentry from "@sentry/react";
+import { Dropdown, DropdownChangeEvent } from "primereact/dropdown";
+import "primereact/resources/primereact.min.css";
+import "primereact/resources/themes/lara-light-indigo/theme.css";
+import "../../styles/theme.css";
 
-export const StyledSessionSection = styled.section``;
+interface TrackInfo {
+  name: string;
+  code?: string;
+}
 
 const Talks: FC = () => {
+  const [selectedGroupId, setSelectedGroupId] = useState<TrackInfo | null>(
+    null
+  );
   const { isLoading, error, data } = useFetchTalks();
+
+  useEffect(() => {
+    const sessionSelectedGroupCode =
+      sessionStorage.getItem("selectedGroupCode");
+    const sessionSelectedGroupName =
+      sessionStorage.getItem("selectedGroupName");
+
+    document.title = `Talks - DevBcn - ${conferenceData.edition}`;
+
+    if (sessionSelectedGroupCode && sessionSelectedGroupName) {
+      setSelectedGroupId({
+        name: sessionSelectedGroupName,
+        code: sessionSelectedGroupCode,
+      });
+    }
+  }, []);
 
   if (error) {
     Sentry.captureException(error);
   }
-  React.useEffect(() => {
-    document.title = `Talks - DevBcn - ${conferenceData.edition}`;
-  }, []);
+
+  const dropDownOptions = [
+    { name: "All Tracks", code: undefined },
+    ...(data !== undefined
+      ? data.flatMap((group) => ({
+          code: group.groupId.toString(),
+          name: group.groupName,
+        }))
+      : []),
+  ];
+
+  const filteredTalks = selectedGroupId?.code
+    ? data?.filter((talk) => talk.groupId.toString() === selectedGroupId.code)
+    : data;
+
+  const onChangeSelectedTrack = (e: DropdownChangeEvent) => {
+    const value = e.value;
+    setSelectedGroupId(value || null);
+    sessionStorage.setItem("selectedGroupCode", value?.code || "");
+    sessionStorage.setItem("selectedGroupName", value?.name || "");
+  };
   return (
     <>
       <SectionWrapper color={Color.DARK_BLUE} marginTop={5}>
@@ -59,7 +102,7 @@ const Talks: FC = () => {
         </svg>
       </StyledWaveContainer>
       <SectionWrapper color={Color.LIGHT_BLUE} marginTop={1}>
-        <StyledSessionSection>
+        <section>
           {isLoading && <h1>Loading </h1>}
           {data && data?.length === 0 && (
             <p style={{ color: Color.WHITE, textAlign: "center" }}>
@@ -67,12 +110,27 @@ const Talks: FC = () => {
               upcoming announcements
             </p>
           )}
-          {data &&
-            Array.isArray(data) &&
-            data.map((track) => (
-              <TrackInformation key={track.groupId} track={track} />
-            ))}
-        </StyledSessionSection>
+          {filteredTalks && Array.isArray(filteredTalks) && (
+            <>
+              <div style={{ margin: "10px" }}>
+                <label htmlFor="group-id-select">
+                  <strong>Filter by Track: </strong>
+                </label>
+                <Dropdown
+                  value={selectedGroupId}
+                  onChange={onChangeSelectedTrack}
+                  options={dropDownOptions}
+                  placeholder="Select Track"
+                  optionLabel="name"
+                  className="w-full md:w-14rem"
+                />
+              </div>
+              {filteredTalks.map((track) => (
+                <TrackInformation key={track.groupId} track={track} />
+              ))}
+            </>
+          )}
+        </section>
         <StyledMarginBottom />
       </SectionWrapper>
     </>
