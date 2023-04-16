@@ -17,6 +17,7 @@ import {
   StyledAboutImage,
   StyledSocialIconsWrapper,
 } from "../About/components/Style.AboutCard";
+import conferenceData from "../../data/2023.json";
 
 interface CFpTrack {
   name: string;
@@ -80,9 +81,10 @@ const data: CFpTrack[] = [
       },
       {
         name: "Donia Chaiehloudj",
-        twitter: "",
-        photo: "",
-        linkedIn: "",
+        twitter: "https://twitter.com/doniacld",
+        photo:
+          "https://pbs.twimg.com/profile_images/1590642319589609472/zObYSeID_400x400.jpg",
+        linkedIn: "https://www.linkedin.com/in/donia-chaiehloudj",
       },
       {
         name: "Gonzalo Serrano",
@@ -92,9 +94,10 @@ const data: CFpTrack[] = [
       },
       {
         name: "Mario Macías",
-        twitter: "",
-        photo: "",
-        linkedIn: "",
+        twitter: "https://twitter.com/MaciasUPC",
+        photo:
+          "https://media.licdn.com/dms/image/C4E03AQGv4gLaWoGpjw/profile-displayphoto-shrink_800_800/0/1582785735995?e=1687392000&v=beta&t=w8ljnAlsBUoHjPfPJR3bUh0XGXP1ke1_-bRxvhc5M1E",
+        linkedIn: "https://www.linkedin.com/in/mariomac/",
       },
       {
         name: "Mario Vázquez",
@@ -109,9 +112,9 @@ const data: CFpTrack[] = [
     members: [
       {
         name: "Iago Lastra",
-        photo: "",
-        twitter: "",
-        linkedIn: "",
+        photo: "https://avatars.githubusercontent.com/u/2657897?v=4",
+        twitter: "https://twitter.com/iagolast",
+        linkedIn: "https://www.linkedin.com/in/iagolast/",
       },
       {
         name: "Josue David Rios Diaz",
@@ -150,9 +153,10 @@ const data: CFpTrack[] = [
       },
       {
         name: "Rubén Berenguel",
-        photo: "",
-        twitter: "",
-        linkedIn: "",
+        photo:
+          "https://pbs.twimg.com/profile_images/1393898544600342528/hghgDpMM_400x400.jpg",
+        twitter: "https://twitter.com/berenguel",
+        linkedIn: "https://www.linkedin.com/in/rberenguel/",
       },
     ],
   },
@@ -161,9 +165,10 @@ const data: CFpTrack[] = [
     members: [
       {
         name: "Ara Pulido",
-        photo: "",
-        twitter: "",
-        linkedIn: "",
+        photo:
+          "https://media.licdn.com/dms/image/D4D03AQG2d6PcinjTgA/profile-displayphoto-shrink_800_800/0/1676458154277?e=1687392000&v=beta&t=Ff5xQ-V8u6QWiYkkH1GX3nLD4McgJOvPjZ8T6G9_UJk",
+        twitter: "https://twitter.com/arapulido",
+        linkedIn: "https://www.linkedin.com/in/arapulido/",
       },
       {
         name: "Mario Macías",
@@ -179,9 +184,10 @@ const data: CFpTrack[] = [
       },
       {
         name: "Raquel Pau Fernández",
-        photo: "",
-        twitter: "",
-        linkedIn: "",
+        photo:
+          "https://pbs.twimg.com/profile_images/1253338486200909828/uBuKfSsj_400x400.jpg",
+        twitter: "https://twitter.com/raquelpau",
+        linkedIn: "https://www.linkedin.com/in/raquel-pau-4010069",
       },
     ],
   },
@@ -191,7 +197,7 @@ const data: CFpTrack[] = [
       {
         name: "Celeste Gamez",
         photo: "images/cfp/celeste.png",
-        twitter: "",
+        twitter: "https://images.app.goo.gl/39E8eisV8TiULPQk8",
         linkedIn: "https://www.linkedin.com/in/celeste-g%C3%A1mez-73640460/",
       },
       {
@@ -202,9 +208,10 @@ const data: CFpTrack[] = [
       },
       {
         name: "María Mira Herreros",
-        photo: "",
+        photo:
+          "https://media.licdn.com/dms/image/C4E03AQHgVN4yIpj2yg/profile-displayphoto-shrink_800_800/0/1636703151043?e=1687392000&v=beta&t=pYqOVCjv7iphUDi8Nu_gv5FWiEiKjihipteq_ejxpEM",
         twitter: "",
-        linkedIn: "",
+        linkedIn: "https://www.linkedin.com/in/miramaria",
       },
       {
         name: "Toni Tassani",
@@ -220,49 +227,59 @@ interface CfpTrackProps {
   track: CFpTrack;
 }
 
-const CfpTrackComponent: FC<CfpTrackProps> = ({ track }) => {
-  return (
-    <>
-      <section>
-        <h2>{track.name}</h2>
-      </section>
-      <div style={{ display: "flex" }}>
-        {track.members.map((member, index) => (
-          <div key={index}>
-            <h3>{member.name}</h3>
-            <StyledAboutImage src={member.photo} alt={member.name} />
-            <StyledSocialIconsWrapper>
-              <TwitterIcon color={Color.BLUE} twitterUrl={member.twitter} />
-              <LinkedinIcon color={Color.BLUE} linkedinUrl={member.linkedIn} />
-            </StyledSocialIconsWrapper>
-          </div>
-        ))}
-      </div>
-    </>
-  );
-};
+const CfpTrackComponent: FC<CfpTrackProps> = ({ track }) => (
+  <>
+    <section>
+      <h2>{track.name}</h2>
+    </section>
+    <div style={{ display: "flex" }}>
+      {track.members.map((member, index) => (
+        <div key={index}>
+          <StyledAboutImage src={member.photo} alt={member.name} />
+          <h3 style={{ color: Color.DARK_BLUE }}>{member.name}</h3>
+          <StyledSocialIconsWrapper>
+            <TwitterIcon color={Color.BLUE} twitterUrl={member.twitter} />
+            <LinkedinIcon color={Color.BLUE} linkedinUrl={member.linkedIn} />
+          </StyledSocialIconsWrapper>
+        </div>
+      ))}
+    </div>
+  </>
+);
 
 const CfpSection: FC = () => {
   const { width } = useWindowSize();
+  React.useEffect(() => {
+    document.title = `CFP Committee - DevBcn - ${conferenceData.edition}`;
+  }, []);
   return (
-    <SectionWrapper color={Color.WHITE}>
-      <StyledSpeakersSection>
-        <TitleSection
-          title="CFP Committee"
-          subtitle="The Barcelona Developers Conference - DevBcn"
-          color={Color.BLUE}
-        />
-        {width > MOBILE_BREAKPOINT && (
-          <>
-            <StyledLessIcon src={MoreThanBlueWhiteIcon} />
-            <StyledMoreIcon src={LessThanBlueWhiteIcon} />
-          </>
-        )}
-      </StyledSpeakersSection>
-      {data.map((track, index) => (
-        <CfpTrackComponent key={index} track={track} />
-      ))}
-    </SectionWrapper>
+    <>
+      <SectionWrapper color={Color.WHITE}>
+        <StyledSpeakersSection>
+          <TitleSection
+            title="CFP Committee"
+            subtitle="The Barcelona Developers Conference - DevBcn"
+            color={Color.BLUE}
+          />
+          {width > MOBILE_BREAKPOINT && (
+            <>
+              <StyledLessIcon src={MoreThanBlueWhiteIcon} />
+              <StyledMoreIcon src={LessThanBlueWhiteIcon} />
+            </>
+          )}
+        </StyledSpeakersSection>
+        <p>
+          We're excited to announce the members of the Call for Papers committee
+          for the next DevBcn conference! These experienced professionals will
+          be reviewing and selecting the best talks and workshops for the
+          upcoming event.{" "}
+        </p>
+        {data.map((track, index) => (
+          <CfpTrackComponent key={index} track={track} />
+        ))}
+      </SectionWrapper>
+      <div style={{ height: "200px" }}>&nbsp;</div>
+    </>
   );
 };
 
