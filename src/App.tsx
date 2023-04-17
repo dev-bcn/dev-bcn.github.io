@@ -37,6 +37,10 @@ const StyledAppWrapper = styled.div`
   overflow-x: hidden;
 `;
 
+const isDevBcnCookieSet = document.cookie
+  .split("; ")
+  .some((row) => row.startsWith("DevBcnCookie="));
+
 const App: FC = () => {
   const queryClient = new QueryClient();
   return (
@@ -106,29 +110,31 @@ const App: FC = () => {
           <Route path={ROUTE_HOME_ALTERNATE} component={HomeWrapper} exact />
           <Route path="*" component={NotFoundError} />
         </Switch>
-        <CookieConsent
-          debug={true}
-          enableDeclineButton={true}
-          cookieName="DevBcnCookie"
-          style={{ backgroundColor: Color.DARK_BLUE }}
-          buttonStyle={{
-            backgroundColor: Color.LIGHT_BLUE,
-            color: Color.WHITE,
-            fontWeight: "bold",
-          }}
-          declineButtonStyle={{
-            fontWeight: "bold",
-            backgroundColor: Color.MAGENTA,
-          }}
-        >
-          This website uses cookies to enhance the user experience.{" "}
-          <Link
-            to={ROUTE_COOKIES}
-            style={{ color: "white", fontWeight: "bold" }}
+        {!isDevBcnCookieSet && (
+          <CookieConsent
+            debug={true}
+            enableDeclineButton={true}
+            cookieName="DevBcnCookie"
+            style={{ backgroundColor: Color.DARK_BLUE }}
+            buttonStyle={{
+              backgroundColor: Color.LIGHT_BLUE,
+              color: Color.WHITE,
+              fontWeight: "bold",
+            }}
+            declineButtonStyle={{
+              fontWeight: "bold",
+              backgroundColor: Color.MAGENTA,
+            }}
           >
-            Read here
-          </Link>
-        </CookieConsent>
+            This website uses cookies to enhance the user experience.{" "}
+            <Link
+              to={ROUTE_COOKIES}
+              style={{ color: "white", fontWeight: "bold" }}
+            >
+              Read here
+            </Link>
+          </CookieConsent>
+        )}
         <Footer />
       </QueryClientProvider>
     </StyledAppWrapper>
