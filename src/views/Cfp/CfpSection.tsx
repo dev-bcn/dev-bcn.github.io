@@ -172,9 +172,10 @@ const data: CFpTrack[] = [
       },
       {
         name: "Mario Macías",
-        photo: "",
-        twitter: "",
-        linkedIn: "",
+        twitter: "https://twitter.com/MaciasUPC",
+        photo:
+          "https://media.licdn.com/dms/image/C4E03AQGv4gLaWoGpjw/profile-displayphoto-shrink_800_800/0/1582785735995?e=1687392000&v=beta&t=w8ljnAlsBUoHjPfPJR3bUh0XGXP1ke1_-bRxvhc5M1E",
+        linkedIn: "https://www.linkedin.com/in/mariomac/",
       },
       {
         name: "Mario Vázquez",
@@ -230,7 +231,9 @@ interface CfpTrackProps {
 const CfpTrackComponent: FC<CfpTrackProps> = ({ track }) => (
   <>
     <section>
-      <h2>{track.name}</h2>
+      <h2 style={{ paddingTop: "2rem", paddingBottom: "1rem" }}>
+        {track.name}
+      </h2>
     </section>
     <div style={{ display: "flex" }}>
       {track.members.map((member, index) => (
