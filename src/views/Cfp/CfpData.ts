@@ -1,4 +1,5 @@
 interface CFpTrack {
+  id: string;
   name: string;
   members: CfpMember[];
 }
@@ -12,6 +13,7 @@ interface CfpMember {
 
 export const data: CFpTrack[] = [
   {
+    id: "656fece2-9447-4dbe-8a78-8dc6aa7124f2",
     name: "Java & JVM",
     members: [
       {
@@ -50,6 +52,7 @@ export const data: CFpTrack[] = [
     ],
   },
   {
+    id: "1c22cd3b-73e3-4161-9124-696f3e2f1249",
     name: "Native Languages",
     members: [
       {
@@ -88,6 +91,7 @@ export const data: CFpTrack[] = [
     ],
   },
   {
+    id: "2684b568-2836-4713-99af-643f8a4d7972",
     name: "Frontend",
     members: [
       {
@@ -112,6 +116,7 @@ export const data: CFpTrack[] = [
     ],
   },
   {
+    id: "c1ec728d-03c1-4d8d-9f56-637bc97f5a5b",
     name: "AI, ML, Python",
     members: [
       {
@@ -142,6 +147,7 @@ export const data: CFpTrack[] = [
     ],
   },
   {
+    id: "504cf03b-130d-4b70-a98c-c4faeb553b5e",
     name: "DevOps, Cloud, Kubernetes",
     members: [
       {
@@ -175,6 +181,7 @@ export const data: CFpTrack[] = [
     ],
   },
   {
+    id: "1d04d5bf-4b94-4e56-b0c6-ee93b3bb8c1f",
     name: "Agile, Leadership, Diversity",
     members: [
       {

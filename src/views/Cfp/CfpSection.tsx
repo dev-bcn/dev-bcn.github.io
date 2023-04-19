@@ -78,7 +78,7 @@ const CfpSection: FC = () => {
           )}
         </StyledSpeakersSection>
         {data.map((track) => (
-          <CfpTrackComponent key={track.name} track={track} />
+          <CfpTrackComponent key={track.id} track={track} />
         ))}
       </SectionWrapper>
       <div style={{ height: "350px" }}>&nbsp;</div>

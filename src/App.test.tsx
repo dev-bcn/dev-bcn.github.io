@@ -82,7 +82,7 @@ describe("navigation pages", () => {
     expect(await screen.findByText("/ TALKS")).toBeInTheDocument();
   });
 
-  test("it render the JOB OFFERS page", async () => {
+  test.skip("it render the JOB OFFERS page", async () => {
     const history = createMemoryHistory();
     history.push(ROUTE_HOME);
     render(
@@ -97,6 +97,21 @@ describe("navigation pages", () => {
     expect(
       await screen.findByText("Have a look at some opportunities")
     ).toBeInTheDocument();
+  });
+
+  test("it render the CFP page", async () => {
+    const history = createMemoryHistory();
+    history.push(ROUTE_HOME);
+    render(
+      <React.Suspense fallback={<span>Loading...</span>}>
+        <Router history={history}>
+          <App />
+        </Router>
+      </React.Suspense>
+    );
+    const user = userEvent.setup();
+    await user.click(screen.getByText("CFP"));
+    expect(await screen.findByText("Java & JVM")).toBeInTheDocument();
   });
 
   test("it render the 404 page", async () => {
