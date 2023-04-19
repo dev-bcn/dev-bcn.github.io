@@ -101,9 +101,10 @@ const data: CFpTrack[] = [
       },
       {
         name: "Mario Vázquez",
-        twitter: "",
-        photo: "",
-        linkedIn: "",
+        twitter: "https://twitter.com/mvazce",
+        photo:
+          "https://www.redhat.com/architect/sites/default/files/styles/user_picture_square/public/pictures/2022-06/Mario%20Vazquez%201.jpg?itok=N34lZwBm",
+        linkedIn: "https://www.linkedin.com/in/mariovazquezcebrian/",
       },
     ],
   },
@@ -126,7 +127,7 @@ const data: CFpTrack[] = [
         name: "Laura Rodriguez Castillo",
         photo: "images/cfp/laura.jpeg",
         twitter: "https://twitter.com/superpensando",
-        linkedIn: "http://linkedin.com/in/laurarodriguezcastillo",
+        linkedIn: "https://linkedin.com/in/laurarodriguezcastillo",
       },
     ],
   },
@@ -179,9 +180,10 @@ const data: CFpTrack[] = [
       },
       {
         name: "Mario Vázquez",
-        photo: "",
-        twitter: "",
-        linkedIn: "",
+        twitter: "https://twitter.com/mvazce",
+        photo:
+          "https://www.redhat.com/architect/sites/default/files/styles/user_picture_square/public/pictures/2022-06/Mario%20Vazquez%201.jpg?itok=N34lZwBm",
+        linkedIn: "https://www.linkedin.com/in/mariovazquezcebrian/",
       },
       {
         name: "Raquel Pau Fernández",
@@ -202,10 +204,11 @@ const data: CFpTrack[] = [
         linkedIn: "https://www.linkedin.com/in/celeste-g%C3%A1mez-73640460/",
       },
       {
-        name: "Esther Hernandez",
-        photo: "",
+        name: "Esther Gala",
+        photo:
+          "https://media.licdn.com/dms/image/D4D03AQFR45bj7C_FMg/profile-displayphoto-shrink_800_800/0/1678700978977?e=1687392000&v=beta&t=5C_SFQh7Zo5pE9QhknCqNCkDRUQ03K-oMhXzOtEe9SY",
         twitter: "",
-        linkedIn: "",
+        linkedIn: "https://www.linkedin.com/in/esthergala/",
       },
       {
         name: "María Mira Herreros",
@@ -231,20 +234,27 @@ interface CfpTrackProps {
 const CfpTrackComponent: FC<CfpTrackProps> = ({ track }) => (
   <>
     <section>
-      <h2 style={{ paddingTop: "2rem", paddingBottom: "1rem" }}>
+      <h2 style={{ paddingTop: "2rem", paddingBottom: "1.5rem" }}>
         {track.name}
       </h2>
     </section>
-    <div style={{ display: "flex" }}>
-      {track.members.map((member, index) => (
-        <div key={index}>
-          <StyledAboutImage src={member.photo} alt={member.name} />
-          <h3 style={{ color: Color.DARK_BLUE }}>{member.name}</h3>
-          <StyledSocialIconsWrapper>
-            <TwitterIcon color={Color.BLUE} twitterUrl={member.twitter} />
-            <LinkedinIcon color={Color.BLUE} linkedinUrl={member.linkedIn} />
-          </StyledSocialIconsWrapper>
-        </div>
+    <div style={{ display: "flex", margin: "1rem" }}>
+      {track.members.map((member) => (
+        <>
+          {member.photo !== "" && (
+            <div key={member.name}>
+              <StyledAboutImage src={member.photo} alt={member.name} />
+              <h5 style={{ color: Color.DARK_BLUE }}>{member.name}</h5>
+              <StyledSocialIconsWrapper>
+                <TwitterIcon color={Color.BLUE} twitterUrl={member.twitter} />
+                <LinkedinIcon
+                  color={Color.BLUE}
+                  linkedinUrl={member.linkedIn}
+                />
+              </StyledSocialIconsWrapper>
+            </div>
+          )}
+        </>
       ))}
     </div>
   </>
@@ -277,8 +287,8 @@ const CfpSection: FC = () => {
           be reviewing and selecting the best talks and workshops for the
           upcoming event.{" "}
         </p>
-        {data.map((track, index) => (
-          <CfpTrackComponent key={index} track={track} />
+        {data.map((track) => (
+          <CfpTrackComponent key={track.name} track={track} />
         ))}
       </SectionWrapper>
       <div style={{ height: "200px" }}>&nbsp;</div>
