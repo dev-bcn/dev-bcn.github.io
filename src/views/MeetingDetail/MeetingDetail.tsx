@@ -146,11 +146,7 @@ const MeetingDetail: FC<IMeetingDetailProps> = ({
             <h4>Description</h4>
             <StyledDescription>{meeting.description}</StyledDescription>
             <StyledExtraInfo>
-              <strong>Level: </strong> {meeting.level}
-              <strong> Language: </strong>
-              {meeting.language}
-              <strong> Session type: </strong>
-              {meeting.type}
+              {`${meeting.type} ${meeting.level}`}
               <strong> Track: </strong>
               {meeting.track}
             </StyledExtraInfo>

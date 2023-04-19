@@ -4,4 +4,8 @@
 // learn more: https://github.com/testing-library/jest-dom
 import "@testing-library/jest-dom";
 
-window.scrollTo = jest.fn();
+const windowMock = {
+  scrollTo: jest.fn(),
+};
+
+Object.assign(global, global, windowMock);

@@ -37,7 +37,7 @@ export const StyledMarginBottom = styled.div`
 export const StyledSessionText = styled.div`
   color: ${Color.WHITE};
   padding: 0.5rem 0;
-  font-size: 0.9em;
+  font-size: 0.8em;
   @media (min-width: 800px) {
     hyphens: auto;
     word-wrap: break-word;
@@ -45,24 +45,22 @@ export const StyledSessionText = styled.div`
   }
 `;
 export const StyledSessionCard = styled.div`
-  display: flex;
   align-items: center;
-  flex-direction: column;
-  min-width: 20%;
-  max-width: 50%;
+  /*min-width: 20%;
+  max-width: 50%;*/
   margin: 5px 3rem 3rem;
+  flex-grow: 2;
   background: linear-gradient(
     90deg,
     rgba(0, 36, 84, 0.2) 0%,
     rgba(71, 152, 202, 0.2) 100%
   );
   border-radius: 10px;
-  padding: 5px 15px;
+  padding: 15px;
   @media (min-width: 800px) {
-    align-items: flex-start;
-    flex-direction: row;
+    text-align: left;
     max-width: 900px;
-    margin-bottom: 4rem;
+    margin-bottom: 1.5rem;
   }
 `;
 export const StyledTagsWrapper = styled.div`
@@ -71,34 +69,33 @@ export const StyledTagsWrapper = styled.div`
   justify-content: flex-start;
   margin-bottom: 0.5rem;
 `;
-export const StyledMoreInfoLink = styled(Link)`
-  background-color: ${Color.DARK_BLUE};
+export const StyledTalkTitle = styled(Link)`
   font-weight: bold;
   text-decoration: none;
-  color: white;
+  color: ${Color.YELLOW};
   padding: 5px 7px;
-  border-radius: 3px;
   transition-duration: 0.5s;
   margin-bottom: 10px;
 
   :hover,
   :focus,
   :active {
-    background-color: ${Color.LIGHT_BLUE};
+    color: ${Color.WHITE};
     transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
-    box-shadow: 0 0 3px black;
   }
 `;
 export const StyledTrackInfo = styled.h2`
    {
     color: ${Color.DARK_BLUE};
+    margin-top: 50px;
     margin-left: 40px;
+    margin-bottom: 20px;
   }
 `;
 export const StyledSessionSection = styled.section`
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
+  align-items: stretch;
   width: 100%;
 `;
 
@@ -113,5 +110,17 @@ export const StyledTalkSpeaker = styled.p`
   }
   a:hover {
     color: ${Color.DARK_BLUE};
+  }
+`;
+
+export const StyledSelectTrack = styled.select`
+   {
+    padding: 5px;
+    color: ${Color.YELLOW};
+    background-color: ${Color.LIGHT_BLUE};
+    font-family: "Square 721 Regular", sans-serif;
+    border: none;
+    font-size: 1.2em;
+    max-width: 15%;
   }
 `;

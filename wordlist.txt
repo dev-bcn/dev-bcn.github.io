@@ -1,4 +1,3 @@
-amycuddyTED
 BvU
 DOM
 DevBCN
@@ -8,7 +7,9 @@ Facebook
 Farga
 LkR
 PLo
+StyledSelectTrack
 Twitter
+amycuddyTED
 analytics
 devbcn
 dom
@@ -18,7 +19,9 @@ favicon
 ftazo
 github
 githubusercontent
+groupMap
 gtag
+handleChangeGroup
 hkHj
 html
 http
@@ -36,10 +39,12 @@ localhost
 matchers
 minified
 npm
+onChange
 pbs
 png
 px
 robotstxt
+selectedGroupId
 svg
 toHaveTextContent
 twimg
