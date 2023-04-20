@@ -103,9 +103,10 @@ export const data: CFpTrack[] = [
       },
       {
         name: "Josue David Rios Diaz",
-        photo: "",
-        twitter: "",
-        linkedIn: "",
+        photo:
+          "https://pbs.twimg.com/profile_images/951236352049385472/6rRKHJsE_400x400.jpg",
+        twitter: "https://twitter.com/jdriosdiaz",
+        linkedIn: "https://www.linkedin.com/in/jdriosd/",
       },
       {
         name: "Laura Rodriguez Castillo",
