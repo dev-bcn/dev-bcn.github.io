@@ -8,7 +8,10 @@ import { faqsData } from "./FaqsData";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import { useWindowSize } from "react-use";
-import { BIG_BREAKPOINT, MOBILE_BREAKPOINT } from "../../../../constants/BreakPoints";
+import {
+  BIG_BREAKPOINT,
+  MOBILE_BREAKPOINT,
+} from "../../../../constants/BreakPoints";
 import flickr from "../../../../assets/images/flickr.svg";
 import youtube from "../../../../assets/images/youtube.svg";
 import jbcnconf from "../../../../assets/images/jbcnconf-1.jpg";
@@ -60,7 +63,7 @@ const StyledImage = styled.img`
   margin: 3px;
   padding: 5px;
   border: 1px solid ${Color.YELLOW};
-  border-radius: 5px;
+  border-radius: 100% 0 100% 0 / 15% 89% 11% 85%;
 
   @media (max-width: ${BIG_BREAKPOINT}px) {
     width: 100%;
@@ -83,7 +86,11 @@ const Faqs: FC = () => {
       <SectionWrapper color={Color.DARK_BLUE}>
         <StyledFaqSection>
           {faqsData.map((faq, index) => (
-            <FaqCard faq={faq} index={index} key={faq.question.substring(0, 8)} />
+            <FaqCard
+              faq={faq}
+              index={index}
+              key={faq.question.substring(0, 8)}
+            />
           ))}
           <div id="last-jbcnconf">&nbsp;</div>
           <div style={{ width: "60%" }}>

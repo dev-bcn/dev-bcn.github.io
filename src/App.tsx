@@ -1,6 +1,7 @@
 import { Link, Route, Switch } from "react-router-dom";
 import {
   ROUTE_ABOUT_US,
+  ROUTE_CFP,
   ROUTE_CODE_OF_CONDUCT,
   ROUTE_CONDITIONS,
   ROUTE_COOKIES,
@@ -36,90 +37,105 @@ const StyledAppWrapper = styled.div`
   overflow-x: hidden;
 `;
 
+const isDevBcnCookieSet = document.cookie
+  .split("; ")
+  .some((row) => row.startsWith("DevBcnCookie="));
+
 const App: FC = () => {
   const queryClient = new QueryClient();
   return (
     <StyledAppWrapper className="AppWrapperAll">
       <QueryClientProvider client={queryClient}>
-      <Route path="/loading" component={Loading} />
-      <ScrollToTop />
-      <Navigation />
-      <Switch>
-        <Route
-          path={ROUTE_TALKS}
-          component={React.lazy(() => import("./views/Talks/Talks"))}
-        />
-        <Route
-          path={ROUTE_CODE_OF_CONDUCT}
-          component={React.lazy(
-            () => import("./views/CodeOfConduct/CodeOfConduct")
-          )}
-        />
-        <Route
-          path={ROUTE_CONDITIONS}
-          component={React.lazy(() => import("./views/Conditions/Conditions"))}
-        />
-        <Route
-          path={ROUTE_COOKIES}
-          component={React.lazy(() => import("./views/Cookies/Cookies"))}
-        />
-        <Route
-          path={ROUTE_DIVERSITY}
-          component={React.lazy(() => import("./views/Diversity/Diversity"))}
-        />
-        <Route
-          path={ROUTE_JOB_OFFERS}
-          component={React.lazy(() => import("./views/JobOffers/JobOffers"))}
-        />
-        <Route
-          path={ROUTE_SCHEDULE}
-          component={React.lazy(() => import("./views/Schedule/Schedule"))}
-        />
-        <Route
-          path={ROUTE_SPEAKERS}
-          component={React.lazy(() => import("./views/Speakers/Speakers"))}
-        />
-        <Route
-          path={ROUTE_ABOUT_US}
-          component={React.lazy(() => import("./views/About/About"))}
-        />
-        <Route
-          path={ROUTE_TRAVEL}
-          component={React.lazy(() => import("./views/Travel/Travel"))}
-        />
-        <Route
-          path={ROUTE_MEETING_DETAIL_PLAIN}
-          component={MeetingDetailContainer}
-        />
-        <Route
-          path={ROUTE_SPEAKER_DETAIL_PLAIN}
-          component={SpeakerDetailContainer}
-        />
-        <Route path={ROUTE_HOME} component={HomeWrapper} exact />
-        <Route path={ROUTE_HOME_ALTERNATE} component={HomeWrapper} exact />
-        <Route path="*" component={NotFoundError} />
-      </Switch>
-      <CookieConsent
-        debug={true}
-        enableDeclineButton={true}
-        cookieName="DevBcnCookie"
-        style={{ backgroundColor: Color.DARK_BLUE }}
-        buttonStyle={{
-          backgroundColor: Color.LIGHT_BLUE,
-          color: Color.WHITE,
-          fontWeight: "bold",
-        }}
-        declineButtonStyle={{
-          fontWeight: "bold",
-          backgroundColor: Color.MAGENTA,
-        }}
-      >
-        This website uses cookies to enhance the user experience.{" "}
-        <Link to={ROUTE_COOKIES} style={{ color: "white", fontWeight: "bold" }}>
-          Read here
-        </Link>
-      </CookieConsent>
-      <Footer />
+        <Route path="/loading" component={Loading} />
+        <ScrollToTop />
+        <Navigation />
+        <Switch>
+          <Route
+            path={ROUTE_TALKS}
+            component={React.lazy(() => import("./views/Talks/Talks"))}
+          />
+          <Route
+            path={ROUTE_CODE_OF_CONDUCT}
+            component={React.lazy(
+              () => import("./views/CodeOfConduct/CodeOfConduct")
+            )}
+          />
+          <Route
+            path={ROUTE_CONDITIONS}
+            component={React.lazy(
+              () => import("./views/Conditions/Conditions")
+            )}
+          />
+          <Route
+            path={ROUTE_COOKIES}
+            component={React.lazy(() => import("./views/Cookies/Cookies"))}
+          />
+          <Route
+            path={ROUTE_DIVERSITY}
+            component={React.lazy(() => import("./views/Diversity/Diversity"))}
+          />
+          <Route
+            path={ROUTE_JOB_OFFERS}
+            component={React.lazy(() => import("./views/JobOffers/JobOffers"))}
+          />
+          <Route
+            path={ROUTE_SCHEDULE}
+            component={React.lazy(() => import("./views/Schedule/Schedule"))}
+          />
+          <Route
+            path={ROUTE_SPEAKERS}
+            component={React.lazy(() => import("./views/Speakers/Speakers"))}
+          />
+          <Route
+            path={ROUTE_ABOUT_US}
+            component={React.lazy(() => import("./views/About/About"))}
+          />
+          <Route
+            path={ROUTE_CFP}
+            component={React.lazy(() => import("./views/Cfp/CfpSection"))}
+          />
+          <Route
+            path={ROUTE_TRAVEL}
+            component={React.lazy(() => import("./views/Travel/Travel"))}
+          />
+          <Route
+            path={ROUTE_MEETING_DETAIL_PLAIN}
+            component={MeetingDetailContainer}
+          />
+          <Route
+            path={ROUTE_SPEAKER_DETAIL_PLAIN}
+            component={SpeakerDetailContainer}
+          />
+          <Route path={ROUTE_HOME} component={HomeWrapper} exact />
+          <Route path={ROUTE_HOME_ALTERNATE} component={HomeWrapper} exact />
+          <Route path="*" component={NotFoundError} />
+        </Switch>
+        {!isDevBcnCookieSet && (
+          <CookieConsent
+            debug={true}
+            enableDeclineButton={true}
+            cookieName="DevBcnCookie"
+            style={{ backgroundColor: Color.DARK_BLUE }}
+            buttonStyle={{
+              backgroundColor: Color.LIGHT_BLUE,
+              color: Color.WHITE,
+              fontWeight: "bold",
+            }}
+            declineButtonStyle={{
+              fontWeight: "bold",
+              backgroundColor: Color.MAGENTA,
+            }}
+          >
+            This website uses cookies to enhance the user experience.{" "}
+            <Link
+              to={ROUTE_COOKIES}
+              style={{ color: "white", fontWeight: "bold" }}
+            >
+              Read here
+            </Link>
+          </CookieConsent>
+        )}
+        <Footer />
       </QueryClientProvider>
     </StyledAppWrapper>
   );
