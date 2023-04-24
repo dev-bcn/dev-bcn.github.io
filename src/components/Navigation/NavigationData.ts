@@ -18,6 +18,6 @@ export const navigationItems = [
   //{ id: "JOB OFFERS", link: ROUTE_JOB_OFFERS },
   { id: "SPEAKERS", link: ROUTE_SPEAKERS },
   { id: "ABOUT US", link: ROUTE_ABOUT_US },
-  { id: "CFP", link: ROUTE_CFP },
+  { id: "CFP COMMITTEE", link: ROUTE_CFP },
   { id: "TRAVEL", link: ROUTE_TRAVEL },
 ];

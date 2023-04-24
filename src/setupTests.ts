@@ -8,4 +8,9 @@ const windowMock = {
   scrollTo: jest.fn(),
 };
 
-Object.assign(global, global, windowMock);
+Object.entries(windowMock).forEach(([key, value]) => {
+  if (!global.hasOwnProperty(key)) {
+    // @ts-ignore
+    global[key] = value;
+  }
+});
