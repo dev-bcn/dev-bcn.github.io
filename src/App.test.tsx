@@ -110,7 +110,7 @@ describe("navigation pages", () => {
       </React.Suspense>
     );
     const user = userEvent.setup();
-    await user.click(screen.getByText("CFP"));
+    await user.click(screen.getByText("CFP COMMITTEE"));
     expect(await screen.findByText("Java & JVM")).toBeInTheDocument();
   });
 
