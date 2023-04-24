@@ -31,6 +31,10 @@ export const StyledSponsorItemContainer = styled.div`
   padding: 11.5rem 0 1rem;
   z-index: 1;
 
+  @media (max-width: ${BIG_BREAKPOINT}px) {
+    margin-bottom: 5rem;
+  }
+
   @media (min-width: ${BIG_BREAKPOINT}px) {
     margin-bottom: 3rem;
   }
@@ -82,6 +86,12 @@ export const StyledSponsorLogosContainer = styled.div`
   top: 4.75rem;
   z-index: 2;
   background: none;
+
+  @media (max-width: ${BIG_BREAKPOINT}px) {
+    top: 5rem;
+    bottom: 15rem;
+    padding-right: 1rem;
+  }
 
   @media (min-width: ${BIG_BREAKPOINT}px) {
     top: 5rem;
