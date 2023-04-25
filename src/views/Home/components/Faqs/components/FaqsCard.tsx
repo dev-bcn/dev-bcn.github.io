@@ -45,7 +45,7 @@ export const StyledFaqImage = styled(motion.img)`
   margin: 3px;
   padding: 5px;
   width: 360px;
-  border-radius: 5px;
+  border-radius: 92% 8% 90% 10% / 9% 90% 10% 91%;
 
   @media (max-width: ${BIG_BREAKPOINT}px) {
     width: 95%;
