@@ -49,7 +49,7 @@ export const sponsors: Sponsors = {
     {
       name: "Caixabank Tech",
       website: "https://www.peoplexperiencehub.com/caixabanktech",
-      image: "images/sponsors/caixabank.png",
+      image: "images/sponsors/caixabank-tech.png",
     },
     {
       name: "Ocado Tech",
