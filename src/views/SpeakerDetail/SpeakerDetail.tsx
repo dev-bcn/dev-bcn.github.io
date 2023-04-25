@@ -2,6 +2,7 @@ import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
 
 import { FC, Suspense } from "react";
 import MoreThanIcon from "../../assets/images/MoreThanBlueIcon.svg";
+import LessThan from "../../assets/images/MoreThanIcon.svg";
 import SlashesWhite from "../../assets/images/SlashesWhite.svg";
 import linkedinIcon from "../../assets/images/linkedinIcon.svg";
 import twitterIcon from "../../assets/images/twitterIcon.svg";
@@ -110,7 +111,13 @@ const SpeakerDetail: FC<ISpeakerDetailProps> = ({ speaker }) => {
                 {hasSessions() && (
                   <>
                     <h2>Sessions</h2>
-                    <ul style={{ paddingLeft: "40px", paddingTop: "20px" }}>
+                    <ul
+                      style={{
+                        paddingLeft: "40px",
+                        paddingTop: "20px",
+                        listStyleType: "none",
+                      }}
+                    >
                       {speaker.sessions &&
                         speaker.sessions.map((session, index) => (
                           <li key={index}>
@@ -118,6 +125,12 @@ const SpeakerDetail: FC<ISpeakerDetailProps> = ({ speaker }) => {
                               to={`${ROUTE_TALK_DETAIL}/${session.id}`}
                             >
                               <StyledSpeakerTitle>
+                                <img
+                                  src={LessThan}
+                                  height={12}
+                                  alt="session"
+                                  style={{ paddingRight: "0.5rem" }}
+                                />
                                 {session.name}
                               </StyledSpeakerTitle>
                             </StyledTalkDescription>
