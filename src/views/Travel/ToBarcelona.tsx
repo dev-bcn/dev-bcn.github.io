@@ -53,7 +53,11 @@ export const ToBarcelona: FC = () => {
         increasing numbers of international talent to its shores.
       </p>
       <Suspense fallback={<StyledLoadingImage src={Logo} />}>
-        <img src={Photo} alt="Barcelona beach" />
+        <img
+          style={{ borderRadius: "1rem" }}
+          src={Photo}
+          alt="Barcelona beach"
+        />
       </Suspense>
       <h2>Where to go after-hours?</h2>
       <h3>Plaça de Catalunya & El Barri Gòtic</h3>

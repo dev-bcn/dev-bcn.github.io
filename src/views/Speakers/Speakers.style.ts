@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import {motion} from "framer-motion";
-import {BIG_BREAKPOINT, TABLET_BREAKPOINT} from "../../constants/BreakPoints";
-import {Color} from "../../styles/colors";
+import { motion } from "framer-motion";
+import { BIG_BREAKPOINT, TABLET_BREAKPOINT } from "../../constants/BreakPoints";
+import { Color } from "../../styles/colors";
 
 export const StyledSpeakersSection = styled.section`
   display: flex;
@@ -37,10 +37,10 @@ export const StyledMoreIcon = styled.img`
   }
 `;
 export const StyledContainerLeftSlash = styled(motion.div)<{
-    positionPercentage: string;
+  positionPercentage: string;
 }>`
   position: absolute;
-  top: ${({positionPercentage}) => {
+  top: ${({ positionPercentage }) => {
     return positionPercentage;
   }};
   left: 0;
@@ -49,12 +49,12 @@ export const StyledContainerLeftSlash = styled(motion.div)<{
   opacity: 0.2;
 `;
 export const StyledContainerRightSlash = styled(motion.div)<{
-    positionPercentage: string;
+  positionPercentage: string;
 }>`
   position: absolute;
-  top: ${({positionPercentage}) => {
+  top: ${({ positionPercentage }) => {
     return positionPercentage;
-}};
+  }};
   right: 0;
   height: 2rem;
   width: 50%;
@@ -62,7 +62,7 @@ export const StyledContainerRightSlash = styled(motion.div)<{
 `;
 export const StyledSlash = styled(motion.p)<{ color: string }>`
   font-family: "Square 721 Regular", sans-serif;
-  color: ${({color}) => {
+  color: ${({ color }) => {
     return color;
   }};
   font-size: 2rem;
@@ -75,7 +75,7 @@ export const StyledWaveContainer = styled.div`
   height: 8rem;
   width: 100%;
   @media (min-width: ${TABLET_BREAKPOINT}px) {
-    height: 10rem;
+    height: 16rem;
   }
 `;
 export const SpeakersCardsContainer = styled.div`
