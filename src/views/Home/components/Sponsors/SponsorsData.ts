@@ -70,5 +70,10 @@ export const sponsors: Sponsors = {
       image: "images/sponsors/kube-career.png",
       website: "https://kube.careers//",
     },
+    {
+      name: "entre devs y ops",
+      image: "images/sponsors/entre-devs-y-ops.svg",
+      website: "https://www.entredevyops.es/",
+    },
   ],
 };
