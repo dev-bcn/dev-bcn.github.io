@@ -49,7 +49,13 @@ export const sponsors: Sponsors = {
     {
       name: "Caixabank Tech",
       website: "https://www.peoplexperiencehub.com/caixabanktech",
-      image: "images/sponsors/caixabank.png",
+      image: "images/sponsors/caixabank-tech.png",
+    },
+    {
+      name: "Ocado Tech",
+      website:
+        "https://careers.ocadogroup.com/where-we-are/europe/development-centre-barcelona?utm_source=event&utm_medium=other&utm_campaign=ot_event_bcn_devbcn_website",
+      image: "images/sponsors/ocado.png",
     },
   ],
   virtual: [],
