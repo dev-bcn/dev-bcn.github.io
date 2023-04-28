@@ -130,9 +130,13 @@ export const Accommodation: FC = () => {
                 rel="noreferrer"
                 target="_blank"
               >
-                Hotel Front Maritim
+                Novotel Barcelona Cornella
               </a>
             </h2>
+            <p>
+              10% discount on the refundable rate on their website, subject to
+              availability.
+            </p>
             <p>PROMO CODE: DEVBCN</p>
             <p>
               You must contact them via{" "}
