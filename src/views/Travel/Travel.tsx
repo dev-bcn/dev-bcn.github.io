@@ -5,6 +5,7 @@ import data from "../../data/2023.json";
 import { StyledWaveContainer } from "../Speakers/Speakers.style";
 import styled from "styled-components";
 import { Color } from "../../styles/colors";
+import { Accommodation } from "./Accommodation";
 
 const StyledTravel = styled.div`
   .top {
@@ -34,6 +35,18 @@ const Travel: FC = () => {
     <StyledTravel>
       <section>
         <Venue />
+      </section>
+      <section>
+        <Accommodation />
+        <div
+          style={{
+            backgroundColor: Color.LIGHT_BLUE,
+            borderTopColor: Color.LIGHT_BLUE,
+          }}
+        >
+          <div className="top">&nbsp;</div>
+          <div className="bottom">&nbsp;</div>
+        </div>
       </section>
       <section className="to-barcelona">
         <ToBarcelona />

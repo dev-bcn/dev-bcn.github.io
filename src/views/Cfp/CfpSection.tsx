@@ -23,7 +23,13 @@ import { CfpTrackProps, data } from "./CfpData";
 const CfpTrackComponent: FC<CfpTrackProps> = ({ track }) => (
   <>
     <section>
-      <h2 style={{ paddingTop: "1.5rem", paddingBottom: "1rem" }}>
+      <h2
+        style={{
+          paddingTop: "1.5rem",
+          paddingBottom: "1rem",
+          fontSize: "2rem",
+        }}
+      >
         {track.name}
       </h2>
     </section>

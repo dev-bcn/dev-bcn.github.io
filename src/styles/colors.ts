@@ -15,15 +15,3 @@ export enum Color {
   WHITE = "#fffcf9",
   YELLOW = "#ffd166",
 }
-/*<StyledSelectTrack
-  id="group-id-select"
-value={selectedGroupId}
-onChange={handleChangeGroup}
->
-<option value="">All tracks</option>
-{groupMap.map((group) => (
-  <option key={group.id} value={group.id}>
-  {group.name}
-  </option>
-))}
-</StyledSelectTrack>*/
