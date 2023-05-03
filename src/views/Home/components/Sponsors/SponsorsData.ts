@@ -44,6 +44,11 @@ export const sponsors: Sponsors = {
       image: "images/sponsors/allianz.png",
       website: "https://careers.allianz.com/es_ES.html",
     },
+    {
+      name: "Sopra Steria",
+      image: "images/sponsors/sopra.jpg",
+      website: "https://www.soprasteria.es/",
+    },
   ],
   basic: [
     {
