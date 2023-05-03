@@ -62,6 +62,12 @@ export const sponsors: Sponsors = {
         "https://careers.ocadogroup.com/where-we-are/europe/development-centre-barcelona?utm_source=event&utm_medium=other&utm_campaign=ot_event_bcn_devbcn_website",
       image: "images/sponsors/ocado.png",
     },
+    {
+      name: "Honeypot",
+      website:
+        "https://app.honeypot.io/users/sign_up?utm_source=Live&utm_medium=sourcing&utm_campaign=event_02072023&utm_content=DevBCN",
+      image: "images/sponsors/honeypot.jpg",
+    },
   ],
   virtual: [],
   media_partners: [
