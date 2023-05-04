@@ -49,6 +49,11 @@ export const sponsors: Sponsors = {
       image: "images/sponsors/sopra.jpg",
       website: "https://www.soprasteria.es/",
     },
+    {
+      name: "Idealista",
+      image: "images/sponsors/idealista.jpg",
+      website: "https://www.idealista.com/info/trabaja-con-nosotros",
+    },
   ],
   basic: [
     {
