@@ -176,7 +176,7 @@ export const StyledSponsorIconNormal = styled.img`
 export const RegularSponsorImage = styled.img`
   height: 3.25rem;
   margin-right: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   transition: height ease-in 0.25s;
 
   &:hover {
@@ -193,7 +193,7 @@ export const RegularSponsorImage = styled.img`
   @media (min-width: ${LARGE_BREAKPOINT}px) {
     height: 3.25rem;
     margin-right: 2rem;
-    margin-bottom: 0;
+    margin-bottom: 27px;
   }
 `;
 export const StyledSponsorIconNano = styled.img`
