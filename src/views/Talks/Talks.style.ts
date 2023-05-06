@@ -48,13 +48,10 @@ export const StyledSessionCard = styled.div`
   align-items: center;
   /*min-width: 20%;
   max-width: 50%;*/
-  margin: 5px 3rem 3rem;
+  margin: 0.5rem 1rem 1rem;
   flex-grow: 2;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 36, 84, 0.2) 0%,
-    rgba(71, 152, 202, 0.2) 100%
-  );
+  background: linear-gradient(-45deg, ${Color.DARK_BLUE}, ${Color.LIGHT_BLUE}, ${Color.DARK_BLUE});
+  background-size: 200% 200%;
   border-radius: 10px;
   padding: 15px;
   @media (min-width: 800px) {
@@ -96,7 +93,7 @@ export const StyledSessionSection = styled.section`
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
-  width: 100%;
+  width: 90%;
 `;
 
 export const StyledTalkSpeaker = styled.p`

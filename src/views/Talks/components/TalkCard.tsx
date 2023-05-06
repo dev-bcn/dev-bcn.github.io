@@ -2,27 +2,17 @@ import { FC } from "react";
 import { Link } from "react-router-dom";
 import { StyledJobsInfo } from "../../JobOffers/components/JobsCard";
 import { Tag } from "../../../components/Tag/Tag";
-import {
-  ROUTE_SPEAKER_DETAIL,
-  ROUTE_TALK_DETAIL,
-} from "../../../constants/routes";
-import {
-  CategoryItemEnum,
-  QuestionAnswers,
-  SessionCategory,
-  SessionSpeaker,
-} from "../Talk.types";
-import {
-  extractSessionCategoryInfo,
-  extractSessionTags,
-} from "../UseFetchTalks";
+import { ROUTE_SPEAKER_DETAIL, ROUTE_TALK_DETAIL } from "../../../constants/routes";
+import { CategoryItemEnum, QuestionAnswers, SessionCategory, SessionSpeaker } from "../Talk.types";
+import { extractSessionCategoryInfo, extractSessionTags } from "../UseFetchTalks";
 import {
   StyledSessionCard,
   StyledSessionText,
   StyledTagsWrapper,
   StyledTalkSpeaker,
-  StyledTalkTitle,
+  StyledTalkTitle
 } from "../Talks.style";
+import { Color } from "../../../styles/colors";
 
 interface TalkCardProps {
   index: number;
@@ -65,7 +55,7 @@ export const TalkCard: FC<TalkCardProps> = ({ talk }) => {
         </StyledSessionText>
         <StyledTagsWrapper>
           {extractSessionTags(talk.questionAnswers)?.map((tag) => {
-            return <Tag key={tag} text={tag} />;
+            return <Tag key={tag} text={tag} textColor={Color.WHITE} />;
           })}
         </StyledTagsWrapper>
       </StyledJobsInfo>

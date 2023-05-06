@@ -15,6 +15,7 @@ import {
   ROUTE_SPEAKERS,
   ROUTE_TALKS,
   ROUTE_TRAVEL,
+  ROUTE_WORKSHOPS
 } from "./constants/routes";
 
 import Footer from "./components/Footer/Footer";
@@ -97,6 +98,10 @@ const App: FC = () => {
           <Route
             path={ROUTE_TRAVEL}
             component={React.lazy(() => import("./views/Travel/Travel"))}
+          />
+          <Route
+            path={ROUTE_WORKSHOPS}
+            component={React.lazy(() => import("./views/Workshops/Workshops"))}
           />
           <Route
             path={ROUTE_MEETING_DETAIL_PLAIN}
