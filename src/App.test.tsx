@@ -44,7 +44,7 @@ describe("navigation pages", () => {
       await screen.findByText(/The Barcelona Developers Conference 2023/i)
     ).toBeInTheDocument();
     const user = userEvent.setup();
-    await user.click(screen.getByText("TRAVEL"));
+    await user.click(screen.getByText("Travel"));
     expect(
       await screen.findByText("La Farga Centre d'Activitats")
     ).toBeVisible();
@@ -61,7 +61,7 @@ describe("navigation pages", () => {
       </React.Suspense>
     );
     const user = userEvent.setup();
-    await user.click(screen.getByText("SPEAKERS"));
+    await user.click(screen.getByText("Speakers"));
     expect(
       await screen.findByText(/Speakers coming from all corners of the world/i)
     ).toBeInTheDocument();
@@ -78,8 +78,22 @@ describe("navigation pages", () => {
       </React.Suspense>
     );
     const user = userEvent.setup();
-    await user.click(screen.getByText("TALKS"));
-    expect(await screen.findByText("/ TALKS")).toBeInTheDocument();
+    await user.click(screen.getByText("Talks"));
+    expect(await screen.findByText("/ Talks")).toBeInTheDocument();
+  });
+  test("it render the Workshops page", async () => {
+    const history = createMemoryHistory();
+    history.push(ROUTE_HOME);
+    render(
+      <React.Suspense fallback={<span>Loading...</span>}>
+        <Router history={history}>
+          <App />
+        </Router>
+      </React.Suspense>
+    );
+    const user = userEvent.setup();
+    await user.click(screen.getByText("Workshops"));
+    expect(await screen.findByText("/ Workshops")).toBeInTheDocument();
   });
 
   test.skip("it render the JOB OFFERS page", async () => {
@@ -110,7 +124,7 @@ describe("navigation pages", () => {
       </React.Suspense>
     );
     const user = userEvent.setup();
-    await user.click(screen.getByText("CFP COMMITTEE"));
+    await user.click(screen.getByText("Cfp Committee"));
     expect(await screen.findByText("Java & JVM")).toBeInTheDocument();
   });
 
@@ -140,7 +154,7 @@ describe("navigation pages", () => {
       </React.Suspense>
     );
     const user = userEvent.setup();
-    await user.click(screen.getByText("ABOUT US"));
+    await user.click(screen.getByText("About Us"));
     expect(await screen.findByText(/Jonathan Vila/i)).toBeInTheDocument();
     expect(await screen.findByText(/Nacho Cougil/i)).toBeInTheDocument();
   });
@@ -156,7 +170,7 @@ describe("navigation pages", () => {
       </React.Suspense>
     );
     const user = userEvent.setup();
-    await user.click(screen.getByText("CODE OF CONDUCT"));
+    await user.click(screen.getByText("Code of Conduct"));
     expect(
       await screen.findByText(/The DevBcn is the yearly event/i)
     ).toBeInTheDocument();
