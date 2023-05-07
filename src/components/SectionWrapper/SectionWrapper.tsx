@@ -2,15 +2,17 @@ import { FC, ReactNode } from "react";
 import { MAX_WIDTH } from "../../constants/BreakPoints";
 import styled from "styled-components";
 
-const StyledSectionWrapper = styled.div<{ color: string }>`
+const StyledSectionWrapper = styled.div<{
+  color: string;
+  paddingBottom: number;
+}>`
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
+  padding-bottom: ${({ paddingBottom }) => paddingBottom}px;
   height: 100%;
-  background: ${({ color }) => {
-    return color;
-  }};
+  background: ${({ color }) => color};
 `;
 
 const StyledInnerWrapper = styled.div<{ marginTop: number }>`
@@ -26,17 +28,22 @@ const StyledInnerWrapper = styled.div<{ marginTop: number }>`
 interface ISectionWrapperProps {
   color: string;
   marginTop?: number;
-
+  paddingBottom?: number;
   children: ReactNode;
 }
 
 const SectionWrapper: FC<ISectionWrapperProps> = ({
-  children,
-  color,
-  marginTop = 0,
-}) => {
+                                                    children,
+                                                    color,
+                                                    marginTop = 0,
+                                                    paddingBottom = 0
+                                                  }) => {
   return (
-    <StyledSectionWrapper color={color} className="SectionWrapper">
+    <StyledSectionWrapper
+      color={color}
+      paddingBottom={paddingBottom}
+      className="SectionWrapper"
+    >
       <StyledInnerWrapper marginTop={marginTop} className="InnerSectionWrapper">
         {children}
       </StyledInnerWrapper>
