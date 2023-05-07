@@ -28,7 +28,7 @@ const StyledLocationText = styled.span`
   padding-left: 0.25rem;
 `;
 
-const JobsCard: FC<IJobsCardProps> = ({ offer, index }) => {
+const JobsCard: FC<IJobsCardProps> = ({ offer }) => {
   return (
     <StyledFaqCard>
       <StyledJobsInfo>
