@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { Company } from "./JobsData";
 import { Color } from "../../styles/colors";
+import LinkedinIcon from "../../components/Icons/Linkedin";
+import TwitterIcon from "../../components/Icons/Twitter";
 
 interface CompanyProps {
   company: Company;
@@ -19,6 +21,11 @@ const CompanyContainer = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+  }
+
+  svg {
+    max-width: 18px;
+    max-height: 18px;
   }
 `;
 
@@ -39,6 +46,8 @@ const CompanyName = styled.h2`
   font-weight: bold;
   margin-bottom: 0.5rem;
 `;
+
+const CompanyDescription = styled.p``;
 
 const OfferTitle = styled.h3`
   font-size: 1.25rem;
@@ -67,8 +76,24 @@ const OfferLink = styled.a`
 
 const CompanyOffers: React.FC<CompanyProps> = ({ company }) => {
   return (
-    <CompanyContainer>
-      <CompanyLogo src={company.logo} alt={`${company.name} logo`} />
+    <CompanyContainer id={company.name.toLowerCase()}>
+      <div>
+        <a target="_blank" rel="noreferrer noopener" href={company.url}>
+          <CompanyLogo src={company.logo} alt={`${company.name} logo`} />
+        </a>
+        <p>
+          {company.linkedin && (
+            <LinkedinIcon
+              color={Color.DARK_BLUE}
+              linkedinUrl={company.linkedin}
+            />
+          )}
+          {company.twitter && (
+            <TwitterIcon color={Color.DARK_BLUE} twitterUrl={company.twitter} />
+          )}
+        </p>
+        <CompanyDescription>{company.description}</CompanyDescription>
+      </div>
       <div>
         <CompanyName>{company.name}</CompanyName>
         {company.offers.map((offer) => (
@@ -76,7 +101,11 @@ const CompanyOffers: React.FC<CompanyProps> = ({ company }) => {
             <OfferTitle>{offer.title}</OfferTitle>
             <OfferLocation>{offer.location}</OfferLocation>
             <OfferText dangerouslySetInnerHTML={{ __html: offer.text }} />
-            <OfferLink href={offer.url} target="_blank" rel="noopener noreferrer">
+            <OfferLink
+              href={offer.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Learn more
             </OfferLink>
           </div>
