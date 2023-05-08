@@ -6,7 +6,7 @@ import {
   StyledSpeakersSection,
   StyledTitleContainer,
   StyledTitleIcon,
-  StyledWaveContainer
+  StyledWaveContainer,
 } from "../Talks/Talks.style";
 import LessThanDarkBlueIcon from "../../assets/images/LessThanDarkBlueIcon.svg";
 import TitleSection from "../../components/SectionTitle/TitleSection";
@@ -18,13 +18,12 @@ import conferenceData from "../../data/2023.json";
 import styled from "styled-components";
 import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
 
-
 const StyledSection = styled.section`
-{
-  display: flex;
-  padding: 0 10rem;
-  flex-wrap: wrap;
-}
+   {
+    display: flex;
+    padding: 0 10rem;
+    flex-wrap: wrap;
+  }
 
   @media (max-width: ${BIG_BREAKPOINT}px) {
     padding: 1rem;
@@ -100,7 +99,12 @@ const Workshops: FC = () => {
           )}
           {workshops &&
             workshops.map((track, index) => (
-              <TalkCard talk={track} key={track.id} index={index} />
+              <TalkCard
+                talk={track}
+                key={track.id}
+                index={index}
+                showTrack={true}
+              />
             ))}
         </StyledSection>
         <StyledMarginBottom />

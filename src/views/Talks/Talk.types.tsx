@@ -31,6 +31,7 @@ export interface Session {
   categories: SessionCategory[];
   questionAnswers: QuestionAnswers[];
   recordingUrl?: string;
+  track: string;
 }
 
 export interface IGroup {

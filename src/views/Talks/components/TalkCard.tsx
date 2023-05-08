@@ -2,15 +2,26 @@ import { FC } from "react";
 import { Link } from "react-router-dom";
 import { StyledJobsInfo } from "../../JobOffers/components/JobsCard";
 import { Tag } from "../../../components/Tag/Tag";
-import { ROUTE_SPEAKER_DETAIL, ROUTE_TALK_DETAIL } from "../../../constants/routes";
-import { CategoryItemEnum, QuestionAnswers, SessionCategory, SessionSpeaker } from "../Talk.types";
-import { extractSessionCategoryInfo, extractSessionTags } from "../UseFetchTalks";
+import {
+  ROUTE_SPEAKER_DETAIL,
+  ROUTE_TALK_DETAIL,
+} from "../../../constants/routes";
+import {
+  CategoryItemEnum,
+  QuestionAnswers,
+  SessionCategory,
+  SessionSpeaker,
+} from "../Talk.types";
+import {
+  extractSessionCategoryInfo,
+  extractSessionTags,
+} from "../UseFetchTalks";
 import {
   StyledSessionCard,
   StyledSessionText,
   StyledTagsWrapper,
   StyledTalkSpeaker,
-  StyledTalkTitle
+  StyledTalkTitle,
 } from "../Talks.style";
 import { Color } from "../../../styles/colors";
 
@@ -24,13 +35,15 @@ interface TalkCardProps {
     level?: string;
     link?: string;
     tags?: string[];
+    track: string;
     categories: SessionCategory[];
     questionAnswers: QuestionAnswers[];
   };
   key: number;
+  showTrack?: boolean;
 }
 
-export const TalkCard: FC<TalkCardProps> = ({ talk }) => {
+export const TalkCard: FC<TalkCardProps> = ({ showTrack = false, talk }) => {
   return (
     <StyledSessionCard>
       <StyledJobsInfo align={"flex-start"}>
@@ -53,6 +66,15 @@ export const TalkCard: FC<TalkCardProps> = ({ talk }) => {
           )} `}
           {extractSessionCategoryInfo(talk.categories)}{" "}
         </StyledSessionText>
+        {showTrack && (
+          <StyledSessionText>
+            <strong>Track: </strong>
+            {extractSessionCategoryInfo(
+              talk.categories,
+              CategoryItemEnum.Track
+            )}
+          </StyledSessionText>
+        )}
         <StyledTagsWrapper>
           {extractSessionTags(talk.questionAnswers)?.map((tag) => {
             return <Tag key={tag} text={tag} textColor={Color.WHITE} />;
