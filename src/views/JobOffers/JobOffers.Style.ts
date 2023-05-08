@@ -2,9 +2,6 @@ import styled from "styled-components";
 import { BIG_BREAKPOINT, TABLET_BREAKPOINT } from "../../constants/BreakPoints";
 
 export const StyledWrapperSection = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
   overflow-x: hidden;
 `;

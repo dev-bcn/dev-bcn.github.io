@@ -123,6 +123,6 @@
     ]
   },
   "jobOffers": {
-    "enabled": false
+    "enabled": true
   }
 }

@@ -1,16 +1,17 @@
-import { FC } from 'react';
-import { motion } from 'framer-motion';
-import styled from 'styled-components';
-import { TLateralHashWithText } from '../RightHashWithText/RightHashWithText';
-import { MOBILE_BREAKPOINT } from '../../constants/BreakPoints';
+import { FC } from "react";
+import { motion } from "framer-motion";
+import styled from "styled-components";
+import { TLateralHashWithText } from "../RightHashWithText/RightHashWithText";
+import { MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
 
 const StyledLeftSlashWrapper = styled(motion.div)`
   display: flex;
   width: 100%;
   justify-content: flex-start;
+  text-transform: none;
   padding: 1rem 0;
   @media (min-width: ${MOBILE_BREAKPOINT}px) {
-    padding: 3rem 0;
+    padding: 1.5rem 0;
   }
 `;
 
