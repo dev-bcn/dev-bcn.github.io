@@ -91,5 +91,10 @@ export const sponsors: Sponsors = {
       image: "images/sponsors/entre-devs-y-ops.svg",
       website: "https://www.entredevyops.es/",
     },
+    {
+      name: "Codely",
+      image: "images/sponsors/codely.png",
+      website: "https://codely.com/pro/jbcnconf22",
+    },
   ],
 };
