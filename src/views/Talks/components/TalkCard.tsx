@@ -12,6 +12,7 @@ import {
   StyledTalkSpeaker,
   StyledTalkTitle
 } from "../Talks.style";
+import { Color } from "../../../styles/colors";
 
 interface TalkCardProps {
   index: number;
@@ -23,13 +24,15 @@ interface TalkCardProps {
     level?: string;
     link?: string;
     tags?: string[];
+    track: string;
     categories: SessionCategory[];
     questionAnswers: QuestionAnswers[];
   };
   key: number;
+  showTrack?: boolean;
 }
 
-export const TalkCard: FC<TalkCardProps> = ({ talk }) => {
+export const TalkCard: FC<TalkCardProps> = ({ showTrack = false, talk }) => {
   return (
     <StyledSessionCard>
       <StyledJobsInfo>
@@ -52,9 +55,18 @@ export const TalkCard: FC<TalkCardProps> = ({ talk }) => {
           )} `}
           {extractSessionCategoryInfo(talk.categories)}{" "}
         </StyledSessionText>
+        {showTrack && (
+          <StyledSessionText>
+            <strong>Track: </strong>
+            {extractSessionCategoryInfo(
+              talk.categories,
+              CategoryItemEnum.Track
+            )}
+          </StyledSessionText>
+        )}
         <StyledTagsWrapper>
           {extractSessionTags(talk.questionAnswers)?.map((tag) => {
-            return <Tag key={tag} text={tag} />;
+            return <Tag key={tag} text={tag} textColor={Color.WHITE} />;
           })}
         </StyledTagsWrapper>
       </StyledJobsInfo>

@@ -13,5 +13,6 @@ export const ROUTE_SPEAKER_DETAIL = "/speaker";
 export const ROUTE_SPEAKER_DETAIL_PLAIN = "/speaker/:id";
 export const ROUTE_TALKS = "/talks";
 export const ROUTE_TALK_DETAIL = "/talk";
+export const ROUTE_WORKSHOPS = "/workshops";
 export const ROUTE_MEETING_DETAIL_PLAIN = "/talk/:id";
 export const ROUTE_TRAVEL = "/travel";

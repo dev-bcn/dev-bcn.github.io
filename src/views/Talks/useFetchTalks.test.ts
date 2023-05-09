@@ -18,6 +18,7 @@ describe("sessionAdapter", () => {
 
   test("returns the expected output when session is defined", () => {
     const session: Session = {
+      track: "Java ( core frameworks & libraries )",
       id: 5000,
       description: "Session description",
       startAt: "",
