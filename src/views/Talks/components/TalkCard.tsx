@@ -2,26 +2,15 @@ import { FC } from "react";
 import { Link } from "react-router-dom";
 import { StyledJobsInfo } from "../../JobOffers/components/JobsCard";
 import { Tag } from "../../../components/Tag/Tag";
-import {
-  ROUTE_SPEAKER_DETAIL,
-  ROUTE_TALK_DETAIL,
-} from "../../../constants/routes";
-import {
-  CategoryItemEnum,
-  QuestionAnswers,
-  SessionCategory,
-  SessionSpeaker,
-} from "../Talk.types";
-import {
-  extractSessionCategoryInfo,
-  extractSessionTags,
-} from "../UseFetchTalks";
+import { ROUTE_SPEAKER_DETAIL, ROUTE_TALK_DETAIL } from "../../../constants/routes";
+import { CategoryItemEnum, QuestionAnswers, SessionCategory, SessionSpeaker } from "../Talk.types";
+import { extractSessionCategoryInfo, extractSessionTags } from "../UseFetchTalks";
 import {
   StyledSessionCard,
   StyledSessionText,
   StyledTagsWrapper,
   StyledTalkSpeaker,
-  StyledTalkTitle,
+  StyledTalkTitle
 } from "../Talks.style";
 import { Color } from "../../../styles/colors";
 
@@ -46,7 +35,7 @@ interface TalkCardProps {
 export const TalkCard: FC<TalkCardProps> = ({ showTrack = false, talk }) => {
   return (
     <StyledSessionCard>
-      <StyledJobsInfo align={"flex-start"}>
+      <StyledJobsInfo>
         <StyledTalkTitle to={`${ROUTE_TALK_DETAIL}/${talk.id}`}>
           {talk.title}
         </StyledTalkTitle>

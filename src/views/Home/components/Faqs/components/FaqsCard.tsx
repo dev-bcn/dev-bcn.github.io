@@ -14,7 +14,7 @@ type FaqCardType = {
   index: number;
 };
 
-export const StyledFaqCard = styled.div<{ direction: string }>`
+export const StyledFaqCard = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -22,7 +22,6 @@ export const StyledFaqCard = styled.div<{ direction: string }>`
   margin-bottom: 3rem;
   @media (min-width: 800px) {
     align-items: flex-start;
-    flex-direction: ${({ direction }) => direction};
     max-width: 900px;
     margin-bottom: 4rem;
   }
@@ -75,11 +74,15 @@ export const StyledFaqTitle = styled.h2`
 `;
 
 export const StyledFaqText = styled.p`
-  padding: 0.5rem 0;
+  padding: 0.5rem 2rem;
+  text-align: left;
   @media (min-width: 800px) {
     hyphens: auto;
     word-wrap: break-word;
-    text-align: left;
+  }
+
+  ul {
+    margin: 0.5rem 2rem;
   }
 `;
 
@@ -87,7 +90,7 @@ const FaqCard: FC<FaqCardType> = ({ faq, index }) => {
   const isOdd = index % 2 === 0;
 
   return (
-    <StyledFaqCard direction={isOdd ? "row" : "row-reverse"}>
+    <StyledFaqCard>
       <StyledFaqImageContainer padding={isOdd ? "0 1rem 0 0" : "0 0 0 1rem"}>
         <Suspense fallback={<StyledLoadingImage src={Logo} />}>
           <StyledFaqImage
