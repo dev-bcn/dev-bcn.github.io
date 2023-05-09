@@ -16,6 +16,7 @@ const CompanyContainer = styled.div`
   text-align: left;
   padding-bottom: 15rem;
   margin: 1rem 2rem;
+  width: 90%;
 
   @media (min-width: 768px) {
     flex-direction: row;
@@ -30,9 +31,10 @@ const CompanyContainer = styled.div`
 `;
 
 const CompanyLogo = styled.img`
-  width: 25%;
+  width: 50%;
   max-width: 10rem;
   margin-bottom: 1rem;
+  text-align: center;
 
   @media (min-width: 768px) {
     max-width: none;
@@ -47,7 +49,11 @@ const CompanyName = styled.h2`
   margin-bottom: 0.5rem;
 `;
 
-const CompanyDescription = styled.p``;
+const CompanyDescription = styled.p`
+   {
+    margin: 0.8rem 0;
+  }
+`;
 
 const OfferTitle = styled.h3`
   font-size: 1.25rem;
@@ -78,9 +84,15 @@ const CompanyOffers: React.FC<CompanyProps> = ({ company }) => {
   return (
     <CompanyContainer id={company.name.toLowerCase()}>
       <div>
-        <a target="_blank" rel="noreferrer noopener" href={company.url}>
+        <a
+          style={{ textAlign: "center" }}
+          target="_blank"
+          rel="noreferrer noopener"
+          href={company.url}
+        >
           <CompanyLogo src={company.logo} alt={`${company.name} logo`} />
         </a>
+        <CompanyDescription>{company.description}</CompanyDescription>
         <p>
           {company.linkedin && (
             <LinkedinIcon
@@ -92,7 +104,6 @@ const CompanyOffers: React.FC<CompanyProps> = ({ company }) => {
             <TwitterIcon color={Color.DARK_BLUE} twitterUrl={company.twitter} />
           )}
         </p>
-        <CompanyDescription>{company.description}</CompanyDescription>
       </div>
       <div>
         <CompanyName>{company.name}</CompanyName>
