@@ -1,18 +1,24 @@
 name: sonar analysis
+
 on:
   push:
     branches: [ "main" ]
   pull_request:
     types: [opened, synchronize, reopened]
+
 jobs:
   sonarcloud:
     name: SonarCloud
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
+      # Checkout
+      - name: checkout
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
 
+      # Load cache modules
       - name: Cache node modules
         id: cache-npm
         uses: actions/cache@v3
@@ -25,6 +31,8 @@ jobs:
             ${{ runner.os }}-     
             
 
+
+      # Run tests with coverage
       - name: run tests
         uses: actions/setup-node@v3
         with:
@@ -33,6 +41,9 @@ jobs:
           npm ci
           npm test --coverage
 
+    
+
+     # Send report to sonar
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
