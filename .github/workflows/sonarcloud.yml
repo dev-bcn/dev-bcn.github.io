@@ -27,15 +27,15 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
-            ${{ runner.os }}-     
-      
-      
+            ${{ runner.os }}-
 
       # Run tests with coverage
-      - name: run tests
+      - name: Use Node.js 18.x
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
+
+      - name: run tests with coverage
         run: |
           npm ci
           npm run test -- --coverage . --watchAll=false
