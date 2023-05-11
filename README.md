@@ -1,6 +1,8 @@
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=devbcn.github.io&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=devbcn.github.io)
+
 ![](src/assets/images/1500x500.jpeg)
 
-# Barcelona Developers Conference - DevBcn  
+# Barcelona Developers Conference - DevBcn
 
 ## Getting Started with Create React App
 
