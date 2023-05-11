@@ -40,7 +40,8 @@
   "jest": {
     "transformIgnorePatterns": [
       "/node_modules/(?!axios)/"
-    ]
+    ],
+    "coveragePathIgnorePatterns": ["reportWebVitals.ts","/\\.(Style|Type|types)\\.tsx?$/\n","colors.ts"]
   },
   "eslintConfig": {
     "extends": [

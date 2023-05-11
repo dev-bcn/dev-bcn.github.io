@@ -27,34 +27,40 @@ const CfpTrackComponent: FC<CfpTrackProps> = ({ track }) => (
         style={{
           paddingTop: "1.5rem",
           paddingBottom: "1rem",
-          fontSize: "2rem",
+          fontSize: "1.8rem",
+          color: Color.DARK_BLUE,
         }}
       >
         {track.name}
       </h2>
     </section>
     <div style={{ display: "flex", margin: "1rem" }}>
-      {track.members.map((member) => (
-        <>
-          {member.photo !== "" && (
-            <div key={member.name}>
-              <StyledAboutImage src={member.photo} alt={member.name} />
-              <h5 style={{ color: Color.DARK_BLUE }}>{member.name}</h5>
-              <StyledSocialIconsWrapper>
-                {member.twitter !== "" && (
-                  <TwitterIcon color={Color.BLUE} twitterUrl={member.twitter} />
-                )}
-                {member.linkedIn !== "" && (
-                  <LinkedinIcon
-                    color={Color.BLUE}
-                    linkedinUrl={member.linkedIn}
-                  />
-                )}
-              </StyledSocialIconsWrapper>
-            </div>
-          )}
-        </>
-      ))}
+      {track.members.map((member) => {
+        return (
+          <div key={member.name}>
+            {member.photo !== "" && (
+              <div>
+                <StyledAboutImage src={member.photo} alt={member.name} />
+                <h5 style={{ color: Color.DARK_BLUE }}>{member.name}</h5>
+                <StyledSocialIconsWrapper>
+                  {member.twitter !== "" && (
+                    <TwitterIcon
+                      color={Color.BLUE}
+                      twitterUrl={member.twitter}
+                    />
+                  )}
+                  {member.linkedIn !== "" && (
+                    <LinkedinIcon
+                      color={Color.BLUE}
+                      linkedinUrl={member.linkedIn}
+                    />
+                  )}
+                </StyledSocialIconsWrapper>
+              </div>
+            )}
+          </div>
+        );
+      })}
     </div>
   </>
 );
