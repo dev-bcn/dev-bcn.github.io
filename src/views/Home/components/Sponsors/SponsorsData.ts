@@ -54,6 +54,11 @@ export const sponsors: Sponsors = {
       image: "images/sponsors/idealista.jpg",
       website: "https://www.idealista.com/info/trabaja-con-nosotros",
     },
+    {
+      name: "King",
+      image: "images/sponsors/king.png",
+      website: "https://careers.king.com/about-us/",
+    },
   ],
   basic: [
     {
