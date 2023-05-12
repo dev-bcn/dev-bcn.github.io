@@ -65,3 +65,7 @@ export const jobOffers: Company[] = [
     ],
   },
 ];
+
+export interface CompanyProps {
+  company: Company;
+}

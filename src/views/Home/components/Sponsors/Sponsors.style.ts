@@ -28,7 +28,7 @@ export const StyledSponsorItemContainer = styled.div`
   display: flex;
   flex-direction: column;
   font-size: 1.75rem;
-  padding: 11.5rem 0 1rem;
+  padding: 5.5rem 0 0.5rem;
   z-index: 1;
 
   @media (max-width: ${BIG_BREAKPOINT}px) {
@@ -81,20 +81,17 @@ export const StyledSlashes = styled.div`
 `;
 export const StyledSponsorLogosContainer = styled.div`
   display: flex;
-  position: absolute;
   width: 100%;
   top: 4.75rem;
   z-index: 2;
   background: none;
 
   @media (max-width: ${BIG_BREAKPOINT}px) {
-    top: 5rem;
     bottom: 15rem;
     padding-right: 1rem;
   }
 
   @media (min-width: ${BIG_BREAKPOINT}px) {
-    top: 5rem;
   }
 `;
 export const StyledLogos = styled.div<{ position?: "left" | "right" }>`
@@ -149,6 +146,7 @@ export const PremiumSponsorImage = styled.img`
   height: 7.5rem;
   transition: height ease-in 0.25s;
   max-width: 100%;
+  border-radius: 1rem;
 
   &:hover {
     height: 8rem;
@@ -178,6 +176,7 @@ export const RegularSponsorImage = styled.img`
   margin-right: 0.5rem;
   margin-bottom: 1.5rem;
   transition: height ease-in 0.25s;
+  border-radius: 1rem;
 
   &:hover {
     height: 3.5rem;

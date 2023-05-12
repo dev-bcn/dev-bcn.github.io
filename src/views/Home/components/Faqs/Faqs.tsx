@@ -5,13 +5,8 @@ import LessThanIcon from "../../../../assets/images/LessThanBlueIcon.svg";
 import MoreThanIcon from "../../../../assets/images/LessThanBlueWhiteIcon.svg";
 import SectionWrapper from "../../../../components/SectionWrapper/SectionWrapper";
 import { faqsData } from "./FaqsData";
-import { motion } from "framer-motion";
-import styled from "styled-components";
 import { useWindowSize } from "react-use";
-import {
-  BIG_BREAKPOINT,
-  MOBILE_BREAKPOINT,
-} from "../../../../constants/BreakPoints";
+import { MOBILE_BREAKPOINT } from "../../../../constants/BreakPoints";
 import flickr from "../../../../assets/images/flickr.svg";
 import youtube from "../../../../assets/images/youtube.svg";
 import jbcnconf from "../../../../assets/images/jbcnconf-1.jpg";
@@ -19,65 +14,15 @@ import jbcnconf2 from "../../../../assets/images/jbcnconf-2.jpg";
 import slides from "../../../../assets/images/slides.png";
 import Logo from "../../../../assets/images/logo.svg";
 import { StyledLoadingImage } from "../../../../components/Loading/Loading";
-
-export const StyledFaqSection = styled(motion.section)`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 3rem 2rem;
-  position: relative;
-  @media (min-width: 650px) {
-    padding: 3rem 5rem;
-  }
-`;
-
-export const StyledWaveContainer = styled.div`
-  background: ${Color.DARK_BLUE};
-  overflow-y: hidden;
-  height: 5rem;
-  width: 100%;
-`;
-
-const StyleMoreIcon = styled.img`
-  position: absolute;
-  right: -1rem;
-  top: 5rem;
-  height: 5rem;
-  @media (min-width: 800px) {
-    height: 10rem;
-  }
-`;
-
-const StyleLessIcon = styled.img`
-  position: absolute;
-  left: -1rem;
-  top: 50%;
-  height: 5rem;
-  @media (min-width: 800px) {
-    height: 10rem;
-  }
-`;
-
-const StyledImage = styled.img`
-  margin: 3px;
-  padding: 5px;
-  border: 1px solid ${Color.YELLOW};
-  border-radius: 100% 0 100% 0 / 15% 89% 11% 85%;
-
-  @media (max-width: ${BIG_BREAKPOINT}px) {
-    width: 100%;
-  }
-`;
-const StyledH2 = styled.h2`
-  color: white;
-  margin-bottom: 10px;
-`;
-
-const StyledP = styled.p`
-  color: white;
-  margin-bottom: 10px;
-`;
+import {
+  StyledFaqSection,
+  StyledH2,
+  StyledImage,
+  StyledP,
+  StyledWaveContainer,
+  StyleLessIcon,
+  StyleMoreIcon,
+} from "./Faqs.style";
 
 const Faqs: FC = () => {
   const { width } = useWindowSize();
@@ -86,11 +31,7 @@ const Faqs: FC = () => {
       <SectionWrapper color={Color.DARK_BLUE}>
         <StyledFaqSection>
           {faqsData.map((faq, index) => (
-            <FaqCard
-              faq={faq}
-              index={index}
-              key={faq.question.substring(0, 8)}
-            />
+            <FaqCard faq={faq} index={index} key={faq.id} />
           ))}
           <div id="last-jbcnconf">&nbsp;</div>
           <div style={{ width: "60%" }}>

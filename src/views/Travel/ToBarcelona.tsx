@@ -15,6 +15,11 @@ const StyledSection = styled.div`
 
   h2 {
     margin-bottom: 10px;
+    color: ${Color.YELLOW};
+  }
+
+  h3 {
+    color: ${Color.GREEN};
   }
 
   img {
