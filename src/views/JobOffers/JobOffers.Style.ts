@@ -44,6 +44,7 @@ export const CompanyContainer = styled.div`
   padding-bottom: 15rem;
   margin: 1rem 2rem;
   width: 90%;
+  border-bottom: 1px dotted ${Color.DARK_BLUE};
 
   @media (min-width: 768px) {
     flex-direction: row;
