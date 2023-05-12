@@ -1,10 +1,14 @@
 import { FC } from "react";
-import { StyledFaqCard, StyledFaqText, StyledFaqTitle } from "../../Home/components/Faqs/components/FaqsCard";
 import styled from "styled-components";
 import { Color } from "../../../styles/colors";
 import { motion } from "framer-motion";
 import LocationIcon from "../../../assets/images/LocationIcon.svg";
 import { Offer } from "../JobsData";
+import {
+  StyledFaqCard,
+  StyledFaqText,
+  StyledFaqTitle,
+} from "../../Home/components/Faqs/Faqs.style";
 
 type IJobsCardProps = {
   offer: Offer;
