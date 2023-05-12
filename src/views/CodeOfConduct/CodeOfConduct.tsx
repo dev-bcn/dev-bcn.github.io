@@ -113,7 +113,7 @@ const CodeOfConduct: FC = () => {
         <StyledSpeakersSection>
           <StyledTagsWrapper>
             {CodeOfConductTags.map((tag, index) => (
-              <Tag text={tag} key={index} />
+              <Tag text={tag} key={index} textColor={Color.LIGHT_BLUE} />
             ))}
           </StyledTagsWrapper>
         </StyledSpeakersSection>
