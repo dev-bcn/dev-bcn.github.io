@@ -19,29 +19,34 @@ import {
 } from "../About/components/Style.AboutCard";
 import conferenceData from "../../data/2023.json";
 import { CfpTrackProps, data } from "./CfpData";
+import styled from "styled-components";
+
+const TrackName = styled.h2`
+  padding-top: 1.2rem;
+  padding-bottom: 0.8rem;
+  font-size: 1.5rem;
+  color: ${Color.DARK_BLUE};
+`;
+
+const MemberName = styled.h5`
+  font-size: 0.8rem;
+  color: ${Color.DARK_BLUE};
+  text-align: left;
+`;
 
 const CfpTrackComponent: FC<CfpTrackProps> = ({ track }) => (
   <>
     <section>
-      <h2
-        style={{
-          paddingTop: "1.5rem",
-          paddingBottom: "1rem",
-          fontSize: "1.8rem",
-          color: Color.DARK_BLUE,
-        }}
-      >
-        {track.name}
-      </h2>
+      <TrackName>{track.name}</TrackName>
     </section>
-    <div style={{ display: "flex", margin: "1rem" }}>
+    <div style={{ display: "flex", margin: "1rem auto", maxWidth: "80%" }}>
       {track.members.map((member) => {
         return (
           <div key={member.name}>
             {member.photo !== "" && (
               <div>
                 <StyledAboutImage src={member.photo} alt={member.name} />
-                <h5 style={{ color: Color.DARK_BLUE }}>{member.name}</h5>
+                <MemberName>{member.name}</MemberName>
                 <StyledSocialIconsWrapper>
                   {member.twitter !== "" && (
                     <TwitterIcon

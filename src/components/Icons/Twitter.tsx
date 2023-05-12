@@ -7,9 +7,9 @@ interface ITwitterIconProps {
 }
 
 export const StyledSocialMediaWrapper = styled.a`
-  height: 1rem;
-  width: 1rem;
-  margin-right: 1rem;
+  height: 0.8rem;
+  width: 0.8rem;
+  margin-right: 0.5rem;
 `;
 const TwitterIcon: FC<ITwitterIconProps> = ({ color, twitterUrl }) => {
   return (
