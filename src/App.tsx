@@ -15,7 +15,7 @@ import {
   ROUTE_SPEAKERS,
   ROUTE_TALKS,
   ROUTE_TRAVEL,
-  ROUTE_WORKSHOPS
+  ROUTE_WORKSHOPS,
 } from "./constants/routes";
 
 import Footer from "./components/Footer/Footer";
@@ -35,7 +35,6 @@ import { QueryClient, QueryClientProvider } from "react-query";
 const StyledAppWrapper = styled.div`
   position: relative;
   min-height: 100vh;
-  overflow-x: hidden;
 `;
 
 const isDevBcnCookieSet = document.cookie
