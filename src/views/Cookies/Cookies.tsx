@@ -133,17 +133,17 @@ const Cookies: FC = () => {
       </p>
       <ul>
         <li>
-          <a href="http://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-que-los-sitios-we">
+          <a href="https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-que-los-sitios-we">
             Firefox from here
           </a>
         </li>
         <li>
-          <a href="http://support.google.com/chrome/bin/answer.py?hl=es&answer=95647">
+          <a href="https://support.google.com/chrome/bin/answer.py?hl=es&answer=95647">
             Chrome from here
           </a>
         </li>
         <li>
-          <a href="http://windows.microsoft.com/es-es/internet-explorer/delete-managecookies#ie=ie-10">
+          <a href="https://windows.microsoft.com/es-es/internet-explorer/delete-managecookies#ie=ie-10">
             Explorer from here
           </a>
         </li>
