@@ -87,16 +87,15 @@ const Speakers: FC = () => {
                 />
               </div>
             )}
-            {data && data.length === 0 && (
+            {data?.length === 0 && (
               <p style={{ color: Color.WHITE }}>
                 No selected speakers yet. Keep in touch in our social media for
                 upcoming announcements
               </p>
             )}
-            {data &&
-              data.map((speaker: ISpeaker) => (
-                <SpeakerCard key={speaker.id} speaker={speaker} />
-              ))}
+            {data?.map((speaker: ISpeaker) => (
+              <SpeakerCard key={speaker.id} speaker={speaker} />
+            ))}
           </SpeakersCardsContainer>
           <StyledContainerRightSlash
             initial={{ x: "100%" }}

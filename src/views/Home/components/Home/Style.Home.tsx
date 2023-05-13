@@ -32,7 +32,7 @@ export const StyleHomeContainer = styled.div`
 `;
 
 export const StyledTitleContainer = styled.div`
-  background-color: ${(props) => props.color || Color.DARK_BLUE};
+  background-color: ${(props) => props.color ?? Color.DARK_BLUE};
   border-radius: 20px;
   width: 70%;
   margin-bottom: 1rem;
@@ -50,7 +50,7 @@ export const StyledTitle = styled.h1`
 `;
 
 export const StyledSubtitle = styled.h2`
-  color: ${(props) => props.color || Color.WHITE};
+  color: ${(props) => props.color ?? Color.WHITE};
   font-family: "DejaVu Sans ExtraLight", sans-serif;
   font-size: 1.25rem;
   text-shadow: 1px 1px 1px black;

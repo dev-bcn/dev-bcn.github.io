@@ -97,15 +97,14 @@ const Workshops: FC = () => {
               upcoming announcements
             </p>
           )}
-          {workshops &&
-            workshops.map((track, index) => (
-              <TalkCard
-                talk={track}
-                key={track.id}
-                index={index}
-                showTrack={true}
-              />
-            ))}
+          {workshops?.map((track, index) => (
+            <TalkCard
+              talk={track}
+              key={track.id}
+              index={index}
+              showTrack={true}
+            />
+          ))}
         </StyledSection>
         <StyledMarginBottom />
       </SectionWrapper>

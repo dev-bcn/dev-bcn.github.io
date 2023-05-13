@@ -10,7 +10,7 @@ import * as Sentry from "@sentry/react";
 import Loading from "./components/Loading/Loading";
 
 const tracking_ID =
-  process.env.REACT_APP_GOOGLE_ANALYTICS_API_KEY || "G-0BG1LNPT11";
+  process.env.REACT_APP_GOOGLE_ANALYTICS_API_KEY ?? "G-0BG1LNPT11";
 ReactGa.initialize(tracking_ID);
 
 Sentry.init({

@@ -118,24 +118,23 @@ const SpeakerDetail: FC<ISpeakerDetailProps> = ({ speaker }) => {
                         listStyleType: "none",
                       }}
                     >
-                      {speaker.sessions &&
-                        speaker.sessions.map((session, index) => (
-                          <li key={index}>
-                            <StyledTalkDescription
-                              to={`${ROUTE_TALK_DETAIL}/${session.id}`}
-                            >
-                              <StyledSpeakerTitle>
-                                <img
-                                  src={LessThan}
-                                  height={12}
-                                  alt="session"
-                                  style={{ paddingRight: "0.5rem" }}
-                                />
-                                {session.name}
-                              </StyledSpeakerTitle>
-                            </StyledTalkDescription>
-                          </li>
-                        ))}
+                      {speaker?.sessions?.map((session) => (
+                        <li key={session.id}>
+                          <StyledTalkDescription
+                            to={`${ROUTE_TALK_DETAIL}/${session.id}`}
+                          >
+                            <StyledSpeakerTitle>
+                              <img
+                                src={LessThan}
+                                height={12}
+                                alt="session"
+                                style={{ paddingRight: "0.5rem" }}
+                              />
+                              {session.name}
+                            </StyledSpeakerTitle>
+                          </StyledTalkDescription>
+                        </li>
+                      ))}
                     </ul>
                   </>
                 )}

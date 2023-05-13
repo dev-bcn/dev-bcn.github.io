@@ -6451,11 +6451,11 @@
 .p-inline-message.p-inline-message-error {
     background: #e6a3b2;
     border: 2px solid #de8499;
-     color: #002454;;
+     color: #002454;
 }
 
 .p-inline-message.p-inline-message-error .p-inline-message-icon {
-     color: #002454;;
+     color: #002454;
 }
 
 .p-inline-message .p-inline-message-icon {
@@ -6502,15 +6502,15 @@
     background: #a3d7e6;
     border: solid #65bcd6;
     border-width: 0 0 0 6px;
-     color: #002454;;
+     color: #002454;
 }
 
 .p-message.p-message-info .p-message-icon {
-     color: #002454;;
+     color: #002454;
 }
 
 .p-message.p-message-info .p-message-close {
-     color: #002454;;
+     color: #002454;
 }
 
 .p-message.p-message-success {
