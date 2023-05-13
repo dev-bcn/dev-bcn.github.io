@@ -15,7 +15,7 @@ import {
 } from "./JobOffers.Style";
 
 const CompanyOffers: React.FC<CompanyProps> = ({ company }) => (
-  <CompanyContainer id={company.name.toLowerCase()}>
+  <CompanyContainer id={company.name.replaceAll(" ", "-").toLowerCase()}>
     <div style={{ flex: "0 0 30%" }}>
       <a
         style={{ textAlign: "center" }}
