@@ -33,11 +33,11 @@ interface ISectionWrapperProps {
 }
 
 const SectionWrapper: FC<ISectionWrapperProps> = ({
-                                                    children,
-                                                    color,
-                                                    marginTop = 0,
-                                                    paddingBottom = 0
-                                                  }) => {
+  children,
+  color,
+  marginTop = 0,
+  paddingBottom = 0,
+}) => {
   return (
     <StyledSectionWrapper
       color={color}

@@ -9,8 +9,33 @@ import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import TitleSection from "../../components/SectionTitle/TitleSection";
 import { useWindowSize } from "react-use";
 import data from "../../data/2023.json";
-import { StyledLessIcon, StyledMoreIcon, StyledTitleContainer, StyledWrapperSection } from "./JobOffers.Style";
+import {
+  Companies,
+  CompanyNameLink,
+  StyledLessIcon,
+  StyledMoreIcon,
+  StyledTitleContainer,
+} from "./JobOffers.Style";
 import CompanyOffers from "./CompanyOffers";
+
+const NoOffersAvailable = () => (
+  <>
+    {!data.jobOffers.enabled && (
+      <h4 style={{ color: Color.DARK_BLUE }}>No job offers available yet</h4>
+    )}
+  </>
+);
+
+const MoreThanLessThan = (props: { width: number }) => (
+  <>
+    {props.width > MOBILE_BREAKPOINT && (
+      <>
+        <StyledLessIcon src={LessThanBlueIcon} />
+        <StyledMoreIcon src={MoreThanBlueIcon} />
+      </>
+    )}
+  </>
+);
 
 const JobOffers: FC = () => {
   const { width } = useWindowSize();
@@ -21,7 +46,7 @@ const JobOffers: FC = () => {
 
   return (
     <SectionWrapper color={Color.WHITE} marginTop={6} paddingBottom={100}>
-      <StyledWrapperSection>
+      <section>
         <StyledTitleContainer>
           <TitleSection
             title="JOB OFFERS"
@@ -29,25 +54,28 @@ const JobOffers: FC = () => {
             color={Color.BLACK_BLUE}
           />
         </StyledTitleContainer>
-        {width > MOBILE_BREAKPOINT && (
-          <>
-            <StyledLessIcon src={LessThanBlueIcon} />
-            <StyledMoreIcon src={MoreThanBlueIcon} />
-          </>
-        )}
-        {!data.jobOffers.enabled && (
-          <h4 style={{ color: Color.DARK_BLUE }}>
-            No job offers available yet
-          </h4>
-        )}
+        <MoreThanLessThan width={width} />
+        <NoOffersAvailable />
         {data.jobOffers.enabled && (
-          <>
-            {jobOffers.map((company) => (
-              <CompanyOffers company={company} key={company.id} />
-            ))}
-          </>
+          <div id="job-offers">
+            <Companies id="companies">
+              {jobOffers.map((company) => (
+                <CompanyNameLink
+                  href={` #${company.name.replaceAll(" ", "-").toLowerCase()}`}
+                  key={company.id}
+                >
+                  {company.name}
+                </CompanyNameLink>
+              ))}
+            </Companies>
+            <div id="offers">
+              {jobOffers.map((company) => (
+                <CompanyOffers company={company} key={company.id} />
+              ))}
+            </div>
+          </div>
         )}
-      </StyledWrapperSection>
+      </section>
     </SectionWrapper>
   );
 };

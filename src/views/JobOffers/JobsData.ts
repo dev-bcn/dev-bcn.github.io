@@ -79,13 +79,13 @@ export const jobOffers: Company[] = [
         location: "Full remote",
         url: "https://www.soprasteria.com/",
         text:
-          '"<p>Our employees agree on the 𝗚𝗿𝗲𝗮𝘁 𝗧𝗲𝗮𝗺 and environment we have at 𝗦𝗼𝗽𝗿𝗮 𝗦𝘁𝗲𝗿𝗶𝗮. We are more than 46,000 people working in 25 countries and our mission is to match talent and technology, trying to help you find a place where you can develop your full potential.</p>\n' +
+          "<p>Our employees agree on the 𝗚𝗿𝗲𝗮𝘁 𝗧𝗲𝗮𝗺 and environment we have at 𝗦𝗼𝗽𝗿𝗮 𝗦𝘁𝗲𝗿𝗶𝗮. We are more than 46,000 people working in 25 countries and our mission is to match talent and technology, trying to help you find a place where you can develop your full potential.</p>\n" +
           "\n" +
-          "<p><strong>𝗗𝗼 𝘆𝗼𝘂 𝗱𝗮𝗿𝗲 𝘁𝗼 𝗰𝗿𝗲𝗮𝘁𝗲 𝘁𝗵𝗲 𝗳𝘂𝘁𝘂𝗿𝗲?</strong></p>\n" +
+          "<p><strong>Do you dare to create the future?</strong></p>\n" +
           "\n" +
-          "<p>We are looking to expand our team with a professional 𝗙𝘂𝗹𝗹 𝗦𝘁𝗮𝗰𝗸 𝗝𝗮𝘃𝗮𝗦𝗰𝗿𝗶𝗽𝘁 𝗘𝗻𝗴𝗶𝗻𝗲𝗲𝗿. You will be part of a project of software development and continuous improvement, for one of the most important insurance companies in the world.</p>\n" +
+          "<p>We are looking to expand our team with a professional Full Stack Javascript Engineer. You will be part of a project of software development and continuous improvement, for one of the most important insurance companies in the world.</p>\n" +
           "\n" +
-          "<p>𝗬𝗼𝘂𝗿 𝗱𝗮𝘆-𝘁𝗼-𝗱𝗮𝘆 𝗳𝘂𝗻𝗰𝘁𝗶𝗼𝗻𝘀 𝘄𝗶𝗹𝗹 𝗯𝗲:</p>\n" +
+          "<p><strong>Your day-to-day functions will be:</strong></p>\n" +
           "<ul>\n" +
           "<li>Coding in 𝗝𝗮𝘃𝗮𝘀𝗰𝗿𝗶𝗽𝘁, 𝗥𝗲𝗮𝗰𝘁𝗝𝘀 and 𝗡𝗼𝗱𝗲𝗝𝘀, with knowledge of 𝗧𝘆𝗽𝗲𝘀𝗰𝗿𝗶𝗽𝘁 or 𝗩𝘂𝗲𝗝𝘀.</li>\n" +
           "<li>Support in the definition and refinement of requirements.</li>\n" +
@@ -95,15 +95,14 @@ export const jobOffers: Company[] = [
           "<li>Working with Agile methodology.</li>\n" +
           "<li>Contribute to technical and architectural decision-making.</li>\n" +
           "</ul>\n" +
-          "<p>𝗕𝗲𝗰𝗮𝘂𝘀𝗲 𝘄𝗲 𝗸𝗻𝗼𝘄 𝘄𝗵𝗮𝘁 𝘆𝗼𝘂 𝗻𝗲𝗲𝗱 ... 𝗪𝗲 𝗼𝗳𝗳𝗲𝗿:</p>\n" +
+          "<p><strong>Because we know what yo need... we offer:</strong></p>\n" +
           "<ul>\n" +
           "<li>Flexibility for your time - it's not all going to be work!</li>\n" +
           "<li>Possibility of Working from Home.</li>\n" +
           "<li>Participate in challenging projects, do you want to learn something new?</li>\n" +
           "<li>Grow with a personalized continuous development program.</li>\n" +
           "<li>Enjoy our Benefits and Flexible Compensation Plan.</li>\n" +
-          "</ul>\n" +
-          '"',
+          "</ul>\n",
       },
     ],
   },

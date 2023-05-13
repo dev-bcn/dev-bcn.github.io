@@ -16,7 +16,14 @@ import {
 
 const CompanyOffers: React.FC<CompanyProps> = ({ company }) => (
   <CompanyContainer id={company.name.replaceAll(" ", "-").toLowerCase()}>
-    <div style={{ flex: "0 0 30%" }}>
+    <div
+      style={{
+        flex: "0 0 30%",
+        height: "55vh",
+        backgroundColor: Color.SKY_BLUE,
+        padding: "0.5rem",
+      }}
+    >
       <a
         style={{ textAlign: "center" }}
         target="_blank"
@@ -30,18 +37,23 @@ const CompanyOffers: React.FC<CompanyProps> = ({ company }) => (
       <p>
         {company.linkedin && (
           <LinkedinIcon
-            color={Color.LIGHT_BLUE}
+            color={Color.DARK_BLUE}
             linkedinUrl={company.linkedin}
           />
         )}
         {company.twitter && (
-          <TwitterIcon color={Color.LIGHT_BLUE} twitterUrl={company.twitter} />
+          <TwitterIcon color={Color.DARK_BLUE} twitterUrl={company.twitter} />
         )}
       </p>
     </div>
     <div style={{ flex: "0 0 70%" }}>
       {company.offers.map((offer) => (
-        <div key={offer.id}>
+        <div
+          key={offer.id}
+          style={{
+            padding: "0.5rem 1rem",
+          }}
+        >
           <OfferTitle>{offer.title}</OfferTitle>
           <OfferLocation>{offer.location}</OfferLocation>
           <OfferText dangerouslySetInnerHTML={{ __html: offer.text }} />
