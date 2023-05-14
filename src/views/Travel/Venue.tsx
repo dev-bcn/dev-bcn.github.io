@@ -144,7 +144,7 @@ export const Venue: FC = () => {
     lat: 41.362,
     lng: 2.1044,
   };
-  const key = process.env.REACT_APP_MAP_API_KEY || "";
+  const key = process.env.REACT_APP_MAP_API_KEY ?? "";
 
   return (
     <StyledVenue>

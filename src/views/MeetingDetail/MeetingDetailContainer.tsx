@@ -27,7 +27,7 @@ const MeetingDetailContainer: FC = () => {
     return speakers?.map((speaker) => speaker.id);
   };
 
-  const talkSpeakers: String[] | undefined = getTalkSpeakers(data);
+  const talkSpeakers: string[] | undefined = getTalkSpeakers(data);
   const sessionSpeakers: ISpeaker[] | undefined = speakerData?.filter(
     (speaker) => talkSpeakers?.includes(speaker.id)
   );

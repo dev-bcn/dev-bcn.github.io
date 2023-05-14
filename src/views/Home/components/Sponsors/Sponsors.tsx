@@ -5,7 +5,11 @@ import LessThanBlueIcon from "../../../../assets/images/MoreThanBlueWhiteIcon.sv
 import LessThanBlueWhiteIcon from "../../../../assets/images/LessThanBlueWhiteIcon.svg";
 import SectionWrapper from "../../../../components/SectionWrapper/SectionWrapper";
 import TitleSection from "../../../../components/SectionTitle/TitleSection";
-import { StyledSponsorsContainer, StyledTitleContainer, StyledTitleImg } from "./Sponsors.style";
+import {
+  StyledSponsorsContainer,
+  StyledTitleContainer,
+  StyledTitleImg,
+} from "./Sponsors.style";
 import { TopSponsors } from "./TopSponsors";
 import { RegularSponsors } from "./RegularSponsors";
 import { PremiumSponsors } from "./PremiumSponsors";
@@ -16,7 +20,7 @@ import { MediaPartners } from "./MediaPartners";
 export const buildSlashes = (module: number) => {
   const slashesElement = document.getElementById("Slashes");
 
-  const slashesWidth = slashesElement?.offsetWidth || 0;
+  const slashesWidth = slashesElement?.offsetWidth ?? 0;
 
   let slashes = "";
   for (let index = 0; index < slashesWidth; index++) {

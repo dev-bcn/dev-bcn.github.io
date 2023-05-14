@@ -13,7 +13,7 @@ import Logo from "../../../assets/images/logo.svg";
 
 type AboutCardProps = {
   person: {
-    imageNumber: number;
+    id: number;
     name: string;
     nameColor: string;
     job: string;
