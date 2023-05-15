@@ -2,10 +2,6 @@ import styled from "styled-components";
 import { BIG_BREAKPOINT, TABLET_BREAKPOINT } from "../../constants/BreakPoints";
 import { Color } from "../../styles/colors";
 
-export const StyledWrapperSection = styled.section`
-  align-items: center;
-  overflow-x: hidden;
-`;
 export const StyledTitleContainer = styled.div`
   width: 100%;
   padding: 0 2rem;
@@ -41,14 +37,17 @@ export const CompanyContainer = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: left;
-  padding-bottom: 15rem;
   margin: 1rem 2rem;
   width: 90%;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${BIG_BREAKPOINT}px) {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+  }
+
+  @media (max-width: ${BIG_BREAKPOINT}px) {
+    padding-bottom: 15rem;
   }
 
   svg {
@@ -57,9 +56,8 @@ export const CompanyContainer = styled.div`
   }
 `;
 export const CompanyLogo = styled.img`
-  width: 50%;
-  max-width: 10rem;
-  margin-bottom: 1rem;
+  width: 95%;
+  margin: 0 auto 1.5rem;
   text-align: center;
 
   @media (min-width: 768px) {
@@ -72,6 +70,13 @@ export const CompanyName = styled.h2`
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
+`;
+export const CompanyNameLink = styled.a`
+  text-decoration: none;
+  text-transform: uppercase;
+  padding-left: 1rem;
+  color: ${Color.MAGENTA};
+  font-weight: bold;
 `;
 export const CompanyDescription = styled.p`
   margin: 0.8rem 0;
@@ -91,12 +96,13 @@ export const OfferText = styled.p`
 
   p {
     margin: initial;
-    padding: 0.2rem;
+    padding: 0.2rem 1rem;
   }
 
   ul {
     margin-bottom: 1rem;
     margin-left: 2rem;
+    padding-left: 2rem;
   }
 `;
 export const OfferLocation = styled.p`
@@ -106,4 +112,18 @@ export const OfferLocation = styled.p`
 export const OfferLink = styled.a`
   color: ${Color.MAGENTA};
   font-weight: bold;
+`;
+export const Companies = styled.div`
+   {
+    padding: 1.5rem;
+    position: sticky;
+    top: 64px;
+    text-align: center;
+    background-color: ${Color.WHITE};
+  }
+
+  @media (max-width: ${BIG_BREAKPOINT}px) {
+    background-color: ${Color.YELLOW};
+    top: 49px;
+  }
 `;

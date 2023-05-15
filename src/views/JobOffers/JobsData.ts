@@ -64,6 +64,48 @@ export const jobOffers: Company[] = [
       },
     ],
   },
+  {
+    id: "bf3871fa-9423-4370-8b12-e8e5112fec24",
+    logo: "images/sponsors/sopra.jpg",
+    url: "https://www.soprasteria.com",
+    name: "Sopra Steria",
+    description:
+      "We are a European leader in digital transformation, providing one of the most comprehensive portfolios of end-to-end service offerings on the market: Consulting, Systems Integration, Software Development, Infrastructure Management and Business Process Services.",
+    linkedin: "https://www.linkedin.com/company/soprasteria",
+    offers: [
+      {
+        id: "939d0ff8-2ecf-41a9-abff-81349f3b7d5c",
+        title: "Full Stack Javascript Engineer",
+        location: "Full remote",
+        url: "https://www.soprasteria.com/",
+        text:
+          "<p>Our employees agree on the 𝗚𝗿𝗲𝗮𝘁 𝗧𝗲𝗮𝗺 and environment we have at 𝗦𝗼𝗽𝗿𝗮 𝗦𝘁𝗲𝗿𝗶𝗮. We are more than 46,000 people working in 25 countries and our mission is to match talent and technology, trying to help you find a place where you can develop your full potential.</p>\n" +
+          "\n" +
+          "<p><strong>Do you dare to create the future?</strong></p>\n" +
+          "\n" +
+          "<p>We are looking to expand our team with a professional Full Stack Javascript Engineer. You will be part of a project of software development and continuous improvement, for one of the most important insurance companies in the world.</p>\n" +
+          "\n" +
+          "<p><strong>Your day-to-day functions will be:</strong></p>\n" +
+          "<ul>\n" +
+          "<li>Coding in 𝗝𝗮𝘃𝗮𝘀𝗰𝗿𝗶𝗽𝘁, 𝗥𝗲𝗮𝗰𝘁𝗝𝘀 and 𝗡𝗼𝗱𝗲𝗝𝘀, with knowledge of 𝗧𝘆𝗽𝗲𝘀𝗰𝗿𝗶𝗽𝘁 or 𝗩𝘂𝗲𝗝𝘀.</li>\n" +
+          "<li>Support in the definition and refinement of requirements.</li>\n" +
+          "<li>Participating in the design and creation of scalable software.</li>\n" +
+          "<li>Writing clean, functional code on the front- and back-end.</li>\n" +
+          "<li>Work using best practices (testing, code reviews, CI/CD...).</li>\n" +
+          "<li>Working with Agile methodology.</li>\n" +
+          "<li>Contribute to technical and architectural decision-making.</li>\n" +
+          "</ul>\n" +
+          "<p><strong>Because we know what yo need... we offer:</strong></p>\n" +
+          "<ul>\n" +
+          "<li>Flexibility for your time - it's not all going to be work!</li>\n" +
+          "<li>Possibility of Working from Home.</li>\n" +
+          "<li>Participate in challenging projects, do you want to learn something new?</li>\n" +
+          "<li>Grow with a personalized continuous development program.</li>\n" +
+          "<li>Enjoy our Benefits and Flexible Compensation Plan.</li>\n" +
+          "</ul>\n",
+      },
+    ],
+  },
 ];
 
 export interface CompanyProps {
