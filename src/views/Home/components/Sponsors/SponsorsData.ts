@@ -59,6 +59,12 @@ export const sponsors: Sponsors = {
       image: "images/sponsors/king.png",
       website: "https://careers.king.com/about-us/",
     },
+    {
+      name: "Azul",
+      image: "images/sponsors/azul.png",
+      website:
+        "https://www.azul.com/?utm_medium=email&utm_campaign=20230703-SEV-DevBCN&utm_source=DevBCN&utm_content=&utm_term=",
+    },
   ],
   basic: [
     {
