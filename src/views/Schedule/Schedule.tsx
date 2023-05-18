@@ -20,6 +20,7 @@ const Schedule: FC = () => {
     document.title = `Schedule - DevBcn - ${data.edition}`;
     const script = document.createElement("script");
     script.src = "https://sessionize.com/api/v2/a2sw0wks/view/GridSmart";
+    script.type = "text/javascript";
     const schedule = document.getElementById("#schedule");
     if (schedule !== null) {
       schedule.appendChild(script);
