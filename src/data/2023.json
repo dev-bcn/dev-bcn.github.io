@@ -22,7 +22,7 @@
     "enabled": false
   },
   "schedule": {
-    "enabled": false
+    "enabled": true
   },
   "jobOffers": {
     "enabled": true
