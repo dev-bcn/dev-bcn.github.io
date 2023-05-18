@@ -12,24 +12,29 @@ import {
   StyledMoreIcon,
   StyledScheduleSection,
 } from "./Schedule.style";
+import * as Sentry from "@sentry/react";
+import { Simulate } from "react-dom/test-utils";
+import error = Simulate.error;
 
 const Schedule: FC = () => {
   const { width } = useWindowSize();
 
   React.useEffect(() => {
     document.title = `Schedule - DevBcn - ${data.edition}`;
-    const script = document.createElement("script");
-    script.src = "https://sessionize.com/api/v2/a2sw0wks/view/GridSmart";
-    script.type = "text/javascript";
-    const schedule = document.getElementById("#schedule");
-    if (schedule !== null) {
-      schedule.appendChild(script);
-    }
 
-    return () => {
-      // @ts-ignore
-      document.getElementById("#schedule").removeChild(script);
-    };
+    fetch("https://sessionize.com/api/v2/a2sw0wks/view/GridSmart")
+      .then((value) => value.text())
+      .then((value) => {
+        const sched = document.getElementById("#schedule");
+        if (sched !== null) {
+          sched.innerHTML = value;
+        }
+      })
+      .catch((err) => {
+        Sentry.captureException(error);
+        // eslint-disable-next-line no-console
+        console.error(err);
+      });
   }, []);
 
   return (
