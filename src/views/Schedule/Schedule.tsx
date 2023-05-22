@@ -60,7 +60,11 @@ const Schedule: FC = () => {
             announce the speakers and their talks/workshops
           </p>
         )}
-        {data.schedule.enabled && <div id="#schedule">Schedule</div>}
+        {data.schedule.enabled && (
+          <div style={{ width: "90%", margin: "0 auto" }} id="#schedule">
+            &nbsp;
+          </div>
+        )}
       </StyledScheduleSection>
     </SectionWrapper>
   );
