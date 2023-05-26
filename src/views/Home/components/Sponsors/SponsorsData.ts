@@ -94,6 +94,11 @@ export const sponsors: Sponsors = {
         "https://app.honeypot.io/users/sign_up?utm_source=Live&utm_medium=sourcing&utm_campaign=event_02072023&utm_content=DevBCN",
       image: "images/sponsors/honeypot.jpg",
     },
+    {
+      name: "Edreams",
+      image: "images/sponsors/edreams.png",
+      website: "https://www.edreamsodigeo.com",
+    },
   ],
   virtual: [],
   media_partners: [
