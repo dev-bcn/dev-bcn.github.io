@@ -114,7 +114,7 @@ export const StyledLogos = styled.div<{ position?: "left" | "right" }>`
       position === "right" ? sponsorMarginDesktop : 0}%;
     top: 5rem;
     flex-wrap: wrap;
-    width: ${({ position }) => (position === "right" ? 59 : 100)}%;
+    width: ${({ position }) => (position === "right" ? 80 : 100)}%;
   }
 
   @media (min-width: ${LARGE_BREAKPOINT}px) {
