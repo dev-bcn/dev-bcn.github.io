@@ -65,6 +65,16 @@ export const sponsors: Sponsors = {
       website:
         "https://www.azul.com/?utm_medium=email&utm_campaign=20230703-SEV-DevBCN&utm_source=DevBCN&utm_content=&utm_term=",
     },
+    {
+      name: "CouchBase",
+      website: "https://developer.couchbase.com/",
+      image: "images/sponsors/couchbase.png",
+    },
+    {
+      name: "Alten",
+      image: "images/sponsors/alten.jpg",
+      website: "https://www.alten.es",
+    },
   ],
   basic: [
     {
