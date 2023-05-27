@@ -119,6 +119,114 @@ export const jobOffers: Company[] = [
           "<li>At least B2 level of English</li>\n" +
           "</ul>",
       },
+      {
+        id: "22bd4bd6-ad6a-4bce-a733-7c4ac812af58",
+        title: "Big Data Engineer",
+        location: "Hybrid",
+        url: "https://jobs.gft.com/job-invite/10463/",
+        text:
+          "<p>Buscamos Big Data Engineers que quieran desarrollar su carrera profesional en el sector TI. ¿Quieres unirte a nuestro equipo de GFT?</p>\n" +
+          "<p>Tus principales responsabilidades serán:</p>\n" +
+          "<p>Aunque dependerán de tu perfil y experiencia aportada, en general las principales funciones que llevarás a cabo con nosotros serán:</p>\n" +
+          "<ul>\n" +
+          "<li>Diseñar, desarrollar y testear soluciones data alineadas con las necesidades de negocio.</li>\n" +
+          "<li>Investigar nuevas tecnologías y algoritmos de los que desarrollarás prototipos y PoC </li>\n" +
+          "<li>Trabajar junto a Data Scientists, Software Architects y Developers.</li>\n" +
+          "<li>Desarrollar herramientas analíticas y programas.</li>\n" +
+          "<li>Desarrollar y procesar sistemas de datos.</li>\n" +
+          "<li>Desarrollar algoritmos y prototipos.</li>\n" +
+          "</ul>\n" +
+          "<p>Requisitos deseados:</p>\n" +
+          "<ul>" +
+          "<li>Licenciatura o Grado en Ingeniería de Software o similares.</li>\n" +
+          "<li>Experiencia previa de 2/3 años de experiencia en proyectos Big Data con con Hadoop,  Scala, Spark, Cassandra, Impala, Hive, spark streaming, kafka, flume, apache Nifi, etc.</li>\n" +
+          "<li>Elastic y Kibana para la visualización y monitorización.</li>\n" +
+          "<li>Experiencia en desarrollo de software, analisis y diseño de arquitecturas.</li>\n" +
+          "<li>Experiencia en modelado y manipulación de datos.</li>\n" +
+          "</ul>\n" +
+          "<p>Requisito valorable: </p>\n" +
+          "<ul>" +
+          "<li>Conocimiento de soluciones No-SQL (HBase, Elastic, Cassandra, MongoDB); Conocimientos de soluciones data basadas en cloud (GCP, AWS, IBM Watson, Azure...); Comprensión de algoritmos de machine learning.</li>\n" +
+          "<li>Conocimiento en transformación de datos o ETL.</li>\n" +
+          "</ul>",
+      },
+      {
+        id: "83907cfc-028d-4485-b2c5-fecf1516effd",
+        title: "API Architect",
+        url: "",
+        location: "Hybrid",
+        text:
+          "<p>We are looking for an enthusiastic and dynamic API Architect.</p>\n" +
+          "<p>Your main responsibilities will be:</p>\n" +
+          "<ul>\n" +
+          "<li>Solution design and technology stack selection.</li>\n" +
+          "<li>Solution development and technical team supervision.</li>\n" +
+          "<li>Analyze and document the enterprise and technology environment.</li>\n" +
+          "<li>Software architecture design and guidance.</li>\n" +
+          "<li>Enterprise architecture and integration patterns.</li>\n" +
+          "<li>Data architecture, API design and implementation.</li>\n" +
+          "</ul>\n" +
+          "<p>Skills will help you succeed:</p>\n" +
+          "<ul>" +
+          "<li>Computer Science diploma, 6+ years of relevant work experience </li>\n" +
+          "<li>Experience designing and developing web applications using Apigee and Java/J2EE Technologies.</li>\n" +
+          "<li>Experience designing and building business/technical services for the financial sector and supporting them in production environments</li>\n" +
+          "<li>Experience designing relational data models and building microservices</li>\n" +
+          "<li>Deep understanding of modern software development lifecycles, versioning, and deployment</li>\n" +
+          "<li>REST design principles, Spring Framework architecture and extensibility points</li>\n" +
+          "<li>Fluency in English (at least B2 level</li>)" +
+          "</ul>",
+      },
+      {
+        id: "6bda67ef-4b8f-476b-bb21-2f7a87e0d670",
+        location: "Hybrid",
+        title: "Google Cloud Platform Engineer",
+        url: "https://jobs.gft.com/job-invite/99121/",
+        text:
+          "<p>Actualmente tenemos un puesto vacante para un/a Google Cloud Platform (GCP) Engineer que quiera unirse a GFT en nuestros proyectos internacionales. </p>\n" +
+          "<p>Tus principales responsabilidades serán:</p>\n" +
+          "<ul>\n" +
+          "<li>Comprender las necesidades del cliente y trabajar en estrecha colaboración con los equipos correspondientes para garantizar que la solución en la nube desarrollada esté alineada con las necesidades y la Propuesta de Valor de GFT.</li>\n" +
+          "<li>Desarrollar y organizar sistemas en la nube. </li>\n" +
+          "<li>Crear una estrategia para la nube y gestionar el proceso de adopción.</li>\n" +
+          "<li>Reconocer, identificar y documentar áreas potenciales donde los procesos comerciales existentes requieren cambios, o donde se necesitan desarrollar nuevos procesos, y hacer recomendaciones.</li>\n" +
+          "<li>Asegurar la capacidad de GFT para implementar y entregar la solución diseñada trabajando en estrecha colaboración con las unidades de entrega designadas. </li>\n" +
+          "<li>Identificar, evaluar y minimizar el riesgo asociado con la privacidad en la nube de la empresa</li>\n" +
+          "</ul>\n" +
+          "<p>Requisitos:</p>\n" +
+          "<ul>" +
+          "<li>Excelente conocimiento de los distintos entornos Cloud, especialmente GCP.</li>\n" +
+          "<li>Experiencia en migración de máquinas virtuales de sistemas on premise a nube.</li>\n" +
+          "<li>Conocimiento de herramientas DevOps.</li>\n" +
+          "<li>Conocimiento de utilización de herramientas automáticas de migración (por ejemplo Velostrata).</li>\n" +
+          "<li>Nivel de inglés alto </li>\n" +
+          "</ul>",
+      },
+      {
+        id: "72a02498-9417-475d-97e0-59f3a82a56b3",
+        location: "Hybrid",
+        title: "Desarrollador/a Java Microservicios",
+        url: "https://jobs.gft.com/job-invite/2121/",
+        text:
+          "<p>Actualmente tenemos un puesto vacante para un/a Desarrollador/a Senior Java con Microservicios que quiera desarollar su carrera en GFT.  </p>\n" +
+          "<p>Tus principales responsabilidades son:</p>\n" +
+          " <ul>\n" +
+          "<li>Analizar y programar tanto sobre código existente como desde cero, y realizar el mantenimiento de módulos de software de complejidad media, trabajando a partir de requisitos y especificaciones detallados de forma oral y escrita.</li>\n" +
+          "<li>Realizar revisiones de código de otros desarrolladores y proporcionar puntos de mejora.</li>\n" +
+          "<li>Dar soporte a los perfiles más junior actuando como punto de referencia cuando necesiten ayuda o soporte en temas específicos.</li>\n" +
+          "<li>Ayudar en el desarrollo de prototipos de módulos de software y aplicaciones.</li>\n" +
+          "<li>Desarrollar tests unitarios y asumir la responsabilidad sobre el test unitario del código propio </li>\n" +
+          "<li>Consolidar el conocimiento de todas las herramientas y plantillas de testing y bug tracking empleadas dentro del proyecto.</li>\n" +
+          "<li>Participar en distintas fases del ciclo de desarrollo.</li>\n" +
+          "</ul>\n" +
+          "<p>Requisitos deseados:</p>\n" +
+          "<ul>" +
+          "<li>Graduado en Ingeniería informática (o equivalente).</li>\n" +
+          "<li>Graduado en Formación Profesional Superior o Medio en Informática.</li>\n" +
+          "<li>Experiencia en arquitectura de Microservivios.</li>\n" +
+          "<li>Valorable experiencia con Springboot y Apis.</li>\n" +
+          "</ul>\n",
+      },
     ],
   },
   {
