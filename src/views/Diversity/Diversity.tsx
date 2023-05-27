@@ -31,8 +31,13 @@ const StyledWave = styled.section`
 `;
 
 const StyledLogo = styled.img`
-  flex: 2 1 auto;
-  padding-bottom: 100px;
+   {
+    flex: 2 1 auto;
+    padding-bottom: 100px;
+  }
+  @media only screen and (max-width: ${BIG_BREAKPOINT}px) {
+    padding-bottom: 20px;
+  }
 `;
 
 const Heading = styled.h1`
@@ -53,6 +58,19 @@ const StyledP = styled.p`
 
   &.first {
     margin-top: 50px;
+  }
+`;
+
+const FlexDiv = styled.div`
+   {
+    display: flex;
+    width: 20%;
+    margin: 0 auto;
+    flex-direction: column;
+  }
+  @media only screen and (max-width: ${BIG_BREAKPOINT}px) {
+    width: 60%;
+    padding-bottom: 50rem;
   }
 `;
 const Diversity: FC = () => {
@@ -95,20 +113,13 @@ const Diversity: FC = () => {
         </a>{" "}
         for making this possible!
       </StyledP>
-      <div
-        style={{
-          display: "flex",
-          width: "20%",
-          margin: "0 auto",
-          flexDirection: "column",
-        }}
-      >
+      <FlexDiv>
         <StyledLogo
           alt="Vepee"
           src="https://static.vente-privee.com/vp5/_web/site/vp/_common/logos/veepee-black.svg"
         />
         <StyledLogo alt="Adevinta" src="images/sponsors/adevinta.png" />
-      </div>
+      </FlexDiv>
     </StyledSection>
   );
 };
