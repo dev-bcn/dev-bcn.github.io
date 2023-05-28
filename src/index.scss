@@ -54,3 +54,73 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.sz-session--service .sz-session__card{
+  color:#8ec9ee;
+}
+
+/* Registration */
+#sz-tab-45110 > div > div:nth-child(10) > div{
+  background-color:#26547c!important;
+}
+
+/* Monday Keynote */
+#sz-tab-45110 > div > div:nth-child(13) > div{
+  background-color: #34bb9c!important;
+}
+
+#sz-tab-45110 > div > div:nth-child(13) > div > h3{
+  color:#288572;
+}
+#sz-tab-45110 > div > div:nth-child(13) > div > div > div.sz-session__time{
+  color:#288572;
+}
+
+/* Coffee Break */
+#sz-tab-45110 > div > div:nth-child(19) > div{
+  background-color: #2f2f2f!important;
+}
+#sz-tab-45110 > div > div:nth-child(19) > div > h3{
+  color:#f0f0f0;
+}
+#sz-tab-45110 > div > div:nth-child(19) > div > div > div.sz-session__time{
+  color:#f0f0f0;
+}
+
+/* Lunch */
+#sz-tab-45110 > div > div:nth-child(45) > div{
+  background-color: #2f2f2f!important;
+}
+#sz-tab-45110 > div > div:nth-child(45) > div > h3{
+  color:#f0f0f0;
+}
+#sz-tab-45110 > div > div:nth-child(45) > div > div > div.sz-session__time{
+  color:#f0f0f0;
+}
+
+/* Coffee break */
+#sz-tab-45110 > div > div:nth-child(64) > div{
+  background-color: #2f2f2f!important;
+}
+#sz-tab-45110 > div > div:nth-child(64) > div > h3{
+  color:#f0f0f0;
+}
+#sz-tab-45110 > div > div:nth-child(64) > div > div > div.sz-session__time{
+  color:#f0f0f0;
+}
+
+/* pre-party */
+#sz-tab-45110 > div > div:nth-child(82) > div{
+  background-color:#26547c!important;
+}
+
+/* Networking Party */
+#sz-tab-45110 > div > div:nth-child(85) > div{
+  background-color: #34bb9c!important;
+}
+#sz-tab-45110 > div > div:nth-child(85) > div > h3{
+  color:#288572;
+}
+#sz-tab-45110 > div > div:nth-child(85) > div > div > div.sz-session__time{
+  color:#288572;
+}
