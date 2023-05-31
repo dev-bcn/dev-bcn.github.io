@@ -77,7 +77,7 @@ export const sponsors: Sponsors = {
     },
     {
       name: "Alten",
-      image: "images/sponsors/alten.jpg",
+      image: "images/sponsors/alten.png",
       website: "https://www.alten.es",
     },
   ],
