@@ -32,11 +32,13 @@ const StyledWave = styled.section`
 
 const StyledLogo = styled.img`
    {
+    max-width: 30vw;
     flex: 2 1 auto;
-    padding-bottom: 100px;
+    padding-bottom: 50px;
   }
   @media only screen and (max-width: ${BIG_BREAKPOINT}px) {
     padding-bottom: 20px;
+    max-width: 65vw;
   }
 `;
 
@@ -67,6 +69,7 @@ const FlexDiv = styled.div`
     width: 20%;
     margin: 0 auto;
     flex-direction: column;
+    padding-bottom: 90px;
   }
   @media only screen and (max-width: ${BIG_BREAKPOINT}px) {
     width: 60%;
