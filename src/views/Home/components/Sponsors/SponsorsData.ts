@@ -79,7 +79,7 @@ export const sponsors: Sponsors = {
       name: "Veepee",
       image: "images/sponsors/veepee.png",
       website: "https://www.veepee.es/gr/home/default",
-    },
+    }
   ],
   basic: [
     {
