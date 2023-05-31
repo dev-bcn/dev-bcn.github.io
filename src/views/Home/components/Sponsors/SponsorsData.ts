@@ -27,6 +27,11 @@ export const sponsors: Sponsors = {
       image: "images/sponsors/bcn-jug.png",
       website: "https://www.meetup.com/barcelonajug/",
     },
+    {
+      name: "Adevinta",
+      website: "https://www.adevinta.com/",
+      image: "images/sponsors/adevinta.png",
+    },
   ],
   regular: [
     {
@@ -69,6 +74,11 @@ export const sponsors: Sponsors = {
       name: "Gradle",
       image: "images/sponsors/gradle.png",
       website: "https://gradle.com/",
+    },
+    {
+      name: "Veepee",
+      image: "images/sponsors/veepee.png",
+      website: "https://www.veepee.es/gr/home/default",
     },
   ],
   basic: [

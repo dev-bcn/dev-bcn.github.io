@@ -114,11 +114,20 @@ const Diversity: FC = () => {
         for making this possible!
       </StyledP>
       <FlexDiv>
-        <StyledLogo
-          alt="Vepee"
-          src="https://static.vente-privee.com/vp5/_web/site/vp/_common/logos/veepee-black.svg"
-        />
-        <StyledLogo alt="Adevinta" src="images/sponsors/adevinta.png" />
+        <a
+          href="https://www.veepee.es/gr/home/default"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <StyledLogo alt="Vepee" src="images/sponsors/veepee.png" />
+        </a>
+        <a
+          href="https://www.adevinta.es/"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <StyledLogo alt="Adevinta" src="images/sponsors/adevinta.png" />
+        </a>
       </FlexDiv>
     </StyledSection>
   );
