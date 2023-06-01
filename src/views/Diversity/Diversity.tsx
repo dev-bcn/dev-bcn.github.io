@@ -3,6 +3,11 @@ import { Color } from "../../styles/colors";
 import data from "../../data/2023.json";
 import styled from "styled-components";
 import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
+import { Link } from "react-router-dom";
+import {
+  ROUTE_CODE_OF_CONDUCT,
+  ROUTE_CONDITIONS,
+} from "../../constants/routes";
 
 const StyledSection = styled.section`
    {
@@ -69,11 +74,26 @@ const FlexDiv = styled.div`
     width: 20%;
     margin: 0 auto;
     flex-direction: column;
-    padding-bottom: 90px;
+    padding-bottom: 20px;
   }
   @media only screen and (max-width: ${BIG_BREAKPOINT}px) {
     width: 60%;
     padding-bottom: 50rem;
+  }
+`;
+
+const StyledParagraph = styled.section`
+   {
+    text-align: left;
+    color: ${Color.DARK_BLUE};
+    margin: 15px 3%;
+  }
+  h2 {
+    padding-bottom: 15px;
+  }
+
+  ul {
+    padding-left: 40px;
   }
 `;
 const Diversity: FC = () => {
@@ -132,6 +152,116 @@ const Diversity: FC = () => {
           <StyledLogo alt="Adevinta" src="images/sponsors/adevinta.png" />
         </a>
       </FlexDiv>
+      {data.diversity && (
+        <>
+          <StyledParagraph>
+            <h2 id="who-can-apply">Who can apply?</h2>
+            <div className="sectionbody">
+              <div className="paragraph">
+                <p>
+                  We strongly encourage applications from women, people with
+                  disabilities, people of color, economically disadvantaged
+                  people, LGBTQ or any other underrepresented group. In
+                  addition, the applicants must be 18 years of age or older and
+                  must be available to attend the main days of the event (18th
+                  and 19th).
+                </p>
+              </div>
+              <div className="paragraph">
+                <p>
+                  There are a <strong>limited amount of sponsorships</strong> 🔥
+                  and will be awarded based on a combination of need and impact.
+                </p>
+              </div>
+            </div>
+          </StyledParagraph>
+          <StyledParagraph>
+            <h2 id="how-can-i-apply">How can I apply?</h2>
+            <div className="sectionbody">
+              <div className="paragraph">
+                <p>
+                  To apply, please fill the{" "}
+                  <a
+                    rel="noreferrer"
+                    target="_blank"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSdyRqQkh2iRD_QxzAwodIM1cXmO_Q4hNGojXnFli-crob2QUQ/viewform"
+                  >
+                    application form
+                  </a>{" "}
+                  introducing yourself and telling us about your expectations
+                  for the event.
+                </p>
+              </div>
+              <div className="paragraph">
+                <p>
+                  All applications' information will be kept confidential and
+                  used exclusively for this campaign.
+                </p>
+              </div>
+            </div>
+          </StyledParagraph>
+          <StyledParagraph>
+            <h2 id="how-will-i-be-notified">How will I be notified?</h2>
+            <div className="sectionbody">
+              <div className="paragraph">
+                <p>
+                  Selected people will be notified via email at the contact
+                  provided.
+                </p>
+              </div>
+              <div className="paragraph">
+                <p>
+                  They will receive a free ticket to the conference, which{" "}
+                  <strong>
+                    includes admission 🎫 to all talks during the 3rd and 4th,
+                    and catering 🥘 during the two days of the conference
+                  </strong>
+                  . Workshops (on the 5th) cannot be included due to limited
+                  capacity.
+                </p>
+              </div>
+            </div>
+          </StyledParagraph>
+          <StyledParagraph>
+            <h2 id="terms-and-conditions">Terms and Conditions</h2>
+            <div className="sectionbody">
+              <div className="paragraph">
+                <p>All awarded attendees must:</p>
+              </div>
+              <div className="ulist">
+                <ul>
+                  <li>
+                    <p>
+                      Follow the conference{" "}
+                      <Link to={ROUTE_CODE_OF_CONDUCT}>Code of conduct</Link>.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Find additional funding for transportation and
+                      accommodation. These costs are not included.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Inform if they are not able to attend the event days 18th
+                      and 19th. Tickets are not transferable.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Agree to conference and ticket{" "}
+                      <Link to={ROUTE_CONDITIONS}>terms and conditions</Link> in
+                      case of being awarded with a ticket.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </StyledParagraph>
+          <div style={{ paddingBottom: "190px" }}>&nbsp;</div>
+        </>
+      )}
     </StyledSection>
   );
 };
