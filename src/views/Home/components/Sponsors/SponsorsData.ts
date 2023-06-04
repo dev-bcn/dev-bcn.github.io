@@ -80,6 +80,15 @@ export const sponsors: Sponsors = {
       image: "images/sponsors/veepee.png",
       website: "https://www.veepee.es/gr/home/default",
     }
+      name: "CouchBase",
+      website: "https://developer.couchbase.com/",
+      image: "images/sponsors/couchbase.png",
+    },
+    {
+      name: "Alten",
+      image: "images/sponsors/alten.png",
+      website: "https://www.alten.es",
+    }
   ],
   basic: [
     {
@@ -98,6 +107,11 @@ export const sponsors: Sponsors = {
       website:
         "https://app.honeypot.io/users/sign_up?utm_source=Live&utm_medium=sourcing&utm_campaign=event_02072023&utm_content=DevBCN",
       image: "images/sponsors/honeypot.jpg",
+    },
+    {
+      name: "Edreams",
+      image: "images/sponsors/edreams.png",
+      website: "https://www.edreamsodigeo.com",
     },
   ],
   virtual: [],
