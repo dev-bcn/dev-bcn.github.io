@@ -79,7 +79,8 @@ export const sponsors: Sponsors = {
       name: "Veepee",
       image: "images/sponsors/veepee.png",
       website: "https://www.veepee.es/gr/home/default",
-    }
+    },
+    {
       name: "CouchBase",
       website: "https://developer.couchbase.com/",
       image: "images/sponsors/couchbase.png",
@@ -88,7 +89,7 @@ export const sponsors: Sponsors = {
       name: "Alten",
       image: "images/sponsors/alten.png",
       website: "https://www.alten.es",
-    }
+    },
   ],
   basic: [
     {
