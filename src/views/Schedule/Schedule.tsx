@@ -1,7 +1,5 @@
 import { BIG_BREAKPOINT, MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
 import { Color } from "../../styles/colors";
-
-import { AvatarCard } from "./components/AvatarCard";
 import React, { FC } from "react";
 import LessThanBlueWhiteIcon from "../../assets/images/MoreThanBlueWhiteIcon.svg";
 import { Link } from "react-router-dom";
@@ -29,9 +27,6 @@ const Schedule: FC = () => {
 
   const meetingDetailUrl = "grace-jansen";
   const speakerDetailUrl = "grace-jansen";
-  const scheduleDay1 = data.schedule.day_one;
-  const scheduleDay2 = data.schedule.day_two;
-  const scheduleDay3 = data.schedule.day_three;
 
   React.useEffect(() => {
     document.title = `Schedule - DevBcn - ${data.edition}`;
@@ -122,12 +117,6 @@ const Schedule: FC = () => {
               BREAK
             </StyledTrack>
 
-            <StyledTracksContainer>
-              {scheduleDay1.map((meet, index) => (
-                <AvatarCard key={index} meet={meet} />
-              ))}
-            </StyledTracksContainer>
-
             <StyledTrack
               width={"100%"}
               background={Color.YELLOW}
@@ -136,12 +125,6 @@ const Schedule: FC = () => {
               BREAK
             </StyledTrack>
 
-            <StyledTracksContainer>
-              {scheduleDay2.map((meet, index) => (
-                <AvatarCard key={index} meet={meet} />
-              ))}
-            </StyledTracksContainer>
-
             <StyledTrack
               width={"100%"}
               background={Color.DARK_BLUE}
@@ -149,12 +132,6 @@ const Schedule: FC = () => {
             >
               LUNCH BREAK
             </StyledTrack>
-
-            <StyledTracksContainer>
-              {scheduleDay3.map((meet, index) => (
-                <AvatarCard key={index} meet={meet} />
-              ))}
-            </StyledTracksContainer>
 
             <StyledTrack
               width={"100%"}
@@ -191,12 +168,6 @@ const Schedule: FC = () => {
               BREAK
             </StyledTrack>
 
-            <StyledTracksContainer>
-              {scheduleDay1.map((meet, index) => (
-                <AvatarCard key={index} meet={meet} />
-              ))}
-            </StyledTracksContainer>
-
             <StyledTrack
               width={"100%"}
               background={Color.YELLOW}
@@ -204,12 +175,6 @@ const Schedule: FC = () => {
             >
               BREAK
             </StyledTrack>
-
-            <StyledTracksContainer>
-              {scheduleDay2.map((meet, index) => (
-                <AvatarCard key={index} meet={meet} />
-              ))}
-            </StyledTracksContainer>
 
             <StyledTrack
               width={"100%"}
@@ -219,12 +184,6 @@ const Schedule: FC = () => {
               LUNCH BREAK
             </StyledTrack>
 
-            <StyledTracksContainer>
-              {scheduleDay2.map((meet, index) => (
-                <AvatarCard key={index} meet={meet} />
-              ))}
-            </StyledTracksContainer>
-
             <StyledTrack
               width={"100%"}
               background={Color.DARK_BLUE}
@@ -232,12 +191,6 @@ const Schedule: FC = () => {
             >
               BREAK
             </StyledTrack>
-
-            <StyledTracksContainer>
-              {scheduleDay3.map((meet, index) => (
-                <AvatarCard key={index} meet={meet} />
-              ))}
-            </StyledTracksContainer>
 
             <StyledTrack
               width={"100%"}

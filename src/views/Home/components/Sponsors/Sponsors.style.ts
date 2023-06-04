@@ -147,6 +147,7 @@ export const PremiumSponsorImage = styled.img`
   transition: height ease-in 0.25s;
   max-width: 100%;
   border-radius: 1rem;
+  margin: 1rem 2rem;
 
   &:hover {
     height: 8rem;

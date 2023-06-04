@@ -21,108 +21,11 @@
   "carrousel": {
     "enabled": false
   },
-  "speakers": [],
-  "talks": [],
   "schedule": {
-    "enabled": false,
-    "day_one": [
-      {
-        "title": "THE FUTURE IS KUBERNETES-NATIVE",
-        "author": "Grace Jansen",
-        "date": "08:40 - 09:00",
-        "meetingLink": "/meetingDetail/grace-jansen",
-        "authorProfile": "/speakerDetail",
-        "meetImageNumber": 1,
-        "titleAndDateColor": "Color.PINK",
-        "authorNameColor": "Color.BLUE"
-      },
-      {
-        "title": "THE FUTURE IS KUBERNETES-NATIVE",
-        "author": "Grace Jansen",
-        "date": "08:40 - 09:00",
-        "meetingLink": "/meetingDetail/grace-jansen",
-        "authorProfile": "/speakerDetail",
-        "meetImageNumber": 1,
-        "titleAndDateColor": "Color.BLUE",
-        "authorNameColor": "Color.PINK"
-      },
-      {
-        "title": "THE FUTURE IS KUBERNETES-NATIVE",
-        "author": "Grace Jansen",
-        "date": "08:40 - 09:00",
-        "meetingLink": "/meetingDetail/grace-jansen",
-        "authorProfile": "/speakerDetail",
-        "meetImageNumber": 1,
-        "titleAndDateColor": "Color.GREEN",
-        "authorNameColor": "Color.PINK"
-      }
-    ],
-    "day_two": [
-      {
-        "title": "THE FUTURE IS KUBERNETES-NATIVE",
-        "author": "Grace Jansen",
-        "date": "08:40 - 09:00",
-        "meetingLink": "/meetingDetail/grace-jansen",
-        "authorProfile": "/speakerDetail",
-        "meetImageNumber": 1,
-        "titleAndDateColor": "Color.PINK",
-        "authorNameColor": "Color.BLUE"
-      },
-      {
-        "title": "THE FUTURE IS KUBERNETES-NATIVE",
-        "author": "Grace Jansen",
-        "date": "08:40 - 09:00",
-        "meetingLink": "/meetingDetail/grace-jansen",
-        "authorProfile": "/speakerDetail",
-        "meetImageNumber": 1,
-        "titleAndDateColor": "Color.BLUE",
-        "authorNameColor": "Color.PINK"
-      },
-      {
-        "title": "THE FUTURE IS KUBERNETES-NATIVE",
-        "author": "Grace Jansen",
-        "date": "08:40 - 09:00",
-        "meetingLink": "/meetingDetail/grace-jansen",
-        "authorProfile": "/speakerDetail",
-        "meetImageNumber": 1,
-        "titleAndDateColor": "Color.GREEN",
-        "authorNameColor": "Color.PINK"
-      }
-    ],
-    "day_three": [
-      {
-        "title": "THE FUTURE IS KUBERNETES-NATIVE",
-        "author": "Grace Jansen",
-        "date": "08:40 - 09:00",
-        "meetingLink": "/meetingDetail/grace-jansen",
-        "authorProfile": "/speakerDetail",
-        "meetImageNumber": 1,
-        "titleAndDateColor": "Color.PINK",
-        "authorNameColor": "Color.BLUE"
-      },
-      {
-        "title": "THE FUTURE IS KUBERNETES-NATIVE",
-        "author": "Grace Jansen",
-        "date": "08:40 - 09:00",
-        "meetingLink": "/meetingDetail/grace-jansen",
-        "authorProfile": "/speakerDetail",
-        "meetImageNumber": 1,
-        "titleAndDateColor": "Color.BLUE",
-        "authorNameColor": "Color.PINK"
-      },
-      {
-        "title": "THE FUTURE IS KUBERNETES-NATIVE",
-        "author": "Grace Jansen",
-        "date": "08:40 - 09:00",
-        "meetingLink": "/meetingDetail/grace-jansen",
-        "authorProfile": "/speakerDetail",
-        "meetImageNumber": 1,
-        "titleAndDateColor": "Color.GREEN",
-        "authorNameColor": "Color.PINK"
-      }
-    ]
+    "enabled": false
   },
   "jobOffers": {
     "enabled": true
-  }
+  },
+  "diversity": true
 }

@@ -89,7 +89,7 @@ const Workshops: FC = () => {
         </svg>
       </StyledWaveContainer>
       <SectionWrapper color={Color.LIGHT_BLUE} marginTop={1}>
-        <StyledSection>
+        <StyledSection data-test-id="workshops">
           {isLoading && <h1>Loading </h1>}
           {workshops?.length === 0 && (
             <p style={{ color: Color.WHITE, textAlign: "center" }}>

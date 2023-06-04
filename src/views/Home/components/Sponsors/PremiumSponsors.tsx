@@ -85,6 +85,7 @@ export const PremiumSponsors: FC = () => {
                   rel="noreferrer"
                 >
                   <PremiumSponsorImage
+                    className="sponsor-image"
                     alt={sponsor.name}
                     src={sponsor.image}
                     style={{
