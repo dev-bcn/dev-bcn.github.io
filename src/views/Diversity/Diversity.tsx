@@ -163,8 +163,8 @@ const Diversity: FC = () => {
                   disabilities, people of color, economically disadvantaged
                   people, LGBTQ or any other underrepresented group. In
                   addition, the applicants must be 18 years of age or older and
-                  must be available to attend the main days of the event (18th
-                  and 19th).
+                  must be available to attend the main days of the event (3rd
+                  and 4th).
                 </p>
               </div>
               <div className="paragraph">
