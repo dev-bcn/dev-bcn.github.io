@@ -137,5 +137,10 @@ export const sponsors: Sponsors = {
       image: "images/sponsors/codely.png",
       website: "https://codely.com/pro/jbcnconf22",
     },
+    {
+      name: "CIO Insigths",
+      website: "https://www.cioinsights.com/",
+      image: "images/sponsors/cio.png",
+    },
   ],
 };
