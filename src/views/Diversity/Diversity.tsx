@@ -78,7 +78,7 @@ const FlexDiv = styled.div`
   }
   @media only screen and (max-width: ${BIG_BREAKPOINT}px) {
     width: 60%;
-    padding-bottom: 50rem;
+    padding-bottom: 0.5rem;
   }
 `;
 
