@@ -76,11 +76,6 @@ export const sponsors: Sponsors = {
       website: "https://gradle.com/",
     },
     {
-      name: "Veepee",
-      image: "images/sponsors/veepee.png",
-      website: "https://www.veepee.es/gr/home/default",
-    },
-    {
       name: "CouchBase",
       website: "https://developer.couchbase.com/",
       image: "images/sponsors/couchbase.png",
@@ -113,6 +108,11 @@ export const sponsors: Sponsors = {
       name: "Edreams",
       image: "images/sponsors/edreams.png",
       website: "https://www.edreamsodigeo.com",
+    },
+    {
+      name: "Veepee",
+      image: "images/sponsors/veepee.png",
+      website: "https://www.veepee.es/gr/home/default",
     },
   ],
   virtual: [],
