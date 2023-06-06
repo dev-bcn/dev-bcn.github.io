@@ -91,7 +91,7 @@ export const StyledHeaderWrapper = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  z-index: 3;
+  z-index: 450;
 `;
 export const StyledHeader = styled.header`
   background: ${Color.LIGHT_BLUE};
