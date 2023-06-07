@@ -110,6 +110,12 @@ const App: FC = () => {
             )}
           />
           <Route
+            path="/attendee"
+            component={React.lazy(
+              () => import("./views/Attendee/AttendeeInformation")
+            )}
+          />
+          <Route
             path={ROUTE_MEETING_DETAIL_PLAIN}
             component={MeetingDetailContainer}
           />
