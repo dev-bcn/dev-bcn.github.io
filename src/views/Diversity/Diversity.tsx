@@ -88,6 +88,7 @@ const StyledParagraph = styled.section`
     color: ${Color.DARK_BLUE};
     margin: 15px 3%;
   }
+
   h2 {
     padding-bottom: 15px;
   }
@@ -129,21 +130,13 @@ const Diversity: FC = () => {
       </StyledP>
 
       <StyledP>
-        We must thank <a href="https://www.veepee.es/gr/home/default">Vepee</a>{" "}
-        &{" "}
+        We must thank{" "}
         <a href="https://www.adevinta.es/" target="_blank" rel="noreferrer">
           Adevinta
         </a>{" "}
         for making this possible!
       </StyledP>
       <FlexDiv>
-        <a
-          href="https://www.veepee.es/gr/home/default"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          <StyledLogo alt="Vepee" src="images/sponsors/veepee.png" />
-        </a>
         <a
           href="https://www.adevinta.es/"
           target="_blank"

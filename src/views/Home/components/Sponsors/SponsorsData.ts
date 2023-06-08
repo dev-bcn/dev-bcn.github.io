@@ -109,11 +109,11 @@ export const sponsors: Sponsors = {
       image: "images/sponsors/edreams.png",
       website: "https://www.edreamsodigeo.com",
     },
-    {
+    /*{
       name: "Veepee",
       image: "images/sponsors/veepee.png",
       website: "https://www.veepee.es/gr/home/default",
-    },
+    },*/
   ],
   virtual: [],
   media_partners: [
