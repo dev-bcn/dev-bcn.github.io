@@ -109,6 +109,11 @@ export const sponsors: Sponsors = {
       image: "images/sponsors/edreams.png",
       website: "https://www.edreamsodigeo.com",
     },
+    {
+      name: "barcelona Activa",
+      image: "images/sponsors/barcelona-activa.png",
+      website: "https://www.barcelonactiva.cat/",
+    },
     /*{
       name: "Veepee",
       image: "images/sponsors/veepee.png",
