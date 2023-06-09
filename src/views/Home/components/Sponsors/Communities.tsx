@@ -18,11 +18,11 @@ import { useWindowSize } from "react-use";
 import { useCallback, useEffect, useState } from "react";
 import { sponsors } from "./SponsorsData";
 
-export function VirtualSponsors() {
+export const Communities = () => {
   const { width } = useWindowSize();
   const [slashes, setSlashes] = useState("");
   const [isHovered, setIsHovered] = useState<boolean>(false);
-  const virtualSponsors = sponsors.virtual;
+  const communities = sponsors.communities;
 
   useEffect(() => {
     const newSlashes = buildSlashes(2);
@@ -30,19 +30,16 @@ export function VirtualSponsors() {
     setSlashes(newSlashes);
   }, [width]);
 
-  const handleHoverSponsorVirtual = useCallback(() => setIsHovered(true), []);
-  const handleUnHoverSponsorVirtual = useCallback(
-    () => setIsHovered(false),
-    []
-  );
+  const handleHover = useCallback(() => setIsHovered(true), []);
+  const handleUnHover = useCallback(() => setIsHovered(false), []);
   return (
     <>
-      {virtualSponsors !== null && virtualSponsors.length > 0 && (
+      {communities !== null && communities.length > 0 && (
         <StyledSponsorItemContainer
-          className="SponsorItem virtual"
-          id="virtual-sponsors"
-          onMouseEnter={handleHoverSponsorVirtual}
-          onMouseLeave={handleUnHoverSponsorVirtual}
+          className="SponsorItem communities"
+          id="communities"
+          onMouseEnter={handleHover}
+          onMouseLeave={handleUnHover}
         >
           <SponsorBadge
             color={Color.DARK_BLUE}
@@ -59,7 +56,7 @@ export function VirtualSponsors() {
               }
               id="Slashes"
             >
-              VIRTUAL
+              COMMUNITIES
               <StyledSeparator />
               <StyledSlashes>{slashes}</StyledSlashes>
             </StyledSponsorTitleSlashesContainer>
@@ -72,7 +69,7 @@ export function VirtualSponsors() {
 
           <StyledSponsorLogosContainer className="SponsorLogos">
             <StyledLogos>
-              {virtualSponsors.map((sponsor) => (
+              {communities.map((sponsor) => (
                 <a
                   href={sponsor.website}
                   target="_blank"
@@ -96,4 +93,4 @@ export function VirtualSponsors() {
       )}
     </>
   );
-}
+};

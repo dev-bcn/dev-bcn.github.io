@@ -2,7 +2,7 @@ export interface Sponsors {
   top: Sponsor[] | null;
   premium: Sponsor[] | null;
   regular: Sponsor[] | null;
-  virtual: Sponsor[] | null;
+  communities: Sponsor[] | null;
   basic: Sponsor[] | null;
   media_partners: Sponsor[] | null;
 }
@@ -120,7 +120,13 @@ export const sponsors: Sponsors = {
       website: "https://www.veepee.es/gr/home/default",
     },*/
   ],
-  virtual: [],
+  communities: [
+    {
+      name: "Agile Spain",
+      image: "images/sponsors/agile.png",
+      website: "https://agile-spain.org/",
+    },
+  ],
   media_partners: [
     {
       name: "Kube events",
