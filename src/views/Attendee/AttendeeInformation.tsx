@@ -10,7 +10,7 @@ const PrePartyImg = styled.img`
     margin: 0.3rem;
     padding: 0.2rem;
     border: 1px solid ${Color.DARK_BLUE};
-    transition: 0.25s linear;
+    transition: 0.5s linear;
   }
 
   &:hover {
@@ -26,6 +26,7 @@ const PartyImg = styled.img`
     padding: 0.2rem;
     border: 1px solid ${Color.SKY_BLUE};
   }
+
   &:hover {
     filter: brightness(1.2);
   }
@@ -41,6 +42,23 @@ const MobileSection = styled.section`
   }
 `;
 
+const PrePartySection = styled.section`
+   {
+    background-color: ${Color.LIGHT_BLUE};
+    padding: 50px 100px 20px;
+  }
+`;
+
+const NetworkingPartySection = styled.section`
+  background-color: ${Color.DARK_BLUE};
+  padding: 50px 100px 20px;
+`;
+
+const SectionWrapper = styled.div`
+  margin: 0 auto;
+  max-width: 1280px;
+`;
+
 const AttendeeInformation: FC = () => {
   return (
     <main>
@@ -51,91 +69,93 @@ const AttendeeInformation: FC = () => {
         Here's some important information to get the most of your attendance to
         DevBcn 2023.
       </p>
-      <section
-        id="pre-party"
-        style={{
-          backgroundColor: Color.LIGHT_BLUE,
-          padding: "50px 100px 20px",
-          maxWidth: "1280px",
-          margin: "0 auto",
-        }}
-      >
-        <h2 style={{ color: Color.DARK_BLUE }}>Pre-Party</h2>
-        <p style={{ textAlign: "justify", margin: "15px" }}>
-          We believe that learning and enjoyment go hand in hand. That's why we
-          have organized a pre-party session sponsored by{" "}
-          <a
-            target="_blank"
-            rel="noreferrer noopener"
-            href="https://www.azul.com/?utm_medium=email&utm_campaign=20230703-SEV-DevBCN&utm_source=DevBCN&utm_content=&utm_term="
-          >
-            Azul
-          </a>{" "}
-          for all attendees on{" "}
-          <strong>Monday, July 3rd from 19:00 to 20:00</strong>. During this
-          time, you can unwind, socialize, and have a great time with fellow
-          participants. Indulge in tasty snacks and beverages while engaging in
-          friendly games of air hockey and table football. It's a fantastic
-          opportunity to network, relax, and set the tone for the upcoming
-          conference. We can't wait to see you there!
-        </p>
-        <p>
-          <PrePartyImg
-            src="/images/pre-party/pre-party-1.jpg"
-            alt="pre-party"
-          />
-          <PrePartyImg
-            src="/images/pre-party/pre-party-2.jpg"
-            alt="pre-party"
-          />
-          <PrePartyImg
-            src="/images/pre-party/pre-party-3.jpg"
-            alt="pre-party"
-          />
-          <PrePartyImg
-            src="/images/pre-party/pre-party-4.jpg"
-            alt="pre-party"
-          />
-        </p>
-        <p>Brought to you by Azul</p>
-        <p>
-          <a
-            target="_blank"
-            rel="noreferrer noopener"
-            href="https://www.azul.com/?utm_medium=email&utm_campaign=20230703-SEV-DevBCN&utm_source=DevBCN&utm_content=&utm_term="
-          >
-            <img
-              src="/images/sponsors/azul.png"
-              alt="Azul"
-              style={{ width: "30vw" }}
+      <PrePartySection id="pre-party">
+        <SectionWrapper>
+          <h2 style={{ color: Color.DARK_BLUE }}>Pre-Party</h2>
+          <p style={{ textAlign: "justify", margin: "15px" }}>
+            We believe that learning and enjoyment go hand in hand. That's why
+            we have organized a pre-party session sponsored by{" "}
+            <a
+              target="_blank"
+              rel="noreferrer noopener"
+              href="https://www.azul.com/?utm_medium=email&utm_campaign=20230703-SEV-DevBCN&utm_source=DevBCN&utm_content=&utm_term="
+            >
+              Azul
+            </a>{" "}
+            for all attendees on{" "}
+            <strong>Monday, July 3rd from 19:00 to 20:00</strong>. During this
+            time, you can unwind, socialize, and have a great time with fellow
+            participants. Indulge in tasty snacks and beverages while engaging
+            in friendly games of air hockey and table football. It's a fantastic
+            opportunity to network, relax, and set the tone for the upcoming
+            conference. We can't wait to see you there!
+          </p>
+          <p>
+            <PrePartyImg
+              src="/images/pre-party/pre-party-1.jpg"
+              alt="pre-party"
             />
-          </a>
-        </p>
-      </section>
-      <section
-        id="networking-party"
-        style={{
-          backgroundColor: Color.DARK_BLUE,
-          padding: "50px 100px 20px",
-          maxWidth: "1280px",
-          margin: "0 auto",
-        }}
-      >
-        <h2 style={{ color: Color.SKY_BLUE }}>Networking Party</h2>
-        <p style={{ color: Color.WHITE, margin: "20px", textAlign: "justify" }}>
-          Only for a selected audience, we'll deliver a networking party with
-          dinner, orchestra, and Karaoke. These tickets will be distributed
-          among the sponsors, so make sure to contact them throughout the day to
-          get one.
-        </p>
-        <p style={{ color: Color.WHITE, margin: "20px", textAlign: "justify" }}>
-          <strong>Monday, July 3rd from 20:00 to 22:00</strong>
-        </p>
-        <PartyImg src="/images/party/party-1.jpg" alt="party" />
-        <PartyImg src="/images/party/party-2.jpg" alt="party" />
-        <PartyImg src="/images/party/party-3.jpg" alt="party" />
-        <PartyImg src="/images/party/party-4.jpg" alt="party" />
-      </section>
+            <PrePartyImg
+              src="/images/pre-party/pre-party-2.jpg"
+              alt="pre-party"
+            />
+            <PrePartyImg
+              src="/images/pre-party/pre-party-3.jpg"
+              alt="pre-party"
+            />
+            <PrePartyImg
+              src="/images/pre-party/pre-party-4.jpg"
+              alt="pre-party"
+            />
+          </p>
+          <p>
+            Brought to you by{" "}
+            <a
+              target="_blank"
+              rel="noreferrer noopener"
+              href="https://www.azul.com/?utm_medium=email&utm_campaign=20230703-SEV-DevBCN&utm_source=DevBCN&utm_content=&utm_term="
+            >
+              Azul
+            </a>
+          </p>
+          <p>
+            <a
+              target="_blank"
+              rel="noreferrer noopener"
+              href="https://www.azul.com/?utm_medium=email&utm_campaign=20230703-SEV-DevBCN&utm_source=DevBCN&utm_content=&utm_term="
+            >
+              <img
+                src="/images/sponsors/azul.png"
+                alt="Azul"
+                style={{ width: "30vw", margin: "2rem" }}
+              />
+            </a>
+          </p>
+        </SectionWrapper>
+      </PrePartySection>
+      <NetworkingPartySection id="networking-party">
+        <SectionWrapper>
+          <h2 style={{ color: Color.SKY_BLUE }}>Networking Party</h2>
+          <p
+            style={{ color: Color.WHITE, margin: "20px", textAlign: "justify" }}
+          >
+            Only for a selected audience, we'll deliver a networking party with
+            dinner, orchestra, and Karaoke. These tickets will be distributed
+            among the sponsors, so make sure to contact them throughout the day
+            to get one.
+          </p>
+          <PartyImg src="/images/party/entry-pass.png" alt="party" />
+          <p
+            style={{ color: Color.WHITE, margin: "20px", textAlign: "center" }}
+          >
+            <strong>Monday, July 3rd from 20:00 to 22:00</strong>
+          </p>
+          <PartyImg src="/images/party/party-1.jpg" alt="party" />
+          <PartyImg src="/images/party/party-2.jpg" alt="party" />
+          <PartyImg src="/images/party/party-3.jpg" alt="party" />
+          <PartyImg src="/images/party/party-4.jpg" alt="party" />
+        </SectionWrapper>
+      </NetworkingPartySection>
       <MobileSection id="mobile-application">
         <h2 style={{ color: Color.DARK_BLUE, marginTop: "10px" }}>
           Mobile application

@@ -1,6 +1,7 @@
 import { Link, Route, Switch } from "react-router-dom";
 import {
   ROUTE_ABOUT_US,
+  ROUTE_ATTENDEE,
   ROUTE_CFP,
   ROUTE_CODE_OF_CONDUCT,
   ROUTE_COMMUNITIES,
@@ -110,7 +111,7 @@ const App: FC = () => {
             )}
           />
           <Route
-            path="/attendee"
+            path={ROUTE_ATTENDEE}
             component={React.lazy(
               () => import("./views/Attendee/AttendeeInformation")
             )}
