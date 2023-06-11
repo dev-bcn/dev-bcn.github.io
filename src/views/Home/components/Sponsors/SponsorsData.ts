@@ -153,5 +153,10 @@ export const sponsors: Sponsors = {
       website: "https://www.cioinsights.com/",
       image: "images/sponsors/cio.png",
     },
+    {
+      name: "Glorium",
+      image: "images/sponsors/glorium.png",
+      website: "https://gloriumtech.com/",
+    },
   ],
 };
