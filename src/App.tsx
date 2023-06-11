@@ -14,6 +14,7 @@ import {
   ROUTE_MEETING_DETAIL_PLAIN,
   ROUTE_SCHEDULE,
   ROUTE_SPEAKER_DETAIL_PLAIN,
+  ROUTE_SPEAKER_INFO,
   ROUTE_SPEAKERS,
   ROUTE_TALKS,
   ROUTE_TRAVEL,
@@ -87,6 +88,12 @@ const App: FC = () => {
           <Route
             path={ROUTE_SPEAKERS}
             component={React.lazy(() => import("./views/Speakers/Speakers"))}
+          />
+          <Route
+            path={ROUTE_SPEAKER_INFO}
+            component={React.lazy(
+              () => import("./views/Speakers/SpeakerInformation")
+            )}
           />
           <Route
             path={ROUTE_ABOUT_US}
