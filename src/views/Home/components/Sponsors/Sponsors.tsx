@@ -14,7 +14,7 @@ import { TopSponsors } from "./TopSponsors";
 import { RegularSponsors } from "./RegularSponsors";
 import { PremiumSponsors } from "./PremiumSponsors";
 import { BasicSponsor } from "./BasicSponsor";
-import { VirtualSponsors } from "./VirtualSponsors";
+import { Communities } from "./Communities";
 import { MediaPartners } from "./MediaPartners";
 
 export const buildSlashes = (module: number) => {
@@ -50,7 +50,7 @@ const Sponsors: FC = () => (
       <PremiumSponsors />
       <RegularSponsors />
       <BasicSponsor />
-      <VirtualSponsors />
+      <Communities />
       <MediaPartners />
     </StyledSponsorsContainer>
   </SectionWrapper>
