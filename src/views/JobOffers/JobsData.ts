@@ -317,6 +317,36 @@ export const jobOffers: Company[] = [
       },
     ],
   },
+  {
+    id: "d7235281-9424-4d15-b7a3-fba26d4178dc",
+    name: "King",
+    description:
+      "King is a leading interactive entertainment company for the mobile gaming world.",
+    twitter: "https://twitter.com/king_games?lang=en",
+    linkedin: "https://www.linkedin.com/company/king/",
+    url: "https://careers.king.com/",
+    logo: "images/sponsors/king.png",
+    offers: [
+      {
+        id: "47778f29-27b7-4783-a5d9-5d1faa2e1ab7",
+        url: "https://careers.king.com/jobs/job/r020701-cplusplus-tools-engineer/",
+        location: "Hybrid",
+        title: "C++ Tools Engineer",
+        text:
+          "<p>We are looking for an experienced Game Engine Tools Engineer to join our custom cross platform mobile game engine team. Our engine and toolchain is used by hundreds of developers inside of King and is used to deliver some of the biggest games in the world. Our team is made up of 45 dedicated people, and we are now looking to grow by adding experienced engineers with great customer centric approaches.\n" +
+          "\n" +
+          "<p>Your role within our Kingdom</p>\n" +
+          "<ul>\n" +
+          "<li>Our engine team needs an expert Game Engine Tools Engineer to work on improving and maintaining our cross platform mobile engine, editor and tool chain. You will be responsible for developing and refining new and existing features on behalf of our dozens of live production game teams.</li>\n" +
+          "\n" +
+          "<li>Understanding of the challenges faced by artists, coders and designers, and create the technology that helps them to continuously deliver their projects.</li>\n" +
+          "\n" +
+          "<li>You should have great interpersonal skills, as you wilxl work closely with Product Managers, QA Specialists, UI/UX Designers and other crafts to create the best possible products.</li>\n" +
+          "\n" +
+          "<li>Self- driving attitude combined with passion for improving users workflows and solving difficult challenges are key skills for this role.</li></ul></p>",
+      },
+    ],
+  },
 ];
 
 export interface CompanyProps {
