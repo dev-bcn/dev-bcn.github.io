@@ -59,9 +59,12 @@ code {
   color: #8ec9ee;
 }
 
-$session-room-bg-color:#565656;
-$session-room-color:#f0f0f0;
-$coffee-break-bg-color:#2f2f2f;
+$session-room-bg-color: #565656;
+$session-room-color: #f0f0f0;
+$coffee-break-bg-color: #2f2f2f;
+
+$green-background: #34bb9c;
+$green-font-color: #288572;
 
 /* Registration */
 #sz-tab-45110 > div > div:nth-child(10) > div {
@@ -72,9 +75,10 @@ $coffee-break-bg-color:#2f2f2f;
 #sz-tab-45110 > div > div:nth-child(13) > div {
   background-color: #34bb9c !important;
 }
-#sz-tab-45110 > div > div:nth-child(19) > div > div > div.sz-session__room{
+
+#sz-tab-45110 > div > div:nth-child(19) > div > div > div.sz-session__room {
   background-color: $session-room-bg-color;
-  color:$session-room-color;
+  color: $session-room-color;
 }
 
 #sz-tab-45110 > div > div:nth-child(13) > div > h3 {
@@ -90,9 +94,9 @@ $coffee-break-bg-color:#2f2f2f;
   background-color: #2f2f2f !important;
 }
 
-#sz-tab-45110 > div > div:nth-child(22) > div > div > div.sz-session__room{
+#sz-tab-45110 > div > div:nth-child(22) > div > div > div.sz-session__room {
   background-color: $session-room-bg-color;
-  color:$session-room-color;
+  color: $session-room-color;
 }
 
 #sz-tab-45110 > div > div:nth-child(22) > div > h3 {
@@ -115,19 +119,23 @@ $coffee-break-bg-color:#2f2f2f;
 #sz-tab-45110 > div > div:nth-child(19) > div > div > div.sz-session__time {
   color: #f0f0f0;
 }
+
 /* session break */
 #sz-tab-45110 > div > div:nth-child(34) > div {
   background-color: #2f2f2f !important;
 }
-#sz-tab-45110 > div > div:nth-child(34) > div > div > div.sz-session__room{
+
+#sz-tab-45110 > div > div:nth-child(34) > div > div > div.sz-session__room {
   background-color: $session-room-bg-color;
-  color:$session-room-color;
+  color: $session-room-color;
 }
+
 #sz-tab-45110 > div > div:nth-child(34) > div > h3 {
   color: #f0f0f0;
 }
-#sz-tab-45110 > div > div:nth-child(34) > div > div > div.sz-session__time{
-  color:#f0f0f0;
+
+#sz-tab-45110 > div > div:nth-child(34) > div > div > div.sz-session__time {
+  color: #f0f0f0;
 }
 
 /* Lunch */
@@ -135,9 +143,9 @@ $coffee-break-bg-color:#2f2f2f;
   background-color: #2f2f2f !important;
 }
 
-#sz-tab-45110 > div > div:nth-child(46) > div > div > div.sz-session__room{
+#sz-tab-45110 > div > div:nth-child(46) > div > div > div.sz-session__room {
   background-color: $session-room-bg-color;
-  color:$session-room-color;
+  color: $session-room-color;
 }
 
 #sz-tab-45110 > div > div:nth-child(46) > div > h3 {
@@ -149,38 +157,36 @@ $coffee-break-bg-color:#2f2f2f;
 }
 
 /* Session break */
-#sz-tab-45110 > div > div:nth-child(58) > div > div > div.sz-session__room{
+#sz-tab-45110 > div > div:nth-child(58) > div > div > div.sz-session__room {
   background-color: $session-room-bg-color;
-  color:$session-room-color;
+  color: $session-room-color;
 }
 
 /* Coffee break */
-#sz-tab-45110 > div > div:nth-child(69) > div {
+#sz-tab-45110 > div > div:nth-child(70) > div {
   background-color: #2f2f2f !important;
 }
 
-
-#sz-tab-45110 > div > div:nth-child(69) > div > h3 {
+#sz-tab-45110 > div > div:nth-child(70) > div > h3 {
   color: #f0f0f0;
 }
 
-#sz-tab-45110 > div > div:nth-child(69) > div > div > div.sz-session__room{
+#sz-tab-45110 > div > div:nth-child(70) > div > div > div.sz-session__room {
   background-color: $session-room-bg-color;
-  color:$session-room-color;
+  color: $session-room-color;
 }
 
-#sz-tab-45110 > div > div:nth-child(69) > div > div > div.sz-session__time {
+#sz-tab-45110 > div > div:nth-child(70) > div > div > div.sz-session__time {
   color: #f0f0f0;
 }
-
 
 /* pre-party */
-#sz-tab-45110 > div > div:nth-child(96) > div {
+#sz-tab-45110 > div > div:nth-child(98) > div {
   background-color: #26547c !important;
 }
 
-#sz-tab-45110 > div > div:nth-child(96) > div > div > div.sz-session__time{
-  color:#f0f0f0;
+#sz-tab-45110 > div > div:nth-child(98) > div > div > div.sz-session__time {
+  color: #f0f0f0;
 }
 
 /* Coffee break */
@@ -188,9 +194,9 @@ $coffee-break-bg-color:#2f2f2f;
   background-color: $coffee-break-bg-color !important;
 }
 
-#sz-tab-45110 > div > div:nth-child(85) > div > div > div.sz-session__room{
+#sz-tab-45110 > div > div:nth-child(85) > div > div > div.sz-session__room {
   background-color: $session-room-bg-color;
-  color:$session-room-color;
+  color: $session-room-color;
 }
 
 #sz-tab-45110 > div > div:nth-child(85) > div > h3 {
@@ -201,27 +207,42 @@ $coffee-break-bg-color:#2f2f2f;
   color: #f0f0f0;
 }
 
+/* Session Break*/
+[data-sessionid="97ad440d-d809-438d-8c94-e6e72c84ca9a"] div.sz-session__card{
+  background-color: $coffee-break-bg-color!important;
+}
+
+[data-sessionid="97ad440d-d809-438d-8c94-e6e72c84ca9a"] div.sz-session__room {
+  background-color: $session-room-bg-color!important;
+  color: $session-room-color!important;
+}
+
+[data-sessionid="97ad440d-d809-438d-8c94-e6e72c84ca9a"] div.sz-session__time {
+  color: #f0f0f0!important;
+}
+
+[data-sessionid="97ad440d-d809-438d-8c94-e6e72c84ca9a"] h3 {
+  color: #f0f0f0!important;
+}
+
 /* Networking Party */
-#sz-tab-45110 > div > div:nth-child(99) > div {
-  background-color: #34bb9c !important;
-}
-#sz-tab-45110 > div > div:nth-child(99) > div > div > div.sz-session__room{
-  background-color: #288a73;
-  color:$session-room-color;
+[data-sessionid="a0ad95c3-06ef-49ad-89a1-537e84f5b264"] div.sz-session__card {
+  background-color: $green-background!important;
+  color: $green-font-color!important;
 }
 
-#sz-tab-45110 > div > div:nth-child(99) > div > h3 {
-  color: #288572;
+[data-sessionid="a0ad95c3-06ef-49ad-89a1-537e84f5b264"] div.sz-session__room {
+  background-color: $green-background!important;
+  color: $green-font-color!important;
 }
 
-#sz-tab-45110 > div > div:nth-child(99) > div > div > div.sz-session__time {
-  color: #288572;
+[data-sessionid="a0ad95c3-06ef-49ad-89a1-537e84f5b264"] h3 {
+  color: $green-font-color!important;
 }
 
 .sz-session--service .sz-session__card {
   color: #8ec9ee;
 }
-
 
 /* Registration */
 #sz-tab-45110 > div > div:nth-child(10) > div {
@@ -290,7 +311,7 @@ $coffee-break-bg-color:#2f2f2f;
 
 #sz-tab-45111 > div > div:nth-child(58) > div > div > div.sz-session__room {
   background-color: $session-room-bg-color;
-  color:$session-room-color;
+  color: $session-room-color;
 }
 
 /* Session break */
@@ -311,19 +332,6 @@ $coffee-break-bg-color:#2f2f2f;
   background-color: #26547c !important;
 }
 
-/* Networking Party */
-#sz-tab-45110 > div > div:nth-child(86) > div {
-  background-color: #34bb9c !important;
-}
-
-#sz-tab-45110 > div > div:nth-child(86) > div > h3 {
-  color: #288572;
-}
-
-#sz-tab-45110 > div > div:nth-child(86) > div > div > div.sz-session__time {
-  color: #288572;
-}
-
 /* Day two: session break */
 #sz-tab-45111 > div > div:nth-child(22) > div {
   background-color: #2f2f2f !important;
@@ -339,7 +347,7 @@ $coffee-break-bg-color:#2f2f2f;
 
 #sz-tab-45111 > div > div:nth-child(22) > div > div > div.sz-session__room {
   background-color: $session-room-bg-color;
-  color:$session-room-color;
+  color: $session-room-color;
 }
 
 /* Day 2: session break */
@@ -349,7 +357,7 @@ $coffee-break-bg-color:#2f2f2f;
 
 #sz-tab-45111 > div > div:nth-child(34) > div > div > div.sz-session__room {
   background-color: $session-room-bg-color;
-  color:$session-room-color;
+  color: $session-room-color;
 }
 
 #sz-tab-45111 > div > div:nth-child(34) > div > h3 {
@@ -367,7 +375,7 @@ $coffee-break-bg-color:#2f2f2f;
 
 #sz-tab-45111 > div > div:nth-child(46) > div > div > div.sz-session__room {
   background-color: $session-room-bg-color;
-  color:$session-room-color;
+  color: $session-room-color;
 }
 
 #sz-tab-45111 > div > div:nth-child(46) > div > h3 {
@@ -385,7 +393,7 @@ $coffee-break-bg-color:#2f2f2f;
 
 #sz-tab-45111 > div > div:nth-child(79) > div > div > div.sz-session__room {
   background-color: $session-room-bg-color;
-  color:$session-room-color;
+  color: $session-room-color;
 }
 
 #sz-tab-45111 > div > div:nth-child(79) > div > h3 {
@@ -427,25 +435,25 @@ $coffee-break-bg-color:#2f2f2f;
 }
 
 /* Day three: reception */
-#sz-tab-45112 > div > div.sz-session.sz-session--cssgrid.sz-session--limit-heading.sz-session--plenum.sz-session--service.sz-room--36973 > div{
+#sz-tab-45112 > div > div.sz-session.sz-session--cssgrid.sz-session--limit-heading.sz-session--plenum.sz-session--service.sz-room--36973 > div {
   background-color: #26547c !important;
 }
 
 /* day three: coffee break */
-#sz-tab-45112 > div > div.sz-session.sz-session--cssgrid.sz-session--limit-heading.sz-session--plenum.sz-session--service.sz-room--31276 > div{
+#sz-tab-45112 > div > div.sz-session.sz-session--cssgrid.sz-session--limit-heading.sz-session--plenum.sz-session--service.sz-room--31276 > div {
   background-color: #2f2f2f !important;
 }
 
 #sz-tab-45112 > div > div.sz-session.sz-session--cssgrid.sz-session--limit-heading.sz-session--plenum.sz-session--service.sz-room--31276 > div > div > div.sz-session__room {
   background-color: $session-room-bg-color;
-  color:$session-room-color;
+  color: $session-room-color;
 }
 
-#sz-tab-45112 > div > div.sz-session.sz-session--cssgrid.sz-session--limit-heading.sz-session--plenum.sz-session--service.sz-room--31276 > div > div > div.sz-session__time{
+#sz-tab-45112 > div > div.sz-session.sz-session--cssgrid.sz-session--limit-heading.sz-session--plenum.sz-session--service.sz-room--31276 > div > div > div.sz-session__time {
   color: #f0f0f0;
 }
 
-#sz-tab-45112 > div > div.sz-session.sz-session--cssgrid.sz-session--limit-heading.sz-session--plenum.sz-session--service.sz-room--31276 > div > h3{
+#sz-tab-45112 > div > div.sz-session.sz-session--cssgrid.sz-session--limit-heading.sz-session--plenum.sz-session--service.sz-room--31276 > div > h3 {
   color: #f0f0f0;
 }
 
