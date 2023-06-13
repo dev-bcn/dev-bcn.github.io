@@ -124,11 +124,11 @@ export const sponsors: Sponsors = {
       website: "https://www.opentrends.net/en",
       image: "images/sponsors/seidor.png",
     },
-    /*{
+    {
       name: "Veepee",
       image: "images/sponsors/veepee.png",
       website: "https://www.veepee.es/gr/home/default",
-    },*/
+    },
   ],
   communities: [
     {
