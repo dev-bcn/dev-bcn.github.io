@@ -46,10 +46,10 @@ describe("Diversity component", () => {
         </Router>
       </React.Suspense>
     );
-    //const vepeeLogo = screen.getByAltText("Vepee");
+    const vepeeLogo = screen.getByAltText("Vepee");
     const adevintaLogo = screen.getByAltText("Adevinta");
 
-    //expect(vepeeLogo).toBeInTheDocument();
+    expect(vepeeLogo).toBeInTheDocument();
     expect(adevintaLogo).toBeInTheDocument();
   });
 });
