@@ -6,7 +6,7 @@ import {
 import { motion } from "framer-motion";
 
 const SponsorMargin = 11;
-const sponsorMarginDesktop = 18;
+const sponsorMarginDesktop = 7;
 export const StyledSponsorsContainer = styled.div`
   position: relative;
   padding-top: 4rem;
@@ -146,7 +146,6 @@ export const PremiumSponsorImage = styled.img`
   height: 7.5rem;
   transition: height ease-in 0.25s;
   max-width: 100%;
-  border-radius: 1rem;
   margin: 1rem 2rem;
 
   &:hover {
