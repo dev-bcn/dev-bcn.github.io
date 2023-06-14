@@ -136,6 +136,21 @@ export const sponsors: Sponsors = {
       image: "images/sponsors/agile.png",
       website: "https://agile-spain.org/",
     },
+    {
+      name: "step4ward",
+      image: "images/sponsors/step4ward.png",
+      website: "https://bit.ly/step4wardhome",
+    },
+    {
+      name: "Apache foundation",
+      image: "images/sponsors/apache-foundation.jpeg",
+      website: "https://www.apache.com/",
+    },
+    {
+      name: "Eclipse foundation",
+      website: "https://www.eclipse.org/",
+      image: "images/sponsors/eclipse-foundation.png",
+    },
   ],
   media_partners: [
     {
