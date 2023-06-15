@@ -13,7 +13,11 @@ export const StyledSocialMediaWrapper = styled.a`
 `;
 const TwitterIcon: FC<ITwitterIconProps> = ({ color, twitterUrl }) => {
   return (
-    <StyledSocialMediaWrapper href={twitterUrl} target={"_blank"}>
+    <StyledSocialMediaWrapper
+      href={twitterUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="100%"

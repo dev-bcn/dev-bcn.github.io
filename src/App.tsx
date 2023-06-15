@@ -3,6 +3,7 @@ import {
   ROUTE_ABOUT_US,
   ROUTE_CFP,
   ROUTE_CODE_OF_CONDUCT,
+  ROUTE_COMMUNITIES,
   ROUTE_CONDITIONS,
   ROUTE_COOKIES,
   ROUTE_DIVERSITY,
@@ -101,6 +102,12 @@ const App: FC = () => {
           <Route
             path={ROUTE_WORKSHOPS}
             component={React.lazy(() => import("./views/Workshops/Workshops"))}
+          />
+          <Route
+            path={ROUTE_COMMUNITIES}
+            component={React.lazy(
+              () => import("./views/Communities/Communities")
+            )}
           />
           <Route
             path={ROUTE_MEETING_DETAIL_PLAIN}
