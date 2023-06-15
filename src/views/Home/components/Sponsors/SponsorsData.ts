@@ -144,7 +144,7 @@ export const sponsors: Sponsors = {
     {
       name: "Apache foundation",
       image: "images/sponsors/apache-foundation.jpeg",
-      website: "https://www.apache.com/",
+      website: "https://www.apache.org/",
     },
     {
       name: "Eclipse foundation",
