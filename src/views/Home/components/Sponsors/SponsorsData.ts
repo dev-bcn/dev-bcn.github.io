@@ -129,6 +129,16 @@ export const sponsors: Sponsors = {
       image: "images/sponsors/veepee.png",
       website: "https://www.veepee.es/gr/home/default",
     },
+    {
+      name: "Zurich",
+      website: "https://bcntdc.zurich.com/en",
+      image: "images/sponsors/zurich.png",
+    },
+    {
+      name: "Inditex",
+      website: "https://www.zaratalent.com/es/tech/",
+      image: "images/sponsors/inditex.png",
+    },
   ],
   communities: [
     {
