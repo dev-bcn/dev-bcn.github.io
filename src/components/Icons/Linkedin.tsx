@@ -11,8 +11,8 @@ const LinkedinIcon: FC<ILinkedinIconProps> = ({ color, linkedinUrl }) => {
     <StyledSocialMediaWrapper href={linkedinUrl} target={"_blank"}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="100%"
-        height="100%"
+        width="24"
+        height="24"
         viewBox="0 0 24 24"
         fill={color}
         stroke={color}

@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import styled from "styled-components";
 import TwitterIcon from "../../components/Icons/Twitter";
 import { Color } from "../../styles/colors";
+import WebsiteIcon from "../../components/Icons/website";
 
 const Heading = styled.h1`
    {
@@ -18,6 +19,8 @@ const FoSS = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    width: 80%;
+    margin: 2rem auto;
   }
 
   #companies {
@@ -36,10 +39,15 @@ const FoSS = styled.div`
     content: " |";
   }
 
+  .description {
+    padding: 1rem;
+    text-align: justify;
+  }
+
   .entry {
     display: flex;
     border-radius: 10px;
-    flex: 1 0 33%;
+    flex: 1 0 20%;
     box-shadow: 0 0 5px 0 lightgray;
     margin-bottom: 20px;
   }
@@ -90,13 +98,13 @@ const Communities: FC = () => {
   return (
     <>
       <Heading>FOSS & Diversity Communities</Heading>
-      <p>
+      <p style={{ margin: "0.5rem" }}>
         This edition, the JBCNConf team will sponsor a free stand for a few
         communities representing Free and OpenSource Software projects and also
         Diversity communities.
       </p>
 
-      <p>
+      <p style={{ margin: "0.5rem" }}>
         You can ask them about their projects and how to be involved in their
         initiatives, as a way to contribute back to the communities and make
         this a better world sharing, learning, helping. These communities will
@@ -121,19 +129,16 @@ const Communities: FC = () => {
                   Eclipse Foundation
                 </h3>
                 <div className="social-media">
-                  <a
-                    target="_blank"
-                    href=" https://www.eclipse.org/"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="fa fa-globe"></i>
-                  </a>
+                  <WebsiteIcon
+                    color={Color.DARK_BLUE}
+                    WebsiteUrl="https://www.eclipse.org/"
+                  />
                   <TwitterIcon
                     color={Color.DARK_BLUE}
                     twitterUrl=" https://www.eclipse.org/"
                   />
                 </div>
-                <div>
+                <div className="description">
                   The Eclipse Foundation provides individuals and organizations
                   with a business-friendly environment for open source software
                   collaboration and innovation. The Foundation is home to the
@@ -161,20 +166,16 @@ const Communities: FC = () => {
                   Apache Software Foundation
                 </h3>
                 <div className="social-media">
-                  <a
-                    target="_blank"
-                    href="https://www.apache.com/"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="fa fa-globe"></i>
-                  </a>
-
+                  <WebsiteIcon
+                    color={Color.DARK_BLUE}
+                    WebsiteUrl="https://www.apache.org/"
+                  />
                   <TwitterIcon
                     color={Color.DARK_BLUE}
                     twitterUrl="https://twitter.com/apache"
                   />
                 </div>
-                <div>
+                <div className="description">
                   Established in 1999, the ASF is a US 501(c)(3) charitable
                   organization, funded by individual donations and corporate
                   sponsors. Our all-volunteer board oversees more than 350
@@ -203,6 +204,7 @@ const Communities: FC = () => {
                   src="/images/sponsors/agile.png"
                   className="attachment-eventstation-related-post-image size-eventstation-related-post-image wp-post-image jello-vertical"
                   alt="Agile Spain"
+                  width="80%"
                 />
               </div>
               <div>
@@ -210,23 +212,16 @@ const Communities: FC = () => {
                   Agile Spain
                 </h3>
                 <div className="social-media">
-                  <a
-                    target="_blank"
-                    href="https://agile-spain.org/"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="fa fa-globe"></i>
-                  </a>
-
-                  <a
-                    target="_blank"
-                    href="https://twitter.com/agilespain"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="fa fa-twitter"></i>
-                  </a>
+                  <WebsiteIcon
+                    color={Color.DARK_BLUE}
+                    WebsiteUrl="https://agile-spain.org/"
+                  />
+                  <TwitterIcon
+                    color={Color.DARK_BLUE}
+                    twitterUrl="https://twitter.com/agilespain"
+                  />
                 </div>
-                <div>Agile Spain - description TBC</div>
+                <div className="description">Agile Spain</div>
               </div>
             </div>
           </div>
@@ -245,19 +240,16 @@ const Communities: FC = () => {
                   Step4ward
                 </h3>
                 <div className="social-media">
-                  <a
-                    target="_blank"
-                    href="https://bit.ly/step4wardhome"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="fa fa-globe"></i>
-                  </a>
+                  <WebsiteIcon
+                    color={Color.DARK_BLUE}
+                    WebsiteUrl="https://bit.ly/step4wardhome"
+                  />
                   <TwitterIcon
                     color={Color.DARK_BLUE}
                     twitterUrl="https://twitter.com/@Step4ward_ES"
                   />
                 </div>
-                <div>
+                <div className="description">
                   Step4ward is a group of volunteer women mentors that helps
                   women that are either starting in the tech industry in Spain
                   or want to continue their evolution within their tech career
