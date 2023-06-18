@@ -139,6 +139,11 @@ export const sponsors: Sponsors = {
       website: "https://www.zaratalent.com/es/tech/",
       image: "images/sponsors/inditex.png",
     },
+    {
+      name: "Axa",
+      image: "images/sponsors/axa.png",
+      website: "https://www.careers.axapartners.com/es/es",
+    },
   ],
   communities: [
     {
