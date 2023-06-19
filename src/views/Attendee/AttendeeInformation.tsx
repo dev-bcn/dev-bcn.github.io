@@ -38,7 +38,7 @@ const MobileSection = styled.section`
   margin: 0 auto;
 
   @media (max-width: ${BIG_BREAKPOINT}px) {
-    padding: 50px 100px 400px;
+    padding: 50px 20px 400px;
   }
 `;
 
@@ -222,7 +222,7 @@ const AttendeeInformation: FC = () => {
                   {" "}
                   1{" "}
                 </p>
-                <p style={{ color: "#2dacee", float: "left", width: "450px" }}>
+                <p style={{ color: "#2dacee" }}>
                   <b>NAVIGATE</b> the event agenda and logistics, even without
                   Wi-Fi or data. Access useful information like ridesharing and
                   local attractions through the Community Board{" "}
@@ -244,7 +244,7 @@ const AttendeeInformation: FC = () => {
                   {" "}
                   2{" "}
                 </p>
-                <p style={{ float: "left", color: "#2dacee", width: "450px" }}>
+                <p style={{ color: "#2dacee" }}>
                   {" "}
                   <b>NETWORK</b> effectively. Plan whom to meet by exploring
                   attendee profiles and sending out messages{" "}
@@ -266,7 +266,7 @@ const AttendeeInformation: FC = () => {
                   {" "}
                   3{" "}
                 </p>
-                <p style={{ float: "left", color: "#2dacee", width: "450px" }}>
+                <p style={{ color: "#2dacee" }}>
                   {" "}
                   <b>PARTICIPATE</b> in event activities through session likes,
                   comments, ratings, live polling, tweeting, and more{" "}
