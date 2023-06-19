@@ -10,21 +10,22 @@ import { ROUTE_ATTENDEE } from "../../constants/routes";
 const NavMenu = styled.a`
    {
     color: ${Color.DARK_BLUE};
-    border: 1px solid red;
-    padding-bottom: 100px;
+    padding: 100px;
     transition: 1s ease-in-out;
   }
 
   &:hover ul {
     display: block;
+    opacity: 100%;
   }
 `;
 
 const SubMenu = styled.ul`
    {
     display: none;
+    opacity: 0;
     position: absolute;
-    top: 25px;
+    top: 20px;
     left: -30px;
     width: 300px;
     background-color: ${Color.LIGHT_BLUE};
