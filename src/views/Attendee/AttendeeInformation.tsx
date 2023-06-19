@@ -127,7 +127,7 @@ const AttendeeInformation: FC = () => {
               <img
                 src="/images/sponsors/azul.png"
                 alt="Azul"
-                style={{ width: "30vw", margin: "2rem" }}
+                style={{ width: "20vw", margin: "2rem" }}
               />
             </a>
           </p>
@@ -141,8 +141,11 @@ const AttendeeInformation: FC = () => {
           >
             Only for a selected audience, we'll deliver a networking party with
             dinner, orchestra, and Karaoke. These tickets will be distributed
-            among the sponsors, so make sure to contact them throughout the day
-            to get one.
+            among the sponsors, and they are they only ones who can provide you
+            one, so make sure to contact them at their booth or through the
+            mobile app throughout the day to get one. They will organize
+            constests and raffles, so make sure to participate in them all to
+            increase your chance of attending.
           </p>
           <PartyImg src="/images/party/entry-pass.png" alt="party" />
           <p
@@ -162,7 +165,7 @@ const AttendeeInformation: FC = () => {
         </h2>
         <div
           style={{
-            fontFamily: "Helvetica, sans-serif",
+            fontFamily: "Square 721 Regular, sans-serif",
             minHeight: "500px",
             padding: "10px",
             border: "1px solid #ccc",
@@ -181,7 +184,10 @@ const AttendeeInformation: FC = () => {
               >
                 conference app
               </a>
-              ,<br />{" "}
+              ,<br />
+              <strong>
+                Make sure to login with the email you provided for your ticket
+              </strong>
               <img
                 width="100px"
                 src="https://whova.com/xems/apis/get_whova_tracking_image/?event_id=devbc1_202307&track_id=use_informational_widget&image_type=whova_logo"
