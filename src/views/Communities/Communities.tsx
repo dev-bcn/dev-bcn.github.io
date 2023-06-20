@@ -221,7 +221,16 @@ const Communities: FC = () => {
                     twitterUrl="https://twitter.com/agilespain"
                   />
                 </div>
-                <div className="description">Agile Spain</div>
+                <div className="description">
+                  Agile Spain es una asociación sin ánimo de lucro, creada en
+                  2009 y sostenida por personas voluntarias. Nuestra misión es
+                  promover los marcos de trabajo ágiles y sus beneficios en
+                  España y en el mundo de habla hispana. La asociación coordina
+                  y da apoyo legal-administrativo a los dos eventos más
+                  importantes del calendario ágil español: la Conferencia Agile
+                  Spain (CAS) y el Agile Open Spain (AOS), así como a otros
+                  eventos independientes organizados por comunidades locales.
+                </div>
               </div>
             </div>
           </div>
