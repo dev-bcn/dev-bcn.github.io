@@ -218,23 +218,23 @@ export const StyledSponsorIconNano = styled.img`
   }
 `;
 export const StyledSponsorIconMicro = styled.img`
-  height: 2.5rem;
+  height: 3.5rem;
   margin-bottom: 1rem;
   transition: height ease-in 0.25s;
   margin-left: 0.75rem;
 
   &:hover {
-    height: 3rem;
+    height: 4rem;
     filter: drop-shadow(1px 1px 1px #fff) !important;
   }
 
   @media (min-width: ${BIG_BREAKPOINT}px) {
-    height: 2.25rem;
+    height: 3.5rem;
     margin-left: 1rem;
   }
 
   @media (min-width: ${LARGE_BREAKPOINT}px) {
-    height: 2.75rem;
+    height: 3.5rem;
     margin-left: 2.5rem;
   }
 `;
