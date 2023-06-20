@@ -122,7 +122,7 @@ export const StyledHeader = styled.header`
       font-family: "Square 721 Regular", sans-serif;
 
       @media (min-width: 1024px) {
-        font-size: 1em;
+        font-size: 0.9em;
       }
     }
 

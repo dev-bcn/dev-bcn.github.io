@@ -8,7 +8,7 @@ interface ITwitterIconProps {
 
 export const StyledSocialMediaWrapper = styled.a`
   height: 0.8rem;
-  width: 0.8rem;
+  max-width: 24px;
   margin-right: 0.5rem;
 `;
 const TwitterIcon: FC<ITwitterIconProps> = ({ color, twitterUrl }) => {
@@ -20,8 +20,8 @@ const TwitterIcon: FC<ITwitterIconProps> = ({ color, twitterUrl }) => {
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="100%"
-        height="100%"
+        width="24"
+        height="24"
         viewBox="0 0 24 24"
         fill={color}
         stroke={color}
