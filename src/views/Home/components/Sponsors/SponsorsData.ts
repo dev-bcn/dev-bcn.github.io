@@ -5,6 +5,7 @@ export interface Sponsors {
   communities: Sponsor[] | null;
   basic: Sponsor[] | null;
   media_partners: Sponsor[] | null;
+  supporters: Sponsor[] | null;
 }
 
 export interface Sponsor {
@@ -197,6 +198,33 @@ export const sponsors: Sponsors = {
       name: "Glorium",
       image: "images/sponsors/glorium.png",
       website: "https://gloriumtech.com/",
+    },
+  ],
+  supporters: [
+    {
+      name: "Jetbrains",
+      image: "images/sponsors/jetbrains.png",
+      website: "https://www.jetbrains.com",
+    },
+    {
+      name: "Madrid JUG",
+      website: "https://www.meetup.com/MadridJUG",
+      image: "images/sponsors/madrid-jug.png",
+    },
+    {
+      name: "Malaga JUG",
+      image: "images/sponsors/malaga-jug.png",
+      website: "https://www.meetup.com/MalagaJUG",
+    },
+    {
+      name: "PythonBCN",
+      website: "https://pybcn.org/",
+      image: "images/sponsors/python-bcn.png",
+    },
+    {
+      name: "BarcelonaJS",
+      website: "https://barcelonajs.com/",
+      image: "images/sponsors/barcelona-js.png",
     },
   ],
 };

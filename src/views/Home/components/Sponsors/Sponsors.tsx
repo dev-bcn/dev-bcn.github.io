@@ -16,6 +16,7 @@ import { PremiumSponsors } from "./PremiumSponsors";
 import { BasicSponsor } from "./BasicSponsor";
 import { Communities } from "./Communities";
 import { MediaPartners } from "./MediaPartners";
+import { Supporters } from "./Supporters";
 
 export const buildSlashes = (module: number) => {
   const slashesElement = document.getElementById("Slashes");
@@ -51,6 +52,7 @@ const Sponsors: FC = () => (
       <RegularSponsors />
       <BasicSponsor />
       <Communities />
+      <Supporters />
       <MediaPartners />
     </StyledSponsorsContainer>
   </SectionWrapper>
