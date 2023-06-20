@@ -81,6 +81,7 @@ export const RegularSponsors = () => {
                 >
                   <RegularSponsorImage
                     src={sponsor.image}
+                    alt={sponsor.name}
                     style={{
                       filter: isHovered
                         ? `drop-shadow(2px 2px 2px ${Color.LIGHT_BLUE})`
