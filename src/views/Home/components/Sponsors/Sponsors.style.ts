@@ -114,7 +114,7 @@ export const StyledLogos = styled.div<{ position?: "left" | "right" }>`
       position === "right" ? sponsorMarginDesktop : 0}%;
     top: 5rem;
     flex-wrap: wrap;
-    width: ${({ position }) => (position === "right" ? 80 : 100)}%;
+    width: ${({ position }) => (position === "right" ? 90 : 100)}%;
   }
 
   @media (min-width: ${LARGE_BREAKPOINT}px) {
@@ -143,13 +143,13 @@ export const StyledSeparator = styled.div`
   }
 `;
 export const PremiumSponsorImage = styled.img`
-  height: 7.5rem;
+  height: 6rem;
   transition: height ease-in 0.25s;
   max-width: 100%;
   margin: 1rem 2rem;
 
   &:hover {
-    height: 8rem;
+    height: 7rem;
     filter: drop-shadow(1px 1px 1px #fff) !important;
   }
 
