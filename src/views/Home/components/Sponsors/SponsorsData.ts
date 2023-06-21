@@ -38,6 +38,11 @@ export const sponsors: Sponsors = {
       website: "https://developers.redhat.com/",
       image: "images/sponsors/red-hat.png",
     },
+    {
+      name: "Revolut",
+      website: "https://www.revolut.com/working-at-revolut/",
+      image: "images/sponsors/revolut.png",
+    },
   ],
   regular: [
     {
