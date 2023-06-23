@@ -150,6 +150,11 @@ export const sponsors: Sponsors = {
       image: "images/sponsors/axa.png",
       website: "https://www.careers.axapartners.com/es/es",
     },
+    {
+      name: "Servicenow",
+      image: "images/sponsors/servicenow.png",
+      website: "https://www.servicenow.com/products/observability.html",
+    },
   ],
   communities: [
     {
