@@ -57,8 +57,9 @@ export const StyledLink = styled(NavLink)`
     transition: all 0.5s ease-in-out;
   }
 
-  & :hover {
+  &:hover {
     font-weight: bold;
+    color: ${Color.MAGENTA};
   }
 
   &.${(props) => props.activeClassName} {
@@ -134,7 +135,7 @@ export const StyledHeader = styled.header`
 
     &:hover {
       color: ${Color.MAGENTA};
-      transition: color ease 0.5s;
+      transition: all ease 0.5s;
     }
   }
 `;
