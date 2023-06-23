@@ -7,6 +7,7 @@ export const ROUTE_COOKIES = "/cookies";
 export const ROUTE_DIVERSITY = "/diversity";
 export const ROUTE_HOME = "/";
 export const ROUTE_ATTENDEE = "/attendee";
+export const ROUTE_SPEAKER_INFO = "/speaker-information";
 export const ROUTE_HOME_ALTERNATE = "/website";
 export const ROUTE_JOB_OFFERS = "/jobOffers";
 export const ROUTE_SCHEDULE = "/schedule";
