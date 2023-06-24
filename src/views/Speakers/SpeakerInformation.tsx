@@ -144,7 +144,7 @@ const SpeakerInformation: FC = () => {
           <Paragraph style={{ textAlign: "center" }}>
             <a href="https://www.confluent.io" target="_blank" rel="noreferrer">
               <img
-                src="/images/sponsors/someRelic.png"
+                src="/images/sponsors/confluent.png"
                 alt="confluent"
                 style={{ width: "20vw" }}
               />
