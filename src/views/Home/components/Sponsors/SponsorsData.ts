@@ -96,6 +96,11 @@ export const sponsors: Sponsors = {
       image: "images/sponsors/alten.png",
       website: "https://www.alten.es",
     },
+    {
+      name: "New Relic",
+      image: "images/sponsors/new-relic.png",
+      website: "https://newrelic.com",
+    },
   ],
   basic: [
     {
