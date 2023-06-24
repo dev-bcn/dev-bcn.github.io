@@ -1,6 +1,7 @@
 import { Link, Route, Switch } from "react-router-dom";
 import {
   ROUTE_ABOUT_US,
+  ROUTE_ATTENDEE,
   ROUTE_CFP,
   ROUTE_CODE_OF_CONDUCT,
   ROUTE_COMMUNITIES,
@@ -13,6 +14,7 @@ import {
   ROUTE_MEETING_DETAIL_PLAIN,
   ROUTE_SCHEDULE,
   ROUTE_SPEAKER_DETAIL_PLAIN,
+  ROUTE_SPEAKER_INFO,
   ROUTE_SPEAKERS,
   ROUTE_TALKS,
   ROUTE_TRAVEL,
@@ -88,6 +90,12 @@ const App: FC = () => {
             component={React.lazy(() => import("./views/Speakers/Speakers"))}
           />
           <Route
+            path={ROUTE_SPEAKER_INFO}
+            component={React.lazy(
+              () => import("./views/Speakers/SpeakerInformation")
+            )}
+          />
+          <Route
             path={ROUTE_ABOUT_US}
             component={React.lazy(() => import("./views/About/About"))}
           />
@@ -107,6 +115,12 @@ const App: FC = () => {
             path={ROUTE_COMMUNITIES}
             component={React.lazy(
               () => import("./views/Communities/Communities")
+            )}
+          />
+          <Route
+            path={ROUTE_ATTENDEE}
+            component={React.lazy(
+              () => import("./views/Attendee/AttendeeInformation")
             )}
           />
           <Route

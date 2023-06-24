@@ -48,11 +48,19 @@ export const StyledClipPath = styled(motion.div)`
   background: ${Color.LIGHT_BLUE};
 `;
 export const StyledLink = styled(NavLink)`
-  padding: 0.5rem;
-  color: ${Color.LIGHT_BLUE};
-  text-decoration: none;
-  cursor: pointer;
-  font-family: "Square 721 Regular", sans-serif;
+   {
+    padding: 0.5rem;
+    color: ${Color.LIGHT_BLUE};
+    text-decoration: none;
+    cursor: pointer;
+    font-family: "Square 721 Regular", sans-serif;
+    transition: all 0.5s ease-in-out;
+  }
+
+  &:hover {
+    font-weight: bold;
+    color: ${Color.MAGENTA};
+  }
 
   &.${(props) => props.activeClassName} {
     &:before {
@@ -80,7 +88,6 @@ export const StyledNavigationLogo = styled.img`
   margin-bottom: 1rem;
   cursor: pointer;
 `;
-
 export const StyledHeaderWrapper = styled.div`
   background: ${Color.LIGHT_BLUE};
   display: flex;
@@ -128,7 +135,43 @@ export const StyledHeader = styled.header`
 
     &:hover {
       color: ${Color.MAGENTA};
-      transition: color ease 0.5s;
+      transition: all ease 0.5s;
     }
+  }
+`;
+export const NavMenu = styled.a`
+   {
+    color: ${Color.DARK_BLUE};
+    padding: 100px;
+    transition: 1s ease-in-out;
+  }
+
+  &:hover ul {
+    display: block;
+    opacity: 100%;
+  }
+`;
+export const SubMenu = styled.ul`
+   {
+    display: none;
+    opacity: 0;
+    position: absolute;
+    top: 18px;
+    left: -20px;
+    width: 116px;
+    background-color: ${Color.LIGHT_BLUE};
+    padding: 5px;
+  }
+`;
+export const SubLink = styled.li`
+   {
+    text-decoration: none;
+    list-style: none;
+    margin-bottom: 3px;
+    transition: all 0.5s ease-in-out;
+  }
+
+  & :hover {
+    font-weight: bold;
   }
 `;

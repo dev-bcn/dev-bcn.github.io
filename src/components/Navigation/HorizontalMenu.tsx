@@ -1,11 +1,11 @@
 import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
-import { navigationItems } from "./NavigationData";
+import { navigationItems, subMenuItems } from "./NavigationData";
 import { useWindowSize } from "react-use";
-import { StyledLink } from "./Style.Navigation";
+import { NavMenu, StyledLink, SubLink, SubMenu } from "./Style.Navigation";
+import { NavLink } from "react-router-dom";
 
 export const HorizontalMenu = () => {
   const { width } = useWindowSize();
-  const handleHorizontalMenu = () => {};
   return (
     <>
       {width > BIG_BREAKPOINT && (
@@ -14,13 +14,22 @@ export const HorizontalMenu = () => {
             <StyledLink
               key={item.id}
               to={item.link}
-              onClick={handleHorizontalMenu}
               activeClassName="isActive"
               exact={true}
             >
               {item.id}
             </StyledLink>
           ))}
+          <NavMenu href="/" style={{ position: "relative" }}>
+            News{" "}
+            <SubMenu>
+              {subMenuItems.map((item) => (
+                <SubLink key={item.id}>
+                  <NavLink to={item.link}>{item.id}</NavLink>
+                </SubLink>
+              ))}
+            </SubMenu>
+          </NavMenu>
         </div>
       )}
     </>
