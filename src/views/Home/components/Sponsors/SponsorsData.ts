@@ -101,6 +101,11 @@ export const sponsors: Sponsors = {
       image: "images/sponsors/new-relic.png",
       website: "https://newrelic.com",
     },
+    {
+      name: "Confluent",
+      website: "https://www.confluent.io/",
+      image: "images/sponsors/confluent.png",
+    },
   ],
   basic: [
     {
