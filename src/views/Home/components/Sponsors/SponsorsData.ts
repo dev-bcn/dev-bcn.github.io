@@ -98,7 +98,7 @@ export const sponsors: Sponsors = {
     },
     {
       name: "New Relic",
-      image: "images/sponsors/new-relic.png",
+      image: "images/sponsors/someRelic.png",
       website: "https://newrelic.com",
     },
     {
