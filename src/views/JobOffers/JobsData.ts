@@ -428,6 +428,51 @@ export const jobOffers: Company[] = [
       },
     ],
   },
+  {
+    id: "31c93b3f-f534-4a5f-9684-e9a0c388e636",
+    name: "Alten",
+    url: "https://www.alten.es/",
+    logo: "images/sponsors/alten.png",
+    linkedin: "https://www.linkedin.com/company/alten-spain/mycompany/",
+    description:
+      "ALTEN is a multinational company that has positioned itself among the first consulting companies providing global experiences, important partners and quality in its ideas, responses and teams.",
+    offers: [
+      {
+        id: "ba12fbbe-d337-4bc8-bd80-b0e34d231aed",
+        title: "Senior Java/Javascript Architect",
+        location: "Full remote",
+        text:
+          "<p>At ALTEN we are building, today, the world of tomorrow and we need someone to contribute to this goal. </p>\n" +
+          "How?<ul>\n" +
+          "<li>Defining the technological strategy of an area.</li>\n" +
+          "<li>Leading the definition of technical architectures.</li>\n" +
+          "<li>Providing technical knowledge to the teams.</li>\n" +
+          "<li>Managing a change in process culture at a technical level.</li>\n" +
+          "<li>Energizing team activities to promote communication and knowledge sharing.</li>\n" +
+          "</ul>\n" +
+          "What will your responsibilities be as a leader?<ul>\n" +
+          "<li> You will be the technical manager of a web development area</li>\n" +
+          "<li> You will define the development methodology and the technical ecosystem (continuous integration, code management, etc.)</li>\n" +
+          "<li> You will define the technological strategy together with the global technical manager</li>\n" +
+          "<li> You will mentor the technical team and technical architects</li>\n" +
+          "<li> You will be responsible for defining the team's training strategy</li>\n" +
+          "<li> And, if you wish, you can contribute to the company from other points of view, for example:</li>\n" +
+          "<li> Publishing or coordinating technical publications on our blog</li>\n" +
+          "<li> Giving training to technical teams</li>\n" +
+          "<li> Making talks in forums and fairs</li>\n" +
+          "<li> Accompanying the business teams to make pre-sales in the most technical opportunities</li>\n" +
+          "</ul>\n" +
+          "This is what we expect from you<ul>\n" +
+          "<li> Knowledge of Java and any Front Javascript technology.</li>\n" +
+          "<li> Experience setting up architectures based on microservices.</li>\n" +
+          "<li> That you have worked with Cloud services.</li>\n" +
+          "<li> Experience setting up a CD / CI system.</li>\n" +
+          "</ul>\n" +
+          "<p>If you are the leader we are looking for, we will be glad to welcome you on board!</p>",
+        url: "https://www.alten.es/career/5169-senior-java-javascript-architect-teletrabajo/",
+      },
+    ],
+  },
 ];
 
 export interface CompanyProps {
