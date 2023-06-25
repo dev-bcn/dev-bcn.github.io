@@ -19,8 +19,8 @@ export interface Offer {
 
 export const jobOffers: Company[] = [
   {
-    id: "4a399a19-7455-4953-94ce-76f59d40c032",
     name: "GFT",
+    id: "4a399a19-7455-4953-94ce-76f59d40c032",
     description:
       "GFT is a digital transformation pioneer that develops sustainable solutions based on new technologies including artificial intelligence and blockchain/DLT. GFT experts create and implement scalable software applications that make access to innovative business models safe and easy.",
     logo: "images/sponsors/GFT.jpg",
@@ -230,8 +230,8 @@ export const jobOffers: Company[] = [
     ],
   },
   {
-    id: "9b68e783-12c0-4c23-bffc-96d2c65cdcdb",
     name: "Idealista",
+    id: "9b68e783-12c0-4c23-bffc-96d2c65cdcdb",
     logo: "images/sponsors/idealista.jpg",
     description:
       "Idealista is the main meeting point for all those people who are looking for a home (or premises, building, the list goes on...) either to buy or to rent, and for those who sell or rent out these properties.",
@@ -276,10 +276,10 @@ export const jobOffers: Company[] = [
     ],
   },
   {
+    name: "Sopra Steria",
     id: "bf3871fa-9423-4370-8b12-e8e5112fec24",
     logo: "images/sponsors/sopra.jpg",
     url: "https://www.soprasteria.com",
-    name: "Sopra Steria",
     description:
       "We are a European leader in digital transformation, providing one of the most comprehensive portfolios of end-to-end service offerings on the market: Consulting, Systems Integration, Software Development, Infrastructure Management and Business Process Services.",
     linkedin: "https://www.linkedin.com/company/soprasteria",
@@ -318,8 +318,8 @@ export const jobOffers: Company[] = [
     ],
   },
   {
-    id: "d7235281-9424-4d15-b7a3-fba26d4178dc",
     name: "King",
+    id: "d7235281-9424-4d15-b7a3-fba26d4178dc",
     description:
       "King is a leading interactive entertainment company for the mobile gaming world.",
     twitter: "https://twitter.com/king_games?lang=en",
@@ -348,8 +348,8 @@ export const jobOffers: Company[] = [
     ],
   },
   {
-    id: "2dcb4f7e-94e3-402e-b56f-0b9f67a4d319",
     name: "Allianz Technology",
+    id: "2dcb4f7e-94e3-402e-b56f-0b9f67a4d319",
     description:
       "With its headquarters in Munich and more than 11,000 employees\n" +
       "around the world, Allianz Technology supports Allianz Group in\n" +
@@ -429,8 +429,8 @@ export const jobOffers: Company[] = [
     ],
   },
   {
-    id: "31c93b3f-f534-4a5f-9684-e9a0c388e636",
     name: "Alten",
+    id: "31c93b3f-f534-4a5f-9684-e9a0c388e636",
     url: "https://www.alten.es/",
     logo: "images/sponsors/alten.png",
     linkedin: "https://www.linkedin.com/company/alten-spain/mycompany/",
@@ -470,6 +470,117 @@ export const jobOffers: Company[] = [
           "</ul>\n" +
           "<p>If you are the leader we are looking for, we will be glad to welcome you on board!</p>",
         url: "https://www.alten.es/career/5169-senior-java-javascript-architect-teletrabajo/",
+      },
+    ],
+  },
+  {
+    name: "Gradle",
+    id: "fc2e69c0-0efc-40df-a535-c7b2df646a5e",
+    logo: "images/sponsors/gradle.png",
+    description:
+      "We are the providers of the Gradle Enterprise build and test performance acceleration and failure analytics solution to improving developer productivity and the Gradle Build Tool.",
+    url: "gradle.com",
+    offers: [
+      {
+        title: "Senior Frontend Engineer",
+        location: "Full remote",
+        id: "485f2976-b1c4-4308-a02b-548a767f547b",
+        text:
+          "<p>We are looking for senior front-end engineers with a demonstrated ability to efficiently deliver and maintain robust and useful front-end solutions, as part of a collaborative team.</p>\n" +
+          "<p>Our ideal candidates have a proven ability to deliver testable, evolvable, and scalable React-based architectures. They are passionate about user experience and are driven to deliver value to users. They thrive on challenging problems, understand the nuances of performance and memory optimization, possess and can capably articulate strong opinions, and feel comfortable collaborating with a distributed team.</p>\n" +
+          "<p><strong>Responsibilities</strong></p><ul>\n" +
+          "<li>Designing and implementing robust solutions</li>\n" +
+          "<li>Applying automated quality assurance</li>\n" +
+          "<li>Employing modern software development techniques and practices</li>\n" +
+          "<li>Doing user research, outreach and support</li>\n" +
+          "<li>Assisting clients during trials and in production</li>\n" +
+          "<li>Managing individual project priorities, deadlines and deliverables</li>\n" +
+          "<li>Contributing to changes that improve the team’s velocity and efficiency</li>\n" +
+          "</ul><p><strong>Minimum qualifications</strong></p><ul>\n" +
+          "<li>5 years of software development experience</li>\n" +
+          "<li>Experience programming in JavaScript and React</li>\n" +
+          "<li>Working proficiency and communication skills in written and verbal English</li>\n" +
+          "</ul>",
+        url: "https://grnh.se/8d97b88b1us",
+      },
+      {
+        title: "Developer Productivity Engineer",
+        id: "58f8098a-89a6-4949-833c-66eeaa484f8d",
+        location: "Full remote",
+        url: "https://grnh.se/05c9a98a1us",
+        text:
+          "<p>We are looking for a passionate Developer Productivity Engineer with a demonstrated ability to accelerate developer productivity through optimizing speed and reliability of feedback cycles and increasing the degree of automation.</p+>\n" +
+          "<p><strong>About the project</strong></p>\n" +
+          "<p>The Gradle Build Tool project is thoroughly tested on different operating systems, Java versions etc. Also, all performance tests run on every commit to the source code repository. As a result, about 80 thousand tests run before integrating a change into the main branch and 40 thousand builds run every week on our CI system.  This presents a big engineering challenge on its own and requires a sophisticated infrastructure using hundreds of build agents, including dynamically added capacity with AWS, and a Kubernetes cluster for test distribution. </p>\n" +
+          "<p>To learn more about how the Gradle Build Tool project is built, see also the interview with Stefan Wolf, the current leader of our Developer Productivity Team at https://www.youtube.com/watch?v=3MSxJPhr4Eo.</p>\n" +
+          "<p><strong>Responsibilities</strong></p><ul>\n" +
+          "<li>Helping a growing team of 20+ engineers to improve their productivity</li>\n" +
+          "<li>Optimizing a large Gradle build at https://github.com/gradle/gradle</li>\n" +
+          "<li>Optimizing a CI pipeline at https://builds.gradle.org/</li>\n" +
+          "<li>Designing and implementing Gradle plugins</li>\n" +
+          "<li>Designing and implementing bots integrating with various systems such as GitHub</li>\n" +
+          "<li>Implementing and improving monitoring of developer productivity metrics</li></ul>",
+      },
+      {
+        title: "Developer Advocate",
+        id: "86e4cfee-2464-49a1-94d4-6d7d5f224afc",
+        location: "Full remote",
+        url: "https://grnh.se/8d26ab5d1us",
+        text:
+          "<p>We are looking for a Developer Advocate for Gradle Build Tool. The person in this role will focus on sharing knowledge and fostering the community through high-traffic online channels as well as in person.</p>\n" +
+          "<p>The person in this role will be responsible for Gradle Build Tool advocacy as a part of our  Developer Relations and Education Team consisting of developer advocate, technical trainer, and technical writer. The team focuses on creation and delivery of educational and informational content, fostering the community, as well as collecting and organizing user feedback to inform engineering priorities. The person in this role will also work closely with technical evangelists responsible for our commercial product, Gradle Enterprise, with the opportunity to learn from very experienced and well-known advocates such as Trisha Gee and Baruch Sadogursky.</p>\n" +
+          "<p>We are looking for someone who has the desire and capability to grow a deep understanding of the build automation domain so that they can help the entire community learn and grow. An ideal candidate would be able to build and refine an advocacy strategy of an extremely widely used open-source project, including how to most optimally leverage available channels and how to best position the product in the competitive landscape and industry trends.</p>\n",
+      },
+    ],
+  },
+  {
+    name: "New Relic",
+    id: "8e13e80b-e3c1-4710-9ff0-5d6d391e05fb",
+    description:
+      "Full-Stack Observability helps engineers plan, build, deploy, and run great software. Only New Relic has a unified data platform for all telemetry data—metrics, events, logs and traces—paired with analysis tools to find solutions fast. Move past the ‘what’ to uncover the ‘why’.",
+    url: "https://newrelic.com/",
+    twitter:
+      "https://twitter.com/newrelic?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor",
+    linkedin: "https://www.linkedin.com/company/new-relic-inc-/",
+    logo: "images/sponsors/someRelic.png",
+    offers: [
+      {
+        title:
+          "Senior Frontend Software Engineer (New Relic One platform - Open to remote)",
+        id: "08cb9887-4317-4d9f-98af-f7b715b86606",
+        location: "Full remote",
+        url: "https://newrelic.careers/en_US/careers/JobDetail/Senior-Frontend-Software-Engineer-New-Relic-One-platform-Open-to-remote/3561",
+        text:
+          "<p><strong>Your opportunity</strong></p>\n" +
+          "<p>We are looking for an experienced senior JavaScript engineer to join us in building The New Relic One! The platform will be used by your coworkers throughout the company and will help make their lives—and the lives of the customers they work with—easier and more enjoyable each and every day. Some of the problems we work on involve frontend APIs to interact with the internal framework, extensible architecture solutions, UI components, deal with modern frameworks and libraries such as ReactJS, and automation using tools such as Jenkins.</p>\n" +
+          "<p><strong>What you'll do</strong></p><ul>\n" +
+          "<li>Select the best frameworks and tools needed to do the job quickly, while also optimizing for codebase stability, product stability, and target use case growth.</li>\n" +
+          "<li>Produce highly performant and flexible CLI using modern Typescript and software development techniques in collaboration with other team members.</li>\n" +
+          "<li>Find and identify opportunities to automate repetitive tasks that are made by developers on a daily basis.</li>\n" +
+          "<li>Collaborate with other UI engineers across the company to learn from others and to ensure you stay up to date on the company’s UI best practices.</li>\n" +
+          "<li>Learn and improve your skills to continuously push us to deliver higher-quality tools and improve the UI team's workflows.</li></ul>",
+      },
+    ],
+  },
+  {
+    name: "Adaptive",
+    id: "04b05cf9-d07c-425f-8368-4972f69ebcd9",
+    description:
+      "At Adaptive, we partner with capital and commodity market participants that value differentiation through technology. Our experienced teams design and deliver complex solutions, using our proven accelerators, creating a long-term competitive advantage for our clients.",
+    twitter: "https://www.twitter.com/WeAreAdaptive",
+    linkedin: "www.linkedin.com/company/adaptive-consulting-ltd/",
+    url: "weareadaptive.com",
+    logo: "images/sponsors/adaptive.png",
+    offers: [
+      {
+        id: "1190b4cf-17bb-4b22-8d07-882b012b95c8",
+        title: "Software Engineer",
+        location: "Hybrid",
+        url: "https://hub.weareadaptive.com/devbcn_job_offers",
+        text:
+          "<p>We are not hiring at the moment, but that doesn't mean we will not be hiring next month!</p>\n" +
+          "<p>You will be able to find out the roles we hire more often in the link below, feel free to leave your email to be contacted once new opportunities will be opened.</p>\n" +
+          "<p>Let's keep in touch!</p>",
       },
     ],
   },
