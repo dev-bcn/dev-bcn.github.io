@@ -347,6 +347,87 @@ export const jobOffers: Company[] = [
       },
     ],
   },
+  {
+    id: "2dcb4f7e-94e3-402e-b56f-0b9f67a4d319",
+    name: "Allianz Technology",
+    description:
+      "With its headquarters in Munich and more than 11,000 employees\n" +
+      "around the world, Allianz Technology supports Allianz Group in\n" +
+      "boosting its leading market position. We realize synergies and cultivate\n" +
+      "innovation.\n" +
+      "As the IT provider of the Allianz Group, Allianz Technology is tasked to\n" +
+      "run optimize, transform and innovate infrastructure, applications and\n" +
+      "services together with Allianz companies to co-create the best\n" +
+      "customer experience.",
+    url: "https://tech.allianz.com/en.html",
+    linkedin: "https://www.linkedin.com/company/allianz-technology/",
+    logo: "images/sponsors/allianz.png",
+    offers: [
+      {
+        id: "1a281437-fcb3-4e8a-bc87-eae711f4a95b",
+        title: "Frontend/ Fullstack Developer",
+        location: "Barcelona",
+        text:
+          "<p>Are you thinking of next steps in your career path? You deserve a\n" +
+          "company that really cares about its talent. At Allianz, we are looking for\n" +
+          "a SW Developer Fullstack to be part of our team. Allianz Technology is\n" +
+          "the internal and unique IT provider of the Allianz Group.\n" +
+          "The ideal candidate will prefer the excitement of shaping the\n" +
+          "technology evolution over following the beaten path and regards highly\n" +
+          "qualified colleagues not as competition, but as a learning opportunity.</p>\n" +
+          "\n" +
+          "<p>" +
+          " As a SW Developer Fullstack, you will be creating reusable UI\n" +
+          "components according to predefined UX design and interacting\n" +
+          "with APIs to obtain and update data.\n" +
+          " Technologies you will use are: Java 11, Spring Boot, REST,\n" +
+          "Angular, GitHub, Kubernetes, Jenkins, JUnit and SonarQube.\n" +
+          "</p>\n" +
+          "<strong>Your skills</strong><ul>\n" +
+          "<li> University degree in Computer Science, Software Engineering or\n" +
+          "equivalent</li>\n" +
+          "<li> 2+ years of software development experience</li>\n" +
+          "<li> 2+ years of experience with Angular 2+, NodeJS &amp; MySQL</li>\n" +
+          "<li> 2+ years of experience with Java 8+</li>\n" +
+          "<li> Experience with Scrum or other agile methodologies</li>\n" +
+          "<li> Experience with Cloud (Azure/AWS) environments, developing in\n" +
+          "the Cloud on ADP or CRP</li>\n" +
+          "<li> Self-motivated and able to work efficiently through ambiguity\n" +
+          "without close supervision</li>\n" +
+          "<li> Proficiency in English (B2+)</li>\n" +
+          "<li> Eagerness to keep learning</li>\n" +
+          "<li> Must demonstrate good judgment and pragmatic approach to\n" +
+          "delivering software</li>\n" +
+          "<li> Understanding of enterprise software design patterns and data\n" +
+          "structures\n" +
+          "\n" +
+          "Internal\n" +
+          "\n" +
+          "<li> Understanding on coding guidelines and standards</li>\n" +
+          "<li> Nice to have: NDBX (Expert) library, Jira and Confluence,\n" +
+          "experience with ABS</li>\n" +
+          "\n" +
+          "</ul><strong>Your benefits:</strong><ul>\n" +
+          "<li> Steady job, you&#39;ll get a permanent contract since the first day.</li>\n" +
+          "<li> Competitive salary.</li>\n" +
+          "<li> Fringe benefits: meal and supplies compensation, life and\n" +
+          "accident insurance, private pension plan and studies fund. We\n" +
+          "also offer discounts on other products from the company and\n" +
+          "shares as well as a Christmas gift card among others. Dare to\n" +
+          "discover a world of benefits!</li>\n" +
+          "<li> Actual work-life balance policies: entry-leave flexibility of 2 hours\n" +
+          "every day, reduced schedule on Fridays and during the summer,\n" +
+          "26 holiday days per year, recoverable working hours, as well as,\n" +
+          "hybrid workplace model.</li>\n" +
+          "<li> Career development: Digital learning platforms, mentoring\n" +
+          "programs and training sessions give employees the opportunity\n" +
+          "for personal and professional development.</li>\n" +
+          "<li> Relocation Service for international transfers.</li>\n" +
+          "<li> Open and international working environment.</li></ul>",
+        url: "Frontend/ Fullstack Developer",
+      },
+    ],
+  },
 ];
 
 export interface CompanyProps {
