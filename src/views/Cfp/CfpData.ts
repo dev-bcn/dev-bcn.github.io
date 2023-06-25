@@ -52,8 +52,8 @@ export const data: CFpTrack[] = [
     ],
   },
   {
-    id: "1c22cd3b-73e3-4161-9124-696f3e2f1249",
     name: "Native Languages",
+    id: "1c22cd3b-73e3-4161-9124-696f3e2f1249",
     members: [
       {
         name: "Aliénor Latour",
@@ -77,8 +77,7 @@ export const data: CFpTrack[] = [
       {
         name: "Mario Macías",
         twitter: "https://twitter.com/MaciasUPC",
-        photo:
-          "https://media.licdn.com/dms/image/C4E03AQGv4gLaWoGpjw/profile-displayphoto-shrink_800_800/0/1582785735995?e=1687392000&v=beta&t=w8ljnAlsBUoHjPfPJR3bUh0XGXP1ke1_-bRxvhc5M1E",
+        photo: "images/cfp/mario-macias.png",
         linkedIn: "https://www.linkedin.com/in/mariomac/",
       },
       {
@@ -91,13 +90,12 @@ export const data: CFpTrack[] = [
     ],
   },
   {
-    id: "2684b568-2836-4713-99af-643f8a4d7972",
     name: "Frontend",
+    id: "2684b568-2836-4713-99af-643f8a4d7972",
     members: [
       {
         name: "Iago Lastra",
-        photo:
-          "https://media.licdn.com/dms/image/D4D03AQE7oYqJnlphjQ/profile-displayphoto-shrink_800_800/0/1666895012729?e=1687392000&v=beta&t=ICIe1FS3UhlmlqttWgR3084cBnRDy0BhTbOPeBi-YCU",
+        photo: "images/cfp/iago.png",
         twitter: "https://twitter.com/iagolast",
         linkedIn: "https://www.linkedin.com/in/iagolast/",
       },
@@ -117,8 +115,8 @@ export const data: CFpTrack[] = [
     ],
   },
   {
-    id: "c1ec728d-03c1-4d8d-9f56-637bc97f5a5b",
     name: "AI, ML, Python",
+    id: "c1ec728d-03c1-4d8d-9f56-637bc97f5a5b",
     members: [
       {
         name: "Alberto Camara",
@@ -148,21 +146,19 @@ export const data: CFpTrack[] = [
     ],
   },
   {
-    id: "504cf03b-130d-4b70-a98c-c4faeb553b5e",
     name: "DevOps, Cloud, Kubernetes",
+    id: "504cf03b-130d-4b70-a98c-c4faeb553b5e",
     members: [
       {
         name: "Ara Pulido",
-        photo:
-          "https://media.licdn.com/dms/image/D4D03AQG2d6PcinjTgA/profile-displayphoto-shrink_800_800/0/1676458154277?e=1687392000&v=beta&t=Ff5xQ-V8u6QWiYkkH1GX3nLD4McgJOvPjZ8T6G9_UJk",
+        photo: "images/cfp/ara.png",
         twitter: "https://twitter.com/arapulido",
         linkedIn: "https://www.linkedin.com/in/arapulido/",
       },
       {
         name: "Mario Macías",
         twitter: "https://twitter.com/MaciasUPC",
-        photo:
-          "https://media.licdn.com/dms/image/C4E03AQGv4gLaWoGpjw/profile-displayphoto-shrink_800_800/0/1582785735995?e=1687392000&v=beta&t=w8ljnAlsBUoHjPfPJR3bUh0XGXP1ke1_-bRxvhc5M1E",
+        photo: "images/cfp/mario-macias.png",
         linkedIn: "https://www.linkedin.com/in/mariomac/",
       },
       {
@@ -182,8 +178,8 @@ export const data: CFpTrack[] = [
     ],
   },
   {
-    id: "1d04d5bf-4b94-4e56-b0c6-ee93b3bb8c1f",
     name: "Agile, Leadership, Diversity",
+    id: "1d04d5bf-4b94-4e56-b0c6-ee93b3bb8c1f",
     members: [
       {
         name: "Celeste Gamez",
@@ -193,15 +189,13 @@ export const data: CFpTrack[] = [
       },
       {
         name: "Esther Gala",
-        photo:
-          "https://media.licdn.com/dms/image/D4D03AQFR45bj7C_FMg/profile-displayphoto-shrink_800_800/0/1678700978977?e=1687392000&v=beta&t=5C_SFQh7Zo5pE9QhknCqNCkDRUQ03K-oMhXzOtEe9SY",
+        photo: "images/cfp/esther.png",
         twitter: "",
         linkedIn: "https://www.linkedin.com/in/esthergala/",
       },
       {
         name: "María Mira Herreros",
-        photo:
-          "https://media.licdn.com/dms/image/C4E03AQHgVN4yIpj2yg/profile-displayphoto-shrink_800_800/0/1636703151043?e=1687392000&v=beta&t=pYqOVCjv7iphUDi8Nu_gv5FWiEiKjihipteq_ejxpEM",
+        photo: "images/cfp/maria.png",
         twitter: "",
         linkedIn: "https://www.linkedin.com/in/miramaria",
       },
