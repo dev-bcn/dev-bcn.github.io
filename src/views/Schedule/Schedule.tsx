@@ -61,7 +61,7 @@ const Schedule: FC = () => {
           </p>
         )}
         {data.schedule.enabled && (
-          <div style={{ width: "90%", margin: "0 auto" }} id="#schedule">
+          <div style={{ width: "100%", margin: "0 auto" }} id="#schedule">
             &nbsp;
           </div>
         )}

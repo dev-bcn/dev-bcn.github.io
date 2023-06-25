@@ -96,6 +96,16 @@ export const sponsors: Sponsors = {
       image: "images/sponsors/alten.png",
       website: "https://www.alten.es",
     },
+    {
+      name: "New Relic",
+      image: "images/sponsors/someRelic.png",
+      website: "https://newrelic.com",
+    },
+    {
+      name: "Confluent",
+      website: "https://www.confluent.io/",
+      image: "images/sponsors/confluent.png",
+    },
   ],
   basic: [
     {
@@ -149,6 +159,11 @@ export const sponsors: Sponsors = {
       name: "Axa",
       image: "images/sponsors/axa.png",
       website: "https://www.careers.axapartners.com/es/es",
+    },
+    {
+      name: "Servicenow",
+      image: "images/sponsors/servicenow.png",
+      website: "https://www.servicenow.com/products/observability.html",
     },
   ],
   communities: [
