@@ -27,12 +27,14 @@ const InfoButtons: FC = () => {
     <StyledActionDiv>
       <Button
         onClick={trackAttendee}
+        target="_self"
         text="🙋🏻 Attendee information"
         link="https://www.devbcn.com/attendee"
       />
 
       <Button
         onClick={trackSpeaker}
+        target="_self"
         text="🎙️ Speaker information"
         link="https://www.devbcn.com/speaker-information"
       />

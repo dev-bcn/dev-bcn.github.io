@@ -8,6 +8,7 @@ interface ButtonProps {
   link: string;
   onClick: any;
   disabled?: boolean;
+  target?: string;
 }
 
 const StyledActionButton = styled.div`
@@ -53,13 +54,19 @@ const StyledActionButton = styled.div`
   }
 `;
 
-const Button: FC<ButtonProps> = ({ text, link, onClick, disabled }) => {
+const Button: FC<ButtonProps> = ({
+  text,
+  link,
+  onClick,
+  disabled,
+  target = "_blank",
+}) => {
   return (
     <StyledActionButton className="hvr-bounce-in">
       <a
         onClick={onClick}
         href={link}
-        target="_blank"
+        target={target}
         rel="noreferrer nofollow"
       >
         {text}
