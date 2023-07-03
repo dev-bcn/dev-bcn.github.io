@@ -25,6 +25,7 @@ import logo from "../../../../assets/images/logo.png";
 import ActionButtons from "../ActionButtons/ActionButtons";
 import styled from "styled-components";
 import { Color } from "../../../../styles/colors";
+import InfoButtons from "../InfoButtons/InfoButtons";
 
 const StyledLogo = styled.img`
   margin: 20px;
@@ -76,6 +77,7 @@ const Home: FC = () => {
           </StyledTitleContainer>
           <Countdown date={startDay} renderer={TimeCountDown} />
           {data.actionButtons && <ActionButtons />}
+          {data.showInfoButtons && <InfoButtons />}
 
           {width > LARGE_BREAKPOINT && <StyledLessThan src={LessThanIcon} />}
           <StyledTopSlash

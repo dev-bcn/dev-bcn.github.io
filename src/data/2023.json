@@ -10,9 +10,10 @@
   "facebook": "https://facebook.com/devbcn",
   "github": "https://github.com/devbcn",
   "linkedin": "https://www.linkedin.com/company/devbcn",
+  "showInfoButtons": true,
   "tickets": {
     "startDay": "2022-11-01T00:00:00",
-    "endDay": "2023-07-03T00:00:00"
+    "endDay": "2023-06-26T00:00:00"
   },
   "cfp": {
     "startDay": "2022-11-01T00:00:00",
