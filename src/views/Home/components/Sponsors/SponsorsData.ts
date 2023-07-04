@@ -110,7 +110,7 @@ export const sponsors: Sponsors = {
   basic: [
     {
       name: "Caixabank Tech",
-      website: "https://www.peoplexperiencehub.com/caixabanktech",
+      website: "https://www.caixabanktech.com/es/pagina-de-inicio/",
       image: "images/sponsors/caixabank-tech.png",
     },
     {
