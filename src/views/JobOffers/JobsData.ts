@@ -584,6 +584,164 @@ export const jobOffers: Company[] = [
       },
     ],
   },
+  {
+    name: "Capitole",
+    id: "e3f6c467-8b6d-4077-aced-14d0a8a3f508",
+    description:
+      "At Capitole we empower businesses to reach their full potential by leveraging cutting-edge and innovative IT services, while valuing people every step of the way.",
+    url: "https://capitole-consulting.com/",
+    linkedin: "https://www.linkedin.com/company/capitole-consulting/",
+    logo: "images/sponsors/capitole.png",
+    offers: [
+      {
+        title: "Technical Lead",
+        location: "hybrid",
+        url: "https://www.linkedin.com/company/capitole-consulting/jobs/",
+        text:
+          "<p>En Capitole Consulting buscamos un Technical Lead que le apasione el mundo de la programación, que se sienta atraído por los retos y desafíos porque... este es un GRAN RETO 😎 y, sobre todo, que tengan ganas de crecer...Te apuntas??</p>\n" +
+          "<p>Se trata de un proyecto para una multinacional líder del sector Retail cuyo objetivo es trabajar con últimas tecnologías para lograr la máxima eficacia y ofrecer los mejores servicios a través de sus plataformas digitales.</p>\n" +
+          "<p>Aquí, se diseñan y desarrollan funcionalidades de alta calidad, siguiendo la cultura y metodología DevOps con programación reactiva. Apuestan por un código reutilizable, mantenible, escalable y elegante, por ello aplican principios SOLID, Clean Code, patrones TDD/DDD...</p>\n" +
+          "<p>🤖¿Qué buscamos? Experiencia en:</p><ul>\n" +
+          "<li>Liderazgo técnico de equipos</li>\n" +
+          "<li>Lenguaje Java (8-11-17)</li>\n" +
+          "<li>Frameworks: Spring Boot / Spring MVC / Spring Cloud</li>\n" +
+          "<li>Arquitectura de Microservicios y Hexagonal</li>\n" +
+          "<li>Comunicación entre servicios síncrona (API/REST) y asíncrona (GRPC)</li>\n" +
+          "<li>Colas de mensajería Kafka</li>\n" +
+          "<li>Bases de datos SQL y NoSQL (Couchbase, MongoDB...)</li>\n" +
+          "<li>Clean Code, buenas prácticas, DDD, TDD, Api first...</li>\n" +
+          "<li>Integración continua: Jenkins, Docker.</li>\n" +
+          "<li>Metodologías ágiles (Scrum).</li>\n" +
+          "<li>Suite Atlassian (Jira, Confluence).</li>\n" +
+          "<li>Testing (JUnit, Mockito, TDD).</li>\n" +
+          "</ul>" +
+          "<p>🧐 ¿Qué podemos ofrecemos?</p><ul>\n" +
+          "<li>Salario competitivo</li>\n" +
+          "<li>Para que te mantengas a la vanguardia de la informática, te ofrecemos un presupuesto de formación anual individual de 1200€</li>\n" +
+          "<li>Remuneración flexible a través de Sodexo</li>\n" +
+          "<li>Horario flexible, para ayudarte a conciliar tu vida profesional / familiar.</li>\n" +
+          "<li>Trabajo a distancia al 100%.</li>\n" +
+          "<li>Seguro Médico Privado Sanitas íntegramente pagado por Capitole.</li>\n" +
+          "<li>Descuentos en Gimnasios con Andjoy</li>\n" +
+          "<li>Team Buildings mensuales y la imperdible Pool Party y cena de Navidad!</li>\n" +
+          "<li>Comunidades tecnológicas para que compartas tus conocimientos e ideas con los demás equipos. ¡¡¡Compartir el conocimiento interno es fundamental!!!</li>\n" +
+          "<li>¡Por último y no menos importante un EQUIPAZO!</li></ul>",
+        id: "a80df426-776c-4137-baa2-ea36df384263",
+      },
+    ],
+  },
+  {
+    name: "Adevinta",
+    id: "68a85584-6cf7-45f8-82c2-7edce28e259b",
+    url: "www.adevinta.com",
+    logo: "images/sponsors/adevinta.png",
+    twitter: "https://twittere.com/Adevinta",
+    linkedin: "https://www.linkedin.com/company/adevinta/",
+    description:
+      "We are a global online classifieds specialist, operating digital online classifieds in 11 countries. We provide technology-based services to connect buyers and sellers and facilitate transactions, from job offers to real estate, cars, consumer goods and more.",
+    offers: [
+      {
+        title: "Backend Platform - Generalist",
+        id: "50bfb969-f39b-4ea0-a849-b0bbb622be7d",
+        location: "hybrid",
+        text:
+          "<p>We are looking for a back-end engineer to fulfill our team's back-end platform engineer position for the milanuncios vertical.</p>\n" +
+          "<p>The Back-end Platform team is responsible for leading the discipline. Its mission is to continuously improve the company's practices, technology, and engineering experience.</p>\n" +
+          "<p>It achieves so by building agreements and providing tooling in collaboration with other Platform teams, knowledge, and support.</p>\n" +
+          "<p>They also drive the adoption of new industry trends, continuously raising the bar.</p>\n" +
+          "<p>Your mission as part of the Platform Area is the Acceleration of the product development teams, and specifically of the Backend Developers.</p>\n" +
+          "<p>We choose to achieve this Acceleration by creating and fostering a continuously improving community, bringing the software crafters principles to every team.</p>\n" +
+          "<p>Their responsibilities are:</p><ul>\n" +
+          "<li>Support back-end engineers and unblock any issues they face by accompanying them to fulfill the desired results.</li>\n" +
+          "<li>Build/Maintain a strong back-end community in the vertical, focusing on having everyone's voice heard.</li>\n" +
+          "<li>Share the problems, failures, and successes to Back-end platform engineers and other discipline platform engineers to feed the other vertical communities.</li>\n" +
+          '</ul>"',
+        url: "https://marketplaces.wd3.myworkdayjobs.com/es/External_Careers/job/Barcelona---Oficina-Central/Backend-Platform---Generalist_JR003429-1",
+      },
+      {
+        title: "iOS Engineer",
+        id: "20b1245f-28ef-4c08-bffa-70d38e39ad35",
+        text:
+          "<p>We are looking for an iOS Engineer to join one of our product teams at coches.net</p>\n" +
+          "<p>What are you going to find?</p>\n" +
+          "<ul>\n" +
+          "<li>A Swift code base with Clean + MVVM architecture.</li>\n" +
+          "<li>Crash-free users above 99%.</li>" +
+          "<li>CI/CD with Bitrise.</li>\n" +
+          "<li>A multidisciplinary technical team in an international environment.</li>\n" +
+          "<li>Common tools used by hundreds of developers throughout all Adevinta.</li>\n" +
+          "<li>Feedback culture. We encourage giving and receiving feedback to improve every day.</li>\n" +
+          "</ul>" +
+          "<p>Qualifications</p><ul>\n" +
+          "<li>Swift & SwiftUI</li>\n" +
+          "<li>Deep understanding of UIKit & main CocoaTouch APIs.</li>\n" +
+          "<li>Dependency management (CocoaPods/SwiftPM)</li>\n" +
+          "<li>Deep understanding of common architectural patterns: MVP, MVVM, MVC</li>\n" +
+          "<li>SOLID principles and reference implementations (VIPER, Clean, etc.)</li>\n" +
+          "<li>Experience testing code.</li>\n" +
+          "<li>Experience deploying an App to the AppStore and monitoring the release metrics.</li>\n" +
+          "<li>Experience working with Git.</li>\n" +
+          "<li>Fluent in business Spanish and English (written and spoken).</li>" +
+          "</ul>",
+        location: "Hybrid",
+        url: "https://marketplaces.wd3.myworkdayjobs.com/es/External_Careers/job/Barcelona/iOS-Engineer_JR003627",
+      },
+      {
+        title: "Machine Learning Engineer",
+        id: "aa94fa79-b8bf-4f8e-aff5-d0b67e37c983",
+        location: "Hybrid",
+        url: "https://marketplaces.wd3.myworkdayjobs.com/es/External_Careers/job/Barcelona---Oficina-Central/Machine-Learning-Engineer_JR003442-1",
+        text:
+          "<p>As a Machine Learning Engineer at Adevinta, you will be at the heart of an effort to utilise our unique combination of data to bring about the next generation of digital products and services. You will have a direct impact on millions of users around the world by building data products.</p>\n" +
+          "<p>As part of the Personalization team, you will be responsible for building data pipelines that process billions of events and use machine learning techniques to create personalised user experiences on our Marketplaces. The team consists of data scientists and data engineers that work closely together to deliver end-to-end data products such as recommender systems, data-driven search (using learning-to-rank), autocomplete, related searches and other personalised products that help our users make perfect matches on our sites. Adevinta's wide portfolio of sites and services means that we have plenty of data sources and application areas to try out many different approaches in a creative, innovative and ambitious environment.</p>\n",
+      },
+    ],
+  },
+  {
+    name: "Revolut",
+    id: "20309974-2602-4eaa-8199-3fbb902fa88a",
+    description:
+      "People deserve more from their money. More visibility, more control, more freedom.With an arsenal of awesome products that span spending, saving, travel, transfers, investing, exchanging and more, our super app has helped 30+ million customers get more from their money. And we're not done yet.",
+    url: "https://www.revolut.com/working-at-revolut/",
+    twitter: "https://twitter.com/revolutinsider",
+    linkedin: "https://www.linkedin.com/company/5356541/",
+    logo: "images/sponsors/revolut.png",
+    offers: [
+      {
+        title: "Software Engineer (Backend)",
+        id: "2c7a9b7a-b4a2-4664-b114-d7287906e634",
+        text: "We’re looking for a Backend Engineer that wants to change the world. If you like to work at a steady pace with no surprises, keep scrolling. If you want your work to change the global financial landscape, you might be just who we’re looking for. We have a minimalist approach to using external frameworks, with emphasis on maintainability and fast turnaround with TDD, DDD, and Continuous Integration & Delivery.",
+        location: "Full remote",
+        url: "https://www.revolut.com/careers/position/software-engineer-backend-530d3bfd-bdca-4390-8f8a-bc88ddc1eb51/?utm_source=devbcn_conference&utm_medium=ad&utm_campaign=july_2023_devbcn_conference&utm_id=34&utm_term=&utm_content=backend",
+      },
+      {
+        title: "Software Engineer (Python)",
+        id: "59bc8f7e-6b9c-48b4-a3fd-46a7311ff60e",
+        text:
+          "<p>Our Technology team isn’t here to fix legacy systems – it’s here to build world-class financial products from the ground up.</p>\n" +
+          "<p>Products that will be used by millions of people around the world 🌎</p>\n" +
+          "<p>You may expect our Python Engineers to work on heavily regulated banking systems, but we love the unexpected.</p>\n" +
+          "<p>We’re actually better known internally for writing high-quality code and building complex novel solutions end-to-end 🧠</p>\n" +
+          "<p>These geniuses have created our chatbot – the lovely Rita – and they didn’t stop there 🤯</p>\n" +
+          "<p>They’ve also created automated FinCrime quality controls in a few weeks. Yes, they’re just that good!</p>\n" +
+          "<p>You’ll never work alone, either. As a Python Engineer, you’ll sit within a Product Team – simultaneously working with Data Scientists, Analysts, Engineers, Product Owners and Operations Managers to solve problems and make our rocket ship fly even higher 🚀</p>\n" +
+          "<p>Ready to join? 👇</p>",
+        location: "Full remote",
+        url: "https://www.revolut.com/careers/position/software-engineer-python-7d3a7425-fe1a-456c-9dde-d19aba0cde88/?utm_source=devbcn_conference&utm_medium=ad&utm_campaign=july_2023_devbcn_conference&utm_id=35&utm_term=&utm_content=backend",
+      },
+      {
+        title: "Data Scientist",
+        id: "be613ebc-d096-4d60-ae7b-73900bb1a381",
+        text:
+          "<p>We approach Data Science at Revolut the same way that we approach everything else – with class, logical thinking, and lots of style 😎 Let’s break it down: we take the most complex problems and create tailor-made solutions for our customers 🚀 If you’re thinking the Data team is kept in some sort of a secret den, doomed to never see the impact of their work, don’t worry - that’s not how we do things. They’re some of our best and brightest problem-solvers, deployed to the front lines to work in product teams and deliver rockstar solutions 🤘</p>\n" +
+          "<p>We start with deep data analysis to understand our customers, their objectives and any issues they might have. We then use various data points and advanced machine learning algorithms, to come up with the best possible option for each client. We experiment, iterate, and build fully automated solutions, based on algorithms which self-improve with time.</p>\n" +
+          "<p>We’re looking for next-level Data Scientists to board our FinTech rocket ship and shape the future of financial services apps. Phew! It’s a big task, but you won’t do it alone. 💪</p>\n" +
+          "<p>You’ll be working with the toughest and most gifted professionals in Product, Design, Data Science and Engineering, on impactful projects that’ll make our company move forward ⏩</p>",
+        location: "Full remote",
+        url: "https://www.revolut.com/careers/position/data-scientist-credit-5bfed8c7-9f9d-48e2-8e28-7ecf00ac17a8/?utm_source=devbcn_conference&utm_medium=&utm_campaign=july_2023_devbcn_conference&utm_id=36&utm_term=&utm_content=data%20scientist",
+      },
+    ],
+  },
 ];
 
 export interface CompanyProps {
