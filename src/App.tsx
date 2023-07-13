@@ -58,6 +58,12 @@ const App: FC = () => {
             component={React.lazy(() => import("./views/Talks/Talks"))}
           />
           <Route
+            path={"/session"}
+            component={React.lazy(
+              () => import("./views/SessionFeedback/SessionFeedback")
+            )}
+          />
+          <Route
             path={ROUTE_CODE_OF_CONDUCT}
             component={React.lazy(
               () => import("./views/CodeOfConduct/CodeOfConduct")
