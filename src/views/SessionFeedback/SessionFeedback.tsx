@@ -1,4 +1,8 @@
-import { sessionData, sessionRating } from "./sessionData";
+import {
+  MeasurableSessionRating,
+  sessionData,
+  sessionRating,
+} from "./sessionData";
 
 import React, { FC } from "react";
 import { DataTable } from "primereact/datatable";
@@ -11,36 +15,12 @@ import { InputText } from "primereact/inputtext";
 import { FilterMatchMode } from "primereact/api";
 
 const SessionFeedback: FC = () => {
-  const overallRatingBodyTemplate = (session: sessionRating) => {
-    return <Rating value={session.Overall} readOnly cancel={false} />;
-  };
-
-  const originalityBodyTemplate = (session: sessionRating) => {
-    return <Rating value={session.Originality} readOnly cancel={false} />;
-  };
-  const communicationBodyTemplate = (session: sessionRating) => {
-    return <Rating value={session.Communication} readOnly cancel={false} />;
-  };
-  const funBodyTemplate = (session: sessionRating) => {
-    return <Rating value={session.Fun} readOnly cancel={false} />;
-  };
-  const insightBodyTemplate = (session: sessionRating) => {
-    return <Rating value={session.Insight} readOnly cancel={false} />;
-  };
-  const recommendBodyTemplate = (session: sessionRating) => {
-    return (
-      <Rating value={session.Recommend_to_others} readOnly cancel={false} />
-    );
-  };
-  const creativityBodyTemplate = (session: sessionRating) => {
-    return <Rating value={session.Creativity} readOnly cancel={false} />;
-  };
-  const knowledgeBodyTemplate = (session: sessionRating) => {
-    return <Rating value={session.Speaker_knowledge} readOnly cancel={false} />;
-  };
-  const timingBodyTemplate = (session: sessionRating) => {
-    return <Rating value={session.Speaker_knowledge} readOnly cancel={false} />;
-  };
+  const bodyTemplate = React.useCallback(
+    (field: keyof MeasurableSessionRating) => (session: sessionRating) => {
+      return <Rating value={session[field]} readOnly cancel={false} />;
+    },
+    []
+  );
 
   const [globalFilterValue, setGlobalFilterValue] = React.useState("");
   const [filters, setFilters] = React.useState({
@@ -108,54 +88,43 @@ const SessionFeedback: FC = () => {
         globalFilterFields={["Title"]}
       >
         <Column sortable field="Title" header="Title"></Column>
+        <Column sortable field="votes" header="Votes" />
         <Column
           sortable
           field="Overall"
           header="Overall"
-          body={overallRatingBodyTemplate}
+          body={bodyTemplate("Overall")}
         />
         <Column
           sortable
           field="Originality"
           header="Originality"
-          body={originalityBodyTemplate}
+          body={bodyTemplate("Originality")}
         />
         <Column
           sortable
           field="Communication"
           header="Communication"
-          body={communicationBodyTemplate}
+          body={bodyTemplate("Communication")}
         />
-        <Column
-          sortable
-          field="Creativity"
-          header="Creativity"
-          body={creativityBodyTemplate}
-        />
-        <Column sortable field="Fun" header="Fun" body={funBodyTemplate} />
-        <Column
-          sortable
-          field="Insight"
-          header="Insight"
-          body={insightBodyTemplate}
-        />
+        <Column sortable field="Fun" header="Fun" body={bodyTemplate("Fun")} />
         <Column
           sortable
           field="Pace_and_timing"
           header="Pace and timing"
-          body={timingBodyTemplate}
+          body={bodyTemplate("Pace_and_timing")}
         />
         <Column
           sortable
           field="Speaker_knowledge"
           header="Speaker knowledge"
-          body={knowledgeBodyTemplate}
+          body={bodyTemplate("Speaker_knowledge")}
         />
         <Column
           sortable
           field="Recommend_to_others"
           header="Recommend to others"
-          body={recommendBodyTemplate}
+          body={bodyTemplate("Recommend_to_others")}
         />
       </DataTable>
     </section>

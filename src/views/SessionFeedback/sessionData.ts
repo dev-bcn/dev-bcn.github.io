@@ -13,6 +13,8 @@ export interface sessionRating {
   votes: number;
 }
 
+export type MeasurableSessionRating = Omit<sessionRating, "id" | "Title">;
+
 export const sessionData: sessionRating[] = [
   {
     id: "9a5a8f11-df49-4f6e-9407-f8818c4625aa",
