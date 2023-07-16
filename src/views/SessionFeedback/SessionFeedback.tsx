@@ -9,10 +9,10 @@ import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 import { Rating } from "primereact/rating";
 import "primereact/resources/primereact.min.css";
-import "primereact/resources/themes/lara-light-indigo/theme.css";
-import "../../styles/theme.css";
+import "primereact/resources/themes/lara-light-blue/theme.css";
 import { InputText } from "primereact/inputtext";
 import { FilterMatchMode } from "primereact/api";
+import { Color } from "../../styles/colors";
 
 const SessionFeedback: FC = () => {
   const bodyTemplate = React.useCallback(
@@ -25,11 +25,6 @@ const SessionFeedback: FC = () => {
   const [globalFilterValue, setGlobalFilterValue] = React.useState("");
   const [filters, setFilters] = React.useState({
     global: { value: null, matchMode: FilterMatchMode.CONTAINS },
-    name: { value: null, matchMode: FilterMatchMode.STARTS_WITH },
-    "country.name": { value: null, matchMode: FilterMatchMode.STARTS_WITH },
-    representative: { value: null, matchMode: FilterMatchMode.IN },
-    status: { value: null, matchMode: FilterMatchMode.EQUALS },
-    verified: { value: null, matchMode: FilterMatchMode.EQUALS },
   });
 
   const onGlobalFilterChange = (e: { target: { value: any } }) => {
@@ -74,17 +69,28 @@ const SessionFeedback: FC = () => {
         marginLeft: "auto",
       }}
     >
-      <h1>Session Feedback</h1>
+      <h1
+        style={{
+          color: Color.DARK_BLUE,
+          fontFamily: "DejaVu Sans Condensed Bold",
+          paddingBottom: "1rem",
+        }}
+      >
+        Session Feedback
+      </h1>
 
       <DataTable
         dataKey="id"
         filterDisplay="row"
-        size={"small"}
+        size="small"
         header={header}
+        stripedRows
         value={sessionData}
         tableStyle={{ minWidth: "50vw" }}
         emptyMessage="No sessions found."
         filters={filters}
+        sortField="votes"
+        sortOrder={-1}
         globalFilterFields={["Title"]}
       >
         <Column sortable field="Title" header="Title"></Column>
