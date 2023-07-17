@@ -16,9 +16,8 @@ import { Color } from "../../styles/colors";
 
 const SessionFeedback: FC = () => {
   const bodyTemplate = React.useCallback(
-    (field: keyof MeasurableSessionRating) => (session: sessionRating) => {
-      return <Rating value={session[field]} readOnly cancel={false} />;
-    },
+    (field: keyof MeasurableSessionRating) => (session: sessionRating) =>
+      <Rating value={session[field]} readOnly cancel={false} />,
     []
   );
 
@@ -37,21 +36,19 @@ const SessionFeedback: FC = () => {
     setGlobalFilterValue(value);
   };
 
-  const renderHeader = () => {
-    return (
-      <div className="flex justify-content-end">
-        <span className="p-input-icon-left">
-          <i className="pi pi-search" />
-          <InputText
-            className="p-inputtext-sm"
-            value={globalFilterValue}
-            onChange={onGlobalFilterChange}
-            placeholder="Session Search"
-          />
-        </span>
-      </div>
-    );
-  };
+  const renderHeader = () => (
+    <div className="flex justify-content-end">
+      <span className="p-input-icon-left">
+        <i className="pi pi-search" />
+        <InputText
+          className="p-inputtext-sm"
+          value={globalFilterValue}
+          onChange={onGlobalFilterChange}
+          placeholder="Session Search"
+        />
+      </span>
+    </div>
+  );
 
   React.useEffect(() => {
     document.title = "DevBcn 2023 - Session Feedback";
