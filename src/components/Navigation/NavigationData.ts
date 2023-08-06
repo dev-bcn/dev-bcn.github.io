@@ -8,6 +8,7 @@ import {
   ROUTE_HOME,
   ROUTE_JOB_OFFERS,
   ROUTE_SCHEDULE,
+  ROUTE_SESSION_FEEDBACK,
   ROUTE_SPEAKER_INFO,
   ROUTE_SPEAKERS,
   ROUTE_TALKS,
@@ -39,4 +40,5 @@ export const subMenuItems: NavigationItem[] = [
   { id: "Cfp Committee", link: ROUTE_CFP },
   { id: "Attendee information", link: ROUTE_ATTENDEE },
   { id: "Speaker information", link: ROUTE_SPEAKER_INFO },
+  { id: "Session feedback", link: ROUTE_SESSION_FEEDBACK },
 ];

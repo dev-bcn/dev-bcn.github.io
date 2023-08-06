@@ -13,6 +13,7 @@ import {
   ROUTE_JOB_OFFERS,
   ROUTE_MEETING_DETAIL_PLAIN,
   ROUTE_SCHEDULE,
+  ROUTE_SESSION_FEEDBACK,
   ROUTE_SPEAKER_DETAIL_PLAIN,
   ROUTE_SPEAKER_INFO,
   ROUTE_SPEAKERS,
@@ -58,7 +59,7 @@ const App: FC = () => {
             component={React.lazy(() => import("./views/Talks/Talks"))}
           />
           <Route
-            path={"/session"}
+            path={ROUTE_SESSION_FEEDBACK}
             component={React.lazy(
               () => import("./views/SessionFeedback/SessionFeedback")
             )}
