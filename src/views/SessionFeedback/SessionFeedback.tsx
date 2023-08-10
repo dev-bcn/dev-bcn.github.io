@@ -1,7 +1,7 @@
 import {
   MeasurableSessionRating,
   sessionData,
-  sessionRating,
+  SessionRating,
 } from "./sessionData";
 
 import React, { FC } from "react";
@@ -13,13 +13,27 @@ import "primereact/resources/themes/lara-light-blue/theme.css";
 import { InputText } from "primereact/inputtext";
 import { FilterMatchMode } from "primereact/api";
 import { Color } from "../../styles/colors";
+import { Link } from "react-router-dom";
+import { ROUTE_TALK_DETAIL } from "../../constants/routes";
 
 const SessionFeedback: FC = () => {
   const bodyTemplate = React.useCallback(
-    (field: keyof MeasurableSessionRating) => (session: sessionRating) =>
+    (field: keyof MeasurableSessionRating) => (session: SessionRating) =>
       <Rating value={session[field]} readOnly cancel={false} />,
     []
   );
+
+  const TitleTemplate = (session: SessionRating) =>
+    session.talk_id ? (
+      <Link
+        style={{ textDecoration: "none", color: Color.DARK_BLUE }}
+        to={`${ROUTE_TALK_DETAIL}/${session.talk_id}`}
+      >
+        {session.Title}
+      </Link>
+    ) : (
+      <span>{session.Title}</span>
+    );
 
   const [globalFilterValue, setGlobalFilterValue] = React.useState("");
   const [filters, setFilters] = React.useState({
@@ -90,7 +104,12 @@ const SessionFeedback: FC = () => {
         sortOrder={-1}
         globalFilterFields={["Title"]}
       >
-        <Column sortable field="Title" header="Title"></Column>
+        <Column
+          sortable
+          field="Title"
+          header="Title"
+          body={TitleTemplate}
+        ></Column>
         <Column sortable field="votes" header="Votes" />
         <Column
           sortable
