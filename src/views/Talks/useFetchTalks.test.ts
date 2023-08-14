@@ -1,5 +1,6 @@
 import {
   extractSessionCategoryInfo,
+  extractSessionSlides,
   extractSessionTags,
   sessionAdapter,
 } from "./UseFetchTalks";
@@ -41,6 +42,12 @@ describe("sessionAdapter", () => {
           question: "Tags/Topics",
           questionType: "Short_Text",
           answer: "java,openjdk",
+        },
+        {
+          id: 3425,
+          question: "Slides",
+          questionType: "web_address",
+          answer: "https://www.google.com",
         },
       ],
       categories: [
@@ -100,6 +107,7 @@ describe("sessionAdapter", () => {
         },
       ],
       videoUrl: "https://example.com/video.mp4",
+      slidesURL: "https://www.google.com",
       videoTags: ["java", "openjdk"],
       level: "Introductory and overview ⭐",
       language: "English 🇬🇧",
@@ -162,6 +170,39 @@ describe("extractSessionTags", () => {
       " tag2",
       " tag3",
     ]);
+  });
+});
+
+describe("extractSessionSlides", () => {
+  test("returns empty when questionAnswers is empty", () => {
+    expect(extractSessionSlides([])).toEqual("");
+  });
+
+  test("returns the expected output when questionAnswers have a Slides question", () => {
+    const questionAnswers: QuestionAnswers[] = [
+      {
+        id: 1,
+        question: "Question 1",
+        answer: "Answer 1",
+        questionType: "Short_Text",
+      },
+      {
+        id: 2,
+        question: "Slides",
+        answer: "https://www.google.com",
+        questionType: "Short_Text",
+      },
+      {
+        id: 3,
+        question: "Question 2",
+        answer: "Answer 2",
+        questionType: "Short_Text",
+      },
+    ];
+
+    expect(extractSessionSlides(questionAnswers)).toEqual(
+      "https://www.google.com"
+    );
   });
 });
 

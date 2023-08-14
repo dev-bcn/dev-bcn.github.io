@@ -27,6 +27,7 @@ export interface Session {
   description: string;
   startAt: string;
   endsAt: string;
+  slidesURL?: string;
   speakers: SessionSpeaker[];
   categories: SessionCategory[];
   questionAnswers: QuestionAnswers[];
