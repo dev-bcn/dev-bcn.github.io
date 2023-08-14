@@ -167,7 +167,7 @@ const MeetingDetail: FC<IMeetingDetailProps> = ({
             <iframe
               width="100%"
               height={getVideoHeight(width)}
-              src="https://www.youtube.com/embed/IxqTPYeXk3k"
+              src={meeting.videoUrl}
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
