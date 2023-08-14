@@ -38,6 +38,16 @@ export const extractSessionTags = (
   return tags?.split(",");
 };
 
+export const extractSessionSlides = (
+  questionAnswers: QuestionAnswers[]
+): string => {
+  let slides = questionAnswers
+    .filter((question) => question.question === "Slides")
+    .map((question) => question.answer)
+    .at(0);
+  return slides ?? "";
+};
+
 const sessionEmojis: Record<string, string> = {
   Session: "🗣",
   Workshop: "💻",
@@ -91,6 +101,7 @@ export const sessionAdapter = (
     title: session.title,
     speakers: session.speakers,
     videoUrl: session.recordingUrl,
+    slidesURL: extractSessionSlides(session.questionAnswers),
     videoTags: extractSessionTags(session.questionAnswers),
     level: extractSessionCategoryInfo(session?.categories),
     language: extractSessionCategoryInfo(
