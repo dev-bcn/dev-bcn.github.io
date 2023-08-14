@@ -1,8 +1,14 @@
+import React, { FC } from "react";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { renderHook, waitFor } from "@testing-library/react";
+import axios, { AxiosHeaders, AxiosResponse } from "axios";
+import { beforeAll, beforeEach, describe, expect, it } from "@jest/globals";
 import {
   extractSessionCategoryInfo,
   extractSessionSlides,
   extractSessionTags,
   sessionAdapter,
+  useFetchTalksById,
 } from "./UseFetchTalks";
 import {
   CategoryItemEnum,
@@ -11,6 +17,11 @@ import {
   SessionCategory,
 } from "./Talk.types";
 import { IMeeting } from "../MeetingDetail/MeetingDetail.Type";
+
+// Mock jest and set the type
+jest.mock("axios");
+const mockedAxios = axios as jest.Mocked<typeof axios>;
+const axiosHeaders = new AxiosHeaders();
 
 describe("sessionAdapter", () => {
   test("returns empty strings when session is undefined", () => {
@@ -248,5 +259,87 @@ describe("extractSessionCategoryInfo", () => {
     expect(
       extractSessionCategoryInfo(categories, CategoryItemEnum.Language)
     ).toEqual("English 🇬🇧");
+  });
+});
+
+describe("Fetch Talks by id", () => {
+  beforeAll(() => {
+    jest.mock("axios");
+  });
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
+  it("fetches and returns talks data for a specific id", async () => {
+    const queryClient = new QueryClient();
+    const payload: AxiosResponse<Session> = {
+      status: 200,
+      statusText: "OK",
+      headers: {},
+      config: {
+        headers: axiosHeaders,
+      },
+      data: {
+        id: 1234,
+        title: "",
+        description: "",
+        startAt: "",
+        endsAt: "",
+        slidesURL: "",
+        speakers: [
+          {
+            id: "",
+            name: "",
+          },
+        ],
+        categories: [
+          {
+            id: 123,
+            name: CategoryItemEnum.Level,
+            categoryItems: [
+              {
+                id: 123,
+                name: "",
+              },
+            ],
+          },
+        ],
+        questionAnswers: [
+          {
+            id: 123,
+            question: "",
+            questionType: "",
+            answer: "",
+          },
+        ],
+        recordingUrl: "",
+        track: "",
+      },
+    };
+
+    mockedAxios.get.mockImplementation(() => Promise.resolve(payload));
+
+    const wrapper: FC<React.PropsWithChildren<{}>> = ({ children }) => {
+      return (
+        <QueryClientProvider client={queryClient}>
+          {children}
+        </QueryClientProvider>
+      );
+    };
+
+    const { result } = renderHook(() => useFetchTalksById("1234"), {
+      wrapper,
+    });
+
+    await waitFor(() => result.current.isSuccess);
+    await waitFor(() => !result.current.isLoading);
+    expect(mockedAxios.get).toHaveBeenNthCalledWith(
+      1,
+      "https://sessionize.com/api/v2/ttsitynd/view/Sessions"
+    );
+    expect(mockedAxios.get).toHaveReturnedTimes(1);
+    expect(result.current.isLoading).toEqual(false);
+    expect(result.current.error).toEqual(null);
+    expect(result.current.data).toEqual(sessionAdapter(payload.data));
   });
 });
