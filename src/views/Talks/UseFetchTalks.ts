@@ -45,7 +45,7 @@ export const extractSessionSlides = (
     .filter((question) => question.question === "Slides")
     .map((question) => question.answer)
     .at(0);
-  return slides || "";
+  return slides ?? "";
 };
 
 const sessionEmojis: Record<string, string> = {
