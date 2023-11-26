@@ -9,8 +9,8 @@ import { useWindowSize } from "react-use";
 import { MOBILE_BREAKPOINT } from "../../../../constants/BreakPoints";
 import flickr from "../../../../assets/images/flickr.svg";
 import youtube from "../../../../assets/images/youtube.svg";
-import jbcnconf from "../../../../assets/images/jbcnconf-1.jpg";
-import jbcnconf2 from "../../../../assets/images/jbcnconf-2.jpg";
+import image1 from "../../../../assets/images/devbcn-1.jpg";
+import image2 from "../../../../assets/images/devbcn2.jpg";
 import Logo from "../../../../assets/images/logo.svg";
 import { StyledLoadingImage } from "../../../../components/Loading/Loading";
 import {
@@ -36,10 +36,15 @@ const Faqs: FC = () => {
           <div style={{ width: "60%" }}>
             <StyledH2>Check last DevBcn edition</StyledH2>
             <Suspense fallback={<StyledLoadingImage src={Logo} />}>
-              <StyledImage src={jbcnconf} alt="JBCNConf" />
+              <StyledImage
+                src={image1}
+                alt="JBCNConf"
+                width={412}
+                height={275}
+              />
             </Suspense>
             <Suspense fallback={<StyledLoadingImage src={Logo} />}>
-              <StyledImage src={jbcnconf2} alt="JBCNConf - Keynote" />
+              <StyledImage src={image2} alt="JBCNConf - Keynote" />
             </Suspense>
             <StyledP>
               DevBcn is the rebranding of the biggest Java & JVM conference in
