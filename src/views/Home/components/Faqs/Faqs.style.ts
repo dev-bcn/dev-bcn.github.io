@@ -96,7 +96,7 @@ export const StyledFaqImage = styled(motion.img)`
   border-radius: 92% 8% 90% 10% / 9% 90% 10% 91%;
 
   @media (max-width: ${BIG_BREAKPOINT}px) {
-    width: 95%;
+    display: none;
   }
 `;
 export const StyledFaqInfo = styled(motion.div)<{ align: string }>`

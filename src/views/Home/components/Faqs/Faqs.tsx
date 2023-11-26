@@ -36,12 +36,7 @@ const Faqs: FC = () => {
           <div style={{ width: "60%" }}>
             <StyledH2>Check last DevBcn edition</StyledH2>
             <Suspense fallback={<StyledLoadingImage src={Logo} />}>
-              <StyledImage
-                src={image1}
-                alt="JBCNConf"
-                width={412}
-                height={275}
-              />
+              <StyledImage src={image1} alt="JBCNConf" />
             </Suspense>
             <Suspense fallback={<StyledLoadingImage src={Logo} />}>
               <StyledImage src={image2} alt="JBCNConf - Keynote" />
