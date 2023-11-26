@@ -14,7 +14,7 @@ import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
 import { useFetchTalks } from "../Talks/UseFetchTalks";
 import * as Sentry from "@sentry/react";
 import { TalkCard } from "../Talks/components/TalkCard";
-import conferenceData from "../../data/2023.json";
+import conferenceData from "../../data/2024.json";
 import styled from "styled-components";
 import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
 

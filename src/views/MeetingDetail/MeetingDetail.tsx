@@ -30,7 +30,7 @@ import {
 } from "./Style.MeetingDetail";
 import { Link } from "react-router-dom";
 import { ROUTE_SPEAKER_DETAIL, ROUTE_TALKS } from "../../constants/routes";
-import conferenceData from "../../data/2023.json";
+import conferenceData from "../../data/2024.json";
 import { Tag } from "../../components/Tag/Tag";
 import { ISpeaker } from "../Speakers/Speaker.types";
 

@@ -2,13 +2,13 @@ import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
 import { FC } from "react";
 import LessThanBlueIcon from "../../assets/images/LessThanBlueIcon.svg";
 import emailIcon from "../../assets/images/emailIcon.svg";
-import facebookIcon from "../../assets/images/facebookIcon.svg";
+import flickrIcon from "../../assets/images/flickr.svg";
 import linkedinIcon from "../../assets/images/linkedinIcon.svg";
 import logo from "../../assets/images/devBcn.png";
 import twitterIcon from "../../assets/images/twitterIcon.svg";
 import { useHistory } from "react-router-dom";
 import { useWindowSize } from "react-use";
-import data from "../../data/2023.json";
+import data from "../../data/2024.json";
 import youtubeIcon from "../../assets/images/youtubeIcon.svg";
 import {
   StyledAbsoluteImg,
@@ -60,9 +60,9 @@ const Footer: FC = () => {
                   width={24}
                 />
               </StyledLink>
-              <StyledLink target={"_blank"} href={data.facebook}>
+              <StyledLink target={"_blank"} href={data.flickr}>
                 <StyledFooterIcon
-                  src={facebookIcon}
+                  src={flickrIcon}
                   alt="facebook"
                   height={24}
                   width={24}

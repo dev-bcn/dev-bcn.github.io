@@ -88,7 +88,7 @@ const Navigation: FC = () => {
                 </StyledLink>
               ))}
               <StyledTicketLink
-                href="https://tickets.devbcn.com/event/devbcn-2023"
+                href="https://tickets.devbcn.com/event/devbcn-2024"
                 target="_blank"
                 rel="noreferrer"
               >

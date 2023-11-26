@@ -1,6 +1,6 @@
 import Countdown from "react-countdown";
 import { FC } from "react";
-import data from "../../../../data/2023.json";
+import data from "../../../../data/2024.json";
 import LessThanIcon from "../../../../assets/images/MoreThanBlueWhiteIcon.svg";
 import SectionWrapper from "../../../../components/SectionWrapper/SectionWrapper";
 import {
@@ -44,7 +44,9 @@ const Home: FC = () => {
         <StyleHomeContainer>
           <StyledLogo src={logo} alt="DevBcn logo" />
           <StyledTitleContainer>
-            <StyledTitle>The Barcelona Developers Conference 2023</StyledTitle>
+            <StyledTitle>
+              The Barcelona Developers Conference {data.edition}
+            </StyledTitle>
             <StyledSubtitle>
               Former{" "}
               <a
@@ -63,7 +65,7 @@ const Home: FC = () => {
           </StyledTitleContainer>
           <StyledTitleContainer color={Color.LIGHT_BLUE}>
             <StyledSubtitle color={Color.DARK_BLUE}>
-              July 3rd-5th, 2023
+              June 3rd-5th, 2024
             </StyledSubtitle>
             <StyledSubtitle color={Color.DARK_BLUE}>
               La Farga, Hospitalet, Barcelona
@@ -71,7 +73,7 @@ const Home: FC = () => {
           </StyledTitleContainer>
           <StyledTitleContainer color={Color.DARK_BLUE}>
             <StyledSubtitle>
-              7 tracks with the following topics: <br />
+              5 tracks with the following topics: <br />
               {data.tracks}
             </StyledSubtitle>
           </StyledTitleContainer>

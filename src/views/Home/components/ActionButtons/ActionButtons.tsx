@@ -1,5 +1,5 @@
 import { FC, useCallback } from "react";
-import data from "../../../../data/2023.json";
+import data from "../../../../data/2024.json";
 import Button from "../../../../components/UI/Button";
 import styled from "styled-components";
 import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
@@ -45,14 +45,14 @@ const ActionButtons: FC = () => {
         <Button
           onClick={trackTickets}
           text="🎟️ Buy Tickets"
-          link="https://tickets.devbcn.com/event/devbcn-2023"
+          link="https://tickets.devbcn.com/event/devbcn-2024"
         />
       )}
       {isBetween(CFPStartDay, CFPEndDay) && (
         <Button
           onClick={trackCFP}
           text="📢 Call For Papers"
-          link="https://sessionize.com/devbcn23/"
+          link="https://sessionize.com/devbcn24/"
         />
       )}
       {isBetween(sponsorshipStartDay, sponsorshipEndDay) && (

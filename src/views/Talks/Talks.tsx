@@ -4,7 +4,7 @@ import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import TitleSection from "../../components/SectionTitle/TitleSection";
 import { Color } from "../../styles/colors";
-import conferenceData from "../../data/2023.json";
+import conferenceData from "../../data/2024.json";
 import {
   StyledMarginBottom,
   StyledSpeakersSection,

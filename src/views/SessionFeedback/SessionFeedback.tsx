@@ -65,7 +65,7 @@ const SessionFeedback: FC = () => {
   );
 
   React.useEffect(() => {
-    document.title = "DevBcn 2023 - Session Feedback";
+    document.title = "DevBcn 2024 - Session Feedback";
   });
 
   const header = renderHeader();

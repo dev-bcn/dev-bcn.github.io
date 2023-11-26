@@ -20,16 +20,18 @@ export const HorizontalMenu = () => {
               {item.id}
             </StyledLink>
           ))}
-          <NavMenu href="/" style={{ position: "relative" }}>
-            News{" "}
-            <SubMenu>
-              {subMenuItems.map((item) => (
-                <SubLink key={item.id}>
-                  <NavLink to={item.link}>{item.id}</NavLink>
-                </SubLink>
-              ))}
-            </SubMenu>
-          </NavMenu>
+          {subMenuItems.length > 0 && (
+            <NavMenu href="/" style={{ position: "relative" }}>
+              News{" "}
+              <SubMenu>
+                {subMenuItems.map((item) => (
+                  <SubLink key={item.id}>
+                    <NavLink to={item.link}>{item.id}</NavLink>
+                  </SubLink>
+                ))}
+              </SubMenu>
+            </NavMenu>
+          )}
         </div>
       )}
     </>

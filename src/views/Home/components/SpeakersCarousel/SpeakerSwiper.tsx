@@ -6,6 +6,7 @@ import { Color } from "../../../../styles/colors";
 import "swiper/swiper-bundle.min.css";
 import "./SpeakersCarousel.scss";
 import { Link } from "react-router-dom";
+import conferenceData from "../../../../data/2024.json";
 import { ROUTE_SPEAKER_DETAIL } from "../../../../constants/routes";
 import { useFetchSpeakers } from "../../../Speakers/UseFetchSpeakers";
 import * as Sentry from "@sentry/react";
@@ -46,7 +47,7 @@ const SpeakerSwiper: FC = () => {
   return (
     <>
       {isLoading && <p>Loading</p>}
-      {swiperSpeakers && (
+      {conferenceData.carrousel.enabled && swiperSpeakers && (
         <Swiper
           autoplay={{
             delay: 500,

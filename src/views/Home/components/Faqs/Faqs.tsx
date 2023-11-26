@@ -11,7 +11,6 @@ import flickr from "../../../../assets/images/flickr.svg";
 import youtube from "../../../../assets/images/youtube.svg";
 import jbcnconf from "../../../../assets/images/jbcnconf-1.jpg";
 import jbcnconf2 from "../../../../assets/images/jbcnconf-2.jpg";
-import slides from "../../../../assets/images/slides.png";
 import Logo from "../../../../assets/images/logo.svg";
 import { StyledLoadingImage } from "../../../../components/Loading/Loading";
 import {
@@ -35,7 +34,7 @@ const Faqs: FC = () => {
           ))}
           <div id="last-jbcnconf">&nbsp;</div>
           <div style={{ width: "60%" }}>
-            <StyledH2>Check last JBCNConf edition</StyledH2>
+            <StyledH2>Check last DevBcn edition</StyledH2>
             <Suspense fallback={<StyledLoadingImage src={Logo} />}>
               <StyledImage src={jbcnconf} alt="JBCNConf" />
             </Suspense>
@@ -47,28 +46,21 @@ const Faqs: FC = () => {
               Spain, now including more technologies and tracks.
             </StyledP>
             <StyledP>
-              Check for videos/photos and summary of the JBCNConf - 2022 edition
+              Check for videos/photos and summary of the DevBcn - 2023 edition
             </StyledP>
             <a
-              href="https://www.flickr.com/photos/barcelonajug/collections/72157720937175671/"
+              href="https://www.flickr.com/photos/198800418@N08/"
               rel="noreferrer"
               target="_blank"
             >
               <img src={flickr} alt="flickr" height={32} width={32} />
             </a>
             <a
-              href="https://www.youtube.com/watch?v=zFPpwRyl4Iw&list=PLo0fJV3LkR3z42GevLgXlQfNFP2qfgtrq"
+              href="https://www.youtube.com/watch?v=Pv4kEMRE-kg&list=PLzJFNZtyAbyzmAAKzx1COeIBEGFgPA_og"
               rel="noreferrer"
               target="_blank"
             >
               <img src={youtube} alt="Youtube" height={32} width={32} />
-            </a>
-            <a
-              href="https://docs.google.com/presentation/d/1t1RnYOqcoP8Bo1GVyiGyW-mY_2bBpUspnW8nqXDUbGI/edit?usp=sharing"
-              rel="noreferrer"
-              target="_blank"
-            >
-              <img src={slides} alt="Summary Slides" height={32} width={32} />
             </a>
           </div>
           {width > MOBILE_BREAKPOINT && (
