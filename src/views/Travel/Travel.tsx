@@ -36,7 +36,7 @@ const Travel: FC = () => {
       <section>
         <Venue />
       </section>
-      <section>
+      <section style={{ display: "none" }}>
         <Accommodation />
         <div
           style={{
