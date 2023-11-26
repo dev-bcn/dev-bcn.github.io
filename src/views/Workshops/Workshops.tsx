@@ -42,14 +42,16 @@ const Workshops: FC = () => {
   }, []);
 
   //region workshops
-  const categoryId = 149213;
-  const categoryItemIds = new Set([categoryId]);
+  const workshopCategoryId = 149213;
+  const workshopCategoryList = new Set([workshopCategoryId]);
 
   const workshops = data
     ?.flatMap((group) => group.sessions)
     .filter((session) =>
-      session.categories.some((category) =>
-        category.categoryItems.some((item) => categoryItemIds.has(item.id))
+      session.categories.some((sessionCategory) =>
+        sessionCategory.categoryItems.some((category) =>
+          workshopCategoryList.has(category.id)
+        )
       )
     );
   //endregion
@@ -91,20 +93,21 @@ const Workshops: FC = () => {
       <SectionWrapper color={Color.LIGHT_BLUE} marginTop={1}>
         <StyledSection data-test-id="workshops">
           {isLoading && <h1>Loading </h1>}
-          {workshops?.length === 0 && (
+          {conferenceData.hideTalks ? (
             <p style={{ color: Color.WHITE, textAlign: "center" }}>
               No Workshops selected yet. Keep in touch in our social media for
               upcoming announcements
             </p>
+          ) : (
+            workshops?.map((track, index) => (
+              <TalkCard
+                talk={track}
+                key={track.id}
+                index={index}
+                showTrack={true}
+              />
+            ))
           )}
-          {workshops?.map((track, index) => (
-            <TalkCard
-              talk={track}
-              key={track.id}
-              index={index}
-              showTrack={true}
-            />
-          ))}
         </StyledSection>
         <StyledMarginBottom />
       </SectionWrapper>
