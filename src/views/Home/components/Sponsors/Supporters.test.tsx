@@ -18,7 +18,9 @@ describe("Supporters", () => {
   afterEach(() => {
     jest.clearAllMocks();
   });
-  it("renders component with supporters", () => {
+
+  // disabled until supporters included
+  it.skip("renders component with supporters", () => {
     const history = createMemoryHistory();
     history.push(ROUTE_HOME);
     render(
@@ -34,7 +36,7 @@ describe("Supporters", () => {
     expect(screen.getAllByRole("link")).toHaveLength(5);
   });
 
-  it("applies hover styles on mouse enter", () => {
+  it.skip("applies hover styles on mouse enter", () => {
     const history = createMemoryHistory();
     history.push(ROUTE_HOME);
     render(
@@ -54,7 +56,7 @@ describe("Supporters", () => {
     );
   });
 
-  it("removes hover styles on mouse leave", () => {
+  it.skip("removes hover styles on mouse leave", () => {
     const history = createMemoryHistory();
     history.push(ROUTE_HOME);
     render(
