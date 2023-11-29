@@ -22,6 +22,7 @@ import {
   StyleLessIcon,
   StyleMoreIcon,
 } from "./Faqs.style";
+import data from "../../../../data/2024.json";
 
 const Faqs: FC = () => {
   const { width } = useWindowSize();
@@ -46,7 +47,8 @@ const Faqs: FC = () => {
               Spain, now including more technologies and tracks.
             </StyledP>
             <StyledP>
-              Check for videos/photos and summary of the DevBcn - 2023 edition
+              Check for videos/photos and summary of the DevBcn -{" "}
+              {parseInt(data.edition) - 1} edition
             </StyledP>
             <a
               href="https://www.flickr.com/photos/198800418@N08/"

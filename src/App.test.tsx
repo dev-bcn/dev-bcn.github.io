@@ -21,7 +21,9 @@ describe("navigation pages", () => {
       await screen.findByText(/The Barcelona Developers Conference 2024/i)
     ).toBeInTheDocument();
 
-    expect(await screen.findByText(/June 3rd-5th, 2024/i)).toBeInTheDocument();
+    expect(
+      await screen.findByText(/June 13th - 14th, 2024/i)
+    ).toBeInTheDocument();
     expect(
       await screen.findByText(/5 tracks with the following topics:/i)
     ).toBeInTheDocument();

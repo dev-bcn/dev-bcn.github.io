@@ -2,6 +2,8 @@ import { FC } from "react";
 import styled from "styled-components";
 import { Color } from "../../styles/colors";
 import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
+import data from "../../data/2024.json";
+import { format } from "date-fns";
 
 const Heading = styled.h1`
   font-family: "DejaVu Sans Condensed Bold", sans-serif;
@@ -37,6 +39,8 @@ const Image = styled.img`
 `;
 
 const SpeakerInformation: FC = () => {
+  const startDate = new Date(data.startDay);
+  const speakersActivityDate = startDate.setDate(startDate.getDate() - 1);
   return (
     <>
       <main
@@ -56,7 +60,7 @@ const SpeakerInformation: FC = () => {
           <Heading>Speakers activities plan</Heading>
           <Paragraph>
             Here's the detailed information on the speakers activities for
-            Sunday, July 1st, 2023.
+            {format(speakersActivityDate, " EEEE, MMMM do, yyyy")}
           </Paragraph>
           <div style={{ textAlign: "center" }}>
             <Image src="/images/activities/bus.jpg" alt="drinks" />

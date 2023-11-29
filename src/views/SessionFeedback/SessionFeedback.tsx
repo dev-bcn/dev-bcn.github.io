@@ -15,6 +15,7 @@ import { FilterMatchMode } from "primereact/api";
 import { Color } from "../../styles/colors";
 import { Link } from "react-router-dom";
 import { ROUTE_TALK_DETAIL } from "../../constants/routes";
+import data from "../../data/2024.json";
 
 const SessionFeedback: FC = () => {
   const bodyTemplate = React.useCallback(
@@ -65,7 +66,7 @@ const SessionFeedback: FC = () => {
   );
 
   React.useEffect(() => {
-    document.title = "DevBcn 2024 - Session Feedback";
+    document.title = `DevBcn ${data.edition} - Session Feedback`;
   });
 
   const header = renderHeader();

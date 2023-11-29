@@ -20,7 +20,7 @@ import {
 } from "../Speakers/Speakers.style";
 import { StyledMarginBottom, StyledTagsWrapper } from "../Talks/Talks.style";
 import data from "../../data/2024.json";
-import moment from "moment";
+import { format } from "date-fns";
 
 const StyledWaveContainer = styled.div`
   background: ${Color.DARK_BLUE};
@@ -81,7 +81,6 @@ const StyleMoreIcon = styled.img`
 
 const CodeOfConduct: FC = () => {
   const { width } = useWindowSize();
-  const conferenceDate = moment(data.startDay);
 
   useEffect(() => {
     document.title = `Code of Conduct- DevBcn ${data.edition}`;
@@ -95,7 +94,7 @@ const CodeOfConduct: FC = () => {
             title="CODE OF CONDUCT"
             subtitle={
               "The DevBcn is the yearly event organised by Conferencia DevBcn S.L. Conference Talks will held on " +
-              conferenceDate.format("LL")
+              format(new Date(data.startDay), "MMMM do, yyyy")
             }
             color={Color.DARK_BLUE}
           />

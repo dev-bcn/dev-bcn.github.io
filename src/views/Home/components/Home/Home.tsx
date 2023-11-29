@@ -26,6 +26,7 @@ import ActionButtons from "../ActionButtons/ActionButtons";
 import styled from "styled-components";
 import { Color } from "../../../../styles/colors";
 import InfoButtons from "../InfoButtons/InfoButtons";
+import { formatDateRange } from "./DateUtil";
 
 const StyledLogo = styled.img`
   margin: 20px;
@@ -65,7 +66,7 @@ const Home: FC = () => {
           </StyledTitleContainer>
           <StyledTitleContainer color={Color.LIGHT_BLUE}>
             <StyledSubtitle color={Color.DARK_BLUE}>
-              June 3rd-5th, 2024
+              {formatDateRange(new Date(data.startDay), new Date(data.endDay))}
             </StyledSubtitle>
             <StyledSubtitle color={Color.DARK_BLUE}>
               La Farga, Hospitalet, Barcelona
