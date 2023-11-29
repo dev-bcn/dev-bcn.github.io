@@ -5,12 +5,12 @@
   },
   "cfp": {
     "startDay": "2024-01-01T00:00:00",
-    "endDay": "2024-03-01T00:00:00"
+    "endDay": "2024-04-01T00:00:00"
   },
   "diversity": false,
   "edition": "2024",
   "email": "info@devbcn.com",
-  "endDay": "2024-06-05T14:00:00",
+  "endDay": "2024-06-14T14:00:00",
   "facebook": "https://facebook.com/devbcn",
   "flickr": "https://flickr.com/devbcn",
   "github": "https://github.com/devbcn",
@@ -24,11 +24,11 @@
     "enabled": false
   },
   "showInfoButtons": false,
-  "startDay": "2024-06-03T09:00:00",
+  "startDay": "2024-13-03T09:00:00",
   "tracks": "Java | JVM | Go, Rust, C++, C# | Cloud, DevOps, VMs, Kubernetes | Frontend | Leadership, Agile, Diversity | Big Data, Machine Learning, AI, Python",
   "tickets": {
     "startDay": "2024-11-01T00:00:00",
-    "endDay": "2024-06-26T00:00:00"
+    "endDay": "2024-06-01T00:00:00"
   },
   "twitter": "https://twitter.com/dev_bcn",
   "youtube": "https://www.youtube.com/dev_bcn"
