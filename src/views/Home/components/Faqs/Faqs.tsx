@@ -23,6 +23,20 @@ import {
   StyleMoreIcon,
 } from "./Faqs.style";
 import data from "../../../../data/2024.json";
+import styled from "styled-components";
+
+const StyledSummaryLink = styled.a`
+   {
+    color: ${Color.LIGHT_BLUE};
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &:hover {
+    font-weight: bold;
+    color: ${Color.YELLOW};
+  }
+`;
 
 const Faqs: FC = () => {
   const { width } = useWindowSize();
@@ -47,11 +61,17 @@ const Faqs: FC = () => {
               Spain, now including more technologies and tracks.
             </StyledP>
             <StyledP>
-              Check for videos/photos and summary of the DevBcn -{" "}
-              {parseInt(data.edition) - 1} edition
+              Check for videos/photos and{" "}
+              <StyledSummaryLink
+                href="https://youtu.be/6ZxsMUYBrSo"
+                rel="noreferrer"
+                target="_blank"
+              >
+                summary of the DevBcn - {parseInt(data.edition) - 1} edition
+              </StyledSummaryLink>
             </StyledP>
             <a
-              href="https://www.flickr.com/photos/198800418@N08/"
+              href="https://www.flickr.com/photos/devbcn/albums"
               rel="noreferrer"
               target="_blank"
             >
