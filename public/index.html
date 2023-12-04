@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1" name="viewport" />
-  <title>DevBcn 2023</title>
+  <title>DevBcn 2024</title>
   <link href="https://www.google-analytics.com" rel="preconnect" />
   <!-- Google tag (gtag.js) -->
   <script
@@ -13,7 +13,7 @@
   <link href="%PUBLIC_URL%/favicon.ico" rel="icon" />
   <meta content="#002454" name="theme-color" />
   <meta
-    content="DevBcn - Barcelona Developers Conference - July 3rd - 5th 2023"
+    content="DevBcn - Barcelona Developers Conference - June 13th - 14th 2024"
     name="description"
   />
   <meta
@@ -26,7 +26,7 @@
     property="og:title"
   />
   <meta
-    content="3rd to 5th of July 2023, will be the date for a day to share knowledge and experiences, meet enthusiasts and geeks and learn about new technologies."
+    content="13th to 14th of June 2024, will be the date for a day to share knowledge and experiences, meet enthusiasts and geeks and learn about new technologies."
     property="og:description"
   />
   <meta content="website" property="og:type" />
@@ -48,7 +48,7 @@
   />
   <!-- for Slack -->
   <meta content="Date" name="twitter:label1" />
-  <meta content="July 3rd-5th, 2023" name="twitter:data1" />
+  <meta content="June 13th-14th, 2024" name="twitter:data1" />
   <meta content="Location" name="twitter:label2" />
   <meta content="La Farga, Barcelona" name="twitter:data2" />
   <!-- end: Twitter cards -->
@@ -80,13 +80,14 @@
     // the single page app to route accordingly.
     (function(l) {
       if (l.search[1] === "/") {
-        var decoded = l.search
+        const decoded = l.search
           .slice(1)
           .split("&")
           .map(function(s) {
             return s.replace(/~and~/g, "&");
           })
           .join("?");
+
         window.history.replaceState(
           null,
           null,
@@ -112,8 +113,8 @@
       "@context": "https://schema.org",
       "@type": "Event",
       "name": "Barcelona Developers Conference",
-      "startDate": "2023-07-03",
-      "endDate": "2023-07-05",
+      "startDate": "2024-06-13",
+      "endDate": "2024-06-14",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "eventStatus": "https://schema.org/EventScheduled",
       "location": {
@@ -158,21 +159,21 @@
       "offers": [
         {
           "@type": "Offer",
-          "url": "https://tickets.devbcn.com/event/devbcn-2023",
+          "url": "https://tickets.devbcn.com/event/devbcn-2024",
           "price": "260.00",
           "priceCurrency": "EUR",
           "availability": "https://schema.org/InStock",
-          "validFrom": "2023-02-01T00:01:00",
-          "validThrough": "2023-02-28T23:59:59"
+          "validFrom": "2024-02-01T00:01:00",
+          "validThrough": "2024-02-28T23:59:59"
         },
         {
           "@type": "Offer",
-          "url": "https://tickets.devbcn.com/event/devbcn-2023",
+          "url": "https://tickets.devbcn.com/event/devbcn-2024",
           "price": "300.00",
           "priceCurrency": "EUR",
           "availability": "https://schema.org/InStock",
-          "validFrom": "2023-02-01T00:01:00",
-          "validThrough": "2023-02-28T23:59:59"
+          "validFrom": "2024-02-01T00:01:00",
+          "validThrough": "2024-02-28T23:59:59"
         }
       ],
       "organizer": {
