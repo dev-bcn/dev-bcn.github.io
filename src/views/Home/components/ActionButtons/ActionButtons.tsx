@@ -20,8 +20,8 @@ const ActionButtons: FC = () => {
   const ticketEndDay = new Date(data.tickets.endDay);
   const CFPStartDay = new Date(data.cfp.startDay);
   const CFPEndDay = new Date(data.cfp.endDay);
-  const sponsorshipStartDay = new Date(data.tickets.startDay);
-  const sponsorshipEndDay = new Date(data.tickets.endDay);
+  const sponsorshipStartDay = new Date(data.sponsors.startDate);
+  const sponsorshipEndDay = new Date(data.sponsors.endDate);
   const today = new Date();
 
   const isBetween = (startDay: Date, endDay: Date): boolean =>
@@ -41,20 +41,18 @@ const ActionButtons: FC = () => {
 
   return (
     <StyledActionDiv>
-      {isBetween(ticketStartDay, ticketEndDay) && (
-        <Button
-          onClick={trackTickets}
-          text="🎟️ Buy Tickets"
-          link="https://tickets.devbcn.com/event/devbcn-2024"
-        />
-      )}
-      {isBetween(CFPStartDay, CFPEndDay) && (
-        <Button
-          onClick={trackCFP}
-          text="📢 Call For Papers"
-          link="https://sessionize.com/devbcn24/"
-        />
-      )}
+      <Button
+        onClick={trackTickets}
+        text="🎟️ Buy Tickets"
+        link="https://tickets.devbcn.com/event/devbcn-2024"
+        disabled={!isBetween(ticketStartDay, ticketEndDay)}
+      />
+      <Button
+        onClick={trackCFP}
+        text="📢 Call For Papers"
+        disabled={!isBetween(CFPStartDay, CFPEndDay)}
+        link="https://sessionize.com/devbcn24/"
+      />
       {isBetween(sponsorshipStartDay, sponsorshipEndDay) && (
         <Button
           onClick={trackSponsorshipInfo}

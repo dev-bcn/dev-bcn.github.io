@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
 import { Color } from "../../styles/colors";
 import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
@@ -6,10 +6,16 @@ import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
 interface ButtonProps {
   text: string;
   link: string;
-  onClick: any;
+  onClick: () => void;
   disabled?: boolean;
   target?: string;
 }
+
+const doNothingHandler = (
+  event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+) => {
+  event.preventDefault();
+};
 
 const StyledActionButton = styled.div`
   background-color: ${Color.LIGHT_BLUE};
@@ -64,10 +70,11 @@ const Button: FC<ButtonProps> = ({
   return (
     <StyledActionButton className="hvr-bounce-in">
       <a
-        onClick={onClick}
-        href={link}
+        onClick={disabled ? doNothingHandler : onClick}
+        href={disabled ? "https://devbcn.com" : link}
         target={target}
         rel="noreferrer nofollow"
+        aria-disabled={disabled}
       >
         {text}
         {disabled && (

@@ -24,6 +24,10 @@
     "enabled": false
   },
   "showInfoButtons": false,
+  "sponsors": {
+    "startDate": "2023-12-01T09:00:00",
+    "endDate": "2024-05-13T09:00:00"
+  },
   "startDay": "2024-06-13T09:00:00",
   "tracks": "Java | JVM | Go, Rust, C++, C# | Cloud, DevOps, VMs, Kubernetes | Frontend | Leadership, Agile, Diversity | Big Data, Machine Learning, AI, Python",
   "tickets": {
