@@ -14,8 +14,9 @@ export const HorizontalMenu = () => {
             <StyledLink
               key={item.id}
               to={item.link}
-              activeClassName="isActive"
-              exact={true}
+              className={({ isActive }) =>
+                "nav-link" + (isActive ? " isActive" : "")
+              }
             >
               {item.id}
             </StyledLink>

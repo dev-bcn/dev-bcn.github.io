@@ -1,5 +1,12 @@
-import { Link, Route, Switch } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import {
+  ROUTE_2023_ATTENDEE,
+  ROUTE_2023_HOME,
+  ROUTE_2023_SPEAKER_DETAIL_PLAIN,
+  ROUTE_2023_SPEAKER_INFO,
+  ROUTE_2023_SPEAKERS,
+  ROUTE_2023_TALK_DETAIL_PLAIN,
+  ROUTE_2023_TALKS,
   ROUTE_ABOUT_US,
   ROUTE_ATTENDEE,
   ROUTE_CFP,
@@ -9,7 +16,6 @@ import {
   ROUTE_COOKIES,
   ROUTE_DIVERSITY,
   ROUTE_HOME,
-  ROUTE_HOME_ALTERNATE,
   ROUTE_JOB_OFFERS,
   ROUTE_MEETING_DETAIL_PLAIN,
   ROUTE_SCHEDULE,
@@ -30,11 +36,34 @@ import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import SpeakerDetailContainer from "./views/SpeakerDetail/SpeakerDetailContainer";
 import styled from "styled-components";
 import React, { FC } from "react";
-import NotFoundError from "./components/NotFoundError/NotFoundError";
 import { CookieConsent } from "react-cookie-consent";
 import { Color } from "./styles/colors";
 import Loading from "./components/Loading/Loading";
 import { QueryClient, QueryClientProvider } from "react-query";
+import Talks from "./views/Talks/Talks";
+import SessionFeedback from "./views/SessionFeedback/SessionFeedback";
+import CodeOfConduct from "./views/CodeOfConduct/CodeOfConduct";
+import Conditions from "./views/Conditions/Conditions";
+import Cookies from "./views/Cookies/Cookies";
+import Diversity from "./views/Diversity/Diversity";
+import JobOffers from "./views/JobOffers/JobOffers";
+import Schedule from "./views/Schedule/Schedule";
+import Speakers from "./views/Speakers/Speakers";
+import SpeakerInformation from "./views/Speakers/SpeakerInformation";
+import About from "./views/About/About";
+import CfpSection from "./views/Cfp/CfpSection";
+import Travel from "./views/Travel/Travel";
+import Workshops from "./views/Workshops/Workshops";
+import Communities from "./views/Communities/Communities";
+import AttendeeInformation from "./views/Attendee/AttendeeInformation";
+import NotFoundError from "./components/NotFoundError/NotFoundError";
+import { Home2023Wrapper } from "./2023/Home/Home2023Wrapper";
+import Speakers2023 from "./2023/Speakers/Speakers2023";
+import SpeakerDetailContainer2023 from "./2023/SpeakerDetail/SpeakerDetailContainer2023";
+import Talks2023 from "./2023/Talks/Talks2023";
+import TalkDetailContainer2023 from "./2023/TalkDetail/TalkDetailContainer2023";
+import AttendeeInformation2023 from "./2023/Attendee/AttendeeInformation2023";
+import SpeakerInformation2023 from "./2023/Speakers/SpeakerInformation2023";
 
 const StyledAppWrapper = styled.div`
   position: relative;
@@ -45,128 +74,91 @@ const isDevBcnCookieSet = document.cookie
   .split("; ")
   .some((row) => row.startsWith("DevBcnCookie="));
 
+const RenderCookie = () => (
+  <>
+    {!isDevBcnCookieSet && (
+      <CookieConsent
+        debug={true}
+        enableDeclineButton={true}
+        cookieName="DevBcnCookie"
+        style={{ backgroundColor: Color.DARK_BLUE }}
+        buttonStyle={{
+          backgroundColor: Color.LIGHT_BLUE,
+          color: Color.WHITE,
+          fontWeight: "bold",
+        }}
+        declineButtonStyle={{
+          fontWeight: "bold",
+          backgroundColor: Color.MAGENTA,
+        }}
+      >
+        This website uses cookies to enhance the user experience.{" "}
+        <Link to={ROUTE_COOKIES} style={{ color: "white", fontWeight: "bold" }}>
+          Read here
+        </Link>
+      </CookieConsent>
+    )}
+  </>
+);
+
 const App: FC = () => {
   const queryClient = new QueryClient();
   return (
     <StyledAppWrapper className="AppWrapperAll">
       <QueryClientProvider client={queryClient}>
-        <Route path="/loading" component={Loading} />
         <ScrollToTop />
         <Navigation />
-        <Switch>
-          <Route
-            path={ROUTE_TALKS}
-            component={React.lazy(() => import("./views/Talks/Talks"))}
-          />
-          <Route
-            path={ROUTE_SESSION_FEEDBACK}
-            component={React.lazy(
-              () => import("./views/SessionFeedback/SessionFeedback")
-            )}
-          />
-          <Route
-            path={ROUTE_CODE_OF_CONDUCT}
-            component={React.lazy(
-              () => import("./views/CodeOfConduct/CodeOfConduct")
-            )}
-          />
-          <Route
-            path={ROUTE_CONDITIONS}
-            component={React.lazy(
-              () => import("./views/Conditions/Conditions")
-            )}
-          />
-          <Route
-            path={ROUTE_COOKIES}
-            component={React.lazy(() => import("./views/Cookies/Cookies"))}
-          />
-          <Route
-            path={ROUTE_DIVERSITY}
-            component={React.lazy(() => import("./views/Diversity/Diversity"))}
-          />
-          <Route
-            path={ROUTE_JOB_OFFERS}
-            component={React.lazy(() => import("./views/JobOffers/JobOffers"))}
-          />
-          <Route
-            path={ROUTE_SCHEDULE}
-            component={React.lazy(() => import("./views/Schedule/Schedule"))}
-          />
-          <Route
-            path={ROUTE_SPEAKERS}
-            component={React.lazy(() => import("./views/Speakers/Speakers"))}
-          />
-          <Route
-            path={ROUTE_SPEAKER_INFO}
-            component={React.lazy(
-              () => import("./views/Speakers/SpeakerInformation")
-            )}
-          />
-          <Route
-            path={ROUTE_ABOUT_US}
-            component={React.lazy(() => import("./views/About/About"))}
-          />
-          <Route
-            path={ROUTE_CFP}
-            component={React.lazy(() => import("./views/Cfp/CfpSection"))}
-          />
-          <Route
-            path={ROUTE_TRAVEL}
-            component={React.lazy(() => import("./views/Travel/Travel"))}
-          />
-          <Route
-            path={ROUTE_WORKSHOPS}
-            component={React.lazy(() => import("./views/Workshops/Workshops"))}
-          />
-          <Route
-            path={ROUTE_COMMUNITIES}
-            component={React.lazy(
-              () => import("./views/Communities/Communities")
-            )}
-          />
-          <Route
-            path={ROUTE_ATTENDEE}
-            component={React.lazy(
-              () => import("./views/Attendee/AttendeeInformation")
-            )}
-          />
+        <Routes>
+          <Route path="/loading" element={<Loading />} />
+          <Route path={ROUTE_TALKS} element={<Talks />} />
+          <Route path={ROUTE_SESSION_FEEDBACK} element={<SessionFeedback />} />
+          <Route path={ROUTE_CODE_OF_CONDUCT} element={<CodeOfConduct />} />
+          <Route path={ROUTE_CONDITIONS} element={<Conditions />} />
+          <Route path={ROUTE_COOKIES} element={<Cookies />} />
+          <Route path={ROUTE_DIVERSITY} element={<Diversity />} />
+          <Route path={ROUTE_JOB_OFFERS} element={<JobOffers />} />
+          <Route path={ROUTE_SCHEDULE} element={<Schedule />} />¢
+          <Route path={ROUTE_SPEAKERS} element={<Speakers />} />
+          <Route path={ROUTE_SPEAKER_INFO} element={<SpeakerInformation />} />
+          <Route path={ROUTE_ABOUT_US} element={<About />} />
+          <Route path={ROUTE_CFP} element={<CfpSection />} />
+          <Route path={ROUTE_TRAVEL} element={<Travel />} />
+          <Route path={ROUTE_WORKSHOPS} element={<Workshops />} />
+          <Route path={ROUTE_COMMUNITIES} element={<Communities />} />
+          <Route path={ROUTE_ATTENDEE} element={<AttendeeInformation />} />
           <Route
             path={ROUTE_MEETING_DETAIL_PLAIN}
-            component={MeetingDetailContainer}
+            element={<MeetingDetailContainer />}
           />
           <Route
             path={ROUTE_SPEAKER_DETAIL_PLAIN}
-            component={SpeakerDetailContainer}
+            element={<SpeakerDetailContainer />}
           />
-          <Route path={ROUTE_HOME} component={HomeWrapper} exact />
-          <Route path={ROUTE_HOME_ALTERNATE} component={HomeWrapper} exact />
-          <Route path="*" component={NotFoundError} />
-        </Switch>
-        {!isDevBcnCookieSet && (
-          <CookieConsent
-            debug={true}
-            enableDeclineButton={true}
-            cookieName="DevBcnCookie"
-            style={{ backgroundColor: Color.DARK_BLUE }}
-            buttonStyle={{
-              backgroundColor: Color.LIGHT_BLUE,
-              color: Color.WHITE,
-              fontWeight: "bold",
-            }}
-            declineButtonStyle={{
-              fontWeight: "bold",
-              backgroundColor: Color.MAGENTA,
-            }}
-          >
-            This website uses cookies to enhance the user experience.{" "}
-            <Link
-              to={ROUTE_COOKIES}
-              style={{ color: "white", fontWeight: "bold" }}
-            >
-              Read here
-            </Link>
-          </CookieConsent>
-        )}
+          <Route path="/:year" element={<HomeWrapper />} />
+          <Route path={ROUTE_HOME} element={<HomeWrapper />} />
+          {/* 2023 Edition */}
+          <Route path={ROUTE_2023_HOME} element={<Home2023Wrapper />} />
+          <Route
+            path={ROUTE_2023_ATTENDEE}
+            element={<AttendeeInformation2023 />}
+          />
+          <Route
+            path={ROUTE_2023_SPEAKER_INFO}
+            element={<SpeakerInformation2023 />}
+          />
+          <Route path={ROUTE_2023_SPEAKERS} element={<Speakers2023 />} />
+          <Route
+            path={ROUTE_2023_SPEAKER_DETAIL_PLAIN}
+            element={<SpeakerDetailContainer2023 />}
+          />
+          <Route path={ROUTE_2023_TALKS} element={<Talks2023 />} />
+          <Route
+            path={ROUTE_2023_TALK_DETAIL_PLAIN}
+            element={<TalkDetailContainer2023 />}
+          />
+          <Route path="*" element={<NotFoundError />} />
+        </Routes>
+        <RenderCookie />
         <Footer />
       </QueryClientProvider>
     </StyledAppWrapper>

@@ -29,11 +29,12 @@
     "endDate": "2024-05-13T09:00:00"
   },
   "startDay": "2024-06-13T09:00:00",
-  "tracks": "Java | JVM | Go, Rust, C++, C# | Cloud, DevOps, VMs, Kubernetes | Frontend | Leadership, Agile, Diversity | Big Data, Machine Learning, AI, Python",
   "tickets": {
     "startDay": "2024-11-01T00:00:00",
     "endDay": "2024-06-01T00:00:00"
   },
+  "trackNumber": 5,
+  "tracks": "Java | JVM | Cloud, DevOps, VMs, Kubernetes | Frontend, JavaScript, TypeScript, AngularJS, WASM | Leadership, Agile, Diversity | Big Data, Machine Learning, AI, Python",
   "twitter": "https://twitter.com/dev_bcn",
   "youtube": "https://www.youtube.com/dev_bcn"
 }

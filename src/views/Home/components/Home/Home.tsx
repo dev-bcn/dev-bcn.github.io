@@ -1,6 +1,5 @@
 import Countdown from "react-countdown";
-import { FC } from "react";
-import data from "../../../../data/2024.json";
+import { FC, useState } from "react";
 import LessThanIcon from "../../../../assets/images/MoreThanBlueWhiteIcon.svg";
 import SectionWrapper from "../../../../components/SectionWrapper/SectionWrapper";
 import {
@@ -27,6 +26,9 @@ import styled from "styled-components";
 import { Color } from "../../../../styles/colors";
 import InfoButtons from "../InfoButtons/InfoButtons";
 import { formatDateRange } from "./DateUtil";
+import { useEventEdition } from "../../UseEventEdition";
+import { Edition } from "../../HomeWrapper";
+import { Link } from "react-router-dom";
 
 const StyledLogo = styled.img`
   margin: 20px;
@@ -37,7 +39,9 @@ const StyledLogo = styled.img`
 `;
 const Home: FC = () => {
   const { width } = useWindowSize();
-  const startDay = data.startDay;
+  const [edition, setEdition] = useState<Edition>();
+
+  useEventEdition(setEdition);
 
   return (
     <StyledHomaImage>
@@ -46,7 +50,7 @@ const Home: FC = () => {
           <StyledLogo src={logo} alt="DevBcn logo" />
           <StyledTitleContainer>
             <StyledTitle>
-              The Barcelona Developers Conference {data.edition}
+              The Barcelona Developers Conference {edition?.edition}
             </StyledTitle>
             <StyledSubtitle>
               Former{" "}
@@ -63,10 +67,20 @@ const Home: FC = () => {
               Developers, to learn and share on the different modern software
               technologies used across the companies
             </StyledSubtitle>
+            <StyledSubtitle>
+              <small>
+                Past events: <Link to="/2023">2023 edition</Link>
+              </small>
+            </StyledSubtitle>
           </StyledTitleContainer>
           <StyledTitleContainer color={Color.LIGHT_BLUE}>
             <StyledSubtitle color={Color.DARK_BLUE}>
-              {formatDateRange(new Date(data.startDay), new Date(data.endDay))}
+              {edition?.startDay &&
+                edition.endDay &&
+                formatDateRange(
+                  new Date(edition.startDay),
+                  new Date(edition?.endDay)
+                )}
             </StyledSubtitle>
             <StyledSubtitle color={Color.DARK_BLUE}>
               La Farga, Hospitalet, Barcelona
@@ -74,13 +88,13 @@ const Home: FC = () => {
           </StyledTitleContainer>
           <StyledTitleContainer color={Color.DARK_BLUE}>
             <StyledSubtitle>
-              5 tracks with the following topics: <br />
-              {data.tracks}
+              {edition?.trackNumber} tracks with the following topics: <br />
+              {edition?.tracks}
             </StyledSubtitle>
           </StyledTitleContainer>
-          <Countdown date={startDay} renderer={TimeCountDown} />
-          {data.actionButtons && <ActionButtons />}
-          {data.showInfoButtons && <InfoButtons />}
+          <Countdown date={edition?.startDay} renderer={TimeCountDown} />
+          {edition?.actionButtons && <ActionButtons />}
+          {edition?.showInfoButtons && <InfoButtons />}
 
           {width > LARGE_BREAKPOINT && <StyledLessThan src={LessThanIcon} />}
           <StyledTopSlash

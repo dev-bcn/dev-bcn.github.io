@@ -6,7 +6,7 @@ import flickrIcon from "../../assets/images/flickr.svg";
 import linkedinIcon from "../../assets/images/linkedinIcon.svg";
 import logo from "../../assets/images/devBcn.png";
 import twitterIcon from "../../assets/images/twitterIcon.svg";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useWindowSize } from "react-use";
 import data from "../../data/2024.json";
 import youtubeIcon from "../../assets/images/youtubeIcon.svg";
@@ -25,10 +25,10 @@ import {
 const Footer: FC = () => {
   const { width } = useWindowSize();
 
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleLogoClick = () => {
-    history.push("/");
+    navigate("/");
     window.scrollTo(0, 0);
   };
 

@@ -1,7 +1,7 @@
 import { AnimatePresence } from "framer-motion";
 import { FC, useState } from "react";
 import { MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
-import { useHistory, useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Breadcrumbs from "./Breadcrumbs";
 import CloseIcon from "../../assets/images/CloseIcon.svg";
 import NavigationLogo from "../../assets/images/devBcn.png";
@@ -29,9 +29,9 @@ const Navigation: FC = () => {
   const { width } = useWindowSize();
   const [isOpened, setIsOpen] = useState(false);
   const { pathname } = useLocation();
-  const history = useHistory();
+  const navigate = useNavigate();
   const handleLogoClick = () => {
-    history.push(ROUTE_HOME);
+    navigate(ROUTE_HOME);
   };
   const handleSetMenu = () => {
     setIsOpen(!isOpened);
@@ -72,7 +72,7 @@ const Navigation: FC = () => {
               <StyledNavigationLogo
                 src={NavigationLogo}
                 onClick={() => {
-                  history.push(ROUTE_HOME);
+                  navigate(ROUTE_HOME);
                   handleSetMenu();
                 }}
               />
@@ -81,8 +81,9 @@ const Navigation: FC = () => {
                   key={item.id}
                   to={item.link}
                   onClick={handleSetMenu}
-                  activeClassName="isActive"
-                  exact={true}
+                  className={({ isActive }) =>
+                    "nav-link" + (isActive ? " isActive" : "")
+                  }
                 >
                   {item.id}
                 </StyledLink>

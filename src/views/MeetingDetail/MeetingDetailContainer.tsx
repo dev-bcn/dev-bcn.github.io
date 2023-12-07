@@ -17,7 +17,7 @@ const StyledContainer = styled.div`
 `;
 const MeetingDetailContainer: FC = () => {
   const { id } = useParams<{ id: string }>();
-  const { isLoading, error, data } = useFetchTalksById(id);
+  const { isLoading, error, data } = useFetchTalksById(id!!);
   const { data: speakerData } = useFetchSpeakers();
 
   const getTalkSpeakers = (

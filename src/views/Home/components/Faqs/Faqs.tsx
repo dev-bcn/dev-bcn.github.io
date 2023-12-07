@@ -1,5 +1,5 @@
 import { Color } from "../../../../styles/colors";
-import { FC, Suspense } from "react";
+import { FC, Suspense, useState } from "react";
 import FaqCard from "./components/FaqsCard";
 import LessThanIcon from "../../../../assets/images/LessThanBlueIcon.svg";
 import MoreThanIcon from "../../../../assets/images/LessThanBlueWhiteIcon.svg";
@@ -22,8 +22,9 @@ import {
   StyleLessIcon,
   StyleMoreIcon,
 } from "./Faqs.style";
-import data from "../../../../data/2024.json";
 import styled from "styled-components";
+import { useEventEdition } from "../../UseEventEdition";
+import { Edition } from "../../HomeWrapper";
 
 const StyledSummaryLink = styled.a`
    {
@@ -40,6 +41,10 @@ const StyledSummaryLink = styled.a`
 
 const Faqs: FC = () => {
   const { width } = useWindowSize();
+  const [edition, setEdition] = useState<Edition>();
+
+  useEventEdition(setEdition);
+
   return (
     <>
       <SectionWrapper color={Color.DARK_BLUE}>
@@ -67,7 +72,8 @@ const Faqs: FC = () => {
                 rel="noreferrer"
                 target="_blank"
               >
-                summary of the DevBcn - {parseInt(data.edition) - 1} edition
+                summary of the DevBcn -{" "}
+                {parseInt(edition?.edition as string) - 1} edition
               </StyledSummaryLink>
             </StyledP>
             <a
