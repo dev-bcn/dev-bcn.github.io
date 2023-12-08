@@ -32,9 +32,9 @@ import { Link } from "react-router-dom";
 
 const StyledLogo = styled.img`
   margin: 20px;
-  width: 600px;
+  width: 34vw;
   @media (max-width: ${BIG_BREAKPOINT}px) {
-    width: 80%;
+    width: 60%;
   }
 `;
 const Home: FC = () => {
@@ -47,8 +47,10 @@ const Home: FC = () => {
     <StyledHomaImage>
       <SectionWrapper color="transparent">
         <StyleHomeContainer>
-          <StyledLogo src={logo} alt="DevBcn logo" />
-          <StyledLogo src="images/KCD-logo-white.png" alt="KCD Days" />
+          <div style={{ paddingTop: "2rem", paddingBottom: "2rem" }}>
+            <StyledLogo src={logo} alt="DevBcn logo" />
+            <StyledLogo src="images/KCD-logo-white.png" alt="KCD Days" />
+          </div>
           <StyledTitleContainer>
             <StyledTitle>
               The Barcelona Developers Conference {edition?.edition}
