@@ -5,7 +5,7 @@ import {
   ROUTE_TRAVEL,
 } from "../../constants/routes";
 
-interface NavigationItem {
+export interface NavigationItem {
   id: string;
   link: string;
 }

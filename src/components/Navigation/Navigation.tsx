@@ -1,5 +1,5 @@
 import { AnimatePresence } from "framer-motion";
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
 import { useLocation, useNavigate } from "react-router-dom";
 import Breadcrumbs from "./Breadcrumbs";
@@ -8,6 +8,7 @@ import NavigationLogo from "../../assets/images/devBcn.png";
 import { ROUTE_HOME, ROUTE_HOME_ALTERNATE } from "../../constants/routes";
 import TicketsImage from "../../assets/images/TicketsImage.svg";
 import { navigationItems } from "./NavigationData";
+import { navigationItems2023 } from "../../2023/Navigation/NavigationData2023";
 import { useWindowSize } from "react-use";
 import {
   StyledClipPath,
@@ -28,6 +29,8 @@ import { HamburgerMenu } from "./HamburgerMenu";
 const Navigation: FC = () => {
   const { width } = useWindowSize();
   const [isOpened, setIsOpen] = useState(false);
+  const [is2023, setIs2023] = useState(false);
+  const [naviItems, setNavItems] = useState(navigationItems);
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const handleLogoClick = () => {
@@ -40,12 +43,25 @@ const Navigation: FC = () => {
     return pathname === ROUTE_HOME || pathname === ROUTE_HOME_ALTERNATE;
   };
 
+  useEffect(() => {
+    // eslint-disable-next-line no-console
+    console.log(pathname);
+    if (pathname.startsWith("/2023")) {
+      setIs2023(true);
+      setNavItems(navigationItems2023);
+      // eslint-disable-next-line no-console
+      console.log(naviItems);
+    } else {
+      setNavItems(navigationItems);
+    }
+  }, [pathname]);
+
   return (
     <>
       <StyledHeaderWrapper>
         <StyledHeader>
           <StyledHeaderLogo src={NavigationLogo} onClick={handleLogoClick} />
-          <HorizontalMenu />
+          <HorizontalMenu navItems={naviItems} />
           <HamburgerMenu onClick={handleSetMenu} />
         </StyledHeader>
 
@@ -76,7 +92,7 @@ const Navigation: FC = () => {
                   handleSetMenu();
                 }}
               />
-              {navigationItems.map((item) => (
+              {naviItems.map((item) => (
                 <StyledLink
                   key={item.id}
                   to={item.link}
@@ -89,7 +105,11 @@ const Navigation: FC = () => {
                 </StyledLink>
               ))}
               <StyledTicketLink
-                href="https://tickets.devbcn.com/event/devbcn-2024"
+                href={
+                  is2023
+                    ? "https://tickets.devbcn.com/event/devbcn-2023"
+                    : "https://tickets.devbcn.com/event/devbcn-2024"
+                }
                 target="_blank"
                 rel="noreferrer"
               >

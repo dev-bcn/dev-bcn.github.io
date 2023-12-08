@@ -1,16 +1,21 @@
 import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
-import { navigationItems, subMenuItems } from "./NavigationData";
+import { NavigationItem, subMenuItems } from "./NavigationData";
 import { useWindowSize } from "react-use";
 import { NavMenu, StyledLink, SubLink, SubMenu } from "./Style.Navigation";
 import { NavLink } from "react-router-dom";
+import { FC } from "react";
 
-export const HorizontalMenu = () => {
+type Props = {
+  navItems: NavigationItem[];
+};
+
+export const HorizontalMenu: FC<Props> = ({ navItems }) => {
   const { width } = useWindowSize();
   return (
     <>
       {width > BIG_BREAKPOINT && (
         <div className="horizontal-navigation">
-          {navigationItems.map((item) => (
+          {navItems.map((item) => (
             <StyledLink
               key={item.id}
               to={item.link}

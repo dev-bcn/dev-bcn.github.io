@@ -48,6 +48,7 @@ const Home: FC = () => {
       <SectionWrapper color="transparent">
         <StyleHomeContainer>
           <StyledLogo src={logo} alt="DevBcn logo" />
+          <StyledLogo src="images/KCD-logo-white.png" alt="KCD Days" />
           <StyledTitleContainer>
             <StyledTitle>
               The Barcelona Developers Conference {edition?.edition}
