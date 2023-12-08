@@ -1,7 +1,10 @@
 import { Link, Route, Routes } from "react-router-dom";
 import {
   ROUTE_2023_ATTENDEE,
+  ROUTE_2023_CFP,
+  ROUTE_2023_COMMUNITIES,
   ROUTE_2023_HOME,
+  ROUTE_2023_SESSION_FEEDBACK,
   ROUTE_2023_SPEAKER_DETAIL_PLAIN,
   ROUTE_2023_SPEAKER_INFO,
   ROUTE_2023_SPEAKERS,
@@ -64,6 +67,9 @@ import Talks2023 from "./2023/Talks/Talks2023";
 import TalkDetailContainer2023 from "./2023/TalkDetail/TalkDetailContainer2023";
 import AttendeeInformation2023 from "./2023/Attendee/AttendeeInformation2023";
 import SpeakerInformation2023 from "./2023/Speakers/SpeakerInformation2023";
+import Communities2023 from "./2023/Communities/Communities2023";
+import CfpSection2023 from "./2023/Cfp/CfpSection2023";
+import SessionFeedback2023 from "./2023/SessionFeedback/SessionFeedback2023";
 
 const StyledAppWrapper = styled.div`
   position: relative;
@@ -139,9 +145,15 @@ const App: FC = () => {
           {/* 2023 Edition */}
           <Route path={ROUTE_2023_HOME} element={<Home2023Wrapper />} />
           <Route
+            path={ROUTE_2023_SESSION_FEEDBACK}
+            element={<SessionFeedback2023 />}
+          />
+          <Route path={ROUTE_2023_CFP} element={<CfpSection2023 />} />
+          <Route
             path={ROUTE_2023_ATTENDEE}
             element={<AttendeeInformation2023 />}
           />
+          <Route path={ROUTE_2023_COMMUNITIES} element={<Communities2023 />} />
           <Route
             path={ROUTE_2023_SPEAKER_INFO}
             element={<SpeakerInformation2023 />}
