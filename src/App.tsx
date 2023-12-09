@@ -4,6 +4,7 @@ import {
   ROUTE_2023_CFP,
   ROUTE_2023_COMMUNITIES,
   ROUTE_2023_HOME,
+  ROUTE_2023_SCHEDULE,
   ROUTE_2023_SESSION_FEEDBACK,
   ROUTE_2023_SPEAKER_DETAIL_PLAIN,
   ROUTE_2023_SPEAKER_INFO,
@@ -72,6 +73,7 @@ import Communities2023 from "./2023/Communities/Communities2023";
 import CfpSection2023 from "./2023/Cfp/CfpSection2023";
 import SessionFeedback2023 from "./2023/SessionFeedback/SessionFeedback2023";
 import Kcd from "./views/kcd/Kcd";
+import Schedule2023 from "./2023/Schedule/Schedule2023";
 
 const StyledAppWrapper = styled.div`
   position: relative;
@@ -125,7 +127,7 @@ const App: FC = () => {
           <Route path={ROUTE_COOKIES} element={<Cookies />} />
           <Route path={ROUTE_DIVERSITY} element={<Diversity />} />
           <Route path={ROUTE_JOB_OFFERS} element={<JobOffers />} />
-          <Route path={ROUTE_SCHEDULE} element={<Schedule />} />¢
+          <Route path={ROUTE_SCHEDULE} element={<Schedule />} />
           <Route path={ROUTE_SPEAKERS} element={<Speakers />} />
           <Route path={ROUTE_SPEAKER_INFO} element={<SpeakerInformation />} />
           <Route path={ROUTE_ABOUT_US} element={<About />} />
@@ -147,6 +149,7 @@ const App: FC = () => {
           <Route path={ROUTE_HOME} element={<HomeWrapper />} />
           {/* 2023 Edition */}
           <Route path={ROUTE_2023_HOME} element={<Home2023Wrapper />} />
+          <Route path={ROUTE_2023_SCHEDULE} element={<Schedule2023 />} />¢
           <Route
             path={ROUTE_2023_SESSION_FEEDBACK}
             element={<SessionFeedback2023 />}
