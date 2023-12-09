@@ -23,7 +23,7 @@ export const jobOffers: Company[] = [
     id: "4a399a19-7455-4953-94ce-76f59d40c032",
     description:
       "GFT is a digital transformation pioneer that develops sustainable solutions based on new technologies including artificial intelligence and blockchain/DLT. GFT experts create and implement scalable software applications that make access to innovative business models safe and easy.",
-    logo: "images/sponsors/GFT.jpg",
+    logo: "/images/sponsors/GFT.jpg",
     url: "https://www.gft.com",
     linkedin: "https://www.linkedin.com/company/gft-group/",
     twitter: "https://twitter.com/gft_es",
@@ -232,7 +232,7 @@ export const jobOffers: Company[] = [
   {
     name: "Idealista",
     id: "9b68e783-12c0-4c23-bffc-96d2c65cdcdb",
-    logo: "images/sponsors/idealista.jpg",
+    logo: "/images/sponsors/idealista.jpg",
     description:
       "Idealista is the main meeting point for all those people who are looking for a home (or premises, building, the list goes on...) either to buy or to rent, and for those who sell or rent out these properties.",
     url: "https://www.idealista.com/info/trabaja-con-nosotros",
@@ -278,7 +278,7 @@ export const jobOffers: Company[] = [
   {
     name: "Sopra Steria",
     id: "bf3871fa-9423-4370-8b12-e8e5112fec24",
-    logo: "images/sponsors/sopra.jpg",
+    logo: "/images/sponsors/sopra.jpg",
     url: "https://www.soprasteria.com",
     description:
       "We are a European leader in digital transformation, providing one of the most comprehensive portfolios of end-to-end service offerings on the market: Consulting, Systems Integration, Software Development, Infrastructure Management and Business Process Services.",
@@ -325,7 +325,7 @@ export const jobOffers: Company[] = [
     twitter: "https://twitter.com/king_games?lang=en",
     linkedin: "https://www.linkedin.com/company/king/",
     url: "https://careers.king.com/",
-    logo: "images/sponsors/king.png",
+    logo: "/images/sponsors/king.png",
     offers: [
       {
         id: "47778f29-27b7-4783-a5d9-5d1faa2e1ab7",
@@ -361,7 +361,7 @@ export const jobOffers: Company[] = [
       "customer experience.",
     url: "https://tech.allianz.com/en.html",
     linkedin: "https://www.linkedin.com/company/allianz-technology/",
-    logo: "images/sponsors/allianz.png",
+    logo: "/images/sponsors/allianz.png",
     offers: [
       {
         id: "1a281437-fcb3-4e8a-bc87-eae711f4a95b",
@@ -432,7 +432,7 @@ export const jobOffers: Company[] = [
     name: "Alten",
     id: "31c93b3f-f534-4a5f-9684-e9a0c388e636",
     url: "https://www.alten.es/",
-    logo: "images/sponsors/alten.png",
+    logo: "/images/sponsors/alten.png",
     linkedin: "https://www.linkedin.com/company/alten-spain/mycompany/",
     description:
       "ALTEN is a multinational company that has positioned itself among the first consulting companies providing global experiences, important partners and quality in its ideas, responses and teams.",
@@ -476,7 +476,7 @@ export const jobOffers: Company[] = [
   {
     name: "Gradle",
     id: "fc2e69c0-0efc-40df-a535-c7b2df646a5e",
-    logo: "images/sponsors/gradle.png",
+    logo: "/images/sponsors/gradle.png",
     description:
       "We are the providers of the Gradle Enterprise build and test performance acceleration and failure analytics solution to improving developer productivity and the Gradle Build Tool.",
     url: "gradle.com",
@@ -542,7 +542,7 @@ export const jobOffers: Company[] = [
     twitter:
       "https://twitter.com/newrelic?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor",
     linkedin: "https://www.linkedin.com/company/new-relic-inc-/",
-    logo: "images/sponsors/someRelic.png",
+    logo: "/images/sponsors/someRelic.png",
     offers: [
       {
         title:
@@ -570,7 +570,7 @@ export const jobOffers: Company[] = [
     twitter: "https://www.twitter.com/WeAreAdaptive",
     linkedin: "www.linkedin.com/company/adaptive-consulting-ltd/",
     url: "weareadaptive.com",
-    logo: "images/sponsors/adaptive.png",
+    logo: "/images/sponsors/adaptive.png",
     offers: [
       {
         id: "1190b4cf-17bb-4b22-8d07-882b012b95c8",
@@ -591,7 +591,7 @@ export const jobOffers: Company[] = [
       "At Capitole we empower businesses to reach their full potential by leveraging cutting-edge and innovative IT services, while valuing people every step of the way.",
     url: "https://capitole-consulting.com/",
     linkedin: "https://www.linkedin.com/company/capitole-consulting/",
-    logo: "images/sponsors/capitole.png",
+    logo: "/images/sponsors/capitole.png",
     offers: [
       {
         title: "Technical Lead",
@@ -634,7 +634,7 @@ export const jobOffers: Company[] = [
     name: "Adevinta",
     id: "68a85584-6cf7-45f8-82c2-7edce28e259b",
     url: "www.adevinta.com",
-    logo: "images/sponsors/adevinta.png",
+    logo: "/images/sponsors/adevinta.png",
     twitter: "https://twittere.com/Adevinta",
     linkedin: "https://www.linkedin.com/company/adevinta/",
     description:
@@ -705,7 +705,7 @@ export const jobOffers: Company[] = [
     url: "https://www.revolut.com/working-at-revolut/",
     twitter: "https://twitter.com/revolutinsider",
     linkedin: "https://www.linkedin.com/company/5356541/",
-    logo: "images/sponsors/revolut.png",
+    logo: "/images/sponsors/revolut.png",
     offers: [
       {
         title: "Software Engineer (Backend)",

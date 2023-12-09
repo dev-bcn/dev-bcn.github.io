@@ -4,6 +4,7 @@ import {
   ROUTE_2023_CFP,
   ROUTE_2023_COMMUNITIES,
   ROUTE_2023_HOME,
+  ROUTE_2023_JOB_OFFERS,
   ROUTE_2023_SCHEDULE,
   ROUTE_2023_SESSION_FEEDBACK,
   ROUTE_2023_SPEAKER_DETAIL_PLAIN,
@@ -76,6 +77,7 @@ import SessionFeedback2023 from "./2023/SessionFeedback/SessionFeedback2023";
 import Kcd from "./views/kcd/Kcd";
 import Schedule2023 from "./2023/Schedule/Schedule2023";
 import Workshops2023 from "./2023/Workshops/Workshops2023";
+import JobOffers2023 from "./2023/JobOffers/JobOffers2023";
 
 const StyledAppWrapper = styled.div`
   position: relative;
@@ -153,6 +155,7 @@ const App: FC = () => {
           <Route path={ROUTE_2023_HOME} element={<Home2023Wrapper />} />
           <Route path={ROUTE_2023_SCHEDULE} element={<Schedule2023 />} />
           <Route path={ROUTE_2023_WORKSHOPS} element={<Workshops2023 />} />
+          <Route path={ROUTE_2023_JOB_OFFERS} element={<JobOffers2023 />} />
           <Route
             path={ROUTE_2023_SESSION_FEEDBACK}
             element={<SessionFeedback2023 />}

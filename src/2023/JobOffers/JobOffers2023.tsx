@@ -37,7 +37,7 @@ const MoreThanLessThan = (props: { width: number }) => (
   </>
 );
 
-const JobOffers: FC = () => {
+const JobOffers2023: FC = () => {
   const { width } = useWindowSize();
 
   React.useEffect(() => {
@@ -80,4 +80,4 @@ const JobOffers: FC = () => {
   );
 };
 
-export default JobOffers;
+export default JobOffers2023;
