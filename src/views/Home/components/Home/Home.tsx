@@ -29,6 +29,7 @@ import { formatDateRange } from "./DateUtil";
 import { useEventEdition } from "../../UseEventEdition";
 import { Edition } from "../../HomeWrapper";
 import { Link } from "react-router-dom";
+import data from "../../../../data/2023.json";
 
 const StyledLogo = styled.img`
   margin: 20px;
@@ -95,7 +96,9 @@ const Home: FC = () => {
               {edition?.tracks}
             </StyledSubtitle>
           </StyledTitleContainer>
-          <Countdown date={edition?.startDay} renderer={TimeCountDown} />
+          {data.showCountdown && (
+            <Countdown date={edition?.startDay} renderer={TimeCountDown} />
+          )}
           {edition?.actionButtons && <ActionButtons />}
           {edition?.showInfoButtons && <InfoButtons />}
 

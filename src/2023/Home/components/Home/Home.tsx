@@ -75,10 +75,11 @@ const Home: FC = () => {
               {data.tracks}
             </StyledSubtitle>
           </StyledTitleContainer>
-          <Countdown date={startDay} renderer={TimeCountDown} />
+          {data.showCountdown && (
+            <Countdown date={startDay} renderer={TimeCountDown} />
+          )}
           {data.actionButtons && <ActionButtons />}
           {data.showInfoButtons && <InfoButtons />}
-
           {width > LARGE_BREAKPOINT && <StyledLessThan src={LessThanIcon} />}
           <StyledTopSlash
             initial={{ x: "100%" }}
