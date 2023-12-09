@@ -2,6 +2,7 @@ import {
   ROUTE_ABOUT_US,
   ROUTE_CODE_OF_CONDUCT,
   ROUTE_HOME,
+  ROUTE_KCD,
   ROUTE_TRAVEL,
 } from "../../constants/routes";
 
@@ -22,6 +23,7 @@ export const navigationItems: NavigationItem[] = [
   //{ id: "Speakers", link: ROUTE_SPEAKERS },
   { id: "About Us", link: ROUTE_ABOUT_US },
   { id: "Travel", link: ROUTE_TRAVEL },
+  { id: "KCD - Spain", link: ROUTE_KCD },
 ];
 
 export const subMenuItems: NavigationItem[] = [

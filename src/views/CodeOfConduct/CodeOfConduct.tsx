@@ -29,7 +29,7 @@ const StyledWaveContainer = styled.div`
   width: 100%;
 `;
 
-const StyledSectionsSeparator = styled.div`
+export const StyledSectionsSeparator = styled.div`
   background: ${Color.WHITE};
   height: 3rem;
   @media (min-width: ${BIG_BREAKPOINT}px) {
