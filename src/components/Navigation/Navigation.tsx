@@ -54,7 +54,7 @@ const Navigation: FC = () => {
     } else {
       setNavItems(navigationItems);
     }
-  }, [pathname]);
+  }, [pathname, naviItems]);
 
   return (
     <>
