@@ -24,7 +24,7 @@ interface NavigationItem {
 export const navigationItems2023: NavigationItem[] = [
   { id: "Home", link: ROUTE_2023_HOME },
   { id: "Code of Conduct", link: ROUTE_CODE_OF_CONDUCT },
-  { id: "Sponsors", link: "/#sponsors" },
+  { id: "Sponsors", link: "/2023/#sponsors" },
   { id: "SCHEDULE", link: ROUTE_2023_SCHEDULE },
   { id: "Talks", link: ROUTE_2023_TALKS },
   { id: "Workshops", link: ROUTE_2023_WORKSHOPS },
