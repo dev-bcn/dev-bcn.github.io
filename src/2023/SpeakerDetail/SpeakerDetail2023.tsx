@@ -26,7 +26,10 @@ import {
   StyledSpeakerImg,
   StyledSpeakerTitle,
 } from "./Speaker.style";
-import { ROUTE_2023_SPEAKERS, ROUTE_TALK_DETAIL } from "../../constants/routes";
+import {
+  ROUTE_2023_SPEAKERS,
+  ROUTE_2023_TALK_DETAIL,
+} from "../../constants/routes";
 import { StyledTalkDescription } from "./SpeakerDetail.style";
 import { Link } from "react-router-dom";
 import { Color } from "../../styles/colors";
@@ -115,7 +118,7 @@ const SpeakerDetail2023: FC<ISpeakerDetailProps> = ({ speaker }) => {
                     {speaker?.sessions?.map((session) => (
                       <li key={session.id}>
                         <StyledTalkDescription
-                          to={`${ROUTE_TALK_DETAIL}/${session.id}`}
+                          to={`${ROUTE_2023_TALK_DETAIL}/${session.id}`}
                         >
                           <StyledSpeakerTitle>
                             <img

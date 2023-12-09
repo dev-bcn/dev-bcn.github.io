@@ -11,6 +11,7 @@ import {
   ROUTE_2023_SPEAKERS,
   ROUTE_2023_TALK_DETAIL_PLAIN,
   ROUTE_2023_TALKS,
+  ROUTE_2023_WORKSHOPS,
   ROUTE_ABOUT_US,
   ROUTE_ATTENDEE,
   ROUTE_CFP,
@@ -74,6 +75,7 @@ import CfpSection2023 from "./2023/Cfp/CfpSection2023";
 import SessionFeedback2023 from "./2023/SessionFeedback/SessionFeedback2023";
 import Kcd from "./views/kcd/Kcd";
 import Schedule2023 from "./2023/Schedule/Schedule2023";
+import Workshops2023 from "./2023/Workshops/Workshops2023";
 
 const StyledAppWrapper = styled.div`
   position: relative;
@@ -149,7 +151,8 @@ const App: FC = () => {
           <Route path={ROUTE_HOME} element={<HomeWrapper />} />
           {/* 2023 Edition */}
           <Route path={ROUTE_2023_HOME} element={<Home2023Wrapper />} />
-          <Route path={ROUTE_2023_SCHEDULE} element={<Schedule2023 />} />¢
+          <Route path={ROUTE_2023_SCHEDULE} element={<Schedule2023 />} />
+          <Route path={ROUTE_2023_WORKSHOPS} element={<Workshops2023 />} />
           <Route
             path={ROUTE_2023_SESSION_FEEDBACK}
             element={<SessionFeedback2023 />}
