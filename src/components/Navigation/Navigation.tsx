@@ -28,40 +28,36 @@ import { HamburgerMenu } from "./HamburgerMenu";
 
 const Navigation: FC = () => {
   const { width } = useWindowSize();
-  const [isOpened, setIsOpen] = useState(false);
+  const [isOpened, setIsOpened] = useState(false);
   const [is2023, setIs2023] = useState(false);
-  const [naviItems, setNavItems] = useState(navigationItems);
+  const [navItems, setNavItems] = useState(navigationItems);
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const handleLogoClick = () => {
     navigate(ROUTE_HOME);
   };
   const handleSetMenu = () => {
-    setIsOpen(!isOpened);
+    setIsOpened(!isOpened);
   };
   const isHomePage = () => {
     return pathname === ROUTE_HOME || pathname === ROUTE_HOME_ALTERNATE;
   };
 
   useEffect(() => {
-    // eslint-disable-next-line no-console
-    console.log(pathname);
     if (pathname.startsWith("/2023")) {
       setIs2023(true);
       setNavItems(navigationItems2023);
-      // eslint-disable-next-line no-console
-      console.log(naviItems);
     } else {
       setNavItems(navigationItems);
     }
-  }, [pathname, naviItems]);
+  }, [pathname, navItems]);
 
   return (
     <>
       <StyledHeaderWrapper>
         <StyledHeader>
           <StyledHeaderLogo src={NavigationLogo} onClick={handleLogoClick} />
-          <HorizontalMenu navItems={naviItems} />
+          <HorizontalMenu navItems={navItems} />
           <HamburgerMenu onClick={handleSetMenu} />
         </StyledHeader>
 
@@ -92,7 +88,7 @@ const Navigation: FC = () => {
                   handleSetMenu();
                 }}
               />
-              {naviItems.map((item) => (
+              {navItems.map((item) => (
                 <StyledLink
                   key={item.id}
                   to={item.link}
