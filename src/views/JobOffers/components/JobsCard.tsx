@@ -10,7 +10,7 @@ import {
   StyledFaqTitle,
 } from "../../Home/components/Faqs/Faqs.style";
 
-type IJobsCardProps = {
+export type IJobsCardProps = {
   offer: Offer;
   index: number;
 };
