@@ -31,11 +31,32 @@ import { Edition } from "../../HomeWrapper";
 import { Link } from "react-router-dom";
 import data from "../../../../data/2023.json";
 
-const StyledLogo = styled.img`
+const StyledDevBcnLogo = styled.img`
   margin: 20px;
   width: 34vw;
   @media (max-width: ${BIG_BREAKPOINT}px) {
     width: 60%;
+  }
+`;
+const StyledKcdLogo = styled.img`
+  margin: 20px;
+  width: 25vw;
+  @media (max-width: ${BIG_BREAKPOINT}px) {
+    width: 40%;
+  }
+`;
+
+const StyledPlusSign = styled.span`
+   {
+    color: white;
+    font-size: 2rem;
+    transform: translateY(-10rem);
+    @media (max-width: ${BIG_BREAKPOINT}px) {
+      font-size: 1.5rem;
+      display: block;
+      padding: 0;
+      margin: 0;
+    }
   }
 `;
 const Home: FC = () => {
@@ -49,8 +70,9 @@ const Home: FC = () => {
       <SectionWrapper color="transparent">
         <StyleHomeContainer>
           <div style={{ paddingTop: "2rem", paddingBottom: "2rem" }}>
-            <StyledLogo src={logo} alt="DevBcn logo" />
-            <StyledLogo src="images/KCD-logo-white.png" alt="KCD Days" />
+            <StyledDevBcnLogo src={logo} alt="DevBcn logo" />
+            <StyledPlusSign>+</StyledPlusSign>
+            <StyledKcdLogo src="images/KCD-logo-white.png" alt="KCD Days" />
           </div>
           <StyledTitleContainer>
             <StyledTitle>
