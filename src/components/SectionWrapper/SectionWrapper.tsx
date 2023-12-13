@@ -6,13 +6,16 @@ const StyledSectionWrapper = styled.div<{
   color: string;
   paddingBottom: number;
 }>`
+  align-items: center;
+  background: ${({ color }) => color};
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  align-items: center;
-  padding-bottom: ${({ paddingBottom }) => paddingBottom}px;
   height: 100%;
-  background: ${({ color }) => color};
+  justify-content: start;
+  padding-bottom: ${({ paddingBottom }) => paddingBottom}px;
+  /* height: 92vh;
+      scroll-snap-align: start;
+      scroll-snap-type: y mandatory;*/
 `;
 
 const StyledInnerWrapper = styled.div<{ marginTop: number }>`

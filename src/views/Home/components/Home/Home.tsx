@@ -4,6 +4,7 @@ import LessThanIcon from "../../../../assets/images/MoreThanBlueWhiteIcon.svg";
 import SectionWrapper from "../../../../components/SectionWrapper/SectionWrapper";
 import {
   BIG_BREAKPOINT,
+  BIGGER_BREAKPOINT,
   LARGE_BREAKPOINT,
 } from "../../../../constants/BreakPoints";
 import TimeCountDown from "./components/TimeCountdown";
@@ -33,29 +34,65 @@ import data from "../../../../data/2023.json";
 
 const StyledDevBcnLogo = styled.img`
   margin: 20px;
-  width: 34vw;
+  height: 20em;
+  transition: height 0.2s ease-in-out;
+  @media (max-width: ${BIGGER_BREAKPOINT}px) {
+    height: 15rem;
+  }
   @media (max-width: ${BIG_BREAKPOINT}px) {
-    width: 60%;
+    height: 8rem;
   }
 `;
 const StyledKcdLogo = styled.img`
-  margin: 20px;
-  width: 25vw;
+  margin-top: 4em;
+  margin-left: 2em;
+  height: 13rem;
+  transition: height 0.2s ease-in-out;
+  @media (max-width: ${BIGGER_BREAKPOINT}px) {
+    height: 9.5rem;
+    margin: 0;
+  }
   @media (max-width: ${BIG_BREAKPOINT}px) {
-    width: 40%;
+    margin-top: 0;
+    margin-left: 2.5em;
+    margin-right: 2.5em;
+    padding: 1em;
+    height: 6em;
   }
 `;
-
 const StyledPlusSign = styled.span`
    {
     color: white;
-    font-size: 2rem;
-    transform: translateY(-10rem);
+    font-size: 5em;
+    display: block;
+    padding-top: 1.5em;
+    text-shadow: 3px 3px #000;
+    transition: height 0.2s ease-in-out;
+    @media (max-width: ${BIGGER_BREAKPOINT}px) {
+      margin: 0;
+      padding: 0;
+      font-size: 3em;
+    }
     @media (max-width: ${BIG_BREAKPOINT}px) {
       font-size: 1.5rem;
-      display: block;
       padding: 0;
       margin: 0;
+    }
+  }
+`;
+
+const StyledLogoDiv = styled.div`
+   {
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+    display: flex;
+
+    @media (max-width: ${BIGGER_BREAKPOINT}px) {
+      flex-direction: column;
+    }
+
+    @media (max-width: ${BIG_BREAKPOINT}px) {
+      flex-direction: column;
     }
   }
 `;
@@ -69,11 +106,11 @@ const Home: FC = () => {
     <StyledHomaImage>
       <SectionWrapper color="transparent">
         <StyleHomeContainer>
-          <div style={{ paddingTop: "2rem", paddingBottom: "2rem" }}>
+          <StyledLogoDiv>
             <StyledDevBcnLogo src={logo} alt="DevBcn logo" />
             <StyledPlusSign>+</StyledPlusSign>
             <StyledKcdLogo src="images/KCD-logo-white.png" alt="KCD Days" />
-          </div>
+          </StyledLogoDiv>
           <StyledTitleContainer>
             <StyledTitle>
               The Barcelona Developers Conference {edition?.edition}
