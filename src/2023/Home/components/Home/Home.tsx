@@ -26,6 +26,7 @@ import ActionButtons from "../ActionButtons/ActionButtons";
 import styled from "styled-components";
 import { Color } from "../../../../styles/colors";
 import InfoButtons from "../InfoButtons/InfoButtons";
+import MultimediaInfoButtons from "../MultimediaInfoButtons/MultimediaInfoButtons";
 
 const StyledLogo = styled.img`
   margin: 20px;
@@ -80,6 +81,10 @@ const Home: FC = () => {
           )}
           {data.actionButtons && <ActionButtons />}
           {data.showInfoButtons && <InfoButtons />}
+          <h2 style={{ color: Color.LIGHT_BLUE, textShadow: "1px 1px #000" }}>
+            DevBcn 2023 edition resources
+          </h2>
+          <MultimediaInfoButtons />
           {width > LARGE_BREAKPOINT && <StyledLessThan src={LessThanIcon} />}
           <StyledTopSlash
             initial={{ x: "100%" }}
