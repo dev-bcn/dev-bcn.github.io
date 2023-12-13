@@ -23,7 +23,7 @@ describe("ActionButtons", () => {
 
   test("calls gaEventTracker with correct parameters on attendee button click", () => {
     render(<MultimediaInfoButtons />);
-    const flickrButton = screen.getByText("flickr");
+    const flickrButton = screen.getByText("Flickr");
 
     fireEvent.click(flickrButton);
 
