@@ -1,13 +1,14 @@
 import { AnimatePresence } from "framer-motion";
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
-import { useHistory, useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Breadcrumbs from "./Breadcrumbs";
 import CloseIcon from "../../assets/images/CloseIcon.svg";
 import NavigationLogo from "../../assets/images/devBcn.png";
 import { ROUTE_HOME, ROUTE_HOME_ALTERNATE } from "../../constants/routes";
 import TicketsImage from "../../assets/images/TicketsImage.svg";
 import { navigationItems } from "./NavigationData";
+import { navigationItems2023 } from "../../2023/Navigation/NavigationData2023";
 import { useWindowSize } from "react-use";
 import {
   StyledClipPath,
@@ -27,25 +28,36 @@ import { HamburgerMenu } from "./HamburgerMenu";
 
 const Navigation: FC = () => {
   const { width } = useWindowSize();
-  const [isOpened, setIsOpen] = useState(false);
+  const [isOpened, setIsOpened] = useState(false);
+  const [is2023, setIs2023] = useState(false);
+  const [navItems, setNavItems] = useState(navigationItems);
   const { pathname } = useLocation();
-  const history = useHistory();
+  const navigate = useNavigate();
   const handleLogoClick = () => {
-    history.push(ROUTE_HOME);
+    navigate(ROUTE_HOME);
   };
   const handleSetMenu = () => {
-    setIsOpen(!isOpened);
+    setIsOpened(!isOpened);
   };
   const isHomePage = () => {
     return pathname === ROUTE_HOME || pathname === ROUTE_HOME_ALTERNATE;
   };
+
+  useEffect(() => {
+    if (pathname.startsWith("/2023")) {
+      setIs2023(true);
+      setNavItems(navigationItems2023);
+    } else {
+      setNavItems(navigationItems);
+    }
+  }, [pathname, navItems]);
 
   return (
     <>
       <StyledHeaderWrapper>
         <StyledHeader>
           <StyledHeaderLogo src={NavigationLogo} onClick={handleLogoClick} />
-          <HorizontalMenu />
+          <HorizontalMenu navItems={navItems} />
           <HamburgerMenu onClick={handleSetMenu} />
         </StyledHeader>
 
@@ -72,23 +84,28 @@ const Navigation: FC = () => {
               <StyledNavigationLogo
                 src={NavigationLogo}
                 onClick={() => {
-                  history.push(ROUTE_HOME);
+                  navigate(ROUTE_HOME);
                   handleSetMenu();
                 }}
               />
-              {navigationItems.map((item) => (
+              {navItems.map((item) => (
                 <StyledLink
                   key={item.id}
                   to={item.link}
                   onClick={handleSetMenu}
-                  activeClassName="isActive"
-                  exact={true}
+                  className={({ isActive }) =>
+                    "nav-link" + (isActive ? " isActive" : "")
+                  }
                 >
                   {item.id}
                 </StyledLink>
               ))}
               <StyledTicketLink
-                href="https://tickets.devbcn.com/event/devbcn-2023"
+                href={
+                  is2023
+                    ? "https://tickets.devbcn.com/event/devbcn-2023"
+                    : "https://tickets.devbcn.com/event/devbcn-2024"
+                }
                 target="_blank"
                 rel="noreferrer"
               >

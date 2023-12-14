@@ -5,7 +5,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
 import ReactGa from "react-ga";
-import { BrowserTracing } from "@sentry/tracing";
+import { BrowserTracing } from "@sentry/browser";
 import * as Sentry from "@sentry/react";
 import Loading from "./components/Loading/Loading";
 

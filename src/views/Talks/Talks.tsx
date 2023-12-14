@@ -4,7 +4,7 @@ import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import TitleSection from "../../components/SectionTitle/TitleSection";
 import { Color } from "../../styles/colors";
-import conferenceData from "../../data/2023.json";
+import conferenceData from "../../data/2024.json";
 import {
   StyledMarginBottom,
   StyledSpeakersSection,
@@ -104,31 +104,33 @@ const Talks: FC = () => {
       <SectionWrapper color={Color.LIGHT_BLUE} marginTop={1}>
         <section>
           {isLoading && <h1>Loading </h1>}
-          {data && data?.length === 0 && (
+          {conferenceData.hideTalks ? (
             <p style={{ color: Color.WHITE, textAlign: "center" }}>
               No talks selected yet. Keep in touch in our social media for
               upcoming announcements
             </p>
-          )}
-          {filteredTalks && Array.isArray(filteredTalks) && (
-            <>
-              <div style={{ margin: "10px" }}>
-                <label htmlFor="group-id-select">
-                  <strong>Filter by Track: </strong>
-                </label>
-                <Dropdown
-                  value={selectedGroupId}
-                  onChange={onChangeSelectedTrack}
-                  options={dropDownOptions}
-                  placeholder="Select Track"
-                  optionLabel="name"
-                  className="w-full md:w-14rem"
-                />
-              </div>
-              {filteredTalks.map((track) => (
-                <TrackInformation key={track.groupId} track={track} />
-              ))}
-            </>
+          ) : (
+            filteredTalks &&
+            Array.isArray(filteredTalks) && (
+              <>
+                <div style={{ margin: "10px" }}>
+                  <label htmlFor="group-id-select">
+                    <strong>Filter by Track: </strong>
+                  </label>
+                  <Dropdown
+                    value={selectedGroupId}
+                    onChange={onChangeSelectedTrack}
+                    options={dropDownOptions}
+                    placeholder="Select Track"
+                    optionLabel="name"
+                    className="w-full md:w-14rem"
+                  />
+                </div>
+                {filteredTalks.map((track) => (
+                  <TrackInformation key={track.groupId} track={track} />
+                ))}
+              </>
+            )
           )}
         </section>
         <StyledMarginBottom />

@@ -1,10 +1,8 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { Supporters } from "./Supporters";
-import { createMemoryHistory } from "history";
-import { ROUTE_HOME } from "../../../../constants/routes";
 import React from "react";
-import { Router } from "react-router-dom";
 import { useWindowSize } from "react-use";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 jest.mock("react-use", () => ({
   useWindowSize: jest.fn(),
@@ -18,15 +16,16 @@ describe("Supporters", () => {
   afterEach(() => {
     jest.clearAllMocks();
   });
-  it("renders component with supporters", () => {
-    const history = createMemoryHistory();
-    history.push(ROUTE_HOME);
+
+  // disabled until supporters included
+  it.skip("renders component with supporters", () => {
     render(
       <React.Suspense fallback={<span>Loading...</span>}>
-        <Router history={history}>
-          <Supporters />
-        </Router>
-      </React.Suspense>
+        <Routes>
+          <Route path={""} element={<Supporters />} />
+        </Routes>
+      </React.Suspense>,
+      { wrapper: BrowserRouter }
     );
 
     expect(screen.getByTestId("supporters")).toBeInTheDocument();
@@ -34,15 +33,14 @@ describe("Supporters", () => {
     expect(screen.getAllByRole("link")).toHaveLength(5);
   });
 
-  it("applies hover styles on mouse enter", () => {
-    const history = createMemoryHistory();
-    history.push(ROUTE_HOME);
+  it.skip("applies hover styles on mouse enter", () => {
     render(
       <React.Suspense fallback={<span>Loading...</span>}>
-        <Router history={history}>
-          <Supporters />
-        </Router>
-      </React.Suspense>
+        <Routes>
+          <Route path={"*"} element={<Supporters />} />
+        </Routes>
+      </React.Suspense>,
+      { wrapper: BrowserRouter }
     );
     const supportersElement = screen.getByTestId("supporters");
 
@@ -54,24 +52,21 @@ describe("Supporters", () => {
     );
   });
 
-  it("removes hover styles on mouse leave", () => {
-    const history = createMemoryHistory();
-    history.push(ROUTE_HOME);
+  it.skip("removes hover styles on mouse leave", () => {
     render(
       <React.Suspense fallback={<span>Loading...</span>}>
-        <Router history={history}>
-          <Supporters />
-        </Router>
-      </React.Suspense>
+        <Routes>
+          <Route path={"*"} element={<Supporters />} />
+        </Routes>
+      </React.Suspense>,
+      { wrapper: BrowserRouter }
     );
-    const supportersElement = screen.getByTestId("supporters");
+    const supporterElement = screen.getByTestId("supporters");
 
-    fireEvent.mouseEnter(supportersElement);
-    fireEvent.mouseLeave(supportersElement);
+    fireEvent.mouseEnter(supporterElement);
+    fireEvent.mouseLeave(supporterElement);
 
-    expect(supportersElement).not.toHaveClass("hovered");
+    expect(supporterElement).not.toHaveClass("hovered");
     expect(screen.getByText("SUPPORTERS")).toHaveStyle("color: rgb(0, 36, 84)");
   });
-
-  // Add more test cases as needed
 });

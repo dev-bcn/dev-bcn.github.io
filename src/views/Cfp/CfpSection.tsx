@@ -17,7 +17,7 @@ import {
   StyledAboutImage,
   StyledSocialIconsWrapper,
 } from "../About/components/Style.AboutCard";
-import conferenceData from "../../data/2023.json";
+import conferenceData from "../../data/2024.json";
 import { CfpTrackProps, data } from "./CfpData";
 import styled from "styled-components";
 

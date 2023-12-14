@@ -17,7 +17,7 @@ import {
   StyledSpeakersSection,
   StyledWaveContainer,
 } from "./Speakers.style";
-import webData from "../../data/2023.json";
+import webData from "../../data/2024.json";
 import Button from "../../components/UI/Button";
 import { gaEventTracker } from "../../components/analytics/Analytics";
 import { useFetchSpeakers } from "./UseFetchSpeakers";
@@ -87,15 +87,16 @@ const Speakers: FC = () => {
                 />
               </div>
             )}
-            {data?.length === 0 && (
+            {webData.hideSpeakers ? (
               <p style={{ color: Color.WHITE }}>
                 No selected speakers yet. Keep in touch in our social media for
                 upcoming announcements
               </p>
+            ) : (
+              data?.map((speaker: ISpeaker) => (
+                <SpeakerCard key={speaker.id} speaker={speaker} />
+              ))
             )}
-            {data?.map((speaker: ISpeaker) => (
-              <SpeakerCard key={speaker.id} speaker={speaker} />
-            ))}
           </SpeakersCardsContainer>
           <StyledContainerRightSlash
             initial={{ x: "100%" }}

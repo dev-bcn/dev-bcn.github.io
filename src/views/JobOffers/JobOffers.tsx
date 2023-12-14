@@ -8,7 +8,7 @@ import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import TitleSection from "../../components/SectionTitle/TitleSection";
 import { useWindowSize } from "react-use";
-import data from "../../data/2023.json";
+import data from "../../data/2024.json";
 import {
   Companies,
   CompanyNameLink,

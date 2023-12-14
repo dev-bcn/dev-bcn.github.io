@@ -1,5 +1,5 @@
 import { Color } from "../../../../styles/colors";
-import { FC, Suspense } from "react";
+import { FC, Suspense, useState } from "react";
 import FaqCard from "./components/FaqsCard";
 import LessThanIcon from "../../../../assets/images/LessThanBlueIcon.svg";
 import MoreThanIcon from "../../../../assets/images/LessThanBlueWhiteIcon.svg";
@@ -9,9 +9,8 @@ import { useWindowSize } from "react-use";
 import { MOBILE_BREAKPOINT } from "../../../../constants/BreakPoints";
 import flickr from "../../../../assets/images/flickr.svg";
 import youtube from "../../../../assets/images/youtube.svg";
-import jbcnconf from "../../../../assets/images/jbcnconf-1.jpg";
-import jbcnconf2 from "../../../../assets/images/jbcnconf-2.jpg";
-import slides from "../../../../assets/images/slides.png";
+import image1 from "../../../../assets/images/devbcn-1.jpg";
+import image2 from "../../../../assets/images/devbcn2.jpg";
 import Logo from "../../../../assets/images/logo.svg";
 import { StyledLoadingImage } from "../../../../components/Loading/Loading";
 import {
@@ -23,9 +22,29 @@ import {
   StyleLessIcon,
   StyleMoreIcon,
 } from "./Faqs.style";
+import styled from "styled-components";
+import { useEventEdition } from "../../UseEventEdition";
+import { Edition } from "../../HomeWrapper";
+
+const StyledSummaryLink = styled.a`
+   {
+    color: ${Color.LIGHT_BLUE};
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &:hover {
+    font-weight: bold;
+    color: ${Color.YELLOW};
+  }
+`;
 
 const Faqs: FC = () => {
   const { width } = useWindowSize();
+  const [edition, setEdition] = useState<Edition>();
+
+  useEventEdition(setEdition);
+
   return (
     <>
       <SectionWrapper color={Color.DARK_BLUE}>
@@ -35,40 +54,41 @@ const Faqs: FC = () => {
           ))}
           <div id="last-jbcnconf">&nbsp;</div>
           <div style={{ width: "60%" }}>
-            <StyledH2>Check last JBCNConf edition</StyledH2>
+            <StyledH2>Check last DevBcn edition</StyledH2>
             <Suspense fallback={<StyledLoadingImage src={Logo} />}>
-              <StyledImage src={jbcnconf} alt="JBCNConf" />
+              <StyledImage src={image1} alt="JBCNConf" />
             </Suspense>
             <Suspense fallback={<StyledLoadingImage src={Logo} />}>
-              <StyledImage src={jbcnconf2} alt="JBCNConf - Keynote" />
+              <StyledImage src={image2} alt="JBCNConf - Keynote" />
             </Suspense>
             <StyledP>
               DevBcn is the rebranding of the biggest Java & JVM conference in
               Spain, now including more technologies and tracks.
             </StyledP>
             <StyledP>
-              Check for videos/photos and summary of the JBCNConf - 2022 edition
+              Check for videos/photos and{" "}
+              <StyledSummaryLink
+                href="https://youtu.be/6ZxsMUYBrSo"
+                rel="noreferrer"
+                target="_blank"
+              >
+                summary of the DevBcn -{" "}
+                {parseInt(edition?.edition as string) - 1} edition
+              </StyledSummaryLink>
             </StyledP>
             <a
-              href="https://www.flickr.com/photos/barcelonajug/collections/72157720937175671/"
+              href="https://www.flickr.com/photos/devbcn/albums"
               rel="noreferrer"
               target="_blank"
             >
               <img src={flickr} alt="flickr" height={32} width={32} />
             </a>
             <a
-              href="https://www.youtube.com/watch?v=zFPpwRyl4Iw&list=PLo0fJV3LkR3z42GevLgXlQfNFP2qfgtrq"
+              href="https://www.youtube.com/watch?v=Pv4kEMRE-kg&list=PLzJFNZtyAbyzmAAKzx1COeIBEGFgPA_og"
               rel="noreferrer"
               target="_blank"
             >
               <img src={youtube} alt="Youtube" height={32} width={32} />
-            </a>
-            <a
-              href="https://docs.google.com/presentation/d/1t1RnYOqcoP8Bo1GVyiGyW-mY_2bBpUspnW8nqXDUbGI/edit?usp=sharing"
-              rel="noreferrer"
-              target="_blank"
-            >
-              <img src={slides} alt="Summary Slides" height={32} width={32} />
             </a>
           </div>
           {width > MOBILE_BREAKPOINT && (

@@ -1,5 +1,7 @@
 BvU
 DOM
+CFP
+Cfp
 DevBCN
 DevBcn
 ESLint
@@ -9,6 +11,7 @@ LkR
 PLo
 StyledSelectTrack
 Twitter
+Veepee
 amycuddyTED
 analytics
 devbcn
@@ -48,6 +51,7 @@ selectedGroupId
 svg
 toHaveTextContent
 twimg
+veepee
 vilojona
 webfonts
 webpack
@@ -56,5 +60,3 @@ wikipedia
 www
 xSBqFVCYSpsyuO
 youtube
-Veepee
-veepee

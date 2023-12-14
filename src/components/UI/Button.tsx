@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC, ReactNode } from "react";
 import styled from "styled-components";
 import { Color } from "../../styles/colors";
 import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
@@ -6,10 +6,17 @@ import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
 interface ButtonProps {
   text: string;
   link: string;
-  onClick: any;
+  onClick: () => void;
   disabled?: boolean;
   target?: string;
+  children?: ReactNode;
 }
+
+const doNothingHandler = (
+  event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+) => {
+  event.preventDefault();
+};
 
 const StyledActionButton = styled.div`
   background-color: ${Color.LIGHT_BLUE};
@@ -60,23 +67,30 @@ const Button: FC<ButtonProps> = ({
   onClick,
   disabled,
   target = "_blank",
+  children,
 }) => {
   return (
     <StyledActionButton className="hvr-bounce-in">
-      <a
-        onClick={onClick}
-        href={link}
-        target={target}
-        rel="noreferrer nofollow"
-      >
-        {text}
-        {disabled && (
-          <>
-            <br />
-            <small>opening January 1st</small>
-          </>
-        )}
-      </a>
+      <>
+        <a
+          onClick={disabled ? doNothingHandler : onClick}
+          href={disabled ? "https://devbcn.com" : link}
+          target={target}
+          rel="noreferrer nofollow"
+          aria-disabled={disabled}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            textDecoration: "none",
+            flexWrap: "wrap",
+          }}
+        >
+          {children}
+          <span>{`  ${text}`}</span>
+        </a>
+        {disabled && <small>opening January 1st</small>}
+      </>
     </StyledActionButton>
   );
 };

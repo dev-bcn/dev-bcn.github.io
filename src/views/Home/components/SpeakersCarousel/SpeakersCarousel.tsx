@@ -65,10 +65,7 @@ const SpeakersCarousel: FC = () => {
         <StyledTitleWrapper>
           <TitleSection
             title="SPEAKERS"
-            subtitle="Are you a technology company? Interested in meeting
-        enthusiasts and geek people for technology? This is a
-        priceless opportunity to participate in the first Barcelona Developers Conference in Spain, to pr mote your company
-        and to support technological communities."
+            subtitle="Are you passionate about tech and love sharing ideas? Don't miss out on DevBcn! It's a fantastic chance to connect with like-minded techies, showcase your expertise, and contribute to the vibrant tech community. Join us as a speaker and make an impact! Let's innovate and inspire together at this exciting event"
             color={Color.WHITE}
           />
         </StyledTitleWrapper>

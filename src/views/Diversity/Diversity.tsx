@@ -1,6 +1,6 @@
 import { FC, useEffect } from "react";
 import { Color } from "../../styles/colors";
-import data from "../../data/2023.json";
+import data from "../../data/2024.json";
 import styled from "styled-components";
 import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
 import { Link } from "react-router-dom";

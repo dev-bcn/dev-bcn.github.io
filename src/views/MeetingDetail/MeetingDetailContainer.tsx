@@ -4,7 +4,7 @@ import NotFoundError from "../../components/NotFoundError/NotFoundError";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import styled from "styled-components";
 import { useParams } from "react-router-dom";
-import conferenceData from "../../data/2023.json";
+import conferenceData from "../../data/2024.json";
 import { sessionAdapter, useFetchTalksById } from "../Talks/UseFetchTalks";
 import * as Sentry from "@sentry/react";
 import { useFetchSpeakers } from "../Speakers/UseFetchSpeakers";
@@ -17,7 +17,7 @@ const StyledContainer = styled.div`
 `;
 const MeetingDetailContainer: FC = () => {
   const { id } = useParams<{ id: string }>();
-  const { isLoading, error, data } = useFetchTalksById(id);
+  const { isLoading, error, data } = useFetchTalksById(id!!);
   const { data: speakerData } = useFetchSpeakers();
 
   const getTalkSpeakers = (

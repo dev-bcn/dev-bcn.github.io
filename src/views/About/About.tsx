@@ -15,7 +15,7 @@ import {
   StyledSpeakersSection,
 } from "../Speakers/Speakers.style";
 import { StyledMarginBottom } from "../Talks/Talks.style";
-import data from "../../data/2023.json";
+import data from "../../data/2024.json";
 
 const StyledUsersWrapper = styled.div`
   padding-top: 5rem;

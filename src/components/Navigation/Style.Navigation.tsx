@@ -62,7 +62,7 @@ export const StyledLink = styled(NavLink)`
     color: ${Color.MAGENTA};
   }
 
-  &.${(props) => props.activeClassName} {
+  &.${(props) => props.is} {
     &:before {
       content: "/   ";
       font-family: "Square 721 Regular", sans-serif;

@@ -1,32 +1,41 @@
 {
   "actionButtons": true,
-  "edition": "2023",
-  "startDay": "2023-07-03T09:00:00",
-  "endDay": "2023-07-05T14:00:00",
-  "tracks": "Java | JVM | Go, Rust, C++, C# | Cloud, DevOps, VMs, Kubernetes | Frontend | Leadership, Agile, Diversity | Big Data, Machine Learning, AI, Python",
-  "email": "info@devbcn.com",
-  "twitter": "https://twitter.com/dev_bcn",
-  "youtube": "https://www.youtube.com/dev_bcn",
-  "facebook": "https://facebook.com/devbcn",
-  "github": "https://github.com/devbcn",
-  "linkedin": "https://www.linkedin.com/company/devbcn",
-  "showInfoButtons": true,
-  "tickets": {
-    "startDay": "2022-11-01T00:00:00",
-    "endDay": "2023-06-26T00:00:00"
+  "carrousel": {
+    "enabled": false
   },
   "cfp": {
     "startDay": "2022-11-01T00:00:00",
     "endDay": "2023-03-15T00:00:00"
   },
-  "carrousel": {
-    "enabled": false
-  },
-  "schedule": {
-    "enabled": true
-  },
+  "diversity": true,
+  "edition": "2023",
+  "email": "info@devbcn.com",
+  "endDay": "2023-07-05T14:00:00",
+  "facebook": "https://facebook.com/devbcn",
+  "flickr": "https://flickr.com/devbcn",
+  "github": "https://github.com/devbcn",
+  "hideSpeakers": false,
+  "hideTalks": false,
   "jobOffers": {
     "enabled": true
   },
-  "diversity": true
+  "linkedin": "https://www.linkedin.com/company/devbcn",
+  "schedule": {
+    "enabled": true
+  },
+  "showInfoButtons": true,
+  "showCountdown": false,
+  "sponsors": {
+    "startDate": "2022-01-01T09:00:00",
+    "endDate": "2023-07-13T09:00:00"
+  },
+  "startDay": "2023-07-03T09:00:00",
+  "tickets": {
+    "startDay": "2022-11-01T00:00:00",
+    "endDay": "2023-06-26T00:00:00"
+  },
+  "trackNumber": 7,
+  "tracks": "Java | JVM | Go, Rust, C++, C# | Cloud, DevOps, VMs, Kubernetes | Frontend | Leadership, Agile, Diversity | Big Data, Machine Learning, AI, Python",
+  "twitter": "https://twitter.com/dev_bcn",
+  "youtube": "https://www.youtube.com/dev_bcn"
 }

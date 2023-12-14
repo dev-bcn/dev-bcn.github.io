@@ -5,7 +5,7 @@ import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import SpeakerDetail from "./SpeakerDetail";
 import { useParams } from "react-router-dom";
 import { StyledContainer, StyledWaveContainer } from "./Speaker.style";
-import conferenceData from "../../data/2023.json";
+import conferenceData from "../../data/2024.json";
 import { useFetchSpeakers } from "../Speakers/UseFetchSpeakers";
 import * as Sentry from "@sentry/react";
 

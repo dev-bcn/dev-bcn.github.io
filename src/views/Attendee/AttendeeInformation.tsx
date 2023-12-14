@@ -1,7 +1,9 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { Color } from "../../styles/colors";
 import styled from "styled-components";
 import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
+import data from "../../data/2024.json";
+import { format } from "date-fns";
 
 const PrePartyImg = styled.img`
    {
@@ -60,6 +62,12 @@ const SectionWrapper = styled.div`
 `;
 
 const AttendeeInformation: FC = () => {
+  const formattedDate = format(new Date(data.startDay), "EEEE, MMMM do");
+
+  useEffect(() => {
+    document.title = "Attendee information - DevBcn " + data.edition;
+  }, []);
+
   return (
     <main>
       <h1 style={{ color: Color.LIGHT_BLUE, paddingTop: "100px" }}>
@@ -67,7 +75,7 @@ const AttendeeInformation: FC = () => {
       </h1>
       <p style={{ margin: "20px" }}>
         Here's some important information to get the most of your attendance to
-        DevBcn 2023.
+        DevBcn {data.edition}.
       </p>
       <PrePartySection id="pre-party">
         <SectionWrapper>
@@ -80,10 +88,10 @@ const AttendeeInformation: FC = () => {
               rel="noreferrer noopener"
               href="https://www.azul.com/?utm_medium=email&utm_campaign=20230703-SEV-DevBCN&utm_source=DevBCN&utm_content=&utm_term="
             >
-              Azul
+              <strong>Azul</strong>
             </a>{" "}
             for all attendees on{" "}
-            <strong>Monday, July 3rd from 19:00 to 20:00</strong>. During this
+            <strong>{formattedDate} from 19:00 to 20:00</strong>. During this
             time, you can unwind, socialize, and have a great time with fellow
             participants. Indulge in tasty snacks and beverages while engaging
             in friendly games of air hockey and table football. It's a fantastic
@@ -151,7 +159,7 @@ const AttendeeInformation: FC = () => {
           <p
             style={{ color: Color.WHITE, margin: "20px", textAlign: "center" }}
           >
-            <strong>Monday, July 3rd from 20:00 to 22:00</strong>
+            <strong>{formattedDate} from 20:00 to 22:00</strong>
           </p>
           <PartyImg src="/images/party/party-1.jpg" alt="party" />
           <PartyImg src="/images/party/party-2.jpg" alt="party" />
