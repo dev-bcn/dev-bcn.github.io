@@ -1,9 +1,9 @@
 import { FC } from "react";
-import { Autoplay, Parallax } from "swiper";
+import { Autoplay, Parallax } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import styled from "styled-components";
 import { Color } from "../../../../styles/colors";
-import "swiper/swiper-bundle.min.css";
+import "swiper/swiper-bundle.css";
 import "./SpeakersCarousel.scss";
 import { Link } from "react-router-dom";
 import conferenceData from "../../../../data/2024.json";
