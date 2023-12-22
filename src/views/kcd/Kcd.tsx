@@ -42,7 +42,7 @@ const StyledWaveContainer = styled.div`
 export default function Kcd() {
   const { width } = useWindowSize();
   useEffect(() => {
-    document.title = `Code of Conduct- DevBcn ${data.edition}`;
+    document.title = `KCD Spain- DevBcn ${data.edition}`;
   });
   return (
     <>
@@ -55,8 +55,8 @@ export default function Kcd() {
           />
           {width > MOBILE_BREAKPOINT && (
             <>
-              <StyledLessIcon src={LessThanBlue} />
-              <StyledMoreIcon src={MoreThanBlue} />
+              <StyledLessIcon alt="LessThanBlueWhiteIcon" src={LessThanBlue} />
+              <StyledMoreIcon alt="MoreThanBlue" src={MoreThanBlue} />
             </>
           )}
         </StyledSpeakersSection>
@@ -101,14 +101,14 @@ export default function Kcd() {
             target="_blank"
             rel="noreferrer"
           >
-            <img src={twitterIcon} alt="Youtube" height={32} width={32} />
+            <img src={twitterIcon} alt="Twitter" height={32} width={32} />
           </a>
           <a
             href="https://www.linkedin.com/company/kcdspain/"
             target="_blank"
             rel="noreferrer"
           >
-            <img src={linkedinIcon} alt="Youtube" height={32} width={32} />
+            <img src={linkedinIcon} alt="LinkedIn" height={32} width={32} />
           </a>
           <a
             href="https://www.youtube.com/channel/UC2666lycS6cx5a8KL_hBhKA"
