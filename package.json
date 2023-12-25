@@ -88,7 +88,7 @@
     "@types/jest": "^29.5.2",
     "@types/react-router-dom": "^5.3.3",
     "@types/styled-components": "^5.1.26",
-    "eslint": "^8.40.0",
+    "eslint": "^8.56.0",
     "gh-pages": "^5.0.0",
     "prettier": "^2.8.8",
     "react-ga": "^3.3.1",
