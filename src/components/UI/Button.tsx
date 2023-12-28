@@ -43,8 +43,10 @@ const StyledActionButton = styled.div`
     background-color: ${Color.DARK_BLUE};
     transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
   }
+`;
 
-  a {
+const StyledLink = styled.a`
+   {
     text-decoration: none;
     text-shadow: 1px 1px 1px #000;
     color: white;
@@ -53,11 +55,13 @@ const StyledActionButton = styled.div`
     vertical-align: middle;
   }
 
-  a:hover {
+  &:hover {
     background-color: transparent;
   }
+`;
 
-  small {
+const StyledSmall = styled.small`
+   {
     font-weight: bold;
     font-size: 0.7em;
     color: ${Color.MAGENTA};
@@ -65,7 +69,7 @@ const StyledActionButton = styled.div`
     transition: color ease-in-out 0.5s;
   }
 
-  small:hover {
+  &:hover {
     color: ${Color.WHITE};
     background-color: transparent;
   }
@@ -82,7 +86,7 @@ const Button: FC<ButtonProps> = ({
   return (
     <StyledActionButton className="hvr-bounce-in">
       <>
-        <a
+        <StyledLink
           onClick={disabled ? doNothingHandler : onClick}
           href={disabled ? "https://devbcn.com" : link}
           target={target}
@@ -98,8 +102,8 @@ const Button: FC<ButtonProps> = ({
         >
           {children}
           <span>{`  ${text}`}</span>
-        </a>
-        {disabled && <small>opening January 1st</small>}
+        </StyledLink>
+        {disabled && <StyledSmall>opening January 1st</StyledSmall>}
       </>
     </StyledActionButton>
   );
