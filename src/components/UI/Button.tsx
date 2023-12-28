@@ -23,7 +23,7 @@ const StyledActionButton = styled.div`
   text-align: center;
   font-size: 1.3em;
   min-width: 200px;
-  margin: 20px 1px;
+  margin: 20px 5px;
   border-radius: 5px;
   box-shadow: 1px 1px 1px #000;
   padding: 10px 15px;
@@ -39,9 +39,7 @@ const StyledActionButton = styled.div`
   :focus,
   :active {
     background-color: ${Color.DARK_BLUE};
-    transform: scale(1.2);
     transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
-    margin: 20px 50px;
   }
 
   a {
