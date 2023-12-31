@@ -4,12 +4,16 @@ import { FC } from "react";
 import { Link } from "react-router-dom";
 import LessThanBlueWhiteIcon from ".././../../../assets/images/MoreThanBlueIcon.svg";
 import SectionWrapper from "../../../../components/SectionWrapper/SectionWrapper";
-import { TABLET_BREAKPOINT } from "../../../../constants/BreakPoints";
+import {
+  BIGGER_BREAKPOINT,
+  TABLET_BREAKPOINT,
+} from "../../../../constants/BreakPoints";
 import TitleSection from "../../../../components/SectionTitle/TitleSection";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import { ROUTE_SPEAKERS } from "../../../../constants/routes";
 import SpeakerSwiper from "./SpeakerSwiper";
+import { useWindowSize } from "react-use";
 
 const StyledSpeakersContainer = styled.section`
   background-color: ${Color.LIGHT_BLUE};
@@ -59,6 +63,7 @@ const StyledBlueSlash = styled(motion.p)`
 `;
 
 const SpeakersCarousel: FC = () => {
+  const { width } = useWindowSize();
   return (
     <SectionWrapper color={Color.LIGHT_BLUE}>
       <StyledSpeakersContainer>
@@ -81,10 +86,12 @@ const SpeakersCarousel: FC = () => {
           animate={{ x: 0 }}
           transition={{ duration: 6 }}
         >
-          <StyledBlueSlash>
-            / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
-            / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /{" "}
-          </StyledBlueSlash>
+          {width > BIGGER_BREAKPOINT && (
+            <StyledBlueSlash>
+              / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+              / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /{" "}
+            </StyledBlueSlash>
+          )}
         </StyledBottomSlash>
       </StyledSpeakersContainer>
     </SectionWrapper>
