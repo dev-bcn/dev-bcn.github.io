@@ -19,12 +19,10 @@ import linkedinIcon from "../../assets/images/linkedinIcon.svg";
 import twitterIcon from "../../assets/images/twitterIcon.svg";
 
 const StyledParagraph = styled.p`
-   {
-    color: white;
-    text-align: left;
-    padding: 1rem 5rem;
-    margin: 0 10rem;
-  }
+  color: white;
+  text-align: left;
+  padding: 1rem 5rem;
+  margin: 0 10rem;
 
   a {
     color: ${Color.LIGHT_BLUE};

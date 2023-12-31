@@ -18,30 +18,13 @@ import {
   StyledH2,
   StyledImage,
   StyledP,
+  StyledSummaryLink,
   StyledWaveContainer,
   StyleLessIcon,
   StyleMoreIcon,
 } from "./Faqs.style";
-import styled from "styled-components";
 import { useEventEdition } from "../../UseEventEdition";
 import { Edition } from "../../HomeWrapper";
-
-const StyledSummaryLink = styled.a`
-  color: ${Color.LIGHT_BLUE};
-  text-decoration: none !important;
-  transition: all 0.25s ease-in-out;
-
-  &:hover {
-    font-weight: bold;
-    text-decoration: none;
-    color: ${Color.YELLOW};
-  }
-
-  &:visited {
-    color: ${Color.MAGENTA};
-    text-decoration: none;
-  }
-`;
 
 const Faqs: FC = () => {
   const { width } = useWindowSize();
