@@ -19,34 +19,26 @@ const doNothingHandler = (
 };
 
 const StyledActionButton = styled.div`
-   {
-    background-color: ${Color.LIGHT_BLUE};
-    text-align: center;
-    font-size: 1.3em;
-    min-width: 200px;
-    margin: 20px 5px;
-    border-radius: 5px;
-    box-shadow: 1px 1px 1px #000;
-    padding: 10px 15px;
-    transform: perspective(1px) translateZ(0);
-    transition-duration: 0.5s;
-    vertical-align: middle;
-  }
+  background-color: ${Color.LIGHT_BLUE};
+  text-align: center;
+  font-size: 1.3em;
+  min-width: 200px;
+  margin: 20px 5px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px #000;
+  padding: 10px 15px;
+  transform: perspective(1px) translateZ(0);
+  transition-duration: 0.5s;
+  vertical-align: middle;
 
-  @media (max-width: ${BIG_BREAKPOINT}px) {
-    margin: 5px 1px;
-  }
-
-  :hover,
-  :focus,
-  :active {
+  &:hover,
+  &:focus,
+  &:active {
     background-color: ${Color.DARK_BLUE};
     transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
   }
-`;
 
-const StyledLink = styled.a`
-   {
+  & a {
     text-decoration: none;
     text-shadow: 1px 1px 1px #000;
     color: white;
@@ -55,23 +47,15 @@ const StyledLink = styled.a`
     vertical-align: middle;
   }
 
-  &:hover {
-    background-color: transparent;
-  }
-`;
-
-const StyledSmall = styled.small`
-   {
+  & small {
     font-weight: bold;
     font-size: 0.7em;
     color: ${Color.MAGENTA};
     text-shadow: none;
-    transition: color ease-in-out 0.5s;
   }
 
-  &:hover {
-    color: ${Color.WHITE};
-    background-color: transparent;
+  @media (max-width: ${BIG_BREAKPOINT}px) {
+    margin: 5px 1px;
   }
 `;
 
@@ -86,7 +70,7 @@ const Button: FC<ButtonProps> = ({
   return (
     <StyledActionButton className="hvr-bounce-in">
       <>
-        <StyledLink
+        <a
           onClick={disabled ? doNothingHandler : onClick}
           href={disabled ? "https://devbcn.com" : link}
           target={target}
@@ -102,8 +86,8 @@ const Button: FC<ButtonProps> = ({
         >
           {children}
           <span>{`  ${text}`}</span>
-        </StyledLink>
-        {disabled && <StyledSmall>opening January 1st</StyledSmall>}
+        </a>
+        {disabled && <small>opening January 1st</small>}
       </>
     </StyledActionButton>
   );
