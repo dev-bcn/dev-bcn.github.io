@@ -5,7 +5,6 @@ import SectionWrapper from "../../../../components/SectionWrapper/SectionWrapper
 import {
   BIG_BREAKPOINT,
   BIGGER_BREAKPOINT,
-  LARGE_BREAKPOINT,
 } from "../../../../constants/BreakPoints";
 import TimeCountDown from "./components/TimeCountdown";
 import { useWindowSize } from "react-use";
@@ -161,26 +160,32 @@ const Home: FC = () => {
           {edition?.actionButtons && <ActionButtons />}
           {edition?.showInfoButtons && <InfoButtons />}
 
-          {width > LARGE_BREAKPOINT && <StyledLessThan src={LessThanIcon} />}
-          <StyledTopSlash
-            initial={{ x: "100%" }}
-            animate={{ x: 0 }}
-            transition={{ duration: 4 }}
-          >
-            <StyledGreenSlash>
-              / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
-              / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /{" "}
-            </StyledGreenSlash>
-          </StyledTopSlash>
+          {width > BIGGER_BREAKPOINT && <StyledLessThan src={LessThanIcon} />}
+          {width > BIGGER_BREAKPOINT && (
+            <StyledTopSlash
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              transition={{ duration: 4 }}
+            >
+              <StyledGreenSlash>
+                / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+                / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+                / /{" "}
+              </StyledGreenSlash>
+            </StyledTopSlash>
+          )}
           <StyledBottomSlash
             initial={{ x: "-100%" }}
             animate={{ x: 0 }}
             transition={{ duration: 6 }}
           >
-            <StyledBlueSlash>
-              / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
-              / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /{" "}
-            </StyledBlueSlash>
+            {width > BIGGER_BREAKPOINT && (
+              <StyledBlueSlash>
+                / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+                / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+                / /{" "}
+              </StyledBlueSlash>
+            )}
           </StyledBottomSlash>
         </StyleHomeContainer>
       </SectionWrapper>

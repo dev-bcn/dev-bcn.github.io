@@ -35,7 +35,13 @@ const StyledSummaryLink = styled.a`
 
   &:hover {
     font-weight: bold;
+    text-decoration: none;
     color: ${Color.YELLOW};
+  }
+
+  &:visited {
+    color: ${Color.MAGENTA};
+    text-decoration: none;
   }
 `;
 

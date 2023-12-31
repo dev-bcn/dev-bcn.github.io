@@ -31,18 +31,14 @@ const StyledActionButton = styled.div`
   transition-duration: 0.5s;
   vertical-align: middle;
 
-  @media (max-width: ${BIG_BREAKPOINT}px) {
-    margin: 5px 1px;
-  }
-
-  :hover,
-  :focus,
-  :active {
+  &:hover,
+  &:focus,
+  &:active {
     background-color: ${Color.DARK_BLUE};
     transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
   }
 
-  a {
+  & a {
     text-decoration: none;
     text-shadow: 1px 1px 1px #000;
     color: white;
@@ -51,11 +47,15 @@ const StyledActionButton = styled.div`
     vertical-align: middle;
   }
 
-  small {
+  & small {
     font-weight: bold;
     font-size: 0.7em;
     color: ${Color.MAGENTA};
     text-shadow: none;
+  }
+
+  @media (max-width: ${BIG_BREAKPOINT}px) {
+    margin: 5px 1px;
   }
 `;
 
