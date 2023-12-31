@@ -27,11 +27,9 @@ import { useEventEdition } from "../../UseEventEdition";
 import { Edition } from "../../HomeWrapper";
 
 const StyledSummaryLink = styled.a`
-   {
-    color: ${Color.LIGHT_BLUE};
-    text-decoration: none;
-    transition: all 0.2s ease-in-out;
-  }
+  color: ${Color.LIGHT_BLUE};
+  text-decoration: none !important;
+  transition: all 0.25s ease-in-out;
 
   &:hover {
     font-weight: bold;

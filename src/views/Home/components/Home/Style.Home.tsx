@@ -33,7 +33,7 @@ export const StyleHomeContainer = styled.div`
 
 export const StyledTitleContainer = styled.div`
   background-color: ${(props) => props.color ?? Color.DARK_BLUE};
-  border-radius: 20px;
+  border-radius: 10px;
   width: 70%;
   margin-bottom: 1rem;
   padding: 10px 5px;
@@ -54,6 +54,7 @@ export const StyledSubtitle = styled.h2`
   font-family: "DejaVu Sans ExtraLight", sans-serif;
   font-size: 1.25rem;
   text-shadow: 1px 1px 1px black;
+  padding: 0.25rem;
 
   a {
     text-decoration: none;

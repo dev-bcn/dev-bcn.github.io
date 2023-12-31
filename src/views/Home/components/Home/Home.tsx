@@ -60,39 +60,35 @@ const StyledKcdLogo = styled.img`
   }
 `;
 const StyledPlusSign = styled.span`
-   {
-    color: white;
-    font-size: 5em;
-    display: block;
-    padding-top: 1.5em;
-    text-shadow: 3px 3px #000;
-    transition: height 0.2s ease-in-out;
-    @media (max-width: ${BIGGER_BREAKPOINT}px) {
-      margin: 0;
-      padding: 0;
-      font-size: 3em;
-    }
-    @media (max-width: ${BIG_BREAKPOINT}px) {
-      font-size: 1.5rem;
-      padding: 0;
-      margin: 0;
-    }
+  color: white;
+  font-size: 5em;
+  display: block;
+  padding-top: 1.5em;
+  text-shadow: 3px 3px #000;
+  transition: height 0.2s ease-in-out;
+  @media (max-width: ${BIGGER_BREAKPOINT}px) {
+    margin: 0;
+    padding: 0;
+    font-size: 3em;
+  }
+  @media (max-width: ${BIG_BREAKPOINT}px) {
+    font-size: 1.5rem;
+    padding: 0;
+    margin: 0;
   }
 `;
 
 const StyledLogoDiv = styled.div`
-   {
-    padding-top: 4rem;
-    padding-bottom: 2rem;
-    display: flex;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+  display: flex;
 
-    @media (max-width: ${BIGGER_BREAKPOINT}px) {
-      flex-direction: column;
-    }
+  @media (max-width: ${BIGGER_BREAKPOINT}px) {
+    flex-direction: column;
+  }
 
-    @media (max-width: ${BIG_BREAKPOINT}px) {
-      flex-direction: column;
-    }
+  @media (max-width: ${BIG_BREAKPOINT}px) {
+    flex-direction: column;
   }
 `;
 const Home: FC = () => {
