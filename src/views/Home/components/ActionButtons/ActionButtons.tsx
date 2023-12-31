@@ -51,7 +51,7 @@ const ActionButtons: FC = () => {
         onClick={trackCFP}
         text="📢 Call For Papers"
         disabled={!isBetween(CFPStartDay, CFPEndDay)}
-        link="https://sessionize.com/devbcn24/"
+        link="https://sessionize.com/devbcn-2024/"
       />
       {isBetween(sponsorshipStartDay, sponsorshipEndDay) && (
         <Button
