@@ -1,9 +1,12 @@
 import styled from "styled-components";
 import { Color } from "../../../../styles/colors";
 import { motion } from "framer-motion";
-import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
+import {
+  BIG_BREAKPOINT,
+  BIGGER_BREAKPOINT,
+} from "../../../../constants/BreakPoints";
 
-export const StyledHomaImage = styled.div`
+export const StyledHomeImage = styled.div`
   padding: 70px 0 40px;
   background: linear-gradient(-45deg, ${Color.LIGHT_BLUE}, ${Color.MAGENTA}, ${Color.DARK_BLUE}, ${Color.GREEN});
   background-size: 400% 400%;
@@ -33,7 +36,7 @@ export const StyleHomeContainer = styled.div`
 
 export const StyledTitleContainer = styled.div`
   background-color: ${(props) => props.color ?? Color.DARK_BLUE};
-  border-radius: 20px;
+  border-radius: 10px;
   width: 70%;
   margin-bottom: 1rem;
   padding: 10px 5px;
@@ -54,6 +57,7 @@ export const StyledSubtitle = styled.h2`
   font-family: "DejaVu Sans ExtraLight", sans-serif;
   font-size: 1.25rem;
   text-shadow: 1px 1px 1px black;
+  padding: 0.25rem;
 
   a {
     text-decoration: none;
@@ -114,4 +118,63 @@ export const StyledBlueSlash = styled(motion.p)`
   font-size: 2rem;
   overflow-y: hidden;
   height: 100%;
+`;
+export const StyledDevBcnLogo = styled.img`
+  margin: 20px;
+  height: 20em;
+  transition: height 0.2s ease-in-out;
+  @media (max-width: ${BIGGER_BREAKPOINT}px) {
+    height: 15rem;
+  }
+  @media (max-width: ${BIG_BREAKPOINT}px) {
+    height: 8rem;
+  }
+`;
+export const StyledKcdLogo = styled.img`
+  margin-top: 4em;
+  margin-left: 2em;
+  height: 13rem;
+  transition: height 0.2s ease-in-out;
+  @media (max-width: ${BIGGER_BREAKPOINT}px) {
+    height: 9.5rem;
+    margin: 0;
+  }
+  @media (max-width: ${BIG_BREAKPOINT}px) {
+    margin-top: 0;
+    margin-left: 2.5em;
+    margin-right: 2.5em;
+    padding: 1em;
+    height: 6em;
+  }
+`;
+export const StyledPlusSign = styled.span`
+  color: white;
+  font-size: 5em;
+  display: block;
+  padding-top: 1.5em;
+  text-shadow: 3px 3px #000;
+  transition: height 0.2s ease-in-out;
+  @media (max-width: ${BIGGER_BREAKPOINT}px) {
+    margin: 0;
+    padding: 0;
+    font-size: 3em;
+  }
+  @media (max-width: ${BIG_BREAKPOINT}px) {
+    font-size: 1.5rem;
+    padding: 0;
+    margin: 0;
+  }
+`;
+export const StyledLogoDiv = styled.div`
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+  display: flex;
+
+  @media (max-width: ${BIGGER_BREAKPOINT}px) {
+    flex-direction: column;
+  }
+
+  @media (max-width: ${BIG_BREAKPOINT}px) {
+    flex-direction: column;
+  }
 `;

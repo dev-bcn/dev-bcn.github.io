@@ -131,3 +131,19 @@ export const StyledFaqText = styled.p`
     margin: 0.5rem 2rem;
   }
 `;
+export const StyledSummaryLink = styled.a`
+  color: ${Color.LIGHT_BLUE};
+  text-decoration: none !important;
+  transition: all 0.25s ease-in-out;
+
+  &:hover {
+    font-weight: bold;
+    text-decoration: none;
+    color: ${Color.YELLOW};
+  }
+
+  &:visited {
+    color: ${Color.MAGENTA};
+    text-decoration: none;
+  }
+`;
