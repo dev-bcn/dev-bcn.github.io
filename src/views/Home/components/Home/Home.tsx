@@ -2,19 +2,19 @@ import Countdown from "react-countdown";
 import { FC, useState } from "react";
 import LessThanIcon from "../../../../assets/images/MoreThanBlueWhiteIcon.svg";
 import SectionWrapper from "../../../../components/SectionWrapper/SectionWrapper";
-import {
-  BIG_BREAKPOINT,
-  BIGGER_BREAKPOINT,
-  LARGE_BREAKPOINT,
-} from "../../../../constants/BreakPoints";
+import { BIGGER_BREAKPOINT } from "../../../../constants/BreakPoints";
 import TimeCountDown from "./components/TimeCountdown";
 import { useWindowSize } from "react-use";
 import {
   StyledBlueSlash,
   StyledBottomSlash,
+  StyledDevBcnLogo,
   StyledGreenSlash,
-  StyledHomaImage,
+  StyledHomeImage,
+  StyledKcdLogo,
   StyledLessThan,
+  StyledLogoDiv,
+  StyledPlusSign,
   StyledSubtitle,
   StyledTitle,
   StyledTitleContainer,
@@ -23,7 +23,6 @@ import {
 } from "./Style.Home";
 import logo from "../../../../assets/images/logo.png";
 import ActionButtons from "../ActionButtons/ActionButtons";
-import styled from "styled-components";
 import { Color } from "../../../../styles/colors";
 import InfoButtons from "../InfoButtons/InfoButtons";
 import { formatDateRange } from "./DateUtil";
@@ -32,70 +31,6 @@ import { Edition } from "../../HomeWrapper";
 import { Link } from "react-router-dom";
 import data from "../../../../data/2023.json";
 
-const StyledDevBcnLogo = styled.img`
-  margin: 20px;
-  height: 20em;
-  transition: height 0.2s ease-in-out;
-  @media (max-width: ${BIGGER_BREAKPOINT}px) {
-    height: 15rem;
-  }
-  @media (max-width: ${BIG_BREAKPOINT}px) {
-    height: 8rem;
-  }
-`;
-const StyledKcdLogo = styled.img`
-  margin-top: 4em;
-  margin-left: 2em;
-  height: 13rem;
-  transition: height 0.2s ease-in-out;
-  @media (max-width: ${BIGGER_BREAKPOINT}px) {
-    height: 9.5rem;
-    margin: 0;
-  }
-  @media (max-width: ${BIG_BREAKPOINT}px) {
-    margin-top: 0;
-    margin-left: 2.5em;
-    margin-right: 2.5em;
-    padding: 1em;
-    height: 6em;
-  }
-`;
-const StyledPlusSign = styled.span`
-   {
-    color: white;
-    font-size: 5em;
-    display: block;
-    padding-top: 1.5em;
-    text-shadow: 3px 3px #000;
-    transition: height 0.2s ease-in-out;
-    @media (max-width: ${BIGGER_BREAKPOINT}px) {
-      margin: 0;
-      padding: 0;
-      font-size: 3em;
-    }
-    @media (max-width: ${BIG_BREAKPOINT}px) {
-      font-size: 1.5rem;
-      padding: 0;
-      margin: 0;
-    }
-  }
-`;
-
-const StyledLogoDiv = styled.div`
-   {
-    padding-top: 4rem;
-    padding-bottom: 2rem;
-    display: flex;
-
-    @media (max-width: ${BIGGER_BREAKPOINT}px) {
-      flex-direction: column;
-    }
-
-    @media (max-width: ${BIG_BREAKPOINT}px) {
-      flex-direction: column;
-    }
-  }
-`;
 const Home: FC = () => {
   const { width } = useWindowSize();
   const [edition, setEdition] = useState<Edition>();
@@ -103,7 +38,7 @@ const Home: FC = () => {
   useEventEdition(setEdition);
 
   return (
-    <StyledHomaImage>
+    <StyledHomeImage>
       <SectionWrapper color="transparent">
         <StyleHomeContainer>
           <StyledLogoDiv>
@@ -161,30 +96,36 @@ const Home: FC = () => {
           {edition?.actionButtons && <ActionButtons />}
           {edition?.showInfoButtons && <InfoButtons />}
 
-          {width > LARGE_BREAKPOINT && <StyledLessThan src={LessThanIcon} />}
-          <StyledTopSlash
-            initial={{ x: "100%" }}
-            animate={{ x: 0 }}
-            transition={{ duration: 4 }}
-          >
-            <StyledGreenSlash>
-              / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
-              / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /{" "}
-            </StyledGreenSlash>
-          </StyledTopSlash>
+          {width > BIGGER_BREAKPOINT && <StyledLessThan src={LessThanIcon} />}
+          {width > BIGGER_BREAKPOINT && (
+            <StyledTopSlash
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              transition={{ duration: 4 }}
+            >
+              <StyledGreenSlash>
+                / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+                / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+                / /{" "}
+              </StyledGreenSlash>
+            </StyledTopSlash>
+          )}
           <StyledBottomSlash
             initial={{ x: "-100%" }}
             animate={{ x: 0 }}
             transition={{ duration: 6 }}
           >
-            <StyledBlueSlash>
-              / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
-              / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /{" "}
-            </StyledBlueSlash>
+            {width > BIGGER_BREAKPOINT && (
+              <StyledBlueSlash>
+                / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+                / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+                / /{" "}
+              </StyledBlueSlash>
+            )}
           </StyledBottomSlash>
         </StyleHomeContainer>
       </SectionWrapper>
-    </StyledHomaImage>
+    </StyledHomeImage>
   );
 };
 

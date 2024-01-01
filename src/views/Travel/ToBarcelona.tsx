@@ -6,12 +6,10 @@ import Logo from "../../assets/images/logo.svg";
 import { StyledLoadingImage } from "../../components/Loading/Loading";
 
 const StyledSection = styled.div`
-   {
-    text-align: justify;
-    padding: 20px 40px;
-    background-color: ${Color.DARK_BLUE};
-    color: ${Color.WHITE};
-  }
+  text-align: justify;
+  padding: 20px 40px;
+  background-color: ${Color.DARK_BLUE};
+  color: ${Color.WHITE};
 
   h2 {
     margin-bottom: 10px;
