@@ -36,6 +36,7 @@ interface TalkCardProps {
     link?: string;
     tags?: string[];
     track: string;
+    recordingUrl?: string;
     categories: SessionCategory[];
     questionAnswers: QuestionAnswers[];
   };
@@ -48,7 +49,7 @@ export const TalkCard: FC<TalkCardProps> = ({ showTrack = false, talk }) => {
     <StyledSessionCard>
       <StyledJobsInfo>
         <StyledTalkTitle to={`${ROUTE_2023_TALK_DETAIL}/${talk.id}`}>
-          {talk.title}
+          {talk.title} {talk.recordingUrl ? " 🎥 " : ""}
         </StyledTalkTitle>
         <StyledSessionText>
           {talk.speakers.map((speaker: SessionSpeaker) => (
