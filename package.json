@@ -89,7 +89,7 @@
     "@types/react-router-dom": "^5.3.3",
     "@types/styled-components": "^5.1.26",
     "eslint": "^8.56.0",
-    "gh-pages": "^5.0.0",
+    "gh-pages": "^6.1.1",
     "prettier": "^2.8.8",
     "react-ga": "^3.3.1",
     "react-test-renderer": "^18.2.0"
