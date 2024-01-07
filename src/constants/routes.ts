@@ -13,6 +13,8 @@ export const ROUTE_HOME_ALTERNATE = "/website";
 export const ROUTE_JOB_OFFERS = "/jobOffers";
 export const ROUTE_SCHEDULE = "/schedule";
 export const ROUTE_SPEAKERS = "/speakers";
+
+export const ROUTE_SPONSORSHIP = "/sponsorship";
 export const ROUTE_SPEAKER_DETAIL = "/speaker";
 export const ROUTE_SPEAKER_INFO = "/speaker-information";
 export const ROUTE_SPEAKER_DETAIL_PLAIN = "/speaker/:id";
