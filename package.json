@@ -4,6 +4,8 @@
   "version": "1.5.0",
   "private": true,
   "dependencies": {
+    "@egjs/flicking-plugins": "^4.7.1",
+    "@egjs/react-flicking": "^4.11.2",
     "@sentry/react": "^7.56.0",
     "@sentry/tracing": "^7.91.0",
     "@types/node": "^20.2.5",

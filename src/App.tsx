@@ -30,6 +30,7 @@ import {
   ROUTE_SPEAKER_DETAIL_PLAIN,
   ROUTE_SPEAKER_INFO,
   ROUTE_SPEAKERS,
+  ROUTE_SPONSORSHIP,
   ROUTE_TALKS,
   ROUTE_TRAVEL,
   ROUTE_WORKSHOPS,
@@ -78,6 +79,7 @@ import Kcd from "./views/kcd/Kcd";
 import Schedule2023 from "./2023/Schedule/Schedule2023";
 import Workshops2023 from "./2023/Workshops/Workshops2023";
 import JobOffers2023 from "./2023/JobOffers/JobOffers2023";
+import Sponsorship from "./views/sponsorship/Sponsorship";
 
 const StyledAppWrapper = styled.div`
   position: relative;
@@ -149,6 +151,7 @@ const App: FC = () => {
             path={ROUTE_SPEAKER_DETAIL_PLAIN}
             element={<SpeakerDetailContainer />}
           />
+          <Route path={ROUTE_SPONSORSHIP} element={<Sponsorship />} />
           <Route path="/:year" element={<HomeWrapper />} />
           <Route path={ROUTE_HOME} element={<HomeWrapper />} />
           {/* 2023 Edition */}
