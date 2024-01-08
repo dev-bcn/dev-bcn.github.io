@@ -39,6 +39,7 @@ export const StyledSectionsSeparator = styled.div`
 const StyledSponsorshipText = styled.div`
   text-align: start;
   color: ${Color.BLACK_BLUE};
+  max-width: 95vw;
 
   p {
     margin: 5px 20px;
@@ -55,6 +56,17 @@ const StyledSponsorshipText = styled.div`
 
   h4 {
     margin: 20px 0;
+  }
+
+  a:visited {
+    color: ${Color.DARK_BLUE};
+    font-weight: normal;
+  }
+
+  @media only screen and (max-width: ${BIG_BREAKPOINT}px) {
+    iframe {
+      width: 90vw;
+    }
   }
 `;
 
@@ -115,55 +127,55 @@ const Sponsorship: FC = () => {
             alt="DevBcn 2023 - sponsors"
             width="1080"
             height="720"
-            src="images/sponsorship/_L8A7454.jpg"
+            src="/images/sponsorship/image_1.jpg"
           />
           <img
             alt="DevBcn 2023 - sponsors"
             width="1080"
             height="720"
-            src="images/sponsorship/_L8A7947.jpg"
+            src="/images/sponsorship/image_2.jpg"
           />
           <img
             alt="DevBcn 2023 - sponsors"
             width="1080"
             height="720"
-            src="images/sponsorship/_L8A7988.jpg"
+            src="/images/sponsorship/image_3.jpg"
           />
           <img
             alt="DevBcn 2023 - sponsors"
             width="1080"
             height="720"
-            src="images/sponsorship/_L8A8123.jpg"
+            src="/images/sponsorship/image_4.jpg"
           />
           <img
             alt="DevBcn 2023 - sponsors"
             width="1080"
             height="720"
-            src="images/sponsorship/_L8A9285.jpg"
+            src="/images/sponsorship/image_5.jpg"
           />
           <img
             alt="DevBcn 2023 - sponsors"
             width="1080"
             height="720"
-            src="images/sponsorship/_L8A9360.jpg"
+            src="/images/sponsorship/image_6.jpg"
           />
           <img
             alt="DevBcn 2023 - sponsors"
             width="1080"
             height="720"
-            src="images/sponsorship/_MG_1785.jpg"
+            src="/images/sponsorship/image_7.jpg"
           />
           <img
             alt="DevBcn 2023 - sponsors"
             width="1080"
             height="720"
-            src="images/sponsorship/IMG_1808.jpg"
+            src="/images/sponsorship/image_8.jpg"
           />
           <img
             alt="DevBcn 2023 - sponsors"
             width="1080"
             height="720"
-            src="images/sponsorship/veepee.jpg"
+            src="/images/sponsorship/image_9.jpg"
           />
         </Flicking>
       </SectionWrapper>
