@@ -93,9 +93,6 @@ const Navigation: FC = () => {
                   key={item.id}
                   to={item.link}
                   onClick={handleSetMenu}
-                  className={({ isActive }) =>
-                    "nav-link" + (isActive ? " isActive" : "")
-                  }
                 >
                   {item.id}
                 </StyledLink>

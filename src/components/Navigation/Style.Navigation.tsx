@@ -48,25 +48,22 @@ export const StyledClipPath = styled(motion.div)`
   background: ${Color.LIGHT_BLUE};
 `;
 export const StyledLink = styled(NavLink)`
-   {
-    padding: 0.5rem;
-    color: ${Color.LIGHT_BLUE};
-    text-decoration: none;
-    cursor: pointer;
-    font-family: "Square 721 Regular", sans-serif;
-    transition: all 0.5s ease-in-out;
-  }
+  padding: 0.5rem;
+  color: ${Color.LIGHT_BLUE};
+  text-decoration: none;
+  cursor: pointer;
+  font-family: "Square 721 Regular", sans-serif;
+  transition: all 0.5s ease-in-out;
 
   &:hover {
     font-weight: bold;
     color: ${Color.MAGENTA};
   }
 
-  &.${(props) => props.is} {
-    &:before {
-      content: "/   ";
-      font-family: "Square 721 Regular", sans-serif;
-    }
+  &:visited {
+    color: ${Color.WHITE};
+    text-decoration: none !important;
+    font-weight: normal;
   }
 
   @media (min-width: ${MOBILE_BREAKPOINT}px) {
@@ -171,7 +168,7 @@ export const SubLink = styled.li`
     transition: all 0.5s ease-in-out;
   }
 
-  & :hover {
+  &:hover {
     font-weight: bold;
   }
 `;

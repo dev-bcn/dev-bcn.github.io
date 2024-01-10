@@ -16,13 +16,7 @@ export const HorizontalMenu: FC<Props> = ({ navItems }) => {
       {width > BIG_BREAKPOINT && (
         <div className="horizontal-navigation">
           {navItems.map((item) => (
-            <StyledLink
-              key={item.id}
-              to={item.link}
-              className={({ isActive }) =>
-                "nav-link" + (isActive ? " isActive" : "")
-              }
-            >
+            <StyledLink key={item.id} to={item.link}>
               {item.id}
             </StyledLink>
           ))}

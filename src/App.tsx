@@ -14,26 +14,18 @@ import {
   ROUTE_2023_TALKS,
   ROUTE_2023_WORKSHOPS,
   ROUTE_ABOUT_US,
-  ROUTE_ATTENDEE,
-  ROUTE_CFP,
   ROUTE_CODE_OF_CONDUCT,
-  ROUTE_COMMUNITIES,
   ROUTE_CONDITIONS,
   ROUTE_COOKIES,
-  ROUTE_DIVERSITY,
   ROUTE_HOME,
-  ROUTE_JOB_OFFERS,
   ROUTE_KCD,
   ROUTE_MEETING_DETAIL_PLAIN,
-  ROUTE_SCHEDULE,
-  ROUTE_SESSION_FEEDBACK,
   ROUTE_SPEAKER_DETAIL_PLAIN,
   ROUTE_SPEAKER_INFO,
   ROUTE_SPEAKERS,
   ROUTE_SPONSORSHIP,
   ROUTE_TALKS,
   ROUTE_TRAVEL,
-  ROUTE_WORKSHOPS,
 } from "./constants/routes";
 
 import Footer from "./components/Footer/Footer";
@@ -49,21 +41,13 @@ import { Color } from "./styles/colors";
 import Loading from "./components/Loading/Loading";
 import { QueryClient, QueryClientProvider } from "react-query";
 import Talks from "./views/Talks/Talks";
-import SessionFeedback from "./views/SessionFeedback/SessionFeedback";
 import CodeOfConduct from "./views/CodeOfConduct/CodeOfConduct";
 import Conditions from "./views/Conditions/Conditions";
 import Cookies from "./views/Cookies/Cookies";
-import Diversity from "./views/Diversity/Diversity";
-import JobOffers from "./views/JobOffers/JobOffers";
-import Schedule from "./views/Schedule/Schedule";
 import Speakers from "./views/Speakers/Speakers";
 import SpeakerInformation from "./views/Speakers/SpeakerInformation";
 import About from "./views/About/About";
-import CfpSection from "./views/Cfp/CfpSection";
 import Travel from "./views/Travel/Travel";
-import Workshops from "./views/Workshops/Workshops";
-import Communities from "./views/Communities/Communities";
-import AttendeeInformation from "./views/Attendee/AttendeeInformation";
 import NotFoundError from "./components/NotFoundError/NotFoundError";
 import { Home2023Wrapper } from "./2023/Home/Home2023Wrapper";
 import Speakers2023 from "./2023/Speakers/Speakers2023";
@@ -127,21 +111,20 @@ const App: FC = () => {
         <Routes>
           <Route path="/loading" element={<Loading />} />
           <Route path={ROUTE_TALKS} element={<Talks />} />
-          <Route path={ROUTE_SESSION_FEEDBACK} element={<SessionFeedback />} />
+          {/*<Route path={ROUTE_SESSION_FEEDBACK} element={<SessionFeedback />} />*/}
           <Route path={ROUTE_CODE_OF_CONDUCT} element={<CodeOfConduct />} />
           <Route path={ROUTE_CONDITIONS} element={<Conditions />} />
           <Route path={ROUTE_COOKIES} element={<Cookies />} />
-          <Route path={ROUTE_DIVERSITY} element={<Diversity />} />
-          <Route path={ROUTE_JOB_OFFERS} element={<JobOffers />} />
-          <Route path={ROUTE_SCHEDULE} element={<Schedule />} />
+          {/*<Route path={ROUTE_DIVERSITY} element={<Diversity />} />*/}
+          {/*<Route path={ROUTE_JOB_OFFERS} element={<JobOffers />} />*/}
+          {/*<Route path={ROUTE_SCHEDULE} element={<Schedule />} />*/}
           <Route path={ROUTE_SPEAKERS} element={<Speakers />} />
           <Route path={ROUTE_SPEAKER_INFO} element={<SpeakerInformation />} />
           <Route path={ROUTE_ABOUT_US} element={<About />} />
-          <Route path={ROUTE_CFP} element={<CfpSection />} />
+          {/*<Route path={ROUTE_CFP} element={<CfpSection />} />*/}
           <Route path={ROUTE_TRAVEL} element={<Travel />} />
-          <Route path={ROUTE_WORKSHOPS} element={<Workshops />} />
-          <Route path={ROUTE_COMMUNITIES} element={<Communities />} />
-          <Route path={ROUTE_ATTENDEE} element={<AttendeeInformation />} />
+          {/*<Route path={ROUTE_COMMUNITIES} element={<Communities />} />*/}
+          {/*<Route path={ROUTE_ATTENDEE} element={<AttendeeInformation />} />*/}
           <Route path={ROUTE_KCD} element={<Kcd />} />
           <Route
             path={ROUTE_MEETING_DETAIL_PLAIN}
