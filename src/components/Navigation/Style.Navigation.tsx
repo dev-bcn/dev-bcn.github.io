@@ -66,13 +66,6 @@ export const StyledLink = styled(NavLink)`
     font-weight: normal;
   }
 
-  &.nav-link .isActive {
-    &:before {
-      content: "/   ";
-      font-family: "Square 721 Regular", sans-serif;
-    }
-  }
-
   @media (min-width: ${MOBILE_BREAKPOINT}px) {
     font-size: 1.125rem;
   }
