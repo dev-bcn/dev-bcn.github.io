@@ -39,13 +39,13 @@ export const data: CFpTrack[] = [
       },
       {
         name: "Grace Jansen",
-        photo: "images/cfp/grace.png",
+        photo: "/images/cfp/grace.png",
         twitter: "https://twitter.com/gracejansen27",
         linkedIn: "https://www.linkedin.com/in/grace-jansen",
       },
       {
         name: "Ixchel Ruiz",
-        photo: "images/cfp/ixchel.png",
+        photo: "/images/cfp/ixchel.png",
         twitter: "https://twitter.com/ixchelruiz",
         linkedIn: "https://www.linkedin.com/in/ixchelruiz",
       },
@@ -58,7 +58,7 @@ export const data: CFpTrack[] = [
       {
         name: "Aliénor Latour",
         twitter: "",
-        photo: "images/cfp/alienor.jpg",
+        photo: "/images/cfp/alienor.jpg",
         linkedIn: "https://www.linkedin.com/in/alienor-latour/",
       },
       {
@@ -71,13 +71,13 @@ export const data: CFpTrack[] = [
       {
         name: "Gonzalo Serrano",
         twitter: "https://twitter.com/gonzaloserrano",
-        photo: "images/cfp/gonzalo.jpg",
+        photo: "/images/cfp/gonzalo.jpg",
         linkedIn: "https://www.linkedin.com/in/gonzaloserranorevuelta/",
       },
       {
         name: "Mario Macías",
         twitter: "https://twitter.com/MaciasUPC",
-        photo: "images/cfp/mario-macias.png",
+        photo: "/images/cfp/mario-macias.png",
         linkedIn: "https://www.linkedin.com/in/mariomac/",
       },
       {
@@ -95,7 +95,7 @@ export const data: CFpTrack[] = [
     members: [
       {
         name: "Iago Lastra",
-        photo: "images/cfp/iago.png",
+        photo: "/images/cfp/iago.png",
         twitter: "https://twitter.com/iagolast",
         linkedIn: "https://www.linkedin.com/in/iagolast/",
       },
@@ -108,7 +108,7 @@ export const data: CFpTrack[] = [
       },
       {
         name: "Laura Rodriguez Castillo",
-        photo: "images/cfp/laura.jpeg",
+        photo: "/images/cfp/laura.jpeg",
         twitter: "https://twitter.com/superpensando",
         linkedIn: "https://linkedin.com/in/laurarodriguezcastillo",
       },
@@ -120,7 +120,7 @@ export const data: CFpTrack[] = [
     members: [
       {
         name: "Alberto Camara",
-        photo: "images/cfp/alberto.jpg",
+        photo: "/images/cfp/alberto.jpg",
         twitter: "https://twitter.com/b3r2s",
         linkedIn: "https://www.linkedin.com/in/alberto-camara/",
       },
@@ -151,14 +151,14 @@ export const data: CFpTrack[] = [
     members: [
       {
         name: "Ara Pulido",
-        photo: "images/cfp/ara.png",
+        photo: "/images/cfp/ara.png",
         twitter: "https://twitter.com/arapulido",
         linkedIn: "https://www.linkedin.com/in/arapulido/",
       },
       {
         name: "Mario Macías",
         twitter: "https://twitter.com/MaciasUPC",
-        photo: "images/cfp/mario-macias.png",
+        photo: "/images/cfp/mario-macias.png",
         linkedIn: "https://www.linkedin.com/in/mariomac/",
       },
       {
@@ -183,25 +183,25 @@ export const data: CFpTrack[] = [
     members: [
       {
         name: "Celeste Gamez",
-        photo: "images/cfp/celeste.png",
+        photo: "/images/cfp/celeste.png",
         twitter: "https://images.app.goo.gl/39E8eisV8TiULPQk8",
         linkedIn: "https://www.linkedin.com/in/celeste-g%C3%A1mez-73640460/",
       },
       {
         name: "Esther Gala",
-        photo: "images/cfp/esther.png",
+        photo: "/images/cfp/esther.png",
         twitter: "",
         linkedIn: "https://www.linkedin.com/in/esthergala/",
       },
       {
         name: "María Mira Herreros",
-        photo: "images/cfp/maria.png",
+        photo: "/images/cfp/maria.png",
         twitter: "",
         linkedIn: "https://www.linkedin.com/in/miramaria",
       },
       {
         name: "Toni Tassani",
-        photo: "images/cfp/toni.jpg",
+        photo: "/images/cfp/toni.jpg",
         twitter: "https://twitter.com/atassani",
         linkedIn: "https://www.linkedin.com/in/tonitassani/en",
       },
