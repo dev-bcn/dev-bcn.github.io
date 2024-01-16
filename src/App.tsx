@@ -3,6 +3,7 @@ import {
   ROUTE_2023_ATTENDEE,
   ROUTE_2023_CFP,
   ROUTE_2023_COMMUNITIES,
+  ROUTE_2023_DIVERSITY,
   ROUTE_2023_HOME,
   ROUTE_2023_JOB_OFFERS,
   ROUTE_2023_SCHEDULE,
@@ -64,6 +65,7 @@ import Schedule2023 from "./2023/Schedule/Schedule2023";
 import Workshops2023 from "./2023/Workshops/Workshops2023";
 import JobOffers2023 from "./2023/JobOffers/JobOffers2023";
 import Sponsorship from "./views/sponsorship/Sponsorship";
+import Diversity2023 from "./2023/Diversity/Diversity2023";
 
 const StyledAppWrapper = styled.div`
   position: relative;
@@ -139,6 +141,7 @@ const App: FC = () => {
           <Route path={ROUTE_HOME} element={<HomeWrapper />} />
           {/* 2023 Edition */}
           <Route path={ROUTE_2023_HOME} element={<Home2023Wrapper />} />
+          {<Route path={ROUTE_2023_DIVERSITY} element={<Diversity2023 />} />}
           <Route path={ROUTE_2023_SCHEDULE} element={<Schedule2023 />} />
           <Route path={ROUTE_2023_WORKSHOPS} element={<Workshops2023 />} />
           <Route path={ROUTE_2023_JOB_OFFERS} element={<JobOffers2023 />} />
