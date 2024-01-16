@@ -38,6 +38,10 @@ const StyledActionButton = styled.div`
     transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
   }
 
+  & span {
+    font-size: 0.9rem;
+  }
+
   & a {
     text-decoration: none;
     text-shadow: 1px 1px 1px #000;
