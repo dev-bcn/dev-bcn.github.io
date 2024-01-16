@@ -107,6 +107,7 @@ export const StyledHeader = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 0 2rem;
+
   @media (min-width: 480px) {
     height: 4rem;
   }
@@ -137,11 +138,9 @@ export const StyledHeader = styled.header`
   }
 `;
 export const NavMenu = styled.a`
-   {
-    color: ${Color.DARK_BLUE};
-    padding: 100px;
-    transition: 1s ease-in-out;
-  }
+  color: ${Color.DARK_BLUE};
+  padding: 100px;
+  transition: 1s ease-in-out;
 
   &:hover ul {
     display: block;
@@ -149,24 +148,20 @@ export const NavMenu = styled.a`
   }
 `;
 export const SubMenu = styled.ul`
-   {
-    display: none;
-    opacity: 0;
-    position: absolute;
-    top: 18px;
-    left: -20px;
-    width: 116px;
-    background-color: ${Color.LIGHT_BLUE};
-    padding: 5px;
-  }
+  display: none;
+  opacity: 0;
+  position: absolute;
+  top: 18px;
+  left: -20px;
+  width: 116px;
+  background-color: ${Color.LIGHT_BLUE};
+  padding: 5px;
 `;
 export const SubLink = styled.li`
-   {
-    text-decoration: none;
-    list-style: none;
-    margin-bottom: 3px;
-    transition: all 0.5s ease-in-out;
-  }
+  text-decoration: none;
+  list-style: none;
+  margin-bottom: 3px;
+  transition: all 0.5s ease-in-out;
 
   &:hover {
     font-weight: bold;

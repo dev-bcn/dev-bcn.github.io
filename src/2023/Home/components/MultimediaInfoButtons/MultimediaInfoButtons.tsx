@@ -49,8 +49,8 @@ const MultimediaInfoButtons: FC = () => {
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/159px-YouTube_full-color_icon_%282017%29.svg.png"
           alt="Youtube"
-          height={32}
-          width={48}
+          height={28}
+          width={42}
           style={{ marginRight: "5px" }}
         />
       </Button>

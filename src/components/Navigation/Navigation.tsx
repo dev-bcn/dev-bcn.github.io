@@ -7,8 +7,11 @@ import CloseIcon from "../../assets/images/CloseIcon.svg";
 import NavigationLogo from "../../assets/images/devBcn.png";
 import { ROUTE_HOME, ROUTE_HOME_ALTERNATE } from "../../constants/routes";
 import TicketsImage from "../../assets/images/TicketsImage.svg";
-import { navigationItems } from "./NavigationData";
-import { navigationItems2023 } from "../../2023/Navigation/NavigationData2023";
+import { navigationItems, subMenuItems } from "./NavigationData";
+import {
+  navigationItems2023,
+  subMenuItems2023,
+} from "../../2023/Navigation/NavigationData2023";
 import { useWindowSize } from "react-use";
 import {
   StyledClipPath,
@@ -31,6 +34,7 @@ const Navigation: FC = () => {
   const [isOpened, setIsOpened] = useState(false);
   const [is2023, setIs2023] = useState(false);
   const [navItems, setNavItems] = useState(navigationItems);
+  const [subNavItems, setSubNavItems] = useState(subMenuItems);
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const handleLogoClick = () => {
@@ -47,17 +51,19 @@ const Navigation: FC = () => {
     if (pathname.startsWith("/2023")) {
       setIs2023(true);
       setNavItems(navigationItems2023);
+      setSubNavItems(subMenuItems2023);
     } else {
       setNavItems(navigationItems);
+      setSubNavItems(subMenuItems);
     }
-  }, [pathname, navItems]);
+  }, [pathname, navItems, subNavItems]);
 
   return (
     <>
       <StyledHeaderWrapper>
         <StyledHeader>
           <StyledHeaderLogo src={NavigationLogo} onClick={handleLogoClick} />
-          <HorizontalMenu navItems={navItems} />
+          <HorizontalMenu navItems={navItems} subMenuItems={subNavItems} />
           <HamburgerMenu onClick={handleSetMenu} />
         </StyledHeader>
 
