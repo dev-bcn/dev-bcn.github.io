@@ -99,7 +99,7 @@ const StyledParagraph = styled.section`
 `;
 const Diversity: FC = () => {
   useEffect(() => {
-    document.title = `Diversity - DevBcn ${data.edition}`;
+    document.title = `Diversity — ${data.title} — ${data.edition}`;
   });
 
   return (
@@ -214,11 +214,11 @@ const Diversity: FC = () => {
                 <p>
                   They will receive a free ticket to the conference, which{" "}
                   <strong>
-                    includes admission 🎫 to all talks during the 3rd and 4th,
-                    and catering 🥘 during the two days of the conference
+                    includes admission 🎫 to all talks during the 13
+                    <sup>th</sup> and 14<sup>th</sup>, and catering 🥘 during
+                    the two days of the conference
                   </strong>
-                  . Workshops (on the 5th) cannot be included due to limited
-                  capacity.
+                  .
                 </p>
               </div>
             </div>
@@ -241,12 +241,6 @@ const Diversity: FC = () => {
                     <p>
                       Find additional funding for transportation and
                       accommodation. These costs are not included.
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      Inform if they are not able to attend the event days 18th
-                      and 19th. Tickets are not transferable.
                     </p>
                   </li>
                   <li>

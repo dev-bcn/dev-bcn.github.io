@@ -97,7 +97,7 @@ const Sponsorship: FC = () => {
   ];
 
   useEffect(() => {
-    document.title = `Sponsorship- DevBcn ${data.edition}`;
+    document.title = `Sponsorship — ${data.title} — ${data.edition}`;
   });
 
   return (
@@ -224,7 +224,7 @@ const Sponsorship: FC = () => {
                 >
                   Kubernetes Community days (KCD)
                 </a>
-              </strong>
+              </strong>{" "}
               in the next edition, a full track dedicated and curated for
               Kubernetes and the Cloud.
             </p>
@@ -248,7 +248,7 @@ const Sponsorship: FC = () => {
                 >
                   detailed brochure
                 </a>{" "}
-              </strong>
+              </strong>{" "}
               at and discover the myriad of ways you can shine at DevBcn 2024.
             </p>
             <h4>Why Partner with DevBcn 2024?</h4>

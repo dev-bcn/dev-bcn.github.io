@@ -83,7 +83,7 @@ const CodeOfConduct: FC = () => {
   const { width } = useWindowSize();
 
   useEffect(() => {
-    document.title = `Code of Conduct- DevBcn ${data.edition}`;
+    document.title = `Code of Conduct — ${data.title} — ${data.edition}`;
   });
 
   return (
@@ -111,8 +111,8 @@ const CodeOfConduct: FC = () => {
         <LeftHashWithText color={Color.WHITE} text="TOPICS" />
         <StyledSpeakersSection>
           <StyledTagsWrapper>
-            {CodeOfConductTags.map((tag, index) => (
-              <Tag text={tag} key={index} textColor={Color.LIGHT_BLUE} />
+            {CodeOfConductTags.map((tag) => (
+              <Tag text={tag} key={tag} textColor={Color.LIGHT_BLUE} />
             ))}
           </StyledTagsWrapper>
         </StyledSpeakersSection>

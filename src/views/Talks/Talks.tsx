@@ -37,7 +37,7 @@ const Talks: FC = () => {
     const sessionSelectedGroupName =
       sessionStorage.getItem("selectedGroupName");
 
-    document.title = `Talks - DevBcn - ${conferenceData.edition}`;
+    document.title = `Talks - ${conferenceData.title} - ${conferenceData.edition}`;
 
     if (sessionSelectedGroupCode && sessionSelectedGroupName) {
       setSelectedGroupId({

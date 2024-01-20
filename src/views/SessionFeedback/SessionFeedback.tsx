@@ -66,7 +66,7 @@ const SessionFeedback: FC = () => {
   );
 
   React.useEffect(() => {
-    document.title = `DevBcn ${data.edition} - Session Feedback`;
+    document.title = `Session Feedback — ${data.title} - ${data.edition}`;
   });
 
   const header = renderHeader();

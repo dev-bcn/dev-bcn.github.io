@@ -43,42 +43,40 @@ const About: FC = () => {
   const { width } = useWindowSize();
 
   React.useEffect(() => {
-    document.title = `About us - DevBcn - ${data.edition}`;
+    document.title = `About us — ${data.title} — ${data.edition}`;
   }, []);
 
   return (
-    <>
-      <SectionWrapper color={Color.WHITE} marginTop={8}>
-        <StyledSpeakersSection>
-          <TitleSection
-            title="ABOUT US"
-            subtitle="The Barcelona Developers Conference - DevBcn"
-            color={Color.BLUE}
-          />
-          {width > MOBILE_BREAKPOINT && (
-            <>
-              <StyledLessIcon src={MoreThanBlueWhiteIcon} />
-              <StyledMoreIcon src={LessThanBlueWhiteIcon} />
-            </>
-          )}
-          <StyledUsersWrapper>
-            {aboutData.map((organizer) => (
-              <AboutCard person={organizer} key={organizer.id} />
-            ))}
-          </StyledUsersWrapper>
-          <p>
-            <StyledLink
-              href="https://eepurl.com/ifxXl9"
-              rel="noreferrer"
-              target="_blank"
-            >
-              📨 Subscribe to our news here
-            </StyledLink>
-          </p>
-          <StyledMarginBottom />
-        </StyledSpeakersSection>
-      </SectionWrapper>
-    </>
+    <SectionWrapper color={Color.WHITE} marginTop={8}>
+      <StyledSpeakersSection>
+        <TitleSection
+          title="ABOUT US"
+          subtitle="The Barcelona Developers Conference - DevBcn"
+          color={Color.BLUE}
+        />
+        {width > MOBILE_BREAKPOINT && (
+          <>
+            <StyledLessIcon src={MoreThanBlueWhiteIcon} />
+            <StyledMoreIcon src={LessThanBlueWhiteIcon} />
+          </>
+        )}
+        <StyledUsersWrapper>
+          {aboutData.map((organizer) => (
+            <AboutCard person={organizer} key={organizer.id} />
+          ))}
+        </StyledUsersWrapper>
+        <p>
+          <StyledLink
+            href="https://eepurl.com/ifxXl9"
+            rel="noreferrer"
+            target="_blank"
+          >
+            📨 Subscribe to our news here
+          </StyledLink>
+        </p>
+        <StyledMarginBottom />
+      </StyledSpeakersSection>
+    </SectionWrapper>
   );
 };
 
