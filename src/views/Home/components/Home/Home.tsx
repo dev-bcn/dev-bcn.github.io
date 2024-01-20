@@ -96,7 +96,9 @@ const Home: FC = () => {
           {edition?.actionButtons && <ActionButtons />}
           {edition?.showInfoButtons && <InfoButtons />}
 
-          {width > BIGGER_BREAKPOINT && <StyledLessThan src={LessThanIcon} />}
+          {width > BIGGER_BREAKPOINT && (
+            <StyledLessThan alt="Icon" src={LessThanIcon} />
+          )}
           {width > BIGGER_BREAKPOINT && (
             <StyledTopSlash
               initial={{ x: "100%" }}

@@ -36,7 +36,7 @@ const Footer: FC = () => {
     <StyledFooterAbsoluteContainer className="Footer">
       <StyledFooterContainer>
         <StyledFooterItem>
-          <StyledAbsoluteImg src={LessThanBlueIcon} />
+          <StyledAbsoluteImg alt="less than - icon" src={LessThanBlueIcon} />
         </StyledFooterItem>
         <StyledFooterItem>
           <StyledFlexCol>

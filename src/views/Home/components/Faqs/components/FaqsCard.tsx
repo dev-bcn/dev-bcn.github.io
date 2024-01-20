@@ -19,6 +19,7 @@ const FaqCard: FC<FaqCardType> = ({ faq, index }) => {
       <StyledFaqImageContainer padding={isOdd ? "0 1rem 0 0" : "0 0 0 1rem"}>
         <Suspense fallback={<StyledLoadingImage src={Logo} />}>
           <StyledFaqImage
+            alt={`DevBcn — image ${index}`}
             src={require(`../../../../../assets/images/FaqsImage${index}.jpg`)}
           />
         </Suspense>

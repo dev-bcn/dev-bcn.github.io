@@ -78,7 +78,10 @@ const SpeakersCarousel: FC = () => {
         <StyledLink>
           <Link to={ROUTE_SPEAKERS} className="link--text">
             <StyledSubtitle> View all speakers</StyledSubtitle>
-            <StyledLessThanRed src={LessThanBlueWhiteIcon} />
+            <StyledLessThanRed
+              alt="view speakers"
+              src={LessThanBlueWhiteIcon}
+            />
           </Link>
         </StyledLink>
         <StyledBottomSlash

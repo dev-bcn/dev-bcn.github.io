@@ -35,7 +35,7 @@ const Sponsors: FC = () => (
   <SectionWrapper color={Color.WHITE}>
     <StyledSponsorsContainer id="sponsors">
       <StyledTitleContainer className="TitleContainer">
-        <StyledTitleImg src={LessThanBlueIcon} />
+        <StyledTitleImg alt="Less than - icon" src={LessThanBlueIcon} />
         <TitleSection
           data-testid="sponsors-box"
           title="SPONSORS"
@@ -45,7 +45,7 @@ const Sponsors: FC = () => (
         and to support technological communities."
           color={Color.DARK_BLUE}
         />
-        <StyledTitleImg src={LessThanBlueWhiteIcon} />
+        <StyledTitleImg alt="more than - icon" src={LessThanBlueWhiteIcon} />
       </StyledTitleContainer>
       <TopSponsors />
       <PremiumSponsors />
