@@ -29,7 +29,7 @@ const StyledTravel = styled.div`
 
 const Travel: FC = () => {
   useEffect(() => {
-    document.title = `Travel - DevBcn ${data.edition}`;
+    document.title = `Travel — ${data.title} — ${data.edition}`;
   }, []);
   return (
     <StyledTravel>

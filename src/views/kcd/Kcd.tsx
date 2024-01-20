@@ -40,7 +40,7 @@ const StyledWaveContainer = styled.div`
 export default function Kcd() {
   const { width } = useWindowSize();
   useEffect(() => {
-    document.title = `KCD Spain- DevBcn ${data.edition}`;
+    document.title = `KCD Spain — ${data.title} — ${data.edition}`;
   });
   return (
     <>

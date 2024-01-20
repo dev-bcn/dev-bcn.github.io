@@ -52,7 +52,7 @@ const Speakers: FC = () => {
   }, []);
 
   useEffect(() => {
-    document.title = `Speakers - DevBcn ${webData.edition}`;
+    document.title = `Speakers — ${webData.title} — ${webData.edition}`;
   });
 
   const CFPStartDay = new Date(webData.cfp.startDay);

@@ -73,7 +73,7 @@ const CfpTrackComponent: FC<CfpTrackProps> = ({ track }) => (
 const CfpSection: FC = () => {
   const { width } = useWindowSize();
   React.useEffect(() => {
-    document.title = `CFP Committee - DevBcn - ${conferenceData.edition}`;
+    document.title = `CFP Committee — ${conferenceData.title} — ${conferenceData.edition}`;
   }, []);
   return (
     <>

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import TwitterIcon from "../../components/Icons/Twitter";
 import { Color } from "../../styles/colors";
 import WebsiteIcon from "../../components/Icons/website";
+import data from "../../data/2024.json";
 
 const Heading = styled.h1`
    {
@@ -93,7 +94,7 @@ const FoSS = styled.div`
 
 const Communities: FC = () => {
   React.useEffect(() => {
-    document.title = "Communities";
+    document.title = `Communities — ${data.title} — ${data.edition}`;
   });
   return (
     <>

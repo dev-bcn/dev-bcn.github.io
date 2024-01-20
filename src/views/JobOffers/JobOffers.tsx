@@ -41,7 +41,7 @@ const JobOffers: FC = () => {
   const { width } = useWindowSize();
 
   React.useEffect(() => {
-    document.title = `Job Offers - DevBcn - ${data.edition}`;
+    document.title = `Job Offers - ${data.title} - ${data.edition}`;
   }, []);
 
   return (

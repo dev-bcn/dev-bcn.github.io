@@ -34,8 +34,9 @@
     "startDay": "2024-01-01T00:00:00",
     "endDay": "2024-06-01T00:00:00"
   },
+  "title": "DevBcn - Barcelona Developers Conference ",
   "trackNumber": 5,
-  "tracks": "Java | JVM | Cloud, DevOps, VMs, Kubernetes | Frontend, JavaScript, TypeScript, AngularJS, WASM | Leadership, Agile, Diversity | Big Data, Machine Learning, AI, Python",
+  "tracks": "Java & JVM | Cloud, DevOps, VMs, Kubernetes | Frontend, JavaScript, TypeScript, AngularJS, WASM | Leadership, Agile, Diversity | Big Data, Machine Learning, AI, Python",
   "twitter": "https://twitter.com/dev_bcn",
   "youtube": "https://www.youtube.com/dev_bcn"
 }

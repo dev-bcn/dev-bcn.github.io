@@ -119,7 +119,7 @@ const MeetingDetail: FC<IMeetingDetailProps> = ({
   const { width } = useWindowSize();
 
   useEffect(() => {
-    document.title = `${meeting.title} - DevBcn ${conferenceData.edition}`;
+    document.title = `${meeting.title} — ${conferenceData.title} — ${conferenceData.edition}`;
   }, [meeting.title]);
 
   const finalMeetingInfo: MyType = {

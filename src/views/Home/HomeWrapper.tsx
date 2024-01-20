@@ -23,6 +23,7 @@ export interface Edition {
   startDay: Date;
   endDay: Date;
   trackNumber: string;
+  title: string;
   tracks: string;
   email: string;
   twitter: string;
@@ -54,7 +55,7 @@ export const HomeWrapper: FC = () => {
 
   useEventEdition(setEdition);
   React.useEffect(() => {
-    document.title = `Home - DevBcn - ${edition?.edition}`;
+    document.title = `Home - ${edition?.title} - ${edition?.edition}`;
     if (hash != null && hash !== "") {
       const scroll = document.getElementById(hash.substring(1));
       scroll?.scrollIntoView();

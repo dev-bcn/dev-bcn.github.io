@@ -34,6 +34,7 @@
     "startDay": "2022-11-01T00:00:00",
     "endDay": "2023-06-26T00:00:00"
   },
+  "title": "DevBcn - Barcelona Developers Conference ",
   "trackNumber": 7,
   "tracks": "Java | JVM | Go, Rust, C++, C# | Cloud, DevOps, VMs, Kubernetes | Frontend | Leadership, Agile, Diversity | Big Data, Machine Learning, AI, Python",
   "twitter": "https://twitter.com/dev_bcn",

@@ -65,7 +65,7 @@ const AttendeeInformation: FC = () => {
   const formattedDate = format(new Date(data.startDay), "EEEE, MMMM do");
 
   useEffect(() => {
-    document.title = "Attendee information - DevBcn " + data.edition;
+    document.title = `Attendee information — ${data.title} — ${data.edition}`;
   }, []);
 
   return (

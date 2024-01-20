@@ -20,7 +20,7 @@ const Schedule: FC = () => {
   const { width } = useWindowSize();
 
   React.useEffect(() => {
-    document.title = `Schedule - DevBcn - ${data.edition}`;
+    document.title = `Schedule — ${data.title} — ${data.edition}`;
 
     fetch("https://sessionize.com/api/v2/a2sw0wks/view/GridSmart")
       .then((value) => value.text())

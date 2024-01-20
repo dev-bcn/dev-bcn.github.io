@@ -1,6 +1,7 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
 import { Color } from "../../styles/colors";
+import data from "../../data/2024.json";
 
 const StyledDiv = styled.div`
    {
@@ -34,6 +35,9 @@ const StyledDiv = styled.div`
 `;
 
 const Conditions: FC = () => {
+  React.useEffect(() => {
+    document.title = `Communities — ${data.title} — ${data.edition}`;
+  });
   return (
     <StyledDiv>
       <h1>TERMS AND CONDITIONS</h1>
@@ -258,7 +262,7 @@ const Conditions: FC = () => {
         of your personal data. If you wish to invoke your privacy rights, please
         contact{" "}
         <a href="mailto:customers@devbcn.com" target="_blank" rel="noreferrer">
-          customers@devbcn.com.
+          customers@devbcn.com
         </a>
         . We will normally respond to your request within 30 days. This period
         can be extended by a further two months if the request is complex or if
