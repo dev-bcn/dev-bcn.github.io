@@ -62,7 +62,11 @@ const Navigation: FC = () => {
     <>
       <StyledHeaderWrapper>
         <StyledHeader>
-          <StyledHeaderLogo src={NavigationLogo} onClick={handleLogoClick} />
+          <StyledHeaderLogo
+            alt="DevBcn — logo"
+            src={NavigationLogo}
+            onClick={handleLogoClick}
+          />
           <HorizontalMenu navItems={navItems} subMenuItems={subNavItems} />
           <HamburgerMenu onClick={handleSetMenu} />
         </StyledHeader>

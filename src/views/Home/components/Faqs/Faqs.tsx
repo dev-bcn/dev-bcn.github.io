@@ -43,10 +43,10 @@ const Faqs: FC = () => {
           <div style={{ width: "60%" }}>
             <StyledH2>Check last DevBcn edition</StyledH2>
             <Suspense fallback={<StyledLoadingImage src={Logo} />}>
-              <StyledImage src={image1} alt="JBCNConf" />
+              <StyledImage src={image1} alt="DevBcn 2023" />
             </Suspense>
             <Suspense fallback={<StyledLoadingImage src={Logo} />}>
-              <StyledImage src={image2} alt="JBCNConf - Keynote" />
+              <StyledImage src={image2} alt="DevBcn 2023" />
             </Suspense>
             <StyledP>
               DevBcn is the rebranding of the biggest Java & JVM conference in
@@ -80,8 +80,8 @@ const Faqs: FC = () => {
           </div>
           {width > MOBILE_BREAKPOINT && (
             <>
-              <StyleMoreIcon src={MoreThanIcon} />
-              <StyleLessIcon src={LessThanIcon} />
+              <StyleMoreIcon alt="More than — icon" src={MoreThanIcon} />
+              <StyleLessIcon alt="Lees than — icon" src={LessThanIcon} />
             </>
           )}
         </StyledFaqSection>
