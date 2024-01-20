@@ -10,6 +10,7 @@ export const HamburgerMenu = (props: { onClick: () => void }) => {
     <>
       {width <= BIG_BREAKPOINT && (
         <StyledBlueHamburger
+          alt="Navigation Menu"
           src={BlueHamburgerIcon}
           whileTap={{ scale: 0.8 }}
           onClick={props.onClick}
