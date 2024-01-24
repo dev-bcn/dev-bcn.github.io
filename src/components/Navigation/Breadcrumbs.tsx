@@ -61,7 +61,7 @@ const getLinkData = (page: string) => {
   return returnValue;
 };
 
-const Breadcrumbs: FC = () => {
+const Breadcrumbs: FC<React.PropsWithChildren<unknown>> = () => {
   const [pages, setPages] = useState<string[]>([]);
   const location = useLocation();
 

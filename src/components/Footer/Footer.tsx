@@ -22,7 +22,7 @@ import {
   StyledLink,
 } from "./Styles.Footer";
 
-const Footer: FC = () => {
+const Footer: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
 
   const navigate = useNavigate();

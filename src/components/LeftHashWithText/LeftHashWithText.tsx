@@ -29,7 +29,7 @@ const StyledSlashText = styled.h1<{ color: string }>`
   }
 `;
 
-export const LeftHashWithText: FC<TLateralHashWithText> = ({ color, text }) => {
+export const LeftHashWithText: FC<React.PropsWithChildren<TLateralHashWithText>> = ({ color, text }) => {
   return (
     <StyledLeftSlashWrapper
       initial={{ x: '-100%' }}

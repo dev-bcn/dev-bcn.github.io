@@ -38,7 +38,7 @@ const Image = styled.img`
   }
 `;
 
-const SpeakerInformation: FC = () => {
+const SpeakerInformation: FC<React.PropsWithChildren<unknown>> = () => {
   const startDate = new Date(data.startDay);
   const speakersActivityDate = startDate.setDate(startDate.getDate() - 1);
   return (

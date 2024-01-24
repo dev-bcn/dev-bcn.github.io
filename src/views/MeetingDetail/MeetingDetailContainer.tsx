@@ -15,7 +15,7 @@ import MeetingDetail from "./MeetingDetail";
 const StyledContainer = styled.div`
   background-color: ${Color.WHITE};
 `;
-const MeetingDetailContainer: FC = () => {
+const MeetingDetailContainer: FC<React.PropsWithChildren<unknown>> = () => {
   const { id } = useParams<{ id: string }>();
   const { isLoading, error, data } = useFetchTalksById(id!!);
   const { data: speakerData } = useFetchSpeakers();

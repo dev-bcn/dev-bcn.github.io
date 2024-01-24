@@ -31,7 +31,7 @@ export const buildSlashes = (module: number) => {
   return slashes;
 };
 
-const Sponsors: FC = () => (
+const Sponsors: FC<React.PropsWithChildren<unknown>> = () => (
   <SectionWrapper color={Color.WHITE}>
     <StyledSponsorsContainer id="sponsors">
       <StyledTitleContainer className="TitleContainer">

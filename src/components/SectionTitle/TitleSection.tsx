@@ -51,7 +51,7 @@ const StyledSubTitle = styled.p`
   }
 `;
 
-const TitleSection: FC<ISectionTitleProps> = ({ title, subtitle, color }) => {
+const TitleSection: FC<React.PropsWithChildren<ISectionTitleProps>> = ({ title, subtitle, color }) => {
   return (
     <StyledTitleContainer>
       <StyledTitle color={color}>/ {title}</StyledTitle>

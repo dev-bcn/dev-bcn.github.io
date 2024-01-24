@@ -92,7 +92,7 @@ const FoSS = styled.div`
   }
 `;
 
-const Communities: FC = () => {
+const Communities: FC<React.PropsWithChildren<unknown>> = () => {
   React.useEffect(() => {
     document.title = `Communities — ${data.title} — ${data.edition}`;
   });
@@ -205,7 +205,8 @@ const Communities: FC = () => {
                   src="/images/sponsors/agile.png"
                   className="attachment-eventstation-related-post-image size-eventstation-related-post-image wp-post-image jello-vertical"
                   alt="Agile Spain"
-                  width="80%"
+                  width="600"
+                  style={{ width: "80%" }}
                 />
               </div>
               <div>

@@ -15,7 +15,7 @@ import TalkDetail from "./TalkDetail";
 const StyledContainer = styled.div`
   background-color: ${Color.WHITE};
 `;
-const TalkDetailContainer2023: FC = () => {
+const TalkDetailContainer2023: FC<React.PropsWithChildren<unknown>> = () => {
   const { id } = useParams<{ id: string }>();
   const { isLoading, error, data } = useFetchTalksById(id!!);
   const { data: speakerData } = useFetchSpeakers();

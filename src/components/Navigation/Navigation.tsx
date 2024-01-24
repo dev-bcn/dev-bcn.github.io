@@ -29,7 +29,7 @@ import {
 import { HorizontalMenu } from "./HorizontalMenu";
 import { HamburgerMenu } from "./HamburgerMenu";
 
-const Navigation: FC = () => {
+const Navigation: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
   const [isOpened, setIsOpened] = useState(false);
   const [is2023, setIs2023] = useState(false);

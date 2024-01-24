@@ -32,7 +32,7 @@ const StyledSection = styled.div`
   }
 `;
 
-export const ToBarcelona: FC = () => {
+export const ToBarcelona: FC<React.PropsWithChildren<unknown>> = () => {
   return (
     <StyledSection>
       <h2>Travel to Barcelona</h2>

@@ -35,7 +35,7 @@ const MemberName = styled.h5`
   text-align: left;
 `;
 
-const CfpTrackComponent: FC<CfpTrackProps> = ({ track }) => (
+const CfpTrackComponent: FC<React.PropsWithChildren<CfpTrackProps>> = ({ track }) => (
   <>
     <section>
       <TrackName>{track.name}</TrackName>
@@ -71,7 +71,7 @@ const CfpTrackComponent: FC<CfpTrackProps> = ({ track }) => (
   </>
 );
 
-const CfpSection2023: FC = () => {
+const CfpSection2023: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
   React.useEffect(() => {
     document.title = `CFP Committee - DevBcn - ${conferenceData.edition}`;

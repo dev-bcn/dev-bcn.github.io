@@ -1,4 +1,4 @@
-import { FC, Suspense } from "react";
+import React, { FC, Suspense } from "react";
 import venue from "../../assets/images/la-farga.png";
 import GoogleMapReact from "google-map-react";
 import "./map.css";
@@ -103,7 +103,9 @@ interface LocationProps {
   text: string;
 }
 
-const AnyReactComponent: FC<LocationProps> = ({ text }) => (
+const AnyReactComponent: FC<React.PropsWithChildren<LocationProps>> = ({
+  text,
+}) => (
   <div
     style={{
       color: Color.WHITE,
@@ -137,7 +139,7 @@ const AnyReactComponent: FC<LocationProps> = ({ text }) => (
   </div>
 );
 
-export const Venue: FC = () => {
+export const Venue: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
   const location: LocationProps = {
     text: "La Farga",

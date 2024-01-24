@@ -14,7 +14,7 @@ const StyledActionDiv = styled.div`
   }
 `;
 
-const MultimediaInfoButtons: FC = () => {
+const MultimediaInfoButtons: FC<React.PropsWithChildren<unknown>> = () => {
   const trackAttendee = useCallback(() => {
     gaEventTracker("flickr", "flickr");
   }, []);

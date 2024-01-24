@@ -16,7 +16,7 @@ type SpeakersCardProps = {
   speaker: ISpeaker;
 };
 
-export const SpeakerCard: FC<SpeakersCardProps> = ({ speaker }) => {
+export const SpeakerCard: FC<React.PropsWithChildren<SpeakersCardProps>> = ({ speaker }) => {
   return (
     <StyledSpeakerCard>
       <Link

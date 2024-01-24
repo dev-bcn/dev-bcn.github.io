@@ -17,7 +17,7 @@ import { Link } from "react-router-dom";
 import { ROUTE_TALK_DETAIL } from "../../constants/routes";
 import data from "../../data/2024.json";
 
-const SessionFeedback: FC = () => {
+const SessionFeedback: FC<React.PropsWithChildren<unknown>> = () => {
   const bodyTemplate = React.useCallback(
     (field: keyof MeasurableSessionRating) => (session: SessionRating) =>
       <Rating value={session[field]} readOnly cancel={false} />,

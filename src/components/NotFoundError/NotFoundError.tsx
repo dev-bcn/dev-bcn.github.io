@@ -34,7 +34,7 @@ interface INotFoundErrorProps {
   message?: string;
 }
 
-const NotFoundError: FC<INotFoundErrorProps> = ({ message = "Page" }) => {
+const NotFoundError: FC<React.PropsWithChildren<INotFoundErrorProps>> = ({ message = "Page" }) => {
   useEffect(() => {
     document.title = "DevBcn - page not Found";
   });

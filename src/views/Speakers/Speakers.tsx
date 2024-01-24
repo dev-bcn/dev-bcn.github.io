@@ -35,7 +35,7 @@ const LessThanGreaterThan = (props: { width: number }) => (
   </>
 );
 
-const Speakers: FC = () => {
+const Speakers: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
   const today = new Date();
   const isBetween = (startDay: Date, endDay: Date): boolean =>

@@ -16,7 +16,7 @@ import * as Sentry from "@sentry/react";
 import { Simulate } from "react-dom/test-utils";
 import error = Simulate.error;
 
-const Schedule: FC = () => {
+const Schedule: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
 
   React.useEffect(() => {

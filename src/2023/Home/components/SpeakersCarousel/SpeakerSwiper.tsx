@@ -34,7 +34,7 @@ const StyledSlideText = styled.p`
   font-size: 0.875rem;
   color: white;
 `;
-const SpeakerSwiper: FC = () => {
+const SpeakerSwiper: FC<React.PropsWithChildren<unknown>> = () => {
   const { isLoading, data, error } = useFetchSpeakers();
 
   const swiperSpeakers = data?.sort(() => 0.5 - Math.random()).slice(0, 20);

@@ -14,7 +14,7 @@ import {
   OfferTitle,
 } from "./JobOffers.Style";
 
-const CompanyOffers: React.FC<CompanyProps> = ({ company }) => (
+const CompanyOffers: React.FC<React.PropsWithChildren<CompanyProps>> = ({ company }) => (
   <CompanyContainer id={company.name.replaceAll(" ", "-").toLowerCase()}>
     <div
       style={{

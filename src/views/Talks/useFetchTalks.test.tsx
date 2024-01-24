@@ -319,7 +319,7 @@ describe("Fetch Talks by id", () => {
 
     mockedAxios.get.mockImplementation(() => Promise.resolve(payload));
 
-    const wrapper: FC<React.PropsWithChildren<{}>> = ({ children }) => {
+    const wrapper: FC<React.PropsWithChildren<React.PropsWithChildren<{}>>> = ({ children }) => {
       return (
         <QueryClientProvider client={queryClient}>
           {children}

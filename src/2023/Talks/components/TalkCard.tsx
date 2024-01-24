@@ -44,7 +44,7 @@ interface TalkCardProps {
   showTrack?: boolean;
 }
 
-export const TalkCard: FC<TalkCardProps> = ({ showTrack = false, talk }) => {
+export const TalkCard: FC<React.PropsWithChildren<TalkCardProps>> = ({ showTrack = false, talk }) => {
   return (
     <StyledSessionCard>
       <StyledJobsInfo>

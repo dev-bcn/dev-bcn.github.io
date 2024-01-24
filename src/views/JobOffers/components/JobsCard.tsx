@@ -32,7 +32,7 @@ const StyledLocationText = styled.span`
   padding-left: 0.25rem;
 `;
 
-const JobsCard: FC<IJobsCardProps> = ({ offer }) => {
+const JobsCard: FC<React.PropsWithChildren<IJobsCardProps>> = ({ offer }) => {
   return (
     <StyledFaqCard>
       <StyledJobsInfo>

@@ -63,7 +63,7 @@ const StyledActionButton = styled.div`
   }
 `;
 
-const Button: FC<ButtonProps> = ({
+const Button: FC<React.PropsWithChildren<ButtonProps>> = ({
   text,
   link,
   onClick,

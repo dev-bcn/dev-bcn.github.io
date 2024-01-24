@@ -97,7 +97,7 @@ const StyledParagraph = styled.section`
     padding-left: 40px;
   }
 `;
-const Diversity: FC = () => {
+const Diversity: FC<React.PropsWithChildren<unknown>> = () => {
   useEffect(() => {
     document.title = `Diversity — ${data.title} — ${data.edition}`;
   });

@@ -79,7 +79,7 @@ const StyleMoreIcon = styled.img`
   }
 `;
 
-const CodeOfConduct: FC = () => {
+const CodeOfConduct: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
 
   useEffect(() => {

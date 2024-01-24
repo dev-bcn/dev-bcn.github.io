@@ -115,7 +115,7 @@ type MyType = {
   track?: string;
 };
 
-const TalkDetail: FC<IMeetingDetailProps> = ({
+const TalkDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
   meeting,
   speakers: mySpeakers,
 }) => {

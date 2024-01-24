@@ -13,7 +13,7 @@ const StyledSection = styled.section`
   }
 `;
 
-const Cookies: FC = () => {
+const Cookies: FC<React.PropsWithChildren<unknown>> = () => {
   return (
     <StyledSection>
       <h1>Cookies policy</h1>

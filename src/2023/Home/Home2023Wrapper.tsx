@@ -16,7 +16,7 @@ const StyledContainer = styled.div`
   }
 `;
 
-export const Home2023Wrapper: FC = () => {
+export const Home2023Wrapper: FC<React.PropsWithChildren<unknown>> = () => {
   const { hash } = useLocation();
 
   React.useEffect(() => {

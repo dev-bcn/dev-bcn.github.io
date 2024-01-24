@@ -65,7 +65,7 @@ export const colorTagByText = (text: string): string => {
   return "#000000";
 };
 
-export const Tag: FC<TagProps> = ({ text, textColor }) => {
+export const Tag: FC<React.PropsWithChildren<TagProps>> = ({ text, textColor }) => {
   const color = colorTagByText(text);
   return (
     <StyledTagWrapper borderColor={color}>

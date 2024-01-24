@@ -18,7 +18,7 @@ const StyledActionDiv = styled.div`
   }
 `;
 
-const InfoButtons: FC = () => {
+const InfoButtons: FC<React.PropsWithChildren<unknown>> = () => {
   const trackAttendee = useCallback(() => {
     gaEventTracker("attendee-info", "attendee-infos");
   }, []);
