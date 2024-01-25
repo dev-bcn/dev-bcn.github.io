@@ -36,7 +36,7 @@ const Image = styled.img`
   }
 `;
 
-const SpeakerInformation2023: FC = () => {
+const SpeakerInformation2023: FC<React.PropsWithChildren<unknown>> = () => {
   return (
     <>
       <main

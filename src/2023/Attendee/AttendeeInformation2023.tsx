@@ -59,7 +59,7 @@ const SectionWrapper = styled.div`
   max-width: 1280px;
 `;
 
-const AttendeeInformation2023: FC = () => {
+const AttendeeInformation2023: FC<React.PropsWithChildren<unknown>> = () => {
   return (
     <main>
       <h1 style={{ color: Color.LIGHT_BLUE, paddingTop: "100px" }}>

@@ -103,7 +103,7 @@ const RenderCookie = () => (
   </>
 );
 
-const App: FC = () => {
+const App: FC<React.PropsWithChildren<unknown>> = () => {
   const queryClient = new QueryClient();
   return (
     <StyledAppWrapper className="AppWrapperAll">

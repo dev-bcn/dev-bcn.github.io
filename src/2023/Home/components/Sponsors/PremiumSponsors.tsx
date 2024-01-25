@@ -18,7 +18,7 @@ import { FC, useCallback, useEffect, useState } from "react";
 import { buildSlashes } from "./Sponsors";
 import { sponsors } from "./SponsorsData";
 
-export const PremiumSponsors: FC = () => {
+export const PremiumSponsors: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
   const [slashes, setSlashes] = useState("");
   const [isHovered, setIsHovered] = useState<boolean>(false);

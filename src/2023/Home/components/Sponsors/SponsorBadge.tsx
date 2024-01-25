@@ -12,7 +12,7 @@ interface ISponsorBadgeProps {
   isVisible: boolean;
 }
 
-const SponsorBadge: FC<ISponsorBadgeProps> = ({
+const SponsorBadge: FC<React.PropsWithChildren<ISponsorBadgeProps>> = ({
   position,
   color,
   isVisible,

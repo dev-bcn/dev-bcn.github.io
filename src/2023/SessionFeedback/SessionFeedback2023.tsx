@@ -16,7 +16,7 @@ import { Color } from "../../styles/colors";
 import { Link } from "react-router-dom";
 import { ROUTE_TALK_DETAIL } from "../../constants/routes";
 
-const SessionFeedback2023: FC = () => {
+const SessionFeedback2023: FC<React.PropsWithChildren<unknown>> = () => {
   const bodyTemplate = React.useCallback(
     (field: keyof MeasurableSessionRating) => (session: SessionRating) =>
       <Rating value={session[field]} readOnly cancel={false} />,

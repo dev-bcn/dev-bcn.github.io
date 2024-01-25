@@ -25,7 +25,7 @@ interface TrackInfo {
   code?: string;
 }
 
-const Talks2023: FC = () => {
+const Talks2023: FC<React.PropsWithChildren<unknown>> = () => {
   const [selectedGroupId, setSelectedGroupId] = useState<TrackInfo | null>(
     null
   );

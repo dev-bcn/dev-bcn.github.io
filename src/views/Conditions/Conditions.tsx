@@ -34,7 +34,7 @@ const StyledDiv = styled.div`
   }
 `;
 
-const Conditions: FC = () => {
+const Conditions: FC<React.PropsWithChildren<unknown>> = () => {
   React.useEffect(() => {
     document.title = `Communities — ${data.title} — ${data.edition}`;
   });

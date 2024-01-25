@@ -35,7 +35,7 @@ const StyledSection = styled.section`
     min-width: 14%;
   }
 `;
-const Workshops: FC = () => {
+const Workshops: FC<React.PropsWithChildren<unknown>> = () => {
   const { isLoading, data, error } = useFetchTalks();
   useEffect(() => {
     document.title = `Workshops - DevBcn - ${conferenceData.edition}`;

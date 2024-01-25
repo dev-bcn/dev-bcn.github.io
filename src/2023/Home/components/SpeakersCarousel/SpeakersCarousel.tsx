@@ -58,7 +58,7 @@ const StyledBlueSlash = styled(motion.p)`
   height: 100%;
 `;
 
-const SpeakersCarousel: FC = () => {
+const SpeakersCarousel: FC<React.PropsWithChildren<unknown>> = () => {
   return (
     <SectionWrapper color={Color.LIGHT_BLUE}>
       <StyledSpeakersContainer>

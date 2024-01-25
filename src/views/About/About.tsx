@@ -39,7 +39,7 @@ const StyledLink = styled.a`
   }
 `;
 
-const About: FC = () => {
+const About: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
 
   React.useEffect(() => {

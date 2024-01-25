@@ -5,16 +5,14 @@ import { Color } from "../../styles/colors";
 import WebsiteIcon from "../../components/Icons/website";
 
 const Heading = styled.h1`
-   {
-    padding-top: 10rem;
-    font-size: 2rem;
-  }
+  padding-top: 10rem;
+  font-size: 2rem;
 `;
 const Paragraph = styled.p`
   padding-bottom: 10rem;
 `;
 const FoSS = styled.div`
-  .entries {
+  &.entries {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -23,75 +21,14 @@ const FoSS = styled.div`
     margin: 2rem auto;
   }
 
-  #companies {
-    position: sticky;
-    top: 100px;
-    background: white;
-    text-align: center;
-  }
-
-  #companies a {
-    margin: 0 1px;
-    text-transform: capitalize;
-  }
-
-  #companies a:not(:last-child):after {
-    content: " |";
-  }
-
-  .description {
-    padding: 1rem;
-    text-align: justify;
-  }
-
-  .entry {
-    display: flex;
-    border-radius: 10px;
-    flex: 1 0 20%;
-    box-shadow: 0 0 5px 0 lightgray;
-    margin-bottom: 20px;
-  }
-
-  .company-info {
-    flex: 1 0 auto;
-    width: 20%;
-    padding: 10px;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, #f5f5f5 100%);
-  }
-
   .company-info img {
     min-width: 100px;
     max-width: 20vw;
     vertical-align: middle;
   }
-
-  .vacancies {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    justify-content: space-evenly;
-    align-content: stretch;
-    border-left: 1px dotted darkgrey;
-    padding-left: 5px;
-    background: linear-gradient(to top, white 50%, #f5f5f5 80%);
-  }
-
-  .vacancy {
-    flex-grow: 1;
-    margin: 0 10px;
-  }
-
-  .vacancy p {
-    margin-bottom: 5px;
-  }
-
-  .social-media {
-    text-align: center;
-    padding-bottom: 20px;
-  }
 `;
 
-const Communities2023: FC = () => {
+const Communities2023: FC<React.PropsWithChildren<unknown>> = () => {
   React.useEffect(() => {
     document.title = "Communities";
   });
@@ -204,7 +141,8 @@ const Communities2023: FC = () => {
                   src="/images/sponsors/agile.png"
                   className="attachment-eventstation-related-post-image size-eventstation-related-post-image wp-post-image jello-vertical"
                   alt="Agile Spain"
-                  width="80%"
+                  width="600"
+                  style={{ width: "80%" }}
                 />
               </div>
               <div>

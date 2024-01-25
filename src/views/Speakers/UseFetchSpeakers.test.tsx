@@ -78,7 +78,7 @@ describe("fetch speaker hook and speaker adapter", () => {
     const queryClient = new QueryClient();
 
     mockedAxios.get.mockImplementation(() => Promise.resolve(payload));
-    const wrapper: FC<React.PropsWithChildren<{}>> = ({ children }) => {
+    const wrapper: FC<React.PropsWithChildren<React.PropsWithChildren<{}>>> = ({ children }) => {
       return (
         <QueryClientProvider client={queryClient}>
           {children}
@@ -123,7 +123,7 @@ describe("fetch speaker hook and speaker adapter", () => {
         sessions: [{ id: 4567, name: "sample session" }],
       },
     ];
-    const wrapper: FC<React.PropsWithChildren<{}>> = ({ children }) => {
+    const wrapper: FC<React.PropsWithChildren<React.PropsWithChildren<{}>>> = ({ children }) => {
       return (
         <QueryClientProvider client={queryClient}>
           {children}

@@ -35,7 +35,7 @@ const StyledLogo = styled.img`
     width: 80%;
   }
 `;
-const Home: FC = () => {
+const Home: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
   const startDay = data.startDay;
 

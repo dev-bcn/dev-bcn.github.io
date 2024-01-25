@@ -49,7 +49,7 @@ export interface Cfp {
   endDay: Date;
 }
 
-export const HomeWrapper: FC = () => {
+export const HomeWrapper: FC<React.PropsWithChildren<unknown>> = () => {
   const { hash } = useLocation();
   const [edition, setEdition] = useState<Edition>();
 

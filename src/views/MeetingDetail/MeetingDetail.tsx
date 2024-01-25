@@ -112,7 +112,7 @@ type MyType = {
   track?: string;
 };
 
-const MeetingDetail: FC<IMeetingDetailProps> = ({
+const MeetingDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
   meeting,
   speakers: mySpeakers,
 }) => {

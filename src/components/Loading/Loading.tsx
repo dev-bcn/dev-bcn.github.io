@@ -22,7 +22,7 @@ export const StyledLoadingImage = styled.img`
   }
 `;
 
-const Loading: FC = () => {
+const Loading: FC<React.PropsWithChildren<unknown>> = () => {
   return (
     <div
       style={{

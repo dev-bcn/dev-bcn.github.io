@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
 import { Color } from "../../styles/colors";
 import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
@@ -72,7 +72,7 @@ const StyledAccommodation = styled.div`
     padding: 1.25rem;
     display: flex;
     align-items: center;
-    border-radius: 95% 5% 95% 5% / 5% 100% 0% 95%;
+    border-radius: 95% 5% 95% 5% / 5% 100% 0 95%;
     @media (max-width: ${BIG_BREAKPOINT}px) {
       flex-direction: column;
     }
@@ -81,7 +81,7 @@ const StyledAccommodation = styled.div`
   .accommodation img {
     max-width: 300px;
     margin-right: 1.25rem;
-    border-radius: 90% 10% 90% 10% / 0% 100% 0% 100%;
+    border-radius: 90% 10% 90% 10% / 0 100% 0 100%;
 
     @media (max-width: ${BIG_BREAKPOINT}px) {
       max-width: 100%;
@@ -112,7 +112,7 @@ const StyledAccommodation = styled.div`
   }
 `;
 
-export const Accommodation: FC = () => {
+export const Accommodation: FC<React.PropsWithChildren<unknown>> = () => {
   return (
     <StyledAccommodation>
       <div className="container">

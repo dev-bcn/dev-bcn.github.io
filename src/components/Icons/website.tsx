@@ -6,7 +6,7 @@ interface IWebsiteIconProps {
   WebsiteUrl: string;
 }
 
-const WebsiteIcon: FC<IWebsiteIconProps> = ({ color, WebsiteUrl }) => {
+const WebsiteIcon: FC<React.PropsWithChildren<IWebsiteIconProps>> = ({ color, WebsiteUrl }) => {
   return (
     <StyledSocialMediaWrapper href={WebsiteUrl} target={"_blank"}>
       <svg

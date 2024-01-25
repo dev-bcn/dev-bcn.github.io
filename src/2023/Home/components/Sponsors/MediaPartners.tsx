@@ -18,7 +18,7 @@ import { useWindowSize } from "react-use";
 import { FC, useCallback, useEffect, useState } from "react";
 import { sponsors } from "./SponsorsData";
 
-export const MediaPartners: FC = () => {
+export const MediaPartners: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
   const [slashes, setSlashes] = useState("");
   const [isHovered, setIsHovered] = useState<boolean>(false);

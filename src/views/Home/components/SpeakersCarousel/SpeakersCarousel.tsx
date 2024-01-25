@@ -62,7 +62,7 @@ const StyledBlueSlash = styled(motion.p)`
   height: 100%;
 `;
 
-const SpeakersCarousel: FC = () => {
+const SpeakersCarousel: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
   return (
     <SectionWrapper color={Color.LIGHT_BLUE}>

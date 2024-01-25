@@ -26,7 +26,7 @@ import {
 import { useEventEdition } from "../../UseEventEdition";
 import { Edition } from "../../HomeWrapper";
 
-const Faqs: FC = () => {
+const Faqs: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
   const [edition, setEdition] = useState<Edition>();
 

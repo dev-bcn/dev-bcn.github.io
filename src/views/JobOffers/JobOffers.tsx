@@ -37,7 +37,7 @@ const MoreThanLessThan = (props: { width: number }) => (
   </>
 );
 
-const JobOffers: FC = () => {
+const JobOffers: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
 
   React.useEffect(() => {

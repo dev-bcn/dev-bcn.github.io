@@ -32,7 +32,7 @@ const StyledSlashText = styled.h1<{ color: string }>`
   }
 `;
 
-export const RightHashWithText: FC<TLateralHashWithText> = ({
+export const RightHashWithText: FC<React.PropsWithChildren<TLateralHashWithText>> = ({
   color,
   text,
 }) => {

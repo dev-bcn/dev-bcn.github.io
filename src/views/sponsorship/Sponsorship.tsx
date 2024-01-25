@@ -90,7 +90,7 @@ const StyleMoreIcon = styled.img`
   }
 `;
 
-const Sponsorship: FC = () => {
+const Sponsorship: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
   const plugins = [
     new AutoPlay({ duration: 2000, direction: "NEXT", stopOnHover: false }),

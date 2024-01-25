@@ -42,7 +42,7 @@ type TimeCountDownProps = {
   completed: boolean;
 };
 
-const TimeCountDown: FC<TimeCountDownProps> = ({
+const TimeCountDown: FC<React.PropsWithChildren<TimeCountDownProps>> = ({
   days,
   hours,
   minutes,

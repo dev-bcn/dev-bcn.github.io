@@ -31,7 +31,7 @@ import { Edition } from "../../HomeWrapper";
 import { Link } from "react-router-dom";
 import data from "../../../../data/2023.json";
 
-const Home: FC = () => {
+const Home: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
   const [edition, setEdition] = useState<Edition>();
 

@@ -15,7 +15,7 @@ const StyledActionDiv = styled.div`
   }
 `;
 
-const ActionButtons: FC = () => {
+const ActionButtons: FC<React.PropsWithChildren<unknown>> = () => {
   const ticketStartDay = new Date(data.tickets.startDay);
   const ticketEndDay = new Date(data.tickets.endDay);
   const CFPStartDay = new Date(data.cfp.startDay);

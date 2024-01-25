@@ -11,7 +11,7 @@ export const StyledSocialMediaWrapper = styled.a`
   max-width: 24px;
   margin-right: 0.5rem;
 `;
-const TwitterIcon: FC<ITwitterIconProps> = ({ color, twitterUrl }) => {
+const TwitterIcon: FC<React.PropsWithChildren<ITwitterIconProps>> = ({ color, twitterUrl }) => {
   return (
     <StyledSocialMediaWrapper
       href={twitterUrl}

@@ -16,7 +16,7 @@ const useGenerateAnchorName = (trackName: string) => {
   return visibleTodos[0];
 };
 
-const TrackInformation: FC<TrackInfoProps> = ({ track }) => {
+const TrackInformation: FC<React.PropsWithChildren<TrackInfoProps>> = ({ track }) => {
   const anchorName = useGenerateAnchorName(track.groupName);
 
   return (

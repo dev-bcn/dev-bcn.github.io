@@ -6,7 +6,7 @@ interface ILinkedinIconProps {
   linkedinUrl: string;
 }
 
-const LinkedinIcon: FC<ILinkedinIconProps> = ({ color, linkedinUrl }) => {
+const LinkedinIcon: FC<React.PropsWithChildren<ILinkedinIconProps>> = ({ color, linkedinUrl }) => {
   return (
     <StyledSocialMediaWrapper href={linkedinUrl} target={"_blank"}>
       <svg

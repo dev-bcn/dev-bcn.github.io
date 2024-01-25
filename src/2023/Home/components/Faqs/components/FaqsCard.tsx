@@ -11,7 +11,7 @@ import {
   StyledFaqTitle,
 } from "../Faqs.style";
 
-const FaqCard: FC<FaqCardType> = ({ faq, index }) => {
+const FaqCard: FC<React.PropsWithChildren<FaqCardType>> = ({ faq, index }) => {
   const isOdd = index % 2 === 0;
 
   return (

@@ -21,7 +21,7 @@ type AvatarCardProps = {
   };
 };
 
-export const AvatarCard: FC<AvatarCardProps> = ({ meet }) => {
+export const AvatarCard: FC<React.PropsWithChildren<AvatarCardProps>> = ({ meet }) => {
   return (
     <StyledAvatarContainer className='AvatarCard'>
       <StyledAvatarImage

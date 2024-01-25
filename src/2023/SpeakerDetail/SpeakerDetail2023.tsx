@@ -39,7 +39,7 @@ interface ISpeakerDetailProps {
   speaker: ISpeaker;
 }
 
-const SpeakerDetail2023: FC<ISpeakerDetailProps> = ({ speaker }) => {
+const SpeakerDetail2023: FC<React.PropsWithChildren<ISpeakerDetailProps>> = ({ speaker }) => {
   const { width } = useWindowSize();
 
   const hasSessions = (): boolean =>

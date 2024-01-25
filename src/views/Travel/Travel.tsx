@@ -27,7 +27,7 @@ const StyledTravel = styled.div`
   }
 `;
 
-const Travel: FC = () => {
+const Travel: FC<React.PropsWithChildren<unknown>> = () => {
   useEffect(() => {
     document.title = `Travel — ${data.title} — ${data.edition}`;
   }, []);

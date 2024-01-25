@@ -9,7 +9,7 @@ export const faqsData: FaqType[] = [
     id: "2274b606-a043-4899-839a-f236d88bbe98",
     question: "What is the Barcelona Developers Conference?",
     answer:
-      "Three days to share knowledge and experiences, meet enthusiasts and geeks and learn about new technologies related to Backend and frontend development, Agile, DevOps, Cloud, and many others.",
+      "Two days to share knowledge and experiences, meet enthusiasts and geeks and learn about new technologies related to Backend and frontend development, Agile, DevOps, Cloud, and many others.",
   },
   {
     id: "13eedebd-59a8-48c5-8897-6270a617ae75",

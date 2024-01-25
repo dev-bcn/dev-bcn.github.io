@@ -37,7 +37,7 @@ interface ISpeakerDetailProps {
   speaker: ISpeaker;
 }
 
-const SpeakerDetail: FC<ISpeakerDetailProps> = ({ speaker }) => {
+const SpeakerDetail: FC<React.PropsWithChildren<ISpeakerDetailProps>> = ({ speaker }) => {
   const { width } = useWindowSize();
 
   useEffect(() => {

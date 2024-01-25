@@ -9,7 +9,7 @@ import conferenceData from "../../data/2024.json";
 import { useFetchSpeakers } from "../Speakers/UseFetchSpeakers";
 import * as Sentry from "@sentry/react";
 
-const SpeakerDetailContainer: FC = () => {
+const SpeakerDetailContainer: FC<React.PropsWithChildren<unknown>> = () => {
   const { id } = useParams<{ id: string }>();
 
   const { isLoading, error, data } = useFetchSpeakers(id);

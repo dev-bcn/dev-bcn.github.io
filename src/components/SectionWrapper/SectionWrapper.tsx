@@ -35,7 +35,7 @@ interface ISectionWrapperProps {
   children: ReactNode;
 }
 
-const SectionWrapper: FC<ISectionWrapperProps> = ({
+const SectionWrapper: FC<React.PropsWithChildren<ISectionWrapperProps>> = ({
   children,
   color,
   marginTop = 0,

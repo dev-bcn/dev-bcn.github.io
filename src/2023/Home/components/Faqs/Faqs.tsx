@@ -22,7 +22,7 @@ import {
   StyleMoreIcon,
 } from "./Faqs.style";
 
-const Faqs: FC = () => {
+const Faqs: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
   return (
     <>

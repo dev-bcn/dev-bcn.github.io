@@ -18,7 +18,7 @@ import { useWindowSize } from "react-use";
 import { buildSlashes } from "./Sponsors";
 import { sponsors } from "./SponsorsData";
 
-export const TopSponsors: FC = () => {
+export const TopSponsors: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
   const [slashes, setSlashes] = useState("");
   const [isHovered, setIsHovered] = useState<boolean>(false);
