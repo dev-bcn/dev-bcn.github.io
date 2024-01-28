@@ -1,13 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.f2949cc8.css",
-    "main.js": "/static/js/main.a41efc7b.js",
+    "main.css": "/static/css/main.7ab11289.css",
+    "main.js": "/static/js/main.22dc6198.js",
     "static/js/496.036b222b.chunk.js": "/static/js/496.036b222b.chunk.js",
     "static/media/after-hours.jpg": "/static/media/after-hours.732647c87982d3461fe6.jpg",
     "static/media/la-farga.png": "/static/media/la-farga.bdd2098b891600a22ce8.png",
     "static/media/DejaVu Sans Bold.ttf": "/static/media/DejaVu Sans Bold.766ec7f37f27362a3922.ttf",
     "static/media/DejaVu Sans Condensed Bold.ttf": "/static/media/DejaVu Sans Condensed Bold.ed925627f38341c0a56f.ttf",
     "static/media/DejaVu Sans ExtraLight.ttf": "/static/media/DejaVu Sans ExtraLight.44b4c66eee82892fe93a.ttf",
+    "static/media/Inter-italic.var.woff2?v=3.19": "/static/media/Inter-italic.var.30807be7abc48ba8c73c.woff2",
+    "static/media/Inter-roman.var.woff2?v=3.19": "/static/media/Inter-roman.var.ba4caefcdf5b36b438db.woff2",
     "static/media/devbcn-1.jpg": "/static/media/devbcn-1.473dc96391be5381010a.jpg",
     "static/media/SpeakersWelcomer.jpg": "/static/media/SpeakersWelcomer.877ee5c39a5d6817eae3.jpg",
     "static/media/devbcn2.jpg": "/static/media/devbcn2.bc0e40510202cb4f6902.jpg",
@@ -18,7 +20,6 @@
     "static/media/logo.png": "/static/media/logo.b21c52c0de343c6b9117.png",
     "static/media/Square 721 Regular.otf": "/static/media/Square 721 Regular.c7768dfb3197d6cd8b5e.otf",
     "index.html": "/index.html",
-    "static/media/color.png": "/static/media/color.6441e63a57ccc5105bad.png",
     "static/media/logo.svg": "/static/media/logo.2c9f559ea55275a050159753db1a607a.svg",
     "static/media/youtube.svg": "/static/media/youtube.66d963fd0a8b78de212b85c566528187.svg",
     "static/media/SlashesWhite.svg": "/static/media/SlashesWhite.f558ff3ee9c9d5c571002489a216fb3a.svg",
@@ -40,12 +41,12 @@
     "static/media/MoreThanBlueIcon.svg": "/static/media/MoreThanBlueIcon.80b146cc5d88641337b61ea66402a531.svg",
     "static/media/MoreThanBlueWhiteIcon.svg": "/static/media/MoreThanBlueWhiteIcon.4e0508c1662edcaf4a1d5cf4b17c33be.svg",
     "static/media/MoreThanIcon.svg": "/static/media/MoreThanIcon.8ceda92f0d54c6046dc048cdc832f18a.svg",
-    "main.f2949cc8.css.map": "/static/css/main.f2949cc8.css.map",
-    "main.a41efc7b.js.map": "/static/js/main.a41efc7b.js.map",
+    "main.7ab11289.css.map": "/static/css/main.7ab11289.css.map",
+    "main.22dc6198.js.map": "/static/js/main.22dc6198.js.map",
     "496.036b222b.chunk.js.map": "/static/js/496.036b222b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f2949cc8.css",
-    "static/js/main.a41efc7b.js"
+    "static/css/main.7ab11289.css",
+    "static/js/main.22dc6198.js"
   ]
 }
