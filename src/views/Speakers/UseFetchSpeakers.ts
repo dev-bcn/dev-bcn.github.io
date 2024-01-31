@@ -5,12 +5,12 @@ import { IResponse, ISpeaker } from "./Speaker.types";
 export const useFetchSpeakers = (id?: string): UseQueryResult<ISpeaker[]> => {
   return useQuery("api-speakers", async () => {
     const serverResponse = await axios.get(
-      "https://sessionize.com/api/v2/ttsitynd/view/Speakers"
+      "https://sessionize.com/api/v2/teq4asez/view/Speakers",
     );
     let returnData;
     if (id !== undefined) {
       returnData = serverResponse.data.filter(
-        (speaker: { id: string }) => speaker.id === id
+        (speaker: { id: string }) => speaker.id === id,
       );
     } else {
       returnData = serverResponse.data;
@@ -28,6 +28,6 @@ export const speakerAdapter = (response: IResponse[]): ISpeaker[] =>
     sessions: response.sessions,
     twitterUrl: response.links.filter((link) => link.linkType === "Twitter")[0],
     linkedInUrl: response.links.filter(
-      (link) => link.linkType === "LinkedIn"
+      (link) => link.linkType === "LinkedIn",
     )[0],
   }));
