@@ -36,7 +36,7 @@ export const StyledMarginBottom = styled.div`
 `;
 export const StyledSessionText = styled.div`
   color: ${Color.WHITE};
-  padding: 0.5rem 0;
+  padding: 0.3rem 0;
   font-size: 0.8em;
   @media (min-width: 800px) {
     hyphens: auto;
@@ -48,9 +48,9 @@ export const StyledSessionCard = styled.div`
   align-items: center;
   /*min-width: 20%;
   max-width: 50%;*/
-  margin: 0.5rem 1rem 1rem;
+  margin: 0.3rem 1rem 1rem;
   flex-grow: 2;
-  background: linear-gradient(-45deg, ${Color.DARK_BLUE}, ${Color.LIGHT_BLUE}, ${Color.DARK_BLUE});
+  background-color: ${Color.DARK_BLUE};
   background-size: 200% 200%;
   border-radius: 10px;
   padding: 15px;

@@ -12,7 +12,7 @@ import { IMeeting } from "../MeetingDetail/MeetingDetail.Type";
 export const useFetchTalks = (): UseQueryResult<IGroup[]> =>
   useQuery("api-talks", async () => {
     let data = await axios.get(
-      "https://sessionize.com/api/v2/ttsitynd/view/Sessions"
+      "https://sessionize.com/api/v2/teq4asez/view/Sessions",
     );
     return data.data;
   });
@@ -20,7 +20,7 @@ export const useFetchTalks = (): UseQueryResult<IGroup[]> =>
 export const useFetchTalksById = (id: string): UseQueryResult<Session[]> =>
   useQuery("talks", async () => {
     const serverResponse = await axios.get(
-      "https://sessionize.com/api/v2/ttsitynd/view/Sessions"
+      "https://sessionize.com/api/v2/teq4asez/view/Sessions",
     );
     return serverResponse.data
       .map((track: IGroup) => track.sessions)
@@ -29,7 +29,7 @@ export const useFetchTalksById = (id: string): UseQueryResult<Session[]> =>
   });
 
 export const extractSessionTags = (
-  questionAnswers: QuestionAnswers[]
+  questionAnswers: QuestionAnswers[],
 ): string[] | undefined => {
   let tags = questionAnswers
     .filter((question) => question.question === "Tags/Topics")
@@ -39,7 +39,7 @@ export const extractSessionTags = (
 };
 
 export const extractSessionSlides = (
-  questionAnswers: QuestionAnswers[]
+  questionAnswers: QuestionAnswers[],
 ): string => {
   let slides = questionAnswers
     .filter((question) => question.question === "Slides")
@@ -62,7 +62,7 @@ const sessionLevel: Record<string, string> = {
 
 export const extractSessionCategoryInfo = (
   categories: SessionCategory[],
-  item: CategoryItemEnum = CategoryItemEnum.Level
+  item: CategoryItemEnum = CategoryItemEnum.Level,
 ): string | undefined => {
   const info = categories.find((category) => category.name === item)
     ?.categoryItems?.[0]?.name;
@@ -91,7 +91,7 @@ export const extractSessionCategoryInfo = (
 };
 
 export const sessionAdapter = (
-  session: Session | undefined
+  session: Session | undefined,
 ): IMeeting | undefined => {
   if (session === undefined) {
     return undefined;
@@ -106,15 +106,15 @@ export const sessionAdapter = (
     level: extractSessionCategoryInfo(session?.categories),
     language: extractSessionCategoryInfo(
       session.categories,
-      CategoryItemEnum.Language
+      CategoryItemEnum.Language,
     ),
     type: extractSessionCategoryInfo(
       session.categories,
-      CategoryItemEnum.Format
+      CategoryItemEnum.Format,
     ),
     track: extractSessionCategoryInfo(
       session.categories,
-      CategoryItemEnum.Track
+      CategoryItemEnum.Track,
     ),
   };
 };

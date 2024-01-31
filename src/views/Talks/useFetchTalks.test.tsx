@@ -212,7 +212,7 @@ describe("extractSessionSlides", () => {
     ];
 
     expect(extractSessionSlides(questionAnswers)).toEqual(
-      "https://www.google.com"
+      "https://www.google.com",
     );
   });
 });
@@ -239,25 +239,25 @@ describe("extractSessionCategoryInfo", () => {
 
   test("returns undefined when categories is empty", () => {
     expect(
-      extractSessionCategoryInfo([], CategoryItemEnum.Level)
+      extractSessionCategoryInfo([], CategoryItemEnum.Level),
     ).toBeUndefined();
   });
 
   test("returns undefined when the requested item is not present in categories", () => {
     expect(
-      extractSessionCategoryInfo(categories, CategoryItemEnum.Track)
+      extractSessionCategoryInfo(categories, CategoryItemEnum.Track),
     ).toBeUndefined();
   });
 
   test("returns the expected output when the requested item is present in categories", () => {
     expect(
-      extractSessionCategoryInfo(categories, CategoryItemEnum.Level)
+      extractSessionCategoryInfo(categories, CategoryItemEnum.Level),
     ).toEqual("Introductory and overview ⭐");
   });
 
   test("returns the expected output when the requested item is present in categories with a different name", () => {
     expect(
-      extractSessionCategoryInfo(categories, CategoryItemEnum.Language)
+      extractSessionCategoryInfo(categories, CategoryItemEnum.Language),
     ).toEqual("English 🇬🇧");
   });
 });
@@ -335,7 +335,7 @@ describe("Fetch Talks by id", () => {
     await waitFor(() => !result.current.isLoading);
     expect(mockedAxios.get).toHaveBeenNthCalledWith(
       1,
-      "https://sessionize.com/api/v2/ttsitynd/view/Sessions"
+      "https://sessionize.com/api/v2/teq4asez/view/Sessions",
     );
     expect(mockedAxios.get).toHaveReturnedTimes(1);
     //expect(result.current.isLoading).toEqual(false);
