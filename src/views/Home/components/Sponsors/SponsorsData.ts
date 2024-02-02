@@ -16,10 +16,33 @@ export interface Sponsor {
 
 export const sponsors: Sponsors = {
   top: [],
-  premium: [],
-  regular: [],
+  premium: [
+    {
+      name: "Barcelona JUG",
+      image: "images/sponsors/bcn-jug.png",
+      website: "https://www.meetup.com/barcelonajug/",
+    },
+  ],
+  regular: [
+    {
+      name: "Sopra Steria",
+      image: "/images/sponsors/sopra.jpg",
+      website: "https://www.soprasteria.es/",
+    },
+  ],
   basic: [],
-  communities: [],
+  communities: [
+    {
+      name: "KCD Spain",
+      website: "https://kcdspain.com/",
+      image: "/images/KCD-logo-white.png",
+    },
+    {
+      name: "CNCF Foundation",
+      website: "https://www.cncf.io/",
+      image: "/images/cncf-main-site-logo.svg",
+    },
+  ],
   media_partners: [],
   supporters: [],
 };

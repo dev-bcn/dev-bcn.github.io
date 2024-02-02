@@ -149,7 +149,6 @@ export const PremiumSponsorImage = styled.img`
   margin: 1rem 2rem;
 
   &:hover {
-    height: 7rem;
     filter: drop-shadow(1px 1px 1px #fff) !important;
   }
 
@@ -179,7 +178,6 @@ export const RegularSponsorImage = styled.img`
   border-radius: 1rem;
 
   &:hover {
-    height: 3.5rem;
     filter: drop-shadow(1px 1px 1px #fff) !important;
   }
 
@@ -224,7 +222,6 @@ export const StyledSponsorIconMicro = styled.img`
   margin-left: 0.75rem;
 
   &:hover {
-    height: 4rem;
     filter: drop-shadow(1px 1px 1px #fff) !important;
   }
 
