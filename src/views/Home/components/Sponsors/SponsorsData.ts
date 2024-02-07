@@ -37,11 +37,6 @@ export const sponsors: Sponsors = {
       website: "https://kcdspain.com/",
       image: "/images/KCD-logo-white.png",
     },
-    {
-      name: "CNCF Foundation",
-      website: "https://www.cncf.io/",
-      image: "/images/cncf-main-site-logo.svg",
-    },
   ],
   media_partners: [],
   supporters: [],
