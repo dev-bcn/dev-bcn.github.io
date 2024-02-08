@@ -16,13 +16,7 @@ export interface Sponsor {
 
 export const sponsors: Sponsors = {
   top: [],
-  premium: [
-    {
-      name: "Barcelona JUG",
-      image: "images/sponsors/bcn-jug.png",
-      website: "https://www.meetup.com/barcelonajug/",
-    },
-  ],
+  premium: [],
   regular: [
     {
       name: "Sopra Steria",
