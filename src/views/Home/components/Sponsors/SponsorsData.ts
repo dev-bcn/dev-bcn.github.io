@@ -17,9 +17,21 @@ export interface Sponsor {
 export const sponsors: Sponsors = {
   top: [],
   premium: [],
-  regular: [],
+  regular: [
+    {
+      name: "Sopra Steria",
+      image: "/images/sponsors/sopra.jpg",
+      website: "https://www.soprasteria.es/",
+    },
+  ],
   basic: [],
-  communities: [],
+  communities: [
+    {
+      name: "KCD Spain",
+      website: "https://kcdspain.com/",
+      image: "/images/KCD-logo-white.png",
+    },
+  ],
   media_partners: [],
   supporters: [],
 };
