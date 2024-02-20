@@ -62,13 +62,13 @@ export const data: CFpTrack[] = [
       },
       {
         name: "Carles Nuñez",
+        twitter: "https://twitter.com/carlesnunez",
         linkedIn: "https://www.linkedin.com/in/carles-nunez-tomeo/",
         photo: "images/cfp/carles_nunez.jpg",
       },
       {
         name: "Phil Nash",
         linkedIn: "https://www.linkedin.com/in/philnash/",
-        twitter: "https://twitter.com/carlesnunez",
       },
     ],
   },
