@@ -6,7 +6,7 @@ interface CFpTrack {
 
 interface CfpMember {
   name: string;
-  photo: string;
+  photo?: string;
   linkedIn?: string;
   twitter?: string;
 }
@@ -69,7 +69,6 @@ export const data: CFpTrack[] = [
         name: "Phil Nash",
         linkedIn: "https://www.linkedin.com/in/philnash/",
         twitter: "https://twitter.com/carlesnunez",
-        photo: "",
       },
     ],
   },
@@ -79,9 +78,7 @@ export const data: CFpTrack[] = [
     members: [
       {
         name: "Carmen Herrero",
-        photo: "",
-        twitter: "",
-        linkedIn: "",
+        linkedIn: "https://www.linkedin.com/in/carherrero/",
       },
       {
         name: "Elena Tajadura",
@@ -90,14 +87,7 @@ export const data: CFpTrack[] = [
           "https://www.linkedin.com/in/elena-tajadura-jim%C3%A9nez-9300a943/",
       },
       {
-        name: "Gema Parreño",
-        photo: "",
-        twitter: "",
-        linkedIn: "",
-      },
-      {
         name: "Javier Menendez",
-        photo: "",
         linkedIn: "https://www.linkedin.com/in/jamepa/",
       },
     ],
@@ -108,7 +98,6 @@ export const data: CFpTrack[] = [
     members: [
       {
         name: "Almudena Vivanco",
-        photo: "",
         linkedIn: "https://www.linkedin.com/in/almudenavivanco/",
       },
       {
@@ -120,12 +109,10 @@ export const data: CFpTrack[] = [
       },
       {
         name: "Christian Polanco",
-        photo: "",
         linkedIn: "https://www.linkedin.com/in/chrsalx/",
       },
       {
         name: "David Ricordel",
-        photo: "",
         linkedIn: "https://www.linkedin.com/in/davidricordel/",
       },
       {
@@ -142,12 +129,10 @@ export const data: CFpTrack[] = [
       },
       {
         name: "Rael Garcia",
-        photo: "",
         linkedIn: "https://www.linkedin.com/in/rael/",
       },
       {
         name: "Imma Valls",
-        photo: "",
         linkedIn: "https://www.linkedin.com/in/imma-valls",
       },
     ],
@@ -158,16 +143,14 @@ export const data: CFpTrack[] = [
     members: [
       {
         name: "Elena Navarro",
-        photo: "",
         linkedIn: "https://www.linkedin.com/in/elena-navarro-molina",
       },
       {
         name: "Jaume Jornet",
         linkedIn: "https://www.linkedin.com/in/jaumejornet/",
-        photo: "",
       },
       {
-        name: "Julio César",
+        name: "Julio César Pérez",
         photo: "images/cfp/julio_cesar.jpg",
         linkedIn: "https://www.linkedin.com/in/juliocesarperezarques/",
         twitter: "https://twitter.com/jcesarperez",

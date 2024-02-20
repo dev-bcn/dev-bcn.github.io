@@ -32,7 +32,7 @@ const CfpTrackComponent: FC<React.PropsWithChildren<CfpTrackProps>> = ({
       {track.members.map((member) => {
         return (
           <div key={member.name}>
-            {member.photo !== "" && (
+            {member.photo && (
               <div>
                 <StyledAboutImage src={member.photo} alt={member.name} />
                 <MemberName>{member.name}</MemberName>
