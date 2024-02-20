@@ -15,6 +15,7 @@ import {
   ROUTE_2023_TALKS,
   ROUTE_2023_WORKSHOPS,
   ROUTE_ABOUT_US,
+  ROUTE_CFP,
   ROUTE_CODE_OF_CONDUCT,
   ROUTE_CONDITIONS,
   ROUTE_COOKIES,
@@ -66,6 +67,7 @@ import Workshops2023 from "./2023/Workshops/Workshops2023";
 import JobOffers2023 from "./2023/JobOffers/JobOffers2023";
 import Sponsorship from "./views/sponsorship/Sponsorship";
 import Diversity2023 from "./2023/Diversity/Diversity2023";
+import CfpSection from "./views/Cfp/CfpSection";
 
 const StyledAppWrapper = styled.div`
   position: relative;
@@ -123,7 +125,7 @@ const App: FC<React.PropsWithChildren<unknown>> = () => {
           <Route path={ROUTE_SPEAKERS} element={<Speakers />} />
           <Route path={ROUTE_SPEAKER_INFO} element={<SpeakerInformation />} />
           <Route path={ROUTE_ABOUT_US} element={<About />} />
-          {/*<Route path={ROUTE_CFP} element={<CfpSection />} />*/}
+          <Route path={ROUTE_CFP} element={<CfpSection />} />
           <Route path={ROUTE_TRAVEL} element={<Travel />} />
           {/*<Route path={ROUTE_COMMUNITIES} element={<Communities />} />*/}
           {/*<Route path={ROUTE_ATTENDEE} element={<AttendeeInformation />} />*/}

@@ -1,5 +1,6 @@
 import {
   ROUTE_ABOUT_US,
+  ROUTE_CFP,
   ROUTE_CODE_OF_CONDUCT,
   ROUTE_HOME,
   ROUTE_KCD,
@@ -32,7 +33,7 @@ export const navigationItems: NavigationItem[] = [
 
 export const subMenuItems: NavigationItem[] = [
   //{ id: "DIVERSITY", link: ROUTE_DIVERSITY },
-  //{ id: "Cfp Committee", link: ROUTE_CFP },
+  { id: "Cfp Committee", link: ROUTE_CFP },
   //{ id: "Attendee information", link: ROUTE_ATTENDEE },
   //{ id: "Speaker information", link: ROUTE_SPEAKER_INFO },
   //{ id: "Session feedback", link: ROUTE_SESSION_FEEDBACK },
