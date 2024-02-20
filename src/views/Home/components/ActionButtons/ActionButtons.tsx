@@ -51,7 +51,7 @@ const ActionButtons: FC<React.PropsWithChildren<unknown>> = () => {
         onClick={trackCFP}
         text="📢 Call For Papers"
         disabled={!isBetween(CFPStartDay, CFPEndDay)}
-        link="https://sessionize.com/devbcn-2024/"
+        link={data.cfp.link}
       />
       {isBetween(sponsorshipStartDay, sponsorshipEndDay) && (
         <Button

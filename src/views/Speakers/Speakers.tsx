@@ -83,7 +83,7 @@ const Speakers: FC<React.PropsWithChildren<unknown>> = () => {
                 <Button
                   onClick={trackCFP}
                   text="📢 Apply to be a Speaker"
-                  link="https://sessionize.com/devbcn23/"
+                  link={webData.cfp.link}
                 />
               </div>
             )}
