@@ -52,7 +52,7 @@ const ActionButtons: FC<React.PropsWithChildren<unknown>> = () => {
         <Button
           onClick={trackCFP}
           text="📢 Call For Papers"
-          link="https://sessionize.com/devbcn23/"
+          link={data.cfp.link}
         />
       )}
       {isBetween(sponsorshipStartDay, sponsorshipEndDay) && (
