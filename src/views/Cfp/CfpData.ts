@@ -133,6 +133,8 @@ export const data: CFpTrack[] = [
       },
       {
         name: "Imma Valls",
+        photo: "imma-valls.jpg",
+        twitter: "https://twitter.com/eyeveebee",
         linkedIn: "https://www.linkedin.com/in/imma-valls",
       },
     ],
