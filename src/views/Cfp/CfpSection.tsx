@@ -21,7 +21,7 @@ import conferenceData from "../../data/2024.json";
 import { CfpTrackProps, data } from "./CfpData";
 import { MemberName, TrackName } from "./Cfp.style";
 
-const CfpTrackComponent: FC<React.PropsWithChildren<CfpTrackProps>> = ({
+export const CfpTrackComponent: FC<React.PropsWithChildren<CfpTrackProps>> = ({
   track,
 }) => (
   <>
@@ -31,7 +31,7 @@ const CfpTrackComponent: FC<React.PropsWithChildren<CfpTrackProps>> = ({
     <div style={{ display: "flex", margin: "1rem auto", maxWidth: "80%" }}>
       {track.members.map((member) => {
         return (
-          <div key={member.name}>
+          <div key={member.name} role="article" data-testid={member.name}>
             {member.photo && (
               <div>
                 <StyledAboutImage src={member.photo} alt={member.name} />

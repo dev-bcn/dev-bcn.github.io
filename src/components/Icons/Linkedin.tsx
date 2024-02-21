@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import { StyledSocialMediaWrapper } from "./Twitter";
 
 interface ILinkedinIconProps {
@@ -6,10 +6,14 @@ interface ILinkedinIconProps {
   linkedinUrl: string;
 }
 
-const LinkedinIcon: FC<React.PropsWithChildren<ILinkedinIconProps>> = ({ color, linkedinUrl }) => {
+const LinkedinIcon: FC<React.PropsWithChildren<ILinkedinIconProps>> = ({
+  color,
+  linkedinUrl,
+}) => {
   return (
     <StyledSocialMediaWrapper href={linkedinUrl} target={"_blank"}>
       <svg
+        data-icon="linkedin-icon"
         xmlns="http://www.w3.org/2000/svg"
         width="24"
         height="24"

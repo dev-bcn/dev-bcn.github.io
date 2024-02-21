@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
 
 interface ITwitterIconProps {
@@ -11,7 +11,10 @@ export const StyledSocialMediaWrapper = styled.a`
   max-width: 24px;
   margin-right: 0.5rem;
 `;
-const TwitterIcon: FC<React.PropsWithChildren<ITwitterIconProps>> = ({ color, twitterUrl }) => {
+const TwitterIcon: FC<React.PropsWithChildren<ITwitterIconProps>> = ({
+  color,
+  twitterUrl,
+}) => {
   return (
     <StyledSocialMediaWrapper
       href={twitterUrl}
@@ -19,6 +22,7 @@ const TwitterIcon: FC<React.PropsWithChildren<ITwitterIconProps>> = ({ color, tw
       rel="noopener noreferrer"
     >
       <svg
+        data-icon="twitter-icon"
         xmlns="http://www.w3.org/2000/svg"
         width="24"
         height="24"
