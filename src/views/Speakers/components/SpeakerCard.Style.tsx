@@ -26,9 +26,9 @@ export const StyledSpeakerImageContainer = styled.div`
 `;
 export const StyledSpeakerImage = styled.img`
   width: 100%;
-  height: auto;
   display: block;
   border-radius: 10px;
+  aspect-ratio: 1/1;
 `;
 export const StyledImageAnimation = styled.div`
   position: absolute;

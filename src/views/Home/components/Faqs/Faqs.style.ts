@@ -48,6 +48,7 @@ export const StyleLessIcon = styled.img`
 export const StyledImage = styled.img`
   margin: 3px;
   padding: 5px;
+  aspect-ratio: 412/275;
   border: 1px solid ${Color.YELLOW};
   border-radius: 100% 0 100% 0 / 15% 89% 11% 85%;
 

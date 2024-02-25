@@ -20,7 +20,7 @@ export const sponsors: Sponsors = {
   regular: [
     {
       name: "Sopra Steria",
-      image: "/images/sponsors/sopra.jpg",
+      image: "/images/sponsors/sopra.png",
       website: "https://www.soprasteria.es/",
     },
   ],

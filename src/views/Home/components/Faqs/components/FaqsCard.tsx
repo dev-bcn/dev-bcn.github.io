@@ -1,4 +1,4 @@
-import { FC, Suspense } from "react";
+import React, { FC, Suspense } from "react";
 import Logo from "../../../../../assets/images/logo.svg";
 import { StyledLoadingImage } from "../../../../../components/Loading/Loading";
 import {

@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import { Autoplay, Parallax } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import styled from "styled-components";
@@ -14,7 +14,7 @@ import * as Sentry from "@sentry/react";
 const StyledSlideImage = styled.img`
   display: block;
   width: 100%;
-  height: auto;
+  aspect-ratio: 1/1;
   border-radius: 10px;
 `;
 

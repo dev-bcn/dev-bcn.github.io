@@ -164,7 +164,12 @@ export const Venue: FC<React.PropsWithChildren<unknown>> = () => {
       <section className="venue">
         <div className="image">
           <Suspense fallback={<StyledLoadingImage src={Logo} />}>
-            <img src={venue} alt="La Farga" className="venue" />
+            <img
+              src={venue}
+              style={{ aspectRatio: "285/173" }}
+              alt="La Farga"
+              className="venue"
+            />
           </Suspense>
           <a
             href="https://www.lafarga.com/corporatiu/lafarga-hospitalet//"

@@ -13,8 +13,8 @@ interface CfpMember {
 
 export const data: CFpTrack[] = [
   {
-    id: "656fece2-9447-4dbe-8a78-8dc6aa7124f2",
     name: "Java & JVM",
+    id: "656fece2-9447-4dbe-8a78-8dc6aa7124f2",
     members: [
       {
         name: "Ana Maria Mihalceanu",
@@ -133,7 +133,7 @@ export const data: CFpTrack[] = [
       },
       {
         name: "Imma Valls",
-        photo: "imma-valls.jpg",
+        photo: "images/cfp/imma-valls.jpg",
         twitter: "https://twitter.com/eyeveebee",
         linkedIn: "https://www.linkedin.com/in/imma-valls",
       },

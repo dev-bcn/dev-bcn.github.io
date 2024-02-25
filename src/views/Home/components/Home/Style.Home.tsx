@@ -121,7 +121,8 @@ export const StyledBlueSlash = styled(motion.p)`
 `;
 export const StyledDevBcnLogo = styled.img`
   margin: 20px;
-  height: 20em;
+  height: 20rem;
+  aspect-ratio: 800/327;
   transition: height 0.2s ease-in-out;
   @media (max-width: ${BIGGER_BREAKPOINT}px) {
     height: 15rem;
@@ -135,8 +136,9 @@ export const StyledKcdLogo = styled.img`
   margin-left: 2em;
   height: 13rem;
   transition: height 0.2s ease-in-out;
+  aspect-ratio: 800/327;
   @media (max-width: ${BIGGER_BREAKPOINT}px) {
-    height: 9.5rem;
+    height: 12rem;
     margin: 0;
   }
   @media (max-width: ${BIG_BREAKPOINT}px) {
@@ -144,7 +146,7 @@ export const StyledKcdLogo = styled.img`
     margin-left: 2.5em;
     margin-right: 2.5em;
     padding: 1em;
-    height: 6em;
+    height: 10rem;
   }
 `;
 export const StyledPlusSign = styled.span`
