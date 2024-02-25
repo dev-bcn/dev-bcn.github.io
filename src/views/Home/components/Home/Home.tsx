@@ -21,7 +21,6 @@ import {
   StyledTopSlash,
   StyleHomeContainer,
 } from "./Style.Home";
-import logo from "../../../../assets/images/logo.png";
 import ActionButtons from "../ActionButtons/ActionButtons";
 import { Color } from "../../../../styles/colors";
 import InfoButtons from "../InfoButtons/InfoButtons";
@@ -42,7 +41,7 @@ const Home: FC<React.PropsWithChildren<unknown>> = () => {
       <SectionWrapper color="transparent">
         <StyleHomeContainer>
           <StyledLogoDiv>
-            <StyledDevBcnLogo src={logo} alt="DevBcn logo" />
+            <StyledDevBcnLogo src="images/logo.png" alt="DevBcn logo" />
             <StyledPlusSign>+</StyledPlusSign>
             <StyledKcdLogo src="images/KCD-logo-white.png" alt="KCD Days" />
           </StyledLogoDiv>
