@@ -1,5 +1,5 @@
 import Countdown from "react-countdown";
-import { FC, useState } from "react";
+import React, { FC, useState } from "react";
 import LessThanIcon from "../../../../assets/images/MoreThanBlueWhiteIcon.svg";
 import SectionWrapper from "../../../../components/SectionWrapper/SectionWrapper";
 import { BIGGER_BREAKPOINT } from "../../../../constants/BreakPoints";
@@ -21,7 +21,6 @@ import {
   StyledTopSlash,
   StyleHomeContainer,
 } from "./Style.Home";
-import logo from "../../../../assets/images/logo.png";
 import ActionButtons from "../ActionButtons/ActionButtons";
 import { Color } from "../../../../styles/colors";
 import InfoButtons from "../InfoButtons/InfoButtons";
@@ -42,7 +41,7 @@ const Home: FC<React.PropsWithChildren<unknown>> = () => {
       <SectionWrapper color="transparent">
         <StyleHomeContainer>
           <StyledLogoDiv>
-            <StyledDevBcnLogo src={logo} alt="DevBcn logo" />
+            <StyledDevBcnLogo src="images/logo.png" alt="DevBcn logo" />
             <StyledPlusSign>+</StyledPlusSign>
             <StyledKcdLogo src="images/KCD-logo-white.png" alt="KCD Days" />
           </StyledLogoDiv>
@@ -77,7 +76,7 @@ const Home: FC<React.PropsWithChildren<unknown>> = () => {
                 edition.endDay &&
                 formatDateRange(
                   new Date(edition.startDay),
-                  new Date(edition?.endDay)
+                  new Date(edition.endDay),
                 )}
             </StyledSubtitle>
             <StyledSubtitle color={Color.DARK_BLUE}>

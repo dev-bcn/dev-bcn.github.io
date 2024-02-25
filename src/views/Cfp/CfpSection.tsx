@@ -19,22 +19,11 @@ import {
 } from "../About/components/Style.AboutCard";
 import conferenceData from "../../data/2024.json";
 import { CfpTrackProps, data } from "./CfpData";
-import styled from "styled-components";
+import { MemberName, TrackName } from "./Cfp.style";
 
-const TrackName = styled.h2`
-  padding-top: 1.2rem;
-  padding-bottom: 0.8rem;
-  font-size: 1.5rem;
-  color: ${Color.DARK_BLUE};
-`;
-
-const MemberName = styled.h5`
-  font-size: 0.8rem;
-  color: ${Color.DARK_BLUE};
-  text-align: left;
-`;
-
-const CfpTrackComponent: FC<React.PropsWithChildren<CfpTrackProps>> = ({ track }) => (
+export const CfpTrackComponent: FC<React.PropsWithChildren<CfpTrackProps>> = ({
+  track,
+}) => (
   <>
     <section>
       <TrackName>{track.name}</TrackName>
@@ -42,19 +31,19 @@ const CfpTrackComponent: FC<React.PropsWithChildren<CfpTrackProps>> = ({ track }
     <div style={{ display: "flex", margin: "1rem auto", maxWidth: "80%" }}>
       {track.members.map((member) => {
         return (
-          <div key={member.name}>
-            {member.photo !== "" && (
+          <article key={member.name} data-testid={member.name}>
+            {member.photo && (
               <div>
                 <StyledAboutImage src={member.photo} alt={member.name} />
                 <MemberName>{member.name}</MemberName>
                 <StyledSocialIconsWrapper>
-                  {member.twitter !== "" && (
+                  {member.twitter && (
                     <TwitterIcon
                       color={Color.BLUE}
                       twitterUrl={member.twitter}
                     />
                   )}
-                  {member.linkedIn !== "" && (
+                  {member.linkedIn && (
                     <LinkedinIcon
                       color={Color.BLUE}
                       linkedinUrl={member.linkedIn}
@@ -63,7 +52,7 @@ const CfpTrackComponent: FC<React.PropsWithChildren<CfpTrackProps>> = ({ track }
                 </StyledSocialIconsWrapper>
               </div>
             )}
-          </div>
+          </article>
         );
       })}
     </div>

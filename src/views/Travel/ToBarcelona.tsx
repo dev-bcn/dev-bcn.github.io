@@ -57,7 +57,7 @@ export const ToBarcelona: FC<React.PropsWithChildren<unknown>> = () => {
       </p>
       <Suspense fallback={<StyledLoadingImage src={Logo} />}>
         <img
-          style={{ borderRadius: "1rem" }}
+          style={{ borderRadius: "1rem", aspectRatio: "602/367" }}
           src={Photo}
           alt="Barcelona beach"
         />

@@ -64,7 +64,7 @@ export default function Kcd() {
         <img
           src="images/KCD-logo-white.png"
           alt="KCD - Spain"
-          style={{ width: "20vw", margin: "2rem" }}
+          style={{ width: "20vw", margin: "2rem", aspectRatio: "120/49" }}
         />
         <StyledParagraph>
           <a href="https://kcdspain.com/" target="_blank" rel="noreferrer">
