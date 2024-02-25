@@ -9,6 +9,7 @@ export const StyledAboutCard = styled.div`
 export const StyledAboutImage = styled.img`
   width: 100%;
   max-height: 20rem;
+  aspect-ratio: 1/1;
   border-radius: 30% 70% 70% 30% / 30% 29% 71% 70%;
 `;
 export const StyledAboutName = styled.h4<{ color: string }>`

@@ -31,7 +31,7 @@ export const CfpTrackComponent: FC<React.PropsWithChildren<CfpTrackProps>> = ({
     <div style={{ display: "flex", margin: "1rem auto", maxWidth: "80%" }}>
       {track.members.map((member) => {
         return (
-          <div key={member.name} role="article" data-testid={member.name}>
+          <article key={member.name} data-testid={member.name}>
             {member.photo && (
               <div>
                 <StyledAboutImage src={member.photo} alt={member.name} />
@@ -52,7 +52,7 @@ export const CfpTrackComponent: FC<React.PropsWithChildren<CfpTrackProps>> = ({
                 </StyledSocialIconsWrapper>
               </div>
             )}
-          </div>
+          </article>
         );
       })}
     </div>
