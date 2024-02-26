@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import React, { FC, useEffect } from "react";
 import TitleSection from "../../components/SectionTitle/TitleSection";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import { BIG_BREAKPOINT, MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
@@ -268,8 +268,15 @@ const CodeOfConduct: FC<React.PropsWithChildren<unknown>> = () => {
 
             <p>
               If you are the subject of or witness to unacceptable behavior, or
-              have any other concerns, please notify the event organizers as
-              soon as possible. If you do not feel comfortable speaking to an
+              have any other concerns, please{" "}
+              <a
+                href="mailto:privacy@devbcn.com"
+                rel="noreferrer"
+                target="_blank"
+              >
+                notify the event organizers
+              </a>{" "}
+              as soon as possible. If you do not feel comfortable speaking to an
               organizer, please feel free to send your concerns or any comments
               to the event organizers.
             </p>
