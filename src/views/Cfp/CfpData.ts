@@ -79,6 +79,7 @@ export const data: CFpTrack[] = [
       {
         name: "Carmen Herrero",
         linkedIn: "https://www.linkedin.com/in/carherrero/",
+        photo: "images/cfp/carmen_herrero.jpg",
       },
       {
         name: "Elena Tajadura",
