@@ -79,7 +79,7 @@ const StyleMoreIcon = styled.img`
   }
 `;
 
-const CodeOfConduct: FC<React.PropsWithChildren<unknown>> = () => {
+export const CodeOfConduct: FC<React.PropsWithChildren> = () => {
   const { width } = useWindowSize();
 
   useEffect(() => {
@@ -304,4 +304,4 @@ const CodeOfConduct: FC<React.PropsWithChildren<unknown>> = () => {
   );
 };
 
-export default CodeOfConduct;
+CodeOfConduct.displayName = "CodeOfConduct";

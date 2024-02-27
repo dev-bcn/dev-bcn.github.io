@@ -12,17 +12,17 @@ describe("navigation pages", () => {
           <Route path="*" element={<App />} />
         </Routes>
       </React.Suspense>,
-      { wrapper: BrowserRouter }
+      { wrapper: BrowserRouter },
     );
     expect(
-      await screen.findByText(/The Barcelona Developers Conference 2024/i)
+      await screen.findByText(/The Barcelona Developers Conference 2024/i),
     ).toBeInTheDocument();
 
     expect(
-      await screen.findByText(/June 13th - 14th, 2024/i)
+      await screen.findByText(/June 13th - 14th, 2024/i),
     ).toBeInTheDocument();
     expect(
-      await screen.findByText(/5 tracks with the following topics:/i)
+      await screen.findByText(/5 tracks with the following topics:/i),
     ).toBeInTheDocument();
 
     //expect(await screen.findByText(/🎟️ Buy Tickets/i)).toBeInTheDocument();
@@ -36,58 +36,46 @@ describe("navigation pages", () => {
           <Route path="*" element={<App />} />
         </Routes>
       </React.Suspense>,
-      { wrapper: BrowserRouter }
+      { wrapper: BrowserRouter },
     );
     expect(
-      await screen.findByText(/The Barcelona Developers Conference 2024/i)
+      await screen.findByText(/The Barcelona Developers Conference 2024/i),
     ).toBeInTheDocument();
     const user = userEvent.setup();
     await user.click(screen.getByText("Travel"));
     expect(
-      await screen.findByText("La Farga Centre d'Activitats")
+      await screen.findByText("La Farga Centre d'Activitats"),
     ).toBeVisible();
   });
 
-  test.skip("it render the SPEAKERS page", async () => {
+  test("it render the SPEAKERS page", async () => {
     render(
       <React.Suspense fallback={<span>Loading...</span>}>
         <Routes>
           <Route path="*" element={<App />} />
         </Routes>
       </React.Suspense>,
-      { wrapper: BrowserRouter }
+      { wrapper: BrowserRouter },
     );
     const user = userEvent.setup();
     await user.click(screen.getByText("Speakers"));
     expect(
-      await screen.findByText(/Speakers coming from all corners of the world/i)
+      await screen.findByText(/Speakers coming from all corners of the world/i),
     ).toBeInTheDocument();
   });
 
-  test.skip("it render the TALKS page", async () => {
-    render(
-      <React.Suspense fallback={<span>Loading...</span>}>
-        <Routes>
-          <Route path="*" element={<App />} />
-        </Routes>
-      </React.Suspense>
-    );
-    const user = userEvent.setup();
-    await user.click(screen.getByText("Talks"));
-    expect(await screen.findByText("/ Talks")).toBeInTheDocument();
-  });
-  test.skip("it render the Workshops page", async () => {
+  test("it render the TALKS page", async () => {
     render(
       <React.Suspense fallback={<span>Loading...</span>}>
         <Routes>
           <Route path="*" element={<App />} />
         </Routes>
       </React.Suspense>,
-      { wrapper: BrowserRouter }
+      { wrapper: BrowserRouter },
     );
     const user = userEvent.setup();
-    await user.click(screen.getByText("Workshops"));
-    expect(await screen.findByText("/ Workshops")).toBeInTheDocument();
+    await user.click(screen.getByText("Talks"));
+    expect(await screen.findByText("/ Talks")).toBeInTheDocument();
   });
 
   test.skip("it render the JOB OFFERS page", async () => {
@@ -97,23 +85,23 @@ describe("navigation pages", () => {
           <Route path="*" element={<App />} />
         </Routes>
       </React.Suspense>,
-      { wrapper: BrowserRouter }
+      { wrapper: BrowserRouter },
     );
     const user = userEvent.setup();
     await user.click(screen.getByText("JOB OFFERS"));
     expect(
-      await screen.findByText("Have a look at some opportunities")
+      await screen.findByText("Have a look at some opportunities"),
     ).toBeInTheDocument();
   });
 
-  test.skip("it render the CFP page", async () => {
+  test("it render the CFP page", async () => {
     render(
       <React.Suspense fallback={<span>Loading...</span>}>
         <Routes>
           <Route path="*" element={<App />} />
         </Routes>
       </React.Suspense>,
-      { wrapper: BrowserRouter }
+      { wrapper: BrowserRouter },
     );
     const user = userEvent.setup();
     await user.click(screen.getByText("Cfp Committee"));
@@ -127,7 +115,7 @@ describe("navigation pages", () => {
           <Route path="*" element={<App />} />
         </Routes>
       </React.Suspense>,
-      { wrapper: BrowserRouter }
+      { wrapper: BrowserRouter },
     );
     const user = userEvent.setup();
     await user.click(screen.getByText("About Us"));
@@ -142,12 +130,12 @@ describe("navigation pages", () => {
           <Route path="*" element={<App />} />
         </Routes>
       </React.Suspense>,
-      { wrapper: BrowserRouter }
+      { wrapper: BrowserRouter },
     );
     const user = userEvent.setup();
     await user.click(screen.getByText("Code of Conduct"));
     expect(
-      await screen.findByText(/The DevBcn is the yearly event/i)
+      await screen.findByText(/The DevBcn is the yearly event/i),
     ).toBeInTheDocument();
   });
 });
