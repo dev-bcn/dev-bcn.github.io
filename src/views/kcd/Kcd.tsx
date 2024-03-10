@@ -8,7 +8,7 @@ import {
 } from "../Speakers/Speakers.style";
 import TitleSection from "../../components/SectionTitle/TitleSection";
 import { StyledSectionsSeparator } from "../CodeOfConduct/CodeOfConduct";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import data from "../../data/2024.json";
 import { MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
 import LessThanBlue from "../../assets/images/MoreThanBlueWhiteIcon.svg";
@@ -37,6 +37,27 @@ const StyledWaveContainer = styled.div`
   width: 100%;
 `;
 
+const revealAnimation = keyframes`
+    from {
+        opacity: 0;
+        translate: 0 100px;
+    }
+    50% {
+        opacity: .5;
+    }
+    to {
+        opacity: 1;
+        translate: 0 0;
+    }`;
+
+const StyledImage = styled.img`
+  aspect-ratio: 120/49;
+  margin: 2rem;
+  width: 20vw;
+  animation: linear ${revealAnimation} 0.2s both;
+  animation-range: entry 5% cover 30%;
+`;
+
 export default function Kcd() {
   const { width } = useWindowSize();
   useEffect(() => {
@@ -61,11 +82,7 @@ export default function Kcd() {
       </SectionWrapper>
       <StyledSectionsSeparator />
       <SectionWrapper color={Color.DARK_BLUE}>
-        <img
-          src="images/KCD-logo-white.png"
-          alt="KCD - Spain"
-          style={{ width: "20vw", margin: "2rem", aspectRatio: "120/49" }}
-        />
+        <StyledImage src="images/KCD-logo-white.png" alt="KCD - Spain" />
         <StyledParagraph>
           <a href="https://kcdspain.com/" target="_blank" rel="noreferrer">
             <strong>KCD Spain</strong>

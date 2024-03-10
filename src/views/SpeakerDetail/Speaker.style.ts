@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Color } from "../../styles/colors";
 import {
   BIG_BREAKPOINT,
@@ -7,6 +7,18 @@ import {
 } from "../../constants/BreakPoints";
 import { motion } from "framer-motion";
 
+const revealAnimation = keyframes`
+    from {
+        opacity: 0;
+        translate: 0 100px;
+    }
+    50% {
+        opacity: .5;
+    }
+    to {
+        opacity: 1;
+        translate: 0 0;
+    }`;
 export const StyledContainer = styled.div`
   background-color: ${Color.BLUE};
 `;
@@ -136,9 +148,10 @@ export const StyledSpeakerImgBorder = styled.div`
 `;
 export const StyledSpeakerImg = styled.img`
   border-radius: 10px;
-  padding: 5px;
-  border: 1px solid ${Color.YELLOW};
+  padding: 0;
+  border: 2px solid ${Color.DARK_BLUE};
   margin-bottom: 15px;
+  animation: ${revealAnimation} 0.3s ease-in-out;
 
   @media only screen and (max-width: ${BIG_BREAKPOINT}px) {
     width: 80%;
