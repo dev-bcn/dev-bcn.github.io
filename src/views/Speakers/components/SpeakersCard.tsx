@@ -12,11 +12,13 @@ import { ROUTE_SPEAKER_DETAIL } from "../../../constants/routes";
 import { ISpeaker } from "../Speaker.types";
 import Loading from "../../../assets/images/logo.png";
 
-type SpeakersCardProps = {
+type SpeakerCardProps = {
   speaker: ISpeaker;
 };
 
-export const SpeakerCard: FC<React.PropsWithChildren<SpeakersCardProps>> = ({ speaker }) => {
+export const SpeakerCard: FC<React.PropsWithChildren<SpeakerCardProps>> = ({
+  speaker,
+}) => {
   return (
     <StyledSpeakerCard>
       <Link

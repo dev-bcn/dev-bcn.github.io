@@ -1,4 +1,17 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const revealAnimation = keyframes`
+    from {
+        opacity: 0;
+        translate: 0 100px;
+    }
+    50% {
+        opacity: .5;
+    }
+    to {
+        opacity: 1;
+        translate: 0 0;
+    }`;
 
 export const StyledAboutCard = styled.div`
   display: flex;
@@ -11,6 +24,9 @@ export const StyledAboutImage = styled.img`
   max-height: 20rem;
   aspect-ratio: 1/1;
   border-radius: 30% 70% 70% 30% / 30% 29% 71% 70%;
+  animation: ${revealAnimation} 0.2s ease-in-out;
+  animation-timeline: view();
+  animation-range: entry 5% cover 30%;
 `;
 export const StyledAboutName = styled.h4<{ color: string }>`
   padding-top: 0.25rem;

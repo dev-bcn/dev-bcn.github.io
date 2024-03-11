@@ -1,9 +1,22 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import {
   MOBILE_BREAKPOINT,
   TABLET_BREAKPOINT,
 } from "../../../constants/BreakPoints";
 import { Color } from "../../../styles/colors";
+
+const revealAnimation = keyframes`
+    from {
+        opacity: 0;
+        translate: 0 100px;
+    }
+    50% {
+        opacity: .5;
+    }
+    to {
+        opacity: 1;
+        translate: 0 0;
+    }`;
 
 export const StyledSpeakerCard = styled.div`
   display: flex;
@@ -29,6 +42,9 @@ export const StyledSpeakerImage = styled.img`
   display: block;
   border-radius: 10px;
   aspect-ratio: 1/1;
+  animation: linear ${revealAnimation} both;
+  animation-timeline: view();
+  animation-range: entry 5% cover 30%;
 `;
 export const StyledImageAnimation = styled.div`
   position: absolute;

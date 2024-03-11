@@ -1,7 +1,20 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Color } from "../../../../styles/colors";
 import { motion } from "framer-motion";
 import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
+
+const revealAnimation = keyframes`
+    from {
+        opacity: 0;
+        translate: 0 100px;
+    }
+    50% {
+        opacity: .5;
+    }
+    to {
+        opacity: 1;
+        translate: 0 0;
+    }`;
 
 export type FaqCardType = {
   faq: {
@@ -51,6 +64,9 @@ export const StyledImage = styled.img`
   aspect-ratio: 1.5;
   border: 1px solid ${Color.YELLOW};
   border-radius: 100% 0 100% 0 / 15% 89% 11% 85%;
+  animation: linear ${revealAnimation} both;
+  animation-timeline: view();
+  animation-range: entry 5% cover 30%;
 
   @media (max-width: ${BIG_BREAKPOINT}px) {
     width: 100%;
@@ -95,6 +111,9 @@ export const StyledFaqImage = styled(motion.img)`
   padding: 5px;
   width: 360px;
   border-radius: 92% 8% 90% 10% / 9% 90% 10% 91%;
+  animation: linear ${revealAnimation} both;
+  animation-timeline: view();
+  animation-range: entry 5% cover 30%;
 
   @media (max-width: ${BIG_BREAKPOINT}px) {
     display: none;
