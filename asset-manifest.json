@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.116bbeef.css",
-    "main.js": "/static/js/main.4b3a849c.js",
+    "main.js": "/static/js/main.4fe5b357.js",
     "static/js/496.6e1c6ab0.chunk.js": "/static/js/496.6e1c6ab0.chunk.js",
     "static/media/after-hours.jpg": "/static/media/after-hours.732647c87982d3461fe6.jpg",
     "static/media/la-farga.png": "/static/media/la-farga.bdd2098b891600a22ce8.png",
@@ -42,11 +42,11 @@
     "static/media/MoreThanBlueWhiteIcon.svg": "/static/media/MoreThanBlueWhiteIcon.4e0508c1662edcaf4a1d5cf4b17c33be.svg",
     "static/media/MoreThanIcon.svg": "/static/media/MoreThanIcon.8ceda92f0d54c6046dc048cdc832f18a.svg",
     "main.116bbeef.css.map": "/static/css/main.116bbeef.css.map",
-    "main.4b3a849c.js.map": "/static/js/main.4b3a849c.js.map",
+    "main.4fe5b357.js.map": "/static/js/main.4fe5b357.js.map",
     "496.6e1c6ab0.chunk.js.map": "/static/js/496.6e1c6ab0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.116bbeef.css",
-    "static/js/main.4b3a849c.js"
+    "static/js/main.4fe5b357.js"
   ]
 }
