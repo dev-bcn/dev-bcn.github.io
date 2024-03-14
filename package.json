@@ -6,7 +6,7 @@
   "dependencies": {
     "@egjs/flicking-plugins": "^4.7.1",
     "@egjs/react-flicking": "^4.11.2",
-    "@sentry/react": "^7.104.0",
+    "@sentry/react": "^7.107.0",
     "@sentry/tracing": "^7.106.0",
     "@types/node": "^20.11.24",
     "@types/react": "^18.2.64",
