@@ -24,7 +24,13 @@ export const sponsors: Sponsors = {
       website: "https://www.soprasteria.es/",
     },
   ],
-  basic: [],
+  basic: [
+    {
+      name: "Seidor",
+      website: "https://www.opentrends.net/en",
+      image: "images/sponsors/seidor.png",
+    },
+  ],
   communities: [
     {
       name: "KCD Spain",

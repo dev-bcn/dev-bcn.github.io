@@ -24,9 +24,6 @@ describe("navigation pages", () => {
     expect(
       await screen.findByText(/5 tracks with the following topics:/i),
     ).toBeInTheDocument();
-
-    //expect(await screen.findByText(/🎟️ Buy Tickets/i)).toBeInTheDocument();
-    //expect(screen.getAllByText(/Interested in meeting/i)).toHaveLength(2);
   });
 
   test("it render the TRAVEL page", async () => {

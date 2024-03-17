@@ -6,7 +6,7 @@ import {
 import { motion } from "framer-motion";
 
 const SponsorMargin = 11;
-const sponsorMarginDesktop = 7;
+const sponsorMarginDesktop = 11;
 export const StyledSponsorsContainer = styled.div`
   position: relative;
   padding-top: 4rem;
