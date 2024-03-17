@@ -6,7 +6,7 @@ import {
 import { motion } from "framer-motion";
 
 const SponsorMargin = 11;
-const sponsorMarginDesktop = 7;
+const sponsorMarginDesktop = 11;
 export const StyledSponsorsContainer = styled.div`
   position: relative;
   padding-top: 4rem;
@@ -154,20 +154,6 @@ export const PremiumSponsorImage = styled.img`
 
   @media (min-width: ${BIG_BREAKPOINT}px) {
     height: 7.5rem;
-  }
-`;
-export const StyledSponsorIconNormal = styled.img`
-  height: 2.75rem;
-  margin-left: 0.5rem;
-
-  @media (min-width: ${BIG_BREAKPOINT}px) {
-    height: 3.5rem;
-    margin-left: 2rem;
-  }
-
-  @media (min-width: ${LARGE_BREAKPOINT}px) {
-    height: 5rem;
-    margin-left: 2.5rem;
   }
 `;
 export const RegularSponsorImage = styled.img`
