@@ -156,20 +156,6 @@ export const PremiumSponsorImage = styled.img`
     height: 7.5rem;
   }
 `;
-export const StyledSponsorIconNormal = styled.img`
-  height: 2.75rem;
-  margin-left: 0.5rem;
-
-  @media (min-width: ${BIG_BREAKPOINT}px) {
-    height: 3.5rem;
-    margin-left: 2rem;
-  }
-
-  @media (min-width: ${LARGE_BREAKPOINT}px) {
-    height: 5rem;
-    margin-left: 2.5rem;
-  }
-`;
 export const RegularSponsorImage = styled.img`
   height: 3.25rem;
   margin-right: 0.5rem;
