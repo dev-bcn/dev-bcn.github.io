@@ -1,16 +1,27 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import { Link } from "react-router-dom";
 import { StyledJobsInfo } from "../../JobOffers/components/JobsCard";
 import { Tag } from "../../../components/Tag/Tag";
-import { ROUTE_SPEAKER_DETAIL, ROUTE_TALK_DETAIL } from "../../../constants/routes";
-import { CategoryItemEnum, QuestionAnswers, SessionCategory, SessionSpeaker } from "../Talk.types";
-import { extractSessionCategoryInfo, extractSessionTags } from "../UseFetchTalks";
+import {
+  ROUTE_SPEAKER_DETAIL,
+  ROUTE_TALK_DETAIL,
+} from "../../../constants/routes";
+import {
+  CategoryItemEnum,
+  QuestionAnswers,
+  SessionCategory,
+  SessionSpeaker,
+} from "../Talk.types";
+import {
+  extractSessionCategoryInfo,
+  extractSessionTags,
+} from "../UseFetchTalks";
 import {
   StyledSessionCard,
   StyledSessionText,
   StyledTagsWrapper,
   StyledTalkSpeaker,
-  StyledTalkTitle
+  StyledTalkTitle,
 } from "../Talks.style";
 import { Color } from "../../../styles/colors";
 
@@ -32,7 +43,10 @@ interface TalkCardProps {
   showTrack?: boolean;
 }
 
-export const TalkCard: FC<React.PropsWithChildren<TalkCardProps>> = ({ showTrack = false, talk }) => {
+export const TalkCard: FC<React.PropsWithChildren<TalkCardProps>> = ({
+  showTrack = false,
+  talk,
+}) => {
   return (
     <StyledSessionCard>
       <StyledJobsInfo>
@@ -51,7 +65,7 @@ export const TalkCard: FC<React.PropsWithChildren<TalkCardProps>> = ({ showTrack
         <StyledSessionText>
           {`${extractSessionCategoryInfo(
             talk.categories,
-            CategoryItemEnum.Format
+            CategoryItemEnum.Format,
           )} `}
           {extractSessionCategoryInfo(talk.categories)}{" "}
         </StyledSessionText>
@@ -60,7 +74,7 @@ export const TalkCard: FC<React.PropsWithChildren<TalkCardProps>> = ({ showTrack
             <strong>Track: </strong>
             {extractSessionCategoryInfo(
               talk.categories,
-              CategoryItemEnum.Track
+              CategoryItemEnum.Track,
             )}
           </StyledSessionText>
         )}

@@ -98,15 +98,17 @@ export const StyledSessionSection = styled.section`
 
 export const StyledTalkSpeaker = styled.p`
   font-size: 1em;
+
   a:before {
     content: "🧑🏻‍💻 ";
   }
   a {
     text-decoration: none;
+    transition: color ease-in-out 200ms;
     color: ${Color.WHITE};
   }
   a:hover {
-    color: ${Color.DARK_BLUE};
+    color: ${Color.LIGHT_BLUE};
   }
 `;
 
