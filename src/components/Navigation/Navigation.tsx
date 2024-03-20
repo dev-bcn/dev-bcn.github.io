@@ -107,6 +107,16 @@ const Navigation: FC<React.PropsWithChildren<unknown>> = () => {
                   {item.id}
                 </StyledLink>
               ))}
+              {subNavItems.map((item) => (
+                <StyledLink
+                  key={item.id}
+                  to={item.link}
+                  onClick={handleSetMenu}
+                >
+                  {item.id}
+                </StyledLink>
+              ))}
+
               <StyledTicketLink
                 href={
                   is2023
