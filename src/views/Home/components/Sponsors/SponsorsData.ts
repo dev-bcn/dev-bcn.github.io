@@ -16,7 +16,13 @@ export interface Sponsor {
 
 export const sponsors: Sponsors = {
   top: [],
-  premium: [],
+  premium: [
+    {
+      name: "Allianz",
+      image: "images/sponsors/allianz.png",
+      website: "https://careers.allianz.com/es_ES.html",
+    },
+  ],
   regular: [
     {
       name: "Sopra Steria",
