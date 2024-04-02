@@ -57,7 +57,7 @@ const ActionButtons: FC<React.PropsWithChildren<unknown>> = () => {
         <Button
           onClick={trackSponsorshipInfo}
           text="🤝 Sponsorship"
-          link="mailto:sponsors@devbcn.com?subject=devBcn sponsorship"
+          link="https://www.devbcn.com/sponsorship"
         />
       )}
     </StyledActionDiv>
