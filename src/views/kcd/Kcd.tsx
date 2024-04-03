@@ -61,15 +61,15 @@ const StyledImage = styled.img`
 export default function Kcd() {
   const { width } = useWindowSize();
   useEffect(() => {
-    document.title = `KCD Spain — ${data.title} — ${data.edition}`;
+    document.title = `KCD Barcelona — ${data.title} — ${data.edition}`;
   });
   return (
     <>
       <SectionWrapper marginTop={5} color={Color.WHITE}>
         <StyledSpeakersSection>
           <TitleSection
-            title={"KCD - Spain"}
-            subtitle={"Kubernetes Community Days - Spain"}
+            title={"KCD - Barcelona"}
+            subtitle={"Kubernetes Community Days - Barcelona"}
             color={Color.DARK_BLUE}
           />
           {width > MOBILE_BREAKPOINT && (
@@ -82,10 +82,10 @@ export default function Kcd() {
       </SectionWrapper>
       <StyledSectionsSeparator />
       <SectionWrapper color={Color.DARK_BLUE}>
-        <StyledImage src="images/KCD-logo-white.png" alt="KCD - Spain" />
+        <StyledImage src="images/KCD-logo-white.png" alt="KCD - Barcelona" />
         <StyledParagraph>
-          <a href="https://kcdspain.com/" target="_blank" rel="noreferrer">
-            <strong>KCD Spain</strong>
+          <a href="https://community.cncf.io/events/details/cncf-kcd-spain-presents-kcd-barcelona-2024" target="_blank" rel="noreferrer">
+            <strong>KCD Barcelona</strong>
           </a>{" "}
           is an event within the CNCF framework called Kubernetes Community Days
           (KCDs).

@@ -27,7 +27,7 @@ export const navigationItems: NavigationItem[] = [
   { id: "Speakers", link: ROUTE_SPEAKERS },
   { id: "About Us", link: ROUTE_ABOUT_US },
   { id: "Travel", link: ROUTE_TRAVEL },
-  { id: "KCD - Spain", link: ROUTE_KCD },
+  { id: "KCD - Barcelona", link: ROUTE_KCD },
   { id: "Sponsorship", link: ROUTE_SPONSORSHIP },
 ];
 

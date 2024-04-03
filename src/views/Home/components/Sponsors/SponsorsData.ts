@@ -39,9 +39,9 @@ export const sponsors: Sponsors = {
   ],
   communities: [
     {
-      name: "KCD Spain",
-      website: "https://kcdspain.com/",
-      image: "/images/KCD-logo-white.png",
+      name: "KCD Barcelona",
+      website: "https://community.cncf.io/events/details/cncf-kcd-spain-presents-kcd-barcelona-2024/",
+      image: "/images/KCD-logo-black.png",
     },
   ],
   media_partners: [],

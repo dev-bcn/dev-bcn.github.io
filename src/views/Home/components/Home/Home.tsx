@@ -43,7 +43,7 @@ const Home: FC<React.PropsWithChildren<unknown>> = () => {
           <StyledLogoDiv>
             <StyledDevBcnLogo src="images/logo.png" alt="DevBcn logo" />
             <StyledPlusSign>+</StyledPlusSign>
-            <StyledKcdLogo src="images/KCD-logo-white.png" alt="KCD Days" />
+            <StyledKcdLogo src="images/KCD-logo-white.png" alt="KCD Barcelona" />
           </StyledLogoDiv>
           <StyledTitleContainer>
             <StyledTitle>
