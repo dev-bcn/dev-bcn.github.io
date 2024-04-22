@@ -29,6 +29,11 @@ export const sponsors: Sponsors = {
       image: "/images/sponsors/sopra.png",
       website: "https://www.soprasteria.es/",
     },
+    {
+      name: "Caixabank Tech",
+      website: "https://www.caixabanktech.com/es/pagina-de-inicio/",
+      image: "images/sponsors/caixabank-tech.png",
+    },
   ],
   basic: [
     {
@@ -40,7 +45,8 @@ export const sponsors: Sponsors = {
   communities: [
     {
       name: "KCD Barcelona",
-      website: "https://community.cncf.io/events/details/cncf-kcd-spain-presents-kcd-barcelona-2024/",
+      website:
+        "https://community.cncf.io/events/details/cncf-kcd-spain-presents-kcd-barcelona-2024/",
       image: "/images/KCD-logo-black.png",
     },
   ],
