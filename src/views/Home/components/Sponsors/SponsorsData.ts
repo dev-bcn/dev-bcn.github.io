@@ -22,6 +22,11 @@ export const sponsors: Sponsors = {
       image: "images/sponsors/allianz.png",
       website: "https://careers.allianz.com/es_ES.html",
     },
+    {
+      name: "Barcelona JUG",
+      image: "images/sponsors/bcn-jug.png",
+      website: "https://www.meetup.com/barcelonajug/",
+    },
   ],
   regular: [
     {
