@@ -39,6 +39,11 @@ export const sponsors: Sponsors = {
       website: "https://www.caixabanktech.com/es/pagina-de-inicio/",
       image: "images/sponsors/caixabank-tech.png",
     },
+    {
+      name: "Idealista",
+      image: "images/sponsors/idealista.jpg",
+      website: "https://www.idealista.com/info/trabaja-con-nosotros",
+    },
   ],
   basic: [
     {
