@@ -46,6 +46,11 @@ export const sponsors: Sponsors = {
       website: "https://www.opentrends.net/en",
       image: "images/sponsors/seidor.png",
     },
+    {
+      name: "Perfect Scale",
+      website: "https://www.perfectscale.io/",
+      image: "images/sponsors/perfect-scale.png",
+    },
   ],
   communities: [
     {
