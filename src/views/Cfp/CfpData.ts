@@ -151,6 +151,8 @@ export const data: CFpTrack[] = [
       {
         name: "Jaume Jornet",
         linkedIn: "https://www.linkedin.com/in/jaumejornet/",
+        photo: "images/cfp/jaume-jornet.jpg",
+        twitter: "https://twitter.com/jaumejornet",
       },
       {
         name: "Julio César Pérez",
