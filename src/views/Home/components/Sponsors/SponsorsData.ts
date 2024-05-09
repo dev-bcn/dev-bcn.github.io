@@ -15,7 +15,13 @@ export interface Sponsor {
 }
 
 export const sponsors: Sponsors = {
-  top: [],
+  top: [
+    {
+      name: "DATASTAX",
+      image: "images/sponsors/datastax.png",
+      website: "https://www.datastax.com/",
+    },
+  ],
   premium: [
     {
       name: "Allianz",
