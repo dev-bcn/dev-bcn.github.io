@@ -55,6 +55,11 @@ export const sponsors: Sponsors = {
       image: "images/sponsors/clever-cloud.png",
       website: "https://www.clever-cloud.com/",
     },
+    {
+      name: "ALTEN",
+      image: "images/sponsors/alten.png",
+      website: "https://www.alten.es/",
+    },
   ],
   basic: [
     {
