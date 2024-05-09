@@ -77,6 +77,11 @@ export const sponsors: Sponsors = {
       image: "images/sponsors/auth0.png",
       website: "https://okta.com/careers",
     },
+    {
+      name: "Barcelona Activa",
+      image: "images/sponsors/barcelona-activa.png",
+      website: "https://www.barcelonactiva.cat/",
+    },
   ],
   communities: [
     {
