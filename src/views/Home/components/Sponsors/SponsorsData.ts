@@ -44,6 +44,11 @@ export const sponsors: Sponsors = {
       image: "images/sponsors/idealista.jpg",
       website: "https://www.idealista.com/info/trabaja-con-nosotros",
     },
+    {
+      name: "Clever Cloud",
+      image: "images/sponsors/clever-cloud.png",
+      website: "https://www.clever-cloud.com/",
+    },
   ],
   basic: [
     {
