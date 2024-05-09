@@ -56,6 +56,11 @@ export const sponsors: Sponsors = {
       website: "https://www.perfectscale.io/",
       image: "images/sponsors/perfect-scale.png",
     },
+    {
+      name: "Auth0",
+      image: "images/sponsors/auth0.png",
+      website: "https://okta.com/careers",
+    },
   ],
   communities: [
     {
