@@ -82,6 +82,11 @@ export const sponsors: Sponsors = {
       image: "images/sponsors/barcelona-activa.png",
       website: "https://www.barcelonactiva.cat/",
     },
+    {
+      name: "Reevo",
+      image: "images/sponsors/reevo.png",
+      website: "https://www.reevo.it/",
+    },
   ],
   communities: [
     {
