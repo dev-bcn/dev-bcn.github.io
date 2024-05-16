@@ -87,6 +87,11 @@ export const sponsors: Sponsors = {
       image: "images/sponsors/reevo.png",
       website: "https://www.reevo.it/",
     },
+    {
+      name: "GFT",
+      website: "https://www.gft.com/es/es/",
+      image: "images/sponsors/GFT.jpg",
+    },
   ],
   communities: [
     {
