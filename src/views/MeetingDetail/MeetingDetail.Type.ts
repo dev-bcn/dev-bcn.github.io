@@ -1,6 +1,7 @@
 import { SessionSpeaker } from "../Talks/Talk.types";
 
 export interface IMeeting {
+  id: number;
   urlName?: string;
   title: string;
   description: string;

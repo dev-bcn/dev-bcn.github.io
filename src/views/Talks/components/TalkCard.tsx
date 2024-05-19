@@ -22,6 +22,7 @@ import {
   StyledTagsWrapper,
   StyledTalkSpeaker,
   StyledTalkTitle,
+  StyledVoteTalkLink,
 } from "../Talks.style";
 import { Color } from "../../../styles/colors";
 
@@ -83,6 +84,15 @@ export const TalkCard: FC<React.PropsWithChildren<TalkCardProps>> = ({
             return <Tag key={tag} text={tag} textColor={Color.WHITE} />;
           })}
         </StyledTagsWrapper>
+        <section>
+          <StyledVoteTalkLink
+            href={`https://openfeedback.io/devbcn24/0/${talk.id}`}
+            target={"_blank"}
+            rel="noreferrer noopener"
+          >
+            🗳️ <strong>Vote this talk</strong>
+          </StyledVoteTalkLink>
+        </section>
       </StyledJobsInfo>
     </StyledSessionCard>
   );

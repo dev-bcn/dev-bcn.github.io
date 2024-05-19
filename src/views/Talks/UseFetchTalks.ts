@@ -97,6 +97,7 @@ export const sessionAdapter = (
     return undefined;
   }
   return {
+    id: session.id,
     description: session.description,
     title: session.title,
     speakers: session.speakers,

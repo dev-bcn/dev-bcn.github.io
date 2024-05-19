@@ -4,7 +4,7 @@ import {
   MOBILE_BREAKPOINT,
 } from "../../constants/BreakPoints";
 import { Color } from "../../styles/colors";
-import { FC, Suspense, useEffect } from "react";
+import React, { FC, Suspense, useEffect } from "react";
 import { IMeeting } from "./MeetingDetail.Type";
 import LessThanIconWhite from "../../assets/images/LessThanIconWhite.svg";
 import LessThanIcon from "../../assets/images/LessThanBlueIcon.svg";
@@ -33,6 +33,7 @@ import { ROUTE_SPEAKER_DETAIL, ROUTE_TALKS } from "../../constants/routes";
 import conferenceData from "../../data/2024.json";
 import { Tag } from "../../components/Tag/Tag";
 import { ISpeaker } from "../Speakers/Speaker.types";
+import styled from "styled-components";
 
 const getVideoHeight = (windowWidth: number) => {
   let videoHeight;
@@ -93,6 +94,12 @@ const opacityVariants = {
     },
   },
 };
+
+export const StyledVoteTalkLink = styled.a`
+  text-decoration: none;
+  color: ${Color.BLACK_BLUE};
+  font-size: 0.8rem;
+`;
 
 interface IMeetingDetailProps {
   meeting: IMeeting;
@@ -201,10 +208,17 @@ const MeetingDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
             ></iframe>
           )}
           <StyledVideoTagsContainer>
-            {meeting.videoTags?.map((tag) => (
-              <Tag text={tag} key={tag} />
-            ))}
+            {meeting.videoTags?.map((tag) => <Tag text={tag} key={tag} />)}
           </StyledVideoTagsContainer>
+          <section>
+            <StyledVoteTalkLink
+              href={`https://openfeedback.io/devbcn24/0/${meeting.id}`}
+              target={"_blank"}
+              rel="noreferrer noopener"
+            >
+              🗳️ <strong>Vote this talk</strong>
+            </StyledVoteTalkLink>
+          </section>
         </StyledVideoContainer>
         <StyledSpeakerDetailContainer className="speaker-details-Container">
           <StyledLessThan src={LessThanIconWhite} />
@@ -233,6 +247,7 @@ const MeetingDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
             </StyledRightContainer>
           </StyledDetailsContainer>
         </StyledSpeakerDetailContainer>
+
         <div>
           <Link
             to={ROUTE_TALKS}
