@@ -89,7 +89,7 @@ export const StyledVideoTagsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin-top: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 `;
 
 export const StyledSpeakerDetailContainer = styled.div`

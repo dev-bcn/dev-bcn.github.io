@@ -105,6 +105,7 @@ describe("sessionAdapter", () => {
       ],
     };
     const expected: IMeeting = {
+      id: 5000,
       description: "Session description",
       title: "Session title",
       speakers: [
@@ -319,7 +320,9 @@ describe("Fetch Talks by id", () => {
 
     mockedAxios.get.mockImplementation(() => Promise.resolve(payload));
 
-    const wrapper: FC<React.PropsWithChildren<React.PropsWithChildren<{}>>> = ({ children }) => {
+    const wrapper: FC<React.PropsWithChildren<React.PropsWithChildren<{}>>> = ({
+      children,
+    }) => {
       return (
         <QueryClientProvider client={queryClient}>
           {children}

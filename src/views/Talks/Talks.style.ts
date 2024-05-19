@@ -123,3 +123,8 @@ export const StyledSelectTrack = styled.select`
     max-width: 15%;
   }
 `;
+export const StyledVoteTalkLink = styled.a`
+  text-decoration: none;
+  color: ${Color.WHITE};
+  font-size: 0.8rem;
+`;
