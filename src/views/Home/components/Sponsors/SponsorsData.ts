@@ -101,6 +101,17 @@ export const sponsors: Sponsors = {
       image: "/images/KCD-logo-black.png",
     },
   ],
-  media_partners: [],
+  media_partners: [
+    {
+      name: "Kube events",
+      image: "images/sponsors/kube-events.png",
+      website: "https://kube.events/",
+    },
+    {
+      name: "Kube careers",
+      image: "images/sponsors/kube-career.png",
+      website: "https://kube.careers//",
+    },
+  ],
   supporters: [],
 };
