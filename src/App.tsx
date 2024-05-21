@@ -15,6 +15,7 @@ import {
   ROUTE_2023_TALKS,
   ROUTE_2023_WORKSHOPS,
   ROUTE_ABOUT_US,
+  ROUTE_ACCOMMODATION,
   ROUTE_CFP,
   ROUTE_CODE_OF_CONDUCT,
   ROUTE_CONDITIONS,
@@ -68,6 +69,7 @@ import Sponsorship from "./views/sponsorship/Sponsorship";
 import Diversity2023 from "./2023/Diversity/Diversity2023";
 import CfpSection from "./views/Cfp/CfpSection";
 import { CodeOfConduct } from "./views/CodeOfConduct/CodeOfConduct";
+import { Accommodation } from "./views/Travel/Accommodation";
 
 const StyledAppWrapper = styled.div`
   position: relative;
@@ -241,6 +243,14 @@ const App: FC<React.PropsWithChildren<unknown>> = () => {
             element={
               <React.Suspense fallback={<Loading />}>
                 <HomeWrapper />
+              </React.Suspense>
+            }
+          />
+          <Route
+            path={ROUTE_ACCOMMODATION}
+            element={
+              <React.Suspense fallback={<Loading />}>
+                <Accommodation />
               </React.Suspense>
             }
           />

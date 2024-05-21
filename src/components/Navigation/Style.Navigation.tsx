@@ -153,7 +153,7 @@ export const SubMenu = styled.ul`
   position: absolute;
   top: 18px;
   left: -20px;
-  width: 116px;
+  width: 141px;
   background-color: ${Color.LIGHT_BLUE};
   padding: 5px;
 `;
