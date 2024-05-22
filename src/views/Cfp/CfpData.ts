@@ -111,6 +111,8 @@ export const data: CFpTrack[] = [
       {
         name: "Christian Polanco",
         linkedIn: "https://www.linkedin.com/in/chrsalx/",
+        twitter: "https://twitter.com/chrsalx",
+        photo: "images/cfp/christian-polanco.jpg",
       },
       {
         name: "David Ricordel",
