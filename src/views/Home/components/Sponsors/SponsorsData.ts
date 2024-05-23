@@ -113,5 +113,11 @@ export const sponsors: Sponsors = {
       website: "https://kube.careers//",
     },
   ],
-  supporters: [],
+  supporters: [
+    {
+      name: "BarcelonaJS",
+      website: "https://barcelonajs.com/",
+      image: "images/sponsors/barcelona-js.png",
+    },
+  ],
 };
