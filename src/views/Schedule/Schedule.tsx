@@ -22,7 +22,7 @@ const Schedule: FC<React.PropsWithChildren<unknown>> = () => {
   React.useEffect(() => {
     document.title = `Schedule — ${data.title} — ${data.edition}`;
 
-    fetch("https://sessionize.com/api/v2/a2sw0wks/view/GridSmart")
+    fetch("https://sessionize.com/api/v2/w8mdb9k5/view/GridSmart")
       .then((value) => value.text())
       .then((value) => {
         const sched = document.getElementById("#schedule");
@@ -54,16 +54,15 @@ const Schedule: FC<React.PropsWithChildren<unknown>> = () => {
             <StyledMoreIcon src={MoreThanBlueWhiteIcon} />
           </>
         )}
-        {!data.schedule.enabled && (
+        {data.schedule.enabled ? (
+          <div style={{ width: "100%", margin: "0 auto" }} id="#schedule">
+            &nbsp;
+          </div>
+        ) : (
           <p style={{ color: Color.DARK_BLUE }}>
             Schedule is not available yet. Keep in touch on social media as we
             announce the speakers and their talks/workshops
           </p>
-        )}
-        {data.schedule.enabled && (
-          <div style={{ width: "100%", margin: "0 auto" }} id="#schedule">
-            &nbsp;
-          </div>
         )}
       </StyledScheduleSection>
     </SectionWrapper>
