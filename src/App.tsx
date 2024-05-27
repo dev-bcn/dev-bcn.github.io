@@ -23,6 +23,7 @@ import {
   ROUTE_HOME,
   ROUTE_KCD,
   ROUTE_MEETING_DETAIL_PLAIN,
+  ROUTE_SCHEDULE,
   ROUTE_SPEAKER_DETAIL_PLAIN,
   ROUTE_SPEAKER_INFO,
   ROUTE_SPEAKERS,
@@ -70,6 +71,7 @@ import Diversity2023 from "./2023/Diversity/Diversity2023";
 import CfpSection from "./views/Cfp/CfpSection";
 import { CodeOfConduct } from "./views/CodeOfConduct/CodeOfConduct";
 import { Accommodation } from "./views/Travel/Accommodation";
+import Schedule from "./views/Schedule/Schedule";
 
 const StyledAppWrapper = styled.div`
   position: relative;
@@ -157,9 +159,15 @@ const App: FC<React.PropsWithChildren<unknown>> = () => {
           {/*<Route path={ROUTE_JOB_OFFERS} element={<React.Suspense fallback={<Loading />}>
                 <JobOffers />
               </React.Suspense>} />*/}
-          {/*<Route path={ROUTE_SCHEDULE} element={<React.Suspense fallback={<Loading />}>
+          <Route
+            path={ROUTE_SCHEDULE}
+            element={
+              <React.Suspense fallback={<Loading />}>
                 <Schedule />
-              </React.Suspense>} />*/}
+              </React.Suspense>
+            }
+          />
+          */
           <Route
             path={ROUTE_SPEAKERS}
             element={

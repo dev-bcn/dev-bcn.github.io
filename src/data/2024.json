@@ -22,7 +22,7 @@
   },
   "linkedin": "https://www.linkedin.com/company/devbcn",
   "schedule": {
-    "enabled": false
+    "enabled": true
   },
   "showCountdown": true,
   "showInfoButtons": false,
