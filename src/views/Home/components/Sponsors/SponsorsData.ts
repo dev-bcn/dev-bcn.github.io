@@ -60,6 +60,11 @@ export const sponsors: Sponsors = {
       image: "images/sponsors/alten.png",
       website: "https://www.alten.es/",
     },
+    {
+      name: "TIGERA",
+      image: "images/sponsors/tigera.png",
+      website: "https://www.tigera.io/",
+    },
   ],
   basic: [
     {
