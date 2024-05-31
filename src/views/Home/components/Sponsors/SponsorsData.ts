@@ -26,7 +26,7 @@ export const sponsors: Sponsors = {
     {
       name: "Allianz",
       image: "images/sponsors/allianz.png",
-      website: "https://careers.allianz.com/es_ES.html",
+      website: "https://tech.allianz.com/en.html",
     },
     {
       name: "Barcelona JUG",
