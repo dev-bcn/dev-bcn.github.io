@@ -105,6 +105,31 @@ export const sponsors: Sponsors = {
         "https://community.cncf.io/events/details/cncf-kcd-spain-presents-kcd-barcelona-2024/",
       image: "/images/KCD-logo-black.png",
     },
+    {
+      name: "Apache Foundation",
+      image: "images/sponsors/apache-foundation.jpeg",
+      website: "https://www.apache.org/",
+    },
+    {
+      name: "Eclipse Foundation",
+      image: "images/sponsors/eclipse-foundation.png",
+      website: "https://www.eclipse.org/",
+    },
+    {
+      name: "Foojay",
+      image: "images/sponsors/foojay.jpg",
+      website: "https://foojay.io/",
+    },
+    {
+      name: "Migracode Barcelona",
+      image: "images/sponsors/migracode.jpg",
+      website: "https://www.migracode.org/",
+    },
+    {
+      name: "Step4ward",
+      image: "images/sponsors/step4ward.png",
+      website: "https://bit.ly/step4wardhome",
+    },
   ],
   media_partners: [
     {
