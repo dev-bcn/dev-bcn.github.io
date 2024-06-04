@@ -11,6 +11,7 @@ import {
   MOBILE_BREAKPOINT,
   TABLET_BREAKPOINT,
 } from "../../constants/BreakPoints";
+import * as Sentry from "@sentry/react";
 
 export const talkCardAdapter = (
   session: UngroupedSession,
@@ -64,13 +65,14 @@ const StyledMain = styled.main`
 
 export const LiveView: FC<React.PropsWithChildren<unknown>> = () => {
   const { isLoading, error, data } = useFetchLiveView();
-  const dateFormat = new Intl.DateTimeFormat("es-ES", {
-    hour: "2-digit",
-    minute: "2-digit",
-  });
+
   const [today, setToday] = React.useState(new Date(2024, 5, 13, 12, 40));
   const isBetween = (talk: UngroupedSession): boolean =>
     today >= new Date(talk.startsAt) && today <= new Date(talk.endsAt);
+
+  if (error) {
+    Sentry.captureException(error);
+  }
 
   React.useEffect(() => {
     document.title = `Live view - ${conference.title} - ${conference.edition} Edition`;
