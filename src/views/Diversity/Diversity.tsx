@@ -8,6 +8,7 @@ import {
   ROUTE_CODE_OF_CONDUCT,
   ROUTE_CONDITIONS,
 } from "../../constants/routes";
+import { formatDateWithOrdinal } from "../../components/date/dateUtils";
 
 const StyledSection = styled.section`
    {
@@ -53,14 +54,12 @@ const Heading = styled.h1`
 `;
 
 const StyledP = styled.p`
-   {
-    text-align: justify;
-    color: ${Color.DARK_BLUE};
-    margin: 15px 3%;
+  text-align: justify;
+  color: ${Color.DARK_BLUE};
+  margin: 15px 3%;
 
-    @media (max-width: ${BIG_BREAKPOINT}px) {
-      margin: 15px 10%;
-    }
+  @media (max-width: ${BIG_BREAKPOINT}px) {
+    margin: 15px 10%;
   }
 
   &.first {
@@ -69,13 +68,11 @@ const StyledP = styled.p`
 `;
 
 const FlexDiv = styled.div`
-   {
-    display: flex;
-    width: 20%;
-    margin: 0 auto;
-    flex-direction: column;
-    padding-bottom: 20px;
-  }
+  display: flex;
+  width: 20%;
+  margin: 0 auto;
+  flex-direction: column;
+  padding-bottom: 20px;
   @media only screen and (max-width: ${BIG_BREAKPOINT}px) {
     width: 60%;
     padding-bottom: 0.5rem;
@@ -83,11 +80,9 @@ const FlexDiv = styled.div`
 `;
 
 const StyledParagraph = styled.section`
-   {
-    text-align: left;
-    color: ${Color.DARK_BLUE};
-    margin: 15px 3%;
-  }
+  text-align: left;
+  color: ${Color.DARK_BLUE};
+  margin: 15px 3%;
 
   h2 {
     padding-bottom: 15px;
@@ -97,6 +92,7 @@ const StyledParagraph = styled.section`
     padding-left: 40px;
   }
 `;
+
 const Diversity: FC<React.PropsWithChildren<unknown>> = () => {
   useEffect(() => {
     document.title = `Diversity — ${data.title} — ${data.edition}`;
@@ -130,27 +126,19 @@ const Diversity: FC<React.PropsWithChildren<unknown>> = () => {
       </StyledP>
 
       <StyledP>
-        We must thank <a href="https://www.veepee.es/gr/home/default">Veepee</a>{" "}
-        &{" "}
-        <a href="https://www.adevinta.es/" target="_blank" rel="noreferrer">
-          Adevinta
+        We must thank{" "}
+        <a href="https://careers.ocadogroup.com/where-we-are/europe/development-centre-barcelona?utm_source=event&utm_medium=other&utm_campaign=ot_event_bcn_devbcn_website">
+          Ocado
         </a>{" "}
         for making this possible!
       </StyledP>
       <FlexDiv>
         <a
-          href="https://www.veepee.es/gr/home/default"
+          href="https://careers.ocadogroup.com/where-we-are/europe/development-centre-barcelona?utm_source=event&utm_medium=other&utm_campaign=ot_event_bcn_devbcn_website"
           target="_blank"
           rel="noreferrer noopener"
         >
-          <StyledLogo alt="Vepee" src="images/sponsors/veepee.png" />
-        </a>
-        <a
-          href="https://www.adevinta.es/"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          <StyledLogo alt="Adevinta" src="images/sponsors/adevinta.png" />
+          <StyledLogo alt="Vepee" src="images/sponsors/ocado.png" />
         </a>
       </FlexDiv>
       {data.diversity && (
@@ -214,11 +202,11 @@ const Diversity: FC<React.PropsWithChildren<unknown>> = () => {
                 <p>
                   They will receive a free ticket to the conference, which{" "}
                   <strong>
-                    includes admission 🎫 to all talks during the 13
-                    <sup>th</sup> and 14<sup>th</sup>, and catering 🥘 during
-                    the two days of the conference
+                    includes admission 🎫 to all talks during the{" "}
+                    {formatDateWithOrdinal(new Date(data.startDay))} and{" "}
+                    {formatDateWithOrdinal(new Date(data.endDay))}, and catering
+                    🥘 during the two days of the conference.
                   </strong>
-                  .
                 </p>
               </div>
             </div>
