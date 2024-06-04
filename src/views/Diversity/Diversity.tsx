@@ -138,7 +138,7 @@ const Diversity: FC<React.PropsWithChildren<unknown>> = () => {
           target="_blank"
           rel="noreferrer noopener"
         >
-          <StyledLogo alt="Vepee" src="images/sponsors/ocado.png" />
+          <StyledLogo alt="Ocado" src="images/sponsors/ocado.png" />
         </a>
       </FlexDiv>
       {data.diversity && (

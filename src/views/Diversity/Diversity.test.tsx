@@ -41,7 +41,7 @@ describe("Diversity component", () => {
       </React.Suspense>,
       { wrapper: BrowserRouter },
     );
-    const ocadoLogo = screen.getByAltText("ocado");
+    const ocadoLogo = screen.getByAltText("Ocado");
 
     expect(ocadoLogo).toBeInTheDocument();
   });
