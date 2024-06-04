@@ -1,11 +1,11 @@
 export interface Liveview {
   readonly groupID: null;
   readonly groupName: string;
-  readonly sessions: Session[];
+  readonly sessions: UngroupedSession[];
   readonly isDefault: boolean;
 }
 
-export interface Session {
+export interface UngroupedSession {
   readonly questionAnswers: QuestionAnswer[];
   readonly id: string;
   readonly title: string;

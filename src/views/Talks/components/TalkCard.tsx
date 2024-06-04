@@ -26,7 +26,7 @@ import {
 } from "../Talks.style";
 import { Color } from "../../../styles/colors";
 
-interface TalkCardProps {
+export interface TalkCardProps {
   index: number;
   talk: {
     id: number;

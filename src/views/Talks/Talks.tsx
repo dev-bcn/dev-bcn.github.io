@@ -27,7 +27,7 @@ interface TrackInfo {
 
 const Talks: FC<React.PropsWithChildren<unknown>> = () => {
   const [selectedGroupId, setSelectedGroupId] = useState<TrackInfo | null>(
-    null
+    null,
   );
   const { isLoading, error, data } = useFetchTalks();
 

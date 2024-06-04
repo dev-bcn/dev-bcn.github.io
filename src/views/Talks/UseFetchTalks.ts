@@ -8,6 +8,7 @@ import {
 } from "./Talk.types";
 import axios from "axios";
 import { IMeeting } from "../MeetingDetail/MeetingDetail.Type";
+import { Liveview } from "./liveView.types";
 
 export const useFetchTalks = (): UseQueryResult<IGroup[]> =>
   useQuery("api-talks", async () => {
@@ -26,6 +27,14 @@ export const useFetchTalksById = (id: string): UseQueryResult<Session[]> =>
       .map((track: IGroup) => track.sessions)
       .flat(1)
       .filter((session: { id: string }) => session.id === id);
+  });
+
+export const useFetchLiveView = (): UseQueryResult<Liveview> =>
+  useQuery("api-talks", async () => {
+    let data = await axios.get(
+      "https://sessionize.com/api/v2/ezm48alx/view/Sessions",
+    );
+    return data.data.at(0);
   });
 
 export const extractSessionTags = (

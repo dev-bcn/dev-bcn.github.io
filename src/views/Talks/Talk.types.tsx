@@ -1,6 +1,6 @@
 export interface SessionSpeaker {
-  id: string;
-  name: string;
+  readonly id: string;
+  readonly name: string;
 }
 
 export enum CategoryItemEnum {
@@ -11,40 +11,40 @@ export enum CategoryItemEnum {
 }
 
 interface CategoryItem {
-  id: number;
-  name: string;
+  readonly id: number;
+  readonly name: string;
 }
 
 export interface SessionCategory {
-  id: number;
-  name: CategoryItemEnum;
-  categoryItems: CategoryItem[];
+  readonly id: number;
+  readonly name: CategoryItemEnum;
+  readonly categoryItems: CategoryItem[];
 }
 
 export interface Session {
-  id: number;
-  title: string;
-  description: string;
-  startAt: string;
-  endsAt: string;
-  slidesURL?: string;
-  speakers: SessionSpeaker[];
-  categories: SessionCategory[];
-  questionAnswers: QuestionAnswers[];
-  recordingUrl?: string;
-  track: string;
+  readonly id: number;
+  readonly title: string;
+  readonly description: string;
+  readonly startAt: string;
+  readonly endsAt: string;
+  readonly slidesURL?: string;
+  readonly speakers: SessionSpeaker[];
+  readonly categories: SessionCategory[];
+  readonly questionAnswers: QuestionAnswers[];
+  readonly recordingUrl?: string;
+  readonly track: string;
 }
 
 export interface IGroup {
-  groupId: number;
-  groupName: string;
-  sessions: Session[];
-  isDefault: boolean;
+  readonly groupId: number;
+  readonly groupName: string;
+  readonly sessions: Session[];
+  readonly isDefault: boolean;
 }
 
 export interface QuestionAnswers {
-  id: number;
-  question: string;
-  questionType: string;
-  answer: string;
+  readonly id: number;
+  readonly question: string;
+  readonly questionType: string;
+  readonly answer: string;
 }
