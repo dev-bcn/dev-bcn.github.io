@@ -74,6 +74,7 @@ import { CodeOfConduct } from "./views/CodeOfConduct/CodeOfConduct";
 import { Accommodation } from "./views/Travel/Accommodation";
 import Schedule from "./views/Schedule/Schedule";
 import Diversity from "./views/Diversity/Diversity";
+import { LiveView } from "./views/Talks/LiveView";
 
 const StyledAppWrapper = styled.div`
   position: relative;
@@ -144,6 +145,14 @@ const App: FC<React.PropsWithChildren<unknown>> = () => {
             element={
               <React.Suspense fallback={<Loading />}>
                 <Conditions />
+              </React.Suspense>
+            }
+          />
+          <Route
+            path={"live-view"}
+            element={
+              <React.Suspense fallback={<Loading />}>
+                <LiveView />
               </React.Suspense>
             }
           />
