@@ -11,7 +11,7 @@ describe("Diversity component", () => {
           <Route path={"*"} element={<Diversity />} />
         </Routes>
       </React.Suspense>,
-      { wrapper: BrowserRouter }
+      { wrapper: BrowserRouter },
     );
     const headingElement = screen.getByText("Diversity Sponsorship");
     expect(headingElement).toBeInTheDocument();
@@ -24,10 +24,10 @@ describe("Diversity component", () => {
           <Route path={"*"} element={<Diversity />} />
         </Routes>
       </React.Suspense>,
-      { wrapper: BrowserRouter }
+      { wrapper: BrowserRouter },
     );
     const paragraphElement = screen.getByText(
-      /DevBcn, its volunteers, and staff consider that understanding/i
+      /DevBcn, its volunteers, and staff consider that understanding/i,
     );
     expect(paragraphElement).toBeInTheDocument();
   });
@@ -39,12 +39,10 @@ describe("Diversity component", () => {
           <Route path={"*"} element={<Diversity />} />
         </Routes>
       </React.Suspense>,
-      { wrapper: BrowserRouter }
+      { wrapper: BrowserRouter },
     );
-    const vepeeLogo = screen.getByAltText("Vepee");
-    const adevintaLogo = screen.getByAltText("Adevinta");
+    const ocadoLogo = screen.getByAltText("ocado");
 
-    expect(vepeeLogo).toBeInTheDocument();
-    expect(adevintaLogo).toBeInTheDocument();
+    expect(ocadoLogo).toBeInTheDocument();
   });
 });
