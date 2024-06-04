@@ -20,6 +20,7 @@ import {
   ROUTE_CODE_OF_CONDUCT,
   ROUTE_CONDITIONS,
   ROUTE_COOKIES,
+  ROUTE_DIVERSITY,
   ROUTE_HOME,
   ROUTE_KCD,
   ROUTE_MEETING_DETAIL_PLAIN,
@@ -72,6 +73,7 @@ import CfpSection from "./views/Cfp/CfpSection";
 import { CodeOfConduct } from "./views/CodeOfConduct/CodeOfConduct";
 import { Accommodation } from "./views/Travel/Accommodation";
 import Schedule from "./views/Schedule/Schedule";
+import Diversity from "./views/Diversity/Diversity";
 
 const StyledAppWrapper = styled.div`
   position: relative;
@@ -153,9 +155,16 @@ const App: FC<React.PropsWithChildren<unknown>> = () => {
               </React.Suspense>
             }
           />
-          {/*<Route path={ROUTE_DIVERSITY} element={<React.Suspense fallback={<Loading />}>
-                <Diversity />
-              </React.Suspense>} />*/}
+          {
+            <Route
+              path={ROUTE_DIVERSITY}
+              element={
+                <React.Suspense fallback={<Loading />}>
+                  <Diversity />
+                </React.Suspense>
+              }
+            />
+          }
           {/*<Route path={ROUTE_JOB_OFFERS} element={<React.Suspense fallback={<Loading />}>
                 <JobOffers />
               </React.Suspense>} />*/}
