@@ -66,7 +66,7 @@ const StyledMain = styled.main`
 export const LiveView: FC<React.PropsWithChildren<unknown>> = () => {
   const { isLoading, error, data } = useFetchLiveView();
 
-  const [today, setToday] = React.useState(new Date(2024, 5, 13, 12, 40));
+  const [today] = React.useState(new Date(2024, 5, 13, 12, 40));
   const isBetween = (talk: UngroupedSession): boolean =>
     today >= new Date(talk.startsAt) && today <= new Date(talk.endsAt);
 
@@ -76,19 +76,6 @@ export const LiveView: FC<React.PropsWithChildren<unknown>> = () => {
 
   React.useEffect(() => {
     document.title = `Live view - ${conference.title} - ${conference.edition} Edition`;
-    const interval = setInterval(() => {
-      setToday((prevDate) => {
-        const newDate = new Date(prevDate);
-        if (prevDate > new Date(2024, 5, 14, 21, 0)) {
-          newDate.setFullYear(2024, 5, 13);
-          newDate.setTime(8);
-        }
-        newDate.setMinutes(newDate.getMinutes() + 10);
-        return newDate;
-      });
-    }, 1000);
-
-    return () => clearInterval(interval);
   }, []);
 
   return (
