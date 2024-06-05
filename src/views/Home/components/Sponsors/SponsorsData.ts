@@ -97,6 +97,12 @@ export const sponsors: Sponsors = {
       website: "https://www.gft.com/es/es/",
       image: "images/sponsors/GFT.jpg",
     },
+    {
+      name: "Grupo Castilla",
+      image: "images/sponsors/grupo-castilla.png",
+      website:
+        "https://www.grupocastilla.es/servicios-rrhh/consultoria-tecnologica/",
+    },
   ],
   communities: [
     {
