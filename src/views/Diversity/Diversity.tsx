@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import React, { FC, useEffect } from "react";
 import { Color } from "../../styles/colors";
 import data from "../../data/2024.json";
 import styled from "styled-components";
@@ -8,26 +8,25 @@ import {
   ROUTE_CODE_OF_CONDUCT,
   ROUTE_CONDITIONS,
 } from "../../constants/routes";
-import { formatDateWithOrdinal } from "../../components/date/dateUtils";
 
 const StyledSection = styled.section`
-   {
+{
     padding-top: 48px;
-  }
+}
 
-  .top {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 50px));
-    height: 51px;
-    background-color: ${Color.DARK_BLUE};
-    border-top: 1px solid ${Color.DARK_BLUE};
-  }
+    .top {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 50px));
+        height: 51px;
+        background-color: ${Color.DARK_BLUE};
+        border-top: 1px solid ${Color.DARK_BLUE};
+    }
 
-  .bottom {
-    clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 100%);
-    margin-top: -50px;
-    height: 50px;
-    background-color: ${Color.WHITE};
-  }
+    .bottom {
+        clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 100%);
+        margin-top: -50px;
+        height: 50px;
+        background-color: ${Color.WHITE};
+    }
 `;
 
 const StyledWave = styled.section`
@@ -37,15 +36,15 @@ const StyledWave = styled.section`
 `;
 
 const StyledLogo = styled.img`
-   {
+{
     max-width: 30vw;
     flex: 2 1 auto;
     padding-bottom: 50px;
-  }
-  @media only screen and (max-width: ${BIG_BREAKPOINT}px) {
-    padding-bottom: 20px;
-    max-width: 65vw;
-  }
+}
+    @media only screen and (max-width: ${BIG_BREAKPOINT}px) {
+        padding-bottom: 20px;
+        max-width: 65vw;
+    }
 `;
 
 const Heading = styled.h1`
@@ -122,7 +121,7 @@ const Diversity: FC<React.PropsWithChildren<unknown>> = () => {
 
       <StyledP>
         That’s why we are running again the diversity sponsorship for DevBcn{" "}
-        {data.edition} 🎉
+        {parseInt(data.edition) + 1} 🎉
       </StyledP>
 
       <StyledP>
@@ -141,29 +140,28 @@ const Diversity: FC<React.PropsWithChildren<unknown>> = () => {
           <StyledLogo alt="Ocado" src="images/sponsors/ocado.png" />
         </a>
       </FlexDiv>
-      {data.diversity && (
-        <>
-          <StyledParagraph>
-            <h2 id="who-can-apply">Who can apply?</h2>
-            <div className="sectionbody">
-              <div className="paragraph">
-                <p>
-                  We strongly encourage applications from women, people with
-                  disabilities, people of color, economically disadvantaged
-                  people, LGBTQ or any other underrepresented group. In
-                  addition, the applicants must be 18 years of age or older and
-                  must be available to attend the main days of the event (3rd
-                  and 4th).
-                </p>
-              </div>
-              <div className="paragraph">
-                <p>
-                  There are a <strong>limited amount of sponsorships</strong> 🔥
-                  and will be awarded based on a combination of need and impact.
-                </p>
-              </div>
+      <>
+        <StyledParagraph>
+          <h2 id="who-can-apply">Who can apply?</h2>
+          <div className="sectionbody">
+            <div className="paragraph">
+              <p>
+                We strongly encourage applications from women, people with
+                disabilities, people of color, economically disadvantaged
+                people, LGBTQ or any other underrepresented group. In addition,
+                the applicants must be 18 years of age or older and must be
+                available to attend the main days of the event.
+              </p>
             </div>
-          </StyledParagraph>
+            <div className="paragraph">
+              <p>
+                There are a <strong>limited amount of sponsorships</strong> 🔥
+                and will be awarded based on a combination of need and impact.
+              </p>
+            </div>
+          </div>
+        </StyledParagraph>
+        {data.diversity && (
           <StyledParagraph>
             <h2 id="how-can-i-apply">How can I apply?</h2>
             <div className="sectionbody">
@@ -189,62 +187,60 @@ const Diversity: FC<React.PropsWithChildren<unknown>> = () => {
               </div>
             </div>
           </StyledParagraph>
-          <StyledParagraph>
-            <h2 id="how-will-i-be-notified">How will I be notified?</h2>
-            <div className="sectionbody">
-              <div className="paragraph">
-                <p>
-                  Selected people will be notified via email at the contact
-                  provided.
-                </p>
-              </div>
-              <div className="paragraph">
-                <p>
-                  They will receive a free ticket to the conference, which{" "}
-                  <strong>
-                    includes admission 🎫 to all talks during the{" "}
-                    {formatDateWithOrdinal(new Date(data.startDay))} and{" "}
-                    {formatDateWithOrdinal(new Date(data.endDay))}, and catering
-                    🥘 during the two days of the conference.
-                  </strong>
-                </p>
-              </div>
+        )}
+        <StyledParagraph>
+          <h2 id="how-will-i-be-notified">How will I be notified?</h2>
+          <div className="sectionbody">
+            <div className="paragraph">
+              <p>
+                Selected people will be notified via email at the contact
+                provided.
+              </p>
             </div>
-          </StyledParagraph>
-          <StyledParagraph>
-            <h2 id="terms-and-conditions">Terms and Conditions</h2>
-            <div className="sectionbody">
-              <div className="paragraph">
-                <p>All awarded attendees must:</p>
-              </div>
-              <div className="ulist">
-                <ul>
-                  <li>
-                    <p>
-                      Follow the conference{" "}
-                      <Link to={ROUTE_CODE_OF_CONDUCT}>Code of conduct</Link>.
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      Find additional funding for transportation and
-                      accommodation. These costs are not included.
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      Agree to conference and ticket{" "}
-                      <Link to={ROUTE_CONDITIONS}>terms and conditions</Link> in
-                      case of being awarded with a ticket.
-                    </p>
-                  </li>
-                </ul>
-              </div>
+            <div className="paragraph">
+              <p>
+                They will receive a free ticket to the conference, which{" "}
+                <strong>
+                  includes admission 🎫 to all talks during the event, and
+                  catering 🥘 during the two days of the conference.
+                </strong>
+              </p>
             </div>
-          </StyledParagraph>
-          <div style={{ paddingBottom: "190px" }}>&nbsp;</div>
-        </>
-      )}
+          </div>
+        </StyledParagraph>
+        <StyledParagraph>
+          <h2 id="terms-and-conditions">Terms and Conditions</h2>
+          <div className="sectionbody">
+            <div className="paragraph">
+              <p>All awarded attendees must:</p>
+            </div>
+            <div className="ulist">
+              <ul>
+                <li>
+                  <p>
+                    Follow the conference{" "}
+                    <Link to={ROUTE_CODE_OF_CONDUCT}>Code of conduct</Link>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Find additional funding for transportation and
+                    accommodation. These costs are not included.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Agree to conference and ticket{" "}
+                    <Link to={ROUTE_CONDITIONS}>terms and conditions</Link> in
+                    case of being awarded with a ticket.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </StyledParagraph>
+        <div style={{ paddingBottom: "190px" }}>&nbsp;</div>
+      </>
     </StyledSection>
   );
 };
