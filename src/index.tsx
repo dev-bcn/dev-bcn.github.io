@@ -1,11 +1,16 @@
 import "./index.scss";
-import { BrowserRouter } from "react-router-dom";
+import {
+  BrowserRouter,
+  createRoutesFromChildren,
+  matchRoutes,
+  useLocation,
+  useNavigationType,
+} from "react-router-dom";
 import App from "./App";
-import React from "react";
+import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
 import ReactGa from "react-ga";
-import { BrowserTracing } from "@sentry/browser";
 import * as Sentry from "@sentry/react";
 import Loading from "./components/Loading/Loading";
 
@@ -15,7 +20,15 @@ ReactGa.initialize(tracking_ID);
 
 Sentry.init({
   dsn: "https://fdfaeed3901d43a299b95c534e42a4c1@o194303.ingest.sentry.io/4504348314435584",
-  integrations: [new BrowserTracing()],
+  integrations: [
+    Sentry.reactRouterV6BrowserTracingIntegration({
+      useEffect,
+      useLocation,
+      useNavigationType,
+      createRoutesFromChildren,
+      matchRoutes,
+    }),
+  ],
   tracesSampleRate: 1.0,
   environment: process.env.NODE_ENV,
   release: "devBcn@" + process.env.npm_package_version,
@@ -29,7 +42,7 @@ ReactDOM.render(
       </BrowserRouter>
     </React.Suspense>
   </React.StrictMode>,
-  document.getElementById("root")
+  document.getElementById("root"),
 );
 
 // If you want to start measuring performance in your app, pass a function
