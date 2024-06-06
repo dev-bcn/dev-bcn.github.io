@@ -2,13 +2,8 @@ import { UngroupedSession } from "./liveView.types";
 import { TalkCardProps } from "./components/TalkCard";
 import { QuestionAnswers, SessionCategory, SessionSpeaker } from "./Talk.types";
 
-export const talkCardAdapter = (
-  session: UngroupedSession,
-  index: number,
-): TalkCardProps => {
+export const talkCardAdapter = (session: UngroupedSession): TalkCardProps => {
   return {
-    index: index,
-    key: parseInt(session.id),
     talk: {
       id: parseInt(session.id),
       title: session.title,

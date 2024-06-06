@@ -50,9 +50,9 @@ const Workshops: FC<React.PropsWithChildren<unknown>> = () => {
     .filter((session) =>
       session.categories.some((sessionCategory) =>
         sessionCategory.categoryItems.some((category) =>
-          workshopCategoryList.has(category.id)
-        )
-      )
+          workshopCategoryList.has(category.id),
+        ),
+      ),
     );
   //endregion
 
@@ -99,13 +99,8 @@ const Workshops: FC<React.PropsWithChildren<unknown>> = () => {
               upcoming announcements
             </p>
           ) : (
-            workshops?.map((track, index) => (
-              <TalkCard
-                talk={track}
-                key={track.id}
-                index={index}
-                showTrack={true}
-              />
+            workshops?.map((track) => (
+              <TalkCard talk={track} key={track.id} showTrack={true} />
             ))
           )}
         </StyledSection>

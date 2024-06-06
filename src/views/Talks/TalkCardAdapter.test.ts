@@ -46,10 +46,8 @@ describe("talkCardAdapter", () => {
       ],
     };
 
-    const result = talkCardAdapter(session, 1);
+    const result = talkCardAdapter(session);
 
-    expect(result.index).toBe(1);
-    expect(result.key).toBe(1);
     expect(result.talk.title).toBe(session.title);
     expect(result.talk.speakers.at(0)?.name).toBe(session.speakers[0].name);
   });

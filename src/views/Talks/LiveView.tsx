@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useCallback, useEffect, useMemo } from "react";
 import { useFetchLiveView } from "./UseFetchTalks";
 import Loading from "../../components/Loading/Loading";
 import { UngroupedSession } from "./liveView.types";
@@ -8,34 +8,36 @@ import * as Sentry from "@sentry/react";
 import { StyledMain } from "./Talks.style";
 import { talkCardAdapter } from "./TalkCardAdapter";
 
-export const LiveView: FC<React.PropsWithChildren<unknown>> = () => {
+const LiveView: FC<React.PropsWithChildren<unknown>> = () => {
   const { isLoading, error, data } = useFetchLiveView();
+  const today = useMemo(() => new Date(), []);
 
-  const [today] = React.useState(new Date());
+  const isBetween = useCallback(
+    (today: Date, startDate: string, endDate: string): boolean => {
+      return today >= new Date(startDate) && today <= new Date(endDate);
+    },
+    [],
+  );
 
-  const isBetween = (
-    today: Date,
-    startDate: string,
-    endDate: string,
-  ): boolean => today >= new Date(startDate) && today <= new Date(endDate);
+  const getPredicate = useCallback(
+    () => (session: UngroupedSession) =>
+      isBetween(today, session.startsAt, session.endsAt),
+    [today, isBetween],
+  );
 
-  const getPredicate = () => (session: UngroupedSession) =>
-    isBetween(today, session.startsAt, session.endsAt);
+  const filteredTalks = useMemo(() => {
+    return data?.sessions.filter(getPredicate());
+  }, [data, getPredicate]);
 
-  const [filteredTalks, setFilteredTalks] = React.useState<
-    UngroupedSession[] | undefined
-  >(data?.sessions.filter(getPredicate()));
-
-  if (error) {
-    Sentry.captureException(error);
-  }
-
-  React.useEffect(() => {
+  useEffect(() => {
     document.title = `Live view - ${conference.title} - ${conference.edition} Edition`;
-    if (data) {
-      setFilteredTalks(data?.sessions.filter(getPredicate()));
+  }, []);
+
+  useEffect(() => {
+    if (error) {
+      Sentry.captureException(error);
     }
-  }, [data, today, getPredicate]);
+  }, [error]);
 
   return (
     <StyledMain>
@@ -51,11 +53,13 @@ export const LiveView: FC<React.PropsWithChildren<unknown>> = () => {
       {isLoading && <Loading />}
       <article>Live Schedule</article>
       {!isBetween(today, conference.startDay, conference.endDay) && (
-        <h4>The live schedule is not ready yet </h4>
+        <h4>The live schedule is not ready yet</h4>
       )}
-      {filteredTalks?.map((session, index) => {
-        return <TalkCard {...talkCardAdapter(session, index)} />;
-      })}
+      {filteredTalks?.map((session) => (
+        <TalkCard key={session.id} {...talkCardAdapter(session)} />
+      ))}
     </StyledMain>
   );
 };
+
+export default LiveView;
