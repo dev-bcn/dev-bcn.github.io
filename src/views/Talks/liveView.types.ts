@@ -10,8 +10,8 @@ export interface UngroupedSession {
   readonly id: string;
   readonly title: string;
   readonly description: null | string;
-  readonly startsAt: Date;
-  readonly endsAt: Date;
+  readonly startsAt: string;
+  readonly endsAt: string;
   readonly isServiceSession: boolean;
   readonly isPlenumSession: boolean;
   readonly speakers: Speaker[];

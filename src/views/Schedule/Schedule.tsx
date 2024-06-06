@@ -14,6 +14,7 @@ import {
 } from "./Schedule.style";
 import * as Sentry from "@sentry/react";
 import { Simulate } from "react-dom/test-utils";
+import { Link } from "react-router-dom";
 import error = Simulate.error;
 
 const Schedule: FC<React.PropsWithChildren<unknown>> = () => {
@@ -55,9 +56,21 @@ const Schedule: FC<React.PropsWithChildren<unknown>> = () => {
           </>
         )}
         {data.schedule.enabled ? (
-          <div style={{ width: "100%", margin: "0 auto" }} id="#schedule">
-            &nbsp;
-          </div>
+          <>
+            <Link
+              to="/live-view"
+              style={{
+                textDecoration: "none",
+                fontWeight: "bold",
+                margin: "0.5rem",
+              }}
+            >
+              📅 See Live schedule
+            </Link>
+            <div style={{ width: "100%", margin: "0 auto" }} id="#schedule">
+              &nbsp;
+            </div>
+          </>
         ) : (
           <p style={{ color: Color.DARK_BLUE }}>
             Schedule is not available yet. Keep in touch on social media as we
