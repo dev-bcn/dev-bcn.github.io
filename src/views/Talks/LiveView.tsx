@@ -26,7 +26,7 @@ const LiveView: FC<React.PropsWithChildren<unknown>> = () => {
   );
 
   const filteredTalks = useMemo(() => {
-    return data?.sessions.filter(getPredicate());
+    return data?.sessions?.filter(getPredicate());
   }, [data, getPredicate]);
 
   useEffect(() => {
