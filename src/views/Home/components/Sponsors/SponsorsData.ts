@@ -33,6 +33,11 @@ export const sponsors: Sponsors = {
       image: "images/sponsors/bcn-jug.png",
       website: "https://www.meetup.com/barcelonajug/",
     },
+    {
+      name: "PREM.AI",
+      website: "https://www.premai.io/",
+      image: "images/sponsors/prem-ai.png",
+    },
   ],
   regular: [
     {
