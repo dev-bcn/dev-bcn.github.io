@@ -70,6 +70,11 @@ export const sponsors: Sponsors = {
       image: "images/sponsors/tigera.png",
       website: "https://www.tigera.io/",
     },
+    {
+      name: "Dynatrace",
+      image: "images/sponsors/dynatrace.png",
+      website: "https://www.dynatrace.com/",
+    },
   ],
   basic: [
     {
