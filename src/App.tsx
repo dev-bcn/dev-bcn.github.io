@@ -75,8 +75,6 @@ import { Accommodation } from "./views/Travel/Accommodation";
 import Schedule from "./views/Schedule/Schedule";
 import Diversity from "./views/Diversity/Diversity";
 import { LiveView } from "./views/Talks/LiveView";
-import Diversity from "./views/Diversity/Diversity";
-import { LiveView } from "./views/Talks/LiveView";
 
 const StyledAppWrapper = styled.div`
   position: relative;
