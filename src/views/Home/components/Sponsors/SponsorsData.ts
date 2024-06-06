@@ -108,6 +108,11 @@ export const sponsors: Sponsors = {
       website:
         "https://www.grupocastilla.es/servicios-rrhh/consultoria-tecnologica/",
     },
+    {
+      name: "Axa",
+      image: "images/sponsors/axa.png",
+      website: "https://www.axapartners.es/es",
+    },
   ],
   communities: [
     {
