@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import { Color } from "../../styles/colors";
-import { BIG_BREAKPOINT, TABLET_BREAKPOINT } from "../../constants/BreakPoints";
+import {
+  BIG_BREAKPOINT,
+  MOBILE_BREAKPOINT,
+  TABLET_BREAKPOINT,
+} from "../../constants/BreakPoints";
 import { Link } from "react-router-dom";
 
 export const StyledTitleContainer = styled.div`
@@ -127,4 +131,19 @@ export const StyledVoteTalkLink = styled.a`
   text-decoration: none;
   color: ${Color.WHITE};
   font-size: 0.8rem;
+`;
+export const StyledMain = styled.main`
+  padding-left: 2rem;
+  padding-top: 4rem;
+  padding-bottom: 7rem;
+
+  @media screen and (max-width: ${MOBILE_BREAKPOINT}px) {
+    padding-bottom: 40rem;
+    padding-left: 1rem;
+  }
+
+  @media screen and (min-width: ${TABLET_BREAKPOINT}px) {
+    padding-bottom: 20rem;
+    padding-left: 1rem;
+  }
 `;
