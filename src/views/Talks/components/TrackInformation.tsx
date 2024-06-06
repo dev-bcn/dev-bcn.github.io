@@ -16,7 +16,9 @@ const useGenerateAnchorName = (trackName: string) => {
   return visibleTodos[0];
 };
 
-const TrackInformation: FC<React.PropsWithChildren<TrackInfoProps>> = ({ track }) => {
+const TrackInformation: FC<React.PropsWithChildren<TrackInfoProps>> = ({
+  track,
+}) => {
   const anchorName = useGenerateAnchorName(track.groupName);
 
   return (
@@ -25,7 +27,7 @@ const TrackInformation: FC<React.PropsWithChildren<TrackInfoProps>> = ({ track }
       <StyledSessionSection>
         {Array.isArray(track.sessions) &&
           track.sessions.map((session) => (
-            <TalkCard talk={session} key={session.id} index={session.id} />
+            <TalkCard talk={session} key={session.id} />
           ))}
       </StyledSessionSection>
     </div>

@@ -1,4 +1,4 @@
-import { LiveView } from "./LiveView";
+import LiveView from "./LiveView";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { render, screen } from "@testing-library/react";
 import React from "react";

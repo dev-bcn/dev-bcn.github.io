@@ -27,7 +27,6 @@ import {
 import { Color } from "../../../styles/colors";
 
 export interface TalkCardProps {
-  index: number;
   talk: {
     id: number;
     title: string;
@@ -40,7 +39,6 @@ export interface TalkCardProps {
     categories: SessionCategory[];
     questionAnswers: QuestionAnswers[];
   };
-  key: number;
   showTrack?: boolean;
 }
 
