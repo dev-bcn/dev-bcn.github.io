@@ -38,6 +38,11 @@ export const sponsors: Sponsors = {
       website: "https://www.premai.io/",
       image: "images/sponsors/prem-ai.png",
     },
+    {
+      name: "Revolut",
+      website: "https://www.revolut.com/working-at-revolut/",
+      image: "images/sponsors/revolut.png",
+    },
   ],
   regular: [
     {
