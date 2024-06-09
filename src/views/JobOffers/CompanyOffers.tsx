@@ -14,7 +14,9 @@ import {
   OfferTitle,
 } from "./JobOffers.Style";
 
-const CompanyOffers: React.FC<React.PropsWithChildren<CompanyProps>> = ({ company }) => (
+const CompanyOffers: React.FC<React.PropsWithChildren<CompanyProps>> = ({
+  company,
+}) => (
   <CompanyContainer id={company.name.replaceAll(" ", "-").toLowerCase()}>
     <div
       style={{
@@ -22,6 +24,7 @@ const CompanyOffers: React.FC<React.PropsWithChildren<CompanyProps>> = ({ compan
         height: "55vh",
         backgroundColor: Color.SKY_BLUE,
         padding: "0.5rem",
+        borderRadius: "2rem",
       }}
     >
       <a
@@ -34,7 +37,7 @@ const CompanyOffers: React.FC<React.PropsWithChildren<CompanyProps>> = ({ compan
       </a>
       <CompanyName>{company.name}</CompanyName>
       <CompanyDescription>{company.description}</CompanyDescription>
-      <p>
+      <p style={{ margin: "1rem" }}>
         {company.linkedin && (
           <LinkedinIcon
             color={Color.DARK_BLUE}

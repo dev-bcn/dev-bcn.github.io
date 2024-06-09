@@ -56,9 +56,11 @@ export const CompanyContainer = styled.div`
   }
 `;
 export const CompanyLogo = styled.img`
-  width: 95%;
+  width: 100%;
   margin: 0 auto 1.5rem;
   text-align: center;
+  border-radius: 2rem;
+  padding-top: 0.5rem;
 
   @media (min-width: 768px) {
     max-width: none;
@@ -69,7 +71,7 @@ export const CompanyLogo = styled.img`
 export const CompanyName = styled.h2`
   font-size: 1.5rem;
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  margin: 0.5rem;
 `;
 export const CompanyNameLink = styled.a`
   text-decoration: none;
@@ -79,7 +81,7 @@ export const CompanyNameLink = styled.a`
   font-weight: bold;
 `;
 export const CompanyDescription = styled.p`
-  margin: 0.8rem 0;
+  margin: 0.8rem 1rem;
   text-align: left;
   color: ${Color.DARK_BLUE};
 `;
