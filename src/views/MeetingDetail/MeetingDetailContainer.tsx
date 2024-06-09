@@ -17,11 +17,11 @@ const StyledContainer = styled.div`
 `;
 const MeetingDetailContainer: FC<React.PropsWithChildren<unknown>> = () => {
   const { id } = useParams<{ id: string }>();
-  const { isLoading, error, data } = useFetchTalksById(id!!);
+  const { isLoading, error, data } = useFetchTalksById(id!);
   const { data: speakerData } = useFetchSpeakers();
 
   const getTalkSpeakers = (
-    data: Session[] | undefined
+    data: Session[] | undefined,
   ): string[] | undefined => {
     const speakers = data?.[0]?.speakers;
     return speakers?.map((speaker) => speaker.id);
@@ -29,7 +29,7 @@ const MeetingDetailContainer: FC<React.PropsWithChildren<unknown>> = () => {
 
   const talkSpeakers: string[] | undefined = getTalkSpeakers(data);
   const sessionSpeakers: ISpeaker[] | undefined = speakerData?.filter(
-    (speaker) => talkSpeakers?.includes(speaker.id)
+    (speaker) => talkSpeakers?.includes(speaker.id),
   );
 
   const adaptedMeeting = sessionAdapter(data?.at(0));
