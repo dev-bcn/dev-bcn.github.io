@@ -38,121 +38,119 @@ const Image = styled.img`
 
 const SpeakerInformation2023: FC<React.PropsWithChildren<unknown>> = () => {
   return (
-    <>
-      <main
+    <main
+      style={{
+        paddingTop: "150px",
+        paddingBottom: "200px",
+      }}
+    >
+      <section
         style={{
-          paddingTop: "150px",
-          paddingBottom: "200px",
+          textAlign: "justify",
+          maxWidth: "1280px",
+          margin: "0 auto",
+          padding: "1rem 0",
         }}
       >
-        <section
+        <Heading>Speakers activities plan</Heading>
+        <Paragraph>
+          Here's the detailed information on the speakers activities for Sunday,
+          July 1st, 2023.
+        </Paragraph>
+        <div style={{ textAlign: "center" }}>
+          <Image src="/images/activities/bus.jpg" alt="drinks" />
+          <Image src="/images/activities/lunch.jpg" alt="drinks" />
+        </div>
+        <div
           style={{
-            textAlign: "justify",
-            maxWidth: "1280px",
-            margin: "0 auto",
-            padding: "1rem 0",
+            backgroundColor: Color.LIGHT_BLUE,
+            padding: "1rem",
+            borderRadius: "1rem",
           }}
         >
-          <Heading>Speakers activities plan</Heading>
-          <Paragraph>
-            Here's the detailed information on the speakers activities for
-            Sunday, July 1st, 2023.
-          </Paragraph>
-          <div style={{ textAlign: "center" }}>
-            <Image src="/images/activities/bus.jpg" alt="drinks" />
-            <Image src="/images/activities/lunch.jpg" alt="drinks" />
-          </div>
-          <div
-            style={{
-              backgroundColor: Color.LIGHT_BLUE,
-              padding: "1rem",
-              borderRadius: "1rem",
-            }}
-          >
-            <List>
-              <li>
-                <strong>
-                  16:00
-                  <a
-                    href="https://www.hotelbarcelonaportafira.com/es/"
-                    rel="noreferrer"
-                    target="_blank"
-                  >
-                    {" "}
-                    Hotel Porta Fira
-                  </a>
-                </strong>{" "}
-                - 🗣 Initial gathering
-                <List>
-                  <li>🚍 Bus, 45 minutes ( be punctual !)</li>
-                </List>
-              </li>
-              <li>
-                <strong>
-                  17:00
-                  <a
-                    href="https://www.torres.es/"
-                    rel="noreferrer"
-                    target="_blank"
-                  >
-                    {" "}
-                    Familia Torres
-                  </a>
-                </strong>{" "}
-                - planned visit
-                <List>
-                  <li>🍷 Wine taste</li>
-                  <li>🍽️ Dinner</li>
-                </List>
-              </li>
-              <li>
-                <strong>22:00 Return to Barcelona </strong>
-                <List>
-                  <li>🚍 45 minutes bus travel</li>
-                  <li>1st stop: Hotel Porta Fira</li>
-                  <li>2nd stop: Hotel Catalonia Plaza for drinks</li>
-                </List>
-              </li>
-              <li>
-                <strong>
-                  22:45{" "}
-                  <a
-                    href="https://goo.gl/maps/jajECdg8rUzZusLx7"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Hotel Catalonia Barcelona Plaza
-                  </a>
-                </strong>{" "}
-                - Drinks
-                <List>
-                  <li> 🥂 Ask for your free drinks bracelet on arrival</li>
-                </List>
-              </li>
-            </List>
-          </div>
-          <div style={{ textAlign: "center" }}>
-            <Image src="/images/activities/drinks-1.jpg" alt="drinks" />
-            <Image src="/images/activities/drinks-2.jpg" alt="drinks" />
-          </div>
-          <Paragraph style={{ textAlign: "center" }}>
-            Brought to you by{" "}
-            <a href="https://www.confluent.io" target="_blank" rel="noreferrer">
-              Confluent
-            </a>
-          </Paragraph>
-          <Paragraph style={{ textAlign: "center" }}>
-            <a href="https://www.confluent.io" target="_blank" rel="noreferrer">
-              <img
-                src="/images/sponsors/confluent.png"
-                alt="confluent"
-                style={{ width: "20vw" }}
-              />
-            </a>
-          </Paragraph>
-        </section>
-      </main>
-    </>
+          <List>
+            <li>
+              <strong>
+                16:00
+                <a
+                  href="https://www.hotelbarcelonaportafira.com/es/"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  {" "}
+                  Hotel Porta Fira
+                </a>
+              </strong>{" "}
+              - 🗣 Initial gathering
+              <List>
+                <li>🚍 Bus, 45 minutes ( be punctual !)</li>
+              </List>
+            </li>
+            <li>
+              <strong>
+                17:00
+                <a
+                  href="https://www.torres.es/"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  {" "}
+                  Familia Torres
+                </a>
+              </strong>{" "}
+              - planned visit
+              <List>
+                <li>🍷 Wine taste</li>
+                <li>🍽️ Dinner</li>
+              </List>
+            </li>
+            <li>
+              <strong>22:00 Return to Barcelona </strong>
+              <List>
+                <li>🚍 45 minutes bus travel</li>
+                <li>1st stop: Hotel Porta Fira</li>
+                <li>2nd stop: Hotel Catalonia Plaza for drinks</li>
+              </List>
+            </li>
+            <li>
+              <strong>
+                22:45{" "}
+                <a
+                  href="https://goo.gl/maps/jajECdg8rUzZusLx7"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Hotel Catalonia Barcelona Plaza
+                </a>
+              </strong>{" "}
+              - Drinks
+              <List>
+                <li> 🥂 Ask for your free drinks bracelet on arrival</li>
+              </List>
+            </li>
+          </List>
+        </div>
+        <div style={{ textAlign: "center" }}>
+          <Image src="/images/activities/drinks-1.jpg" alt="drinks" />
+          <Image src="/images/activities/drinks-2.jpg" alt="drinks" />
+        </div>
+        <Paragraph style={{ textAlign: "center" }}>
+          Brought to you by{" "}
+          <a href="https://www.confluent.io" target="_blank" rel="noreferrer">
+            Confluent
+          </a>
+        </Paragraph>
+        <Paragraph style={{ textAlign: "center" }}>
+          <a href="https://www.confluent.io" target="_blank" rel="noreferrer">
+            <img
+              src="/images/sponsors/confluent.png"
+              alt="confluent"
+              style={{ width: "20vw" }}
+            />
+          </a>
+        </Paragraph>
+      </section>
+    </main>
   );
 };
 
