@@ -22,6 +22,7 @@ import {
   ROUTE_COOKIES,
   ROUTE_DIVERSITY,
   ROUTE_HOME,
+  ROUTE_JOB_OFFERS,
   ROUTE_KCD,
   ROUTE_MEETING_DETAIL_PLAIN,
   ROUTE_SCHEDULE,
@@ -75,6 +76,7 @@ import { Accommodation } from "./views/Travel/Accommodation";
 import Schedule from "./views/Schedule/Schedule";
 import Diversity from "./views/Diversity/Diversity";
 import LiveView from "./views/Talks/LiveView";
+import JobOffers from "./views/JobOffers/JobOffers";
 
 const StyledAppWrapper = styled.div`
   position: relative;
@@ -174,9 +176,16 @@ const App: FC<React.PropsWithChildren<unknown>> = () => {
               }
             />
           }
-          {/*<Route path={ROUTE_JOB_OFFERS} element={<React.Suspense fallback={<Loading />}>
-                <JobOffers />
-              </React.Suspense>} />*/}
+          {
+            <Route
+              path={ROUTE_JOB_OFFERS}
+              element={
+                <React.Suspense fallback={<Loading />}>
+                  <JobOffers />
+                </React.Suspense>
+              }
+            />
+          }
           <Route
             path={ROUTE_SCHEDULE}
             element={
