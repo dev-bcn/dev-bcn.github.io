@@ -108,7 +108,7 @@ const Sponsorship: FC<React.PropsWithChildren<unknown>> = () => {
             title="Sponsorship"
             subtitle={`The DevBcn is the yearly event organised by Conferencia DevBcn S.L. Conference Talks will held on ${format(
               new Date(data.startDay),
-              "MMMM do, yyyy"
+              "MMMM do, yyyy",
             )} at La Farga, Hospitalet de Llobregat`}
             color={Color.DARK_BLUE}
           />
@@ -288,9 +288,8 @@ const Sponsorship: FC<React.PropsWithChildren<unknown>> = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                #devbcn24
+                #devbcn24 .
               </a>
-              .
             </p>
             <p>
               We eagerly await the opportunity to collaborate with you once more
