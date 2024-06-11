@@ -13,7 +13,7 @@ interface ButtonProps {
 }
 
 const doNothingHandler = (
-  event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
 ) => {
   event.preventDefault();
 };
@@ -76,7 +76,7 @@ const Button: FC<React.PropsWithChildren<ButtonProps>> = ({
       <>
         <a
           onClick={disabled ? doNothingHandler : onClick}
-          href={disabled ? "https://devbcn.com" : link}
+          href={disabled ? "#top" : link}
           target={target}
           rel="noreferrer nofollow"
           aria-disabled={disabled}
@@ -91,7 +91,7 @@ const Button: FC<React.PropsWithChildren<ButtonProps>> = ({
           {children}
           <span>{`  ${text}`}</span>
         </a>
-        {disabled && <small>opening January 1st</small>}
+        {disabled && <small>SOLD OUT</small>}
       </>
     </StyledActionButton>
   );
