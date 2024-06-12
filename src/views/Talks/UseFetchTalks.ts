@@ -106,25 +106,29 @@ export const sessionAdapter = (
     return undefined;
   }
   return {
-    id: session.id,
     description: session.description,
-    title: session.title,
-    speakers: session.speakers,
-    videoUrl: session.recordingUrl,
-    slidesURL: extractSessionSlides(session.questionAnswers),
-    videoTags: extractSessionTags(session.questionAnswers),
-    level: extractSessionCategoryInfo(session?.categories),
+    endDate: session.endsAt.split("T")[0],
+    endTime: session.endsAt.split("T")[1],
+    id: session.id,
     language: extractSessionCategoryInfo(
       session.categories,
       CategoryItemEnum.Language,
+    ),
+    level: extractSessionCategoryInfo(session?.categories),
+    slidesURL: extractSessionSlides(session.questionAnswers),
+    speakers: session.speakers,
+    startDate: session.startsAt.split("T")[0],
+    startTime: session.startsAt.split("T")[1],
+    title: session.title,
+    track: extractSessionCategoryInfo(
+      session.categories,
+      CategoryItemEnum.Track,
     ),
     type: extractSessionCategoryInfo(
       session.categories,
       CategoryItemEnum.Format,
     ),
-    track: extractSessionCategoryInfo(
-      session.categories,
-      CategoryItemEnum.Track,
-    ),
+    videoTags: extractSessionTags(session.questionAnswers),
+    videoUrl: session.recordingUrl,
   };
 };

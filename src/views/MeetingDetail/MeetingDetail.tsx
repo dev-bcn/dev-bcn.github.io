@@ -34,6 +34,7 @@ import conferenceData from "../../data/2024.json";
 import { Tag } from "../../components/Tag/Tag";
 import { ISpeaker } from "../Speakers/Speaker.types";
 import styled from "styled-components";
+import { AddToCalendarButton } from "add-to-calendar-button-react";
 
 const getVideoHeight = (windowWidth: number) => {
   let videoHeight;
@@ -218,6 +219,20 @@ const MeetingDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
             >
               🗳️ <strong>Vote this talk</strong>
             </StyledVoteTalkLink>
+            <AddToCalendarButton
+              name={meeting.title}
+              description={meeting.description}
+              options={["Apple", "Google", "iCal"]}
+              location={meeting.track}
+              startDate={meeting.startDate}
+              endDate={meeting.endDate}
+              startTime={meeting.startTime}
+              endTime={meeting.endTime}
+              lightMode="bodyScheme"
+              label="Add this session to your calendar"
+              timeZone="currentBrowser"
+              size="5"
+            ></AddToCalendarButton>
           </section>
         </StyledVideoContainer>
         <StyledSpeakerDetailContainer className="speaker-details-Container">

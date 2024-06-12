@@ -41,8 +41,8 @@ describe("sessionAdapter", () => {
       track: "Java ( core frameworks & libraries )",
       id: 5000,
       description: "Session description",
-      startAt: "",
-      endsAt: "",
+      startsAt: "2024-06-13T12:00:00",
+      endsAt: "2024-06-13T14:00:00",
       title: "Session title",
       speakers: [
         {
@@ -133,6 +133,10 @@ describe("sessionAdapter", () => {
       language: "English 🇬🇧",
       type: "Session 🗣",
       track: "Java ( core frameworks & libraries )",
+      startDate: "2024-06-13",
+      startTime: "12:00:00",
+      endDate: "2024-06-13",
+      endTime: "14:00:00",
     };
 
     expect(sessionAdapter(session)).toEqual(expected);
@@ -291,7 +295,7 @@ describe("Fetch Talks by id", () => {
         id: faker.number.int(),
         title: faker.lorem.text(),
         description: faker.lorem.lines(1),
-        startAt: faker.date.past().toString(),
+        startsAt: faker.date.past().toString(),
         endsAt: faker.date.past().toString(),
         slidesURL: faker.internet.url(),
         speakers: [

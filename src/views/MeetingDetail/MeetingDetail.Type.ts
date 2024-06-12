@@ -13,4 +13,8 @@ export interface IMeeting {
   type?: string;
   language?: string;
   track?: string;
+  startDate: string;
+  endDate: string;
+  startTime: string;
+  endTime: string;
 }
