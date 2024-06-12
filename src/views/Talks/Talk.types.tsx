@@ -25,7 +25,7 @@ export interface Session {
   readonly id: number;
   readonly title: string;
   readonly description: string;
-  readonly startAt: string;
+  readonly startsAt: string;
   readonly endsAt: string;
   readonly slidesURL?: string;
   readonly speakers: SessionSpeaker[];
