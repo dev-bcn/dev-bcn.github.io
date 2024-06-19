@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/static/css/main.2e591bb0.css",
-    "main.js": "/static/js/main.206b92b9.js",
-    "static/media/after-hours.jpg": "/static/media/after-hours.732647c87982d3461fe6.jpg",
-    "static/media/la-farga.png": "/static/media/la-farga.bdd2098b891600a22ce8.png",
+    "main.js": "/static/js/main.463a4a99.js",
+    "static/media/after-hours.jpg": "/static/media/after-hours.1181927ee8adeb6743f5.jpg",
+    "static/media/la-farga.png": "/static/media/la-farga.aeb0b60836ca685adb71.png",
     "static/media/DejaVu Sans Bold.ttf": "/static/media/DejaVu Sans Bold.766ec7f37f27362a3922.ttf",
     "static/media/DejaVu Sans Condensed Bold.ttf": "/static/media/DejaVu Sans Condensed Bold.ed925627f38341c0a56f.ttf",
     "static/media/DejaVu Sans ExtraLight.ttf": "/static/media/DejaVu Sans ExtraLight.44b4c66eee82892fe93a.ttf",
@@ -13,8 +13,8 @@
     "static/media/SpeakersWelcomer.jpg": "/static/media/SpeakersWelcomer.877ee5c39a5d6817eae3.jpg",
     "static/media/devbcn2.jpg": "/static/media/devbcn2.bc0e40510202cb4f6902.jpg",
     "static/media/devBcn.png": "/static/media/devBcn.6fcf59c81c4b4d39a554.png",
-    "static/media/FaqsImage1.jpg": "/static/media/FaqsImage1.b59713723726f3e3d80c.jpg",
-    "static/media/FaqsImage0.jpg": "/static/media/FaqsImage0.99d8b47291ac04d1a208.jpg",
+    "static/media/FaqsImage1.jpg": "/static/media/FaqsImage1.08cf335a49a76ae88646.jpg",
+    "static/media/FaqsImage0.jpg": "/static/media/FaqsImage0.a09a87a734839eda4924.jpg",
     "static/media/SpeakersPlanning.jpg": "/static/media/SpeakersPlanning.bdbeb7507f962b3e96ca.jpg",
     "static/media/logo.png": "/static/media/logo.b21c52c0de343c6b9117.png",
     "static/media/Square 721 Regular.otf": "/static/media/Square 721 Regular.c7768dfb3197d6cd8b5e.otf",
@@ -41,10 +41,10 @@
     "static/media/MoreThanBlueWhiteIcon.svg": "/static/media/MoreThanBlueWhiteIcon.4e0508c1662edcaf4a1d5cf4b17c33be.svg",
     "static/media/MoreThanIcon.svg": "/static/media/MoreThanIcon.8ceda92f0d54c6046dc048cdc832f18a.svg",
     "main.2e591bb0.css.map": "/static/css/main.2e591bb0.css.map",
-    "main.206b92b9.js.map": "/static/js/main.206b92b9.js.map"
+    "main.463a4a99.js.map": "/static/js/main.463a4a99.js.map"
   },
   "entrypoints": [
     "static/css/main.2e591bb0.css",
-    "static/js/main.206b92b9.js"
+    "static/js/main.463a4a99.js"
   ]
 }
