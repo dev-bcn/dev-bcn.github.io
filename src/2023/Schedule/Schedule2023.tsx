@@ -13,8 +13,6 @@ import {
   StyledScheduleSection,
 } from "./Schedule.style";
 import * as Sentry from "@sentry/react";
-import { Simulate } from "react-dom/test-utils";
-import error = Simulate.error;
 
 const Schedule2023: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
@@ -30,11 +28,7 @@ const Schedule2023: FC<React.PropsWithChildren<unknown>> = () => {
           sched.innerHTML = value;
         }
       })
-      .catch((err) => {
-        Sentry.captureException(error);
-        // eslint-disable-next-line no-console
-        console.error(err);
-      });
+      .catch((err) => Sentry.captureException(err));
   }, []);
 
   return (
