@@ -400,7 +400,6 @@ To create a production bundle, use `npm run build` or `yarn build`.
       sessionize.localCityName = u.split("/")[1].replace(new RegExp("_", "g"), " ");
       sessionize.localCityName === "Kiev" && (sessionize.localCityName = "Kyiv");
     } catch (e) {
-      console.error(e);
       sessionize.showLocalTimezone = !1;
     }
     (f = document.getElementsByClassName("sz-timezone"), f.length > 1 && (console.error("Invalid number of .sz-timezone elements"), sessionize.showLocalTimezone = !1), sessionize.showLocalTimezone) && (n = document.querySelectorAll("[data-sztz]"), t = [], n.forEach(function(n) {
