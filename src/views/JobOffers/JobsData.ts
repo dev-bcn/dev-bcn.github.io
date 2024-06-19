@@ -112,6 +112,27 @@ export const jobOffers: Company[] = [
       },
     ],
   },
+  {
+    name: "Allianz Technology Spain",
+    url: "https://tech.allianz.com/en.html",
+    twitter: "",
+    linkedin: "https://www.linkedin.com/company/allianz-technology/",
+    logo: "",
+    id: "cee5804a-9899-47bf-8d0c-75e37072035d",
+    description:
+      "Allianz Technology is the global IT service provider for Allianz and delivers IT solutions that drive the digitalization of the Group. With more than 13,000 employees located in 22 countries around the globe, Allianz Technology works together with other Allianz entities in pioneering the digitalization of the financial services industry.\n" +
+      "\n" +
+      "We oversee the full digitalization spectrum – from one of the industry’s largest IT infrastructure projects that includes data centers, networking and security, to application platforms that span from workplace services to digital interaction. In short, we deliver full-scale, end-to-end IT solutions for Allianz in the digital age.",
+    offers: [
+      {
+        id: "759ff753-cce4-4806-8a7c-f8b4098eff16",
+        text: "",
+        location: "Hybrid",
+        url: "https://careers.allianz.com/job/BARCELONA-Cloud-DevOps-Engineer-B-08009/1072627501/Q",
+        title: "Cloud DevOps Engineer",
+      },
+    ],
+  },
 ];
 
 export interface CompanyProps {
