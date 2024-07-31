@@ -203,7 +203,7 @@ const MeetingDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
               width="100%"
               height={getVideoHeight(width)}
               src={meeting.videoUrl}
-              title="YouTube video player"
+              title={meeting.title}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
