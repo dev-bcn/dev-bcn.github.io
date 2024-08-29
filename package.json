@@ -10,7 +10,7 @@
     "@sentry/react": "^8.17.0",
     "@sentry/tracing": "^7.114.0",
     "@types/node": "^22.5.1",
-    "@types/react": "^18.3.3",
+    "@types/react": "^18.3.4",
     "@types/react-dom": "^18.3.0",
     "add-to-calendar-button-react": "^2.6.19",
     "axios": "^1.7.5",
