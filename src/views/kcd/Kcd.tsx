@@ -84,7 +84,11 @@ export default function Kcd() {
       <SectionWrapper color={Color.DARK_BLUE}>
         <StyledImage src="images/KCD-logo-white.png" alt="KCD - Barcelona" />
         <StyledParagraph>
-          <a href="https://community.cncf.io/events/details/cncf-kcd-spain-presents-kcd-barcelona-2024" target="_blank" rel="noreferrer">
+          <a
+            href="https://community.cncf.io/events/details/cncf-kcd-spain-presents-kcd-barcelona-2024"
+            target="_blank"
+            rel="noreferrer"
+          >
             <strong>KCD Barcelona</strong>
           </a>{" "}
           is an event within the CNCF framework called Kubernetes Community Days

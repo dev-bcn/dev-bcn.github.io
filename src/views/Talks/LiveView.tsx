@@ -2,7 +2,7 @@ import React, { FC, useCallback, useEffect, useMemo } from "react";
 import { useFetchLiveView } from "./UseFetchTalks";
 import Loading from "../../components/Loading/Loading";
 import { UngroupedSession } from "./liveView.types";
-import conference from "../../data/2024.json";
+import conference from "../../data/2025.json";
 import { TalkCard } from "./components/TalkCard";
 import * as Sentry from "@sentry/react";
 import { StyledMain } from "./Talks.style";

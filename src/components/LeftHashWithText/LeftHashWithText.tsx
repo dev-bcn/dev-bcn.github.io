@@ -29,12 +29,14 @@ const StyledSlashText = styled.h1<{ color: string }>`
   }
 `;
 
-export const LeftHashWithText: FC<React.PropsWithChildren<TLateralHashWithText>> = ({ color, text }) => {
+export const LeftHashWithText: FC<
+  React.PropsWithChildren<TLateralHashWithText>
+> = ({ color, text }) => {
   return (
     <StyledLeftSlashWrapper
-      initial={{ x: '-100%' }}
+      initial={{ x: "-100%" }}
       animate={{ x: 0 }}
-      transition={{ duration: 3, ease: 'easeIn' }}
+      transition={{ duration: 3, ease: "easeIn" }}
     >
       {text ? (
         <StyledSlashText color={color}>

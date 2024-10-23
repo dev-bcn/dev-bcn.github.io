@@ -18,7 +18,7 @@ describe("Kcd Component", () => {
     require("react-use").useWindowSize.mockReturnValue({ width: 1280 }); // Mock window size
     render(<Kcd />);
     expect(
-      screen.getByText("Kubernetes Community Days - Barcelona")
+      screen.getByText("Kubernetes Community Days - Barcelona"),
     ).toBeInTheDocument();
   });
 
