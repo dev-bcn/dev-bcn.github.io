@@ -2,7 +2,7 @@ import { FC } from "react";
 import styled from "styled-components";
 import { Color } from "../../styles/colors";
 import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
-import data from "../../data/2024.json";
+import data from "../../data/2025.json";
 import { format } from "date-fns";
 
 const Heading = styled.h1`

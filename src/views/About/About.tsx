@@ -15,7 +15,7 @@ import {
   StyledSpeakersSection,
 } from "../Speakers/Speakers.style";
 import { StyledMarginBottom } from "../Talks/Talks.style";
-import data from "../../data/2024.json";
+import {useEventEdition} from "../Home/UseEventEdition";
 
 const StyledUsersWrapper = styled.div`
   padding-top: 5rem;
@@ -41,10 +41,13 @@ const StyledLink = styled.a`
 
 const About: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
+  const {edition} = useEventEdition();
 
   React.useEffect(() => {
-    document.title = `About us — ${data.title} — ${data.edition}`;
-  }, []);
+    if (edition) {
+      document.title = `About us — ${edition.title} — ${edition.edition}`;
+    }
+  }, [edition]);
 
   return (
     <SectionWrapper color={Color.WHITE} marginTop={8}>

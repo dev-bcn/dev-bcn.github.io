@@ -11,7 +11,7 @@ describe("Attendee information component", () => {
           <Route path={"*"} element={<AttendeeInformation />} />
         </Routes>
       </React.Suspense>,
-      { wrapper: BrowserRouter }
+      { wrapper: BrowserRouter },
     );
     const headingElement = screen.getByText("Attendee information");
     expect(headingElement).toBeInTheDocument();
@@ -23,7 +23,7 @@ describe("Attendee information component", () => {
           <Route path={"*"} element={<AttendeeInformation />} />
         </Routes>
       </React.Suspense>,
-      { wrapper: BrowserRouter }
+      { wrapper: BrowserRouter },
     );
     const headingElement = screen.getByAltText("Azul");
     expect(headingElement).toBeInTheDocument();

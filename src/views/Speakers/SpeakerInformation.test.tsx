@@ -11,7 +11,7 @@ describe("Speakers activities component", () => {
           <Route path={"*"} element={<SpeakerInformation />} />
         </Routes>
       </React.Suspense>,
-      { wrapper: BrowserRouter }
+      { wrapper: BrowserRouter },
     );
     const headingElement = screen.getByText("Speakers activities plan");
     expect(headingElement).toBeInTheDocument();

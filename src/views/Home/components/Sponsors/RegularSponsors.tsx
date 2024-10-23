@@ -33,7 +33,7 @@ export const RegularSponsors = () => {
   const handleHoverSponsorRegular = useCallback(() => setIsHovered(true), []);
   const handleUnHoverSponsorRegular = useCallback(
     () => setIsHovered(false),
-    []
+    [],
   );
   return (
     <>

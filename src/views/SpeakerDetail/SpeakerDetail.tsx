@@ -26,23 +26,29 @@ import {
   StyledSpeakerImg,
   StyledSpeakerTitle,
 } from "./Speaker.style";
-import { ROUTE_SPEAKERS, ROUTE_TALK_DETAIL } from "../../constants/routes";
+import {
+  ROUTE_SPEAKERS_PARAMETERIZED,
+  ROUTE_TALK_DETAIL,
+} from "../../constants/routes";
 import { StyledTalkDescription } from "./SpeakerDetail.style";
 import { Link } from "react-router-dom";
 import { Color } from "../../styles/colors";
 import { ISpeaker } from "../Speakers/Speaker.types";
-import conferenceData from "../../data/2024.json";
 
 interface ISpeakerDetailProps {
   speaker: ISpeaker;
+  edition: string;
 }
 
-const SpeakerDetail: FC<React.PropsWithChildren<ISpeakerDetailProps>> = ({ speaker }) => {
+const SpeakerDetail: FC<React.PropsWithChildren<ISpeakerDetailProps>> = ({
+  speaker,
+  edition,
+}) => {
   const { width } = useWindowSize();
 
   useEffect(() => {
-    document.title = `${speaker.fullName} — ${conferenceData.title} — ${conferenceData.edition}`;
-  }, [speaker.fullName]);
+    document.title = `${speaker.fullName} — DevBcn - Barcelona Developers Conference — ${edition}`;
+  }, [edition, speaker.fullName]);
 
   const hasSessions = (): boolean =>
     (speaker.sessions && speaker.sessions.length > 0) || false;
@@ -139,7 +145,7 @@ const SpeakerDetail: FC<React.PropsWithChildren<ISpeakerDetailProps>> = ({ speak
               )}
 
               <Link
-                to={ROUTE_SPEAKERS}
+                to={ROUTE_SPEAKERS_PARAMETERIZED.replace(":year", edition)}
                 style={{
                   color: Color.BLACK_BLUE,
                   fontWeight: "bold",

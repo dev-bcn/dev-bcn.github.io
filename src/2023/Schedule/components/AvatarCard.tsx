@@ -1,11 +1,11 @@
-import { FC } from 'react';
-import { Link } from 'react-router-dom';
+import { FC } from "react";
+import { Link } from "react-router-dom";
 import {
-    StyledAvatarContainer,
-    StyledAvatarImage,
-    StyledWelcomerText,
-    StyledWelcomerTextContainer,
-    StyledWelcomerTextLink
+  StyledAvatarContainer,
+  StyledAvatarImage,
+  StyledWelcomerText,
+  StyledWelcomerTextContainer,
+  StyledWelcomerTextLink,
 } from "../Schedule.style";
 
 type AvatarCardProps = {
@@ -21,19 +21,23 @@ type AvatarCardProps = {
   };
 };
 
-export const AvatarCard: FC<React.PropsWithChildren<AvatarCardProps>> = ({ meet }) => {
+export const AvatarCard: FC<React.PropsWithChildren<AvatarCardProps>> = ({
+  meet,
+}) => {
   return (
-    <StyledAvatarContainer className='AvatarCard'>
+    <StyledAvatarContainer className="AvatarCard">
       <StyledAvatarImage
-        src={require(`../../../assets/images/ScheduleAvatar${meet.meetImageNumber}.jpg`)}
+        src={require(
+          `../../../assets/images/ScheduleAvatar${meet.meetImageNumber}.jpg`,
+        )}
       />
       <StyledWelcomerTextContainer>
-        <Link to={meet.meetingLink} className='link--text'>
+        <Link to={meet.meetingLink} className="link--text">
           <StyledWelcomerTextLink color={meet.titleAndDateColor}>
-            {meet.title}{' '}
+            {meet.title}{" "}
           </StyledWelcomerTextLink>
         </Link>
-        <Link to={meet.authorProfile} className='link--text'>
+        <Link to={meet.authorProfile} className="link--text">
           <StyledWelcomerTextLink color={meet.authorNameColor}>
             {meet.author}
           </StyledWelcomerTextLink>

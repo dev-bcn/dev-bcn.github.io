@@ -3,31 +3,29 @@ import { Color } from "../../styles/colors";
 import React, { FC } from "react";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import SpeakerDetail from "./SpeakerDetail";
-import { useParams } from "react-router-dom";
 import { StyledContainer, StyledWaveContainer } from "./Speaker.style";
-import conferenceData from "../../data/2024.json";
 import { useFetchSpeakers } from "../Speakers/UseFetchSpeakers";
 import * as Sentry from "@sentry/react";
+import { useEventEdition } from "../Home/UseEventEdition";
 
 const SpeakerDetailContainer: FC<React.PropsWithChildren<unknown>> = () => {
-  const { id } = useParams<{ id: string }>();
-
-  const { isLoading, error, data } = useFetchSpeakers(id);
+  const { edition } = useEventEdition();
+  const { isLoading, data, error } = useFetchSpeakers(edition?.speakerApi);
 
   if (error) {
     Sentry.captureException(error);
   }
   React.useEffect(() => {
-    if (data) {
-      document.title = `${data[0]?.fullName} - DevBcn - ${conferenceData.edition}`;
+    if (edition && data) {
+      document.title = `${data[0]?.fullName} - DevBcn - ${edition.edition}`;
     }
-  }, [id, data]);
+  }, [data, edition]);
   return (
     <StyledContainer>
       <SectionWrapper color={Color.BLUE} marginTop={4}>
         {isLoading && <h2>Loading</h2>}
-        {!isLoading && data && data.length > 0 ? (
-          <SpeakerDetail speaker={data[0]} />
+        {!isLoading && data && edition && data.length > 0 ? (
+          <SpeakerDetail speaker={data[0]} edition={edition?.edition} />
         ) : (
           "not found"
         )}

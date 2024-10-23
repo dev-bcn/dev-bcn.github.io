@@ -195,7 +195,9 @@ export const StyledLink = styled.a`
   display: flex;
   align-items: center;
 `;
-export const StyledSocialMediaIcon = styled.img<{ noMargin?: boolean }>`
+export const StyledSocialMediaIcon = styled.img.withConfig({
+  shouldForwardProp: (prop) => !["noMargin"].includes(prop),
+})<{ noMargin?: boolean }>`
   height: 1.5rem;
   margin-right: ${({ noMargin }) => (noMargin ? "0" : "0.75rem")};
 

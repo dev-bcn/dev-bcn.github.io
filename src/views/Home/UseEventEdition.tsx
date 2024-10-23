@@ -1,21 +1,28 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Edition } from "./HomeWrapper";
 
-export function useEventEdition(setEdition: (data: any) => void) {
-  let { year } = useParams();
+export function useEventEdition(): { edition: Edition | null } {
+  let { year } = useParams<{ year: string }>();
+  const [edition, setEdition] = useState<Edition | null>(null);
+  if (year === undefined) {
+    const error = new Error();
+    // eslint-disable-next-line no-console
+    console.error(error.stack);
+  }
 
   useEffect(() => {
-    // Fallback to the current year if no year is provided in the URL
-    const editionYear = year ?? "2024";
-
+    const editionYear = year ?? "2025";
     import(`../../data/${editionYear}.json`)
       .then((data) => {
-        setEdition(data); // Set the state of conferenceEdition
+        setEdition(data);
+        localStorage.setItem("edition", data.edition);
       })
       .catch((e) => {
         // eslint-disable-next-line no-console
         console.error("Error loading conference edition data:", e);
-        // Handle the error case, maybe setEdition to a default state
       });
-  }, [year, setEdition]); // Dependencies: year and setEdition
+  }, [year]);
+
+  return { edition };
 }

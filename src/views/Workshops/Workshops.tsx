@@ -14,9 +14,10 @@ import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
 import { useFetchTalks } from "../Talks/UseFetchTalks";
 import * as Sentry from "@sentry/react";
 import { TalkCard } from "../Talks/components/TalkCard";
-import conferenceData from "../../data/2024.json";
+import conferenceData from "../../data/2023.json";
 import styled from "styled-components";
 import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
+import { useEventEdition } from "../Home/UseEventEdition";
 
 const StyledSection = styled.section`
    {
@@ -36,7 +37,8 @@ const StyledSection = styled.section`
   }
 `;
 const Workshops: FC<React.PropsWithChildren<unknown>> = () => {
-  const { isLoading, data, error } = useFetchTalks();
+  const { edition } = useEventEdition();
+  const { isLoading, data, error } = useFetchTalks(edition?.talkApi);
   useEffect(() => {
     document.title = `Workshops - DevBcn - ${conferenceData.edition}`;
   }, []);

@@ -1,6 +1,6 @@
 import { Color } from "../../../../styles/colors";
 
-import { FC } from "react";
+import React, { FC } from "react";
 import { Link } from "react-router-dom";
 import LessThanBlueWhiteIcon from ".././../../../assets/images/MoreThanBlueIcon.svg";
 import SectionWrapper from "../../../../components/SectionWrapper/SectionWrapper";
@@ -11,7 +11,7 @@ import {
 import TitleSection from "../../../../components/SectionTitle/TitleSection";
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import { ROUTE_SPEAKERS } from "../../../../constants/routes";
+import { ROUTE_SPEAKERS_PARAMETERIZED } from "../../../../constants/routes";
 import SpeakerSwiper from "./SpeakerSwiper";
 import { useWindowSize } from "react-use";
 
@@ -62,7 +62,9 @@ const StyledBlueSlash = styled(motion.p)`
   height: 100%;
 `;
 
-const SpeakersCarousel: FC<React.PropsWithChildren<unknown>> = () => {
+const SpeakersCarousel: FC<React.PropsWithChildren<{ edition: string }>> = ({
+  edition,
+}) => {
   const { width } = useWindowSize();
   return (
     <SectionWrapper color={Color.LIGHT_BLUE}>
@@ -76,7 +78,10 @@ const SpeakersCarousel: FC<React.PropsWithChildren<unknown>> = () => {
         </StyledTitleWrapper>
         <SpeakerSwiper />
         <StyledLink>
-          <Link to={ROUTE_SPEAKERS} className="link--text">
+          <Link
+            to={ROUTE_SPEAKERS_PARAMETERIZED.replace(":year", edition)}
+            className="link--text"
+          >
             <StyledSubtitle> View all speakers</StyledSubtitle>
             <StyledLessThanRed
               alt="view speakers"

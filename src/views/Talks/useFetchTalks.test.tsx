@@ -341,7 +341,7 @@ describe("Fetch Talks by id", () => {
       );
     };
 
-    const { result } = renderHook(() => useFetchTalksById("1234"), {
+    const { result } = renderHook(() => useFetchTalksById("some-url", "1234"), {
       wrapper,
     });
 

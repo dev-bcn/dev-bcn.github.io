@@ -14,7 +14,9 @@ interface IPageWrapperProps {
   children: ReactNode;
 }
 
-const PageWrapper: FC<React.PropsWithChildren<IPageWrapperProps>> = ({ children }) => {
+const PageWrapper: FC<React.PropsWithChildren<IPageWrapperProps>> = ({
+  children,
+}) => {
   return <StyledPageWrapper>{children}</StyledPageWrapper>;
 };
 

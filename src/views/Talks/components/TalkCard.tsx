@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { StyledJobsInfo } from "../../JobOffers/components/JobsCard";
 import { Tag } from "../../../components/Tag/Tag";
 import {
-  ROUTE_SPEAKER_DETAIL,
+  ROUTE_SPEAKER_DETAIL_PARAMETERIZED,
   ROUTE_TALK_DETAIL,
 } from "../../../constants/routes";
 import {
@@ -25,6 +25,7 @@ import {
   StyledVoteTalkLink,
 } from "../Talks.style";
 import { Color } from "../../../styles/colors";
+import { Edition } from "../../Home/HomeWrapper";
 
 export interface TalkCardProps {
   talk: {
@@ -40,22 +41,27 @@ export interface TalkCardProps {
     questionAnswers: QuestionAnswers[];
   };
   showTrack?: boolean;
+  openFeedback?: Edition["openFeedback"];
 }
 
 export const TalkCard: FC<React.PropsWithChildren<TalkCardProps>> = ({
   showTrack = false,
   talk,
+  openFeedback,
 }) => {
+  const edition = localStorage.getItem("edition") ?? "2025";
   return (
     <StyledSessionCard>
       <StyledJobsInfo>
-        <StyledTalkTitle to={`${ROUTE_TALK_DETAIL}/${talk.id}`}>
+        <StyledTalkTitle
+          to={`${ROUTE_TALK_DETAIL.replace(":year", edition)}/${talk.id}`}
+        >
           {talk.title}
         </StyledTalkTitle>
         <StyledSessionText>
           {talk.speakers.map((speaker: SessionSpeaker) => (
             <StyledTalkSpeaker key={speaker.id}>
-              <Link to={`${ROUTE_SPEAKER_DETAIL}/${speaker.id}`}>
+              <Link to={`${ROUTE_SPEAKER_DETAIL_PARAMETERIZED}/${speaker.id}`}>
                 {speaker.name}
               </Link>
             </StyledTalkSpeaker>
@@ -78,18 +84,20 @@ export const TalkCard: FC<React.PropsWithChildren<TalkCardProps>> = ({
           </StyledSessionText>
         )}
         <StyledTagsWrapper>
-          {extractSessionTags(talk.questionAnswers)?.map((tag) => {
-            return <Tag key={tag} text={tag} textColor={Color.WHITE} />;
+          {extractSessionTags(talk.questionAnswers)?.map((tag, index) => {
+            return <Tag key={tag + index} text={tag} textColor={Color.WHITE} />;
           })}
         </StyledTagsWrapper>
         <section>
-          <StyledVoteTalkLink
-            href={`https://openfeedback.io/devbcn24/0/${talk.id}`}
-            target={"_blank"}
-            rel="noreferrer noopener"
-          >
-            🗳️ <strong>Vote this talk</strong>
-          </StyledVoteTalkLink>
+          {openFeedback?.enabled && (
+            <StyledVoteTalkLink
+              href={`${openFeedback.url}${talk.id}`}
+              target={"_blank"}
+              rel="noreferrer noopener"
+            >
+              🗳️ <strong>Vote this talk</strong>
+            </StyledVoteTalkLink>
+          )}
         </section>
       </StyledJobsInfo>
     </StyledSessionCard>

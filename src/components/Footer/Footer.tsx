@@ -1,5 +1,5 @@
 import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
-import { FC } from "react";
+import React, { FC } from "react";
 import LessThanBlueIcon from "../../assets/images/LessThanBlueIcon.svg";
 import emailIcon from "../../assets/images/emailIcon.svg";
 import flickrIcon from "../../assets/images/flickr.svg";
@@ -8,7 +8,7 @@ import logo from "../../assets/images/devBcn.png";
 import twitterIcon from "../../assets/images/twitterIcon.svg";
 import { useNavigate } from "react-router-dom";
 import { useWindowSize } from "react-use";
-import data from "../../data/2024.json";
+import data from "../../data/2025.json";
 import youtubeIcon from "../../assets/images/youtubeIcon.svg";
 import {
   StyledAbsoluteImg,

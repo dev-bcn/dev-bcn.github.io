@@ -10,20 +10,26 @@ import axios from "axios";
 import { IMeeting } from "../MeetingDetail/MeetingDetail.Type";
 import { Liveview } from "./liveView.types";
 
-export const useFetchTalks = (): UseQueryResult<IGroup[]> =>
+export const useFetchTalks = (
+  url: string | undefined,
+): UseQueryResult<IGroup[]> =>
   useQuery("api-talks", async () => {
+    if(!url){return;}
     let data = await axios.get(
-      "https://sessionize.com/api/v2/teq4asez/view/Sessions",
+      url,
     );
     return data.data;
   });
 
-export const useFetchTalksById = (id: string): UseQueryResult<Session[]> =>
+export const useFetchTalksById = (
+  url: string | undefined,
+  id: string,
+): UseQueryResult<Session[]> =>
   useQuery("talks", async () => {
-    const serverResponse = await axios.get(
-      "https://sessionize.com/api/v2/teq4asez/view/Sessions",
-    );
-    return serverResponse.data
+    if (!url) {
+      return;
+    }
+    return (await axios.get(url)).data
       .map((track: IGroup) => track.sessions)
       .flat(1)
       .filter((session: { id: string }) => session.id === id);

@@ -33,7 +33,7 @@ export const PremiumSponsors: FC<React.PropsWithChildren<unknown>> = () => {
   const handleHoverSponsorPremium = useCallback(() => setIsHovered(true), []);
   const handleUnHoverSponsorPremium = useCallback(
     () => setIsHovered(false),
-    []
+    [],
   );
   return (
     <>

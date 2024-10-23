@@ -19,9 +19,10 @@ import data from "../../data/2024.json";
 
 const SessionFeedback: FC<React.PropsWithChildren<unknown>> = () => {
   const bodyTemplate = React.useCallback(
-    (field: keyof MeasurableSessionRating) => (session: SessionRating) =>
-      <Rating value={session[field]} readOnly cancel={false} />,
-    []
+    (field: keyof MeasurableSessionRating) => (session: SessionRating) => (
+      <Rating value={session[field]} readOnly cancel={false} />
+    ),
+    [],
   );
 
   const TitleTemplate = (session: SessionRating) =>

@@ -9,7 +9,7 @@ describe("Talks", () => {
     render(
       <QueryClientProvider client={queryClient}>
         <Talks />
-      </QueryClientProvider>
+      </QueryClientProvider>,
     );
   });
 
@@ -18,7 +18,7 @@ describe("Talks", () => {
     render(
       <QueryClientProvider client={queryClient}>
         <Talks />
-      </QueryClientProvider>
+      </QueryClientProvider>,
     );
     const titleElement = screen.getByText(/TALKS/);
     expect(titleElement).toBeInTheDocument();
@@ -29,10 +29,10 @@ describe("Talks", () => {
     render(
       <QueryClientProvider client={queryClient}>
         <Talks />
-      </QueryClientProvider>
+      </QueryClientProvider>,
     );
     const subtitleElement = screen.getByText(
-      /speakers coming from all corners of the world/i
+      /speakers coming from all corners of the world/i,
     );
     expect(subtitleElement).toBeInTheDocument();
   });
@@ -42,7 +42,7 @@ describe("Talks", () => {
     render(
       <QueryClientProvider client={queryClient}>
         <Talks />
-      </QueryClientProvider>
+      </QueryClientProvider>,
     );
     const dropdownElement = screen.getByText("Loading");
     expect(dropdownElement).toBeInTheDocument();
@@ -53,7 +53,7 @@ describe("Talks", () => {
     render(
       <QueryClientProvider client={queryClient}>
         <Talks />
-      </QueryClientProvider>
+      </QueryClientProvider>,
     );
     expect(screen.getByText("Loading")).toBeInTheDocument();
   });
@@ -63,7 +63,7 @@ describe("Talks", () => {
     render(
       <QueryClientProvider client={queryClient}>
         <Talks />
-      </QueryClientProvider>
+      </QueryClientProvider>,
     );
     const dropdownElement = screen.getByText("Loading");
     expect(dropdownElement).toBeInTheDocument();

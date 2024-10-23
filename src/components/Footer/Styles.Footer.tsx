@@ -63,7 +63,7 @@ export const StyledFlexCol = styled.div`
   align-items: center;
 `;
 
-export const StyledFlexRow = styled.div<{ justify?: string }>`
+export const StyledFlexRow = styled.div.withConfig({shouldForwardProp: (prop) => !["justify"].includes(prop)})<{ justify?: string }>`
   width: 100%;
   display: flex;
   align-items: center;

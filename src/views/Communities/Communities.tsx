@@ -3,7 +3,7 @@ import styled from "styled-components";
 import TwitterIcon from "../../components/Icons/Twitter";
 import { Color } from "../../styles/colors";
 import WebsiteIcon from "../../components/Icons/website";
-import data from "../../data/2024.json";
+import data from "../../data/2025.json";
 
 const Heading = styled.h1`
    {

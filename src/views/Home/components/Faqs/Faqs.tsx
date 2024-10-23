@@ -1,5 +1,5 @@
 import { Color } from "../../../../styles/colors";
-import { FC, Suspense, useState } from "react";
+import React, { FC, Suspense } from "react";
 import FaqCard from "./components/FaqsCard";
 import LessThanIcon from "../../../../assets/images/LessThanBlueIcon.svg";
 import MoreThanIcon from "../../../../assets/images/LessThanBlueWhiteIcon.svg";
@@ -23,14 +23,9 @@ import {
   StyleLessIcon,
   StyleMoreIcon,
 } from "./Faqs.style";
-import { useEventEdition } from "../../UseEventEdition";
-import { Edition } from "../../HomeWrapper";
 
 const Faqs: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
-  const [edition, setEdition] = useState<Edition>();
-
-  useEventEdition(setEdition);
 
   return (
     <>
@@ -59,8 +54,14 @@ const Faqs: FC<React.PropsWithChildren<unknown>> = () => {
                 rel="noreferrer"
                 target="_blank"
               >
-                summary of the DevBcn -{" "}
-                {parseInt(edition?.edition as string) - 1} edition
+                summary of the DevBcn — 2023 edition
+              </StyledSummaryLink>
+              <StyledSummaryLink
+                href="https://youtu.be/k7iMIXtNKyo"
+                rel="noreferrer"
+                target="_blank"
+              >
+                summary of the DevBcn — 2024 edition
               </StyledSummaryLink>
             </StyledP>
             <a
@@ -70,6 +71,7 @@ const Faqs: FC<React.PropsWithChildren<unknown>> = () => {
             >
               <img src={flickr} alt="flickr" height={32} width={32} />
             </a>
+            <br />
             <a
               href="https://www.youtube.com/watch?v=Pv4kEMRE-kg&list=PLzJFNZtyAbyzmAAKzx1COeIBEGFgPA_og"
               rel="noreferrer"

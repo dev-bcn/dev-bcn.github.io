@@ -29,12 +29,15 @@ import {
   StyledVideoTagsContainer,
 } from "./Style.MeetingDetail";
 import { Link } from "react-router-dom";
-import { ROUTE_SPEAKER_DETAIL, ROUTE_TALKS } from "../../constants/routes";
-import conferenceData from "../../data/2024.json";
+import {
+  ROUTE_SPEAKER_DETAIL_PARAMETERIZED,
+  ROUTE_TALKS_PARAMETERIZED,
+} from "../../constants/routes";
 import { Tag } from "../../components/Tag/Tag";
 import { ISpeaker } from "../Speakers/Speaker.types";
 import styled from "styled-components";
 import { AddToCalendarButton } from "add-to-calendar-button-react";
+import { Edition } from "../Home/HomeWrapper";
 
 const getVideoHeight = (windowWidth: number) => {
   let videoHeight;
@@ -105,6 +108,7 @@ export const StyledVoteTalkLink = styled.a`
 interface IMeetingDetailProps {
   meeting: IMeeting;
   speakers?: ISpeaker[];
+  edition?: Edition | null;
 }
 
 type MyType = {
@@ -123,12 +127,15 @@ type MyType = {
 const MeetingDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
   meeting,
   speakers: mySpeakers,
+  edition,
 }) => {
   const { width } = useWindowSize();
 
   useEffect(() => {
-    document.title = `${meeting.title} — ${conferenceData.title} — ${conferenceData.edition}`;
-  }, [meeting.title]);
+    if (edition) {
+      document.title = `${meeting.title} — ${edition.title} — ${edition.edition}`;
+    }
+  }, [meeting.title, edition]);
 
   const finalMeetingInfo: MyType = {
     ...meeting,
@@ -159,12 +166,20 @@ const MeetingDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
               {meeting.track}
 
               {meeting.slidesURL !== "" && (
-                <p style={{ textAlign: "left", marginTop: "0.6rem" }}>
+                <p
+                  style={{
+                    textAlign: "left",
+                    marginTop: "0.6rem",
+                  }}
+                >
                   <a
                     href={meeting.slidesURL}
                     target="_blank"
                     rel="noreferrer"
-                    style={{ textDecoration: "none", color: Color.DARK_BLUE }}
+                    style={{
+                      textDecoration: "none",
+                      color: Color.DARK_BLUE,
+                    }}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -212,13 +227,15 @@ const MeetingDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
             {meeting.videoTags?.map((tag) => <Tag text={tag} key={tag} />)}
           </StyledVideoTagsContainer>
           <section>
-            <StyledVoteTalkLink
-              href={`https://openfeedback.io/devbcn24/0/${meeting.id}`}
-              target={"_blank"}
-              rel="noreferrer noopener"
-            >
-              🗳️ <strong>Vote this talk</strong>
-            </StyledVoteTalkLink>
+            {edition?.openFeedback.enabled && (
+              <StyledVoteTalkLink
+                href={`${edition.openFeedback.url}${meeting.id}`}
+                target={"_blank"}
+                rel="noreferrer noopener"
+              >
+                🗳️ <strong>Vote this talk</strong>
+              </StyledVoteTalkLink>
+            )}
             <AddToCalendarButton
               name={meeting.title}
               description={meeting.description}
@@ -253,7 +270,9 @@ const MeetingDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
                     />
                   </Suspense>
                   <StyledName>
-                    <Link to={`${ROUTE_SPEAKER_DETAIL}/${speaker.id}`}>
+                    <Link
+                      to={`${ROUTE_SPEAKER_DETAIL_PARAMETERIZED}/${speaker.id}`}
+                    >
                       {speaker.fullName}
                     </Link>
                   </StyledName>
@@ -265,7 +284,10 @@ const MeetingDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
 
         <div>
           <Link
-            to={ROUTE_TALKS}
+            to={ROUTE_TALKS_PARAMETERIZED.replace(
+              ":year",
+              edition?.edition ?? "2025",
+            )}
             style={{
               color: Color.MAGENTA,
               fontWeight: "bold",

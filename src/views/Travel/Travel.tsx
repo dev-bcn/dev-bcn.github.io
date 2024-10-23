@@ -1,7 +1,7 @@
 import { FC, useEffect } from "react";
 import { Venue } from "./Venue";
 import { ToBarcelona } from "./ToBarcelona";
-import data from "../../data/2024.json";
+import data from "../../data/2025.json";
 import { StyledWaveContainer } from "../Speakers/Speakers.style";
 import styled from "styled-components";
 import { Color } from "../../styles/colors";

@@ -1,5 +1,5 @@
 import { AnimatePresence } from "framer-motion";
-import { FC, useEffect, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
 import { useLocation, useNavigate } from "react-router-dom";
 import Breadcrumbs from "./Breadcrumbs";
@@ -7,11 +7,11 @@ import CloseIcon from "../../assets/images/CloseIcon.svg";
 import NavigationLogo from "../../assets/images/devBcn.png";
 import { ROUTE_HOME, ROUTE_HOME_ALTERNATE } from "../../constants/routes";
 import TicketsImage from "../../assets/images/TicketsImage.svg";
-import { navigationItems, subMenuItems } from "./NavigationData";
 import {
-  navigationItems2023,
-  subMenuItems2023,
-} from "../../2023/Navigation/NavigationData2023";
+  NavigationItem,
+  navigationItems,
+  subMenuItems,
+} from "./NavigationData";
 import { useWindowSize } from "react-use";
 import {
   StyledClipPath,
@@ -32,9 +32,8 @@ import { HamburgerMenu } from "./HamburgerMenu";
 const Navigation: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
   const [isOpened, setIsOpened] = useState(false);
-  const [is2023, setIs2023] = useState(false);
-  const [navItems, setNavItems] = useState(navigationItems);
-  const [subNavItems, setSubNavItems] = useState(subMenuItems);
+  const [navItems, setNavItems] = useState<NavigationItem[]>([]);
+  const [subNavItems, setSubNavItems] = useState<NavigationItem[]>([]);
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const handleLogoClick = () => {
@@ -46,17 +45,14 @@ const Navigation: FC<React.PropsWithChildren<unknown>> = () => {
   const isHomePage = () => {
     return pathname === ROUTE_HOME || pathname === ROUTE_HOME_ALTERNATE;
   };
+  const [edition] = useState<string>(localStorage.getItem("edition") ?? "2025");
 
   useEffect(() => {
-    if (pathname.startsWith("/2023")) {
-      setIs2023(true);
-      setNavItems(navigationItems2023);
-      setSubNavItems(subMenuItems2023);
-    } else {
-      setNavItems(navigationItems);
-      setSubNavItems(subMenuItems);
-    }
-  }, [pathname, navItems, subNavItems]);
+    // eslint-disable-next-line no-console
+    console.log("Edition", edition);
+    setNavItems(navigationItems(edition));
+    setSubNavItems(subMenuItems(edition));
+  }, [edition]);
 
   return (
     <>
@@ -118,11 +114,7 @@ const Navigation: FC<React.PropsWithChildren<unknown>> = () => {
               ))}
 
               <StyledTicketLink
-                href={
-                  is2023
-                    ? "https://tickets.devbcn.com/event/devbcn-2023"
-                    : "https://tickets.devbcn.com/event/devbcn-2024"
-                }
+                href={`https://tickets.devbcn.com/event/devbcn-${edition}`}
                 target="_blank"
                 rel="noreferrer"
               >

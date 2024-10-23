@@ -1,37 +1,25 @@
 import { Link, Route, Routes } from "react-router-dom";
 import {
-  ROUTE_2023_ATTENDEE,
-  ROUTE_2023_CFP,
-  ROUTE_2023_COMMUNITIES,
-  ROUTE_2023_DIVERSITY,
-  ROUTE_2023_HOME,
-  ROUTE_2023_JOB_OFFERS,
-  ROUTE_2023_SCHEDULE,
-  ROUTE_2023_SESSION_FEEDBACK,
-  ROUTE_2023_SPEAKER_DETAIL_PLAIN,
-  ROUTE_2023_SPEAKER_INFO,
-  ROUTE_2023_SPEAKERS,
-  ROUTE_2023_TALK_DETAIL_PLAIN,
-  ROUTE_2023_TALKS,
-  ROUTE_2023_WORKSHOPS,
-  ROUTE_ABOUT_US,
-  ROUTE_ACCOMMODATION,
-  ROUTE_CFP,
-  ROUTE_CODE_OF_CONDUCT,
-  ROUTE_CONDITIONS,
-  ROUTE_COOKIES,
-  ROUTE_DIVERSITY,
-  ROUTE_HOME,
-  ROUTE_JOB_OFFERS,
-  ROUTE_KCD,
-  ROUTE_MEETING_DETAIL_PLAIN,
-  ROUTE_SCHEDULE,
-  ROUTE_SPEAKER_DETAIL_PLAIN,
-  ROUTE_SPEAKER_INFO,
-  ROUTE_SPEAKERS,
-  ROUTE_SPONSORSHIP,
-  ROUTE_TALKS,
-  ROUTE_TRAVEL,
+    ROUTE_HOME_2023,
+    ROUTE_ABOUT_US,
+    ROUTE_ACCOMMODATION,
+    ROUTE_CODE_OF_CONDUCT,
+    ROUTE_CONDITIONS,
+    ROUTE_COOKIES,
+    ROUTE_DIVERSITY,
+    ROUTE_HOME,
+    ROUTE_JOB_OFFERS,
+    ROUTE_KCD,
+    ROUTE_MEETING_DETAIL_PLAIN,
+    ROUTE_SPEAKER_DETAIL_PLAIN,
+    ROUTE_SPEAKER_INFO,
+    ROUTE_SPONSORSHIP,
+    ROUTE_TRAVEL,
+    ROUTE_TALKS_PARAMETERIZED,
+    ROUTE_SPEAKERS_PARAMETERIZED,
+    ROUTE_HOME_2024,
+    ROUTE_CFP_PARAMETERIZED,
+    ROUTE_SCHEDULE_PARAMETERIZED,
 } from "./constants/routes";
 
 import Footer from "./components/Footer/Footer";
@@ -55,21 +43,8 @@ import About from "./views/About/About";
 import Travel from "./views/Travel/Travel";
 import NotFoundError from "./components/NotFoundError/NotFoundError";
 import { Home2023Wrapper } from "./2023/Home/Home2023Wrapper";
-import Speakers2023 from "./2023/Speakers/Speakers2023";
-import SpeakerDetailContainer2023 from "./2023/SpeakerDetail/SpeakerDetailContainer2023";
-import Talks2023 from "./2023/Talks/Talks2023";
-import TalkDetailContainer2023 from "./2023/TalkDetail/TalkDetailContainer2023";
-import AttendeeInformation2023 from "./2023/Attendee/AttendeeInformation2023";
-import SpeakerInformation2023 from "./2023/Speakers/SpeakerInformation2023";
-import Communities2023 from "./2023/Communities/Communities2023";
-import CfpSection2023 from "./2023/Cfp/CfpSection2023";
-import SessionFeedback2023 from "./2023/SessionFeedback/SessionFeedback2023";
 import Kcd from "./views/kcd/Kcd";
-import Schedule2023 from "./2023/Schedule/Schedule2023";
-import Workshops2023 from "./2023/Workshops/Workshops2023";
-import JobOffers2023 from "./2023/JobOffers/JobOffers2023";
 import Sponsorship from "./views/sponsorship/Sponsorship";
-import Diversity2023 from "./2023/Diversity/Diversity2023";
 import CfpSection from "./views/Cfp/CfpSection";
 import { CodeOfConduct } from "./views/CodeOfConduct/CodeOfConduct";
 import { Accommodation } from "./views/Travel/Accommodation";
@@ -77,6 +52,7 @@ import Schedule from "./views/Schedule/Schedule";
 import Diversity from "./views/Diversity/Diversity";
 import LiveView from "./views/Talks/LiveView";
 import JobOffers from "./views/JobOffers/JobOffers";
+import { Home2024Wrapper } from "./2024/Home/components/Home/Home2024Wrapper";
 
 const StyledAppWrapper = styled.div`
   position: relative;
@@ -124,7 +100,7 @@ const App: FC<React.PropsWithChildren<unknown>> = () => {
         <Routes>
           <Route path="/loading" element={<Loading />} />
           <Route
-            path={ROUTE_TALKS}
+            path={ROUTE_TALKS_PARAMETERIZED}
             element={
               <React.Suspense fallback={<Loading />}>
                 <Talks />
@@ -187,7 +163,7 @@ const App: FC<React.PropsWithChildren<unknown>> = () => {
             />
           }
           <Route
-            path={ROUTE_SCHEDULE}
+            path={ROUTE_SCHEDULE_PARAMETERIZED}
             element={
               <React.Suspense fallback={<Loading />}>
                 <Schedule />
@@ -196,7 +172,7 @@ const App: FC<React.PropsWithChildren<unknown>> = () => {
           />
           */
           <Route
-            path={ROUTE_SPEAKERS}
+            path={ROUTE_SPEAKERS_PARAMETERIZED}
             element={
               <React.Suspense fallback={<Loading />}>
                 <Speakers />
@@ -220,7 +196,7 @@ const App: FC<React.PropsWithChildren<unknown>> = () => {
             }
           />
           <Route
-            path={ROUTE_CFP}
+            path={ROUTE_CFP_PARAMETERIZED}
             element={
               <React.Suspense fallback={<Loading />}>
                 <CfpSection />
@@ -274,10 +250,19 @@ const App: FC<React.PropsWithChildren<unknown>> = () => {
             }
           />
           <Route
-            path="/:year"
+            path={ROUTE_HOME_2024}
             element={
               <React.Suspense fallback={<Loading />}>
-                <HomeWrapper />
+                <Home2024Wrapper />
+              </React.Suspense>
+            }
+          />
+          <Route
+            path={ROUTE_HOME_2023}
+            element={
+              <React.Suspense fallback={<Loading />}>
+                {/* HOME PAGE SHOULD BE PARAMETERIZED */}
+                <Home2023Wrapper />
               </React.Suspense>
             }
           />
@@ -294,121 +279,6 @@ const App: FC<React.PropsWithChildren<unknown>> = () => {
             element={
               <React.Suspense fallback={<Loading />}>
                 <HomeWrapper />
-              </React.Suspense>
-            }
-          />
-          {/* 2023 Edition */}
-          <Route
-            path={ROUTE_2023_HOME}
-            element={
-              <React.Suspense fallback={<Loading />}>
-                <Home2023Wrapper />
-              </React.Suspense>
-            }
-          />
-          {
-            <Route
-              path={ROUTE_2023_DIVERSITY}
-              element={
-                <React.Suspense fallback={<Loading />}>
-                  <Diversity2023 />
-                </React.Suspense>
-              }
-            />
-          }
-          <Route
-            path={ROUTE_2023_SCHEDULE}
-            element={
-              <React.Suspense fallback={<Loading />}>
-                <Schedule2023 />
-              </React.Suspense>
-            }
-          />
-          <Route
-            path={ROUTE_2023_WORKSHOPS}
-            element={
-              <React.Suspense fallback={<Loading />}>
-                <Workshops2023 />
-              </React.Suspense>
-            }
-          />
-          <Route
-            path={ROUTE_2023_JOB_OFFERS}
-            element={
-              <React.Suspense fallback={<Loading />}>
-                <JobOffers2023 />
-              </React.Suspense>
-            }
-          />
-          <Route
-            path={ROUTE_2023_SESSION_FEEDBACK}
-            element={
-              <React.Suspense fallback={<Loading />}>
-                <SessionFeedback2023 />
-              </React.Suspense>
-            }
-          />
-          <Route
-            path={ROUTE_2023_CFP}
-            element={
-              <React.Suspense fallback={<Loading />}>
-                <CfpSection2023 />
-              </React.Suspense>
-            }
-          />
-          <Route
-            path={ROUTE_2023_ATTENDEE}
-            element={
-              <React.Suspense fallback={<Loading />}>
-                <AttendeeInformation2023 />
-              </React.Suspense>
-            }
-          />
-          <Route
-            path={ROUTE_2023_COMMUNITIES}
-            element={
-              <React.Suspense fallback={<Loading />}>
-                <Communities2023 />
-              </React.Suspense>
-            }
-          />
-          <Route
-            path={ROUTE_2023_SPEAKER_INFO}
-            element={
-              <React.Suspense fallback={<Loading />}>
-                <SpeakerInformation2023 />
-              </React.Suspense>
-            }
-          />
-          <Route
-            path={ROUTE_2023_SPEAKERS}
-            element={
-              <React.Suspense fallback={<Loading />}>
-                <Speakers2023 />
-              </React.Suspense>
-            }
-          />
-          <Route
-            path={ROUTE_2023_SPEAKER_DETAIL_PLAIN}
-            element={
-              <React.Suspense fallback={<Loading />}>
-                <SpeakerDetailContainer2023 />
-              </React.Suspense>
-            }
-          />
-          <Route
-            path={ROUTE_2023_TALKS}
-            element={
-              <React.Suspense fallback={<Loading />}>
-                <Talks2023 />
-              </React.Suspense>
-            }
-          />
-          <Route
-            path={ROUTE_2023_TALK_DETAIL_PLAIN}
-            element={
-              <React.Suspense fallback={<Loading />}>
-                <TalkDetailContainer2023 />
               </React.Suspense>
             }
           />

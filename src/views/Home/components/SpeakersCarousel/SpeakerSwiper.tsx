@@ -6,10 +6,10 @@ import { Color } from "../../../../styles/colors";
 import "swiper/swiper-bundle.min.css";
 import "./SpeakersCarousel.scss";
 import { Link } from "react-router-dom";
-import conferenceData from "../../../../data/2024.json";
-import { ROUTE_SPEAKER_DETAIL } from "../../../../constants/routes";
+import { ROUTE_SPEAKER_DETAIL_PARAMETERIZED } from "../../../../constants/routes";
 import { useFetchSpeakers } from "../../../Speakers/UseFetchSpeakers";
 import * as Sentry from "@sentry/react";
+import { useEventEdition } from "../../UseEventEdition";
 
 const StyledSlideImage = styled.img`
   display: block;
@@ -36,7 +36,8 @@ const StyledSlideText = styled.p`
   color: white;
 `;
 const SpeakerSwiper: FC<React.PropsWithChildren<unknown>> = () => {
-  const { isLoading, data, error } = useFetchSpeakers();
+  const { edition } = useEventEdition();
+  const { isLoading, data, error } = useFetchSpeakers(edition?.speakerApi);
 
   const swiperSpeakers = data?.sort(() => 0.5 - Math.random()).slice(0, 20);
 
@@ -47,7 +48,7 @@ const SpeakerSwiper: FC<React.PropsWithChildren<unknown>> = () => {
   return (
     <>
       {isLoading && <p>Loading</p>}
-      {conferenceData.carrousel.enabled && swiperSpeakers && (
+      {edition?.carrousel.enabled && swiperSpeakers && (
         <Swiper
           autoplay={{
             delay: 500,
@@ -85,7 +86,7 @@ const SpeakerSwiper: FC<React.PropsWithChildren<unknown>> = () => {
           {swiperSpeakers.map((speaker) => (
             <SwiperSlide key={speaker.id}>
               <Link
-                to={`${ROUTE_SPEAKER_DETAIL}/${speaker.id}`}
+                to={`${ROUTE_SPEAKER_DETAIL_PARAMETERIZED}/${speaker.id}`}
                 style={{ textDecoration: "none" }}
               >
                 <StyledSlideImage

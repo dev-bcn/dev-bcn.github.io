@@ -29,7 +29,7 @@ describe("ActionButtons", () => {
 
     expect(gaEventTracker).toHaveBeenCalledWith(
       "attendee-info",
-      "attendee-infos"
+      "attendee-infos",
     );
   });
 

@@ -10,7 +10,10 @@ type Props = {
   subMenuItems: NavigationItem[];
 };
 
-export const HorizontalMenu: FC<React.PropsWithChildren<Props>> = ({ navItems, subMenuItems }) => {
+export const HorizontalMenu: FC<React.PropsWithChildren<Props>> = ({
+  navItems,
+  subMenuItems,
+}) => {
   const { width } = useWindowSize();
   return (
     <>

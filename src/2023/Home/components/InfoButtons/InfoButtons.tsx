@@ -5,7 +5,7 @@ import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
 import { gaEventTracker } from "../../../../components/analytics/Analytics";
 import {
   ROUTE_2023_ATTENDEE,
-  ROUTE_2023_SPEAKER_INFO,
+  ROUTE_SPEAKER_INFO_PARAMETERIZED,
 } from "../../../../constants/routes";
 
 const StyledActionDiv = styled.div`
@@ -40,7 +40,7 @@ const InfoButtons: FC<React.PropsWithChildren<unknown>> = () => {
         onClick={trackSpeaker}
         target="_self"
         text="🎙️ Speaker information"
-        link={ROUTE_2023_SPEAKER_INFO}
+        link={ROUTE_SPEAKER_INFO_PARAMETERIZED}
       />
     </StyledActionDiv>
   );

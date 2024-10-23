@@ -3,6 +3,8 @@ import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { CfpTrackComponent } from "./CfpSection";
 import { data } from "./CfpData";
+// eslint-disable jest/no-conditional-expect
+// eslint-disable testing-library/no-node-access
 
 data.forEach((track, index) => {
   describe(`CfpTrackComponent with track ${index}`, () => {

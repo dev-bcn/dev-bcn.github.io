@@ -36,7 +36,7 @@ export const StyledMoreIcon = styled.img`
     height: 10rem;
   }
 `;
-export const StyledContainerLeftSlash = styled(motion.div)<{
+export const StyledContainerLeftSlash = styled(motion.div).withConfig({shouldForwardProp: (prop) => !["positionPercentage"].includes(prop)})<{
   positionPercentage: string;
 }>`
   position: absolute;
@@ -48,7 +48,7 @@ export const StyledContainerLeftSlash = styled(motion.div)<{
   width: 50%;
   opacity: 0.2;
 `;
-export const StyledContainerRightSlash = styled(motion.div)<{
+export const StyledContainerRightSlash = styled(motion.div).withConfig({shouldForwardProp: (prop) => !["positionPercentage"].includes(prop)})<{
   positionPercentage: string;
 }>`
   position: absolute;

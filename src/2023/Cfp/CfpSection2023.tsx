@@ -1,11 +1,7 @@
 import React, { FC } from "react";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import { Color } from "../../styles/colors";
-import {
-  StyledLessIcon,
-  StyledMoreIcon,
-  StyledSpeakersSection,
-} from "../Speakers/Speakers.style";
+
 import TitleSection from "../../components/SectionTitle/TitleSection";
 import { MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
 import MoreThanBlueWhiteIcon from "../../assets/images/MoreThanBlueWhiteIcon.svg";
@@ -21,6 +17,11 @@ import {
   StyledAboutImage,
   StyledSocialIconsWrapper,
 } from "../../views/About/components/Style.AboutCard";
+import { StyledSpeakersSection } from "../../views/Talks/Talks.style";
+import {
+  StyledLessIcon,
+  StyledMoreIcon,
+} from "../../views/Speakers/Speakers.style";
 
 const TrackName = styled.h2`
   padding-top: 1.2rem;
@@ -35,7 +36,9 @@ const MemberName = styled.h5`
   text-align: left;
 `;
 
-const CfpTrackComponent: FC<React.PropsWithChildren<CfpTrackProps>> = ({ track }) => (
+const CfpTrackComponent: FC<React.PropsWithChildren<CfpTrackProps>> = ({
+  track,
+}) => (
   <>
     <section>
       <TrackName>{track.name}</TrackName>

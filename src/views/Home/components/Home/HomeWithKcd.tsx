@@ -1,5 +1,5 @@
 import Countdown from "react-countdown";
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import LessThanIcon from "../../../../assets/images/MoreThanBlueWhiteIcon.svg";
 import SectionWrapper from "../../../../components/SectionWrapper/SectionWrapper";
 import { BIGGER_BREAKPOINT } from "../../../../constants/BreakPoints";
@@ -26,15 +26,12 @@ import { Color } from "../../../../styles/colors";
 import InfoButtons from "../InfoButtons/InfoButtons";
 import { formatDateRange } from "./DateUtil";
 import { useEventEdition } from "../../UseEventEdition";
-import { Edition } from "../../HomeWrapper";
 import { Link } from "react-router-dom";
 import data from "../../../../data/2023.json";
 
-const Home: FC<React.PropsWithChildren<unknown>> = () => {
+const HomeWithKcd: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
-  const [edition, setEdition] = useState<Edition>();
-
-  useEventEdition(setEdition);
+  const { edition } = useEventEdition();
 
   return (
     <StyledHomeImage>
@@ -43,7 +40,10 @@ const Home: FC<React.PropsWithChildren<unknown>> = () => {
           <StyledLogoDiv>
             <StyledDevBcnLogo src="images/logo.png" alt="DevBcn logo" />
             <StyledPlusSign>+</StyledPlusSign>
-            <StyledKcdLogo src="images/KCD-logo-white.png" alt="KCD Barcelona" />
+            <StyledKcdLogo
+              src="images/KCD-logo-white.png"
+              alt="KCD Barcelona"
+            />
           </StyledLogoDiv>
           <StyledTitleContainer>
             <StyledTitle>
@@ -66,7 +66,8 @@ const Home: FC<React.PropsWithChildren<unknown>> = () => {
             </StyledSubtitle>
             <StyledSubtitle>
               <small>
-                Past events: <Link to="/2023">2023 edition</Link>
+                Past events: <Link to="/2023">2023 edition</Link>,{" "}
+                <Link to="/2024">2024 edition</Link>
               </small>
             </StyledSubtitle>
           </StyledTitleContainer>
@@ -130,4 +131,4 @@ const Home: FC<React.PropsWithChildren<unknown>> = () => {
   );
 };
 
-export default Home;
+export default HomeWithKcd;

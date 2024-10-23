@@ -19,7 +19,7 @@ import {
   StyledSpeakersSection,
 } from "../Speakers/Speakers.style";
 import { StyledMarginBottom, StyledTagsWrapper } from "../Talks/Talks.style";
-import data from "../../data/2024.json";
+import data from "../../data/2025.json";
 import { format } from "date-fns";
 
 const StyledWaveContainer = styled.div`

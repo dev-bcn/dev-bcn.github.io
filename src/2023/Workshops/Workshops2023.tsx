@@ -1,22 +1,24 @@
 import React, { FC, useEffect } from "react";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import { Color } from "../../styles/colors";
+
+import LessThanDarkBlueIcon from "../../assets/images/LessThanDarkBlueIcon.svg";
+import TitleSection from "../../components/SectionTitle/TitleSection";
+import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
+import * as Sentry from "@sentry/react";
+import conferenceData from "../../data/2023.json";
+import styled from "styled-components";
+import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
 import {
   StyledMarginBottom,
   StyledSpeakersSection,
   StyledTitleContainer,
   StyledTitleIcon,
   StyledWaveContainer,
-} from "../Talks/Talks.style";
-import LessThanDarkBlueIcon from "../../assets/images/LessThanDarkBlueIcon.svg";
-import TitleSection from "../../components/SectionTitle/TitleSection";
-import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
-import { useFetchTalks } from "../Talks/UseFetchTalks";
-import * as Sentry from "@sentry/react";
-import { TalkCard } from "../Talks/components/TalkCard";
-import conferenceData from "../../data/2023.json";
-import styled from "styled-components";
-import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
+} from "../../views/Talks/Talks.style";
+import { useFetchTalks } from "../../views/Talks/UseFetchTalks";
+import { TalkCard } from "../../views/Talks/components/TalkCard";
+import { useEventEdition } from "../../views/Home/UseEventEdition";
 
 const StyledSection = styled.section`
    {
@@ -36,7 +38,8 @@ const StyledSection = styled.section`
   }
 `;
 const Workshops2023: FC<React.PropsWithChildren<unknown>> = () => {
-  const { isLoading, data, error } = useFetchTalks();
+  const { edition } = useEventEdition();
+  const { isLoading, data, error } = useFetchTalks(edition?.talkApi);
   useEffect(() => {
     document.title = `Workshops - DevBcn - ${conferenceData.edition}`;
   }, []);
@@ -49,8 +52,8 @@ const Workshops2023: FC<React.PropsWithChildren<unknown>> = () => {
     ?.flatMap((group) => group.sessions)
     .filter((session) =>
       session.categories.some((category) =>
-        category.categoryItems.some((item) => categoryItemIds.has(item.id))
-      )
+        category.categoryItems.some((item) => categoryItemIds.has(item.id)),
+      ),
     );
   //endregion
 
@@ -98,12 +101,7 @@ const Workshops2023: FC<React.PropsWithChildren<unknown>> = () => {
             </p>
           )}
           {workshops?.map((track, index) => (
-            <TalkCard
-              talk={track}
-              key={track.id}
-              index={index}
-              showTrack={true}
-            />
+            <TalkCard talk={track} key={track.id} showTrack={true} />
           ))}
         </StyledSection>
         <StyledMarginBottom />

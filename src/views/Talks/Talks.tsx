@@ -1,10 +1,9 @@
-import React, { FC, useEffect, useState } from "react";
+import React, {FC, useEffect, useMemo, useState} from "react";
 import LessThanDarkBlueIcon from "../../assets/images/LessThanDarkBlueIcon.svg";
 import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import TitleSection from "../../components/SectionTitle/TitleSection";
 import { Color } from "../../styles/colors";
-import conferenceData from "../../data/2024.json";
 import {
   StyledMarginBottom,
   StyledSpeakersSection,
@@ -19,6 +18,7 @@ import { Dropdown, DropdownChangeEvent } from "primereact/dropdown";
 import "primereact/resources/primereact.min.css";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "../../styles/theme.css";
+import { useEventEdition } from "../Home/UseEventEdition";
 
 interface TrackInfo {
   name: string;
@@ -26,10 +26,9 @@ interface TrackInfo {
 }
 
 const Talks: FC<React.PropsWithChildren<unknown>> = () => {
-  const [selectedGroupId, setSelectedGroupId] = useState<TrackInfo | null>(
-    null,
-  );
-  const { isLoading, error, data } = useFetchTalks();
+  const [selectedGroupId, setSelectedGroupId] = useState<TrackInfo | null>(null,);
+  const { edition } = useEventEdition();
+  const { isLoading, error, data } = useFetchTalks(edition?.speakerApi);
 
   useEffect(() => {
     const sessionSelectedGroupCode =
@@ -37,7 +36,9 @@ const Talks: FC<React.PropsWithChildren<unknown>> = () => {
     const sessionSelectedGroupName =
       sessionStorage.getItem("selectedGroupName");
 
-    document.title = `Talks - ${conferenceData.title} - ${conferenceData.edition}`;
+    if (edition) {
+      document.title = `Talks - ${edition.title} - ${edition.edition}`;
+    }
 
     if (sessionSelectedGroupCode && sessionSelectedGroupName) {
       setSelectedGroupId({
@@ -45,25 +46,22 @@ const Talks: FC<React.PropsWithChildren<unknown>> = () => {
         code: sessionSelectedGroupCode,
       });
     }
-  }, []);
+  }, [edition]);
 
   if (error) {
     Sentry.captureException(error);
   }
 
-  const dropDownOptions = [
-    { name: "All Tracks", code: undefined },
-    ...(data !== undefined
-      ? data.flatMap((group) => ({
-          code: group.groupId.toString(),
-          name: group.groupName,
-        }))
-      : []),
-  ];
+  const dropDownOptions = useMemo(() => {
+    return [
+      { name: "All Tracks", code: undefined },
+      ...(data ? data.map(group => ({ code: group.groupId.toString(), name: group.groupName })) : []),
+    ];
+  }, [data]);
 
-  const filteredTalks = selectedGroupId?.code
-    ? data?.filter((talk) => talk.groupId.toString() === selectedGroupId.code)
-    : data;
+  const filteredTalks = useMemo(() => {
+    return selectedGroupId?.code ? data?.filter(talk => talk.groupId.toString() === selectedGroupId.code) : data;
+  }, [data, selectedGroupId]);
 
   const onChangeSelectedTrack = (e: DropdownChangeEvent) => {
     const value = e.value;
@@ -104,7 +102,7 @@ const Talks: FC<React.PropsWithChildren<unknown>> = () => {
       <SectionWrapper color={Color.LIGHT_BLUE} marginTop={1}>
         <section>
           {isLoading && <h1>Loading </h1>}
-          {conferenceData.hideTalks ? (
+          {edition?.hideTalks ? (
             <p style={{ color: Color.WHITE, textAlign: "center" }}>
               No talks selected yet. Keep in touch in our social media for
               upcoming announcements
@@ -126,8 +124,8 @@ const Talks: FC<React.PropsWithChildren<unknown>> = () => {
                     className="w-full md:w-14rem"
                   />
                 </div>
-                {filteredTalks.map((track) => (
-                  <TrackInformation key={track.groupId} track={track} />
+                {filteredTalks.map((track, index) => (
+                  <TrackInformation key={track.groupId + index} track={track} />
                 ))}
               </>
             )

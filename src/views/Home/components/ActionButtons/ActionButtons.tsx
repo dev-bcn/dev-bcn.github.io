@@ -1,5 +1,5 @@
 import { FC, useCallback } from "react";
-import data from "../../../../data/2024.json";
+import data from "../../../../data/2025.json";
 import Button from "../../../../components/UI/Button";
 import styled from "styled-components";
 import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
