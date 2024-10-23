@@ -67,7 +67,7 @@ export const routes = createBrowserRouter([
     path: "live-view",
     Component: LiveView,
     loader: () => import("./components/Loading/Loading"),
-  }, //TODO parameterize
+  },
   {
     path: ROUTE_COOKIES,
     Component: Cookies,
@@ -77,27 +77,27 @@ export const routes = createBrowserRouter([
     path: ROUTE_DIVERSITY,
     Component: Diversity,
     loader: () => import("./components/Loading/Loading"),
-  }, //TODO parameterize
+  },
   {
     path: ROUTE_JOB_OFFERS,
     Component: JobOffers,
     loader: () => import("./components/Loading/Loading"),
-  }, //TODO parameterize
+  },
   {
     path: ROUTE_SCHEDULE_PARAMETERIZED,
     Component: Schedule,
     loader: () => import("./components/Loading/Loading"),
-  }, //TODO parameterize
+  },
   {
     path: ROUTE_SPEAKERS_PARAMETERIZED,
     Component: Speakers,
     loader: () => import("./components/Loading/Loading"),
-  }, //TODO parameterize
+  },
   {
     path: ROUTE_SPEAKER_INFO,
     Component: SpeakerInformation,
     loader: () => import("./components/Loading/Loading"),
-  }, //TODO parameterize
+  },
   {
     path: ROUTE_ABOUT_US,
     Component: About,
@@ -107,7 +107,7 @@ export const routes = createBrowserRouter([
     path: ROUTE_CFP_PARAMETERIZED,
     Component: CfpSection,
     loader: () => import("./components/Loading/Loading"),
-  }, //TODO parameterize
+  },
   {
     path: ROUTE_TRAVEL,
     Component: Travel,
@@ -122,32 +122,32 @@ export const routes = createBrowserRouter([
     path: ROUTE_MEETING_DETAIL_PLAIN,
     Component: MeetingDetailContainer,
     loader: () => import("./components/Loading/Loading"),
-  }, //TODO parameterize
+  },
   {
     path: ROUTE_SPEAKER_DETAIL_PLAIN,
     Component: SpeakerDetailContainer,
     loader: () => import("./components/Loading/Loading"),
-  }, //TODO parameterize
+  },
   {
     path: ROUTE_SPONSORSHIP,
     Component: Sponsorship,
     loader: () => import("./components/Loading/Loading"),
-  }, //TODO parameterize
+  },
   {
     path: "/:year",
     Component: HomeWrapper,
     loader: () => import("./components/Loading/Loading"),
-  }, //TODO parameterize
+  },
   {
     path: ROUTE_ACCOMMODATION,
     Component: Accommodation,
     loader: () => import("./components/Loading/Loading"),
-  }, //TODO parameterize
+  },
   {
     path: ROUTE_HOME,
     Component: HomeWrapper,
     loader: () => import("./components/Loading/Loading"),
-  }, //TODO parameterize
+  },
   {
     path: "*",
     Component: NotFoundError,
