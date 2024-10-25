@@ -93,7 +93,9 @@ export const StyledFaqCard = styled.div`
     margin-bottom: 4rem;
   }
 `;
-export const StyledFaqImageContainer = styled.div<{ padding: string }>`
+export const StyledFaqImageContainer = styled.div.withConfig({
+    shouldForwardProp: (prop) => !["padding"].includes(prop),
+})<{ padding: string }>`
   position: relative;
   @media (min-width: 800px) {
     height: auto;
