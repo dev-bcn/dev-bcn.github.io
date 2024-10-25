@@ -1,5 +1,5 @@
 import { AnimatePresence } from "framer-motion";
-import { FC } from "react";
+import React, { FC } from "react";
 import {
   leftVariants,
   rightVariants,
