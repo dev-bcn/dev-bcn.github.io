@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 import styled from "styled-components";
+import edition from "../../../../data/2024.json";
 
 import { useLocation, useParams } from "react-router-dom";
-import { useEventEdition } from "../../../../views/Home/UseEventEdition";
 import Faqs from "../../../../views/Home/components/Faqs/Faqs";
 import SpeakersCarousel from "../../../../views/Home/components/SpeakersCarousel/SpeakersCarousel";
 import Sponsors from "../../../../views/Home/components/Sponsors/Sponsors";
@@ -23,14 +23,13 @@ export const Home2024Wrapper: FC<React.PropsWithChildren<unknown>> = () => {
   //eslint-disable-next-line no-console
   console.log("YEAR", year);
 
-  const { edition } = useEventEdition();
   React.useEffect(() => {
     document.title = `Home - ${edition?.title} - ${edition?.edition}`;
     if (hash != null && hash !== "") {
       const scroll = document.getElementById(hash.substring(1));
       scroll?.scrollIntoView();
     }
-  }, [hash, edition]);
+  }, [hash]);
 
   return (
     <StyledContainer id="home-wrapper">

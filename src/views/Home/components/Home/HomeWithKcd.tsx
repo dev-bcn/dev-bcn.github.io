@@ -25,13 +25,11 @@ import ActionButtons from "../ActionButtons/ActionButtons";
 import { Color } from "../../../../styles/colors";
 import InfoButtons from "../InfoButtons/InfoButtons";
 import { formatDateRange } from "./DateUtil";
-import { useEventEdition } from "../../UseEventEdition";
+import edition from "../../../../data/2024.json";
 import { Link } from "react-router-dom";
-import data from "../../../../data/2023.json";
 
 const HomeWithKcd: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
-  const { edition } = useEventEdition();
 
   return (
     <StyledHomeImage>
@@ -67,7 +65,6 @@ const HomeWithKcd: FC<React.PropsWithChildren<unknown>> = () => {
             <StyledSubtitle>
               <small>
                 Past events: <Link to="/2023">2023 edition</Link>,{" "}
-                <Link to="/2024">2024 edition</Link>
               </small>
             </StyledSubtitle>
           </StyledTitleContainer>
@@ -90,7 +87,7 @@ const HomeWithKcd: FC<React.PropsWithChildren<unknown>> = () => {
               {edition?.tracks}
             </StyledSubtitle>
           </StyledTitleContainer>
-          {data.showCountdown && (
+          {edition.showCountdown && (
             <Countdown date={edition?.startDay} renderer={TimeCountDown} />
           )}
           {edition?.actionButtons && <ActionButtons />}

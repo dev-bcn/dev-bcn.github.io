@@ -5,9 +5,8 @@ import HomeWithKcd from "./components/Home/HomeWithKcd";
 import SpeakersCarousel from "./components/SpeakersCarousel/SpeakersCarousel";
 import Sponsors from "./components/Sponsors/Sponsors";
 import styled from "styled-components";
-
+import edition from "../../data/2025.json";
 import {useLocation} from "react-router-dom";
-import {useEventEdition} from "./UseEventEdition";
 
 const StyledContainer = styled.div`
     padding-bottom: 10rem;
@@ -62,7 +61,6 @@ export interface Cfp {
 export const HomeWrapper: FC<React.PropsWithChildren<unknown>> = () => {
     const {hash} = useLocation();
 
-    const {edition} = useEventEdition();
     React.useEffect(() => {
         document.title = `Home - ${edition?.title} - ${edition?.edition}`;
         if (hash != null && hash !== "") {
