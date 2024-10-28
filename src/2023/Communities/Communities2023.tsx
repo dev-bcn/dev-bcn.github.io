@@ -1,8 +1,8 @@
-import React, { FC } from "react";
+import React, {FC} from "react";
 import styled from "styled-components";
-import TwitterIcon from "../../components/Icons/Twitter";
-import { Color } from "../../styles/colors";
-import WebsiteIcon from "../../components/Icons/website";
+import TwitterIcon from "src/components/Icons/Twitter";
+import {Color} from "src/styles/colors";
+import WebsiteIcon from "src/components/Icons/website";
 
 const Heading = styled.h1`
   padding-top: 10rem;

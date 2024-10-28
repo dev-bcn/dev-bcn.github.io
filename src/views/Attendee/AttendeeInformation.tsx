@@ -1,7 +1,7 @@
 import {FC, useEffect, useState} from "react";
-import {Color} from "../../styles/colors";
+import {Color} from "src/styles/colors";
 import styled from "styled-components";
-import {BIG_BREAKPOINT} from "../../constants/BreakPoints";
+import {BIG_BREAKPOINT} from "src/constants/BreakPoints";
 import {format} from "date-fns";
 import {useEventEdition} from "../Home/UseEventEdition";
 

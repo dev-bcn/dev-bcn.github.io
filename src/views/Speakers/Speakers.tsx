@@ -1,11 +1,9 @@
-import {MOBILE_BREAKPOINT} from "../../constants/BreakPoints";
-import {Color} from "../../styles/colors";
+import {MOBILE_BREAKPOINT} from "src/constants/BreakPoints";
+import {Color} from "src/styles/colors";
 import React, {FC, useCallback, useEffect, useMemo} from "react";
-import LessThanBlueIcon from "../../assets/images/LessThanBlueIcon.svg";
-import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
-import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
+import SectionWrapper from "src/components/SectionWrapper/SectionWrapper";
 import {SpeakerCard} from "./components/SpeakersCard";
-import TitleSection from "../../components/SectionTitle/TitleSection";
+import TitleSection from "src/components/SectionTitle/TitleSection";
 import {useWindowSize} from "react-use";
 import {
     SpeakersCardsContainer,
@@ -17,20 +15,20 @@ import {
     StyledSpeakersSection,
     StyledWaveContainer,
 } from "./Speakers.style";
-import Button from "../../components/UI/Button";
-import {gaEventTracker} from "../../components/analytics/Analytics";
+import Button from "src/components/UI/Button";
+import {gaEventTracker} from "src/components/analytics/Analytics";
 import {useFetchSpeakers} from "./UseFetchSpeakers";
 import {ISpeaker} from "./Speaker.types";
 import * as Sentry from "@sentry/react";
 import {useEventEdition} from "../Home/UseEventEdition";
-import Loading from "../../components/Loading/Loading";
+import Loading from "src/components/Loading/Loading";
 
-const LessThanGreaterThan = ({ width }: { width: number }) => (
+const LessThanGreaterThan = ({width}: { width: number }) => (
     <>
         {width > MOBILE_BREAKPOINT && (
             <>
-                <StyledLessIcon src={LessThanBlueIcon}/>
-                <StyledMoreIcon src={MoreThanBlueIcon}/>
+                <StyledLessIcon src="images/LessThanBlueIcon.svg"/>
+                <StyledMoreIcon src="images/MoreThanBlueIcon.svg"/>
             </>
         )}
     </>
@@ -38,7 +36,7 @@ const LessThanGreaterThan = ({ width }: { width: number }) => (
 
 const Speakers: FC<React.PropsWithChildren<unknown>> = () => {
     const {width} = useWindowSize();
-    const today = useMemo(()=>new Date(),[]);
+    const today = useMemo(() => new Date(), []);
     const isBetween = useCallback((startDay: Date, endDay: Date): boolean => {
         if (!startDay || !endDay) return false;
         return startDay < today && endDay > today;

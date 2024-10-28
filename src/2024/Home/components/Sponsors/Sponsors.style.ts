@@ -1,9 +1,6 @@
 import styled from "styled-components";
-import {
-  BIG_BREAKPOINT,
-  LARGE_BREAKPOINT,
-} from "../../../../constants/BreakPoints";
-import { motion } from "framer-motion";
+import {BIG_BREAKPOINT, LARGE_BREAKPOINT,} from "src/constants/BreakPoints";
+import {motion} from "framer-motion";
 
 const SponsorMargin = 11;
 const sponsorMarginDesktop = 11;

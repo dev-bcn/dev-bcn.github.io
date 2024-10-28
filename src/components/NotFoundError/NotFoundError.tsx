@@ -1,10 +1,11 @@
-import { Color } from "../../styles/colors";
+import {Color} from "src/styles/colors";
 
-import { FC, useEffect } from "react";
-import { Link } from "react-router-dom";
+import {FC, useEffect} from "react";
+import {Link} from "react-router-dom";
 import SectionWrapper from "../SectionWrapper/SectionWrapper";
 import styled from "styled-components";
-import ActionButtons from "../../views/Home/components/ActionButtons/ActionButtons";
+import ActionButtons
+    from "src/views/Home/components/ActionButtons/ActionButtons";
 
 const StyledContainer = styled.div`
   display: flex;

@@ -1,12 +1,12 @@
-import { FC, useCallback } from "react";
-import Button from "../../../../components/UI/Button";
+import {FC, useCallback} from "react";
+import Button from "src/components/UI/Button";
 import styled from "styled-components";
-import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
-import { gaEventTracker } from "../../../../components/analytics/Analytics";
+import {BIG_BREAKPOINT} from "src/constants/BreakPoints";
+import {gaEventTracker} from "src/components/analytics/Analytics";
 import {
-  ROUTE_2023_ATTENDEE,
-  ROUTE_SPEAKER_INFO_PARAMETERIZED,
-} from "../../../../constants/routes";
+    ROUTE_2023_ATTENDEE,
+    ROUTE_SPEAKER_INFO_PARAMETERIZED,
+} from "src/constants/routes";
 
 const StyledActionDiv = styled.div`
   display: flex;

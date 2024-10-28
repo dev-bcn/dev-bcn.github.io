@@ -2,15 +2,12 @@ import {
   BIG_BREAKPOINT,
   LARGE_BREAKPOINT,
   MOBILE_BREAKPOINT,
-} from "../../constants/BreakPoints";
-import { Color } from "../../styles/colors";
-import React, { FC, Suspense, useEffect } from "react";
-import { IMeeting } from "./MeetingDetail.Type";
-import LessThanIconWhite from "../../assets/images/LessThanIconWhite.svg";
-import LessThanIcon from "../../assets/images/LessThanBlueIcon.svg";
-import MoreThanIcon from "../../assets/images/MoreThanBlueIcon.svg";
-import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import { useWindowSize } from "react-use";
+} from "src/constants/BreakPoints";
+import {Color} from "src/styles/colors";
+import React, {FC, Suspense, useEffect} from "react";
+import {IMeeting} from "./MeetingDetail.Type";
+import SectionWrapper from "src/components/SectionWrapper/SectionWrapper";
+import {useWindowSize} from "react-use";
 import {
   StyledContainer,
   StyledDescription,
@@ -28,16 +25,16 @@ import {
   StyledVideoContainer,
   StyledVideoTagsContainer,
 } from "./Style.MeetingDetail";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import {
   ROUTE_SPEAKER_DETAIL_PARAMETERIZED,
   ROUTE_TALKS_PARAMETERIZED,
-} from "../../constants/routes";
-import { Tag } from "../../components/Tag/Tag";
-import { ISpeaker } from "../Speakers/Speaker.types";
+} from "src/constants/routes";
+import {Tag} from "src/components/Tag/Tag";
+import {ISpeaker} from "../Speakers/Speaker.types";
 import styled from "styled-components";
-import { AddToCalendarButton } from "add-to-calendar-button-react";
-import { Edition } from "../Home/HomeWrapper";
+import {AddToCalendarButton} from "add-to-calendar-button-react";
+import {Edition} from "../Home/HomeWrapper";
 
 const getVideoHeight = (windowWidth: number) => {
   let videoHeight;
@@ -150,7 +147,7 @@ const MeetingDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
             initial="initial"
             animate="animate"
             variants={leftVariants}
-            src={LessThanIcon}
+            src="images/LessThanBlueIcon.svg"
           />
           <StyledFlexCol
             initial="initial"
@@ -205,7 +202,7 @@ const MeetingDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
             initial="initial"
             animate="animate"
             variants={rightVariants}
-            src={MoreThanIcon}
+            src="images/LessThanBlueWhiteIcon.svg"
           />
         </StyledMeetingTitleContainer>
         <StyledVideoContainer
@@ -253,7 +250,7 @@ const MeetingDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
           </section>
         </StyledVideoContainer>
         <StyledSpeakerDetailContainer className="speaker-details-Container">
-          <StyledLessThan src={LessThanIconWhite} />
+          <StyledLessThan src="images/LessThanIconWhite.svg"/>
           <StyledDetailsContainer className="details-container-inner">
             <StyledRightContainer>
               {finalMeetingInfo.speakers?.map((speaker) => (

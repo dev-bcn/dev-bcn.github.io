@@ -1,9 +1,7 @@
 import React, {FC, useEffect, useMemo, useState} from "react";
-import LessThanDarkBlueIcon from "../../assets/images/LessThanDarkBlueIcon.svg";
-import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
-import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import TitleSection from "../../components/SectionTitle/TitleSection";
-import { Color } from "../../styles/colors";
+import SectionWrapper from "src/components/SectionWrapper/SectionWrapper";
+import TitleSection from "src/components/SectionTitle/TitleSection";
+import {Color} from "src/styles/colors";
 import {
   StyledMarginBottom,
   StyledSpeakersSection,
@@ -12,13 +10,13 @@ import {
   StyledWaveContainer,
 } from "./Talks.style";
 import TrackInformation from "./components/TrackInformation";
-import { useFetchTalks } from "./UseFetchTalks";
+import {useFetchTalks} from "./UseFetchTalks";
 import * as Sentry from "@sentry/react";
-import { Dropdown, DropdownChangeEvent } from "primereact/dropdown";
+import {Dropdown, DropdownChangeEvent} from "primereact/dropdown";
 import "primereact/resources/primereact.min.css";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
-import "../../styles/theme.css";
-import { useEventEdition } from "../Home/UseEventEdition";
+import "src/styles/theme.css";
+import {useEventEdition} from "../Home/UseEventEdition";
 
 interface TrackInfo {
   name: string;
@@ -74,7 +72,7 @@ const Talks: FC<React.PropsWithChildren<unknown>> = () => {
       <SectionWrapper color={Color.DARK_BLUE} marginTop={5}>
         <StyledSpeakersSection>
           <StyledTitleContainer>
-            <StyledTitleIcon src={LessThanDarkBlueIcon} />
+            <StyledTitleIcon src="images/images/LessThanDarkBlueIcon.svg"/>
             <TitleSection
               title="TALKS"
               subtitle="Speakers coming from all corners of the world join us to
@@ -83,7 +81,7 @@ const Talks: FC<React.PropsWithChildren<unknown>> = () => {
               Technologies and in the JCP."
               color={Color.WHITE}
             />
-            <StyledTitleIcon src={MoreThanBlueIcon} />
+            <StyledTitleIcon src="images/MoreThanBlueIcon.svg"/>
           </StyledTitleContainer>
         </StyledSpeakersSection>
       </SectionWrapper>

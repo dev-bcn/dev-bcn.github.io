@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { Edition } from "./HomeWrapper";
+import {useEffect, useState} from "react";
+import {useParams} from "react-router-dom";
+import {Edition} from "./HomeWrapper";
 
 export function useEventEdition(): { edition: Edition | null } {
   let { year } = useParams<{ year: string }>();
@@ -13,7 +13,7 @@ export function useEventEdition(): { edition: Edition | null } {
 
   useEffect(() => {
     const editionYear = year ?? "2025";
-    import(`../../data/${editionYear}.json`)
+    import(`src/data/${editionYear}`)
       .then((data) => {
         setEdition(data);
         localStorage.setItem("edition", data.edition);

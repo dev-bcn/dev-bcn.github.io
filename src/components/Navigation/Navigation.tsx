@@ -1,18 +1,11 @@
-import { AnimatePresence } from "framer-motion";
-import React, { FC, useEffect, useState } from "react";
-import { MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
-import { useLocation, useNavigate } from "react-router-dom";
+import {AnimatePresence} from "framer-motion";
+import React, {FC, useEffect, useState} from "react";
+import {MOBILE_BREAKPOINT} from "src/constants/BreakPoints";
+import {useLocation, useNavigate} from "react-router-dom";
 import Breadcrumbs from "./Breadcrumbs";
-import CloseIcon from "../../assets/images/CloseIcon.svg";
-import NavigationLogo from "../../assets/images/devBcn.png";
-import { ROUTE_HOME, ROUTE_HOME_ALTERNATE } from "../../constants/routes";
-import TicketsImage from "../../assets/images/TicketsImage.svg";
-import {
-  NavigationItem,
-  navigationItems,
-  subMenuItems,
-} from "./NavigationData";
-import { useWindowSize } from "react-use";
+import {ROUTE_HOME, ROUTE_HOME_ALTERNATE} from "src/constants/routes";
+import {NavigationItem, navigationItems, subMenuItems,} from "./NavigationData";
+import {useWindowSize} from "react-use";
 import {
   StyledClipPath,
   StyledHeader,
@@ -26,8 +19,8 @@ import {
   StyledNavLinkHighlightedImage,
   StyledTicketLink,
 } from "./Style.Navigation";
-import { HorizontalMenu } from "./HorizontalMenu";
-import { HamburgerMenu } from "./HamburgerMenu";
+import {HorizontalMenu} from "./HorizontalMenu";
+import {HamburgerMenu} from "./HamburgerMenu";
 
 const Navigation: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
@@ -60,7 +53,7 @@ const Navigation: FC<React.PropsWithChildren<unknown>> = () => {
         <StyledHeader>
           <StyledHeaderLogo
             alt="DevBcn — logo"
-            src={NavigationLogo}
+            src="images/devBcn.png"
             onClick={handleLogoClick}
           />
           <HorizontalMenu navItems={navItems} subMenuItems={subNavItems} />
@@ -83,12 +76,12 @@ const Navigation: FC<React.PropsWithChildren<unknown>> = () => {
           >
             <StyledNavigation>
               <StyledMenuIcon
-                src={CloseIcon}
+                  src="images/CloseIcon.svg"
                 onClick={handleSetMenu}
                 whileTap={{ scale: 0.8 }}
               />
               <StyledNavigationLogo
-                src={NavigationLogo}
+                  src="images/devBcn.png"
                 onClick={() => {
                   navigate(ROUTE_HOME);
                   handleSetMenu();
@@ -118,7 +111,7 @@ const Navigation: FC<React.PropsWithChildren<unknown>> = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <StyledNavLinkHighlightedImage src={TicketsImage} />
+                <StyledNavLinkHighlightedImage src="images/TicketsImage.svg"/>
               </StyledTicketLink>
             </StyledNavigation>
             {width > MOBILE_BREAKPOINT && <StyledClipPath />}

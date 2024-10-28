@@ -1,7 +1,7 @@
-import { FC } from "react";
+import {FC} from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { ROUTE_HOME } from "../../constants/routes";
+import {Link} from "react-router-dom";
+import {ROUTE_HOME} from "src/constants/routes";
 
 const StyledSection = styled.section`
   text-align: left;

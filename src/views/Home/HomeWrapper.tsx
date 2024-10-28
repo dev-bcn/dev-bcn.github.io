@@ -1,11 +1,11 @@
-import {BIG_BREAKPOINT} from "../../constants/BreakPoints";
+import {BIG_BREAKPOINT} from "src/constants/BreakPoints";
 import React, {FC} from "react";
 import Faqs from "./components/Faqs/Faqs";
 import HomeWithKcd from "./components/Home/HomeWithKcd";
 import SpeakersCarousel from "./components/SpeakersCarousel/SpeakersCarousel";
 import Sponsors from "./components/Sponsors/Sponsors";
 import styled from "styled-components";
-import edition from "../../data/2025.json";
+import {edition} from "src/data/2025";
 import {useLocation} from "react-router-dom";
 
 const StyledContainer = styled.div`
@@ -30,6 +30,7 @@ export interface Edition {
     hideTalks: boolean;
     jobOffers: Carrousel;
     linkedin: string;
+    flickr: string;
     openFeedback: {
         enabled: boolean;
         url: string;
@@ -37,12 +38,17 @@ export interface Edition {
     schedule: Carrousel;
     scheduleApi: string;
     showInfoButtons: boolean;
+    showCountdown: boolean;
     speakerApi: string;
+    sponsors: {
+        startDate: Date;
+        endDate: Date;
+    }
     startDay: Date;
     talkApi: string;
     tickets: Cfp;
     title: string;
-    trackNumber: string;
+    trackNumber: number;
     tracks: string;
     twitter: string;
     youtube: string;
@@ -67,7 +73,7 @@ export const HomeWrapper: FC<React.PropsWithChildren<unknown>> = () => {
             const scroll = document.getElementById(hash.substring(1));
             scroll?.scrollIntoView();
         }
-    }, [hash, edition]);
+    }, [hash]);
 
     return (
         <StyledContainer id="home-wrapper">
@@ -75,7 +81,10 @@ export const HomeWrapper: FC<React.PropsWithChildren<unknown>> = () => {
             <HomeWithKcd/>
             {/* todo create new interface for this*/}
             <Faqs/>
-            {edition?.carrousel.enabled && <SpeakersCarousel edition="2025"/>}
+            {edition?.carrousel.enabled &&
+                <SpeakersCarousel apiUrl={edition.speakerApi}
+                                  carrouselEnabled={edition.carrousel.enabled}
+                                  edition={edition.edition}/>}
             <Sponsors/>
         </StyledContainer>
     );

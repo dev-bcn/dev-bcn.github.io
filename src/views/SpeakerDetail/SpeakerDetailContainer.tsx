@@ -1,12 +1,12 @@
-import { Color } from "../../styles/colors";
+import {Color} from "src/styles/colors";
 
-import React, { FC } from "react";
-import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
+import React, {FC} from "react";
+import SectionWrapper from "src/components/SectionWrapper/SectionWrapper";
 import SpeakerDetail from "./SpeakerDetail";
-import { StyledContainer, StyledWaveContainer } from "./Speaker.style";
-import { useFetchSpeakers } from "../Speakers/UseFetchSpeakers";
+import {StyledContainer, StyledWaveContainer} from "./Speaker.style";
+import {useFetchSpeakers} from "../Speakers/UseFetchSpeakers";
 import * as Sentry from "@sentry/react";
-import { useEventEdition } from "../Home/UseEventEdition";
+import {useEventEdition} from "../Home/UseEventEdition";
 
 const SpeakerDetailContainer: FC<React.PropsWithChildren<unknown>> = () => {
   const { edition } = useEventEdition();

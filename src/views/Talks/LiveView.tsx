@@ -1,12 +1,12 @@
-import React, { FC, useCallback, useEffect, useMemo } from "react";
-import { useFetchLiveView } from "./UseFetchTalks";
-import Loading from "../../components/Loading/Loading";
-import { UngroupedSession } from "./liveView.types";
-import conference from "../../data/2025.json";
-import { TalkCard } from "./components/TalkCard";
+import React, {FC, useCallback, useEffect, useMemo} from "react";
+import {useFetchLiveView} from "./UseFetchTalks";
+import Loading from "src/components/Loading/Loading";
+import {UngroupedSession} from "./liveView.types";
+import conference from "src/data/2025.json";
+import {TalkCard} from "./components/TalkCard";
 import * as Sentry from "@sentry/react";
-import { StyledMain } from "./Talks.style";
-import { talkCardAdapter } from "./TalkCardAdapter";
+import {StyledMain} from "./Talks.style";
+import {talkCardAdapter} from "./TalkCardAdapter";
 
 const LiveView: FC<React.PropsWithChildren<unknown>> = () => {
   const { isLoading, error, data } = useFetchLiveView();
@@ -42,7 +42,7 @@ const LiveView: FC<React.PropsWithChildren<unknown>> = () => {
   return (
     <StyledMain>
       <img
-        src="images/logo.png"
+          src="/images/logo.png"
         alt={conference.title}
         style={{ width: "25%" }}
       />

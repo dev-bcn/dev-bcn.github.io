@@ -1,9 +1,9 @@
-import React, { FC, useCallback } from "react";
-import data from "../../../../data/2023.json";
-import Button from "../../../../components/UI/Button";
+import React, {FC, useCallback} from "react";
+import {edition} from "src/data/2023";
+import Button from "src/components/UI/Button";
 import styled from "styled-components";
-import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
-import { gaEventTracker } from "../../../../components/analytics/Analytics";
+import {BIG_BREAKPOINT} from "src/constants/BreakPoints";
+import {gaEventTracker} from "src/components/analytics/Analytics";
 
 const StyledActionDiv = styled.div`
   display: flex;
@@ -15,13 +15,13 @@ const StyledActionDiv = styled.div`
   }
 `;
 
-const ActionButtons: FC<React.PropsWithChildren<unknown>> = () => {
-  const ticketStartDay = new Date(data.tickets.startDay);
-  const ticketEndDay = new Date(data.tickets.endDay);
-  const CFPStartDay = new Date(data.cfp.startDay);
-  const CFPEndDay = new Date(data.cfp.endDay);
-  const sponsorshipStartDay = new Date(data.tickets.startDay);
-  const sponsorshipEndDay = new Date(data.tickets.endDay);
+const ActionButtons: FC<React.PropsWithChildren> = () => {
+    const ticketStartDay = new Date(edition.tickets.startDay);
+    const ticketEndDay = new Date(edition.tickets.endDay);
+    const CFPStartDay = new Date(edition.cfp.startDay);
+    const CFPEndDay = new Date(edition.cfp.endDay);
+    const sponsorshipStartDay = new Date(edition.tickets.startDay);
+    const sponsorshipEndDay = new Date(edition.tickets.endDay);
   const today = new Date();
 
   const isBetween = (startDay: Date, endDay: Date): boolean =>
@@ -52,7 +52,7 @@ const ActionButtons: FC<React.PropsWithChildren<unknown>> = () => {
         <Button
           onClick={trackCFP}
           text="📢 Call For Papers"
-          link={data.cfp.link}
+          link={edition.cfp.link}
         />
       )}
       {isBetween(sponsorshipStartDay, sponsorshipEndDay) && (

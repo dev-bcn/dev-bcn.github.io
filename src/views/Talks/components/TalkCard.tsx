@@ -1,11 +1,11 @@
-import React, { FC } from "react";
-import { Link } from "react-router-dom";
-import { StyledJobsInfo } from "../../JobOffers/components/JobsCard";
-import { Tag } from "../../../components/Tag/Tag";
+import React, {FC} from "react";
+import {Link} from "react-router-dom";
+import {StyledJobsInfo} from "../../JobOffers/components/JobsCard";
+import {Tag} from "src/components/Tag/Tag";
 import {
   ROUTE_SPEAKER_DETAIL_PARAMETERIZED,
   ROUTE_TALK_DETAIL,
-} from "../../../constants/routes";
+} from "src/constants/routes";
 import {
   CategoryItemEnum,
   QuestionAnswers,
@@ -24,8 +24,8 @@ import {
   StyledTalkTitle,
   StyledVoteTalkLink,
 } from "../Talks.style";
-import { Color } from "../../../styles/colors";
-import { Edition } from "../../Home/HomeWrapper";
+import {Color} from "src/styles/colors";
+import {Edition} from "../../Home/HomeWrapper";
 
 export interface TalkCardProps {
   talk: {

@@ -1,11 +1,11 @@
-import { FC, useEffect } from "react";
-import { Venue } from "./Venue";
-import { ToBarcelona } from "./ToBarcelona";
-import data from "../../data/2025.json";
-import { StyledWaveContainer } from "../Speakers/Speakers.style";
+import {FC, useEffect} from "react";
+import {Venue} from "./Venue";
+import {ToBarcelona} from "./ToBarcelona";
+import {edition} from "src/data/2025";
+import {StyledWaveContainer} from "../Speakers/Speakers.style";
 import styled from "styled-components";
-import { Color } from "../../styles/colors";
-import { Accommodation } from "./Accommodation";
+import {Color} from "src/styles/colors";
+import {Accommodation} from "./Accommodation";
 
 const StyledTravel = styled.div`
   .top {
@@ -29,7 +29,7 @@ const StyledTravel = styled.div`
 
 const Travel: FC<React.PropsWithChildren<unknown>> = () => {
   useEffect(() => {
-    document.title = `Travel — ${data.title} — ${data.edition}`;
+      document.title = `Travel — ${edition.title} — ${edition.edition}`;
   }, []);
   return (
     <StyledTravel>

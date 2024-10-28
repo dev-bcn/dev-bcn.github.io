@@ -1,7 +1,7 @@
-import React, { FC } from "react";
+import React, {FC} from "react";
 import styled from "styled-components";
-import { Color } from "../../styles/colors";
-import data from "../../data/2025.json";
+import {Color} from "src/styles/colors";
+import {edition} from "src/data/2025";
 
 const StyledDiv = styled.div`
    {
@@ -36,7 +36,7 @@ const StyledDiv = styled.div`
 
 const Conditions: FC<React.PropsWithChildren<unknown>> = () => {
   React.useEffect(() => {
-    document.title = `Communities — ${data.title} — ${data.edition}`;
+      document.title = `Communities — ${edition.title} — ${edition.edition}`;
   });
   return (
     <StyledDiv>

@@ -1,5 +1,5 @@
-import React, { FC, ReactNode } from "react";
-import { MAX_WIDTH } from "../../constants/BreakPoints";
+import React, {FC, ReactNode} from "react";
+import {MAX_WIDTH} from "src/constants/BreakPoints";
 import styled from "styled-components";
 
 const StyledSectionWrapper = styled.div.withConfig({

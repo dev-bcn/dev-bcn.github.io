@@ -1,9 +1,9 @@
-import { FC } from "react";
+import {FC} from "react";
 import styled from "styled-components";
-import { Color } from "../../../styles/colors";
-import { motion } from "framer-motion";
-import LocationIcon from "../../../assets/images/LocationIcon.svg";
-import { Offer } from "../JobsData";
+import {Color} from "src/styles/colors";
+import {motion} from "framer-motion";
+
+import {Offer} from "../JobsData";
 import {
   StyledFaqCard,
   StyledFaqText,
@@ -38,7 +38,7 @@ const JobsCard: FC<React.PropsWithChildren<IJobsCardProps>> = ({ offer }) => {
       <StyledJobsInfo>
         <StyledFaqTitle>{offer.title}</StyledFaqTitle>
         <StyledLocationContainer>
-          <StyledLocationImage src={LocationIcon} />
+          <StyledLocationImage src="images/LocationIcon.svg"/>
           <StyledLocationText>{offer.location}</StyledLocationText>
         </StyledLocationContainer>
         <StyledFaqText dangerouslySetInnerHTML={{ __html: offer.text }} />

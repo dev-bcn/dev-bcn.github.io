@@ -1,22 +1,16 @@
-import React, { FC, Suspense } from "react";
-import venue from "../../assets/images/la-farga.png";
+import React, {FC, Suspense} from "react";
 import GoogleMapReact from "google-map-react";
 import "./map.css";
-import FGC from "../../assets/images/fgc.png";
 import styled from "styled-components";
-import TitleSection from "../../components/SectionTitle/TitleSection";
-import { Color } from "../../styles/colors";
+import TitleSection from "src/components/SectionTitle/TitleSection";
+import {Color} from "src/styles/colors";
 import {
-  BIG_BREAKPOINT,
-  MAX_WIDTH,
-  MOBILE_BREAKPOINT,
-} from "../../constants/BreakPoints";
-import LessThanBlue from "../../assets/images/MoreThanBlueWhiteIcon.svg";
-import MoreThanBlue from "../../assets/images/LessThanBlueWhiteIcon.svg";
-import { useWindowSize } from "react-use";
-import LocationIcon from "../../assets/images/LocationIcon.svg";
-import Logo from "../../assets/images/logo.svg";
-import { StyledLoadingImage } from "../../components/Loading/Loading";
+    BIG_BREAKPOINT,
+    MAX_WIDTH,
+    MOBILE_BREAKPOINT,
+} from "src/constants/BreakPoints";
+import {useWindowSize} from "react-use";
+import {StyledLoadingImage} from "src/components/Loading/Loading";
 
 const StyledVenue = styled.div`
    {
@@ -133,7 +127,7 @@ const AnyReactComponent: FC<React.PropsWithChildren<LocationProps>> = ({
       rel="noreferrer"
       target="_blank"
     >
-      <img src={LocationIcon} alt="La Farga" height={24} />
+        <img src="/images/LocationIcon.svg" alt="La Farga" height={24}/>
       {text}
     </a>
   </div>
@@ -157,15 +151,15 @@ export const Venue: FC<React.PropsWithChildren<unknown>> = () => {
       />
       {width > MOBILE_BREAKPOINT && (
         <>
-          <StyledLessIcon src={LessThanBlue} />
-          <StyledMoreIcon src={MoreThanBlue} />
+            <StyledLessIcon src="images/MoreThanBlueWhiteIcon.svg"/>
+            <StyledMoreIcon src="images/MoreThanBlueIcon.svg"/>
         </>
       )}
       <section className="venue">
         <div className="image">
-          <Suspense fallback={<StyledLoadingImage src={Logo} />}>
+            <Suspense fallback={<StyledLoadingImage src="images/logo.svg"/>}>
             <img
-              src={venue}
+                src="/images/la-farga.png"
               style={{ aspectRatio: "285/173" }}
               alt="La Farga"
               className="venue"
@@ -191,7 +185,8 @@ export const Venue: FC<React.PropsWithChildren<unknown>> = () => {
           </p>
           <p>🚇 Metro: Parada Rambla Just Oliveras Autobús: Líneas L12 – LH2</p>
           <p>
-            🚝 <img src={FGC} alt="FGC" width="20" /> FGC: Estación Sant Josep
+              🚝 <img src="/images/fgc.png" alt="FGC" width="30"/> FGC: Estación
+              Sant Josep
           </p>
           <p>
             🚙 Access by <strong>car:</strong> via C-31 (20 minutes from the

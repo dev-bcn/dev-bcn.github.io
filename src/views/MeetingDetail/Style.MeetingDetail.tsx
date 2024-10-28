@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { BIG_BREAKPOINT, LARGE_BREAKPOINT } from "../../constants/BreakPoints";
-import { motion } from "framer-motion";
-import { Color } from "../../styles/colors";
+import {BIG_BREAKPOINT, LARGE_BREAKPOINT} from "src/constants/BreakPoints";
+import {Color} from "src/styles/colors";
+import {motion} from "framer-motion";
 
 export const StyledContainer = styled.div`
   padding-top: 2rem;
@@ -131,17 +131,6 @@ export const StyledDetailsContainer = styled.div`
   @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
     flex-direction: row;
     padding: 3rem 0 3rem 3rem;
-  }
-`;
-
-export const StyledImageContainer = styled.div`
-  flex-direction: column;
-  width: 25%;
-  padding: 0 1rem;
-  display: none;
-
-  @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    display: flex;
   }
 `;
 

@@ -1,27 +1,25 @@
-import React, { FC } from "react";
-import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import { Color } from "../../styles/colors";
+import React, {FC} from "react";
+import SectionWrapper from "src/components/SectionWrapper/SectionWrapper";
+import {Color} from "src/styles/colors";
 
-import TitleSection from "../../components/SectionTitle/TitleSection";
-import { MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
-import MoreThanBlueWhiteIcon from "../../assets/images/MoreThanBlueWhiteIcon.svg";
-import LessThanBlueWhiteIcon from "../../assets/images/LessThanBlueWhiteIcon.svg";
-import { useWindowSize } from "react-use";
-import TwitterIcon from "../../components/Icons/Twitter";
-import LinkedinIcon from "../../components/Icons/Linkedin";
+import TitleSection from "src/components/SectionTitle/TitleSection";
+import {MOBILE_BREAKPOINT} from "src/constants/BreakPoints";
+import {useWindowSize} from "react-use";
+import TwitterIcon from "src/components/Icons/Twitter";
+import LinkedinIcon from "src/components/Icons/Linkedin";
 
-import conferenceData from "../../data/2023.json";
-import { CfpTrackProps, data } from "./CfpData";
+import {edition} from "src/data/2023"
+import {CfpTrackProps, data} from "./CfpData";
 import styled from "styled-components";
 import {
-  StyledAboutImage,
-  StyledSocialIconsWrapper,
-} from "../../views/About/components/Style.AboutCard";
-import { StyledSpeakersSection } from "../../views/Talks/Talks.style";
+    StyledAboutImage,
+    StyledSocialIconsWrapper,
+} from "src/views/About/components/Style.AboutCard";
+import {StyledSpeakersSection} from "src/views/Talks/Talks.style";
 import {
-  StyledLessIcon,
-  StyledMoreIcon,
-} from "../../views/Speakers/Speakers.style";
+    StyledLessIcon,
+    StyledMoreIcon,
+} from "src/views/Speakers/Speakers.style";
 
 const TrackName = styled.h2`
   padding-top: 1.2rem;
@@ -77,7 +75,7 @@ const CfpTrackComponent: FC<React.PropsWithChildren<CfpTrackProps>> = ({
 const CfpSection2023: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
   React.useEffect(() => {
-    document.title = `CFP Committee - DevBcn - ${conferenceData.edition}`;
+      document.title = `CFP Committee - DevBcn - ${edition.edition}`;
   }, []);
   return (
     <>
@@ -93,8 +91,8 @@ const CfpSection2023: FC<React.PropsWithChildren<unknown>> = () => {
           />
           {width > MOBILE_BREAKPOINT && (
             <>
-              <StyledLessIcon src={MoreThanBlueWhiteIcon} />
-              <StyledMoreIcon src={LessThanBlueWhiteIcon} />
+                <StyledLessIcon src="images/LessThanBlueWhiteIcon.svg"/>
+                <StyledMoreIcon src="images/MoreThanBlueWhiteIcon.svg"/>
             </>
           )}
         </StyledSpeakersSection>

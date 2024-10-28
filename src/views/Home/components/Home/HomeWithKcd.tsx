@@ -1,10 +1,9 @@
 import Countdown from "react-countdown";
-import React, { FC } from "react";
-import LessThanIcon from "../../../../assets/images/MoreThanBlueWhiteIcon.svg";
-import SectionWrapper from "../../../../components/SectionWrapper/SectionWrapper";
-import { BIGGER_BREAKPOINT } from "../../../../constants/BreakPoints";
+import React, {FC} from "react";
+import SectionWrapper from "src/components/SectionWrapper/SectionWrapper";
+import {BIGGER_BREAKPOINT} from "src/constants/BreakPoints";
 import TimeCountDown from "./components/TimeCountdown";
-import { useWindowSize } from "react-use";
+import {useWindowSize} from "react-use";
 import {
   StyledBlueSlash,
   StyledBottomSlash,
@@ -22,13 +21,13 @@ import {
   StyleHomeContainer,
 } from "./Style.Home";
 import ActionButtons from "../ActionButtons/ActionButtons";
-import { Color } from "../../../../styles/colors";
+import {Color} from "src/styles/colors";
 import InfoButtons from "../InfoButtons/InfoButtons";
-import { formatDateRange } from "./DateUtil";
-import edition from "../../../../data/2024.json";
-import { Link } from "react-router-dom";
+import {formatDateRange} from "./DateUtil";
+import {edition} from "src/data/2024";
+import {Link} from "react-router-dom";
 
-const HomeWithKcd: FC<React.PropsWithChildren<unknown>> = () => {
+const HomeWithKcd: FC<React.PropsWithChildren> = () => {
   const { width } = useWindowSize();
 
   return (
@@ -83,18 +82,18 @@ const HomeWithKcd: FC<React.PropsWithChildren<unknown>> = () => {
           </StyledTitleContainer>
           <StyledTitleContainer color={Color.DARK_BLUE}>
             <StyledSubtitle>
-              {edition?.trackNumber} tracks with the following topics: <br />
-              {edition?.tracks}
+              {edition.trackNumber} tracks with the following topics: <br/>
+              {edition.tracks}
             </StyledSubtitle>
           </StyledTitleContainer>
           {edition.showCountdown && (
-            <Countdown date={edition?.startDay} renderer={TimeCountDown} />
+              <Countdown date={edition.startDay} renderer={TimeCountDown}/>
           )}
-          {edition?.actionButtons && <ActionButtons />}
-          {edition?.showInfoButtons && <InfoButtons />}
+          {edition.actionButtons && <ActionButtons/>}
+          {edition.showInfoButtons && <InfoButtons/>}
 
           {width > BIGGER_BREAKPOINT && (
-            <StyledLessThan alt="Icon" src={LessThanIcon} />
+              <StyledLessThan alt="Icon" src="images/LessThanBlueIcon.svg"/>
           )}
           {width > BIGGER_BREAKPOINT && (
             <StyledTopSlash

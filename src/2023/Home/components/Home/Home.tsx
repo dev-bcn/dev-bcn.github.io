@@ -1,14 +1,10 @@
 import Countdown from "react-countdown";
-import { FC } from "react";
-import data from "../../../../data/2023.json";
-import LessThanIcon from "../../../../assets/images/MoreThanBlueWhiteIcon.svg";
-import SectionWrapper from "../../../../components/SectionWrapper/SectionWrapper";
-import {
-  BIG_BREAKPOINT,
-  LARGE_BREAKPOINT,
-} from "../../../../constants/BreakPoints";
+import {FC} from "react";
+import SectionWrapper from "src/components/SectionWrapper/SectionWrapper";
+import {edition} from "src/data/2023";
+import {BIG_BREAKPOINT, LARGE_BREAKPOINT,} from "src/constants/BreakPoints";
 import TimeCountDown from "./components/TimeCountdown";
-import { useWindowSize } from "react-use";
+import {useWindowSize} from "react-use";
 import {
   StyledBlueSlash,
   StyledBottomSlash,
@@ -21,12 +17,12 @@ import {
   StyledTopSlash,
   StyleHomeContainer,
 } from "./Style.Home";
-import logo from "../../../../assets/images/logo.png";
 import ActionButtons from "../ActionButtons/ActionButtons";
 import styled from "styled-components";
-import { Color } from "../../../../styles/colors";
+import {Color} from "src/styles/colors";
 import InfoButtons from "../InfoButtons/InfoButtons";
-import MultimediaInfoButtons from "../MultimediaInfoButtons/MultimediaInfoButtons";
+import MultimediaInfoButtons
+  from "../MultimediaInfoButtons/MultimediaInfoButtons";
 
 const StyledLogo = styled.img`
   margin: 20px;
@@ -37,13 +33,13 @@ const StyledLogo = styled.img`
 `;
 const Home: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
-  const startDay = data.startDay;
+  const startDay = edition.startDay;
 
   return (
     <StyledHomaImage>
       <SectionWrapper color="transparent">
         <StyleHomeContainer>
-          <StyledLogo src={logo} alt="DevBcn logo" />
+          <StyledLogo src="images/logo.svg" alt="DevBcn logo"/>
           <StyledTitleContainer>
             <StyledTitle>The Barcelona Developers Conference 2023</StyledTitle>
             <StyledSubtitle>
@@ -73,19 +69,20 @@ const Home: FC<React.PropsWithChildren<unknown>> = () => {
           <StyledTitleContainer color={Color.DARK_BLUE}>
             <StyledSubtitle>
               7 tracks with the following topics: <br />
-              {data.tracks}
+              {edition.tracks}
             </StyledSubtitle>
           </StyledTitleContainer>
-          {data.showCountdown && (
+          {edition.showCountdown && (
             <Countdown date={startDay} renderer={TimeCountDown} />
           )}
-          {data.actionButtons && <ActionButtons />}
-          {data.showInfoButtons && <InfoButtons />}
+          {edition.actionButtons && <ActionButtons/>}
+          {edition.showInfoButtons && <InfoButtons/>}
           <h2 style={{ color: Color.LIGHT_BLUE, textShadow: "1px 1px #000" }}>
             DevBcn 2023 edition resources
           </h2>
           <MultimediaInfoButtons />
-          {width > LARGE_BREAKPOINT && <StyledLessThan src={LessThanIcon} />}
+          {width > LARGE_BREAKPOINT &&
+              <StyledLessThan src="images/LessThanBlueIcon.svg"/>}
           <StyledTopSlash
             initial={{ x: "100%" }}
             animate={{ x: 0 }}

@@ -1,7 +1,7 @@
-import {Color} from "../../styles/colors";
+import {Color} from "src/styles/colors";
 import React, {FC, useEffect} from "react";
-import NotFoundError from "../../components/NotFoundError/NotFoundError";
-import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
+import NotFoundError from "src/components/NotFoundError/NotFoundError";
+import SectionWrapper from "src/components/SectionWrapper/SectionWrapper";
 import styled from "styled-components";
 import {useParams} from "react-router-dom";
 import {sessionAdapter, useFetchTalksById} from "../Talks/UseFetchTalks";

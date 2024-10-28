@@ -1,24 +1,21 @@
-import React, { FC, useEffect } from "react";
-import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import { Color } from "../../styles/colors";
+import React, {FC, useEffect} from "react";
+import SectionWrapper from "src/components/SectionWrapper/SectionWrapper";
+import {Color} from "src/styles/colors";
 
-import LessThanDarkBlueIcon from "../../assets/images/LessThanDarkBlueIcon.svg";
-import TitleSection from "../../components/SectionTitle/TitleSection";
-import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
+import TitleSection from "src/components/SectionTitle/TitleSection";
 import * as Sentry from "@sentry/react";
-import conferenceData from "../../data/2023.json";
+import {edition} from "src/data/2023";
 import styled from "styled-components";
-import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
+import {BIG_BREAKPOINT} from "src/constants/BreakPoints";
 import {
-  StyledMarginBottom,
-  StyledSpeakersSection,
-  StyledTitleContainer,
-  StyledTitleIcon,
-  StyledWaveContainer,
-} from "../../views/Talks/Talks.style";
-import { useFetchTalks } from "../../views/Talks/UseFetchTalks";
-import { TalkCard } from "../../views/Talks/components/TalkCard";
-import { useEventEdition } from "../../views/Home/UseEventEdition";
+    StyledMarginBottom,
+    StyledSpeakersSection,
+    StyledTitleContainer,
+    StyledTitleIcon,
+    StyledWaveContainer,
+} from "src/views/Talks/Talks.style";
+import {useFetchTalks} from "src/views/Talks/UseFetchTalks";
+import {TalkCard} from "src/views/Talks/components/TalkCard";
 
 const StyledSection = styled.section`
    {
@@ -38,10 +35,9 @@ const StyledSection = styled.section`
   }
 `;
 const Workshops2023: FC<React.PropsWithChildren<unknown>> = () => {
-  const { edition } = useEventEdition();
   const { isLoading, data, error } = useFetchTalks(edition?.talkApi);
   useEffect(() => {
-    document.title = `Workshops - DevBcn - ${conferenceData.edition}`;
+      document.title = `Workshops - DevBcn - ${edition.edition}`;
   }, []);
 
   //region workshops
@@ -66,7 +62,7 @@ const Workshops2023: FC<React.PropsWithChildren<unknown>> = () => {
       <SectionWrapper color={Color.DARK_BLUE} marginTop={5}>
         <StyledSpeakersSection>
           <StyledTitleContainer>
-            <StyledTitleIcon src={LessThanDarkBlueIcon} />
+              <StyledTitleIcon src="images/LessThanDarkBlueIcon.svg"/>
             <TitleSection
               title="Workshops"
               subtitle="Speakers coming from all corners of the world join us to
@@ -75,7 +71,7 @@ const Workshops2023: FC<React.PropsWithChildren<unknown>> = () => {
               Technologies and in the JCP."
               color={Color.WHITE}
             />
-            <StyledTitleIcon src={MoreThanBlueIcon} />
+              <StyledTitleIcon src="images/MoreThanBlueIcon.svg"/>
           </StyledTitleContainer>
         </StyledSpeakersSection>
       </SectionWrapper>
@@ -100,7 +96,7 @@ const Workshops2023: FC<React.PropsWithChildren<unknown>> = () => {
               upcoming announcements
             </p>
           )}
-          {workshops?.map((track, index) => (
+            {workshops?.map((track) => (
             <TalkCard talk={track} key={track.id} showTrack={true} />
           ))}
         </StyledSection>

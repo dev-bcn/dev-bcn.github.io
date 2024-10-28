@@ -1,15 +1,8 @@
-import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
-import React, { FC } from "react";
-import LessThanBlueIcon from "../../assets/images/LessThanBlueIcon.svg";
-import emailIcon from "../../assets/images/emailIcon.svg";
-import flickrIcon from "../../assets/images/flickr.svg";
-import linkedinIcon from "../../assets/images/linkedinIcon.svg";
-import logo from "../../assets/images/devBcn.png";
-import twitterIcon from "../../assets/images/twitterIcon.svg";
-import { useNavigate } from "react-router-dom";
-import { useWindowSize } from "react-use";
-import data from "../../data/2025.json";
-import youtubeIcon from "../../assets/images/youtubeIcon.svg";
+import {BIG_BREAKPOINT} from "src/constants/BreakPoints";
+import React, {FC} from "react";
+import {useNavigate} from "react-router-dom";
+import {useWindowSize} from "react-use";
+import {edition} from "src/data/2025";
 import {
   StyledAbsoluteImg,
   StyledFlexCol,
@@ -36,7 +29,8 @@ const Footer: FC<React.PropsWithChildren<unknown>> = () => {
     <StyledFooterAbsoluteContainer className="Footer">
       <StyledFooterContainer>
         <StyledFooterItem>
-          <StyledAbsoluteImg alt="less than - icon" src={LessThanBlueIcon} />
+          <StyledAbsoluteImg alt="less than - icon"
+                             src="images/LessThanBlueIcon.svg"/>
         </StyledFooterItem>
         <StyledFooterItem>
           <StyledFlexCol>
@@ -44,33 +38,33 @@ const Footer: FC<React.PropsWithChildren<unknown>> = () => {
             <StyledFlexRow
               justify={width < BIG_BREAKPOINT ? "center" : "flex-start"}
             >
-              <StyledLink target={"_blank"} href={data.twitter}>
+              <StyledLink target={"_blank"} href={edition.twitter}>
                 <StyledFooterIcon
                   alt="twitter"
-                  src={twitterIcon}
+                  src="images/twitterIcon.svg"
                   height={24}
                   width={24}
                 />
               </StyledLink>
-              <StyledLink target={"_blank"} href={data.youtube}>
+              <StyledLink target={"_blank"} href={edition.youtube}>
                 <StyledFooterIcon
-                  src={youtubeIcon}
+                    src="images/youtubeIcon.svg"
                   alt="youtube"
                   height={24}
                   width={24}
                 />
               </StyledLink>
-              <StyledLink target={"_blank"} href={data.flickr}>
+              <StyledLink target={"_blank"} href={edition.flickr}>
                 <StyledFooterIcon
-                  src={flickrIcon}
+                    src="images/flickr.svg"
                   alt="facebook"
                   height={24}
                   width={24}
                 />
               </StyledLink>
-              <StyledLink target={"_blank"} href={data.linkedin}>
+              <StyledLink target={"_blank"} href={edition.linkedin}>
                 <StyledFooterIcon
-                  src={linkedinIcon}
+                    src="images/linkedinIcon.svg"
                   alt="facebook"
                   height={24}
                   width={24}
@@ -83,7 +77,7 @@ const Footer: FC<React.PropsWithChildren<unknown>> = () => {
         <StyledFooterItem>
           <StyledImg
             alt="DevBcn"
-            src={logo}
+            src="images/devBcn.png"
             width={140}
             height={72}
             onClick={handleLogoClick}
@@ -93,14 +87,14 @@ const Footer: FC<React.PropsWithChildren<unknown>> = () => {
           <StyledFlexCol>
             <StyledFlexRow>CONTACT</StyledFlexRow>
             <StyledFlexRow>
-              <StyledLink href={`mailto: ${data.email}`}>
+              <StyledLink href={`mailto: ${edition.email}`}>
                 <StyledFooterIcon
-                  src={emailIcon}
+                    src="images/emailIcon.svg"
                   alt="email"
                   height={24}
                   width={24}
                 />
-                {data.email}
+                {edition.email}
               </StyledLink>
             </StyledFlexRow>
             <StyledFlexRow>&nbsp;</StyledFlexRow>

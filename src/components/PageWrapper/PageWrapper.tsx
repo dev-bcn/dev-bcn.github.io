@@ -1,5 +1,5 @@
-import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
-import { FC, ReactNode } from "react";
+import {BIG_BREAKPOINT} from "src/constants/BreakPoints";
+import {FC, ReactNode} from "react";
 import styled from "styled-components";
 
 const StyledPageWrapper = styled.div`

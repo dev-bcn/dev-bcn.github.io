@@ -1,14 +1,13 @@
-import React, { FC, Suspense } from "react";
-import Logo from "../../../../../assets/images/logo.svg";
-import { StyledLoadingImage } from "../../../../../components/Loading/Loading";
+import React, {FC, Suspense} from "react";
+import {StyledLoadingImage} from "src/components/Loading/Loading";
 import {
-  FaqCardType,
-  StyledFaqCard,
-  StyledFaqImage,
-  StyledFaqImageContainer,
-  StyledFaqInfo,
-  StyledFaqText,
-  StyledFaqTitle,
+    FaqCardType,
+    StyledFaqCard,
+    StyledFaqImage,
+    StyledFaqImageContainer,
+    StyledFaqInfo,
+    StyledFaqText,
+    StyledFaqTitle,
 } from "../Faqs.style";
 
 const FaqCard: FC<React.PropsWithChildren<FaqCardType>> = ({ faq, index }) => {
@@ -17,10 +16,10 @@ const FaqCard: FC<React.PropsWithChildren<FaqCardType>> = ({ faq, index }) => {
   return (
     <StyledFaqCard className="faq-card">
       <StyledFaqImageContainer padding={isOdd ? "0 1rem 0 0" : "0 0 0 1rem"}>
-        <Suspense fallback={<StyledLoadingImage src={Logo} />}>
+          <Suspense fallback={<StyledLoadingImage/>}>
           <StyledFaqImage
             alt={`DevBcn — image ${index}`}
-            src={require(`../../../../../assets/images/FaqsImage${index}.jpg`)}
+            src={`images/FaqsImage${index}.jpg`}
           />
         </Suspense>
       </StyledFaqImageContainer>

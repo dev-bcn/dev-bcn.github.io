@@ -1,24 +1,20 @@
-import { FC, useEffect } from "react";
-import TitleSection from "../../components/SectionTitle/TitleSection";
-import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import { BIG_BREAKPOINT, MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
-import { Color } from "../../styles/colors";
-import LessThanBlue from "../../assets/images/MoreThanBlueWhiteIcon.svg";
-import LessThanTransparentIcon from "../../assets/images/LessThanTransparentIcon.svg";
-import MoreThanBlue from "../../assets/images/LessThanBlueWhiteIcon.svg";
-import MoreThanTransparentIcon from "../../assets/images/MoreThanTransparentIcon.svg";
+import {FC, useEffect} from "react";
+import TitleSection from "src/components/SectionTitle/TitleSection";
+import SectionWrapper from "src/components/SectionWrapper/SectionWrapper";
+import {BIG_BREAKPOINT, MOBILE_BREAKPOINT} from "src/constants/BreakPoints";
+import {Color} from "src/styles/colors";
 import styled from "styled-components";
-import { useWindowSize } from "react-use";
+import {useWindowSize} from "react-use";
 import {
   StyledLessIcon,
   StyledMoreIcon,
   StyledSpeakersSection,
 } from "../Speakers/Speakers.style";
-import { StyledMarginBottom } from "../Talks/Talks.style";
-import data from "../../data/2024.json";
-import { format } from "date-fns";
+import {StyledMarginBottom} from "../Talks/Talks.style";
+import {edition} from "src/data/2024";
+import {format} from "date-fns";
 import Flicking from "@egjs/react-flicking";
-import { AutoPlay } from "@egjs/flicking-plugins";
+import {AutoPlay} from "@egjs/flicking-plugins";
 import "@egjs/react-flicking/dist/flicking.css";
 
 const StyledWaveContainer = styled.div`
@@ -90,14 +86,14 @@ const StyleMoreIcon = styled.img`
   }
 `;
 
-const Sponsorship: FC<React.PropsWithChildren<unknown>> = () => {
+const Sponsorship: FC<React.PropsWithChildren> = () => {
   const { width } = useWindowSize();
   const plugins = [
     new AutoPlay({ duration: 2000, direction: "NEXT", stopOnHover: false }),
   ];
 
   useEffect(() => {
-    document.title = `Sponsorship — ${data.title} — ${data.edition}`;
+    document.title = `Sponsorship — ${edition.title} — ${edition.edition}`;
   });
 
   return (
@@ -107,15 +103,15 @@ const Sponsorship: FC<React.PropsWithChildren<unknown>> = () => {
           <TitleSection
             title="Sponsorship"
             subtitle={`The DevBcn is the yearly event organised by Conferencia DevBcn S.L. Conference Talks will held on ${format(
-              new Date(data.startDay),
+                new Date(edition.startDay),
               "MMMM do, yyyy",
             )} at La Farga, Hospitalet de Llobregat`}
             color={Color.DARK_BLUE}
           />
           {width > MOBILE_BREAKPOINT && (
             <>
-              <StyledLessIcon src={LessThanBlue} />
-              <StyledMoreIcon src={MoreThanBlue} />
+              <StyledLessIcon src="images/MoreThanBlueWhiteIcon.svg"/>
+              <StyledMoreIcon src="images/MoreThanBlueIcon.svg"/>
             </>
           )}
         </StyledSpeakersSection>
@@ -196,8 +192,8 @@ const Sponsorship: FC<React.PropsWithChildren<unknown>> = () => {
       <SectionWrapper color={Color.WHITE} marginTop={0}>
         {width > MOBILE_BREAKPOINT && (
           <>
-            <StyleMoreIcon src={LessThanTransparentIcon} />
-            <StyleLessIcon src={MoreThanTransparentIcon} />
+            <StyleMoreIcon src="images/LessThanTransparentIcon.svg"/>
+            <StyleLessIcon src="images/MoreThanTransparentIcon.svg"/>
           </>
         )}
         <StyledSpeakersSection>

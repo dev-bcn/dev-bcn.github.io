@@ -1,13 +1,10 @@
-import React, { FC, useEffect } from "react";
-import { Color } from "../../styles/colors";
-import data from "../../data/2025.json";
+import React, {FC, useEffect} from "react";
+import {Color} from "src/styles/colors";
+import {edition} from "src/data/2025";
 import styled from "styled-components";
-import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
-import { Link } from "react-router-dom";
-import {
-  ROUTE_CODE_OF_CONDUCT,
-  ROUTE_CONDITIONS,
-} from "../../constants/routes";
+import {BIG_BREAKPOINT} from "src/constants/BreakPoints";
+import {Link} from "react-router-dom";
+import {ROUTE_CODE_OF_CONDUCT, ROUTE_CONDITIONS,} from "src/constants/routes";
 
 const StyledSection = styled.section`
 {
@@ -94,7 +91,7 @@ const StyledParagraph = styled.section`
 
 const Diversity: FC<React.PropsWithChildren<unknown>> = () => {
   useEffect(() => {
-    document.title = `Diversity — ${data.title} — ${data.edition}`;
+    document.title = `Diversity — ${edition.title} — ${edition.edition}`;
   });
 
   return (
@@ -121,7 +118,7 @@ const Diversity: FC<React.PropsWithChildren<unknown>> = () => {
 
       <StyledP>
         That’s why we are running again the diversity sponsorship for DevBcn{" "}
-        {parseInt(data.edition) + 1} 🎉
+        {parseInt(edition.edition) + 1} 🎉
       </StyledP>
 
       <StyledP>
@@ -161,7 +158,7 @@ const Diversity: FC<React.PropsWithChildren<unknown>> = () => {
             </div>
           </div>
         </StyledParagraph>
-        {data.diversity && (
+        {edition.diversity && (
           <StyledParagraph>
             <h2 id="how-can-i-apply">How can I apply?</h2>
             <div className="sectionbody">

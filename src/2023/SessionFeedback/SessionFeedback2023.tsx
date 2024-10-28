@@ -4,17 +4,17 @@ import {
   SessionRating,
 } from "./sessionData";
 
-import React, { FC } from "react";
-import { DataTable } from "primereact/datatable";
-import { Column } from "primereact/column";
-import { Rating } from "primereact/rating";
+import React, {FC} from "react";
+import {DataTable} from "primereact/datatable";
+import {Column} from "primereact/column";
+import {Rating} from "primereact/rating";
 import "primereact/resources/primereact.min.css";
 import "primereact/resources/themes/lara-light-blue/theme.css";
-import { InputText } from "primereact/inputtext";
-import { FilterMatchMode } from "primereact/api";
-import { Color } from "../../styles/colors";
-import { Link } from "react-router-dom";
-import { ROUTE_TALK_DETAIL } from "../../constants/routes";
+import {InputText} from "primereact/inputtext";
+import {FilterMatchMode} from "primereact/api";
+import {Color} from "src/styles/colors";
+import {Link} from "react-router-dom";
+import {ROUTE_TALK_DETAIL} from "src/constants/routes";
 
 const SessionFeedback2023: FC<React.PropsWithChildren<unknown>> = () => {
   const bodyTemplate = React.useCallback(

@@ -4,18 +4,18 @@ import {
   SessionRating,
 } from "./sessionData";
 
-import React, { FC } from "react";
-import { DataTable } from "primereact/datatable";
-import { Column } from "primereact/column";
-import { Rating } from "primereact/rating";
+import React, {FC} from "react";
+import {DataTable} from "primereact/datatable";
+import {Column} from "primereact/column";
+import {Rating} from "primereact/rating";
 import "primereact/resources/primereact.min.css";
 import "primereact/resources/themes/lara-light-blue/theme.css";
-import { InputText } from "primereact/inputtext";
-import { FilterMatchMode } from "primereact/api";
-import { Color } from "../../styles/colors";
-import { Link } from "react-router-dom";
-import { ROUTE_TALK_DETAIL } from "../../constants/routes";
-import data from "../../data/2024.json";
+import {InputText} from "primereact/inputtext";
+import {FilterMatchMode} from "primereact/api";
+import {Color} from "src/styles/colors";
+import {Link} from "react-router-dom";
+import {ROUTE_TALK_DETAIL} from "src/constants/routes";
+import {edition} from "src/data/2024";
 
 const SessionFeedback: FC<React.PropsWithChildren<unknown>> = () => {
   const bodyTemplate = React.useCallback(
@@ -67,7 +67,7 @@ const SessionFeedback: FC<React.PropsWithChildren<unknown>> = () => {
   );
 
   React.useEffect(() => {
-    document.title = `Session Feedback — ${data.title} - ${data.edition}`;
+    document.title = `Session Feedback — ${edition.title} - ${edition.edition}`;
   });
 
   const header = renderHeader();

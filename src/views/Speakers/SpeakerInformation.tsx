@@ -1,9 +1,9 @@
-import { FC } from "react";
+import {FC} from "react";
 import styled from "styled-components";
-import { Color } from "../../styles/colors";
-import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
-import data from "../../data/2025.json";
-import { format } from "date-fns";
+import {Color} from "src/styles/colors";
+import {BIG_BREAKPOINT} from "src/constants/BreakPoints";
+import {edition} from "src/data/2025";
+import {format} from "date-fns";
 
 const Heading = styled.h1`
   font-family: "DejaVu Sans Condensed Bold", sans-serif;
@@ -39,7 +39,7 @@ const Image = styled.img`
 `;
 
 const SpeakerInformation: FC<React.PropsWithChildren<unknown>> = () => {
-  const startDate = new Date(data.startDay);
+  const startDate = new Date(edition.startDay);
   const speakersActivityDate = startDate.setDate(startDate.getDate() - 1);
   return (
     <main

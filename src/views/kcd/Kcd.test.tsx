@@ -1,5 +1,5 @@
 import React from "react";
-import { cleanup, render, screen } from "@testing-library/react";
+import {cleanup, render, screen} from "@testing-library/react";
 import Kcd from "./Kcd";
 
 // Mock the useWindowSize hook and data
@@ -7,7 +7,7 @@ jest.mock("react-use", () => ({
   useWindowSize: jest.fn(),
 }));
 
-jest.mock("../../data/2024.json", () => ({
+jest.mock("data/2024.json", () => ({
   edition: "2024",
 }));
 

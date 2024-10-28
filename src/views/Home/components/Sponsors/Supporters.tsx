@@ -11,12 +11,12 @@ import {
   StyledSponsorTitleSlashesContainer,
 } from "./Sponsors.style";
 import SponsorBadge from "./SponsorBadge";
-import { Color } from "../../../../styles/colors";
-import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
-import { buildSlashes } from "./Sponsors";
-import { useWindowSize } from "react-use";
-import { useCallback, useEffect, useState } from "react";
-import { sponsors } from "./SponsorsData";
+import {Color} from "src/styles/colors";
+import {BIG_BREAKPOINT} from "src/constants/BreakPoints";
+import {buildSlashes} from "./Sponsors";
+import {useWindowSize} from "react-use";
+import {useCallback, useEffect, useState} from "react";
+import {sponsors} from "./SponsorsData";
 
 export const Supporters = () => {
   const { width } = useWindowSize();

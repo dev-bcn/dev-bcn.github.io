@@ -1,7 +1,7 @@
-import React, { FC } from "react";
+import React, {FC} from "react";
 import styled from "styled-components";
-import { Color } from "../../styles/colors";
-import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
+import {Color} from "src/styles/colors";
+import {BIG_BREAKPOINT} from "src/constants/BreakPoints";
 
 const StyledAccommodation = styled.div`
 {
@@ -124,7 +124,6 @@ export const Accommodation: FC<React.PropsWithChildren<unknown>> = () => {
             rel="noreferrer"
             target="_blank"
           >
-            <img src="/images/accomodation/atiram.jpg" alt="Atiram Hotel" />
           </a>
           <div>
             <h2>

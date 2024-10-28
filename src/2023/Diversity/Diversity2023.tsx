@@ -1,13 +1,10 @@
-import { FC, useEffect } from "react";
-import { Color } from "../../styles/colors";
-import data from "../../data/2023.json";
+import React, {FC, useEffect} from "react";
+import {Color} from "src/styles/colors";
+import {edition} from "src/data/2023";
 import styled from "styled-components";
-import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
-import { Link } from "react-router-dom";
-import {
-  ROUTE_CODE_OF_CONDUCT,
-  ROUTE_CONDITIONS,
-} from "../../constants/routes";
+import {BIG_BREAKPOINT} from "src/constants/BreakPoints";
+import {Link} from "react-router-dom";
+import {ROUTE_CODE_OF_CONDUCT, ROUTE_CONDITIONS,} from "src/constants/routes";
 
 const StyledSection = styled.section`
    {
@@ -95,9 +92,9 @@ const StyledParagraph = styled.section`
     padding-left: 40px;
   }
 `;
-const Diversity2023: FC<React.PropsWithChildren<unknown>> = () => {
+const Diversity2023: FC<React.PropsWithChildren> = () => {
   useEffect(() => {
-    document.title = `Diversity - DevBcn ${data.edition}`;
+      document.title = `Diversity - DevBcn ${edition.edition}`;
   });
 
   return (
@@ -124,7 +121,7 @@ const Diversity2023: FC<React.PropsWithChildren<unknown>> = () => {
 
       <StyledP>
         That’s why we are running again the diversity sponsorship for DevBcn{" "}
-        {data.edition} 🎉
+          {edition.edition} 🎉
       </StyledP>
 
       <StyledP>
@@ -151,7 +148,7 @@ const Diversity2023: FC<React.PropsWithChildren<unknown>> = () => {
           <StyledLogo alt="Adevinta" src="/images/sponsors/adevinta.png" />
         </a>
       </FlexDiv>
-      {data.diversity && (
+        {edition.diversity && (
         <>
           <StyledParagraph>
             <h2 id="who-can-apply">Who can apply?</h2>

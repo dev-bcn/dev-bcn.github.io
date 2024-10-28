@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
-import { BIG_BREAKPOINT, TABLET_BREAKPOINT } from "../../constants/BreakPoints";
-import { Color } from "../../styles/colors";
+import {BIG_BREAKPOINT, TABLET_BREAKPOINT} from "src/constants/BreakPoints";
+import {Color} from "src/styles/colors";
+import {motion} from "framer-motion";
 
 export const StyledSpeakersSection = styled.section`
   display: flex;
@@ -37,7 +37,7 @@ export const StyledMoreIcon = styled.img`
   }
 `;
 export const StyledContainerLeftSlash = styled(motion.div).withConfig({shouldForwardProp: (prop) => !["positionPercentage"].includes(prop)})<{
-  positionPercentage: string;
+    positionPercentage: string;
 }>`
   position: absolute;
   top: ${({ positionPercentage }) => {

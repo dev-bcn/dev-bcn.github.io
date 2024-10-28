@@ -1,18 +1,12 @@
-import { Color } from "../../../../styles/colors";
-import React, { FC, Suspense } from "react";
+import {Color} from "src/styles/colors";
+import React, {FC, Suspense} from "react";
 import FaqCard from "./components/FaqsCard";
-import LessThanIcon from "../../../../assets/images/LessThanBlueIcon.svg";
-import MoreThanIcon from "../../../../assets/images/LessThanBlueWhiteIcon.svg";
-import SectionWrapper from "../../../../components/SectionWrapper/SectionWrapper";
-import { faqsData } from "./FaqsData";
-import { useWindowSize } from "react-use";
-import { MOBILE_BREAKPOINT } from "../../../../constants/BreakPoints";
-import flickr from "../../../../assets/images/flickr.svg";
-import youtube from "../../../../assets/images/youtube.svg";
-import image1 from "../../../../assets/images/devbcn-1.jpg";
-import image2 from "../../../../assets/images/devbcn2.jpg";
-import Logo from "../../../../assets/images/logo.svg";
-import { StyledLoadingImage } from "../../../../components/Loading/Loading";
+import SectionWrapper from "src/components/SectionWrapper/SectionWrapper";
+import {faqsData} from "./FaqsData";
+import {useWindowSize} from "react-use";
+import {MOBILE_BREAKPOINT} from "src/constants/BreakPoints";
+
+import {StyledLoadingImage} from "src/components/Loading/Loading";
 import {
   StyledFaqSection,
   StyledH2,
@@ -37,31 +31,31 @@ const Faqs: FC<React.PropsWithChildren<unknown>> = () => {
           <div id="last-jbcnconf">&nbsp;</div>
           <div style={{ width: "60%" }}>
             <StyledH2>Check last DevBcn edition</StyledH2>
-            <Suspense fallback={<StyledLoadingImage src={Logo} />}>
-              <StyledImage src={image1} alt="DevBcn 2023" />
+            <Suspense fallback={<StyledLoadingImage src="images/logo.png"/>}>
+              <StyledImage src="images/devbcn-1.jpg" alt="DevBcn 2023"/>
             </Suspense>
-            <Suspense fallback={<StyledLoadingImage src={Logo} />}>
-              <StyledImage src={image2} alt="DevBcn 2023" />
+            <Suspense fallback={<StyledLoadingImage src="images/logo.png"/>}>
+              <StyledImage src="images/devbcn2.jpg" alt="DevBcn 2023"/>
             </Suspense>
             <StyledP>
               DevBcn is the rebranding of the biggest Java & JVM conference in
               Spain, now including more technologies and tracks.
             </StyledP>
             <StyledP>
-              Check for videos/photos and{" "}
+              Check for videos/photos and summary of the DevBcn
               <StyledSummaryLink
                 href="https://youtu.be/6ZxsMUYBrSo"
                 rel="noreferrer"
                 target="_blank"
               >
-                summary of the DevBcn — 2023 edition
+                {" "}— 2023 edition
               </StyledSummaryLink>
               <StyledSummaryLink
                 href="https://youtu.be/k7iMIXtNKyo"
                 rel="noreferrer"
                 target="_blank"
               >
-                summary of the DevBcn — 2024 edition
+                {" "}— 2024 edition
               </StyledSummaryLink>
             </StyledP>
             <a
@@ -69,21 +63,24 @@ const Faqs: FC<React.PropsWithChildren<unknown>> = () => {
               rel="noreferrer"
               target="_blank"
             >
-              <img src={flickr} alt="flickr" height={32} width={32} />
+              <img src="/images/flickr.svg" alt="flickr" height={32}
+                   width={32}/>
             </a>
-            <br />
             <a
               href="https://www.youtube.com/watch?v=Pv4kEMRE-kg&list=PLzJFNZtyAbyzmAAKzx1COeIBEGFgPA_og"
               rel="noreferrer"
               target="_blank"
             >
-              <img src={youtube} alt="Youtube" height={32} width={32} />
+              <img src="/images/youtube.svg" alt="Youtube" height={32}
+                   width={32}/>
             </a>
           </div>
           {width > MOBILE_BREAKPOINT && (
             <>
-              <StyleMoreIcon alt="More than — icon" src={MoreThanIcon} />
-              <StyleLessIcon alt="Lees than — icon" src={LessThanIcon} />
+              <StyleMoreIcon alt="More than — icon"
+                             src="images/LessThanBlueWhiteIcon.svg"/>
+              <StyleLessIcon alt="Lees than — icon"
+                             src="images/LessThanBlueIcon.svg"/>
             </>
           )}
         </StyledFaqSection>

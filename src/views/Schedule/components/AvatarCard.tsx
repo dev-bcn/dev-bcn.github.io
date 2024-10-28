@@ -1,5 +1,5 @@
-import { FC } from "react";
-import { Link } from "react-router-dom";
+import {FC} from "react";
+import {Link} from "react-router-dom";
 import {
   StyledAvatarContainer,
   StyledAvatarImage,
@@ -28,7 +28,7 @@ export const AvatarCard: FC<React.PropsWithChildren<AvatarCardProps>> = ({
     <StyledAvatarContainer className="AvatarCard">
       <StyledAvatarImage
         src={require(
-          `../../../assets/images/ScheduleAvatar${meet.meetImageNumber}.jpg`,
+            `../assets/images/ScheduleAvatar${meet.meetImageNumber}.jpg`,
         )}
       />
       <StyledWelcomerTextContainer>

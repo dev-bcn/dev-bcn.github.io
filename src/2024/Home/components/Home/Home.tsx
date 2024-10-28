@@ -1,10 +1,9 @@
 import Countdown from "react-countdown";
-import React, { FC } from "react";
-import LessThanIcon from "../../../../assets/images/MoreThanBlueWhiteIcon.svg";
-import SectionWrapper from "../../../../components/SectionWrapper/SectionWrapper";
-import { BIGGER_BREAKPOINT } from "../../../../constants/BreakPoints";
+import React, {FC} from "react";
+import SectionWrapper from "src/components/SectionWrapper/SectionWrapper";
+import {BIGGER_BREAKPOINT} from "src/constants/BreakPoints";
 import TimeCountDown from "./components/TimeCountdown";
-import { useWindowSize } from "react-use";
+import {useWindowSize} from "react-use";
 import {
   StyledBlueSlash,
   StyledBottomSlash,
@@ -21,19 +20,16 @@ import {
   StyledTopSlash,
   StyleHomeContainer,
 } from "./Style.Home";
-import { Color } from "../../../../styles/colors";
-import { formatDateRange } from "./DateUtil";
-import { Link } from "react-router-dom";
-import data from "../../../../data/2023.json";
-import { useEventEdition } from "../../../../views/Home/UseEventEdition";
+import {Color} from "src/styles/colors";
+import {formatDateRange} from "./DateUtil";
+import {Link} from "react-router-dom";
+import {edition} from "src/data/2023";
 import ActionButtons
-  from "../../../../2023/Home/components/ActionButtons/ActionButtons";
-import InfoButtons
-  from "../../../../2023/Home/components/InfoButtons/InfoButtons";
+  from "src/2023/Home/components/ActionButtons/ActionButtons";
+import InfoButtons from "src/2023/Home/components/InfoButtons/InfoButtons";
 
 const Home: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
-  const { edition } = useEventEdition();
 
   return (
     <StyledHomeImage>
@@ -92,14 +88,14 @@ const Home: FC<React.PropsWithChildren<unknown>> = () => {
               {edition?.tracks}
             </StyledSubtitle>
           </StyledTitleContainer>
-          {data.showCountdown && (
+          {edition.showCountdown && (
             <Countdown date={edition?.startDay} renderer={TimeCountDown} />
           )}
           {edition?.actionButtons && <ActionButtons />}
           {edition?.showInfoButtons && <InfoButtons />}
 
           {width > BIGGER_BREAKPOINT && (
-            <StyledLessThan alt="Icon" src={LessThanIcon} />
+              <StyledLessThan alt="Icon" src="images/LessThanBlueIcon.svg"/>
           )}
           {width > BIGGER_BREAKPOINT && (
             <StyledTopSlash

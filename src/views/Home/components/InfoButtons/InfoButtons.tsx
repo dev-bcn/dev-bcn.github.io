@@ -1,8 +1,8 @@
-import { FC, useCallback } from "react";
-import Button from "../../../../components/UI/Button";
+import {FC, useCallback} from "react";
+import Button from "src/components/UI/Button";
 import styled from "styled-components";
-import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
-import { gaEventTracker } from "../../../../components/analytics/Analytics";
+import {BIG_BREAKPOINT} from "src/constants/BreakPoints";
+import {gaEventTracker} from "src/components/analytics/Analytics";
 
 const StyledActionDiv = styled.div`
   display: flex;

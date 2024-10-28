@@ -1,20 +1,16 @@
 import React, {FC} from "react";
-import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import {Color} from "../../styles/colors";
+import SectionWrapper from "src/components/SectionWrapper/SectionWrapper";
+import {Color} from "src/styles/colors";
 import {
     StyledLessIcon,
     StyledMoreIcon,
     StyledSpeakersSection,
 } from "../Speakers/Speakers.style";
-import TitleSection from "../../components/SectionTitle/TitleSection";
-import {MOBILE_BREAKPOINT} from "../../constants/BreakPoints";
-import MoreThanBlueWhiteIcon
-    from "../../assets/images/MoreThanBlueWhiteIcon.svg";
-import LessThanBlueWhiteIcon
-    from "../../assets/images/LessThanBlueWhiteIcon.svg";
+import TitleSection from "src/components/SectionTitle/TitleSection";
+import {MOBILE_BREAKPOINT} from "src/constants/BreakPoints";
 import {useWindowSize} from "react-use";
-import TwitterIcon from "../../components/Icons/Twitter";
-import LinkedinIcon from "../../components/Icons/Linkedin";
+import TwitterIcon from "src/components/Icons/Twitter";
+import LinkedinIcon from "src/components/Icons/Linkedin";
 import {
     StyledAboutImage,
     StyledSocialIconsWrapper,
@@ -84,8 +80,10 @@ const CfpSection: FC<React.PropsWithChildren<unknown>> = () => {
                     />
                     {width > MOBILE_BREAKPOINT && (
                         <>
-                            <StyledLessIcon src={MoreThanBlueWhiteIcon}/>
-                            <StyledMoreIcon src={LessThanBlueWhiteIcon}/>
+                            <StyledLessIcon
+                                src="images/MoreThanBlueWhiteIcon.svg"/>
+                            <StyledMoreIcon
+                                src="images/LessThanBlueWhiteIcon.svg"/>
                         </>
                     )}
                 </StyledSpeakersSection>

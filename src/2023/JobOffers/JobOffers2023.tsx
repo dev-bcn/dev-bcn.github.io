@@ -1,14 +1,12 @@
-import { MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
-import { Color } from "../../styles/colors";
-import { jobOffers } from "./JobsData";
+import {MOBILE_BREAKPOINT} from "src/constants/BreakPoints";
+import {Color} from "src/styles/colors";
+import {jobOffers} from "./JobsData";
 
-import React, { FC } from "react";
-import LessThanBlueIcon from "../../assets/images/LessThanBlueIcon.svg";
-import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
-import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import TitleSection from "../../components/SectionTitle/TitleSection";
-import { useWindowSize } from "react-use";
-import data from "../../data/2023.json";
+import React, {FC} from "react";
+import SectionWrapper from "src/components/SectionWrapper/SectionWrapper";
+import TitleSection from "src/components/SectionTitle/TitleSection";
+import {useWindowSize} from "react-use";
+import {edition} from "src/data/2023";
 import {
   Companies,
   CompanyNameLink,
@@ -20,7 +18,7 @@ import CompanyOffers from "./CompanyOffers";
 
 const NoOffersAvailable = () => (
   <>
-    {!data.jobOffers.enabled && (
+    {!edition.jobOffers.enabled && (
       <h4 style={{ color: Color.DARK_BLUE }}>No job offers available yet</h4>
     )}
   </>
@@ -30,8 +28,8 @@ const MoreThanLessThan = (props: { width: number }) => (
   <>
     {props.width > MOBILE_BREAKPOINT && (
       <>
-        <StyledLessIcon src={LessThanBlueIcon} />
-        <StyledMoreIcon src={MoreThanBlueIcon} />
+        <StyledLessIcon src="images/LessThanBlueIcon.svg"/>
+        <StyledMoreIcon src="images/MoreThanBlueIcon.svg"/>
       </>
     )}
   </>
@@ -41,7 +39,7 @@ const JobOffers2023: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
 
   React.useEffect(() => {
-    document.title = `Job Offers - DevBcn - ${data.edition}`;
+    document.title = `Job Offers - DevBcn - ${edition.edition}`;
   }, []);
 
   return (
@@ -56,7 +54,7 @@ const JobOffers2023: FC<React.PropsWithChildren<unknown>> = () => {
         </StyledTitleContainer>
         <MoreThanLessThan width={width} />
         <NoOffersAvailable />
-        {data.jobOffers.enabled && (
+        {edition.jobOffers.enabled && (
           <div id="job-offers">
             <Companies id="companies">
               {jobOffers.map((company) => (

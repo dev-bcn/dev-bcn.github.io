@@ -1,9 +1,7 @@
-import { FC, Suspense } from "react";
-import Photo from "../../assets/images/after-hours.jpg";
+import {FC, Suspense} from "react";
 import styled from "styled-components";
-import { Color } from "../../styles/colors";
-import Logo from "../../assets/images/logo.svg";
-import { StyledLoadingImage } from "../../components/Loading/Loading";
+import {Color} from "src/styles/colors";
+import {StyledLoadingImage} from "src/components/Loading/Loading";
 
 const StyledSection = styled.div`
   text-align: justify;
@@ -55,10 +53,10 @@ export const ToBarcelona: FC<React.PropsWithChildren<unknown>> = () => {
         repertoire, rendering it a prime location for technology and attracting
         increasing numbers of international talent to its shores.
       </p>
-      <Suspense fallback={<StyledLoadingImage src={Logo} />}>
+        <Suspense fallback={<StyledLoadingImage src="images/logo.svg"/>}>
         <img
           style={{ borderRadius: "1rem", aspectRatio: "602/367" }}
-          src={Photo}
+          src="/images/after-hours.jpg"
           alt="Barcelona beach"
         />
       </Suspense>

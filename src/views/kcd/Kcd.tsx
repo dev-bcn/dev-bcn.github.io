@@ -1,22 +1,18 @@
-import { useEffect } from "react";
-import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import { Color } from "../../styles/colors";
+import {useEffect} from "react";
+import SectionWrapper from "src/components/SectionWrapper/SectionWrapper";
+import {Color} from "src/styles/colors";
 import {
   StyledLessIcon,
   StyledMoreIcon,
   StyledSpeakersSection,
 } from "../Speakers/Speakers.style";
-import TitleSection from "../../components/SectionTitle/TitleSection";
-import { StyledSectionsSeparator } from "../CodeOfConduct/CodeOfConduct";
-import styled, { keyframes } from "styled-components";
-import data from "../../data/2024.json";
-import { MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
-import LessThanBlue from "../../assets/images/MoreThanBlueWhiteIcon.svg";
-import MoreThanBlue from "../../assets/images/LessThanBlueWhiteIcon.svg";
-import { useWindowSize } from "react-use";
-import youtube from "../../assets/images/youtube.svg";
-import linkedinIcon from "../../assets/images/linkedinIcon.svg";
-import twitterIcon from "../../assets/images/twitterIcon.svg";
+import TitleSection from "src/components/SectionTitle/TitleSection";
+import {StyledSectionsSeparator} from "../CodeOfConduct/CodeOfConduct";
+import styled, {keyframes} from "styled-components";
+import {edition} from "src/data/2024";
+import {MOBILE_BREAKPOINT} from "src/constants/BreakPoints";
+import {useWindowSize} from "react-use";
+
 
 const StyledParagraph = styled.p`
   color: white;
@@ -61,7 +57,7 @@ const StyledImage = styled.img`
 export default function Kcd() {
   const { width } = useWindowSize();
   useEffect(() => {
-    document.title = `KCD Barcelona — ${data.title} — ${data.edition}`;
+    document.title = `KCD Barcelona — ${edition.title} — ${edition.edition}`;
   });
   return (
     <>
@@ -74,8 +70,10 @@ export default function Kcd() {
           />
           {width > MOBILE_BREAKPOINT && (
             <>
-              <StyledLessIcon alt="LessThanBlueWhiteIcon" src={LessThanBlue} />
-              <StyledMoreIcon alt="MoreThanBlue" src={MoreThanBlue} />
+              <StyledLessIcon alt="LessThanBlueWhiteIcon"
+                              src="images/MoreThanBlueWhiteIcon.svg"/>
+              <StyledMoreIcon alt="MoreThanBlue"
+                              src="images/MoreThanBlueWhiteIcon.svg"/>
             </>
           )}
         </StyledSpeakersSection>
@@ -120,21 +118,24 @@ export default function Kcd() {
             target="_blank"
             rel="noreferrer"
           >
-            <img src={twitterIcon} alt="Twitter" height={32} width={32} />
+            <img src="/images/twitterIcon.svg" alt="Twitter" height={32}
+                 width={32}/>
           </a>
           <a
             href="https://www.linkedin.com/company/kcdspain/"
             target="_blank"
             rel="noreferrer"
           >
-            <img src={linkedinIcon} alt="LinkedIn" height={32} width={32} />
+            <img src="/images/linkedinIcon.svg" alt="LinkedIn" height={32}
+                 width={32}/>
           </a>
           <a
             href="https://www.youtube.com/channel/UC2666lycS6cx5a8KL_hBhKA"
             target="_blank"
             rel="noreferrer"
           >
-            <img src={youtube} alt="Youtube" height={32} width={32} />
+            <img src="/images/youtube.svg" alt="Youtube" height={32}
+                 width={32}/>
           </a>
         </div>
       </SectionWrapper>

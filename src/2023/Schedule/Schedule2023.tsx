@@ -1,16 +1,14 @@
-import { MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
-import { Color } from "../../styles/colors";
-import React, { FC } from "react";
-import LessThanBlueWhiteIcon from "../../assets/images/MoreThanBlueWhiteIcon.svg";
-import MoreThanBlueWhiteIcon from "../../assets/images/LessThanBlueWhiteIcon.svg";
-import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import TitleSection from "../../components/SectionTitle/TitleSection";
-import { useWindowSize } from "react-use";
-import data from "../../data/2023.json";
+import {MOBILE_BREAKPOINT} from "src/constants/BreakPoints";
+import {Color} from "src/styles/colors";
+import React, {FC} from "react";
+import SectionWrapper from "src/components/SectionWrapper/SectionWrapper";
+import TitleSection from "src/components/SectionTitle/TitleSection";
+import {useWindowSize} from "react-use";
+import {edition} from "src/data/2023";
 import {
-  StyledLessIcon,
-  StyledMoreIcon,
-  StyledScheduleSection,
+    StyledLessIcon,
+    StyledMoreIcon,
+    StyledScheduleSection,
 } from "./Schedule.style";
 import * as Sentry from "@sentry/react";
 
@@ -18,7 +16,7 @@ const Schedule2023: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
 
   React.useEffect(() => {
-    document.title = `Schedule - DevBcn - ${data.edition}`;
+      document.title = `Schedule - DevBcn - ${edition.edition}`;
 
     fetch("https://sessionize.com/api/v2/a2sw0wks/view/GridSmart")
       .then((value) => value.text())
@@ -44,17 +42,17 @@ const Schedule2023: FC<React.PropsWithChildren<unknown>> = () => {
         />
         {width > MOBILE_BREAKPOINT && (
           <>
-            <StyledLessIcon src={LessThanBlueWhiteIcon} />
-            <StyledMoreIcon src={MoreThanBlueWhiteIcon} />
+              <StyledLessIcon src="images/MoreThanBlueWhiteIcon.svg"/>
+              <StyledMoreIcon src="images/LessThanBlueWhiteIcon.svg"/>
           </>
         )}
-        {!data.schedule.enabled && (
+          {!edition.schedule.enabled && (
           <p style={{ color: Color.DARK_BLUE }}>
             Schedule is not available yet. Keep in touch on social media as we
             announce the speakers and their talks/workshops
           </p>
         )}
-        {data.schedule.enabled && (
+          {edition.schedule.enabled && (
           <div style={{ width: "100%", margin: "0 auto" }} id="#schedule">
             &nbsp;
           </div>

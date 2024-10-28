@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
-import { Color } from "../../styles/colors";
-import { NavLink } from "react-router-dom";
-import { MAX_WIDTH, MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
+import {motion} from "framer-motion";
+import {Color} from "src/styles/colors";
+import {NavLink} from "react-router-dom";
+import {MAX_WIDTH, MOBILE_BREAKPOINT} from "src/constants/BreakPoints";
 
 export const StyledBlueHamburger = styled(motion.img)`
   height: 2.5rem;

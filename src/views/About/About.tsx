@@ -1,20 +1,18 @@
-import React, { FC } from "react";
-import TitleSection from "../../components/SectionTitle/TitleSection";
-import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import { MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
-import LessThanBlueWhiteIcon from "../../assets/images/LessThanBlueWhiteIcon.svg";
-import MoreThanBlueWhiteIcon from "../../assets/images/MoreThanBlueWhiteIcon.svg";
-import { useWindowSize } from "react-use";
-import { aboutData } from "./AboutData";
-import { AboutCard } from "./components/AboutCard";
+import React, {FC} from "react";
+import TitleSection from "src/components/SectionTitle/TitleSection";
+import SectionWrapper from "src/components/SectionWrapper/SectionWrapper";
+import {MOBILE_BREAKPOINT} from "src/constants/BreakPoints";
+import {useWindowSize} from "react-use";
+import {aboutData} from "./AboutData";
+import {AboutCard} from "./components/AboutCard";
 import styled from "styled-components";
-import { Color } from "../../styles/colors";
+import {Color} from "src/styles/colors";
 import {
   StyledLessIcon,
   StyledMoreIcon,
   StyledSpeakersSection,
 } from "../Speakers/Speakers.style";
-import { StyledMarginBottom } from "../Talks/Talks.style";
+import {StyledMarginBottom} from "../Talks/Talks.style";
 import {useEventEdition} from "../Home/UseEventEdition";
 
 const StyledUsersWrapper = styled.div`
@@ -59,8 +57,8 @@ const About: FC<React.PropsWithChildren<unknown>> = () => {
         />
         {width > MOBILE_BREAKPOINT && (
           <>
-            <StyledLessIcon src={MoreThanBlueWhiteIcon} />
-            <StyledMoreIcon src={LessThanBlueWhiteIcon} />
+            <StyledLessIcon src="images/MoreThanBlueWhiteIcon.svg"/>
+            <StyledMoreIcon src="images/LessThanBlueWhiteIcon.svg"/>
           </>
         )}
         <StyledUsersWrapper>

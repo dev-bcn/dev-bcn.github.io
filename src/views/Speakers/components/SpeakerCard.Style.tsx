@@ -1,9 +1,6 @@
-import styled, { keyframes } from "styled-components";
-import {
-  MOBILE_BREAKPOINT,
-  TABLET_BREAKPOINT,
-} from "../../../constants/BreakPoints";
-import { Color } from "../../../styles/colors";
+import styled, {keyframes} from "styled-components";
+import {MOBILE_BREAKPOINT, TABLET_BREAKPOINT,} from "src/constants/BreakPoints";
+import {Color} from "src/styles/colors";
 
 const revealAnimation = keyframes`
     from {

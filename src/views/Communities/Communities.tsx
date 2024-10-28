@@ -1,9 +1,9 @@
-import React, { FC } from "react";
+import React, {FC} from "react";
 import styled from "styled-components";
-import TwitterIcon from "../../components/Icons/Twitter";
-import { Color } from "../../styles/colors";
-import WebsiteIcon from "../../components/Icons/website";
-import data from "../../data/2025.json";
+import TwitterIcon from "src/components/Icons/Twitter";
+import {Color} from "src/styles/colors";
+import WebsiteIcon from "src/components/Icons/website";
+import {edition} from "src/data/2025";
 
 const Heading = styled.h1`
    {
@@ -94,7 +94,7 @@ const FoSS = styled.div`
 
 const Communities: FC<React.PropsWithChildren<unknown>> = () => {
   React.useEffect(() => {
-    document.title = `Communities — ${data.title} — ${data.edition}`;
+    document.title = `Communities — ${edition.title} — ${edition.edition}`;
   });
   return (
     <>

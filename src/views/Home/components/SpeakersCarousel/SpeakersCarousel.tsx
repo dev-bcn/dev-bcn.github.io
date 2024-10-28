@@ -1,19 +1,15 @@
-import { Color } from "../../../../styles/colors";
+import {Color} from "src/styles/colors";
 
-import React, { FC } from "react";
-import { Link } from "react-router-dom";
-import LessThanBlueWhiteIcon from ".././../../../assets/images/MoreThanBlueIcon.svg";
-import SectionWrapper from "../../../../components/SectionWrapper/SectionWrapper";
-import {
-  BIGGER_BREAKPOINT,
-  TABLET_BREAKPOINT,
-} from "../../../../constants/BreakPoints";
-import TitleSection from "../../../../components/SectionTitle/TitleSection";
-import { motion } from "framer-motion";
+import React, {FC} from "react";
+import {Link} from "react-router-dom";
+import SectionWrapper from "src/components/SectionWrapper/SectionWrapper";
+import {BIGGER_BREAKPOINT, TABLET_BREAKPOINT,} from "src/constants/BreakPoints";
+import TitleSection from "src/components/SectionTitle/TitleSection";
+import {motion} from "framer-motion";
 import styled from "styled-components";
-import { ROUTE_SPEAKERS_PARAMETERIZED } from "../../../../constants/routes";
+import {ROUTE_SPEAKERS_PARAMETERIZED} from "src/constants/routes";
 import SpeakerSwiper from "./SpeakerSwiper";
-import { useWindowSize } from "react-use";
+import {useWindowSize} from "react-use";
 
 const StyledSpeakersContainer = styled.section`
   background-color: ${Color.LIGHT_BLUE};
@@ -62,8 +58,16 @@ const StyledBlueSlash = styled(motion.p)`
   height: 100%;
 `;
 
-const SpeakersCarousel: FC<React.PropsWithChildren<{ edition: string }>> = ({
-  edition,
+interface Props {
+    edition: string;
+    carrouselEnabled: boolean;
+    apiUrl: string;
+}
+
+const SpeakersCarousel: FC<React.PropsWithChildren<Props>> = ({
+                                                                  edition,
+                                                                  carrouselEnabled,
+                                                                  apiUrl
 }) => {
   const { width } = useWindowSize();
   return (
@@ -76,7 +80,7 @@ const SpeakersCarousel: FC<React.PropsWithChildren<{ edition: string }>> = ({
             color={Color.WHITE}
           />
         </StyledTitleWrapper>
-        <SpeakerSwiper />
+          <SpeakerSwiper apiUrl={apiUrl} carrouselEnabled={carrouselEnabled}/>
         <StyledLink>
           <Link
             to={ROUTE_SPEAKERS_PARAMETERIZED.replace(":year", edition)}
@@ -85,7 +89,7 @@ const SpeakersCarousel: FC<React.PropsWithChildren<{ edition: string }>> = ({
             <StyledSubtitle> View all speakers</StyledSubtitle>
             <StyledLessThanRed
               alt="view speakers"
-              src={LessThanBlueWhiteIcon}
+              src="images/MoreThanBlueWhiteIcon.svg"
             />
           </Link>
         </StyledLink>

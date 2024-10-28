@@ -1,10 +1,7 @@
 import styled from "styled-components";
-import { Color } from "../../../../styles/colors";
-import { motion } from "framer-motion";
-import {
-  BIG_BREAKPOINT,
-  BIGGER_BREAKPOINT,
-} from "../../../../constants/BreakPoints";
+import {Color} from "src/styles/colors";
+import {motion} from "framer-motion";
+import {BIG_BREAKPOINT, BIGGER_BREAKPOINT,} from "src/constants/BreakPoints";
 
 export const StyledHomeImage = styled.div`
   padding: 70px 0 40px;

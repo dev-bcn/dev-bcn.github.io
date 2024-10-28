@@ -1,7 +1,5 @@
 import styled from "styled-components";
-import { BIG_BREAKPOINT, TABLET_BREAKPOINT } from "../../constants/BreakPoints";
-import SpeakersWelcome from "../../assets/images/SpeakersWelcomer.jpg";
-import SpeakersPlanning from "../../assets/images/SpeakersPlanning.jpg";
+import {BIG_BREAKPOINT, TABLET_BREAKPOINT} from "../../constants/BreakPoints";
 
 export const StyledScheduleSection = styled.section`
   display: flex;
@@ -77,7 +75,7 @@ export const StyledTrack = styled.div<{
 export const StyledWelcomerImage = styled.div`
   width: 100%;
   height: 5rem;
-  background-image: url(${SpeakersWelcome});
+    background-image: url("/images/SpeakersWelcomer.jpg");
   background-size: cover;
   background-position: center center;
   position: relative;
@@ -109,7 +107,7 @@ export const StyledWelcomerTextLink = styled.p<{ color: string }>`
 export const StyledPlanningImage = styled.div`
   width: 100%;
   height: 10rem;
-  background-image: url(${SpeakersPlanning});
+    background-image: url("/images/SpeakersPlanning.jpg");
   background-size: cover;
   background-position: center center;
   position: relative;

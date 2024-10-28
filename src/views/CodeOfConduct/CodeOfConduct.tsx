@@ -1,26 +1,26 @@
-import React, { FC, useEffect } from "react";
-import TitleSection from "../../components/SectionTitle/TitleSection";
-import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import { BIG_BREAKPOINT, MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
-import { Color } from "../../styles/colors";
-import { CodeOfConductTags } from "./CodeOfConductData";
-import { LeftHashWithText } from "../../components/LeftHashWithText/LeftHashWithText";
-import LessThanBlue from "../../assets/images/MoreThanBlueWhiteIcon.svg";
-import LessThanTransparentIcon from "../../assets/images/LessThanTransparentIcon.svg";
-import MoreThanBlue from "../../assets/images/LessThanBlueWhiteIcon.svg";
-import MoreThanTransparentIcon from "../../assets/images/MoreThanTransparentIcon.svg";
-import { RightHashWithText } from "../../components/RightHashWithText/RightHashWithText";
-import { Tag } from "../../components/Tag/Tag";
+import React, {FC, useEffect} from "react";
+import TitleSection from "src/components/SectionTitle/TitleSection";
+import SectionWrapper from "src/components/SectionWrapper/SectionWrapper";
+import {BIG_BREAKPOINT, MOBILE_BREAKPOINT} from "src/constants/BreakPoints";
+import {Color} from "src/styles/colors";
+import {CodeOfConductTags} from "./CodeOfConductData";
+import {
+  LeftHashWithText
+} from "src/components/LeftHashWithText/LeftHashWithText";
+import {
+  RightHashWithText
+} from "src/components/RightHashWithText/RightHashWithText";
+import {Tag} from "src/components/Tag/Tag";
 import styled from "styled-components";
-import { useWindowSize } from "react-use";
+import {useWindowSize} from "react-use";
 import {
   StyledLessIcon,
   StyledMoreIcon,
   StyledSpeakersSection,
 } from "../Speakers/Speakers.style";
-import { StyledMarginBottom, StyledTagsWrapper } from "../Talks/Talks.style";
-import data from "../../data/2025.json";
-import { format } from "date-fns";
+import {StyledMarginBottom, StyledTagsWrapper} from "../Talks/Talks.style";
+import {edition} from "src/data/2025";
+import {format} from "date-fns";
 
 const StyledWaveContainer = styled.div`
   background: ${Color.DARK_BLUE};
@@ -83,7 +83,7 @@ export const CodeOfConduct: FC<React.PropsWithChildren> = () => {
   const { width } = useWindowSize();
 
   useEffect(() => {
-    document.title = `Code of Conduct — ${data.title} — ${data.edition}`;
+    document.title = `Code of Conduct — ${edition.title} — ${edition.edition}`;
   });
 
   return (
@@ -94,14 +94,14 @@ export const CodeOfConduct: FC<React.PropsWithChildren> = () => {
             title="CODE OF CONDUCT"
             subtitle={
               "The DevBcn is the yearly event organised by Conferencia DevBcn S.L. Conference Talks will held on " +
-              format(new Date(data.startDay), "MMMM do, yyyy")
+                format(new Date(edition.startDay), "MMMM do, yyyy")
             }
             color={Color.DARK_BLUE}
           />
           {width > MOBILE_BREAKPOINT && (
             <>
-              <StyledLessIcon src={LessThanBlue} />
-              <StyledMoreIcon src={MoreThanBlue} />
+              <StyledLessIcon src="images/MoreThanBlueWhiteIcon.svg"/>
+              <StyledMoreIcon src="images/MoreThanBlueIcon.svg"/>
             </>
           )}
         </StyledSpeakersSection>
@@ -135,8 +135,8 @@ export const CodeOfConduct: FC<React.PropsWithChildren> = () => {
         <RightHashWithText color={Color.DARK_BLUE} text="CODE OF CONDUCT" />
         {width > MOBILE_BREAKPOINT && (
           <>
-            <StyleMoreIcon src={LessThanTransparentIcon} />
-            <StyleLessIcon src={MoreThanTransparentIcon} />
+            <StyleMoreIcon src="images/LessThanTransparentIcon.svg"/>
+            <StyleLessIcon src="images/MoreThanTransparentIcon.svg"/>
           </>
         )}
         <StyledSpeakersSection>

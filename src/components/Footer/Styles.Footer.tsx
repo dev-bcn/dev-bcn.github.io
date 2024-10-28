@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Color } from "../../styles/colors";
-import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
+import {Color} from "src/styles/colors";
+import {BIG_BREAKPOINT} from "src/constants/BreakPoints";
 
 export const StyledFooterAbsoluteContainer = styled.div`
   position: absolute;

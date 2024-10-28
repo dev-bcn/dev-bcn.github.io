@@ -1,6 +1,6 @@
-import { BIG_BREAKPOINT, LARGE_BREAKPOINT } from "../../constants/BreakPoints";
-import { Color } from "../../styles/colors";
-import { FC } from "react";
+import {BIG_BREAKPOINT, LARGE_BREAKPOINT} from "src/constants/BreakPoints";
+import {Color} from "src/styles/colors";
+import {FC} from "react";
 import styled from "styled-components";
 
 interface ISectionTitleProps {

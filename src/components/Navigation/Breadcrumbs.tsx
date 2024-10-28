@@ -1,7 +1,7 @@
-import { FC, useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import {FC, useEffect, useState} from "react";
+import {Link, useLocation} from "react-router-dom";
 
-import { Color } from "../../styles/colors";
+import {Color} from "src/styles/colors";
 import styled from "styled-components";
 
 const StyledBreadcrumbsWrapper = styled.div`

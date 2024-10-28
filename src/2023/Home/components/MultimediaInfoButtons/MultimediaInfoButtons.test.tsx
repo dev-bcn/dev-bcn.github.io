@@ -1,8 +1,8 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import {fireEvent, render, screen} from "@testing-library/react";
 import MultimediaInfoButtons from "./MultimediaInfoButtons";
-import { gaEventTracker } from "../../../../components/analytics/Analytics";
+import {gaEventTracker} from "src/components/analytics/Analytics";
 
-jest.mock("../../../../components/analytics/Analytics", () => ({
+jest.mock("@components/analytics/Analytics", () => ({
   gaEventTracker: jest.fn(),
 }));
 

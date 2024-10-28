@@ -1,17 +1,17 @@
 import React from "react";
-import { CompanyProps } from "./JobsData";
-import { Color } from "../../styles/colors";
-import LinkedinIcon from "../../components/Icons/Linkedin";
-import TwitterIcon from "../../components/Icons/Twitter";
+import {CompanyProps} from "./JobsData";
+import {Color} from "src/styles/colors";
+import LinkedinIcon from "src/components/Icons/Linkedin";
+import TwitterIcon from "src/components/Icons/Twitter";
 import {
-  CompanyContainer,
-  CompanyDescription,
-  CompanyLogo,
-  CompanyName,
-  OfferLink,
-  OfferLocation,
-  OfferText,
-  OfferTitle,
+    CompanyContainer,
+    CompanyDescription,
+    CompanyLogo,
+    CompanyName,
+    OfferLink,
+    OfferLocation,
+    OfferText,
+    OfferTitle,
 } from "./JobOffers.Style";
 
 const CompanyOffers: React.FC<React.PropsWithChildren<CompanyProps>> = ({

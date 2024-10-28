@@ -1,6 +1,6 @@
-import { FC } from "react";
-import { Color } from "../../styles/colors";
-import { StyledTagText, StyledTagWrapper } from "./Style.Tag";
+import {FC} from "react";
+import {Color} from "src/styles/colors";
+import {StyledTagText, StyledTagWrapper} from "./Style.Tag";
 
 type TagProps = {
   text: string;
