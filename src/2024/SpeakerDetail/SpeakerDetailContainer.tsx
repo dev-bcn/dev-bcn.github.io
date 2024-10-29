@@ -4,10 +4,11 @@ import React, {FC} from "react";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import SpeakerDetail from "./SpeakerDetail";
 import {useParams} from "react-router-dom";
-import {StyledContainer, StyledWaveContainer} from "./Speaker.style";
 import conferenceData from "../../data/2024.json";
 import {useFetchSpeakers} from "../Speakers/UseFetchSpeakers";
 import * as Sentry from "@sentry/react";
+import {StyledContainer} from "../../views/SpeakerDetail/Speaker.style";
+import {StyledWaveContainer} from "../../views/Talks/Talks.style";
 
 const SpeakerDetailContainer: FC<React.PropsWithChildren<unknown>> = () => {
     const {id} = useParams<{ id: string }>();
