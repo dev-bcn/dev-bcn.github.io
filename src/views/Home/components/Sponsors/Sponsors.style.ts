@@ -3,7 +3,7 @@ import {
   BIG_BREAKPOINT,
   LARGE_BREAKPOINT,
 } from "../../../../constants/BreakPoints";
-import { motion } from "framer-motion";
+import {motion} from "framer-motion";
 
 const SponsorMargin = 11;
 const sponsorMarginDesktop = 11;
@@ -94,7 +94,9 @@ export const StyledSponsorLogosContainer = styled.div`
   @media (min-width: ${BIG_BREAKPOINT}px) {
   }
 `;
-export const StyledLogos = styled.div<{ position?: "left" | "right" }>`
+export const StyledLogos = styled.div.withConfig({
+  shouldForwardProp: (prop) => !['position'].includes(prop),
+})<{ position?: "left" | "right" }>`
   display: flex;
   width: 100%;
 
@@ -222,7 +224,9 @@ export const StyledSponsorIconMicro = styled.img`
   }
 `;
 
-export const StyledSponsorBadgeLeft = styled(motion.div)<{
+export const StyledSponsorBadgeLeft = styled(motion.div).withConfig({
+  shouldForwardProp: (prop) => !['position'].includes(prop),
+})<{
   color: string;
   position: "left" | "right";
 }>`
