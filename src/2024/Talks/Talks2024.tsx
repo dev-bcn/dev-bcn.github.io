@@ -12,14 +12,14 @@ import {Dropdown, DropdownChangeEvent} from "primereact/dropdown";
 import "primereact/resources/primereact.min.css";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "../../styles/theme.css";
-import TrackInformation from "../../views/Talks/components/TrackInformation";
 import {
-  StyledMarginBottom,
-  StyledSpeakersSection,
-  StyledTitleContainer,
-  StyledTitleIcon,
-  StyledWaveContainer
+    StyledMarginBottom,
+    StyledSpeakersSection,
+    StyledTitleContainer,
+    StyledTitleIcon,
+    StyledWaveContainer
 } from "../../views/Talks/Talks.style";
+import TrackInformation from "./components/TrackInformation";
 
 interface TrackInfo {
     name: string;
