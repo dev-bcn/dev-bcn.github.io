@@ -7,22 +7,22 @@ import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import TitleSection from "../../components/SectionTitle/TitleSection";
 import {useWindowSize} from "react-use";
 import {
-  SpeakersCardsContainer,
-  StyledContainerLeftSlash,
-  StyledContainerRightSlash,
-  StyledLessIcon,
-  StyledMoreIcon,
-  StyledSlash,
-  StyledSpeakersSection,
-  StyledWaveContainer,
+    SpeakersCardsContainer,
+    StyledContainerLeftSlash,
+    StyledContainerRightSlash,
+    StyledLessIcon,
+    StyledMoreIcon,
+    StyledSlash,
+    StyledSpeakersSection,
+    StyledWaveContainer,
 } from "./Speakers.style";
 import webData from "../../data/2024.json";
 import Button from "../../components/UI/Button";
 import {gaEventTracker} from "../../components/analytics/Analytics";
 import {useFetchSpeakers} from "./UseFetchSpeakers";
 import * as Sentry from "@sentry/react";
-import {SpeakerCard} from "../../2023/Speakers/components/SpeakersCard";
 import {ISpeaker} from "../../views/Speakers/Speaker.types";
+import {SpeakerCard} from "../../views/Speakers/components/SpeakersCard";
 
 const LessThanGreaterThan = (props: { width: number }) => (
     <>
