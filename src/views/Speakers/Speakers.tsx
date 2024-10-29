@@ -1,6 +1,6 @@
 import {MOBILE_BREAKPOINT} from "src/constants/BreakPoints";
 import {Color} from "src/styles/colors";
-import React, {FC, useCallback, useEffect, useMemo} from "react";
+import React, {FC, useCallback, useEffect, useMemo, useState} from "react";
 import SectionWrapper from "src/components/SectionWrapper/SectionWrapper";
 import {SpeakerCard} from "./components/SpeakersCard";
 import TitleSection from "src/components/SectionTitle/TitleSection";
@@ -20,7 +20,7 @@ import {gaEventTracker} from "src/components/analytics/Analytics";
 import {useFetchSpeakers} from "./UseFetchSpeakers";
 import {ISpeaker} from "./Speaker.types";
 import * as Sentry from "@sentry/react";
-import {useEventEdition} from "../Home/UseEventEdition";
+import {useEventEdition} from "../../hooks/UseEventEdition";
 import Loading from "src/components/Loading/Loading";
 
 const LessThanGreaterThan = ({width}: { width: number }) => (
@@ -41,6 +41,8 @@ const Speakers: FC<React.PropsWithChildren<unknown>> = () => {
         if (!startDay || !endDay) return false;
         return startDay < today && endDay > today;
     }, [today]);
+    const [startDay, setStartDay] = useState<Date | null>(null);
+    const [endDay, setEndDay] = useState<Date | null>(null);
     const {edition} = useEventEdition();
 
     const {error, data, isLoading} = useFetchSpeakers(edition?.speakerApi);
@@ -50,7 +52,13 @@ const Speakers: FC<React.PropsWithChildren<unknown>> = () => {
     }, []);
 
     useEffect(() => {
+        //eslint-disable-next-line no-console
+        console.clear();
+        //eslint-disable-next-line no-console
+        console.log("Speakers", edition);
         if (edition) {
+            setStartDay(new Date(edition.cfp.startDay));
+            setEndDay(new Date(edition.cfp.endDay));
             document.title = `Speakers — ${edition.title} — ${edition.edition}`;
         }
     }, [edition]);
@@ -59,12 +67,6 @@ const Speakers: FC<React.PropsWithChildren<unknown>> = () => {
         Sentry.captureException(error);
     }
 
-    const CFPStartDay = useMemo(() => {
-        return edition ? new Date(edition.cfp.startDay) : new Date();
-    }, [edition]);
-    const CFPEndDay = useMemo(() => {
-        return edition ? new Date(edition.cfp.endDay) : new Date();
-    }, [edition]);
     return (
         <>
             <SectionWrapper color={Color.DARK_BLUE} marginTop={5}>
@@ -86,7 +88,7 @@ const Speakers: FC<React.PropsWithChildren<unknown>> = () => {
                                     Error loading speakers: {error.toString()}
                                 </p>
                             )}
-                            {isBetween(CFPStartDay, CFPEndDay) && (
+                            {startDay && endDay && isBetween(startDay, endDay) && (
                                 <div
                                     style={{
                                         width: "100%",

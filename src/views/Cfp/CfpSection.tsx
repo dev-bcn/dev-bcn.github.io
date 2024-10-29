@@ -17,7 +17,7 @@ import {
 } from "../About/components/Style.AboutCard";
 import {CfpTrackProps, data} from "./CfpData";
 import {MemberName, TrackName} from "./Cfp.style";
-import {useEventEdition} from "../Home/UseEventEdition";
+import {useEventEdition} from "../../hooks/UseEventEdition";
 
 export const CfpTrackComponent: FC<React.PropsWithChildren<CfpTrackProps>> = ({
                                                                                   track,

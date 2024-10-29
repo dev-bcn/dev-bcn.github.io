@@ -14,7 +14,7 @@ import {
     StyledTitleContainer,
 } from "./JobOffers.Style";
 import CompanyOffers from "./CompanyOffers";
-import {useEventEdition} from "../Home/UseEventEdition";
+import {useEventEdition} from "../../hooks/UseEventEdition";
 
 const NoOffersAvailable = ({enabled}: { enabled: boolean | undefined }) => (
     <>

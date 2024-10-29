@@ -4,6 +4,13 @@ import SectionWrapper from "src/components/SectionWrapper/SectionWrapper";
 import {BIGGER_BREAKPOINT} from "src/constants/BreakPoints";
 import TimeCountDown from "./components/TimeCountdown";
 import {useWindowSize} from "react-use";
+import {Color} from "src/styles/colors";
+import {formatDateRange} from "./DateUtil";
+import {Link} from "react-router-dom";
+import {edition} from "src/data/2023";
+import ActionButtons
+  from "src/2023/Home/components/ActionButtons/ActionButtons";
+import InfoButtons from "src/2023/Home/components/InfoButtons/InfoButtons";
 import {
   StyledBlueSlash,
   StyledBottomSlash,
@@ -18,15 +25,8 @@ import {
   StyledTitle,
   StyledTitleContainer,
   StyledTopSlash,
-  StyleHomeContainer,
-} from "./Style.Home";
-import {Color} from "src/styles/colors";
-import {formatDateRange} from "./DateUtil";
-import {Link} from "react-router-dom";
-import {edition} from "src/data/2023";
-import ActionButtons
-  from "src/2023/Home/components/ActionButtons/ActionButtons";
-import InfoButtons from "src/2023/Home/components/InfoButtons/InfoButtons";
+  StyleHomeContainer
+} from "../../../../views/Home/components/Home/Style.Home";
 
 const Home: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();

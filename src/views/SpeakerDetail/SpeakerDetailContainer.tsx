@@ -6,7 +6,7 @@ import SpeakerDetail from "./SpeakerDetail";
 import {StyledContainer, StyledWaveContainer} from "./Speaker.style";
 import {useFetchSpeakers} from "../Speakers/UseFetchSpeakers";
 import * as Sentry from "@sentry/react";
-import {useEventEdition} from "../Home/UseEventEdition";
+import {useEventEdition} from "../../hooks/UseEventEdition";
 
 const SpeakerDetailContainer: FC<React.PropsWithChildren<unknown>> = () => {
   const { edition } = useEventEdition();

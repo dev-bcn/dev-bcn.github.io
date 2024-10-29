@@ -1,4 +1,4 @@
-import { useQuery, UseQueryResult } from "react-query";
+import {useQuery, UseQueryResult} from "react-query";
 import {
   CategoryItemEnum,
   IGroup,
@@ -7,14 +7,16 @@ import {
   SessionCategory,
 } from "./Talk.types";
 import axios from "axios";
-import { IMeeting } from "../MeetingDetail/MeetingDetail.Type";
-import { Liveview } from "./liveView.types";
+import {IMeeting} from "../MeetingDetail/MeetingDetail.Type";
+import {Liveview} from "./liveView.types";
 
 export const useFetchTalks = (
   url: string | undefined,
 ): UseQueryResult<IGroup[]> =>
   useQuery("api-talks", async () => {
-    if(!url){return;}
+    if (!url) {
+      throw Error("url is not defined")
+    }
     let data = await axios.get(
       url,
     );
@@ -46,6 +48,11 @@ export const useFetchLiveView = (): UseQueryResult<Liveview> =>
 export const extractSessionTags = (
   questionAnswers: QuestionAnswers[],
 ): string[] | undefined => {
+
+  if (!Array.isArray(questionAnswers)) {
+    return undefined; // Return undefined if questionAnswers is not a valid array
+  }
+
   let tags = questionAnswers
     .filter((question) => question.question === "Tags/Topics")
     .map((question) => question.answer)
@@ -79,8 +86,13 @@ export const extractSessionCategoryInfo = (
   categories: SessionCategory[],
   item: CategoryItemEnum = CategoryItemEnum.Level,
 ): string | undefined => {
+  if (!Array.isArray(categories)) {
+    return undefined;
+  }
+
   const info = categories.find((category) => category.name === item)
     ?.categoryItems?.[0]?.name;
+
 
   if (!info) {
     return undefined;

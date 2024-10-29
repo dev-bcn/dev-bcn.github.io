@@ -1,22 +1,15 @@
 import React, {FC} from "react";
-import styled from "styled-components";
-import edition from "src/data/2024.json";
+import {edition} from "src/data/2024";
 
 import {useLocation, useParams} from "react-router-dom";
 import Faqs from "src/views/Home/components/Faqs/Faqs";
 import SpeakersCarousel
     from "src/views/Home/components/SpeakersCarousel/SpeakersCarousel";
 import Sponsors from "src/views/Home/components/Sponsors/Sponsors";
-import {BIG_BREAKPOINT} from "src/constants/BreakPoints";
 import Home from "./Home";
-
-const StyledContainer = styled.div`
-    padding-bottom: 10rem;
-
-    @media only screen and (max-width: ${BIG_BREAKPOINT}px) {
-        padding-bottom: 20rem;
-    }
-`;
+import {
+    StyledContainer
+} from "../../../../views/Home/components/Home/Style.Home";
 
 export const Home2024Wrapper: FC<React.PropsWithChildren<unknown>> = () => {
     const {hash} = useLocation();

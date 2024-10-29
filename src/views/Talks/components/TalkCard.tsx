@@ -59,7 +59,7 @@ export const TalkCard: FC<React.PropsWithChildren<TalkCardProps>> = ({
           {talk.title}
         </StyledTalkTitle>
         <StyledSessionText>
-          {talk.speakers.map((speaker: SessionSpeaker) => (
+          {talk.speakers && Array.isArray(talk.speakers) && talk.speakers.map((speaker: SessionSpeaker) => (
             <StyledTalkSpeaker key={speaker.id}>
               <Link to={`${ROUTE_SPEAKER_DETAIL_PARAMETERIZED}/${speaker.id}`}>
                 {speaker.name}
@@ -72,7 +72,7 @@ export const TalkCard: FC<React.PropsWithChildren<TalkCardProps>> = ({
             talk.categories,
             CategoryItemEnum.Format,
           )} `}
-          {extractSessionCategoryInfo(talk.categories)}{" "}
+          {extractSessionCategoryInfo(talk.categories || [])}{" "}
         </StyledSessionText>
         {showTrack && (
           <StyledSessionText>
@@ -84,7 +84,7 @@ export const TalkCard: FC<React.PropsWithChildren<TalkCardProps>> = ({
           </StyledSessionText>
         )}
         <StyledTagsWrapper>
-          {extractSessionTags(talk.questionAnswers)?.map((tag, index) => {
+          {extractSessionTags(talk.questionAnswers || [])?.map((tag, index) => {
             return <Tag key={tag + index} text={tag} textColor={Color.WHITE} />;
           })}
         </StyledTagsWrapper>

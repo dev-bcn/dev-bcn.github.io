@@ -1,5 +1,5 @@
 import Countdown from "react-countdown";
-import {FC} from "react";
+import React, {FC} from "react";
 import SectionWrapper from "src/components/SectionWrapper/SectionWrapper";
 import {edition} from "src/data/2023";
 import {BIG_BREAKPOINT, LARGE_BREAKPOINT,} from "src/constants/BreakPoints";
@@ -31,7 +31,7 @@ const StyledLogo = styled.img`
     width: 80%;
   }
 `;
-const Home: FC<React.PropsWithChildren<unknown>> = () => {
+const Home: FC<React.PropsWithChildren> = () => {
   const { width } = useWindowSize();
   const startDay = edition.startDay;
 

@@ -19,7 +19,7 @@ import {
   StyledTitleContainer,
   StyledTopSlash,
   StyleHomeContainer,
-} from "./Style.Home";
+} from "../../../../views/Home/components/Home/Style.Home";
 import ActionButtons from "../ActionButtons/ActionButtons";
 import {Color} from "src/styles/colors";
 import InfoButtons from "../InfoButtons/InfoButtons";

@@ -53,7 +53,7 @@ const Navigation: FC<React.PropsWithChildren<unknown>> = () => {
         <StyledHeader>
           <StyledHeaderLogo
             alt="DevBcn — logo"
-            src="images/devBcn.png"
+            src="/images/devBcn.png"
             onClick={handleLogoClick}
           />
           <HorizontalMenu navItems={navItems} subMenuItems={subNavItems} />
@@ -76,12 +76,12 @@ const Navigation: FC<React.PropsWithChildren<unknown>> = () => {
           >
             <StyledNavigation>
               <StyledMenuIcon
-                  src="images/CloseIcon.svg"
+                  src="/images/CloseIcon.svg"
                 onClick={handleSetMenu}
                 whileTap={{ scale: 0.8 }}
               />
               <StyledNavigationLogo
-                  src="images/devBcn.png"
+                  src="/images/devBcn.png"
                 onClick={() => {
                   navigate(ROUTE_HOME);
                   handleSetMenu();
@@ -111,7 +111,7 @@ const Navigation: FC<React.PropsWithChildren<unknown>> = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <StyledNavLinkHighlightedImage src="images/TicketsImage.svg"/>
+                <StyledNavLinkHighlightedImage src="/images/TicketsImage.svg"/>
               </StyledTicketLink>
             </StyledNavigation>
             {width > MOBILE_BREAKPOINT && <StyledClipPath />}

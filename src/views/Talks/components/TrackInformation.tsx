@@ -1,19 +1,24 @@
-import React, { FC, useMemo } from "react";
-import { TalkCard } from "./TalkCard";
-import { IGroup } from "../Talk.types";
-import { StyledSessionSection, StyledTrackInfo } from "../Talks.style";
+import React, {FC, useMemo} from "react";
+import {TalkCard} from "./TalkCard";
+import {IGroup} from "../Talk.types";
+import {StyledSessionSection, StyledTrackInfo} from "../Talks.style";
 
 interface TrackInfoProps {
   track: IGroup;
 }
 
-const useGenerateAnchorName = (trackName: string) => {
-  const visibleTodos = useMemo(() => {
-    return trackName
-      .split(/\s+/)
-      .map((word) => word.replace(/,$/, "").toLowerCase());
-  }, [trackName]);
-  return visibleTodos[0];
+const useGenerateAnchorName = (trackName: string | undefined) => {
+    const visibleTodos = useMemo(() => {
+        if (typeof trackName !== 'string' || trackName.trim() === '') {
+            return [];
+        }
+        return trackName
+            .split(/\s+/)
+            .map((word) => word.replace(/,$/, "").toLowerCase());
+    }, [trackName]);
+
+    // Return the first element or a default value if visibleTodos is empty
+    return visibleTodos.length > 0 ? visibleTodos[0] : '';
 };
 
 const TrackInformation: FC<React.PropsWithChildren<TrackInfoProps>> = ({

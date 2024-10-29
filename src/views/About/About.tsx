@@ -13,7 +13,7 @@ import {
   StyledSpeakersSection,
 } from "../Speakers/Speakers.style";
 import {StyledMarginBottom} from "../Talks/Talks.style";
-import {useEventEdition} from "../Home/UseEventEdition";
+import {useEventEdition} from "../../hooks/UseEventEdition";
 
 const StyledUsersWrapper = styled.div`
   padding-top: 5rem;

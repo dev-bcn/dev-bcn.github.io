@@ -1,39 +1,41 @@
-import { Link, Route, Routes } from "react-router-dom";
+import {Link, Route, Routes} from "react-router-dom";
 import {
-    ROUTE_HOME_2023,
     ROUTE_ABOUT_US,
     ROUTE_ACCOMMODATION,
+    ROUTE_CFP_PARAMETERIZED,
     ROUTE_CODE_OF_CONDUCT,
     ROUTE_CONDITIONS,
     ROUTE_COOKIES,
     ROUTE_DIVERSITY,
     ROUTE_HOME,
+    ROUTE_HOME_2023,
+    ROUTE_HOME_2024,
     ROUTE_JOB_OFFERS,
     ROUTE_KCD,
     ROUTE_MEETING_DETAIL_PLAIN,
+    ROUTE_SCHEDULE_PARAMETERIZED,
     ROUTE_SPEAKER_DETAIL_PLAIN,
     ROUTE_SPEAKER_INFO,
-    ROUTE_SPONSORSHIP,
-    ROUTE_TRAVEL,
-    ROUTE_TALKS_PARAMETERIZED,
     ROUTE_SPEAKERS_PARAMETERIZED,
-    ROUTE_HOME_2024,
-    ROUTE_CFP_PARAMETERIZED,
-    ROUTE_SCHEDULE_PARAMETERIZED,
+    ROUTE_SPONSORSHIP,
+    ROUTE_TALKS_PARAMETERIZED,
+    ROUTE_TRAVEL,
 } from "./constants/routes";
 
 import Footer from "./components/Footer/Footer";
-import { HomeWrapper } from "./views/Home/HomeWrapper";
-import MeetingDetailContainer from "./views/MeetingDetail/MeetingDetailContainer";
+import {HomeWrapper} from "./views/Home/HomeWrapper";
+import MeetingDetailContainer
+    from "./views/MeetingDetail/MeetingDetailContainer";
 import Navigation from "./components/Navigation/Navigation";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
-import SpeakerDetailContainer from "./views/SpeakerDetail/SpeakerDetailContainer";
+import SpeakerDetailContainer
+    from "./views/SpeakerDetail/SpeakerDetailContainer";
 import styled from "styled-components";
-import React, { FC } from "react";
-import { CookieConsent } from "react-cookie-consent";
-import { Color } from "./styles/colors";
+import React, {FC} from "react";
+import {CookieConsent} from "react-cookie-consent";
+import {Color} from "./styles/colors";
 import Loading from "./components/Loading/Loading";
-import { QueryClient, QueryClientProvider } from "react-query";
+import {QueryClient, QueryClientProvider} from "react-query";
 import Talks from "./views/Talks/Talks";
 import Conditions from "./views/Conditions/Conditions";
 import Cookies from "./views/Cookies/Cookies";
@@ -42,17 +44,17 @@ import SpeakerInformation from "./views/Speakers/SpeakerInformation";
 import About from "./views/About/About";
 import Travel from "./views/Travel/Travel";
 import NotFoundError from "./components/NotFoundError/NotFoundError";
-import { Home2023Wrapper } from "./2023/Home/Home2023Wrapper";
+import {Home2023Wrapper} from "./2023/Home/Home2023Wrapper";
 import Kcd from "./views/kcd/Kcd";
 import Sponsorship from "./views/sponsorship/Sponsorship";
 import CfpSection from "./views/Cfp/CfpSection";
-import { CodeOfConduct } from "./views/CodeOfConduct/CodeOfConduct";
-import { Accommodation } from "./views/Travel/Accommodation";
+import {CodeOfConduct} from "./views/CodeOfConduct/CodeOfConduct";
+import {Accommodation} from "./views/Travel/Accommodation";
 import Schedule from "./views/Schedule/Schedule";
 import Diversity from "./views/Diversity/Diversity";
 import LiveView from "./views/Talks/LiveView";
 import JobOffers from "./views/JobOffers/JobOffers";
-import { Home2024Wrapper } from "./2024/Home/components/Home/Home2024Wrapper";
+import {Home2024Wrapper} from "./2024/Home/components/Home/Home2024Wrapper";
 
 const StyledAppWrapper = styled.div`
   position: relative;
@@ -261,7 +263,6 @@ const App: FC<React.PropsWithChildren<unknown>> = () => {
             path={ROUTE_HOME_2023}
             element={
               <React.Suspense fallback={<Loading />}>
-                {/* HOME PAGE SHOULD BE PARAMETERIZED */}
                 <Home2023Wrapper />
               </React.Suspense>
             }

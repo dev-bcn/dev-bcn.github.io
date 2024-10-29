@@ -177,3 +177,10 @@ export const StyledLogoDiv = styled.div`
     flex-direction: column;
   }
 `;
+export const StyledContainer = styled.div`
+    padding-bottom: 10rem;
+
+    @media only screen and (max-width: ${BIG_BREAKPOINT}px) {
+        padding-bottom: 20rem;
+    }
+`;

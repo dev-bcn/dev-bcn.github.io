@@ -16,7 +16,7 @@ import {Dropdown, DropdownChangeEvent} from "primereact/dropdown";
 import "primereact/resources/primereact.min.css";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "src/styles/theme.css";
-import {useEventEdition} from "../Home/UseEventEdition";
+import {useEventEdition} from "../../hooks/UseEventEdition";
 
 interface TrackInfo {
   name: string;
@@ -53,7 +53,10 @@ const Talks: FC<React.PropsWithChildren<unknown>> = () => {
   const dropDownOptions = useMemo(() => {
     return [
       { name: "All Tracks", code: undefined },
-      ...(data ? data.map(group => ({ code: group.groupId.toString(), name: group.groupName })) : []),
+      ...(data && Array.isArray(data) ? data.map(group => ({
+        code: group.groupId ? group.groupId.toString() : '',
+        name: group.groupName || 'Unnamed'
+      })) : []),
     ];
   }, [data]);
 
@@ -72,7 +75,7 @@ const Talks: FC<React.PropsWithChildren<unknown>> = () => {
       <SectionWrapper color={Color.DARK_BLUE} marginTop={5}>
         <StyledSpeakersSection>
           <StyledTitleContainer>
-            <StyledTitleIcon src="images/images/LessThanDarkBlueIcon.svg"/>
+            <StyledTitleIcon src="/images/images/LessThanDarkBlueIcon.svg"/>
             <TitleSection
               title="TALKS"
               subtitle="Speakers coming from all corners of the world join us to
@@ -81,7 +84,7 @@ const Talks: FC<React.PropsWithChildren<unknown>> = () => {
               Technologies and in the JCP."
               color={Color.WHITE}
             />
-            <StyledTitleIcon src="images/MoreThanBlueIcon.svg"/>
+            <StyledTitleIcon src="/images/MoreThanBlueIcon.svg"/>
           </StyledTitleContainer>
         </StyledSpeakersSection>
       </SectionWrapper>

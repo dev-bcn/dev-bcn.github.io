@@ -21,6 +21,7 @@ export const Home2023Wrapper: FC<React.PropsWithChildren> = () => {
     const {hash} = useLocation();
 
     React.useEffect(() => {
+        localStorage.setItem("edition", edition.edition);
         document.title = `Home - DevBcn - ${edition.edition}`;
         if (hash != null && hash !== "") {
             const scroll = document.getElementById(hash.substring(1));

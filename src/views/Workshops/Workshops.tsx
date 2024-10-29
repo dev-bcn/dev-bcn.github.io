@@ -15,7 +15,7 @@ import {TalkCard} from "../Talks/components/TalkCard";
 import conferenceData from "src/data/2023.json";
 import styled from "styled-components";
 import {BIG_BREAKPOINT} from "src/constants/BreakPoints";
-import {useEventEdition} from "../Home/UseEventEdition";
+import {useEventEdition} from "../../hooks/UseEventEdition";
 
 const StyledSection = styled.section`
    {

@@ -11,7 +11,7 @@ import {
 } from "./Schedule.style";
 import * as Sentry from "@sentry/react";
 import {Link} from "react-router-dom";
-import {useEventEdition} from "../Home/UseEventEdition";
+import {useEventEdition} from "../../hooks/UseEventEdition";
 
 const Schedule: FC<React.PropsWithChildren<unknown>> = () => {
     const {width} = useWindowSize();

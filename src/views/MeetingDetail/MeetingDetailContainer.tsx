@@ -10,7 +10,7 @@ import {useFetchSpeakers} from "../Speakers/UseFetchSpeakers";
 import {ISpeaker} from "../Speakers/Speaker.types";
 import {Session} from "../Talks/Talk.types";
 import MeetingDetail from "./MeetingDetail";
-import {useEventEdition} from "../Home/UseEventEdition";
+import {useEventEdition} from "../../hooks/UseEventEdition";
 
 const StyledContainer = styled.div`
     background-color: ${Color.WHITE};

@@ -219,7 +219,9 @@ export const StyledSponsorIconMicro = styled.img`
   }
 `;
 
-export const StyledSponsorBadgeLeft = styled(motion.div)<{
+export const StyledSponsorBadgeLeft = styled(motion.div).withConfig({
+  shouldForwardProp: (prop) => !["position"].includes(prop),
+})<{
   color: string;
   position: "left" | "right";
 }>`
