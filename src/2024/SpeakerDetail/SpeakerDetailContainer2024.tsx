@@ -10,7 +10,7 @@ import * as Sentry from "@sentry/react";
 import {StyledContainer} from "../../views/SpeakerDetail/Speaker.style";
 import {StyledWaveContainer} from "../../views/Talks/Talks.style";
 
-const SpeakerDetailContainer: FC<React.PropsWithChildren<unknown>> = () => {
+const SpeakerDetailContainer2024: FC<React.PropsWithChildren<unknown>> = () => {
     const {id} = useParams<{ id: string }>();
 
     const {isLoading, error, data} = useFetchSpeakers(id);
@@ -49,4 +49,4 @@ const SpeakerDetailContainer: FC<React.PropsWithChildren<unknown>> = () => {
     );
 };
 
-export default SpeakerDetailContainer;
+export default SpeakerDetailContainer2024;

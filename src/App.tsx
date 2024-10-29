@@ -50,8 +50,6 @@ import {
 
 import Footer from "./components/Footer/Footer";
 import {HomeWrapper} from "./views/Home/HomeWrapper";
-import MeetingDetailContainer
-    from "./views/MeetingDetail/MeetingDetailContainer";
 import Navigation from "./components/Navigation/Navigation";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import SpeakerDetailContainer
@@ -97,6 +95,10 @@ import JobOffers from "./views/JobOffers/JobOffers";
 import {HomeWrapper2024} from "./2024/HomeWrapper2024";
 import Speakers2024 from "./2024/Speakers/Speakers2024";
 import Talks2024 from "./2024/Talks/Talks2024";
+import TalkDetailContainer2024
+    from "./views/MeetingDetail/TalkDetailContainer2024";
+import SpeakerDetailContainer2024
+    from "./2024/SpeakerDetail/SpeakerDetailContainer2024";
 
 const StyledAppWrapper = styled.div`
     position: relative;
@@ -274,7 +276,7 @@ const App: FC<React.PropsWithChildren<unknown>> = () => {
                         path={ROUTE_MEETING_DETAIL_PLAIN}
                         element={
                             <React.Suspense fallback={<Loading/>}>
-                                <MeetingDetailContainer/>
+                                <TalkDetailContainer2024/>
                             </React.Suspense>
                         }
                     />
@@ -411,7 +413,7 @@ const App: FC<React.PropsWithChildren<unknown>> = () => {
                         path={ROUTE_2024_SPEAKER_DETAIL_PLAIN}
                         element={
                             <React.Suspense fallback={<Loading/>}>
-                                <SpeakerDetailContainer2023/>
+                                <SpeakerDetailContainer2024/>
                             </React.Suspense>
                         }
                     />
@@ -427,7 +429,7 @@ const App: FC<React.PropsWithChildren<unknown>> = () => {
                         path={ROUTE_2024_TALK_DETAIL_PLAIN}
                         element={
                             <React.Suspense fallback={<Loading/>}>
-                                <TalkDetailContainer2023/>
+                                <TalkDetailContainer2024/>
                             </React.Suspense>
                         }
                     />
