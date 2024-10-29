@@ -1,8 +1,10 @@
-import { FC, ReactNode } from "react";
-import { MAX_WIDTH } from "../../constants/BreakPoints";
+import {FC, ReactNode} from "react";
+import {MAX_WIDTH} from "../../constants/BreakPoints";
 import styled from "styled-components";
 
-const StyledSectionWrapper = styled.div<{
+const StyledSectionWrapper = styled.div.withConfig({
+  shouldForwardProp: (prop) => !['paddingBottom'].includes(prop),
+})<{
   color: string;
   paddingBottom: number;
 }>`
@@ -13,12 +15,11 @@ const StyledSectionWrapper = styled.div<{
   height: 100%;
   justify-content: start;
   padding-bottom: ${({ paddingBottom }) => paddingBottom}px;
-  /* height: 92vh;
-      scroll-snap-align: start;
-      scroll-snap-type: y mandatory;*/
 `;
 
-const StyledInnerWrapper = styled.div<{ marginTop: number }>`
+const StyledInnerWrapper = styled.div.withConfig({
+  shouldForwardProp: (prop) => !['marginTop'].includes(prop),
+})<{ marginTop: number }>`
   width: 100%;
   height: 100%;
   position: relative;
