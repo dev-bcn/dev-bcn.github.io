@@ -28,11 +28,14 @@ import {
 } from "./Style.Navigation";
 import {HorizontalMenu} from "./HorizontalMenu";
 import {HamburgerMenu} from "./HamburgerMenu";
+import {
+    navigationItems2024,
+    subMenuItems2024
+} from "../../2024/Navigation/NavigationData";
 
 const Navigation: FC<React.PropsWithChildren<unknown>> = () => {
     const {width} = useWindowSize();
     const [isOpened, setIsOpened] = useState(false);
-    const [is2023, setIs2023] = useState(false);
     const [navItems, setNavItems] = useState(navigationItems2025);
     const [subNavItems, setSubNavItems] = useState(subMenuItems2025);
     const {pathname} = useLocation();
@@ -48,20 +51,40 @@ const Navigation: FC<React.PropsWithChildren<unknown>> = () => {
     };
 
     useEffect(() => {
-        if (pathname.startsWith("/2024")) {
-            setNavItems(navigationItems2025);
-            setSubNavItems(subMenuItems2025);
-        }
+        const navMapping = {
+            "/2024": {
+                navItems: navigationItems2024,
+                subNavItems: subMenuItems2024
+            },
+            "/2023": {
+                navItems: navigationItems2023,
+                subNavItems: subMenuItems2023
+            },
+            default: {
+                navItems: navigationItems2025,
+                subNavItems: subMenuItems2025
+            },
+        };
 
+        const {
+            navItems,
+            subNavItems
+        } = Object.entries(navMapping).find(([key]) => pathname.startsWith(key))?.[1] || navMapping.default;
+
+        setNavItems(navItems);
+        setSubNavItems(subNavItems);
+    }, [pathname]);
+
+
+    const getTicketURL = (): string => {
         if (pathname.startsWith("/2023")) {
-            setIs2023(true);
-            setNavItems(navigationItems2023);
-            setSubNavItems(subMenuItems2023);
-        } else {
-            setNavItems(navigationItems2025);
-            setSubNavItems(subMenuItems2025);
+            return "https://tickets.devbcn.com/event/devbcn-2023";
         }
-    }, [pathname, navItems, subNavItems]);
+        if (pathname.startsWith("/2024")) {
+            return "https://tickets.devbcn.com/event/devbcn-2024";
+        }
+        return "https://tickets.devbcn.com/event/devbcn-2025";
+    }
 
     return (
         <>
@@ -124,11 +147,7 @@ const Navigation: FC<React.PropsWithChildren<unknown>> = () => {
                             ))}
 
                             <StyledTicketLink
-                                href={
-                                    is2023
-                                        ? "https://tickets.devbcn.com/event/devbcn-2023"
-                                        : "https://tickets.devbcn.com/event/devbcn-2024"
-                                }
+                                href={getTicketURL()}
                                 target="_blank"
                                 rel="noreferrer"
                             >
