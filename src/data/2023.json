@@ -1,5 +1,5 @@
 {
-  "actionButtons": true,
+  "actionButtons": false,
   "carrousel": {
     "enabled": false
   },
@@ -24,8 +24,8 @@
   "schedule": {
     "enabled": true
   },
-  "showInfoButtons": true,
   "showCountdown": false,
+  "showInfoButtons": true,
   "sponsors": {
     "startDate": "2022-01-01T09:00:00",
     "endDate": "2023-07-13T09:00:00"

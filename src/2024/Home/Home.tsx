@@ -1,9 +1,6 @@
 import Countdown from "react-countdown";
-import React, {FC, useState} from "react";
-import LessThanIcon from "../../../../assets/images/MoreThanBlueWhiteIcon.svg";
-import SectionWrapper
-    from "../../../../components/SectionWrapper/SectionWrapper";
-import {BIGGER_BREAKPOINT} from "../../../../constants/BreakPoints";
+import React, {FC} from "react";
+import LessThanIcon from "../../assets/images/MoreThanBlueWhiteIcon.svg";
 import TimeCountDown from "./components/TimeCountdown";
 import {useWindowSize} from "react-use";
 import {
@@ -12,28 +9,29 @@ import {
     StyledDevBcnLogo,
     StyledGreenSlash,
     StyledHomeImage,
+    StyledKcdLogo,
     StyledLessThan,
     StyledLogoDiv,
+    StyledPlusSign,
     StyledSubtitle,
     StyledTitle,
     StyledTitleContainer,
     StyledTopSlash,
     StyleHomeContainer,
 } from "./Style.Home";
-import ActionButtons from "../ActionButtons/ActionButtons";
-import {Color} from "../../../../styles/colors";
-import InfoButtons from "../InfoButtons/InfoButtons";
 import {formatDateRange} from "./DateUtil";
-import {useEventEdition} from "../../UseEventEdition";
-import {Edition} from "../../HomeWrapper";
 import {Link} from "react-router-dom";
-import data from "../../../../data/2025.json";
+import data from "../../data/2024.json";
+import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
+import {Color} from "../../styles/colors";
+
+import ActionButtons
+    from "../../views/Home/components/ActionButtons/ActionButtons";
+import InfoButtons from "../../views/Home/components/InfoButtons/InfoButtons";
+import {BIGGER_BREAKPOINT} from "../../constants/BreakPoints";
 
 const Home: FC<React.PropsWithChildren<unknown>> = () => {
     const {width} = useWindowSize();
-    const [edition, setEdition] = useState<Edition>();
-
-    useEventEdition(setEdition);
 
     return (
         <StyledHomeImage>
@@ -42,11 +40,13 @@ const Home: FC<React.PropsWithChildren<unknown>> = () => {
                     <StyledLogoDiv>
                         <StyledDevBcnLogo src="images/logo.png"
                                           alt="DevBcn logo"/>
+                        <StyledPlusSign>+</StyledPlusSign>
+                        <StyledKcdLogo src="images/KCD-logo-white.png"
+                                       alt="KCD Barcelona"/>
                     </StyledLogoDiv>
                     <StyledTitleContainer>
                         <StyledTitle>
-                            The Barcelona Developers
-                            Conference {edition?.edition}
+                            The Barcelona Developers Conference {data?.edition}
                         </StyledTitle>
                         <StyledSubtitle>
                             Former{" "}
@@ -67,19 +67,18 @@ const Home: FC<React.PropsWithChildren<unknown>> = () => {
                         </StyledSubtitle>
                         <StyledSubtitle>
                             <small>
-                                Past events: <Link to="/2024">2024
-                                edition</Link>{" "}| <Link to="/2023">2023
+                                Past events: <Link to="/2023">2023
                                 edition</Link>
                             </small>
                         </StyledSubtitle>
                     </StyledTitleContainer>
                     <StyledTitleContainer color={Color.LIGHT_BLUE}>
                         <StyledSubtitle color={Color.DARK_BLUE}>
-                            {edition?.startDay &&
-                                edition.endDay &&
+                            {data?.startDay &&
+                                data.endDay &&
                                 formatDateRange(
-                                    new Date(edition.startDay),
-                                    new Date(edition.endDay),
+                                    new Date(data.startDay),
+                                    new Date(data.endDay),
                                 )}
                         </StyledSubtitle>
                         <StyledSubtitle color={Color.DARK_BLUE}>
@@ -88,17 +87,17 @@ const Home: FC<React.PropsWithChildren<unknown>> = () => {
                     </StyledTitleContainer>
                     <StyledTitleContainer color={Color.DARK_BLUE}>
                         <StyledSubtitle>
-                            {edition?.trackNumber} tracks with the following
+                            {data?.trackNumber} tracks with the following
                             topics: <br/>
-                            {edition?.tracks}
+                            {data?.tracks}
                         </StyledSubtitle>
                     </StyledTitleContainer>
                     {data.showCountdown && (
-                        <Countdown date={edition?.startDay}
+                        <Countdown date={data?.startDay}
                                    renderer={TimeCountDown}/>
                     )}
-                    {edition?.actionButtons && <ActionButtons/>}
-                    {edition?.showInfoButtons && <InfoButtons/>}
+                    {data?.actionButtons && <ActionButtons/>}
+                    {data?.showInfoButtons && <InfoButtons/>}
 
                     {width > BIGGER_BREAKPOINT && (
                         <StyledLessThan alt="Icon" src={LessThanIcon}/>
