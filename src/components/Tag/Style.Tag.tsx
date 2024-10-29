@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const StyledTagWrapper = styled.div<{ borderColor: string }>`
+export const StyledTagWrapper = styled.div.withConfig({
+    shouldForwardProp: (prop) => !['borderColor'].includes(prop),
+})<{ borderColor: string }>`
   border: ${({ borderColor }) => {
     return `1px solid ${borderColor}`;
   }};

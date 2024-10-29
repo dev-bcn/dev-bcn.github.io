@@ -1,9 +1,6 @@
 import {
   ROUTE_ABOUT_US,
-  ROUTE_ACCOMMODATION,
-  ROUTE_CFP,
   ROUTE_CODE_OF_CONDUCT,
-  ROUTE_DIVERSITY,
   ROUTE_HOME,
   ROUTE_SPONSORSHIP,
   ROUTE_TRAVEL,
@@ -30,9 +27,9 @@ export const navigationItems2025: NavigationItem[] = [
 ];
 
 export const subMenuItems2025: NavigationItem[] = [
-  { id: "DIVERSITY", link: ROUTE_DIVERSITY },
-  { id: "Cfp Committee", link: ROUTE_CFP },
-  { id: "Accommodation", link: ROUTE_ACCOMMODATION },
+  //{ id: "DIVERSITY", link: ROUTE_DIVERSITY },
+  //{ id: "Cfp Committee", link: ROUTE_CFP },
+  //{ id: "Accommodation", link: ROUTE_ACCOMMODATION },
   //{ id: "Attendee information", link: ROUTE_ATTENDEE },
   //{ id: "Speaker information", link: ROUTE_SPEAKER_INFO },
   //{ id: "Session feedback", link: ROUTE_SESSION_FEEDBACK },
