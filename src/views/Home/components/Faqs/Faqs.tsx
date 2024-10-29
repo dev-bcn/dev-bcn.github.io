@@ -1,18 +1,19 @@
-import { Color } from "../../../../styles/colors";
-import { FC, Suspense, useState } from "react";
+import {Color} from "../../../../styles/colors";
+import {FC, Suspense} from "react";
 import FaqCard from "./components/FaqsCard";
 import LessThanIcon from "../../../../assets/images/LessThanBlueIcon.svg";
 import MoreThanIcon from "../../../../assets/images/LessThanBlueWhiteIcon.svg";
-import SectionWrapper from "../../../../components/SectionWrapper/SectionWrapper";
-import { faqsData } from "./FaqsData";
-import { useWindowSize } from "react-use";
-import { MOBILE_BREAKPOINT } from "../../../../constants/BreakPoints";
+import SectionWrapper
+  from "../../../../components/SectionWrapper/SectionWrapper";
+import {faqsData} from "./FaqsData";
+import {useWindowSize} from "react-use";
+import {MOBILE_BREAKPOINT} from "../../../../constants/BreakPoints";
 import flickr from "../../../../assets/images/flickr.svg";
 import youtube from "../../../../assets/images/youtube.svg";
 import image1 from "../../../../assets/images/devbcn-1.jpg";
 import image2 from "../../../../assets/images/devbcn2.jpg";
 import Logo from "../../../../assets/images/logo.svg";
-import { StyledLoadingImage } from "../../../../components/Loading/Loading";
+import {StyledLoadingImage} from "../../../../components/Loading/Loading";
 import {
   StyledFaqSection,
   StyledH2,
@@ -23,14 +24,9 @@ import {
   StyleLessIcon,
   StyleMoreIcon,
 } from "./Faqs.style";
-import { useEventEdition } from "../../UseEventEdition";
-import { Edition } from "../../HomeWrapper";
 
 const Faqs: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
-  const [edition, setEdition] = useState<Edition>();
-
-  useEventEdition(setEdition);
 
   return (
     <>
@@ -53,14 +49,22 @@ const Faqs: FC<React.PropsWithChildren<unknown>> = () => {
               Spain, now including more technologies and tracks.
             </StyledP>
             <StyledP>
-              Check for videos/photos and{" "}
+              Check for videos/photos andsummary of the DevBcn —{" "}
+              <StyledSummaryLink
+                  href="https://youtu.be/k7iMIXtNKyo"
+                  rel="noreferrer"
+                  target="_blank"
+              >
+
+                2024 edition —
+              </StyledSummaryLink>
               <StyledSummaryLink
                 href="https://youtu.be/6ZxsMUYBrSo"
                 rel="noreferrer"
                 target="_blank"
               >
-                summary of the DevBcn -{" "}
-                {parseInt(edition?.edition as string) - 1} edition
+
+                {" "}2023 edition
               </StyledSummaryLink>
             </StyledP>
             <a

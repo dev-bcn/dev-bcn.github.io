@@ -5,12 +5,7 @@ import {
   ROUTE_CODE_OF_CONDUCT,
   ROUTE_DIVERSITY,
   ROUTE_HOME,
-  ROUTE_JOB_OFFERS,
-  ROUTE_KCD,
-  ROUTE_SCHEDULE,
-  ROUTE_SPEAKERS,
   ROUTE_SPONSORSHIP,
-  ROUTE_TALKS,
   ROUTE_TRAVEL,
 } from "../../constants/routes";
 
@@ -19,23 +14,22 @@ export interface NavigationItem {
   link: string;
 }
 
-export const navigationItems: NavigationItem[] = [
+export const navigationItems2025: NavigationItem[] = [
   { id: "Home", link: ROUTE_HOME },
   { id: "Code of Conduct", link: ROUTE_CODE_OF_CONDUCT },
   { id: "Sponsors", link: "/#sponsors" },
-  { id: "SCHEDULE", link: ROUTE_SCHEDULE },
-  { id: "Talks", link: ROUTE_TALKS },
+  //{ id: "SCHEDULE", link: ROUTE_SCHEDULE },
+  //{ id: "Talks", link: ROUTE_TALKS },
   //{ id: "Workshops", link: ROUTE_WORKSHOPS },
-  { id: "JOB OFFERS", link: ROUTE_JOB_OFFERS },
+  //{ id: "JOB OFFERS", link: ROUTE_JOB_OFFERS },
   //{ id: "Communities", link: ROUTE_COMMUNITIES },
-  { id: "Speakers", link: ROUTE_SPEAKERS },
+  //{ id: "Speakers", link: ROUTE_SPEAKERS },
   { id: "About Us", link: ROUTE_ABOUT_US },
   { id: "Travel", link: ROUTE_TRAVEL },
-  { id: "KCD - Barcelona", link: ROUTE_KCD },
   { id: "Sponsorship", link: ROUTE_SPONSORSHIP },
 ];
 
-export const subMenuItems: NavigationItem[] = [
+export const subMenuItems2025: NavigationItem[] = [
   { id: "DIVERSITY", link: ROUTE_DIVERSITY },
   { id: "Cfp Committee", link: ROUTE_CFP },
   { id: "Accommodation", link: ROUTE_ACCOMMODATION },

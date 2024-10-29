@@ -1,13 +1,13 @@
-import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
-import React, { FC, useState } from "react";
+import {BIG_BREAKPOINT} from "../../constants/BreakPoints";
+import React, {FC, useState} from "react";
 import Faqs from "./components/Faqs/Faqs";
 import Home from "./components/Home/Home";
 import SpeakersCarousel from "./components/SpeakersCarousel/SpeakersCarousel";
 import Sponsors from "./components/Sponsors/Sponsors";
 import styled from "styled-components";
 
-import { useLocation } from "react-router-dom";
-import { useEventEdition } from "./UseEventEdition";
+import {useLocation} from "react-router-dom";
+import {useEventEdition} from "./UseEventEdition";
 
 const StyledContainer = styled.div`
   padding-bottom: 10rem;
@@ -66,7 +66,7 @@ export const HomeWrapper: FC<React.PropsWithChildren<unknown>> = () => {
     <StyledContainer id="home-wrapper">
       <Home />
       <Faqs />
-      <SpeakersCarousel />
+      {edition?.carrousel.enabled && <SpeakersCarousel/>}
       <Sponsors />
     </StyledContainer>
   );

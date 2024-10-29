@@ -1,9 +1,9 @@
-import { FC, useCallback } from "react";
+import {FC, useCallback} from "react";
 import data from "../../../../data/2024.json";
 import Button from "../../../../components/UI/Button";
 import styled from "styled-components";
-import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
-import { gaEventTracker } from "../../../../components/analytics/Analytics";
+import {BIG_BREAKPOINT} from "../../../../constants/BreakPoints";
+import {gaEventTracker} from "../../../../components/analytics/Analytics";
 
 const StyledActionDiv = styled.div`
   display: flex;
@@ -44,7 +44,7 @@ const ActionButtons: FC<React.PropsWithChildren<unknown>> = () => {
       <Button
         onClick={trackTickets}
         text="🎟️ Buy Tickets"
-        link="https://tickets.devbcn.com/event/devbcn-2024"
+        link="https://tickets.devbcn.com/event/devbcn-2025"
         disabled={!isBetween(ticketStartDay, ticketEndDay)}
       />
       {isBetween(CFPStartDay, CFPEndDay) && (
