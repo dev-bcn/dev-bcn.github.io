@@ -1,21 +1,21 @@
-import { Color } from "../../styles/colors";
-import React, { FC, useEffect } from "react";
+import {Color} from "../../styles/colors";
+import React, {FC, useEffect} from "react";
 import NotFoundError from "../../components/NotFoundError/NotFoundError";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import styled from "styled-components";
-import { useParams } from "react-router-dom";
+import {useParams} from "react-router-dom";
 import conferenceData from "../../data/2024.json";
-import { sessionAdapter, useFetchTalksById } from "../Talks/UseFetchTalks";
+import {sessionAdapter, useFetchTalksById} from "../Talks/UseFetchTalks";
 import * as Sentry from "@sentry/react";
-import { useFetchSpeakers } from "../Speakers/UseFetchSpeakers";
-import { ISpeaker } from "../Speakers/Speaker.types";
-import { Session } from "../Talks/Talk.types";
+import {useFetchSpeakers} from "../Speakers/UseFetchSpeakers";
+import {ISpeaker} from "../Speakers/Speaker.types";
+import {Session} from "../Talks/Talk.types";
 import MeetingDetail from "./MeetingDetail";
 
 const StyledContainer = styled.div`
   background-color: ${Color.WHITE};
 `;
-const MeetingDetailContainer: FC<React.PropsWithChildren<unknown>> = () => {
+const TalkDetailContainer2024: FC<React.PropsWithChildren<unknown>> = () => {
   const { id } = useParams<{ id: string }>();
   const { isLoading, error, data } = useFetchTalksById(id!);
   const { data: speakerData } = useFetchSpeakers();
@@ -66,4 +66,4 @@ const MeetingDetailContainer: FC<React.PropsWithChildren<unknown>> = () => {
   );
 };
 
-export default MeetingDetailContainer;
+export default TalkDetailContainer2024;
