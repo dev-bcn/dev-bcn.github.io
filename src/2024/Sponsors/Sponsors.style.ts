@@ -91,7 +91,9 @@ export const StyledSponsorLogosContainer = styled.div`
     @media (min-width: ${BIG_BREAKPOINT}px) {
     }
 `;
-export const StyledLogos = styled.div<{ position?: "left" | "right" }>`
+export const StyledLogos = styled.div.withConfig({
+    shouldForwardProp: (prop) => !['position'].includes(prop),
+})<{ position?: "left" | "right" }>`
     display: flex;
     width: 100%;
 
