@@ -32,6 +32,7 @@ export interface Edition {
   github: string;
   linkedin: string;
   showInfoButtons: boolean;
+  showCountdown: boolean;
   tickets: Cfp;
   cfp: Cfp;
   carrousel: Carrousel;
@@ -49,7 +50,7 @@ export interface Cfp {
   endDay: Date;
 }
 
-export const HomeWrapper: FC<React.PropsWithChildren<unknown>> = () => {
+const HomeWrapper: FC<React.PropsWithChildren<unknown>> = () => {
   const { hash } = useLocation();
   const [edition, setEdition] = useState<Edition>();
 
@@ -71,3 +72,5 @@ export const HomeWrapper: FC<React.PropsWithChildren<unknown>> = () => {
     </StyledContainer>
   );
 };
+
+export default HomeWrapper;

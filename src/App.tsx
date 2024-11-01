@@ -49,7 +49,7 @@ import {
 } from "./constants/routes";
 
 import Footer from "./components/Footer/Footer";
-import {HomeWrapper} from "./views/Home/HomeWrapper";
+import HomeWrapper from "./views/Home/HomeWrapper";
 import Navigation from "./components/Navigation/Navigation";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import SpeakerDetailContainer

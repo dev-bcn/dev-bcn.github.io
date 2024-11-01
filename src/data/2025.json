@@ -11,7 +11,7 @@
   "diversity": false,
   "edition": "2025",
   "email": "info@devbcn.com",
-  "endDay": "2025-06-14T14:00:00",
+  "endDay": "2025-07-10T14:00:00",
   "facebook": "https://facebook.com/devbcn",
   "flickr": "https://flickr.com/devbcn",
   "github": "https://github.com/devbcn",
@@ -30,13 +30,13 @@
     "startDate": "2023-12-01T09:00:00",
     "endDate": "2025-05-13T09:00:00"
   },
-  "startDay": "2025-06-13T09:00:00",
+  "startDay": "2025-07-09T09:00:00",
   "tickets": {
     "startDay": "2025-01-01T00:00:00",
     "endDay": "2025-06-01T00:00:00"
   },
   "title": "DevBcn - Barcelona Developers Conference ",
-  "trackNumber": 5,
+  "trackNumber": 4,
   "tracks": "Java & JVM | Cloud, DevOps, VMs, Kubernetes | Frontend, JavaScript, TypeScript, Angular, WASM | Leadership, Agile, Diversity | Big Data, Machine Learning, AI, Python",
   "twitter": "https://twitter.com/dev_bcn",
   "youtube": "https://www.youtube.com/dev_bcn"
