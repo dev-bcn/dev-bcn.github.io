@@ -47,20 +47,18 @@ const ActionButtons: FC<React.PropsWithChildren<unknown>> = () => {
         link="https://tickets.devbcn.com/event/devbcn-2025"
         disabled={!isBetween(ticketStartDay, ticketEndDay)}
       />
-      {isBetween(CFPStartDay, CFPEndDay) && (
         <Button
           onClick={trackCFP}
           text="📢 Call For Papers"
           link={data.cfp.link}
+          disabled={!isBetween(CFPStartDay, CFPEndDay)}
         />
-      )}
-      {isBetween(sponsorshipStartDay, sponsorshipEndDay) && (
         <Button
           onClick={trackSponsorshipInfo}
           text="🤝 Sponsorship"
           link="https://www.devbcn.com/sponsorship"
+          disabled={isBetween(sponsorshipStartDay, sponsorshipEndDay)}
         />
-      )}
     </StyledActionDiv>
   );
 };
