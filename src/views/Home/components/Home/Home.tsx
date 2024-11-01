@@ -93,10 +93,10 @@ const Home: FC<React.PropsWithChildren<unknown>> = () => {
                             {edition?.tracks}
                         </StyledSubtitle>
                     </StyledTitleContainer>
-                    {data.showCountdown && (
+                    {data.showCountdown &&
                         <Countdown date={edition?.startDay}
                                    renderer={TimeCountDown}/>
-                    )}
+                    }
                     {edition?.actionButtons && <ActionButtons/>}
                     {edition?.showInfoButtons && <InfoButtons/>}
 
