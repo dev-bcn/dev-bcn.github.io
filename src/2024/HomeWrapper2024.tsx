@@ -10,7 +10,8 @@ import Faqs from "../views/Home/components/Faqs/Faqs";
 import Home from "./Home/Home";
 import SpeakersCarousel from "./SpeakersCarousel/SpeakersCarousel";
 import Sponsors from "./Sponsors/Sponsors";
-import {Edition} from "../views/Home/HomeWrapper";
+
+import {Edition} from "../types/types";
 
 const StyledContainer = styled.div`
     padding-bottom: 10rem;
