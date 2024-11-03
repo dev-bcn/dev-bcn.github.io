@@ -25,9 +25,9 @@ import {Color} from "../../../../styles/colors";
 import InfoButtons from "../InfoButtons/InfoButtons";
 import {formatDateRange} from "./DateUtil";
 import {useEventEdition} from "../../UseEventEdition";
-import {Edition} from "../../HomeWrapper";
 import {Link} from "react-router-dom";
 import data from "../../../../data/2025.json";
+import {Edition} from "../../../../types/types";
 
 const Home: FC<React.PropsWithChildren<unknown>> = () => {
     const {width} = useWindowSize();
@@ -94,8 +94,8 @@ const Home: FC<React.PropsWithChildren<unknown>> = () => {
                         </StyledSubtitle>
                     </StyledTitleContainer>
                     {data.showCountdown &&
-                        <Countdown date={edition?.startDay}
-                                   renderer={TimeCountDown}/>
+                        <><Countdown date={edition?.startDay}
+                                     renderer={TimeCountDown}/></>
                     }
                     {edition?.actionButtons && <ActionButtons/>}
                     {edition?.showInfoButtons && <InfoButtons/>}

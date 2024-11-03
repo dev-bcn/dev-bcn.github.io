@@ -8,6 +8,7 @@ import styled from "styled-components";
 
 import {useLocation} from "react-router-dom";
 import {useEventEdition} from "./UseEventEdition";
+import {Edition} from "../../types/types";
 
 const StyledContainer = styled.div`
   padding-bottom: 10rem;
@@ -16,39 +17,6 @@ const StyledContainer = styled.div`
     padding-bottom: 20rem;
   }
 `;
-
-export interface Edition {
-  actionButtons: boolean;
-  edition: string;
-  startDay: Date;
-  endDay: Date;
-  trackNumber: string;
-  title: string;
-  tracks: string;
-  email: string;
-  twitter: string;
-  youtube: string;
-  facebook: string;
-  github: string;
-  linkedin: string;
-  showInfoButtons: boolean;
-  showCountdown: boolean;
-  tickets: Cfp;
-  cfp: Cfp;
-  carrousel: Carrousel;
-  schedule: Carrousel;
-  jobOffers: Carrousel;
-  diversity: boolean;
-}
-
-export interface Carrousel {
-  enabled: boolean;
-}
-
-export interface Cfp {
-  startDay: Date;
-  endDay: Date;
-}
 
 const HomeWrapper: FC<React.PropsWithChildren<unknown>> = () => {
   const { hash } = useLocation();

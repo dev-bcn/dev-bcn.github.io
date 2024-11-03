@@ -1,11 +1,11 @@
-import { FC } from 'react';
+import {FC} from 'react';
 import styled from 'styled-components';
-import { Color,  } from '../../../../../styles/colors';
+import {Color,} from '../../../../../styles/colors';
 
 const TimeCountDownContainer = styled.div`
   display: flex;
   align-items: center;
-  padding-top: 1.5rem;
+    padding-top: 1.2rem;
 `;
 
 const StyledTimerContainer = styled.div`
