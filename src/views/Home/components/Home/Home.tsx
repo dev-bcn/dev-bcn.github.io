@@ -28,6 +28,7 @@ import {useEventEdition} from "../../UseEventEdition";
 import {Link} from "react-router-dom";
 import data from "../../../../data/2025.json";
 import {Edition} from "../../../../types/types";
+import CountDownCompleted from "./components/CountDownCompleted";
 
 const Home: FC<React.PropsWithChildren<unknown>> = () => {
     const {width} = useWindowSize();
@@ -94,8 +95,9 @@ const Home: FC<React.PropsWithChildren<unknown>> = () => {
                         </StyledSubtitle>
                     </StyledTitleContainer>
                     {data.showCountdown &&
-                        <><Countdown date={edition?.startDay}
-                                     renderer={TimeCountDown}/></>
+                        <Countdown date={edition?.startDay}
+                                   onComplete={CountDownCompleted}
+                                   renderer={TimeCountDown}/>
                     }
                     {edition?.actionButtons && <ActionButtons/>}
                     {edition?.showInfoButtons && <InfoButtons/>}
