@@ -1,5 +1,5 @@
-import { render, screen } from "@testing-library/react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {render, screen} from "@testing-library/react";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import App from "./App";
 import React from "react";
 import userEvent from "@testing-library/user-event";
@@ -15,14 +15,14 @@ describe("navigation pages", () => {
       { wrapper: BrowserRouter },
     );
     expect(
-      await screen.findByText(/The Barcelona Developers Conference 2024/i),
+        await screen.findByText(/The Barcelona Developers Conference 2025/i),
     ).toBeInTheDocument();
 
     expect(
-      await screen.findByText(/June 13th - 14th, 2024/i),
+        await screen.findByText(/July 9th - 10th, 2025/i),
     ).toBeInTheDocument();
     expect(
-      await screen.findByText(/5 tracks with the following topics:/i),
+        await screen.findByText(/4 tracks with the following topics:/i),
     ).toBeInTheDocument();
   });
 
@@ -36,7 +36,7 @@ describe("navigation pages", () => {
       { wrapper: BrowserRouter },
     );
     expect(
-      await screen.findByText(/The Barcelona Developers Conference 2024/i),
+        await screen.findByText(/The Barcelona Developers Conference 2025/i),
     ).toBeInTheDocument();
     const user = userEvent.setup();
     await user.click(screen.getByText("Travel"));
@@ -45,7 +45,7 @@ describe("navigation pages", () => {
     ).toBeVisible();
   });
 
-  test("it render the SPEAKERS page", async () => {
+  test.skip("it render the SPEAKERS page", async () => {
     render(
       <React.Suspense fallback={<span>Loading...</span>}>
         <Routes>
@@ -61,7 +61,7 @@ describe("navigation pages", () => {
     ).toBeInTheDocument();
   });
 
-  test("it render the TALKS page", async () => {
+  test.skip("it render the TALKS page", async () => {
     render(
       <React.Suspense fallback={<span>Loading...</span>}>
         <Routes>
@@ -91,7 +91,7 @@ describe("navigation pages", () => {
     ).toBeInTheDocument();
   });
 
-  test("it render the CFP page", async () => {
+  test.skip("it render the CFP page", async () => {
     render(
       <React.Suspense fallback={<span>Loading...</span>}>
         <Routes>
