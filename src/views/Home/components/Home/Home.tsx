@@ -1,5 +1,5 @@
 import Countdown from "react-countdown";
-import React, {FC, useState} from "react";
+import React, {FC} from "react";
 import LessThanIcon from "../../../../assets/images/MoreThanBlueWhiteIcon.svg";
 import SectionWrapper
     from "../../../../components/SectionWrapper/SectionWrapper";
@@ -24,17 +24,12 @@ import ActionButtons from "../ActionButtons/ActionButtons";
 import {Color} from "../../../../styles/colors";
 import InfoButtons from "../InfoButtons/InfoButtons";
 import {formatDateRange} from "./DateUtil";
-import {useEventEdition} from "../../UseEventEdition";
 import {Link} from "react-router-dom";
-import data from "../../../../data/2025.json";
-import {Edition} from "../../../../types/types";
+import edition from "../../../../data/2025.json";
 import CountDownCompleted from "./components/CountDownCompleted";
 
 const Home: FC<React.PropsWithChildren<unknown>> = () => {
     const {width} = useWindowSize();
-    const [edition, setEdition] = useState<Edition>();
-
-    useEventEdition(setEdition);
 
     return (
         <StyledHomeImage>
@@ -94,11 +89,9 @@ const Home: FC<React.PropsWithChildren<unknown>> = () => {
                             {edition?.tracks}
                         </StyledSubtitle>
                     </StyledTitleContainer>
-                    {data.showCountdown &&
-                        <Countdown date={edition?.startDay}
-                                   onComplete={CountDownCompleted}
-                                   renderer={TimeCountDown}/>
-                    }
+                    <Countdown date={edition?.startDay}
+                               onComplete={CountDownCompleted}
+                               renderer={TimeCountDown}/>
                     {edition?.actionButtons && <ActionButtons/>}
                     {edition?.showInfoButtons && <InfoButtons/>}
 
