@@ -82,6 +82,9 @@ const Home: FC<React.PropsWithChildren<unknown>> = () => {
                             La Farga, Hospitalet, Barcelona
                         </StyledSubtitle>
                     </StyledTitleContainer>
+                    <img src="/images/devBcn-sponsorship.png"
+                         alt="DevBcn sponsorship value" width="800"
+                         height="155"/>
                     <StyledTitleContainer color={Color.DARK_BLUE}>
                         <StyledSubtitle>
                             {edition?.trackNumber} tracks with the following
