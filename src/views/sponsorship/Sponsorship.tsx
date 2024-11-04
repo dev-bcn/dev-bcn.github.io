@@ -235,7 +235,7 @@ const Sponsorship: FC<React.PropsWithChildren<unknown>> = () => {
                             ever. Curious? Access our{" "}
                             <strong>
                                 <a
-                                    href="https://bit.ly/devbcn24-brochure"
+                                    href="https://bit.ly/devbcn25-brochure"
                                     target="_blank"
                                     rel="noreferrer"
                                 >
