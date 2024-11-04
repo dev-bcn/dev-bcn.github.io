@@ -5,6 +5,7 @@ import {BIG_BREAKPOINT} from "../../constants/BreakPoints";
 
 interface ButtonProps {
   text: string;
+    subtext?: string;
   link: string;
   onClick: () => void;
   disabled?: boolean;
@@ -65,6 +66,7 @@ const StyledActionButton = styled.div`
 
 const Button: FC<React.PropsWithChildren<ButtonProps>> = ({
   text,
+                                                              subtext = "SOON",
   link,
   onClick,
   disabled,
@@ -91,7 +93,7 @@ const Button: FC<React.PropsWithChildren<ButtonProps>> = ({
           {children}
           <span>{`  ${text}`}</span>
         </a>
-          {disabled && <small>SOON</small>}
+          {disabled && <small>{subtext}</small>}
       </>
     </StyledActionButton>
   );
