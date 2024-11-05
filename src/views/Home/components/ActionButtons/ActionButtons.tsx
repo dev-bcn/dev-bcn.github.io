@@ -44,14 +44,14 @@ const ActionButtons: FC<React.PropsWithChildren<unknown>> = () => {
       <Button
         onClick={trackTickets}
         text="🎟️ Buy Tickets"
-        subtext="February 2025"
+        subtext="February 1st, 2025"
         link="https://tickets.devbcn.com/event/devbcn-2025"
         disabled={!isBetween(ticketStartDay, ticketEndDay)}
       />
         <Button
           onClick={trackCFP}
           text="📢 Call For Papers"
-          subtext="January 2025"
+          subtext="January 1st, 2025"
           link={data.cfp.link}
           disabled={!isBetween(CFPStartDay, CFPEndDay)}
         />

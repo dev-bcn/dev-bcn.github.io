@@ -252,7 +252,7 @@ const Sponsorship: FC<React.PropsWithChildren<unknown>> = () => {
                                     <strong>Expand Your Reach:</strong> Engage
                                     with a diverse,
                                     tech-savvy audience. Our latest edition held
-                                    more than 1000
+                                    more than 800
                                     attendees.
                                 </li>
                                 <li>
