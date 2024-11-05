@@ -83,7 +83,7 @@ const Home: FC<React.PropsWithChildren<unknown>> = () => {
                         </StyledSubtitle>
                     </StyledTitleContainer>
                     <img src="/images/devBcn-sponsorship.png"
-                         alt="DevBcn sponsorship value" width="800"
+                         alt="DevBcn sponsorship value" width="657"
                          height="155"/>
                     <StyledTitleContainer color={Color.DARK_BLUE}>
                         <StyledSubtitle>
