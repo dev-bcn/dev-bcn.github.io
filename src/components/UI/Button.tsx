@@ -2,6 +2,7 @@ import React, {FC, ReactNode} from "react";
 import styled from "styled-components";
 import {Color} from "../../styles/colors";
 import {BIG_BREAKPOINT} from "../../constants/BreakPoints";
+import {clsx} from "clsx";
 
 interface ButtonProps {
     text: string;
@@ -19,19 +20,24 @@ const doNothingHandler = (
     event.preventDefault();
 };
 
-const StyledActionButton = styled.div`
+const StyledActionButton = styled.a`
+    align-items: stretch;
     background-color: ${Color.LIGHT_BLUE};
-    text-align: center;
-    font-size: 1.3em;
-    min-width: 200px;
-    margin: 20px 5px;
     border-radius: 5px;
     box-shadow: 1px 1px 1px #000;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3em;
+    justify-content: center;
+    margin: 20px 5px;
+    min-width: 200px;
     padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
     transform: perspective(1px) translateZ(0);
     transition-duration: 0.5s;
     vertical-align: middle;
-    cursor: pointer;
 
     &:hover,
     &:focus,
@@ -40,20 +46,24 @@ const StyledActionButton = styled.div`
         transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
     }
 
-    & span {
-        font-size: 0.9rem;
+    &.disabled {
+        background-color: ${Color.LIGHT_BLUE};
+        transition-duration: 0s;
+        cursor: not-allowed;
     }
 
-    & a {
-        text-decoration: none;
-        text-shadow: 1px 1px 1px #000;
+    span {
         color: white;
         display: block;
+        font-size: 0.9rem;
+        margin: 0.1rem 0;
+        text-decoration: none;
+        text-shadow: 1px 1px 1px #000;
         text-transform: uppercase;
         vertical-align: middle;
     }
 
-    & small {
+    .subtext {
         font-weight: bold;
         font-size: 0.7em;
         color: ${Color.MAGENTA};
@@ -75,15 +85,16 @@ const Button: FC<React.PropsWithChildren<ButtonProps>> = ({
                                                               children,
                                                           }) => {
     return (
-        <StyledActionButton className="hvr-bounce-in">
-            <>
-                <a
-                    onClick={disabled ? doNothingHandler : onClick}
+        <StyledActionButton
+            className={clsx(!disabled && "anyul-hvr-bounce-in", disabled && "disabled")}
+            onClick={disabled ? doNothingHandler : onClick}
+            href={disabled ? "#top" : link}
+            target={target}
+            rel="noreferrer nofollow"
+            aria-disabled={disabled}
+        >
+                <span
                     className={disabled ? "disabled" : "active"}
-                    href={disabled ? "#top" : link}
-                    target={target}
-                    rel="noreferrer nofollow"
-                    aria-disabled={disabled}
                     style={{
                         display: "flex",
                         alignItems: "center",
@@ -93,11 +104,10 @@ const Button: FC<React.PropsWithChildren<ButtonProps>> = ({
                     }}
                 >
                     {children}
-                    <span>{`  ${text}`}</span>
-                </a>
-                {disabled && <small>{subtext}</small>}
-            </>
-        </StyledActionButton>
-    );
+                </span>
+            <span>{`  ${text}`}</span>
+            {disabled && <span className="subtext">{subtext}</span>}
+        </StyledActionButton>)
 };
+
 export default Button;
