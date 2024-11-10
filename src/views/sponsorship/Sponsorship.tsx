@@ -22,6 +22,8 @@ import {format} from "date-fns";
 import Flicking from "@egjs/react-flicking";
 import {AutoPlay} from "@egjs/flicking-plugins";
 import "@egjs/react-flicking/dist/flicking.css";
+import Button from "../../components/UI/Button";
+import {gaEventTracker} from "../../components/analytics/Analytics";
 
 const StyledWaveContainer = styled.div`
     background: ${Color.DARK_BLUE};
@@ -98,12 +100,20 @@ const Sponsorship: FC<React.PropsWithChildren<unknown>> = () => {
         new AutoPlay({duration: 2000, direction: "NEXT", stopOnHover: false}),
     ];
 
+    const handleCLick = () => {
+        gaEventTracker("download brochure", "download brochure");
+    };
+
     useEffect(() => {
         document.title = `Sponsorship — ${data.title} — ${data.edition}`;
     });
 
     return (
-        <>
+        <div style={{
+            maxWidth: "80rem",
+            marginLeft: "auto",
+            marginRight: "auto"
+        }}>
             <SectionWrapper color={Color.WHITE} marginTop={5}>
                 <StyledSpeakersSection>
                     <TitleSection
@@ -181,7 +191,6 @@ const Sponsorship: FC<React.PropsWithChildren<unknown>> = () => {
                     />
                 </Flicking>
             </SectionWrapper>
-
             <StyledWaveContainer>
                 <svg
                     viewBox="0 0 500 150"
@@ -194,7 +203,6 @@ const Sponsorship: FC<React.PropsWithChildren<unknown>> = () => {
                     ></path>
                 </svg>
             </StyledWaveContainer>
-
             <SectionWrapper color={Color.WHITE} marginTop={0}>
                 {width > MOBILE_BREAKPOINT && (
                     <>
@@ -245,6 +253,9 @@ const Sponsorship: FC<React.PropsWithChildren<unknown>> = () => {
                             at and discover the myriad of ways you can shine at
                             DevBcn {data?.edition}.
                         </p>
+                        <Button text="Get the Brochure"
+                                link="https://bit.ly/devbcn25-brochure-v3"
+                                onClick={handleCLick}/>
                         <h4>Why Partner with DevBcn?</h4>
                         <p>
                             <ul>
@@ -328,7 +339,7 @@ const Sponsorship: FC<React.PropsWithChildren<unknown>> = () => {
                 </StyledSpeakersSection>
                 <StyledMarginBottom/>
             </SectionWrapper>
-        </>
+        </div>
     );
 };
 
