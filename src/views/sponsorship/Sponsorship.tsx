@@ -98,7 +98,7 @@ const StyleMoreIcon = styled.img`
 const Sponsorship: FC<React.PropsWithChildren<unknown>> = () => {
     const {width} = useWindowSize();
     const plugins = [
-        new AutoPlay({duration: 2000, direction: "NEXT", stopOnHover: false}),
+        new AutoPlay({duration: 2000, direction: "NEXT", stopOnHover: false})
     ];
 
     const handleCLick = () => {
@@ -138,56 +138,56 @@ const Sponsorship: FC<React.PropsWithChildren<unknown>> = () => {
                 <Flicking plugins={plugins} circular={true}>
                     <img
                         alt="DevBcn 2023 - sponsors"
-                        width="1080"
-                        height="720"
+                        width="540"
+                        height="360"
                         src="/images/sponsorship/image_1.jpg"
                     />
                     <img
                         alt="DevBcn 2023 - sponsors"
-                        width="1080"
-                        height="720"
+                        width="540"
+                        height="360"
                         src="/images/sponsorship/image_2.jpg"
                     />
                     <img
                         alt="DevBcn 2023 - sponsors"
-                        width="1080"
-                        height="720"
+                        width="540"
+                        height="360"
                         src="/images/sponsorship/image_3.jpg"
                     />
                     <img
                         alt="DevBcn 2023 - sponsors"
-                        width="1080"
-                        height="720"
+                        width="540"
+                        height="360"
                         src="/images/sponsorship/image_4.jpg"
                     />
                     <img
                         alt="DevBcn 2023 - sponsors"
-                        width="1080"
-                        height="720"
+                        width="540"
+                        height="360"
                         src="/images/sponsorship/image_5.jpg"
                     />
                     <img
                         alt="DevBcn 2023 - sponsors"
-                        width="1080"
-                        height="720"
+                        width="540"
+                        height="360"
                         src="/images/sponsorship/image_6.jpg"
                     />
                     <img
                         alt="DevBcn 2023 - sponsors"
-                        width="1080"
-                        height="720"
+                        width="540"
+                        height="360"
                         src="/images/sponsorship/image_7.jpg"
                     />
                     <img
                         alt="DevBcn 2023 - sponsors"
-                        width="1080"
-                        height="720"
+                        width="540"
+                        height="360"
                         src="/images/sponsorship/image_8.jpg"
                     />
                     <img
                         alt="DevBcn 2023 - sponsors"
-                        width="1080"
-                        height="720"
+                        width="540"
+                        height="360"
                         src="/images/sponsorship/image_9.jpg"
                     />
                 </Flicking>
