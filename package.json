@@ -7,7 +7,7 @@
     "@egjs/flicking-plugins": "^4.7.1",
     "@egjs/react-flicking": "^4.11.4",
     "@faker-js/faker": "9.2.0",
-    "@sentry/react": "^8.38.0",
+    "@sentry/react": "^8.41.0",
     "@sentry/tracing": "^7.114.0",
     "@types/node": "^22.9.0",
     "@types/react": "^18.3.5",
