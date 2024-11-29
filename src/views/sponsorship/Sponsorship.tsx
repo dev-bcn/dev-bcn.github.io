@@ -139,19 +139,19 @@ const Sponsorship: FC<React.PropsWithChildren<unknown>> = () => {
                         alt="DevBcn 2023 - sponsors"
                         width="540"
                         height="360"
-                        src="/images/sponsorship/image_1.jpg"
+                        src="https://live.staticflickr.com/65535/53799782744_e5f0e2ba22_c_d.jpg"
                     />
                     <img
                         alt="DevBcn 2023 - sponsors"
                         width="540"
                         height="360"
-                        src="/images/sponsorship/image_2.jpg"
+                        src="https://live.staticflickr.com/65535/53799461711_097dea1753_c_d.jpg"
                     />
                     <img
                         alt="DevBcn 2023 - sponsors"
                         width="540"
                         height="360"
-                        src="/images/sponsorship/image_3.jpg"
+                        src="https://live.staticflickr.com/65535/53799461481_fa62bd6586_c_d.jpg"
                     />
                     <img
                         alt="DevBcn 2023 - sponsors"
