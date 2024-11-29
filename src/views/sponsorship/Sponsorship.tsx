@@ -111,7 +111,7 @@ const Sponsorship: FC<React.PropsWithChildren<unknown>> = () => {
 
     return (
         <div style={{
-            maxWidth: "80rem",
+            maxWidth: "85rem",
             marginLeft: "auto",
             marginRight: "auto"
         }}>
