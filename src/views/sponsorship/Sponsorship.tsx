@@ -158,37 +158,37 @@ const Sponsorship: FC<React.PropsWithChildren<unknown>> = () => {
                         alt="DevBcn 2023 - sponsors"
                         width="540"
                         height="360"
-                        src="/images/sponsorship/image_4.jpg"
+                        src="https://live.staticflickr.com/65535/53799462836_14bebbe191_c_d.jpg"
                     />
                     <img
                         alt="DevBcn 2023 - sponsors"
                         width="540"
                         height="360"
-                        src="/images/sponsorship/image_5.jpg"
+                        src="https://live.staticflickr.com/65535/53799696478_dce254ec4d_c_d.jpg"
                     />
                     <img
                         alt="DevBcn 2023 - sponsors"
                         width="540"
                         height="360"
-                        src="/images/sponsorship/image_6.jpg"
+                        src="https://live.staticflickr.com/65535/53798524497_1b90d60ced_c_d.jpg"
                     />
                     <img
                         alt="DevBcn 2023 - sponsors"
                         width="540"
                         height="360"
-                        src="/images/sponsorship/image_7.jpg"
+                        src="https://live.staticflickr.com/65535/53799783184_03bca3913b_c_d.jpg"
                     />
                     <img
                         alt="DevBcn 2023 - sponsors"
                         width="540"
                         height="360"
-                        src="/images/sponsorship/image_8.jpg"
+                        src="https://live.staticflickr.com/65535/53799696058_f73315dcfb_c_d.jpg"
                     />
                     <img
                         alt="DevBcn 2023 - sponsors"
                         width="540"
                         height="360"
-                        src="/images/sponsorship/image_9.jpg"
+                        src="https://live.staticflickr.com/65535/53799782919_5b588a8077_c_d.jpg"
                     />
                 </Flicking>
             </SectionWrapper>
