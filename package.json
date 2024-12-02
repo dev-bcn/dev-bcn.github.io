@@ -9,7 +9,7 @@
     "@faker-js/faker": "9.2.0",
     "@sentry/react": "^8.41.0",
     "@sentry/tracing": "^7.114.0",
-    "@types/node": "^22.9.0",
+    "@types/node": "^22.10.1",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
     "add-to-calendar-button-react": "^2.7.3",
