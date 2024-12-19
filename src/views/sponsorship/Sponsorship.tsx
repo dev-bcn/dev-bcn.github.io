@@ -98,7 +98,7 @@ const StyleMoreIcon = styled.img`
 const Sponsorship: FC<React.PropsWithChildren<unknown>> = () => {
     const {width} = useWindowSize();
     const plugins = [
-        new AutoPlay({duration: 2000, direction: "NEXT", stopOnHover: false}),
+        new AutoPlay({duration: 2000, direction: "NEXT", stopOnHover: false})
     ];
 
     const handleCLick = () => {
@@ -111,7 +111,7 @@ const Sponsorship: FC<React.PropsWithChildren<unknown>> = () => {
 
     return (
         <div style={{
-            maxWidth: "80rem",
+            maxWidth: "85rem",
             marginLeft: "auto",
             marginRight: "auto"
         }}>
@@ -138,57 +138,57 @@ const Sponsorship: FC<React.PropsWithChildren<unknown>> = () => {
                 <Flicking plugins={plugins} circular={true}>
                     <img
                         alt="DevBcn 2023 - sponsors"
-                        width="1080"
-                        height="720"
-                        src="/images/sponsorship/image_1.jpg"
+                        width="540"
+                        height="360"
+                        src="https://live.staticflickr.com/65535/53799782744_e5f0e2ba22_c_d.jpg"
                     />
                     <img
                         alt="DevBcn 2023 - sponsors"
-                        width="1080"
-                        height="720"
-                        src="/images/sponsorship/image_2.jpg"
+                        width="540"
+                        height="360"
+                        src="https://live.staticflickr.com/65535/53799461711_097dea1753_c_d.jpg"
                     />
                     <img
                         alt="DevBcn 2023 - sponsors"
-                        width="1080"
-                        height="720"
-                        src="/images/sponsorship/image_3.jpg"
+                        width="540"
+                        height="360"
+                        src="https://live.staticflickr.com/65535/53799461481_fa62bd6586_c_d.jpg"
                     />
                     <img
                         alt="DevBcn 2023 - sponsors"
-                        width="1080"
-                        height="720"
-                        src="/images/sponsorship/image_4.jpg"
+                        width="540"
+                        height="360"
+                        src="https://live.staticflickr.com/65535/53799462836_14bebbe191_c_d.jpg"
                     />
                     <img
                         alt="DevBcn 2023 - sponsors"
-                        width="1080"
-                        height="720"
-                        src="/images/sponsorship/image_5.jpg"
+                        width="540"
+                        height="360"
+                        src="https://live.staticflickr.com/65535/53799696478_dce254ec4d_c_d.jpg"
                     />
                     <img
                         alt="DevBcn 2023 - sponsors"
-                        width="1080"
-                        height="720"
-                        src="/images/sponsorship/image_6.jpg"
+                        width="540"
+                        height="360"
+                        src="https://live.staticflickr.com/65535/53798524497_1b90d60ced_c_d.jpg"
                     />
                     <img
                         alt="DevBcn 2023 - sponsors"
-                        width="1080"
-                        height="720"
-                        src="/images/sponsorship/image_7.jpg"
+                        width="540"
+                        height="360"
+                        src="https://live.staticflickr.com/65535/53799783184_03bca3913b_c_d.jpg"
                     />
                     <img
                         alt="DevBcn 2023 - sponsors"
-                        width="1080"
-                        height="720"
-                        src="/images/sponsorship/image_8.jpg"
+                        width="540"
+                        height="360"
+                        src="https://live.staticflickr.com/65535/53799696058_f73315dcfb_c_d.jpg"
                     />
                     <img
                         alt="DevBcn 2023 - sponsors"
-                        width="1080"
-                        height="720"
-                        src="/images/sponsorship/image_9.jpg"
+                        width="540"
+                        height="360"
+                        src="https://live.staticflickr.com/65535/53799782919_5b588a8077_c_d.jpg"
                     />
                 </Flicking>
             </SectionWrapper>
