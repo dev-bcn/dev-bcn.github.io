@@ -25,6 +25,7 @@ import "@egjs/react-flicking/dist/flicking.css";
 import Button from "../../components/UI/Button";
 import {gaEventTracker} from "../../components/analytics/Analytics";
 
+
 const StyledWaveContainer = styled.div`
     background: ${Color.DARK_BLUE};
     overflow-y: hidden;
@@ -214,8 +215,8 @@ const Sponsorship: FC<React.PropsWithChildren<unknown>> = () => {
                     <StyledSponsorshipText>
                         <h4>Mark Your Calendars!</h4>
                         <p>
-                            DevBcn {data?.edition} is set for <strong>July 9th —
-                            10th</strong> at the
+                            DevBcn <strong>{data?.edition}</strong> is set for <strong>{format(new Date(data.startDay),"MMMM do")} —
+                            {" ".concat(format(data.endDay,"do"))}</strong> at the
                             iconic La Farga, Hospitalet de Llobregat. This year,
                             we're diving
                             deep into the realms of Java, JVM, Cloud, DevOps,
