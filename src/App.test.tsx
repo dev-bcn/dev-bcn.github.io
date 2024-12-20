@@ -19,7 +19,7 @@ describe("navigation pages", () => {
         ).toBeInTheDocument();
 
         expect(
-            await screen.findByText(/July 9th - 10th, 2025/i),
+            await screen.findByText(/July 8th - 10th, 2025/i),
         ).toBeInTheDocument();
         expect(
             await screen.findByText(/4 tracks with the following topics:/i),
