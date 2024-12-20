@@ -2,7 +2,6 @@ import React, {FC} from "react";
 import {QueryClient, QueryClientProvider} from "react-query";
 import {renderHook, waitFor} from "@testing-library/react";
 import {speakerAdapter, useFetchSpeakers} from "./UseFetchSpeakers";
-import {beforeAll, beforeEach, describe, expect, it} from "@jest/globals";
 import axios, {AxiosHeaders, AxiosResponse} from "axios";
 import {IResponse} from "../../views/Speakers/Speaker.types";
 

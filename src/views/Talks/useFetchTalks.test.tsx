@@ -3,7 +3,6 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import { renderHook, waitFor } from "@testing-library/react";
 import axios, { AxiosHeaders, AxiosResponse } from "axios";
 import { faker } from "@faker-js/faker";
-import { beforeAll, beforeEach, describe, expect, it } from "@jest/globals";
 import {
   extractSessionCategoryInfo,
   extractSessionSlides,

@@ -1,7 +1,6 @@
 import { talkCardAdapter } from "./TalkCardAdapter";
 import { UngroupedSession } from "./liveView.types";
 import { faker } from "@faker-js/faker";
-import { expect } from "@jest/globals";
 
 describe("talkCardAdapter", () => {
   it("should return the correct TalkCardProps object", () => {
