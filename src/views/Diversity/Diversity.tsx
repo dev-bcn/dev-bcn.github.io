@@ -3,7 +3,7 @@ import { Color } from "../../styles/colors";
 import data from "../../data/2024.json";
 import styled from "styled-components";
 import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import {
   ROUTE_CODE_OF_CONDUCT,
   ROUTE_CONDITIONS,

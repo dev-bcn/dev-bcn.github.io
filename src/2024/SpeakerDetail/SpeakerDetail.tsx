@@ -9,7 +9,7 @@ import twitterIcon from "../../assets/images/twitterIcon.svg";
 import {useWindowSize} from "react-use";
 
 import {ROUTE_SPEAKERS, ROUTE_TALK_DETAIL} from "../../constants/routes";
-import {Link} from "react-router-dom";
+import {Link} from "react-router";
 import {Color} from "../../styles/colors";
 import conferenceData from "../../data/2024.json";
 import {ISpeaker} from "../../views/Speakers/Speaker.types";

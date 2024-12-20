@@ -13,7 +13,7 @@ import "primereact/resources/themes/lara-light-blue/theme.css";
 import { InputText } from "primereact/inputtext";
 import { FilterMatchMode } from "primereact/api";
 import { Color } from "../../styles/colors";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { ROUTE_TALK_DETAIL } from "../../constants/routes";
 
 const SessionFeedback2023: FC<React.PropsWithChildren<unknown>> = () => {

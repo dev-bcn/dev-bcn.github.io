@@ -31,7 +31,7 @@ import {
   ROUTE_2023_TALK_DETAIL,
 } from "../../constants/routes";
 import { StyledTalkDescription } from "./SpeakerDetail.style";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { Color } from "../../styles/colors";
 import { ISpeaker } from "../Speakers/Speaker.types";
 

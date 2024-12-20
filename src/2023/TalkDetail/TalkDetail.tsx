@@ -28,7 +28,7 @@ import {
   StyledVideoContainer,
   StyledVideoTagsContainer,
 } from "./Style.MeetingDetail";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import {
   ROUTE_2023_SPEAKER_DETAIL,
   ROUTE_2023_TALKS,

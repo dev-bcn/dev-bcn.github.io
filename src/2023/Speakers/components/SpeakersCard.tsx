@@ -7,7 +7,7 @@ import {
   StyledSpeakerText,
   StyledSpeakerTitle,
 } from "./SpeakerCard.Style";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { ISpeaker } from "../Speaker.types";
 import Loading from "../../../assets/images/logo.png";
 import { ROUTE_2023_SPEAKER_DETAIL } from "../../../constants/routes";

@@ -6,7 +6,7 @@ import SpeakersCarousel from "./components/SpeakersCarousel/SpeakersCarousel";
 import Sponsors from "./components/Sponsors/Sponsors";
 import styled from "styled-components";
 import data from "../../data/2023.json";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "react-router";
 
 const StyledContainer = styled.div`
   padding-bottom: 10rem;

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {motion} from "framer-motion";
 import {BIG_BREAKPOINT} from "../../constants/BreakPoints";
 import {Color} from "../../styles/colors";
-import {Link} from "react-router-dom";
+import {Link} from "react-router";
 
 export const StyledTalkDescription = styled(Link)`
   text-decoration: none;
