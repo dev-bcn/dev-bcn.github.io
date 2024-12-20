@@ -2,7 +2,7 @@ import {fireEvent, render, screen} from "@testing-library/react";
 import {Supporters} from "./Supporters";
 import React from "react";
 import {useWindowSize} from "react-use";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router";
 
 jest.mock("react-use", () => ({
     useWindowSize: jest.fn(),

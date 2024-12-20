@@ -20,7 +20,7 @@ import {
     StyleHomeContainer,
 } from "./Style.Home";
 import {formatDateRange} from "./DateUtil";
-import {Link} from "react-router-dom";
+import {Link} from "react-router";
 import data from "../../data/2024.json";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import {Color} from "../../styles/colors";

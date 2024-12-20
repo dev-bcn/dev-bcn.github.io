@@ -1,7 +1,7 @@
 import React, {FC, useState} from "react";
 import styled from "styled-components";
 
-import {useLocation} from "react-router-dom";
+import {useLocation} from "react-router";
 import {BIG_BREAKPOINT} from "../constants/BreakPoints";
 
 import {useEventEdition} from "../views/Home/UseEventEdition";

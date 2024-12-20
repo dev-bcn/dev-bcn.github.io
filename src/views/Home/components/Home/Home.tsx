@@ -24,7 +24,7 @@ import ActionButtons from "../ActionButtons/ActionButtons";
 import {Color} from "../../../../styles/colors";
 import InfoButtons from "../InfoButtons/InfoButtons";
 import {formatDateRange} from "./DateUtil";
-import {Link} from "react-router-dom";
+import {Link} from "react-router";
 import edition from "../../../../data/2025.json";
 import CountDownCompleted from "./components/CountDownCompleted";
 

@@ -1,4 +1,4 @@
-import {Link, Route, Routes} from "react-router-dom";
+import {Link, Route, Routes} from "react-router";
 import {
     ROUTE_2023_ATTENDEE,
     ROUTE_2023_CFP,

@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { Color } from "../../../../styles/colors";
 import "swiper/swiper-bundle.min.css";
 import "./SpeakersCarousel.scss";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { ROUTE_SPEAKER_DETAIL } from "../../../../constants/routes";
 import { useFetchSpeakers } from "../../../Speakers/UseFetchSpeakers";
 import * as Sentry from "@sentry/react";

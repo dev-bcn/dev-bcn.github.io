@@ -2,7 +2,7 @@ import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
 import { NavigationItem } from "./NavigationData";
 import { useWindowSize } from "react-use";
 import { NavMenu, StyledLink, SubLink, SubMenu } from "./Style.Navigation";
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router";
 import { FC } from "react";
 
 type Props = {

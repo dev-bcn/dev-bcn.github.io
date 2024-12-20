@@ -1,7 +1,7 @@
 import { Color } from "../../styles/colors";
 
 import { FC, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import SectionWrapper from "../SectionWrapper/SectionWrapper";
 import styled from "styled-components";
 import ActionButtons from "../../views/Home/components/ActionButtons/ActionButtons";

@@ -6,7 +6,7 @@ import flickrIcon from "../../assets/images/flickr.svg";
 import linkedinIcon from "../../assets/images/linkedinIcon.svg";
 import logo from "../../assets/images/devBcn.png";
 import twitterIcon from "../../assets/images/twitterIcon.svg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 import { useWindowSize } from "react-use";
 import data from "../../data/2024.json";
 import youtubeIcon from "../../assets/images/youtubeIcon.svg";

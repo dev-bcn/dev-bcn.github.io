@@ -3,7 +3,7 @@ import { Color } from "../../styles/colors";
 import React, { FC } from "react";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import SpeakerDetail2023 from "./SpeakerDetail2023";
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router";
 import { StyledContainer, StyledWaveContainer } from "./Speaker.style";
 import conferenceData from "../../data/2023.json";
 import { useFetchSpeakers } from "../Speakers/UseFetchSpeakers";
