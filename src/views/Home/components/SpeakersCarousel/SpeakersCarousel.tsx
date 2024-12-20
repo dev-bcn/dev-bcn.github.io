@@ -1,7 +1,7 @@
 import { Color } from "../../../../styles/colors";
 
 import { FC } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import LessThanBlueWhiteIcon from ".././../../../assets/images/MoreThanBlueIcon.svg";
 import SectionWrapper from "../../../../components/SectionWrapper/SectionWrapper";
 import {

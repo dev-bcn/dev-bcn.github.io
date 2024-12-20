@@ -6,7 +6,7 @@ import SpeakersCarousel from "./components/SpeakersCarousel/SpeakersCarousel";
 import Sponsors from "./components/Sponsors/Sponsors";
 import styled from "styled-components";
 
-import {useLocation} from "react-router-dom";
+import {useLocation} from "react-router";
 import {useEventEdition} from "./UseEventEdition";
 import {Edition} from "../../types/types";
 

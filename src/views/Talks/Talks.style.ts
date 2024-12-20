@@ -5,7 +5,7 @@ import {
   MOBILE_BREAKPOINT,
   TABLET_BREAKPOINT,
 } from "../../constants/BreakPoints";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 export const StyledTitleContainer = styled.div`
   display: flex;

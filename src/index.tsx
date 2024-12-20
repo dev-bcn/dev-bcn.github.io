@@ -5,7 +5,7 @@ import {
   matchRoutes,
   useLocation,
   useNavigationType,
-} from "react-router-dom";
+} from "react-router";
 import App from "./App";
 import React, { useEffect } from "react";
 import ReactDOM from "react-dom";

@@ -1,5 +1,5 @@
 import {render, screen} from "@testing-library/react";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router";
 import App from "./App";
 import React from "react";
 import userEvent from "@testing-library/user-event";

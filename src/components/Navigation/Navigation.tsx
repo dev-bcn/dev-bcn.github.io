@@ -1,7 +1,7 @@
 import {AnimatePresence} from "framer-motion";
 import {FC, useEffect, useState} from "react";
 import {MOBILE_BREAKPOINT} from "../../constants/BreakPoints";
-import {useLocation, useNavigate} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router";
 import Breadcrumbs from "./Breadcrumbs";
 import CloseIcon from "../../assets/images/CloseIcon.svg";
 import NavigationLogo from "../../assets/images/devBcn.png";

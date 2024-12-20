@@ -28,7 +28,7 @@ import {
 } from "./Speaker.style";
 import { ROUTE_SPEAKERS, ROUTE_TALK_DETAIL } from "../../constants/routes";
 import { StyledTalkDescription } from "./SpeakerDetail.style";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { Color } from "../../styles/colors";
 import { ISpeaker } from "../Speakers/Speaker.types";
 import conferenceData from "../../data/2024.json";

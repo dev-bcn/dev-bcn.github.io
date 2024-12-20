@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Color } from "../../styles/colors";
 import { BIG_BREAKPOINT, TABLET_BREAKPOINT } from "../../constants/BreakPoints";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 export const StyledTitleContainer = styled.div`
   display: flex;

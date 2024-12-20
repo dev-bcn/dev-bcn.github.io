@@ -4,7 +4,7 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import styled from "styled-components";
 import "swiper/swiper-bundle.min.css";
 import "./SpeakersCarousel.scss";
-import {Link} from "react-router-dom";
+import {Link} from "react-router";
 import conferenceData from "../../data/2024.json";
 import {useFetchSpeakers} from "../Speakers/UseFetchSpeakers";
 import * as Sentry from "@sentry/react";

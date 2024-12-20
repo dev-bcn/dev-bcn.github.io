@@ -11,7 +11,7 @@ import MoreThanIcon from "../../assets/images/MoreThanBlueIcon.svg";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import {useWindowSize} from "react-use";
 
-import {Link} from "react-router-dom";
+import {Link} from "react-router";
 import {
   ROUTE_2024_SPEAKER_DETAIL,
   ROUTE_2024_TALKS,

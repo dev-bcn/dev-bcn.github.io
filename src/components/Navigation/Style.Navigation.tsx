@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { Color } from "../../styles/colors";
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router";
 import { MAX_WIDTH, MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
 
 export const StyledBlueHamburger = styled(motion.img)`

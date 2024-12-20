@@ -13,7 +13,7 @@ import {
   StyledScheduleSection,
 } from "./Schedule.style";
 import * as Sentry from "@sentry/react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 const Schedule: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();

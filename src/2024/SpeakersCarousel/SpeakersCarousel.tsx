@@ -1,5 +1,5 @@
 import {FC} from "react";
-import {Link} from "react-router-dom";
+import {Link} from "react-router";
 import LessThanBlueWhiteIcon
   from "../../assets/images/MoreThanBlueWhiteIcon.svg";
 import {motion} from "framer-motion";
