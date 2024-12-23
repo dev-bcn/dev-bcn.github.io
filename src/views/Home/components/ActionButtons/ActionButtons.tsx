@@ -58,7 +58,8 @@ const ActionButtons: FC<React.PropsWithChildren<unknown>> = () => {
         <Button
           onClick={trackSponsorshipInfo}
           text="🤝 Sponsorship"
-          link="https://www.devbcn.com/sponsorship"
+          target="_self"
+          link="/sponsorship"
           disabled={isBetween(sponsorshipStartDay, sponsorshipEndDay)}
         />
     </StyledActionDiv>
