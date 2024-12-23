@@ -84,7 +84,7 @@ const Home: FC<React.PropsWithChildren<unknown>> = () => {
                     </StyledTitleContainer>
                     <img src="/images/devBcn-sponsorship.png"
                          alt="DevBcn sponsorship value" width="657"
-                         height="155"/>
+                         height="155" style={{aspectRatio:"657:155", maxWidth:"100%"}}/>
                     <StyledTitleContainer color={Color.DARK_BLUE}>
                         <StyledSubtitle>
                             {edition?.trackNumber} tracks with the following
