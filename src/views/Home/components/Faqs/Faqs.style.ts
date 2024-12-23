@@ -42,7 +42,7 @@ export const StyledWaveContainer = styled.div`
 `;
 export const StyleMoreIcon = styled.img`
   position: absolute;
-  right: -1rem;
+  right: 0;
   top: 5rem;
   height: 5rem;
   @media (min-width: 800px) {
