@@ -32,13 +32,13 @@ export const data: CFpTrack[] = [
       },
       {
         name: "Grace Jansen",
-        photo: "images/cfp/grace.png",
+        photo: "/images/cfp/grace.png",
         twitter: "https://twitter.com/gracejansen27",
         linkedIn: "https://www.linkedin.com/in/grace-jansen",
       },
       {
         name: "Ixchel Ruiz",
-        photo: "images/cfp/ixchel.png",
+        photo: "/images/cfp/ixchel.png",
         twitter: "https://twitter.com/ixchelruiz",
         linkedIn: "https://www.linkedin.com/in/ixchelruiz",
       },
@@ -50,13 +50,13 @@ export const data: CFpTrack[] = [
     members: [
       {
         name: "Iago Lastra",
-        photo: "images/cfp/iago.png",
+        photo: "/images/cfp/iago.png",
         twitter: "https://twitter.com/iagolast",
         linkedIn: "https://www.linkedin.com/in/iagolast/",
       },
       {
         name: "Laura Rodriguez Castillo",
-        photo: "images/cfp/laura.jpeg",
+        photo: "/images/cfp/laura.jpeg",
         twitter: "https://twitter.com/superpensando",
         linkedIn: "https://linkedin.com/in/laurarodriguezcastillo",
       },
@@ -64,7 +64,7 @@ export const data: CFpTrack[] = [
         name: "Carles Nuñez",
         twitter: "https://twitter.com/carlesnunez",
         linkedIn: "https://www.linkedin.com/in/carles-nunez-tomeo/",
-        photo: "images/cfp/carles_nunez.jpg",
+        photo: "/images/cfp/carles_nunez.jpg",
       },
       {
         name: "Phil Nash",
@@ -79,11 +79,11 @@ export const data: CFpTrack[] = [
       {
         name: "Carmen Herrero",
         linkedIn: "https://www.linkedin.com/in/carherrero/",
-        photo: "images/cfp/carmen_herrero.jpg",
+        photo: "/images/cfp/carmen_herrero.jpg",
       },
       {
         name: "Elena Tajadura",
-        photo: "images/cfp/elena_tajadura.jpeg",
+        photo: "/images/cfp/elena_tajadura.jpeg",
         linkedIn:
           "https://www.linkedin.com/in/elena-tajadura-jim%C3%A9nez-9300a943/",
       },
@@ -103,7 +103,7 @@ export const data: CFpTrack[] = [
       },
       {
         name: "Ana Carmona",
-        photo: "images/cfp/ana_carmona.jpg",
+        photo: "/images/cfp/ana_carmona.jpg",
         twitter: "https://twitter.com/nhan_bcn",
         linkedIn:
           "https://www.linkedin.com/in/ana-carmona-ag?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
@@ -112,7 +112,7 @@ export const data: CFpTrack[] = [
         name: "Christian Polanco",
         linkedIn: "https://www.linkedin.com/in/chrsalx/",
         twitter: "https://twitter.com/chrsalx",
-        photo: "images/cfp/christian-polanco.jpg",
+        photo: "/images/cfp/christian-polanco.jpg",
       },
       {
         name: "David Ricordel",
@@ -120,13 +120,13 @@ export const data: CFpTrack[] = [
       },
       {
         name: "Jose Adan Ortiz",
-        photo: "images/cfp/jose-adan-ortiz-k8s-2024.JPG",
+        photo: "/images/cfp/jose-adan-ortiz-k8s-2024.JPG",
         twitter: "https://twitter.com/joseadanof",
         linkedIn: "https://www.linkedin.com/in/joseadan/",
       },
       {
         name: "Pablo Chacin",
-        photo: "images/cfp/pablo_chacin.jpeg",
+        photo: "/images/cfp/pablo_chacin.jpeg",
         twitter: "https://twitter.com/pablochacin",
         linkedIn: "https://www.linkedin.com/in/pablochacin/",
       },
@@ -136,7 +136,7 @@ export const data: CFpTrack[] = [
       },
       {
         name: "Imma Valls",
-        photo: "images/cfp/imma-valls.jpg",
+        photo: "/images/cfp/imma-valls.jpg",
         twitter: "https://twitter.com/eyeveebee",
         linkedIn: "https://www.linkedin.com/in/imma-valls",
       },
@@ -153,18 +153,18 @@ export const data: CFpTrack[] = [
       {
         name: "Jaume Jornet",
         linkedIn: "https://www.linkedin.com/in/jaumejornet/",
-        photo: "images/cfp/jaume-jornet.jpg",
+        photo: "/images/cfp/jaume-jornet.jpg",
         twitter: "https://twitter.com/jaumejornet",
       },
       {
         name: "Julio César Pérez",
-        photo: "images/cfp/julio_cesar.jpg",
+        photo: "/images/cfp/julio_cesar.jpg",
         linkedIn: "https://www.linkedin.com/in/juliocesarperezarques/",
         twitter: "https://twitter.com/jcesarperez",
       },
       {
         name: "Toni Tassani",
-        photo: "images/cfp/toni.jpg",
+        photo: "/images/cfp/toni.jpg",
         twitter: "https://twitter.com/atassani",
         linkedIn: "https://www.linkedin.com/in/tonitassani/en",
       },

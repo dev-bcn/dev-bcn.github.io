@@ -19,7 +19,7 @@ import {
     StyledAboutImage,
     StyledSocialIconsWrapper,
 } from "../About/components/Style.AboutCard";
-import conferenceData from "../../data/2024.json";
+import conferenceData from "../../data/2025.json";
 import {CfpTrackProps, data} from "./CfpData";
 import {MemberName, TrackName} from "./Cfp.style";
 
