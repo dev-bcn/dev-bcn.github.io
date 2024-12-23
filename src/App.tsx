@@ -99,6 +99,7 @@ import TalkDetailContainer2024
     from "./views/MeetingDetail/TalkDetailContainer2024";
 import SpeakerDetailContainer2024
     from "./2024/SpeakerDetail/SpeakerDetailContainer2024";
+import CfpSection2024 from "./2024/Cfp/CfpSection2024";
 
 const StyledAppWrapper = styled.div`
     position: relative;
@@ -373,7 +374,7 @@ const App: FC<React.PropsWithChildren<unknown>> = () => {
                         path={ROUTE_2024_CFP}
                         element={
                             <React.Suspense fallback={<Loading/>}>
-                                <CfpSection2023/>
+                                <CfpSection2024/>
                             </React.Suspense>
                         }
                     />
