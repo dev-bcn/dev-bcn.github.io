@@ -1,26 +1,26 @@
-import React, { FC, Suspense } from "react";
+import React, {FC, Suspense} from "react";
 import venue from "../../assets/images/la-farga.png";
 import GoogleMapReact from "google-map-react";
 import "./map.css";
 import FGC from "../../assets/images/fgc.png";
 import styled from "styled-components";
 import TitleSection from "../../components/SectionTitle/TitleSection";
-import { Color } from "../../styles/colors";
+import {Color} from "../../styles/colors";
 import {
-  BIG_BREAKPOINT,
-  MAX_WIDTH,
-  MOBILE_BREAKPOINT,
+    BIG_BREAKPOINT,
+    MAX_WIDTH,
+    MOBILE_BREAKPOINT,
 } from "../../constants/BreakPoints";
 import LessThanBlue from "../../assets/images/MoreThanBlueWhiteIcon.svg";
 import MoreThanBlue from "../../assets/images/LessThanBlueWhiteIcon.svg";
-import { useWindowSize } from "react-use";
+import {useWindowSize} from "react-use";
 import LocationIcon from "../../assets/images/LocationIcon.svg";
 import Logo from "../../assets/images/logo.svg";
-import { StyledLoadingImage } from "../../components/Loading/Loading";
+import {StyledLoadingImage} from "../../components/Loading/Loading";
 
 const StyledVenue = styled.div`
-   {
-    padding: 100px 10rem 50px;
+
+    padding: 0.5rem 2rem 0.5rem;
     text-align: left;
     max-width: ${MAX_WIDTH}px;
     margin: 0 auto;
@@ -28,7 +28,7 @@ const StyledVenue = styled.div`
     @media (max-width: ${BIG_BREAKPOINT}px) {
       padding: 100px 1rem 50px;
     }
-  }
+
 
   .image {
     img.venue {

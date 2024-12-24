@@ -1,30 +1,35 @@
-import { FC, useEffect } from "react";
-import { Venue } from "./Venue";
-import { ToBarcelona } from "./ToBarcelona";
+import React, {FC, useEffect} from "react";
+import {Venue} from "./Venue";
+import {ToBarcelona} from "./ToBarcelona";
 import data from "../../data/2024.json";
-import { StyledWaveContainer } from "../Speakers/Speakers.style";
+import {StyledWaveContainer} from "../Speakers/Speakers.style";
 import styled from "styled-components";
-import { Color } from "../../styles/colors";
-import { Accommodation } from "./Accommodation";
+import {Color} from "../../styles/colors";
+import {Accommodation} from "./Accommodation";
 
 const StyledTravel = styled.div`
-  .top {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 50px));
-    height: 51px;
-    background-color: ${Color.LIGHT_BLUE};
-    border-top: 1px solid ${Color.LIGHT_BLUE};
-  }
 
-  .bottom {
-    clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 100%);
-    margin-top: -50px;
-    height: 50px;
-    background-color: ${Color.DARK_BLUE};
-  }
+    max-width: 85rem;
+    margin-left: auto;
+    margin-right: auto;
+    
+    .top {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 50px));
+        height: 51px;
+        background-color: ${Color.LIGHT_BLUE};
+        border-top: 1px solid ${Color.LIGHT_BLUE};
+    }
 
-  .to-barcelona {
-    background-color: ${Color.DARK_BLUE};
-  }
+    .bottom {
+        clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 100%);
+        margin-top: -50px;
+        height: 50px;
+        background-color: ${Color.DARK_BLUE};
+    }
+
+    .to-barcelona {
+        background-color: ${Color.DARK_BLUE};
+    }
 `;
 
 const Travel: FC<React.PropsWithChildren<unknown>> = () => {
