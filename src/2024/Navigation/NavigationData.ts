@@ -1,11 +1,11 @@
 import {
+    ROUTE_2024_CFP,
     ROUTE_2024_JOB_OFFERS,
     ROUTE_2024_SCHEDULE,
     ROUTE_2024_SPEAKERS,
     ROUTE_2024_TALKS,
     ROUTE_ABOUT_US,
     ROUTE_ACCOMMODATION,
-    ROUTE_CFP,
     ROUTE_CODE_OF_CONDUCT,
     ROUTE_DIVERSITY,
     ROUTE_HOME,
@@ -36,7 +36,7 @@ export const navigationItems2024: NavigationItem[] = [
 
 export const subMenuItems2024: NavigationItem[] = [
     {id: "DIVERSITY", link: ROUTE_DIVERSITY},
-    {id: "Cfp Committee", link: ROUTE_CFP},
+    {id: "Cfp Committee", link: ROUTE_2024_CFP},
     {id: "Accommodation", link: ROUTE_ACCOMMODATION},
     //{ id: "Attendee information", link: ROUTE_ATTENDEE },
     //{ id: "Speaker information", link: ROUTE_SPEAKER_INFO },
