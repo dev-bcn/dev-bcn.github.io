@@ -1,7 +1,8 @@
 import {FC, useCallback} from "react";
-import data from "../../../../data/2024.json";
+import data from "../../../../data/2025.json";
 import Button from "../../../../components/UI/Button";
 import styled from "styled-components";
+import {isWithinInterval} from "date-fns";
 import {BIG_BREAKPOINT} from "../../../../constants/BreakPoints";
 import {gaEventTracker} from "../../../../components/analytics/Analytics";
 
@@ -24,8 +25,9 @@ const ActionButtons: FC<React.PropsWithChildren<unknown>> = () => {
   const sponsorshipEndDay = new Date(data.sponsors.endDate);
   const today = new Date();
 
+
   const isBetween = (startDay: Date, endDay: Date): boolean =>
-    startDay < new Date() && endDay > today;
+      isWithinInterval(today, {start: startDay, end:endDay});
 
   const trackSponsorshipInfo = useCallback(() => {
     gaEventTracker("sponsorship", "sponsorship");
@@ -38,6 +40,7 @@ const ActionButtons: FC<React.PropsWithChildren<unknown>> = () => {
   const trackCFP = useCallback(() => {
     gaEventTracker("CFP", "CFP");
   }, []);
+
 
   return (
     <StyledActionDiv>
