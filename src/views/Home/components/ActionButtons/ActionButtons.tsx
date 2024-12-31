@@ -63,7 +63,7 @@ const ActionButtons: FC<React.PropsWithChildren<unknown>> = () => {
           text="🤝 Sponsorship"
           target="_self"
           link="/sponsorship"
-          disabled={isBetween(sponsorshipStartDay, sponsorshipEndDay)}
+          disabled={!isBetween(sponsorshipStartDay, sponsorshipEndDay)}
         />
     </StyledActionDiv>
   );
