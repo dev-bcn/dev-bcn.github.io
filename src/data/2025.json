@@ -4,14 +4,14 @@
     "enabled": false
   },
   "cfp": {
-    "startDay": "2025-01-01T00:00:00",
-    "endDay": "2025-03-01T00:00:00",
+    "startDay": "2025-01-01T00:00:00+01:00",
+    "endDay": "2025-03-01T00:00:00+01:00",
     "link": "https://sessionize.com/devbcn-2025/"
   },
   "diversity": false,
   "edition": "2025",
   "email": "info@devbcn.com",
-  "endDay": "2025-07-10T14:00:00",
+  "endDay": "2025-07-10T14:00:00+01:00",
   "facebook": "https://facebook.com/devbcn",
   "flickr": "https://flickr.com/devbcn",
   "github": "https://github.com/devbcn",
@@ -27,13 +27,13 @@
   "showCountdown": true,
   "showInfoButtons": false,
   "sponsors": {
-    "startDate": "2024-01-01T09:00:00",
-    "endDate": "2025-06-09T09:00:00"
+    "startDate": "2024-01-01T09:00:00+01:00",
+    "endDate": "2025-06-09T09:00:00+01:00"
   },
-  "startDay": "2025-07-08T09:00:00",
+  "startDay": "2025-07-08T09:00:00+01:00",
   "tickets": {
-    "startDay": "2025-02-01T00:00:00",
-    "endDay": "2025-06-01T00:00:00"
+    "startDay": "2025-02-01T00:00:00+01:00",
+    "endDay": "2025-06-01T00:00:00+01:00"
   },
   "title": "DevBcn - Barcelona Developers Conference ",
   "trackNumber": 5,
