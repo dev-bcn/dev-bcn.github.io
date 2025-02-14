@@ -61,7 +61,9 @@ export const data: CFpTrack[] = [
                 linkedIn: "https://www.linkedin.com/in/iagolast/",
             },
             {
-                name: "Montse Ortega"
+                name: "Montse Ortega",
+                linkedIn: "https://www.linkedin.com/in/montse-ortega-73061369",
+                photo: "/images/cfp/montse.jpg",
             }
         ],
     },
