@@ -69,10 +69,12 @@ export const data: CFpTrack[] = [
         name: "AI, ML, Python",
         id: "c1ec728d-03c1-4d8d-9f56-637bc97f5a5b",
         members: [
-            {name: "Lize Raes",
-            photo: "/images/cfp/lize-raes.jpg",
-            linkedIn: "https://www.linkedin.com/in/lize-raes-a8a34110/",
-                twitter: "https://x.com/LizeRaes"},
+            {
+                name: "Lize Raes",
+                photo: "/images/cfp/lize-raes.jpg",
+                linkedIn: "https://www.linkedin.com/in/lize-raes-a8a34110/",
+                twitter: "https://x.com/LizeRaes"
+            },
             {name: "Marie-Alice Blete"},
             {name: "Nicolas Grenié"},
             {
@@ -110,7 +112,11 @@ export const data: CFpTrack[] = [
         name: "Agile, Leadership, Diversity",
         id: "1d04d5bf-4b94-4e56-b0c6-ee93b3bb8c1f",
         members: [
-            {name: "Angels Gilabert"},
+            {
+                name: "Angels Gilabert",
+                linkedIn: "https://www.linkedin.com/in/angelsgilabertviciana/",
+                photo: "/images/cfp/angels-gilabert.jpg"
+            },
             {
                 name: "Julio César Pérez",
                 photo: "/images/cfp/julio_cesar.jpg",
