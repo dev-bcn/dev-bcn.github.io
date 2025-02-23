@@ -5,9 +5,7 @@ import styled from "styled-components";
 import {Color} from "../../../../styles/colors";
 import "swiper/swiper-bundle.min.css";
 import "./SpeakersCarousel.scss";
-import {Link} from "react-router";
 import conferenceData from "../../../../data/2025.json";
-import {ROUTE_SPEAKER_DETAIL} from "../../../../constants/routes";
 import {useFetchSpeakers} from "../../../Speakers/UseFetchSpeakers";
 import * as Sentry from "@sentry/react";
 import {ISpeaker} from "../../../../types/speakers";
@@ -40,9 +38,9 @@ const SpeakerSwiper: FC<React.PropsWithChildren<unknown>> = () => {
     const {isLoading, data, error} = useFetchSpeakers();
 
     const victorRentea: ISpeaker = {
-        id: "1f247b87-4af0-4f70-be44-f139bf3f726a",
+        id: "8f5f4c31-232b-4e04-b736-6b2775c939cf",
         fullName: "Victor Rentea",
-        bio: "Java Champion from Bucharest",
+        bio: "With two decades of experience, Victor is a Java Champion working as a trainer for top companies in Europe. More than five thousand developers of 120 companies attended his workshops, so every week he has the opportunity to debate with bright engineers the challenges faced by their projects. In return, Victor summarizes key learning points from these workshops in conference talks and online meetups for the European Software Crafters, the world’s largest community around architecture, refactoring, and testing. Find out how Victor can help you on https://victorrentea.ro: training catalog, consultancy, and YouTube playlists of his talks.",
         speakerImage: "https://sessionize.com/image/3031-0o0o0-a3r6JkTgm9aUHJXBhbvnWQ.jpg?download=victor-rentea.jpg",
         linkedInUrl: {
             url: "https://x.com/victorrentea",
@@ -55,7 +53,7 @@ const SpeakerSwiper: FC<React.PropsWithChildren<unknown>> = () => {
             linkType: "Twitter",
             title: "Twitter"
         },
-        tagLine: "Java Champion from Bucharest",
+        tagLine: "Java Champion and Trainer",
     };
 
     const cachedSpeakers = React.useMemo(() => {
@@ -107,10 +105,10 @@ const SpeakerSwiper: FC<React.PropsWithChildren<unknown>> = () => {
                 >
                     {cachedSpeakers.map((speaker) => (
                         <SwiperSlide key={speaker.id}>
-                            <Link
+                            {/*<Link
                                 to={`${ROUTE_SPEAKER_DETAIL}/${speaker.id}`}
                                 style={{textDecoration: "none"}}
-                            >
+                            >*/}
                                 <StyledSlideImage
                                     src={speaker.speakerImage}
                                     alt={speaker.fullName}
@@ -118,7 +116,7 @@ const SpeakerSwiper: FC<React.PropsWithChildren<unknown>> = () => {
                                 <StyledSlideContain>
                                     <StyledSlideText>{speaker.fullName}</StyledSlideText>
                                 </StyledSlideContain>
-                            </Link>
+                            {/*</Link>*/}
                         </SwiperSlide>
                     ))}
                 </Swiper>
