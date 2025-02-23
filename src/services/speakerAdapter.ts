@@ -1,4 +1,4 @@
-import {IResponse, ISpeaker} from "../views/Speakers/Speaker.types";
+import {IResponse, ISpeaker} from "../types/speakers";
 
 export const speakerAdapter = (response: IResponse[]): ISpeaker[] =>
     response.map((response) => ({

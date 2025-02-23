@@ -1,7 +1,7 @@
 import {useQuery, UseQueryResult} from "react-query";
 import axios from "axios";
-import {ISpeaker} from "./Speaker.types";
 import {speakerAdapter} from "../../services/speakerAdapter";
+import {ISpeaker} from "../../types/speakers";
 
 export const useFetchSpeakers = (id?: string): UseQueryResult<ISpeaker[]> => {
   return useQuery("api-speakers", async () => {

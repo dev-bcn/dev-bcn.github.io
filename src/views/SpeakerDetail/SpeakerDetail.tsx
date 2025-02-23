@@ -1,37 +1,37 @@
-import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
+import {BIG_BREAKPOINT} from "../../constants/BreakPoints";
 
-import { FC, Suspense, useEffect } from "react";
+import {FC, Suspense, useEffect} from "react";
 import MoreThanIcon from "../../assets/images/MoreThanBlueIcon.svg";
 import LessThan from "../../assets/images/MoreThanIcon.svg";
 import SlashesWhite from "../../assets/images/SlashesWhite.svg";
 import linkedinIcon from "../../assets/images/linkedinIcon.svg";
 import twitterIcon from "../../assets/images/twitterIcon.svg";
-import { useWindowSize } from "react-use";
+import {useWindowSize} from "react-use";
 import {
-  StyledDetailsContainer,
-  StyledFlexCol,
-  StyledImageContainer,
-  StyledInfoContainer,
-  StyledLink,
-  StyledMoreThanIcon,
-  StyledMoreThanIconContainer,
-  StyledName,
-  StyledNameContainer,
-  StyledRightContainer,
-  StyledSlashes,
-  StyledSocialMediaContainer,
-  StyledSocialMediaIcon,
-  StyledSpeakerDescription,
-  StyledSpeakerDetailContainer,
-  StyledSpeakerImg,
-  StyledSpeakerTitle,
+    StyledDetailsContainer,
+    StyledFlexCol,
+    StyledImageContainer,
+    StyledInfoContainer,
+    StyledLink,
+    StyledMoreThanIcon,
+    StyledMoreThanIconContainer,
+    StyledName,
+    StyledNameContainer,
+    StyledRightContainer,
+    StyledSlashes,
+    StyledSocialMediaContainer,
+    StyledSocialMediaIcon,
+    StyledSpeakerDescription,
+    StyledSpeakerDetailContainer,
+    StyledSpeakerImg,
+    StyledSpeakerTitle,
 } from "./Speaker.style";
-import { ROUTE_SPEAKERS, ROUTE_TALK_DETAIL } from "../../constants/routes";
-import { StyledTalkDescription } from "./SpeakerDetail.style";
-import { Link } from "react-router";
-import { Color } from "../../styles/colors";
-import { ISpeaker } from "../Speakers/Speaker.types";
+import {ROUTE_SPEAKERS, ROUTE_TALK_DETAIL} from "../../constants/routes";
+import {StyledTalkDescription} from "./SpeakerDetail.style";
+import {Link} from "react-router";
+import {Color} from "../../styles/colors";
 import conferenceData from "../../data/2024.json";
+import {ISpeaker} from "../../types/speakers";
 
 interface ISpeakerDetailProps {
   speaker: ISpeaker;

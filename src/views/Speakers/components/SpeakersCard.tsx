@@ -9,8 +9,8 @@ import {
 } from "./SpeakerCard.Style";
 import {Link} from "react-router";
 import {ROUTE_2024_SPEAKER_DETAIL} from "../../../constants/routes";
-import {ISpeaker} from "../Speaker.types";
 import Loading from "../../../assets/images/logo.png";
+import {ISpeaker} from "../../../types/speakers";
 
 type SpeakerCardProps = {
   speaker: ISpeaker;

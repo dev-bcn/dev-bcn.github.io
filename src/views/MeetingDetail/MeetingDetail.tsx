@@ -1,7 +1,7 @@
 import {
-  BIG_BREAKPOINT,
-  LARGE_BREAKPOINT,
-  MOBILE_BREAKPOINT,
+    BIG_BREAKPOINT,
+    LARGE_BREAKPOINT,
+    MOBILE_BREAKPOINT,
 } from "../../constants/BreakPoints";
 import {Color} from "../../styles/colors";
 import React, {FC, Suspense, useEffect} from "react";
@@ -12,32 +12,32 @@ import MoreThanIcon from "../../assets/images/MoreThanBlueIcon.svg";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import {useWindowSize} from "react-use";
 import {
-  StyledContainer,
-  StyledDescription,
-  StyledDetailsContainer,
-  StyledExtraInfo,
-  StyledFlexCol,
-  StyledLessThan,
-  StyledMeetingTitleContainer,
-  StyledName,
-  StyledNameContainer,
-  StyledRightContainer,
-  StyledSpeakerDetailContainer,
-  StyledTitle,
-  StyledTitleImg,
-  StyledVideoContainer,
-  StyledVideoTagsContainer,
+    StyledContainer,
+    StyledDescription,
+    StyledDetailsContainer,
+    StyledExtraInfo,
+    StyledFlexCol,
+    StyledLessThan,
+    StyledMeetingTitleContainer,
+    StyledName,
+    StyledNameContainer,
+    StyledRightContainer,
+    StyledSpeakerDetailContainer,
+    StyledTitle,
+    StyledTitleImg,
+    StyledVideoContainer,
+    StyledVideoTagsContainer,
 } from "./Style.MeetingDetail";
 import {Link} from "react-router";
 import {
-  ROUTE_2024_SPEAKER_DETAIL,
-  ROUTE_2024_TALKS
+    ROUTE_2024_SPEAKER_DETAIL,
+    ROUTE_2024_TALKS
 } from "../../constants/routes";
 import conferenceData from "../../data/2024.json";
 import {Tag} from "../../components/Tag/Tag";
-import {ISpeaker} from "../Speakers/Speaker.types";
 import styled from "styled-components";
 import {AddToCalendarButton} from "add-to-calendar-button-react";
+import {ISpeaker} from "../../types/speakers";
 
 const getVideoHeight = (windowWidth: number) => {
   let videoHeight;

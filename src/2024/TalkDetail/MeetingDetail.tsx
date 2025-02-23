@@ -1,7 +1,7 @@
 import {
-  BIG_BREAKPOINT,
-  LARGE_BREAKPOINT,
-  MOBILE_BREAKPOINT,
+    BIG_BREAKPOINT,
+    LARGE_BREAKPOINT,
+    MOBILE_BREAKPOINT,
 } from "../../constants/BreakPoints";
 import {Color} from "../../styles/colors";
 import React, {FC, Suspense, useEffect} from "react";
@@ -13,34 +13,34 @@ import {useWindowSize} from "react-use";
 
 import {Link} from "react-router";
 import {
-  ROUTE_2024_SPEAKER_DETAIL,
-  ROUTE_2024_TALKS,
+    ROUTE_2024_SPEAKER_DETAIL,
+    ROUTE_2024_TALKS,
 } from "../../constants/routes";
 import conferenceData from "../../data/2024.json";
 import {Tag} from "../../components/Tag/Tag";
 import styled from "styled-components";
 import {AddToCalendarButton} from "add-to-calendar-button-react";
 import {IMeeting} from "../../views/MeetingDetail/MeetingDetail.Type";
-import {ISpeaker} from "../../views/Speakers/Speaker.types";
 import {
-  StyledContainer,
-  StyledDetailsContainer,
-  StyledFlexCol,
-  StyledName,
-  StyledNameContainer,
-  StyledRightContainer,
-  StyledSpeakerDetailContainer
+    StyledContainer,
+    StyledDetailsContainer,
+    StyledFlexCol,
+    StyledName,
+    StyledNameContainer,
+    StyledRightContainer,
+    StyledSpeakerDetailContainer
 } from "../../views/SpeakerDetail/Speaker.style";
 import {
-  StyledDescription,
-  StyledExtraInfo,
-  StyledLessThan,
-  StyledMeetingTitleContainer,
-  StyledTitleImg,
-  StyledVideoContainer,
-  StyledVideoTagsContainer
+    StyledDescription,
+    StyledExtraInfo,
+    StyledLessThan,
+    StyledMeetingTitleContainer,
+    StyledTitleImg,
+    StyledVideoContainer,
+    StyledVideoTagsContainer
 } from "../../views/MeetingDetail/Style.MeetingDetail";
 import {StyledTitle} from "../Home/Style.Home";
+import {ISpeaker} from "../../types/speakers";
 
 const getVideoHeight = (windowWidth: number) => {
     let videoHeight;

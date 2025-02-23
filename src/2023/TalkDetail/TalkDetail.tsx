@@ -3,14 +3,14 @@ import {
   LARGE_BREAKPOINT,
   MOBILE_BREAKPOINT,
 } from "../../constants/BreakPoints";
-import { Color } from "../../styles/colors";
-import { FC, Suspense, useEffect } from "react";
-import { IMeeting } from "./MeetingDetail.Type";
+import {Color} from "../../styles/colors";
+import {FC, Suspense, useEffect} from "react";
+import {IMeeting} from "./MeetingDetail.Type";
 import LessThanIconWhite from "../../assets/images/LessThanIconWhite.svg";
 import LessThanIcon from "../../assets/images/LessThanBlueIcon.svg";
 import MoreThanIcon from "../../assets/images/MoreThanBlueIcon.svg";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import { useWindowSize } from "react-use";
+import {useWindowSize} from "react-use";
 import {
   StyledContainer,
   StyledDescription,
@@ -28,14 +28,14 @@ import {
   StyledVideoContainer,
   StyledVideoTagsContainer,
 } from "./Style.MeetingDetail";
-import { Link } from "react-router";
+import {Link} from "react-router";
 import {
   ROUTE_2023_SPEAKER_DETAIL,
   ROUTE_2023_TALKS,
 } from "../../constants/routes";
 import conferenceData from "../../data/2023.json";
-import { Tag } from "../../components/Tag/Tag";
-import { ISpeaker } from "../Speakers/Speaker.types";
+import {Tag} from "../../components/Tag/Tag";
+import {ISpeaker} from "../../types/speakers";
 
 const getVideoHeight = (windowWidth: number) => {
   let videoHeight;

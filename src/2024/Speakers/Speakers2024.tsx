@@ -21,8 +21,8 @@ import Button from "../../components/UI/Button";
 import {gaEventTracker} from "../../components/analytics/Analytics";
 import {useFetchSpeakers} from "./UseFetchSpeakers";
 import * as Sentry from "@sentry/react";
-import {ISpeaker} from "../../views/Speakers/Speaker.types";
 import {SpeakerCard} from "../../views/Speakers/components/SpeakersCard";
+import {ISpeaker} from "../../types/speakers";
 
 const LessThanGreaterThan = (props: { width: number }) => (
     <>
