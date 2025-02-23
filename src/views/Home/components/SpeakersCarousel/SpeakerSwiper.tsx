@@ -75,7 +75,7 @@ const SpeakerSwiper: FC<React.PropsWithChildren<unknown>> = () => {
                       disableOnInteraction: true,
                     }}*/
                     slidesPerView={1}
-                    spaceBetween={10}
+                    spaceBetween={7}
                     speed={5000}
                     parallax={true}
                     //loop={true}
