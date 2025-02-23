@@ -1,5 +1,5 @@
 import React, {FC} from "react";
-import {Autoplay, Parallax} from "swiper";
+import {Parallax} from "swiper";
 import {Swiper, SwiperSlide} from "swiper/react";
 import styled from "styled-components";
 import {Color} from "../../../../styles/colors";
@@ -49,15 +49,15 @@ const SpeakerSwiper: FC<React.PropsWithChildren<unknown>> = () => {
       {isLoading && <p>Loading</p>}
       {conferenceData.carrousel.enabled && swiperSpeakers && (
         <Swiper
-          autoplay={{
-            delay: 500,
+          /*autoplay={{
+            delay: 5000,
             disableOnInteraction: true,
-          }}
+          }}*/
           slidesPerView={1}
           spaceBetween={10}
-          speed={3000}
+          speed={5000}
           parallax={true}
-          loop={true}
+          //loop={true}
           grabCursor={true}
           breakpoints={{
             340: {
@@ -72,14 +72,14 @@ const SpeakerSwiper: FC<React.PropsWithChildren<unknown>> = () => {
             },
             1024: {
               width: 1024,
-              slidesPerView: 4,
+              slidesPerView: 5,
               centeredSlides: true,
               spaceBetween: 30,
               autoHeight: true,
             },
           }}
           centeredSlides={true}
-          modules={[Autoplay, Parallax]}
+          modules={[/*Autoplay,*/ Parallax]}
           className="mySwiper"
         >
           {swiperSpeakers.map((speaker) => (
