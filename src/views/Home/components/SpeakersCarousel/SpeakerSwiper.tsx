@@ -59,7 +59,7 @@ const SpeakerSwiper: FC<React.PropsWithChildren<unknown>> = () => {
     const cachedSpeakers = React.useMemo(() => {
         const allSpeakers = data ? [...data, victorRentea] : [victorRentea];
         return allSpeakers.sort(() => 0.5 - Math.random()).slice(0, 20);
-    }, [data]);
+    }, [data, victorRentea]);
 
     if (error) {
         Sentry.captureException(error);
