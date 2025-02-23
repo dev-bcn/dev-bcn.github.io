@@ -38,7 +38,7 @@ const StyledSlideText = styled.p`
 const SpeakerSwiper: FC<React.PropsWithChildren<unknown>> = () => {
   const { isLoading, data, error } = useFetchSpeakers();
 
-  const swiperSpeakers = data?.sort(() => 0.5 - Math.random()).slice(0, 20);
+  const cachedSpeakers = React.useMemo(()=>data?.sort(() => 0.5 - Math.random()).slice(0, 20), [data]);
 
   if (error) {
     Sentry.captureException(error);
@@ -47,7 +47,7 @@ const SpeakerSwiper: FC<React.PropsWithChildren<unknown>> = () => {
   return (
     <>
       {isLoading && <p>Loading</p>}
-      {conferenceData.carrousel.enabled && swiperSpeakers && (
+      {conferenceData.carrousel.enabled && cachedSpeakers && (
         <Swiper
           /*autoplay={{
             delay: 5000,
@@ -82,7 +82,7 @@ const SpeakerSwiper: FC<React.PropsWithChildren<unknown>> = () => {
           modules={[/*Autoplay,*/ Parallax]}
           className="mySwiper"
         >
-          {swiperSpeakers.map((speaker) => (
+          {cachedSpeakers.map((speaker) => (
             <SwiperSlide key={speaker.id}>
               <Link
                 to={`${ROUTE_SPEAKER_DETAIL}/${speaker.id}`}
