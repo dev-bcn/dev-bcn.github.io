@@ -1,7 +1,7 @@
 {
   "actionButtons": true,
   "carrousel": {
-    "enabled": false
+    "enabled": true
   },
   "cfp": {
     "startDay": "2025-01-01T00:00:00+01:00",
