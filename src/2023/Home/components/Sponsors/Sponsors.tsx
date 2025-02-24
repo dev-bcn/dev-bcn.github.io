@@ -1,22 +1,29 @@
-import { Color } from "../../../../styles/colors";
-import { FC } from "react";
+import {Color} from "../../../../styles/colors";
+import {FC} from "react";
 
-import LessThanBlueIcon from "../../../../assets/images/MoreThanBlueWhiteIcon.svg";
-import LessThanBlueWhiteIcon from "../../../../assets/images/LessThanBlueWhiteIcon.svg";
-import SectionWrapper from "../../../../components/SectionWrapper/SectionWrapper";
+import LessThanBlueIcon
+  from "../../../../assets/images/MoreThanBlueWhiteIcon.svg";
+import LessThanBlueWhiteIcon
+  from "../../../../assets/images/LessThanBlueWhiteIcon.svg";
+import SectionWrapper
+  from "../../../../components/SectionWrapper/SectionWrapper";
 import TitleSection from "../../../../components/SectionTitle/TitleSection";
 import {
   StyledSponsorsContainer,
   StyledTitleContainer,
   StyledTitleImg,
 } from "./Sponsors.style";
-import { TopSponsors } from "./TopSponsors";
-import { RegularSponsors } from "./RegularSponsors";
-import { PremiumSponsors } from "./PremiumSponsors";
-import { BasicSponsor } from "./BasicSponsor";
-import { Communities } from "./Communities";
-import { MediaPartners } from "./MediaPartners";
-import { Supporters } from "./Supporters";
+import {TopSponsors} from "./TopSponsors";
+import {RegularSponsors} from "./RegularSponsors";
+import {PremiumSponsors} from "./PremiumSponsors";
+import {Communities} from "./Communities";
+import {Supporters} from "./Supporters";
+import {
+  BasicSponsor
+} from "../../../../views/Home/components/Sponsors/BasicSponsor";
+import {
+  MediaPartners
+} from "../../../../views/Home/components/Sponsors/MediaPartners";
 
 export const buildSlashes = (module: number) => {
   const slashesElement = document.getElementById("Slashes");
