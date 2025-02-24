@@ -13,7 +13,6 @@ import {
   StyledTitleContainer,
   StyledTitleImg,
 } from "./Sponsors.style";
-import {TopSponsors} from "./TopSponsors";
 import {Communities} from "./Communities";
 import {Supporters} from "./Supporters";
 import {
@@ -28,6 +27,9 @@ import {
 import {
   PremiumSponsors
 } from "../../../../views/Home/components/Sponsors/PremiumSponsors";
+import {
+  TopSponsors
+} from "../../../../views/Home/components/Sponsors/TopSponsors";
 
 export const buildSlashes = (module: number) => {
   const slashesElement = document.getElementById("Slashes");
