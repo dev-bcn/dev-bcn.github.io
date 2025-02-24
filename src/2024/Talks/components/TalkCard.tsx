@@ -8,12 +8,6 @@ import {
 import {Color} from "../../../styles/colors";
 import {StyledJobsInfo} from "../../../views/JobOffers/components/JobsCard";
 import {
-    CategoryItemEnum,
-    QuestionAnswers,
-    SessionCategory,
-    SessionSpeaker
-} from "../../../views/Talks/Talk.types";
-import {
     StyledSessionCard,
     StyledSessionText,
     StyledTagsWrapper,
@@ -25,6 +19,12 @@ import {
     extractSessionCategoryInfo,
     extractSessionTags
 } from "../../../services/sessionsAdapter";
+import {
+    CategoryItemEnum,
+    QuestionAnswers,
+    SessionCategory,
+    SessionSpeaker
+} from "../../../types/sessions";
 
 export interface TalkCardProps {
     talk: {

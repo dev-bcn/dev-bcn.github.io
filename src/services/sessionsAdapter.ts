@@ -1,10 +1,10 @@
+import {IMeeting} from "../views/MeetingDetail/MeetingDetail.Type";
 import {
     CategoryItemEnum,
     QuestionAnswers,
     Session,
     SessionCategory
-} from "../views/Talks/Talk.types";
-import {IMeeting} from "../views/MeetingDetail/MeetingDetail.Type";
+} from "../types/sessions";
 
 export const extractSessionTags = (
     questionAnswers: QuestionAnswers[],

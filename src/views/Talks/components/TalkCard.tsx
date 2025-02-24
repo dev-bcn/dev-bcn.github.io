@@ -7,12 +7,6 @@ import {
   ROUTE_TALK_DETAIL,
 } from "../../../constants/routes";
 import {
-  CategoryItemEnum,
-  QuestionAnswers,
-  SessionCategory,
-  SessionSpeaker,
-} from "../Talk.types";
-import {
   StyledSessionCard,
   StyledSessionText,
   StyledTagsWrapper,
@@ -25,6 +19,12 @@ import {
   extractSessionCategoryInfo,
   extractSessionTags
 } from "../../../services/sessionsAdapter";
+import {
+  CategoryItemEnum,
+  QuestionAnswers,
+  SessionCategory,
+  SessionSpeaker
+} from "../../../types/sessions";
 
 export interface TalkCardProps {
   talk: {

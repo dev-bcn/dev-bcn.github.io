@@ -9,9 +9,9 @@ import {sessionAdapter, useFetchTalksById} from "../Talks/UseFetchTalks";
 import * as Sentry from "@sentry/react";
 import {useFetchSpeakers} from "../Speakers/UseFetchSpeakers";
 import MeetingDetail from "./MeetingDetail";
-import {Session} from "../../views/Talks/Talk.types";
 
 import {ISpeaker} from "../../types/speakers";
+import {Session} from "../../types/sessions";
 
 const StyledContainer = styled.div`
     background-color: ${Color.WHITE};

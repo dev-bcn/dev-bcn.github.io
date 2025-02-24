@@ -4,7 +4,8 @@ import {
     StyledSessionSection,
     StyledTrackInfo
 } from "../../../views/Talks/Talks.style";
-import {IGroup} from "../../../views/Talks/Talk.types";
+
+import {IGroup} from "../../../types/sessions";
 
 interface TrackInfoProps {
     track: IGroup;

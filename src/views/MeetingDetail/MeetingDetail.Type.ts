@@ -1,4 +1,4 @@
-import { SessionSpeaker } from "../Talks/Talk.types";
+import {SessionSpeaker} from "../../types/sessions";
 
 export interface IMeeting {
   id: number;

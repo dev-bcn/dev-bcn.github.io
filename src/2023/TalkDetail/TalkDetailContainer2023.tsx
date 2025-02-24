@@ -8,7 +8,7 @@ import conferenceData from "../../data/2023.json";
 import {useFetchTalksById} from "../Talks/UseFetchTalks";
 import * as Sentry from "@sentry/react";
 import {useFetchSpeakers} from "../Speakers/UseFetchSpeakers";
-import {Session} from "../Talks/Talk.types";
+import {Session} from "../../types/sessions";
 import TalkDetail from "./TalkDetail";
 import {ISpeaker} from "../../types/speakers";
 import {sessionAdapter} from "../../services/sessionsAdapter";

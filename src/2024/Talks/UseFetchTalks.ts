@@ -1,7 +1,7 @@
 import {useQuery, UseQueryResult} from "react-query";
 import axios from "axios";
-import {IGroup, Session} from "../../views/Talks/Talk.types";
 import {Liveview} from "../../views/Talks/liveView.types";
+import {IGroup, Session} from "../../types/sessions";
 
 export const useFetchTalks = (): UseQueryResult<IGroup[]> =>
     useQuery("api-talks", async () => {

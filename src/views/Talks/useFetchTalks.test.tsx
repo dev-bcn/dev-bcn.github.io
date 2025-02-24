@@ -4,12 +4,6 @@ import {renderHook, waitFor} from "@testing-library/react";
 import axios, {AxiosHeaders, AxiosResponse} from "axios";
 import {faker} from "@faker-js/faker";
 import {useFetchLiveView, useFetchTalksById,} from "./UseFetchTalks";
-import {
-  CategoryItemEnum,
-  QuestionAnswers,
-  Session,
-  SessionCategory,
-} from "./Talk.types";
 import {IMeeting} from "../MeetingDetail/MeetingDetail.Type";
 import {UngroupedSession} from "./liveView.types";
 import {
@@ -18,6 +12,12 @@ import {
   extractSessionTags,
   sessionAdapter
 } from "../../services/sessionsAdapter";
+import {
+  CategoryItemEnum,
+  QuestionAnswers,
+  Session,
+  SessionCategory
+} from "../../types/sessions";
 
 jest.mock("axios");
 const mockedAxios = axios as jest.Mocked<typeof axios>;
