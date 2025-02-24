@@ -1,24 +1,23 @@
-import React, { FC } from "react";
-import { QueryClient, QueryClientProvider } from "react-query";
-import { renderHook, waitFor } from "@testing-library/react";
-import axios, { AxiosHeaders, AxiosResponse } from "axios";
-import { faker } from "@faker-js/faker";
-import {
-  extractSessionCategoryInfo,
-  extractSessionSlides,
-  extractSessionTags,
-  sessionAdapter,
-  useFetchLiveView,
-  useFetchTalksById,
-} from "./UseFetchTalks";
+import React, {FC} from "react";
+import {QueryClient, QueryClientProvider} from "react-query";
+import {renderHook, waitFor} from "@testing-library/react";
+import axios, {AxiosHeaders, AxiosResponse} from "axios";
+import {faker} from "@faker-js/faker";
+import {useFetchLiveView, useFetchTalksById,} from "./UseFetchTalks";
 import {
   CategoryItemEnum,
   QuestionAnswers,
   Session,
   SessionCategory,
 } from "./Talk.types";
-import { IMeeting } from "../MeetingDetail/MeetingDetail.Type";
-import { UngroupedSession } from "./liveView.types";
+import {IMeeting} from "../MeetingDetail/MeetingDetail.Type";
+import {UngroupedSession} from "./liveView.types";
+import {
+  extractSessionCategoryInfo,
+  extractSessionSlides,
+  extractSessionTags,
+  sessionAdapter
+} from "../../services/sessionsAdapter";
 
 jest.mock("axios");
 const mockedAxios = axios as jest.Mocked<typeof axios>;

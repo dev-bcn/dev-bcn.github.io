@@ -1,7 +1,7 @@
-import { FC } from "react";
-import { Link } from "react-router";
-import { StyledJobsInfo } from "../../JobOffers/components/JobsCard";
-import { Tag } from "../../../components/Tag/Tag";
+import React, {FC} from "react";
+import {Link} from "react-router";
+import {StyledJobsInfo} from "../../JobOffers/components/JobsCard";
+import {Tag} from "../../../components/Tag/Tag";
 import {
   ROUTE_2023_TALK_DETAIL,
   ROUTE_SPEAKER_DETAIL,
@@ -12,10 +12,7 @@ import {
   SessionCategory,
   SessionSpeaker,
 } from "../Talk.types";
-import {
-  extractSessionCategoryInfo,
-  extractSessionTags,
-} from "../UseFetchTalks";
+
 import {
   StyledSessionCard,
   StyledSessionText,
@@ -23,7 +20,11 @@ import {
   StyledTalkSpeaker,
   StyledTalkTitle,
 } from "../Talks.style";
-import { Color } from "../../../styles/colors";
+import {Color} from "../../../styles/colors";
+import {
+  extractSessionCategoryInfo,
+  extractSessionTags
+} from "../../../services/sessionsAdapter";
 
 interface TalkCardProps {
   index: number;

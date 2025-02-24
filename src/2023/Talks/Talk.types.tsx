@@ -22,17 +22,17 @@ export interface SessionCategory {
 }
 
 export interface Session {
-  id: number;
-  title: string;
-  description: string;
-  startAt: string;
-  endsAt: string;
-  slidesURL?: string;
-  speakers: SessionSpeaker[];
-  categories: SessionCategory[];
-  questionAnswers: QuestionAnswers[];
-  recordingUrl?: string;
-  track: string;
+  readonly id: number;
+  readonly title: string;
+  readonly description: string;
+  readonly startsAt: string;
+  readonly endsAt: string;
+  readonly slidesURL?: string;
+  readonly speakers: SessionSpeaker[];
+  readonly categories: SessionCategory[];
+  readonly questionAnswers: QuestionAnswers[];
+  readonly recordingUrl?: string;
+  readonly track: string;
 }
 
 export interface IGroup {
