@@ -42,7 +42,7 @@ const SpeakerSwiper: FC<React.PropsWithChildren<unknown>> = () => {
         const victorRentea: ISpeaker = {
             id: "8f5f4c31-232b-4e04-b736-6b2775c939cf",
             fullName: "Victor Rentea",
-            bio: "With two decades of experience, Victor is a Java Champion working as a trainer for top companies in Europe. More than five thousand developers of 120 companies attended his workshops, so every week he has the opportunity to debate with bright engineers the challenges faced by their projects. In return, Victor summarizes key learning points from these workshops in conference talks and online meetups for the European Software Crafters, the world’s largest community around architecture, refactoring, and testing. Find out how Victor can help you on https://victorrentea.ro: training catalog, consultancy, and YouTube playlists of his talks.",
+            bio: "With two decades of experience, Victor is a Java Champion working as a trainer for top companies in Europe. More than five thousand developers of 120 companies attended his workshops, so every week he has the opportunity to debate with bright engineers the challenges faced by their projects. In return, Victor summarizes key learning points from these workshops in conference talks and online meetups for the European Software Crafters, the world's largest community around architecture, refactoring, and testing. Find out how Victor can help you on https://victorrentea.ro: training catalog, consultancy, and YouTube playlists of his talks.",
             speakerImage: "https://sessionize.com/image/3031-0o0o0-a3r6JkTgm9aUHJXBhbvnWQ.jpg?download=victor-rentea.jpg",
             linkedInUrl: {
                 url: "https://x.com/victorrentea",
@@ -57,8 +57,8 @@ const SpeakerSwiper: FC<React.PropsWithChildren<unknown>> = () => {
             },
             tagLine: "Java Champion and Trainer",
         };
-        const allSpeakers = data ? [...data, victorRentea] : [victorRentea];
-        return allSpeakers.sort(() => 0.5 - Math.random()).slice(0, 20);
+        const allSpeakers: Array<ISpeaker> = data ? [...data, victorRentea] : [victorRentea];
+        return allSpeakers.toSorted(() => 0.5 - Math.random()).slice(0, 20);
     }, [data]);
 
     if (error) {
@@ -103,7 +103,7 @@ const SpeakerSwiper: FC<React.PropsWithChildren<unknown>> = () => {
                     modules={[/*Autoplay,*/ Parallax]}
                     className="mySwiper"
                 >
-                    {cachedSpeakers.map((speaker) => (
+                    {cachedSpeakers.map((speaker:ISpeaker) => (
                         <SwiperSlide key={speaker.id}>
                             {/*<Link
                                 to={`${ROUTE_SPEAKER_DETAIL}/${speaker.id}`}
