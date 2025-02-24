@@ -13,7 +13,7 @@ import {
   StyledTitleContainer,
   StyledTitleImg,
 } from "./Sponsors.style";
-import {Supporters} from "./Supporters";
+
 import {
   BasicSponsor
 } from "../../../../views/Home/components/Sponsors/BasicSponsor";
@@ -32,6 +32,12 @@ import {
 import {
   Communities
 } from "../../../../views/Home/components/Sponsors/Communities";
+import {
+  Supporters
+} from "../../../../views/Home/components/Sponsors/Supporters";
+
+
+import {sponsors} from "./SponsorsData";
 
 export const buildSlashes = (module: number) => {
   const slashesElement = document.getElementById("Slashes");
@@ -62,13 +68,13 @@ const Sponsors: FC<React.PropsWithChildren<unknown>> = () => (
         />
         <StyledTitleImg src={LessThanBlueWhiteIcon} />
       </StyledTitleContainer>
-      <TopSponsors />
-      <PremiumSponsors />
-      <RegularSponsors />
-      <BasicSponsor />
-      <Communities />
-      <Supporters />
-      <MediaPartners />
+      <TopSponsors sponsors={sponsors.top}/>
+      <PremiumSponsors sponsors={sponsors.premium}/>
+      <RegularSponsors sponsors={sponsors.regular}/>
+      <BasicSponsor sponsors={sponsors.basic}/>
+      <Communities sponsors={sponsors.communities}/>
+      <Supporters sponsors={sponsors.supporters}/>
+      <MediaPartners sponsors={sponsors.media_partners}/>
     </StyledSponsorsContainer>
   </SectionWrapper>
 );

@@ -11,19 +11,21 @@ import {
   StyledSponsorTitleSlashesContainer,
 } from "./Sponsors.style";
 import SponsorBadge from "./SponsorBadge";
-import { Color } from "../../../../styles/colors";
-import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
-import { useWindowSize } from "react-use";
-import { FC, useCallback, useEffect, useState } from "react";
-import { buildSlashes } from "./Sponsors";
-import { sponsors } from "./SponsorsData";
+import {Color} from "../../../../styles/colors";
+import {BIG_BREAKPOINT} from "../../../../constants/BreakPoints";
+import {useWindowSize} from "react-use";
+import React, {FC, useCallback, useEffect, useState} from "react";
+import {buildSlashes} from "./Sponsors";
+import {Sponsor} from "./SponsorsData";
 
-export const PremiumSponsors: FC<React.PropsWithChildren<unknown>> = () => {
+interface Props {
+  sponsors: Array<Sponsor> | null;
+}
+
+export const PremiumSponsors: FC<React.PropsWithChildren<Props>> = ({sponsors}) => {
   const { width } = useWindowSize();
   const [slashes, setSlashes] = useState("");
   const [isHovered, setIsHovered] = useState<boolean>(false);
-  const premiumSponsors = sponsors.premium;
-
   useEffect(() => {
     const newSlashes = buildSlashes(2);
 
@@ -37,7 +39,7 @@ export const PremiumSponsors: FC<React.PropsWithChildren<unknown>> = () => {
   );
   return (
     <>
-      {premiumSponsors !== null && premiumSponsors.length > 0 && (
+      {sponsors !== null && sponsors.length > 0 && (
         <StyledSponsorItemContainer
           id="premium-sponsors"
           className="SponsorItem premium"
@@ -77,7 +79,7 @@ export const PremiumSponsors: FC<React.PropsWithChildren<unknown>> = () => {
           <StyledSponsorLogosContainer className="SponsorLogos">
             <StyledFlexGrow />
             <StyledLogos position="right">
-              {premiumSponsors.map((sponsor) => (
+              {sponsors.map((sponsor) => (
                 <a
                   key={sponsor.name}
                   href={sponsor.website}

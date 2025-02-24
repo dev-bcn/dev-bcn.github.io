@@ -9,7 +9,6 @@ import {
     StyledTitleContainer,
     StyledTitleImg,
 } from "./Sponsors.style";
-import {Supporters} from "./Supporters";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import TitleSection from "../../components/SectionTitle/TitleSection";
 import {BasicSponsor} from "../../views/Home/components/Sponsors/BasicSponsor";
@@ -24,6 +23,8 @@ import {
 } from "../../views/Home/components/Sponsors/PremiumSponsors";
 import {TopSponsors} from "../../views/Home/components/Sponsors/TopSponsors";
 import {Communities} from "../../views/Home/components/Sponsors/Communities";
+import {Supporters} from "../../views/Home/components/Sponsors/Supporters";
+import {sponsors} from "./SponsorsData";
 
 export const buildSlashes = (module: number) => {
     const slashesElement = document.getElementById("Slashes");
@@ -39,6 +40,7 @@ export const buildSlashes = (module: number) => {
 };
 
 const Sponsors: FC<React.PropsWithChildren<unknown>> = () => (
+
     <SectionWrapper color={Color.WHITE}>
         <StyledSponsorsContainer id="sponsors">
             <StyledTitleContainer className="TitleContainer">
@@ -55,13 +57,13 @@ const Sponsors: FC<React.PropsWithChildren<unknown>> = () => (
                 <StyledTitleImg alt="more than - icon"
                                 src={LessThanBlueWhiteIcon}/>
             </StyledTitleContainer>
-            <TopSponsors/>
-            <PremiumSponsors/>
-            <RegularSponsors/>
-            <BasicSponsor/>
-            <Communities/>
-            <Supporters/>
-            <MediaPartners/>
+            <TopSponsors sponsors={sponsors.top}/>
+            <PremiumSponsors sponsors={sponsors.premium}/>
+            <RegularSponsors sponsors={sponsors.regular}/>
+            <BasicSponsor sponsors={sponsors.basic}/>
+            <Communities sponsors={sponsors.communities}/>
+            <Supporters sponsors={sponsors.supporters}/>
+            <MediaPartners sponsors={sponsors.media_partners}/>
         </StyledSponsorsContainer>
     </SectionWrapper>
 );

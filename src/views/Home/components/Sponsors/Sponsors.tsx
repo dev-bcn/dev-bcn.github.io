@@ -1,22 +1,26 @@
-import { Color } from "../../../../styles/colors";
-import { FC } from "react";
+import {Color} from "../../../../styles/colors";
+import React, {FC} from "react";
 
-import LessThanBlueIcon from "../../../../assets/images/MoreThanBlueWhiteIcon.svg";
-import LessThanBlueWhiteIcon from "../../../../assets/images/LessThanBlueWhiteIcon.svg";
-import SectionWrapper from "../../../../components/SectionWrapper/SectionWrapper";
+import LessThanBlueIcon
+  from "../../../../assets/images/MoreThanBlueWhiteIcon.svg";
+import LessThanBlueWhiteIcon
+  from "../../../../assets/images/LessThanBlueWhiteIcon.svg";
+import SectionWrapper
+  from "../../../../components/SectionWrapper/SectionWrapper";
 import TitleSection from "../../../../components/SectionTitle/TitleSection";
 import {
   StyledSponsorsContainer,
   StyledTitleContainer,
   StyledTitleImg,
 } from "./Sponsors.style";
-import { TopSponsors } from "./TopSponsors";
-import { RegularSponsors } from "./RegularSponsors";
-import { PremiumSponsors } from "./PremiumSponsors";
-import { BasicSponsor } from "./BasicSponsor";
-import { Communities } from "./Communities";
-import { MediaPartners } from "./MediaPartners";
-import { Supporters } from "./Supporters";
+import {TopSponsors} from "./TopSponsors";
+import {RegularSponsors} from "./RegularSponsors";
+import {PremiumSponsors} from "./PremiumSponsors";
+import {BasicSponsor} from "./BasicSponsor";
+import {Communities} from "./Communities";
+import {MediaPartners} from "./MediaPartners";
+import {Supporters} from "./Supporters";
+import {sponsors} from "./SponsorsData";
 
 export const buildSlashes = (module: number) => {
   const slashesElement = document.getElementById("Slashes");
@@ -47,13 +51,13 @@ const Sponsors: FC<React.PropsWithChildren<unknown>> = () => (
         />
         <StyledTitleImg alt="more than - icon" src={LessThanBlueWhiteIcon} />
       </StyledTitleContainer>
-      <TopSponsors />
-      <PremiumSponsors />
-      <RegularSponsors />
-      <BasicSponsor />
-      <Communities />
-      <Supporters />
-      <MediaPartners />
+      <TopSponsors sponsors={sponsors.top}/>
+      <PremiumSponsors sponsors={sponsors.premium}/>
+      <RegularSponsors sponsors={sponsors.regular}/>
+      <BasicSponsor sponsors={sponsors.basic}/>
+      <Communities sponsors={sponsors.communities}/>
+      <Supporters sponsors={sponsors.supporters}/>
+      <MediaPartners sponsors={sponsors.media_partners}/>
     </StyledSponsorsContainer>
   </SectionWrapper>
 );

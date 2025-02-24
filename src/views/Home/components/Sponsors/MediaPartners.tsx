@@ -11,19 +11,21 @@ import {
   StyledSponsorTitleSlashesContainer,
 } from "./Sponsors.style";
 import SponsorBadge from "./SponsorBadge";
-import { Color } from "../../../../styles/colors";
-import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
-import { buildSlashes } from "./Sponsors";
-import { useWindowSize } from "react-use";
-import { FC, useCallback, useEffect, useState } from "react";
-import { sponsors } from "./SponsorsData";
+import {Color} from "../../../../styles/colors";
+import {BIG_BREAKPOINT} from "../../../../constants/BreakPoints";
+import {buildSlashes} from "./Sponsors";
+import {useWindowSize} from "react-use";
+import React, {FC, useCallback, useEffect, useState} from "react";
+import {Sponsor} from "./SponsorsData";
 
-export const MediaPartners: FC<React.PropsWithChildren<unknown>> = () => {
+interface Props {
+  sponsors: Array<Sponsor> | null;
+}
+
+export const MediaPartners: FC<React.PropsWithChildren<Props>> = ({sponsors}) => {
   const { width } = useWindowSize();
   const [slashes, setSlashes] = useState("");
   const [isHovered, setIsHovered] = useState<boolean>(false);
-  const mediaPartners = sponsors.media_partners;
-
   useEffect(() => {
     const newSlashes = buildSlashes(2);
 
@@ -34,7 +36,7 @@ export const MediaPartners: FC<React.PropsWithChildren<unknown>> = () => {
   const handleUnHoverMediaPartner = useCallback(() => setIsHovered(false), []);
   return (
     <>
-      {mediaPartners !== null && mediaPartners.length > 0 && (
+      {sponsors !== null && sponsors.length > 0 && (
         <StyledSponsorItemContainer
           className="SponsorItem virtual"
           id="virtual-sponsors"
@@ -69,7 +71,7 @@ export const MediaPartners: FC<React.PropsWithChildren<unknown>> = () => {
 
           <StyledSponsorLogosContainer className="SponsorLogos">
             <StyledLogos>
-              {mediaPartners.map((sponsor) => (
+              {sponsors.map((sponsor) => (
                 <a
                   key={sponsor.name}
                   href={sponsor.website}
