@@ -71,8 +71,8 @@ export const sessionAdapter = (
     }
     return {
         description: session.description,
-        endDate: Array.isArray(session.endsAt) ? session.endsAt.split("T")[0] : "",
-        endTime: Array.isArray(session.endsAt) ? session.endsAt.split("T")[1] : "",
+        endDate: session.endsAt !== null ? session.endsAt.split("T")[0] : "",
+        endTime: session.endsAt !== null ? session.endsAt.split("T")[1] : "",
         id: session.id,
         language: extractSessionCategoryInfo(
             session.categories,
@@ -81,8 +81,8 @@ export const sessionAdapter = (
         level: extractSessionCategoryInfo(session?.categories),
         slidesURL: extractSessionSlides(session.questionAnswers),
         speakers: session.speakers,
-        startDate: Array.isArray(session.startsAt) ? session.startsAt.split("T")[0] : "",
-        startTime: Array.isArray(session.startsAt) ? session.startsAt.split("T")[1] : "",
+        startDate: session.startsAt !== null ? session.startsAt.split("T")[0] : "",
+        startTime: session.startsAt !== null ? session.startsAt.split("T")[1] : "",
         title: session.title,
         track: extractSessionCategoryInfo(
             session.categories,
