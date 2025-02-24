@@ -10,8 +10,6 @@ import {
     StyledTitleImg,
 } from "./Sponsors.style";
 import {TopSponsors} from "./TopSponsors";
-import {RegularSponsors} from "./RegularSponsors";
-import {PremiumSponsors} from "./PremiumSponsors";
 import {Communities} from "./Communities";
 import {Supporters} from "./Supporters";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
@@ -20,6 +18,12 @@ import {BasicSponsor} from "../../views/Home/components/Sponsors/BasicSponsor";
 import {
     MediaPartners
 } from "../../views/Home/components/Sponsors/MediaPartners";
+import {
+    RegularSponsors
+} from "../../views/Home/components/Sponsors/RegularSponsors";
+import {
+    PremiumSponsors
+} from "../../views/Home/components/Sponsors/PremiumSponsors";
 
 export const buildSlashes = (module: number) => {
     const slashesElement = document.getElementById("Slashes");
