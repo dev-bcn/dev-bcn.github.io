@@ -8,7 +8,7 @@ import {
   StyledSpeakerTitle,
 } from "./SpeakerCard.Style";
 import {Link} from "react-router";
-import {ROUTE_2024_SPEAKER_DETAIL} from "../../../constants/routes";
+import {ROUTE_SPEAKER_DETAIL} from "../../../constants/routes";
 import Loading from "../../../assets/images/logo.png";
 import {ISpeaker} from "../../../types/speakers";
 
@@ -22,7 +22,7 @@ export const SpeakerCard: FC<React.PropsWithChildren<SpeakerCardProps>> = ({
   return (
     <StyledSpeakerCard>
       <Link
-          to={`${ROUTE_2024_SPEAKER_DETAIL}/${speaker.id}`}
+          to={`${ROUTE_SPEAKER_DETAIL}/${speaker.id}`}
         style={{ textDecoration: "none" }}
       >
         <StyledSpeakerImageContainer>
