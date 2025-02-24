@@ -1,4 +1,4 @@
-import { useQuery, UseQueryResult } from "react-query";
+import {useQuery, UseQueryResult} from "react-query";
 import {
   CategoryItemEnum,
   IGroup,
@@ -7,13 +7,13 @@ import {
   SessionCategory,
 } from "./Talk.types";
 import axios from "axios";
-import { IMeeting } from "../MeetingDetail/MeetingDetail.Type";
-import { Liveview } from "./liveView.types";
+import {IMeeting} from "../MeetingDetail/MeetingDetail.Type";
+import {Liveview} from "./liveView.types";
 
 export const useFetchTalks = (): UseQueryResult<IGroup[]> =>
   useQuery("api-talks", async () => {
     let data = await axios.get(
-      "https://sessionize.com/api/v2/teq4asez/view/Sessions",
+      "https://sessionize.com/api/v2/xhudniix/view/Sessions",
     );
     return data.data;
   });
@@ -21,7 +21,7 @@ export const useFetchTalks = (): UseQueryResult<IGroup[]> =>
 export const useFetchTalksById = (id: string): UseQueryResult<Session[]> =>
   useQuery("talks", async () => {
     const serverResponse = await axios.get(
-      "https://sessionize.com/api/v2/teq4asez/view/Sessions",
+      "https://sessionize.com/api/v2/xhudniix/view/Sessions",
     );
     return serverResponse.data
       .map((track: IGroup) => track.sessions)
@@ -32,7 +32,7 @@ export const useFetchTalksById = (id: string): UseQueryResult<Session[]> =>
 export const useFetchLiveView = (): UseQueryResult<Liveview> =>
   useQuery("api-talks", async () => {
     let data = await axios.get(
-      "https://sessionize.com/api/v2/ezm48alx/view/Sessions",
+      "https://sessionize.com/api/v2/xhudniix/view/Sessions",
     );
     return data.data.at(0);
   });
