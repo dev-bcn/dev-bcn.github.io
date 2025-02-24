@@ -9,7 +9,6 @@ import {
     StyledTitleContainer,
     StyledTitleImg,
 } from "./Sponsors.style";
-import {Communities} from "./Communities";
 import {Supporters} from "./Supporters";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import TitleSection from "../../components/SectionTitle/TitleSection";
@@ -24,6 +23,7 @@ import {
     PremiumSponsors
 } from "../../views/Home/components/Sponsors/PremiumSponsors";
 import {TopSponsors} from "../../views/Home/components/Sponsors/TopSponsors";
+import {Communities} from "../../views/Home/components/Sponsors/Communities";
 
 export const buildSlashes = (module: number) => {
     const slashesElement = document.getElementById("Slashes");
