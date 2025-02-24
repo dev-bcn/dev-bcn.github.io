@@ -13,15 +13,13 @@ describe("CfpSection", () => {
     );
   });
 
-  // Reason: CFP not ready yet
-  it.skip("renders TitleSection with correct props", () => {
+  it("renders TitleSection with correct props", () => {
     render(<CfpSection />);
     expect(screen.getByText(/CFP Committee/)).toBeInTheDocument();
     expect(screen.getByText(/We're excited to announce/)).toBeInTheDocument();
   });
 
-  // Reason: CFP not ready yet
-  it.skip("renders a CfpTrackComponent for each track in data", () => {
+  it("renders a CfpTrackComponent for each track in data", () => {
     render(<CfpSection />);
     data.forEach((track) => {
       expect(screen.getByText(track.name)).toBeInTheDocument();
