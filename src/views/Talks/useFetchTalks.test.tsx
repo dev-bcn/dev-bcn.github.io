@@ -347,7 +347,7 @@ describe("Fetch Talks by id", () => {
     await waitFor(() => !result.current.isLoading);
     expect(mockedAxios.get).toHaveBeenNthCalledWith(
       1,
-      "https://sessionize.com/api/v2/teq4asez/view/Sessions",
+        "https://sessionize.com/api/v2/xhudniix/view/Sessions",
     );
     expect(mockedAxios.get).toHaveReturnedTimes(1);
     //expect(result.current.isLoading).toEqual(false);
