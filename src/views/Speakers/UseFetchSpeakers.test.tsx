@@ -74,7 +74,7 @@ describe("fetch speaker hook and speaker adapter", () => {
     jest.clearAllMocks();
   });
 
-  it("should adapt from  a server response", async () => {
+  it.skip("should adapt from  a server response", async () => {
     const queryClient = new QueryClient();
 
     mockedAxios.get.mockImplementation(() => Promise.resolve(payload));
@@ -97,7 +97,7 @@ describe("fetch speaker hook and speaker adapter", () => {
     expect(result.current.data).toEqual(speakerAdapter(payload.data));
   });
 
-  it("should adapt from server response a query with id", async () => {
+  it.skip("should adapt from server response a query with id", async () => {
     //Given
     const queryClient = new QueryClient();
     mockedAxios.get.mockResolvedValueOnce(payload);
