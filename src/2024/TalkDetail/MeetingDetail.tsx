@@ -225,7 +225,7 @@ const MeetingDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
                         {meeting.videoTags?.map((tag) => <Tag text={tag}
                                                               key={tag}/>)}
                     </StyledVideoTagsContainer>
-                    <section>
+                    <section style={{display: "none"}}>
                         <StyledVoteTalkLink
                             href={`https://openfeedback.io/devbcn24/0/${meeting.id}`}
                             target={"_blank"}

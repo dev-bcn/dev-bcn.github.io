@@ -1,7 +1,7 @@
 import {
-    BIG_BREAKPOINT,
-    LARGE_BREAKPOINT,
-    MOBILE_BREAKPOINT,
+  BIG_BREAKPOINT,
+  LARGE_BREAKPOINT,
+  MOBILE_BREAKPOINT,
 } from "../../constants/BreakPoints";
 import {Color} from "../../styles/colors";
 import React, {FC, Suspense, useEffect} from "react";
@@ -12,26 +12,26 @@ import MoreThanIcon from "../../assets/images/MoreThanBlueIcon.svg";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import {useWindowSize} from "react-use";
 import {
-    StyledContainer,
-    StyledDescription,
-    StyledDetailsContainer,
-    StyledExtraInfo,
-    StyledFlexCol,
-    StyledLessThan,
-    StyledMeetingTitleContainer,
-    StyledName,
-    StyledNameContainer,
-    StyledRightContainer,
-    StyledSpeakerDetailContainer,
-    StyledTitle,
-    StyledTitleImg,
-    StyledVideoContainer,
-    StyledVideoTagsContainer,
+  StyledContainer,
+  StyledDescription,
+  StyledDetailsContainer,
+  StyledExtraInfo,
+  StyledFlexCol,
+  StyledLessThan,
+  StyledMeetingTitleContainer,
+  StyledName,
+  StyledNameContainer,
+  StyledRightContainer,
+  StyledSpeakerDetailContainer,
+  StyledTitle,
+  StyledTitleImg,
+  StyledVideoContainer,
+  StyledVideoTagsContainer,
 } from "./Style.MeetingDetail";
 import {Link} from "react-router";
 import {
-    ROUTE_2024_SPEAKER_DETAIL,
-    ROUTE_2024_TALKS
+  ROUTE_2024_SPEAKER_DETAIL,
+  ROUTE_2024_TALKS
 } from "../../constants/routes";
 import conferenceData from "../../data/2024.json";
 import {Tag} from "../../components/Tag/Tag";
@@ -214,7 +214,7 @@ const MeetingDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
           <StyledVideoTagsContainer>
             {meeting.videoTags?.map((tag) => <Tag text={tag} key={tag} />)}
           </StyledVideoTagsContainer>
-          <section>
+          <section style={{display: "none"}}>
             <StyledVoteTalkLink
               href={`https://openfeedback.io/devbcn24/0/${meeting.id}`}
               target={"_blank"}
