@@ -28,10 +28,7 @@ import {
   StyledVideoTagsContainer,
 } from "./Style.MeetingDetail";
 import {Link} from "react-router";
-import {
-  ROUTE_2024_SPEAKER_DETAIL,
-  ROUTE_2024_TALKS
-} from "../../constants/routes";
+import {ROUTE_SPEAKER_DETAIL, ROUTE_TALKS} from "../../constants/routes";
 import conferenceData from "../../data/2024.json";
 import {Tag} from "../../components/Tag/Tag";
 import styled from "styled-components";
@@ -237,7 +234,7 @@ const MeetingDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
                     />
                   </Suspense>
                   <StyledName>
-                    <Link to={`${ROUTE_2024_SPEAKER_DETAIL}/${speaker.id}`}>
+                    <Link to={`${ROUTE_SPEAKER_DETAIL}/${speaker.id}`}>
                       {speaker.fullName}
                     </Link>
                   </StyledName>
@@ -249,7 +246,7 @@ const MeetingDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
 
         <div>
           <Link
-              to={ROUTE_2024_TALKS}
+              to={ROUTE_TALKS}
             style={{
               color: Color.MAGENTA,
               fontWeight: "bold",
