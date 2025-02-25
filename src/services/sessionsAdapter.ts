@@ -1,6 +1,6 @@
-import {IMeeting} from "../views/MeetingDetail/MeetingDetail.Type";
 import {
     CategoryItemEnum,
+    IMeeting,
     QuestionAnswers,
     Session,
     SessionCategory
