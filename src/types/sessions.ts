@@ -1,3 +1,5 @@
+import {ISpeaker} from "./speakers";
+
 export interface SessionSpeaker {
     readonly id: string;
     readonly name: string;
@@ -48,3 +50,40 @@ export interface QuestionAnswers {
     readonly questionType: string;
     readonly answer: string;
 }
+
+export interface IMeeting {
+    id: number;
+    urlName?: string;
+    title: string;
+    description: string;
+    videoUrl?: string;
+    slidesURL?: string;
+    videoTags?: string[];
+    speakers: SessionSpeaker[];
+    level?: string;
+    type?: string;
+    language?: string;
+    track?: string;
+    startDate: string;
+    endDate: string;
+    startTime: string;
+    endTime: string;
+}
+
+export interface IMeetingDetailProps {
+    meeting: IMeeting;
+    speakers?: ISpeaker[];
+}
+
+export type MyType = {
+    urlName?: string;
+    videoUrl?: string;
+    level?: string;
+    videoTags?: string[];
+    speakers?: ISpeaker[];
+    description: string;
+    language?: string;
+    title: string;
+    type?: string;
+    track?: string;
+};

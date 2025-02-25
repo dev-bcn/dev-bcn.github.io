@@ -20,7 +20,6 @@ import conferenceData from "../../data/2024.json";
 import {Tag} from "../../components/Tag/Tag";
 import styled from "styled-components";
 import {AddToCalendarButton} from "add-to-calendar-button-react";
-import {IMeeting} from "../../views/MeetingDetail/MeetingDetail.Type";
 import {
     StyledContainer,
     StyledDetailsContainer,
@@ -41,6 +40,7 @@ import {
 } from "../../views/MeetingDetail/Style.MeetingDetail";
 import {StyledTitle} from "../Home/Style.Home";
 import {ISpeaker} from "../../types/speakers";
+import {IMeeting} from "../../types/sessions";
 
 const getVideoHeight = (windowWidth: number) => {
     let videoHeight;
