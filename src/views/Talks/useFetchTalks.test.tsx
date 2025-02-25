@@ -4,7 +4,6 @@ import {renderHook, waitFor} from "@testing-library/react";
 import axios, {AxiosHeaders, AxiosResponse} from "axios";
 import {faker} from "@faker-js/faker";
 import {useFetchLiveView, useFetchTalksById,} from "./UseFetchTalks";
-import {IMeeting} from "../MeetingDetail/MeetingDetail.Type";
 import {UngroupedSession} from "./liveView.types";
 import {
   extractSessionCategoryInfo,
@@ -14,6 +13,7 @@ import {
 } from "../../services/sessionsAdapter";
 import {
   CategoryItemEnum,
+  IMeeting,
   QuestionAnswers,
   Session,
   SessionCategory
