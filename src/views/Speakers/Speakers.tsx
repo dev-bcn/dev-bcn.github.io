@@ -1,12 +1,12 @@
-import { MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
-import { Color } from "../../styles/colors";
-import { FC, useCallback, useEffect } from "react";
+import {MOBILE_BREAKPOINT} from "../../constants/BreakPoints";
+import {Color} from "../../styles/colors";
+import {FC, useCallback, useEffect} from "react";
 import LessThanBlueIcon from "../../assets/images/LessThanBlueIcon.svg";
 import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import { SpeakerCard } from "./components/SpeakersCard";
+import {SpeakerCard} from "./components/SpeakersCard";
 import TitleSection from "../../components/SectionTitle/TitleSection";
-import { useWindowSize } from "react-use";
+import {useWindowSize} from "react-use";
 import {
   SpeakersCardsContainer,
   StyledContainerLeftSlash,
@@ -19,10 +19,10 @@ import {
 } from "./Speakers.style";
 import webData from "../../data/2024.json";
 import Button from "../../components/UI/Button";
-import { gaEventTracker } from "../../components/analytics/Analytics";
-import { useFetchSpeakers } from "./UseFetchSpeakers";
-import { ISpeaker } from "./Speaker.types";
+import {gaEventTracker} from "../../components/analytics/Analytics";
+import {useFetchSpeakers} from "./UseFetchSpeakers";
 import * as Sentry from "@sentry/react";
+import {ISpeaker} from "../../types/speakers";
 
 const LessThanGreaterThan = (props: { width: number }) => (
   <>

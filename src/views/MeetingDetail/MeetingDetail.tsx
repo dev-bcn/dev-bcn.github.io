@@ -5,7 +5,6 @@ import {
 } from "../../constants/BreakPoints";
 import {Color} from "../../styles/colors";
 import React, {FC, Suspense, useEffect} from "react";
-import {IMeeting} from "./MeetingDetail.Type";
 import LessThanIconWhite from "../../assets/images/LessThanIconWhite.svg";
 import LessThanIcon from "../../assets/images/LessThanBlueIcon.svg";
 import MoreThanIcon from "../../assets/images/MoreThanBlueIcon.svg";
@@ -29,15 +28,12 @@ import {
   StyledVideoTagsContainer,
 } from "./Style.MeetingDetail";
 import {Link} from "react-router";
-import {
-  ROUTE_2024_SPEAKER_DETAIL,
-  ROUTE_2024_TALKS
-} from "../../constants/routes";
+import {ROUTE_SPEAKER_DETAIL, ROUTE_TALKS} from "../../constants/routes";
 import conferenceData from "../../data/2024.json";
 import {Tag} from "../../components/Tag/Tag";
-import {ISpeaker} from "../Speakers/Speaker.types";
 import styled from "styled-components";
 import {AddToCalendarButton} from "add-to-calendar-button-react";
+import {IMeetingDetailProps, MyType} from "../../types/sessions";
 
 const getVideoHeight = (windowWidth: number) => {
   let videoHeight;
@@ -104,24 +100,6 @@ export const StyledVoteTalkLink = styled.a`
   color: ${Color.BLACK_BLUE};
   font-size: 0.8rem;
 `;
-
-interface IMeetingDetailProps {
-  meeting: IMeeting;
-  speakers?: ISpeaker[];
-}
-
-type MyType = {
-  urlName?: string;
-  videoUrl?: string;
-  level?: string;
-  videoTags?: string[];
-  speakers?: ISpeaker[];
-  description: string;
-  language?: string;
-  title: string;
-  type?: string;
-  track?: string;
-};
 
 const MeetingDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
   meeting,
@@ -214,7 +192,7 @@ const MeetingDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
           <StyledVideoTagsContainer>
             {meeting.videoTags?.map((tag) => <Tag text={tag} key={tag} />)}
           </StyledVideoTagsContainer>
-          <section>
+          <section style={{display: "none"}}>
             <StyledVoteTalkLink
               href={`https://openfeedback.io/devbcn24/0/${meeting.id}`}
               target={"_blank"}
@@ -256,7 +234,7 @@ const MeetingDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
                     />
                   </Suspense>
                   <StyledName>
-                    <Link to={`${ROUTE_2024_SPEAKER_DETAIL}/${speaker.id}`}>
+                    <Link to={`${ROUTE_SPEAKER_DETAIL}/${speaker.id}`}>
                       {speaker.fullName}
                     </Link>
                   </StyledName>
@@ -268,7 +246,7 @@ const MeetingDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
 
         <div>
           <Link
-              to={ROUTE_2024_TALKS}
+              to={ROUTE_TALKS}
             style={{
               color: Color.MAGENTA,
               fontWeight: "bold",

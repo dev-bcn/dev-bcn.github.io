@@ -1,24 +1,23 @@
-import React, { FC } from "react";
-import { QueryClient, QueryClientProvider } from "react-query";
-import { renderHook, waitFor } from "@testing-library/react";
-import axios, { AxiosHeaders, AxiosResponse } from "axios";
-import { faker } from "@faker-js/faker";
+import React, {FC} from "react";
+import {QueryClient, QueryClientProvider} from "react-query";
+import {renderHook, waitFor} from "@testing-library/react";
+import axios, {AxiosHeaders, AxiosResponse} from "axios";
+import {faker} from "@faker-js/faker";
+import {useFetchLiveView, useFetchTalksById,} from "./UseFetchTalks";
+import {UngroupedSession} from "./liveView.types";
 import {
   extractSessionCategoryInfo,
   extractSessionSlides,
   extractSessionTags,
-  sessionAdapter,
-  useFetchLiveView,
-  useFetchTalksById,
-} from "./UseFetchTalks";
+  sessionAdapter
+} from "../../services/sessionsAdapter";
 import {
   CategoryItemEnum,
+  IMeeting,
   QuestionAnswers,
   Session,
-  SessionCategory,
-} from "./Talk.types";
-import { IMeeting } from "../MeetingDetail/MeetingDetail.Type";
-import { UngroupedSession } from "./liveView.types";
+  SessionCategory
+} from "../../types/sessions";
 
 jest.mock("axios");
 const mockedAxios = axios as jest.Mocked<typeof axios>;
@@ -348,7 +347,7 @@ describe("Fetch Talks by id", () => {
     await waitFor(() => !result.current.isLoading);
     expect(mockedAxios.get).toHaveBeenNthCalledWith(
       1,
-      "https://sessionize.com/api/v2/teq4asez/view/Sessions",
+        "https://sessionize.com/api/v2/xhudniix/view/Sessions",
     );
     expect(mockedAxios.get).toHaveReturnedTimes(1);
     //expect(result.current.isLoading).toEqual(false);

@@ -1,9 +1,10 @@
 import React, {FC} from "react";
 import {QueryClient, QueryClientProvider} from "react-query";
 import {renderHook, waitFor} from "@testing-library/react";
-import {speakerAdapter, useFetchSpeakers} from "./UseFetchSpeakers";
+import {useFetchSpeakers} from "./UseFetchSpeakers";
 import axios, {AxiosHeaders, AxiosResponse} from "axios";
-import {IResponse} from "../../views/Speakers/Speaker.types";
+import {speakerAdapter} from "../../services/speakerAdapter";
+import {IResponse} from "../../types/speakers";
 
 jest.mock("axios");
 const mockedAxios = axios as jest.Mocked<typeof axios>;

@@ -11,14 +11,18 @@ import {
   StyledSponsorTitleSlashesContainer,
 } from "./Sponsors.style";
 import SponsorBadge from "./SponsorBadge";
-import { Color } from "../../../../styles/colors";
-import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
-import { buildSlashes } from "./Sponsors";
-import { useWindowSize } from "react-use";
-import { useCallback, useEffect, useState } from "react";
-import { sponsors } from "./SponsorsData";
+import {Color} from "../../../../styles/colors";
+import {BIG_BREAKPOINT} from "../../../../constants/BreakPoints";
+import {buildSlashes} from "./Sponsors";
+import {useWindowSize} from "react-use";
+import React, {FC, useCallback, useEffect, useState} from "react";
+import {Sponsor} from "./SponsorsData";
 
-export const BasicSponsor = () => {
+interface Props {
+  sponsors: Array<Sponsor> | null;
+}
+
+export const BasicSponsor: FC<React.PropsWithChildren<Props>> = ({sponsors}) => {
   const { width } = useWindowSize();
   const [slashes, setSlashes] = useState("");
   const [isHovered, setIsHovered] = useState<boolean>(false);
@@ -32,10 +36,9 @@ export const BasicSponsor = () => {
   const handleHoverSponsorBasic = useCallback(() => setIsHovered(true), []);
   const handleUnHoverSponsorBasic = useCallback(() => setIsHovered(false), []);
 
-  let basicSponsors = sponsors.basic;
   return (
     <>
-      {basicSponsors !== null && basicSponsors.length > 0 && (
+      {sponsors !== null && sponsors.length > 0 && (
         <StyledSponsorItemContainer
           id="basic-sponsors"
           className="SponsorItem basic"
@@ -75,7 +78,7 @@ export const BasicSponsor = () => {
           <StyledSponsorLogosContainer className="SponsorLogos">
             <StyledFlexGrow />
             <StyledLogos position="right">
-              {basicSponsors.map((sponsor) => (
+              {sponsors.map((sponsor) => (
                 <a
                   key={sponsor.name}
                   href={sponsor.website}

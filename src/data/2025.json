@@ -1,7 +1,7 @@
 {
   "actionButtons": true,
   "carrousel": {
-    "enabled": false
+    "enabled": true
   },
   "cfp": {
     "startDay": "2025-01-01T00:00:00+01:00",
@@ -15,8 +15,8 @@
   "facebook": "https://facebook.com/devbcn",
   "flickr": "https://flickr.com/devbcn",
   "github": "https://github.com/devbcn",
-  "hideSpeakers": true,
-  "hideTalks": true,
+  "hideSpeakers": false,
+  "hideTalks": false,
   "jobOffers": {
     "enabled": false
   },

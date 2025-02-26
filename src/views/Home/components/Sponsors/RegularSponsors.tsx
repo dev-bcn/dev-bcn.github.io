@@ -11,19 +11,21 @@ import {
   StyledSponsorTitleSlashesContainer,
 } from "./Sponsors.style";
 import SponsorBadge from "./SponsorBadge";
-import { Color } from "../../../../styles/colors";
-import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
-import { buildSlashes } from "./Sponsors";
-import { useWindowSize } from "react-use";
-import { useCallback, useEffect, useState } from "react";
-import { sponsors } from "./SponsorsData";
+import {Color} from "../../../../styles/colors";
+import {BIG_BREAKPOINT} from "../../../../constants/BreakPoints";
+import {buildSlashes} from "./Sponsors";
+import {useWindowSize} from "react-use";
+import React, {FC, useCallback, useEffect, useState} from "react";
+import {Sponsor} from "./SponsorsData";
 
-export const RegularSponsors = () => {
+interface Props {
+  sponsors: Array<Sponsor> | null;
+}
+
+export const RegularSponsors: FC<React.PropsWithChildren<Props>> = ({sponsors}) => {
   const { width } = useWindowSize();
   const [slashes, setSlashes] = useState("");
   const [isHovered, setIsHovered] = useState<boolean>(false);
-  const regularSponsors = sponsors.regular;
-
   useEffect(() => {
     const newSlashes = buildSlashes(2);
 
@@ -37,7 +39,7 @@ export const RegularSponsors = () => {
   );
   return (
     <>
-      {regularSponsors !== null && regularSponsors.length > 0 && (
+      {sponsors !== null && sponsors.length > 0 && (
         <StyledSponsorItemContainer
           id="regular-sponsors"
           className="SponsorItem regular"
@@ -72,7 +74,7 @@ export const RegularSponsors = () => {
 
           <StyledSponsorLogosContainer className="SponsorLogos">
             <StyledLogos>
-              {regularSponsors.map((sponsor) => (
+              {sponsors.map((sponsor) => (
                 <a
                   key={sponsor.name}
                   href={sponsor.website}

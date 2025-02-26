@@ -5,12 +5,13 @@ import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import styled from "styled-components";
 import {useParams} from "react-router";
 import conferenceData from "../../data/2024.json";
-import {sessionAdapter, useFetchTalksById} from "../Talks/UseFetchTalks";
+import {useFetchTalksById} from "../Talks/UseFetchTalks";
 import * as Sentry from "@sentry/react";
 import {useFetchSpeakers} from "../Speakers/UseFetchSpeakers";
-import {ISpeaker} from "../Speakers/Speaker.types";
-import {Session} from "../Talks/Talk.types";
 import MeetingDetail from "./MeetingDetail";
+import {ISpeaker} from "../../types/speakers";
+import {sessionAdapter} from "../../services/sessionsAdapter";
+import {Session} from "../../types/sessions";
 
 const StyledContainer = styled.div`
   background-color: ${Color.WHITE};

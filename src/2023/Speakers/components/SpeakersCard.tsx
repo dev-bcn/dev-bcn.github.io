@@ -1,4 +1,4 @@
-import { FC, Suspense } from "react";
+import {FC, Suspense} from "react";
 import {
   StyledImageAnimation,
   StyledSpeakerCard,
@@ -7,10 +7,10 @@ import {
   StyledSpeakerText,
   StyledSpeakerTitle,
 } from "./SpeakerCard.Style";
-import { Link } from "react-router";
-import { ISpeaker } from "../Speaker.types";
+import {Link} from "react-router";
 import Loading from "../../../assets/images/logo.png";
-import { ROUTE_2023_SPEAKER_DETAIL } from "../../../constants/routes";
+import {ROUTE_2023_SPEAKER_DETAIL} from "../../../constants/routes";
+import {ISpeaker} from "../../../types/speakers";
 
 type SpeakersCardProps = {
   speaker: ISpeaker;

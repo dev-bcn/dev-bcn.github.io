@@ -3,22 +3,21 @@ import {QueryClient, QueryClientProvider} from "react-query";
 import {renderHook, waitFor} from "@testing-library/react";
 import axios, {AxiosHeaders, AxiosResponse} from "axios";
 import {faker} from "@faker-js/faker";
-import {
-  extractSessionCategoryInfo,
-  extractSessionSlides,
-  extractSessionTags,
-  sessionAdapter,
-  useFetchLiveView,
-  useFetchTalksById,
-} from "./UseFetchTalks";
-import {IMeeting} from "../../views/MeetingDetail/MeetingDetail.Type";
-import {
-  CategoryItemEnum,
-  QuestionAnswers,
-  Session,
-  SessionCategory
-} from "../../views/Talks/Talk.types";
+import {useFetchLiveView, useFetchTalksById,} from "./UseFetchTalks";
 import {UngroupedSession} from "../../views/Talks/liveView.types";
+import {
+    CategoryItemEnum,
+    IMeeting,
+    QuestionAnswers,
+    Session,
+    SessionCategory
+} from "../../types/sessions";
+import {
+    extractSessionCategoryInfo,
+    extractSessionSlides,
+    extractSessionTags,
+    sessionAdapter
+} from "../../services/sessionsAdapter";
 
 
 jest.mock("axios");

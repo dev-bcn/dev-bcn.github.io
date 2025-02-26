@@ -11,19 +11,21 @@ import {
   StyledSponsorTitleSlashesContainer,
 } from "./Sponsors.style";
 import SponsorBadge from "./SponsorBadge";
-import { Color } from "../../../../styles/colors";
-import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
-import { buildSlashes } from "./Sponsors";
-import { useWindowSize } from "react-use";
-import { useCallback, useEffect, useState } from "react";
-import { sponsors } from "./SponsorsData";
+import {Color} from "../../../../styles/colors";
+import {BIG_BREAKPOINT} from "../../../../constants/BreakPoints";
+import {buildSlashes} from "./Sponsors";
+import {useWindowSize} from "react-use";
+import React, {FC, useCallback, useEffect, useState} from "react";
+import {Sponsor} from "./SponsorsData";
 
-export const Communities = () => {
+interface Props {
+  sponsors: Array<Sponsor> | null;
+}
+
+export const Communities: FC<React.PropsWithChildren<Props>> = ({sponsors}) => {
   const { width } = useWindowSize();
   const [slashes, setSlashes] = useState("");
   const [isHovered, setIsHovered] = useState<boolean>(false);
-  const communities = sponsors.communities;
-
   useEffect(() => {
     const newSlashes = buildSlashes(2);
 
@@ -34,7 +36,7 @@ export const Communities = () => {
   const handleUnHover = useCallback(() => setIsHovered(false), []);
   return (
     <>
-      {communities !== null && communities.length > 0 && (
+      {sponsors !== null && sponsors.length > 0 && (
         <StyledSponsorItemContainer
           className="SponsorItem communities"
           id="communities"
@@ -69,7 +71,7 @@ export const Communities = () => {
 
           <StyledSponsorLogosContainer className="SponsorLogos">
             <StyledLogos>
-              {communities.map((sponsor) => (
+              {sponsors.map((sponsor) => (
                 <a
                   href={sponsor.website}
                   target="_blank"
