@@ -78,7 +78,7 @@ describe("navigation pages", () => {
   });
 
   //Reason: not enabled yet
-  test.skip("it render the JOB OFFERS page", async () => {
+  test("it render the JOB OFFERS page", async () => {
     render(
       <React.Suspense fallback={<span>Loading...</span>}>
         <Routes>
@@ -87,11 +87,12 @@ describe("navigation pages", () => {
       </React.Suspense>,
       { wrapper: BrowserRouter },
     );
-    const user = userEvent.setup();
-    await user.click(screen.getByText("JOB OFFERS"));
-    expect(
-      await screen.findByText("Have a look at some opportunities"),
-    ).toBeInTheDocument();
+    expect(() => screen.getByText("JOB OFFERS")).toThrow();
+    //const user = userEvent.setup();
+    /*await user.click(screen.getByText("JOB OFFERS"));
+        expect(
+          await screen.findByText("Have a look at some opportunities"),
+        ).not.toBeInTheDocument();*/
   });
 
   //Reason: not enabled yet
