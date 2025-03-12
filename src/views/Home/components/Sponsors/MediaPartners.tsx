@@ -11,18 +11,20 @@ import {
   StyledSponsorTitleSlashesContainer,
 } from "./Sponsors.style";
 import SponsorBadge from "./SponsorBadge";
-import {Color} from "../../../../styles/colors";
-import {BIG_BREAKPOINT} from "../../../../constants/BreakPoints";
-import {buildSlashes} from "./Sponsors";
-import {useWindowSize} from "react-use";
-import React, {FC, useCallback, useEffect, useState} from "react";
-import {Sponsor} from "./SponsorsData";
+import { Color } from "../../../../styles/colors";
+import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
+import { buildSlashes } from "./Sponsors";
+import { useWindowSize } from "react-use";
+import React, { FC, useCallback, useEffect, useState } from "react";
+import { Sponsor } from "./SponsorsData";
 
 interface Props {
   sponsors: Array<Sponsor> | null;
 }
 
-export const MediaPartners: FC<React.PropsWithChildren<Props>> = ({sponsors}) => {
+export const MediaPartners: FC<React.PropsWithChildren<Props>> = ({
+  sponsors,
+}) => {
   const { width } = useWindowSize();
   const [slashes, setSlashes] = useState("");
   const [isHovered, setIsHovered] = useState<boolean>(false);
@@ -39,7 +41,7 @@ export const MediaPartners: FC<React.PropsWithChildren<Props>> = ({sponsors}) =>
       {sponsors !== null && sponsors.length > 0 && (
         <StyledSponsorItemContainer
           className="SponsorItem virtual"
-          id="virtual-sponsors"
+          id="media-partners"
           onMouseEnter={handleHoverMediaPartner}
           onMouseLeave={handleUnHoverMediaPartner}
         >
