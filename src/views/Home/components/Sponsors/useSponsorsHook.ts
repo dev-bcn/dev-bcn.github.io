@@ -20,7 +20,7 @@ export const useSponsorsHook = ({
   numberOfSlashGroups = 2,
 }: SponsorHookConfig) => {
   const { width } = useWindowSize();
-  const [slashes, setSlashes] = useState("");
+  const [slashes, setSlashes] = useState(buildSlashes(numberOfSlashGroups));
   const [isHovered, setIsHovered] = useState<boolean>(false);
 
   useEffect(() => {
