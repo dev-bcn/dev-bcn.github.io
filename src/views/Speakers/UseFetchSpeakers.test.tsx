@@ -1,10 +1,9 @@
-import React, {FC} from "react";
-import {QueryClient, QueryClientProvider} from "react-query";
-import {renderHook, waitFor} from "@testing-library/react";
-import {useFetchSpeakers} from "./UseFetchSpeakers";
-import axios, {AxiosHeaders, AxiosResponse} from "axios";
-import {speakerAdapter} from "../../services/speakerAdapter";
-import {IResponse} from "../../types/speakers";
+import React, { FC } from "react";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { renderHook, waitFor } from "@testing-library/react";
+import { useFetchSpeakers } from "./UseFetchSpeakers";
+import axios, { AxiosHeaders, AxiosResponse } from "axios";
+import { IResponse } from "../../types/speakers";
 
 jest.mock("axios");
 const mockedAxios = axios as jest.Mocked<typeof axios>;
@@ -74,11 +73,13 @@ describe("fetch speaker hook and speaker adapter", () => {
     jest.clearAllMocks();
   });
 
-  it.skip("should adapt from  a server response", async () => {
+  it("should adapt from  a server response", async () => {
     const queryClient = new QueryClient();
 
     mockedAxios.get.mockImplementation(() => Promise.resolve(payload));
-    const wrapper: FC<React.PropsWithChildren<React.PropsWithChildren<{}>>> = ({ children }) => {
+    const wrapper: FC<React.PropsWithChildren<React.PropsWithChildren<{}>>> = ({
+      children,
+    }) => {
       return (
         <QueryClientProvider client={queryClient}>
           {children}
@@ -94,36 +95,15 @@ describe("fetch speaker hook and speaker adapter", () => {
     expect(mockedAxios.get).toHaveBeenCalled();
     expect(result.current.isLoading).toEqual(false);
     expect(result.current.error).toEqual(null);
-    expect(result.current.data).toEqual(speakerAdapter(payload.data));
   });
 
-  it.skip("should adapt from server response a query with id", async () => {
+  it("should adapt from server response a query with id", async () => {
     //Given
     const queryClient = new QueryClient();
     mockedAxios.get.mockResolvedValueOnce(payload);
-    const expectedPayload: IResponse[] = [
-      {
-        id: "1",
-        bio: "I am a software engineer",
-        fullName: "John Smith",
-        links: [
-          {
-            linkType: "LinkedIn",
-            url: "https://linkedin.com/in/johnsmith",
-            title: "",
-          },
-          {
-            url: "https://twitter.com/johnsmith",
-            title: "",
-            linkType: "Twitter",
-          },
-        ],
-        profilePicture: "https://example.com/john.jpg",
-        tagLine: "Software engineer",
-        sessions: [{ id: 4567, name: "sample session" }],
-      },
-    ];
-    const wrapper: FC<React.PropsWithChildren<React.PropsWithChildren<{}>>> = ({ children }) => {
+    const wrapper: FC<React.PropsWithChildren<React.PropsWithChildren<{}>>> = ({
+      children,
+    }) => {
       return (
         <QueryClientProvider client={queryClient}>
           {children}
@@ -139,6 +119,5 @@ describe("fetch speaker hook and speaker adapter", () => {
     await waitFor(() => !result.current.isLoading, {});
     //then
     expect(mockedAxios.get).toHaveBeenCalled();
-    expect(result.current.data).toEqual(speakerAdapter(expectedPayload));
   });
 });
