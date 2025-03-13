@@ -1,10 +1,10 @@
 import { act, renderHook } from "@testing-library/react";
 import { useSponsorsHook } from "./useSponsorsHook";
-import * as Sponsors from "./Sponsors";
 import React, { FC } from "react";
+import { buildSlashes } from "../../../../services/buildSlashes";
 
 // Mock the buildSlashes function
-jest.mock("./Sponsors", () => ({
+jest.mock("../../../../services/buildSlashes", () => ({
   buildSlashes: jest.fn((count: number) => "//".repeat(count)),
 }));
 
@@ -38,14 +38,14 @@ describe("useSponsorsHook", () => {
     );
 
     // Initial render should call buildSlashes once
-    expect(Sponsors.buildSlashes).toHaveBeenCalledTimes(2);
-    expect(Sponsors.buildSlashes).toHaveBeenCalledWith(2);
+    expect(buildSlashes).toHaveBeenCalledTimes(2);
+    expect(buildSlashes).toHaveBeenCalledWith(2);
 
     // Trigger a rerender (simulating window resize)
     rerender();
 
     // buildSlashes should be called again
-    expect(Sponsors.buildSlashes).toHaveBeenCalledTimes(3);
+    expect(buildSlashes).toHaveBeenCalledTimes(3);
   });
 
   it("should update hover state correctly", () => {
@@ -77,13 +77,13 @@ describe("useSponsorsHook", () => {
     );
 
     // Initial render with 2 groups
-    expect(Sponsors.buildSlashes).toHaveBeenCalledWith(2);
+    expect(buildSlashes).toHaveBeenCalledWith(2);
     expect(result.current.slashes).toBe(undefined);
 
     // Update to 3 groups
     rerender({ numberOfSlashGroups: 3 });
 
-    expect(Sponsors.buildSlashes).toHaveBeenCalledWith(3);
+    expect(buildSlashes).toHaveBeenCalledWith(3);
     expect(result.current.slashes).toBe(undefined);
   });
 
