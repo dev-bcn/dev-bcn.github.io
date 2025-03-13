@@ -7,7 +7,6 @@ import {
   BIG_BREAKPOINT,
   LARGE_BREAKPOINT,
 } from "../../../../constants/BreakPoints";
-import TimeCountDown from "./components/TimeCountdown";
 import { useWindowSize } from "react-use";
 import {
   StyledBlueSlash,
@@ -27,6 +26,8 @@ import styled from "styled-components";
 import { Color } from "../../../../styles/colors";
 import InfoButtons from "../InfoButtons/InfoButtons";
 import MultimediaInfoButtons from "../MultimediaInfoButtons/MultimediaInfoButtons";
+import CountDownCompleted from "../../../../views/Home/components/Home/components/CountDownCompleted";
+import TimeCountDown from "../../../../views/Home/components/Home/components/TimeCountdown";
 
 const StyledLogo = styled.img`
   margin: 20px;
@@ -77,7 +78,11 @@ const Home: FC<React.PropsWithChildren<unknown>> = () => {
             </StyledSubtitle>
           </StyledTitleContainer>
           {data.showCountdown && (
-            <Countdown date={startDay} renderer={TimeCountDown} />
+            <Countdown
+              date={startDay}
+              onComplete={CountDownCompleted}
+              renderer={TimeCountDown}
+            />
           )}
           {data.actionButtons && <ActionButtons />}
           {data.showInfoButtons && <InfoButtons />}
@@ -93,7 +98,8 @@ const Home: FC<React.PropsWithChildren<unknown>> = () => {
           >
             <StyledGreenSlash>
               / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
-              / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /{" "}
+              / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+              /{" "}
             </StyledGreenSlash>
           </StyledTopSlash>
           <StyledBottomSlash
@@ -103,7 +109,8 @@ const Home: FC<React.PropsWithChildren<unknown>> = () => {
           >
             <StyledBlueSlash>
               / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
-              / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /{" "}
+              / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+              /{" "}
             </StyledBlueSlash>
           </StyledBottomSlash>
         </StyleHomeContainer>
