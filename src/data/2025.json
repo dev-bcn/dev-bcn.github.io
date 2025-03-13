@@ -24,6 +24,7 @@
   "schedule": {
     "enabled": false
   },
+  "sessionizeUrl": "https://sessionize.com/api/v2/xhudniix",
   "showCountdown": true,
   "showInfoButtons": false,
   "sponsors": {
