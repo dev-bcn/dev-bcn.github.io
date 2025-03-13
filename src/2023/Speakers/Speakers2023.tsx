@@ -1,12 +1,12 @@
-import {MOBILE_BREAKPOINT} from "../../constants/BreakPoints";
-import {Color} from "../../styles/colors";
-import {FC, useCallback, useEffect} from "react";
+import { MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
+import { Color } from "../../styles/colors";
+import { FC, useCallback, useEffect } from "react";
 import LessThanBlueIcon from "../../assets/images/LessThanBlueIcon.svg";
 import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import {SpeakerCard} from "./components/SpeakersCard";
+import { SpeakerCard } from "./components/SpeakersCard";
 import TitleSection from "../../components/SectionTitle/TitleSection";
-import {useWindowSize} from "react-use";
+import { useWindowSize } from "react-use";
 import {
   SpeakersCardsContainer,
   StyledContainerLeftSlash,
@@ -19,10 +19,10 @@ import {
 } from "./Speakers.style";
 import webData from "../../data/2023.json";
 import Button from "../../components/UI/Button";
-import {gaEventTracker} from "../../components/analytics/Analytics";
-import {useFetchSpeakers} from "./UseFetchSpeakers";
+import { gaEventTracker } from "../../components/analytics/Analytics";
 import * as Sentry from "@sentry/react";
-import {ISpeaker} from "../../types/speakers";
+import { ISpeaker } from "../../types/speakers";
+import { useFetchSpeakers } from "../../views/Speakers/UseFetchSpeakers";
 
 const LessThanGreaterThan = (props: { width: number }) => (
   <>
@@ -41,7 +41,9 @@ const Speakers2023: FC<React.PropsWithChildren<unknown>> = () => {
   const isBetween = (startDay: Date, endDay: Date): boolean =>
     startDay < new Date() && endDay > today;
 
-  const { error, data, isLoading } = useFetchSpeakers();
+  const { error, data, isLoading } = useFetchSpeakers(
+    `${webData.sessionizeUrl}/view/Speakers`,
+  );
 
   if (error) {
     Sentry.captureException(error);
@@ -105,7 +107,8 @@ const Speakers2023: FC<React.PropsWithChildren<unknown>> = () => {
           >
             <StyledSlash color={Color.YELLOW}>
               / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
-              / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /{" "}
+              / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+              /{" "}
             </StyledSlash>
           </StyledContainerRightSlash>
 
@@ -117,7 +120,8 @@ const Speakers2023: FC<React.PropsWithChildren<unknown>> = () => {
           >
             <StyledSlash color={Color.DARK_BLUE}>
               / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
-              / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /{" "}
+              / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+              /{" "}
             </StyledSlash>
           </StyledContainerLeftSlash>
 
@@ -129,7 +133,8 @@ const Speakers2023: FC<React.PropsWithChildren<unknown>> = () => {
           >
             <StyledSlash color={Color.BLUE}>
               / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
-              / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /{" "}
+              / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+              /{" "}
             </StyledSlash>
           </StyledContainerRightSlash>
 
@@ -141,7 +146,8 @@ const Speakers2023: FC<React.PropsWithChildren<unknown>> = () => {
           >
             <StyledSlash color={Color.YELLOW}>
               / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
-              / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /{" "}
+              / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+              /{" "}
             </StyledSlash>
           </StyledContainerLeftSlash>
         </StyledSpeakersSection>
