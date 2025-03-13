@@ -13,10 +13,9 @@ import {
 import SponsorBadge from "./SponsorBadge";
 import { Color } from "../../../../styles/colors";
 import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
-import { buildSlashes } from "./Sponsors";
-import { useWindowSize } from "react-use";
-import React, { FC, useCallback, useEffect, useState } from "react";
+import React, { FC } from "react";
 import { Sponsor } from "./SponsorsData";
+import { useSponsorsHook } from "./useSponsorsHook";
 
 interface Props {
   sponsors: Array<Sponsor> | null;
@@ -25,25 +24,19 @@ interface Props {
 export const MediaPartners: FC<React.PropsWithChildren<Props>> = ({
   sponsors,
 }) => {
-  const { width } = useWindowSize();
-  const [slashes, setSlashes] = useState("");
-  const [isHovered, setIsHovered] = useState<boolean>(false);
-  useEffect(() => {
-    const newSlashes = buildSlashes(2);
+  const { width, slashes, isHovered, handleHover, handleUnHover } =
+    useSponsorsHook({
+      numberOfSlashGroups: 2,
+    });
 
-    setSlashes(newSlashes);
-  }, [width]);
-
-  const handleHoverMediaPartner = useCallback(() => setIsHovered(true), []);
-  const handleUnHoverMediaPartner = useCallback(() => setIsHovered(false), []);
   return (
     <>
       {sponsors !== null && sponsors.length > 0 && (
         <StyledSponsorItemContainer
           className="SponsorItem virtual"
           id="media-partners"
-          onMouseEnter={handleHoverMediaPartner}
-          onMouseLeave={handleUnHoverMediaPartner}
+          onMouseEnter={handleHover}
+          onMouseLeave={handleUnHover}
         >
           <SponsorBadge
             color={Color.DARK_BLUE}

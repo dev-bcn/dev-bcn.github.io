@@ -11,29 +11,23 @@ import {
   StyledSponsorTitleSlashesContainer,
 } from "./Sponsors.style";
 import SponsorBadge from "./SponsorBadge";
-import {Color} from "../../../../styles/colors";
-import {BIG_BREAKPOINT} from "../../../../constants/BreakPoints";
-import React, {FC, useCallback, useEffect, useState} from "react";
-import {useWindowSize} from "react-use";
-import {buildSlashes} from "./Sponsors";
-import {Sponsor} from "./SponsorsData";
+import { Color } from "../../../../styles/colors";
+import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
+import React, { FC } from "react";
+import { Sponsor } from "./SponsorsData";
+import { useSponsorsHook } from "./useSponsorsHook";
 
 interface Props {
   sponsors: Array<Sponsor> | null;
 }
 
-export const TopSponsors: FC<React.PropsWithChildren<Props>> = ({sponsors}) => {
-  const { width } = useWindowSize();
-  const [slashes, setSlashes] = useState("");
-  const [isHovered, setIsHovered] = useState<boolean>(false);
-  useEffect(() => {
-    const newSlashes = buildSlashes(2);
-
-    setSlashes(newSlashes);
-  }, [width]);
-
-  const handleHoverSponsorTop = useCallback(() => setIsHovered(true), []);
-  const handleUnHoverSponsorTop = useCallback(() => setIsHovered(false), []);
+export const TopSponsors: FC<React.PropsWithChildren<Props>> = ({
+  sponsors,
+}) => {
+  const { width, slashes, isHovered, handleHover, handleUnHover } =
+    useSponsorsHook({
+      numberOfSlashGroups: 2,
+    });
 
   return (
     <>
@@ -41,8 +35,8 @@ export const TopSponsors: FC<React.PropsWithChildren<Props>> = ({sponsors}) => {
         <StyledSponsorItemContainer
           id="top-sponsors"
           className="SponsorItem top"
-          onMouseEnter={handleHoverSponsorTop}
-          onMouseLeave={handleUnHoverSponsorTop}
+          onMouseEnter={handleHover}
+          onMouseLeave={handleUnHover}
         >
           <SponsorBadge
             color={Color.BLUE}

@@ -35,7 +35,9 @@ const MemberName = styled.h5`
   text-align: left;
 `;
 
-const CfpTrackComponent: FC<React.PropsWithChildren<CfpTrackProps>> = ({ track }) => (
+const CfpTrackComponent: FC<React.PropsWithChildren<CfpTrackProps>> = ({
+  track,
+}) => (
   <>
     <section>
       <TrackName>{track.name}</TrackName>
@@ -90,8 +92,14 @@ const CfpSection2023: FC<React.PropsWithChildren<unknown>> = () => {
           />
           {width > MOBILE_BREAKPOINT && (
             <>
-              <StyledLessIcon src={MoreThanBlueWhiteIcon} />
-              <StyledMoreIcon src={LessThanBlueWhiteIcon} />
+              <StyledLessIcon
+                title="Less than - icon"
+                src={MoreThanBlueWhiteIcon}
+              />
+              <StyledMoreIcon
+                title="more than - icon"
+                src={LessThanBlueWhiteIcon}
+              />
             </>
           )}
         </StyledSpeakersSection>
