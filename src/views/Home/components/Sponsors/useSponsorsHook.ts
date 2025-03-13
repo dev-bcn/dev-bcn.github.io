@@ -24,8 +24,7 @@ export const useSponsorsHook = ({
   const [isHovered, setIsHovered] = useState<boolean>(false);
 
   useEffect(() => {
-    const newSlashes = buildSlashes(numberOfSlashGroups);
-    setSlashes(newSlashes);
+    setSlashes(buildSlashes(numberOfSlashGroups));
   }, [width, numberOfSlashGroups]);
 
   const handleHover = useCallback(() => setIsHovered(true), []);

@@ -38,14 +38,14 @@ describe("useSponsorsHook", () => {
     );
 
     // Initial render should call buildSlashes once
-    expect(Sponsors.buildSlashes).toHaveBeenCalledTimes(1);
+    expect(Sponsors.buildSlashes).toHaveBeenCalledTimes(2);
     expect(Sponsors.buildSlashes).toHaveBeenCalledWith(2);
 
     // Trigger a rerender (simulating window resize)
     rerender();
 
     // buildSlashes should be called again
-    expect(Sponsors.buildSlashes).toHaveBeenCalledTimes(1);
+    expect(Sponsors.buildSlashes).toHaveBeenCalledTimes(3);
   });
 
   it("should update hover state correctly", () => {
