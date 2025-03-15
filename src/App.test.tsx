@@ -3,8 +3,77 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import App from "./App";
 import React from "react";
 import userEvent from "@testing-library/user-event";
+import { IResponse } from "./types/speakers";
+import axios, { AxiosHeaders, AxiosResponse } from "axios";
+
+jest.mock("axios");
+const mockedAxios = axios as jest.Mocked<typeof axios>;
+const axiosHeaders = new AxiosHeaders();
+const payload: AxiosResponse<IResponse[]> = {
+  status: 200,
+  statusText: "OK",
+  headers: {},
+  config: {
+    headers: axiosHeaders,
+  },
+  data: [
+    {
+      id: "1",
+      fullName: "John Smith",
+      profilePicture: "https://example.com/john.jpg",
+      tagLine: "Software engineer",
+      bio: "I am a software engineer",
+      sessions: [
+        {
+          id: 4567,
+          name: "sample session",
+        },
+      ],
+      links: [
+        {
+          linkType: "Twitter",
+          url: "https://twitter.com/johnsmith",
+          title: "",
+        },
+        {
+          linkType: "LinkedIn",
+          url: "https://linkedin.com/in/johnsmith",
+          title: "",
+        },
+      ],
+    },
+    {
+      id: "2",
+      fullName: "Jane Doe",
+      profilePicture: "https://example.com/jane.jpg",
+      tagLine: "Data scientist",
+      bio: "I am a data scientist",
+      sessions: [],
+      links: [
+        {
+          linkType: "Twitter",
+          url: "https://twitter.com/janedoe",
+          title: "",
+        },
+        {
+          linkType: "LinkedIn",
+          url: "https://linkedin.com/in/janedoe",
+          title: "",
+        },
+      ],
+    },
+  ],
+};
 
 describe("navigation pages", () => {
+  beforeAll(() => {
+    jest.mock("axios");
+    mockedAxios.get.mockImplementation(() => Promise.resolve(payload));
+  });
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
   test("it render the HOME page", async () => {
     render(
       <React.Suspense fallback={<span>Loading...</span>}>
