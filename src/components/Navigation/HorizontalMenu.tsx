@@ -10,7 +10,10 @@ type Props = {
   subMenuItems: NavigationItem[];
 };
 
-export const HorizontalMenu: FC<React.PropsWithChildren<Props>> = ({ navItems, subMenuItems }) => {
+export const HorizontalMenu: FC<React.PropsWithChildren<Props>> = ({
+  navItems,
+  subMenuItems,
+}) => {
   const { width } = useWindowSize();
   return (
     <>
@@ -22,7 +25,7 @@ export const HorizontalMenu: FC<React.PropsWithChildren<Props>> = ({ navItems, s
             </StyledLink>
           ))}
           {subMenuItems.length > 0 && (
-            <NavMenu href="/" style={{ position: "relative" }}>
+            <NavMenu style={{ position: "relative" }}>
               News{" "}
               <SubMenu>
                 {subMenuItems.map((item) => (
