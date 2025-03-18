@@ -22,6 +22,7 @@ import {
 import conferenceData from "../../data/2025.json";
 import {CfpTrackProps, data} from "./CfpData";
 import {MemberName, TrackName} from "./Cfp.style";
+import { useDocumentTitleUpdater } from "../../services/useDocumentTitleUpdate";
 
 export const CfpTrackComponent: FC<React.PropsWithChildren<CfpTrackProps>> = ({
                                                                                   track,
@@ -63,42 +64,43 @@ export const CfpTrackComponent: FC<React.PropsWithChildren<CfpTrackProps>> = ({
 );
 
 const CfpSection: FC<React.PropsWithChildren<unknown>> = () => {
-    const {width} = useWindowSize();
-    React.useEffect(() => {
-        document.title = `CFP Committee — ${conferenceData.title} — ${conferenceData.edition}`;
-    }, []);
+  const { width } = useWindowSize();
 
-    const isCFPCommitteeReady = (): boolean => data.every((track) => track.members.length > 0)
+  useDocumentTitleUpdater("CFP Committee", conferenceData.edition);
 
-    return (
-        <>
-            <SectionWrapper color={Color.WHITE} marginTop={5}>
-                <StyledSpeakersSection>
-                    <TitleSection
-                        title="CFP Committee"
-                        subtitle="We're excited to announce the members of the Call for Papers committee
+  const isCFPCommitteeReady = (): boolean =>
+    data.every((track) => track.members.length > 0);
+
+  return (
+    <>
+      <SectionWrapper color={Color.WHITE} marginTop={5}>
+        <StyledSpeakersSection>
+          <TitleSection
+            title="CFP Committee"
+            subtitle="We're excited to announce the members of the Call for Papers committee
           for the next DevBcn conference! These experienced professionals will
           be reviewing and selecting the best talks and workshops for the
           upcoming event."
-                        color={Color.BLUE}
-                    />
-                    {width > MOBILE_BREAKPOINT && (
-                        <>
-                            <StyledLessIcon src={MoreThanBlueWhiteIcon}/>
-                            <StyledMoreIcon src={LessThanBlueWhiteIcon}/>
-                        </>
-                    )}
-                </StyledSpeakersSection>
-                {!isCFPCommitteeReady() &&
-                    <h1 style={{color: "#002454"}}>CFP Committee in
-                        progress</h1>}
-                {isCFPCommitteeReady() && data.map((track) => (
-                    <CfpTrackComponent key={track.id} track={track}/>
-                ))}
-            </SectionWrapper>
-            <div style={{height: "350px"}}>&nbsp;</div>
-        </>
-    );
+            color={Color.BLUE}
+          />
+          {width > MOBILE_BREAKPOINT && (
+            <>
+              <StyledLessIcon src={MoreThanBlueWhiteIcon} />
+              <StyledMoreIcon src={LessThanBlueWhiteIcon} />
+            </>
+          )}
+        </StyledSpeakersSection>
+        {!isCFPCommitteeReady() && (
+          <h1 style={{ color: "#002454" }}>CFP Committee in progress</h1>
+        )}
+        {isCFPCommitteeReady() &&
+          data.map((track) => (
+            <CfpTrackComponent key={track.id} track={track} />
+          ))}
+      </SectionWrapper>
+      <div style={{ height: "350px" }}>&nbsp;</div>
+    </>
+  );
 };
 
 export default CfpSection;

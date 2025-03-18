@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import { Color } from "../../styles/colors";
 import {
@@ -17,6 +16,7 @@ import { useWindowSize } from "react-use";
 import youtube from "../../assets/images/youtube.svg";
 import linkedinIcon from "../../assets/images/linkedinIcon.svg";
 import twitterIcon from "../../assets/images/twitterIcon.svg";
+import { useDocumentTitleUpdater } from "../../services/useDocumentTitleUpdate";
 
 const StyledParagraph = styled.p`
   color: white;
@@ -60,9 +60,8 @@ const StyledImage = styled.img`
 
 export default function Kcd() {
   const { width } = useWindowSize();
-  useEffect(() => {
-    document.title = `KCD Barcelona — ${data.title} — ${data.edition}`;
-  });
+
+  useDocumentTitleUpdater("KCD Barcelona", data.edition);
   return (
     <>
       <SectionWrapper marginTop={5} color={Color.WHITE}>
@@ -84,7 +83,11 @@ export default function Kcd() {
       <SectionWrapper color={Color.DARK_BLUE}>
         <StyledImage src="images/KCD-logo-white.png" alt="KCD - Barcelona" />
         <StyledParagraph>
-          <a href="https://community.cncf.io/events/details/cncf-kcd-spain-presents-kcd-barcelona-2024" target="_blank" rel="noreferrer">
+          <a
+            href="https://community.cncf.io/events/details/cncf-kcd-spain-presents-kcd-barcelona-2024"
+            target="_blank"
+            rel="noreferrer"
+          >
             <strong>KCD Barcelona</strong>
           </a>{" "}
           is an event within the CNCF framework called Kubernetes Community Days

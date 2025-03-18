@@ -7,6 +7,7 @@ import Sponsors from "./components/Sponsors/Sponsors";
 import styled from "styled-components";
 import data from "../../data/2023.json";
 import { useLocation } from "react-router";
+import { useDocumentTitleUpdater } from "../../services/useDocumentTitleUpdate";
 
 const StyledContainer = styled.div`
   padding-bottom: 10rem;
@@ -20,12 +21,13 @@ export const Home2023Wrapper: FC<React.PropsWithChildren<unknown>> = () => {
   const { hash } = useLocation();
 
   React.useEffect(() => {
-    document.title = `Home - DevBcn - ${data.edition}`;
     if (hash != null && hash !== "") {
       const scroll = document.getElementById(hash.substring(1));
       scroll?.scrollIntoView();
     }
   }, [hash]);
+
+  useDocumentTitleUpdater("Home", data.edition);
   return (
     <StyledContainer id="home-wrapper">
       <Home />

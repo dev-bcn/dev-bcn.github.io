@@ -16,6 +16,7 @@ import {
 } from "../Speakers/Speakers.style";
 import { StyledMarginBottom } from "../Talks/Talks.style";
 import data from "../../data/2024.json";
+import { useDocumentTitleUpdater } from "../../services/useDocumentTitleUpdate";
 
 const StyledUsersWrapper = styled.div`
   padding-top: 5rem;
@@ -42,9 +43,7 @@ const StyledLink = styled.a`
 const About: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
 
-  React.useEffect(() => {
-    document.title = `About us — ${data.title} — ${data.edition}`;
-  }, []);
+  useDocumentTitleUpdater("About us", data.edition);
 
   return (
     <SectionWrapper color={Color.WHITE} marginTop={8}>

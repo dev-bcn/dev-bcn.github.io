@@ -4,7 +4,7 @@ import {
   MOBILE_BREAKPOINT,
 } from "../../constants/BreakPoints";
 import {Color} from "../../styles/colors";
-import React, {FC, Suspense, useEffect} from "react";
+import React, { FC, Suspense } from "react";
 import LessThanIconWhite from "../../assets/images/LessThanIconWhite.svg";
 import LessThanIcon from "../../assets/images/LessThanBlueIcon.svg";
 import MoreThanIcon from "../../assets/images/MoreThanBlueIcon.svg";
@@ -32,8 +32,9 @@ import {ROUTE_SPEAKER_DETAIL, ROUTE_TALKS} from "../../constants/routes";
 import conferenceData from "../../data/2025.json";
 import {Tag} from "../../components/Tag/Tag";
 import styled from "styled-components";
-import {AddToCalendarButton} from "add-to-calendar-button-react";
-import {IMeetingDetailProps, MyType} from "../../types/sessions";
+import { AddToCalendarButton } from "add-to-calendar-button-react";
+import { IMeetingDetailProps, MyType } from "../../types/sessions";
+import { useDocumentTitleUpdater } from "../../services/useDocumentTitleUpdate";
 
 const getVideoHeight = (windowWidth: number) => {
   let videoHeight;
@@ -107,9 +108,7 @@ const MeetingDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
 }) => {
   const { width } = useWindowSize();
 
-  useEffect(() => {
-    document.title = `${meeting.title} — ${conferenceData.title} — ${conferenceData.edition}`;
-  }, [meeting.title]);
+  useDocumentTitleUpdater(meeting.title, conferenceData.edition);
 
   const finalMeetingInfo: MyType = {
     ...meeting,
