@@ -14,7 +14,7 @@ import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
 import { useFetchTalks } from "../Talks/UseFetchTalks";
 import * as Sentry from "@sentry/react";
 import { TalkCard } from "../Talks/components/TalkCard";
-import conferenceData from "../../data/2024.json";
+import conferenceData from "../../data/2025.json";
 import styled from "styled-components";
 import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
 
@@ -42,8 +42,7 @@ const Workshops: FC<React.PropsWithChildren<unknown>> = () => {
   }, []);
 
   //region workshops
-  const workshopCategoryId = 149213;
-  const workshopCategoryList = new Set([workshopCategoryId]);
+  const workshopCategoryList = new Set([149213]);
 
   const workshops = data
     ?.flatMap((group) => group.sessions)
@@ -93,6 +92,7 @@ const Workshops: FC<React.PropsWithChildren<unknown>> = () => {
       <SectionWrapper color={Color.LIGHT_BLUE} marginTop={1}>
         <StyledSection data-test-id="workshops">
           {isLoading && <h1>Loading </h1>}
+          {workshops?.length === 0 && <p>No workshops yet. Keep posted</p>}
           {conferenceData.hideTalks ? (
             <p style={{ color: Color.WHITE, textAlign: "center" }}>
               No Workshops selected yet. Keep in touch in our social media for

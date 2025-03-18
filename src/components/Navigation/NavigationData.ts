@@ -6,7 +6,7 @@ import {
   ROUTE_SPEAKERS,
   ROUTE_SPONSORSHIP,
   ROUTE_TALKS,
-  ROUTE_TRAVEL,
+  ROUTE_TRAVEL, ROUTE_WORKSHOPS,
 } from "../../constants/routes";
 
 export interface NavigationItem {
@@ -20,7 +20,7 @@ export const navigationItems2025: NavigationItem[] = [
   { id: "Sponsors", link: "/#sponsors" },
   //{ id: "SCHEDULE", link: ROUTE_SCHEDULE },
   { id: "Talks", link: ROUTE_TALKS },
-  //{ id: "Workshops", link: ROUTE_WORKSHOPS },
+  { id: "Workshops", link: ROUTE_WORKSHOPS },
   //{ id: "JOB OFFERS", link: ROUTE_JOB_OFFERS },
   //{ id: "Communities", link: ROUTE_COMMUNITIES },
   { id: "Speakers", link: ROUTE_SPEAKERS },
