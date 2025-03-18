@@ -42,9 +42,9 @@ const SpeakerSwiper: FC<React.PropsWithChildren<unknown>> = () => {
     conferenceData.sessionizeUrl,
   );
 
-  const cachedSpeakers: ISpeaker[] = data
-    ? shuffleArray(data).slice(0, 20)
-    : [];
+  const cachedSpeakers: ISpeaker[] = React.useMemo(() => data
+      ? shuffleArray(data).slice(0, 20)
+      : [], [data]);
 
   useSentryErrorReport(error);
 

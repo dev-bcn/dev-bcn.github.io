@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import { Autoplay, Parallax } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import styled from "styled-components";
@@ -61,9 +61,9 @@ const SpeakerSwiper: FC<React.PropsWithChildren<unknown>> = () => {
     conferenceData.sessionizeUrl,
   );
 
-  const swiperSpeakers: ISpeaker[] = data
-    ? shuffleArray(data).slice(0, 20)
-    : [];
+  const swiperSpeakers: ISpeaker[] = React.useMemo(() => data
+      ? shuffleArray(data).slice(0, 20)
+      : [], [data]);
 
   useSentryErrorReport(error);
 
