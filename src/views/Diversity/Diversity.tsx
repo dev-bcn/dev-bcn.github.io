@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from "react";
+import React, { FC } from "react";
 import { Color } from "../../styles/colors";
 import data from "../../data/2024.json";
 import styled from "styled-components";
@@ -8,6 +8,7 @@ import {
   ROUTE_CODE_OF_CONDUCT,
   ROUTE_CONDITIONS,
 } from "../../constants/routes";
+import { useDocumentTitleUpdater } from "../../services/useDocumentTitleUpdate";
 
 const StyledSection = styled.section`
 {
@@ -93,9 +94,7 @@ const StyledParagraph = styled.section`
 `;
 
 const Diversity: FC<React.PropsWithChildren<unknown>> = () => {
-  useEffect(() => {
-    document.title = `Diversity — ${data.title} — ${data.edition}`;
-  });
+  useDocumentTitleUpdater("Diversity", data.edition);
 
   return (
     <StyledSection className="styled-section">

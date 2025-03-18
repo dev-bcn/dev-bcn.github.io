@@ -4,6 +4,7 @@ import TwitterIcon from "../../components/Icons/Twitter";
 import { Color } from "../../styles/colors";
 import WebsiteIcon from "../../components/Icons/website";
 import data from "../../data/2024.json";
+import { useDocumentTitleUpdater } from "../../services/useDocumentTitleUpdate";
 
 const Heading = styled.h1`
    {
@@ -93,9 +94,8 @@ const FoSS = styled.div`
 `;
 
 const Communities: FC<React.PropsWithChildren<unknown>> = () => {
-  React.useEffect(() => {
-    document.title = `Communities — ${data.title} — ${data.edition}`;
-  });
+  useDocumentTitleUpdater("Communities", data.edition);
+
   return (
     <>
       <Heading>FOSS & Diversity Communities</Heading>

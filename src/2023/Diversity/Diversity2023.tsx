@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import { Color } from "../../styles/colors";
 import data from "../../data/2023.json";
 import styled from "styled-components";
@@ -8,6 +8,7 @@ import {
   ROUTE_CODE_OF_CONDUCT,
   ROUTE_CONDITIONS,
 } from "../../constants/routes";
+import { useDocumentTitleUpdater } from "../../services/useDocumentTitleUpdate";
 
 const StyledSection = styled.section`
 {
@@ -96,9 +97,7 @@ const StyledParagraph = styled.section`
   }
 `;
 const Diversity2023: FC<React.PropsWithChildren<unknown>> = () => {
-  useEffect(() => {
-    document.title = `Diversity - DevBcn ${data.edition}`;
-  });
+  useDocumentTitleUpdater("Diversity", data.edition);
 
   return (
     <StyledSection className="styled-section">

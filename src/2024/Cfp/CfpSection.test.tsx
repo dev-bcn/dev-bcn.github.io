@@ -9,7 +9,7 @@ describe("CfpSection", () => {
   it("sets document title on mount", () => {
     render(<CfpSection2024 />);
     expect(document.title).toBe(
-      `CFP Committee — ${conferenceData.title}— ${conferenceData.edition}`,
+      `CFP Committee — DevBcn - Barcelona Developers Conference — ${conferenceData.edition}`,
     );
   });
 

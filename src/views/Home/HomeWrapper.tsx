@@ -9,6 +9,7 @@ import styled from "styled-components";
 import {useLocation} from "react-router";
 import {useEventEdition} from "./UseEventEdition";
 import {Edition} from "../../types/types";
+import { useDocumentTitleUpdater } from "../../services/useDocumentTitleUpdate";
 
 const StyledContainer = styled.div`
   padding-bottom: 10rem;
@@ -24,12 +25,13 @@ const HomeWrapper: FC<React.PropsWithChildren<unknown>> = () => {
 
   useEventEdition(setEdition);
   React.useEffect(() => {
-    document.title = `Home - ${edition?.title} - ${edition?.edition}`;
     if (hash != null && hash !== "") {
       const scroll = document.getElementById(hash.substring(1));
       scroll?.scrollIntoView();
     }
   }, [hash, edition]);
+
+  useDocumentTitleUpdater("Home", edition?.edition ?? "2025");
 
   return (
     <StyledContainer id="home-wrapper">
