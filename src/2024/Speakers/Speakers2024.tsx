@@ -1,6 +1,6 @@
 import { MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
 import { Color } from "../../styles/colors";
-import React, { FC, useCallback, useEffect } from "react";
+import React, { FC, useCallback } from "react";
 import LessThanBlueIcon from "../../assets/images/LessThanBlueIcon.svg";
 import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
@@ -19,10 +19,11 @@ import {
 import webData from "../../data/2024.json";
 import Button from "../../components/UI/Button";
 import { gaEventTracker } from "../../components/analytics/Analytics";
-import * as Sentry from "@sentry/react";
 import { SpeakerCard } from "../../views/Speakers/components/SpeakersCard";
 import { ISpeaker } from "../../types/speakers";
 import { useFetchSpeakers } from "../../views/Speakers/UseFetchSpeakers";
+import { useSentryErrorReport } from "../../services/useSentryErrorReport";
+import { useDocumentTitleUpdater } from "../../services/useDocumentTitleUpdate";
 
 const LessThanGreaterThan = (props: { width: number }) => (
   <>
@@ -45,17 +46,13 @@ const Speakers2024: FC<React.PropsWithChildren<unknown>> = () => {
     `${webData.sessionizeUrl}/view/Speakers`,
   );
 
-  if (error) {
-    Sentry.captureException(error);
-  }
+  useSentryErrorReport(error);
 
   const trackCFP = useCallback(() => {
     gaEventTracker("CFP", "CFP");
   }, []);
 
-  useEffect(() => {
-    document.title = `Speakers — ${webData.title} — ${webData.edition}`;
-  });
+  useDocumentTitleUpdater("Speakers", webData.edition);
 
   const CFPStartDay = new Date(webData.cfp.startDay);
   const CFPEndDay = new Date(webData.cfp.endDay);

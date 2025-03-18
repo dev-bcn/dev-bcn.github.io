@@ -6,10 +6,14 @@ import "swiper/swiper-bundle.min.css";
 import "./SpeakersCarousel.scss";
 import { Link } from "react-router";
 import conferenceData from "../../data/2024.json";
-import * as Sentry from "@sentry/react";
 import { Color } from "../../styles/colors";
 import { ROUTE_SPEAKER_DETAIL } from "../../constants/routes";
 import { useFetchSpeakers } from "../../views/Speakers/UseFetchSpeakers";
+import { useSentryErrorReport } from "../../services/useSentryErrorReport";
+import {ISpeaker} from "../../types/speakers";
+import {
+  shuffleArray
+} from "../../2023/Home/components/SpeakersCarousel/SpeakerSwiper";
 
 const StyledSlideImage = styled.img`
   display: block;
@@ -64,9 +68,7 @@ const swiperSpeakers = React.useMemo(() => {
     return speakersCopy.slice(0, 20);
 }, [data]);
 
-  if (error) {
-    Sentry.captureException(error);
-  }
+  useSentryErrorReport(error);
 
   return (
     <>

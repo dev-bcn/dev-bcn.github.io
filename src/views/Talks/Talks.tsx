@@ -14,11 +14,12 @@ import {
 } from "./Talks.style";
 import TrackInformation from "./components/TrackInformation";
 import { useFetchTalks } from "./UseFetchTalks";
-import * as Sentry from "@sentry/react";
 import { Dropdown, DropdownChangeEvent } from "primereact/dropdown";
 import "primereact/resources/primereact.min.css";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "../../styles/theme.css";
+import { useSentryErrorReport } from "../../services/useSentryErrorReport";
+import { useDocumentTitleUpdater } from "../../services/useDocumentTitleUpdate";
 
 interface TrackInfo {
   name: string;
@@ -37,8 +38,6 @@ const Talks: FC<React.PropsWithChildren<unknown>> = () => {
     const sessionSelectedGroupName =
       sessionStorage.getItem("selectedGroupName");
 
-    document.title = `Talks - ${conferenceData.title} - ${conferenceData.edition}`;
-
     if (sessionSelectedGroupCode && sessionSelectedGroupName) {
       setSelectedGroupId({
         name: sessionSelectedGroupName,
@@ -47,9 +46,8 @@ const Talks: FC<React.PropsWithChildren<unknown>> = () => {
     }
   }, []);
 
-  if (error) {
-    Sentry.captureException(error);
-  }
+  useDocumentTitleUpdater("Talks", conferenceData.edition);
+  useSentryErrorReport(error);
 
   const dropDownOptions = [
     { name: "All Tracks", code: undefined },

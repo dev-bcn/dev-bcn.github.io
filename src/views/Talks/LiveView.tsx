@@ -1,12 +1,13 @@
-import React, { FC, useCallback, useEffect, useMemo } from "react";
+import React, { FC, useCallback, useMemo } from "react";
 import { useFetchLiveView } from "./UseFetchTalks";
 import Loading from "../../components/Loading/Loading";
 import { UngroupedSession } from "./liveView.types";
 import conference from "../../data/2024.json";
 import { TalkCard } from "./components/TalkCard";
-import * as Sentry from "@sentry/react";
 import { StyledMain } from "./Talks.style";
 import { talkCardAdapter } from "./TalkCardAdapter";
+import { useSentryErrorReport } from "../../services/useSentryErrorReport";
+import { useDocumentTitleUpdater } from "../../services/useDocumentTitleUpdate";
 
 const LiveView: FC<React.PropsWithChildren<unknown>> = () => {
   const { isLoading, error, data } = useFetchLiveView();
@@ -29,15 +30,9 @@ const LiveView: FC<React.PropsWithChildren<unknown>> = () => {
     return data?.sessions?.filter(getPredicate());
   }, [data, getPredicate]);
 
-  useEffect(() => {
-    document.title = `Live view - ${conference.title} - ${conference.edition} Edition`;
-  }, []);
+  useDocumentTitleUpdater("Live view - ", conference.edition);
 
-  useEffect(() => {
-    if (error) {
-      Sentry.captureException(error);
-    }
-  }, [error]);
+  useSentryErrorReport(error);
 
   return (
     <StyledMain>

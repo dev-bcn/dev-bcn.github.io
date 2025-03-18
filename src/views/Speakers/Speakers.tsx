@@ -1,6 +1,6 @@
 import { MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
 import { Color } from "../../styles/colors";
-import { FC, useCallback, useEffect } from "react";
+import { FC, useCallback } from "react";
 import LessThanBlueIcon from "../../assets/images/LessThanBlueIcon.svg";
 import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
@@ -21,8 +21,9 @@ import webData from "../../data/2024.json";
 import Button from "../../components/UI/Button";
 import { gaEventTracker } from "../../components/analytics/Analytics";
 import { useFetchSpeakers } from "./UseFetchSpeakers";
-import * as Sentry from "@sentry/react";
 import { ISpeaker } from "../../types/speakers";
+import { useSentryErrorReport } from "../../services/useSentryErrorReport";
+import { useDocumentTitleUpdater } from "../../services/useDocumentTitleUpdate";
 
 const LessThanGreaterThan = (props: { width: number }) => (
   <>
@@ -41,21 +42,15 @@ const Speakers: FC<React.PropsWithChildren<unknown>> = () => {
   const isBetween = (startDay: Date, endDay: Date): boolean =>
     startDay < new Date() && endDay > today;
 
-  const { error, data, isLoading } = useFetchSpeakers(
-    `${webData.sessionizeUrl}/view/Speakers`,
-  );
+  const { error, data, isLoading } = useFetchSpeakers(webData.sessionizeUrl);
 
-  if (error) {
-    Sentry.captureException(error);
-  }
+  useSentryErrorReport(error);
 
   const trackCFP = useCallback(() => {
     gaEventTracker("CFP", "CFP");
   }, []);
 
-  useEffect(() => {
-    document.title = `Speakers — ${webData.title} — ${webData.edition}`;
-  });
+  useDocumentTitleUpdater("Speakers", webData.edition);
 
   const CFPStartDay = new Date(webData.cfp.startDay);
   const CFPEndDay = new Date(webData.cfp.endDay);

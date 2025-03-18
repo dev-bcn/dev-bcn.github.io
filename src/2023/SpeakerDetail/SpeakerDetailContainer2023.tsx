@@ -6,8 +6,9 @@ import SpeakerDetail2023 from "./SpeakerDetail2023";
 import { useParams } from "react-router";
 import { StyledContainer, StyledWaveContainer } from "./Speaker.style";
 import conferenceData from "../../data/2023.json";
-import * as Sentry from "@sentry/react";
 import { useFetchSpeakers } from "../../views/Speakers/UseFetchSpeakers";
+import { useSentryErrorReport } from "../../services/useSentryErrorReport";
+import { useDocumentTitleUpdater } from "../../services/useDocumentTitleUpdate";
 
 const SpeakerDetailContainer2023: FC<React.PropsWithChildren<unknown>> = () => {
   const { id } = useParams<{ id: string }>();
@@ -17,14 +18,10 @@ const SpeakerDetailContainer2023: FC<React.PropsWithChildren<unknown>> = () => {
     id,
   );
 
-  if (error) {
-    Sentry.captureException(error);
-  }
-  React.useEffect(() => {
-    if (data) {
-      document.title = `${data[0]?.fullName} - DevBcn - ${conferenceData.edition}`;
-    }
-  }, [id, data]);
+  useSentryErrorReport(error);
+
+  useDocumentTitleUpdater(data?.[0]?.fullName ?? "", conferenceData.edition);
+
   return (
     <StyledContainer>
       <SectionWrapper color={Color.BLUE} marginTop={4}>

@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from "react";
+import React, { FC } from "react";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import { Color } from "../../styles/colors";
 import {
@@ -12,18 +12,19 @@ import LessThanDarkBlueIcon from "../../assets/images/LessThanDarkBlueIcon.svg";
 import TitleSection from "../../components/SectionTitle/TitleSection";
 import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
 import { useFetchTalks } from "../Talks/UseFetchTalks";
-import * as Sentry from "@sentry/react";
+import { TalkCard } from "../Talks/components/TalkCard";
 import conferenceData from "../../data/2023.json";
 import styled from "styled-components";
 import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
-import {TalkCard} from "../../components/Talk/TalkCard";
+import { useSentryErrorReport } from "../../services/useSentryErrorReport";
+import { useDocumentTitleUpdater } from "../../services/useDocumentTitleUpdate";
 
 const StyledSection = styled.section`
-   {
+{
     display: flex;
     padding: 0 10rem;
     flex-wrap: wrap;
-  }
+}
 
   @media (max-width: ${BIG_BREAKPOINT}px) {
     padding: 1rem;
@@ -37,9 +38,7 @@ const StyledSection = styled.section`
 `;
 const Workshops2023: FC<React.PropsWithChildren<unknown>> = () => {
   const { isLoading, data, error } = useFetchTalks();
-  useEffect(() => {
-    document.title = `Workshops - DevBcn - ${conferenceData.edition}`;
-  }, []);
+  useDocumentTitleUpdater("Workshops", conferenceData.edition);
 
   //region workshops
   const categoryId = 149213;
@@ -49,14 +48,12 @@ const Workshops2023: FC<React.PropsWithChildren<unknown>> = () => {
     ?.flatMap((group) => group.sessions)
     .filter((session) =>
       session.categories.some((category) =>
-        category.categoryItems.some((item) => categoryItemIds.has(item.id))
-      )
+        category.categoryItems.some((item) => categoryItemIds.has(item.id)),
+      ),
     );
   //endregion
 
-  if (error) {
-    Sentry.captureException(error);
-  }
+  useSentryErrorReport(error);
 
   return (
     <>

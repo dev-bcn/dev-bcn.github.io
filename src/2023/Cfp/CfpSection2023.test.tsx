@@ -98,7 +98,7 @@ describe("CfpSection2023", () => {
     render(<CfpSection2023 />);
     await waitFor(() => {
       expect(document.title).toBe(
-        `CFP Committee - DevBcn - ${conferenceData.edition}`,
+        `CFP Committee — DevBcn - Barcelona Developers Conference — ${conferenceData.edition}`,
       );
     });
   });

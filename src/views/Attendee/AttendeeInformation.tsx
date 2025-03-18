@@ -1,9 +1,10 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import { Color } from "../../styles/colors";
 import styled from "styled-components";
 import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
 import data from "../../data/2024.json";
 import { format } from "date-fns";
+import { useDocumentTitleUpdater } from "../../services/useDocumentTitleUpdate";
 
 const PrePartyImg = styled.img`
    {
@@ -64,9 +65,7 @@ const SectionWrapper = styled.div`
 const AttendeeInformation: FC<React.PropsWithChildren<unknown>> = () => {
   const formattedDate = format(new Date(data.startDay), "EEEE, MMMM do");
 
-  useEffect(() => {
-    document.title = `Attendee information — ${data.title} — ${data.edition}`;
-  }, []);
+  useDocumentTitleUpdater("Attendee information", data.edition);
 
   return (
     <main>

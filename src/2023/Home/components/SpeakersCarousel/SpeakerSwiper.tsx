@@ -7,10 +7,11 @@ import "swiper/swiper-bundle.min.css";
 import "./SpeakersCarousel.scss";
 import { Link } from "react-router";
 import { ROUTE_SPEAKER_DETAIL } from "../../../../constants/routes";
-import * as Sentry from "@sentry/react";
 
 import conferenceData from "../../../../data/2023.json";
 import { useFetchSpeakers } from "../../../../views/Speakers/UseFetchSpeakers";
+import { useSentryErrorReport } from "../../../../services/useSentryErrorReport";
+import { ISpeaker } from "../../../../types/speakers";
 
 const StyledSlideImage = styled.img`
   display: block;
@@ -36,16 +37,34 @@ const StyledSlideText = styled.p`
   font-size: 0.875rem;
   color: white;
 `;
+
+/** Fisher-Yates shuffle algorithm using window.crypto.getRandomValues() */
+export const shuffleArray = <T,>(array: T[]): T[] => {
+  if (!array) {
+    return [];
+  }
+  const shuffledArray = [...array]; // Create a copy to avoid modifying the original array
+  for (let i = shuffledArray.length - 1; i > 0; i--) {
+    const j = Math.floor(
+      (window.crypto.getRandomValues(new Uint32Array(1))[0] /
+        (0xffffffff + 1)) *
+        (i + 1),
+    );
+    [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+  }
+  return shuffledArray;
+};
+
 const SpeakerSwiper: FC<React.PropsWithChildren<unknown>> = () => {
   const { isLoading, data, error } = useFetchSpeakers(
     conferenceData.sessionizeUrl,
   );
 
-  const swiperSpeakers = data?.sort(() => 0.5 - Math.random()).slice(0, 20);
+  const swiperSpeakers: ISpeaker[] = data
+    ? shuffleArray(data).slice(0, 20)
+    : [];
 
-  if (error) {
-    Sentry.captureException(error);
-  }
+  useSentryErrorReport(error);
 
   return (
     <>

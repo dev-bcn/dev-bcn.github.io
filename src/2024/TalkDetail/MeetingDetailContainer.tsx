@@ -1,18 +1,19 @@
 import { Color } from "../../styles/colors";
-import React, { FC, useEffect } from "react";
+import React, { FC } from "react";
 import NotFoundError from "../../components/NotFoundError/NotFoundError";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import styled from "styled-components";
 import { useParams } from "react-router";
 import conferenceData from "../../data/2024.json";
 import { useFetchTalksById } from "../Talks/UseFetchTalks";
-import * as Sentry from "@sentry/react";
 import MeetingDetail from "./MeetingDetail";
 
 import { ISpeaker } from "../../types/speakers";
 import { Session } from "../../types/sessions";
 import { sessionAdapter } from "../../services/sessionsAdapter";
 import { useFetchSpeakers } from "../../views/Speakers/UseFetchSpeakers";
+import { useSentryErrorReport } from "../../services/useSentryErrorReport";
+import { useDocumentTitleUpdater } from "../../services/useDocumentTitleUpdate";
 
 const StyledContainer = styled.div`
   background-color: ${Color.WHITE};
@@ -33,18 +34,11 @@ const MeetingDetailContainer: FC<React.PropsWithChildren<unknown>> = () => {
   const sessionSpeakers: ISpeaker[] | undefined = speakerData?.filter(
     (speaker) => talkSpeakers?.includes(speaker.id),
   );
+  useDocumentTitleUpdater(data?.at(0)?.title ?? "", conferenceData.edition);
 
   const adaptedMeeting = sessionAdapter(data?.at(0));
 
-  useEffect(() => {
-    document.title = `${data?.at(0)?.title} - DevBcn - ${
-      conferenceData.edition
-    }`;
-  }, [data]);
-
-  if (error) {
-    Sentry.captureException(error);
-  }
+  useSentryErrorReport(error);
 
   return (
     <StyledContainer>
