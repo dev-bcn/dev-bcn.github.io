@@ -45,11 +45,10 @@ export const shuffleArray = <T,>(array: T[]): T[] => {
   }
   const shuffledArray = [...array]; // Create a copy to avoid modifying the original array
   for (let i = shuffledArray.length - 1; i > 0; i--) {
-    const j = Math.floor(
-      (window.crypto.getRandomValues(new Uint32Array(1))[0] /
-        (0xffffffff + 1)) *
-        (i + 1),
-    );
+    let j;
+    do {
+      j = window.crypto.getRandomValues(new Uint32Array(1))[0] % (i + 1);
+    } while (j >= (i + 1));
     [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
   }
   return shuffledArray;
