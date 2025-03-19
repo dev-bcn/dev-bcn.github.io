@@ -32,6 +32,16 @@ export const sponsors: Sponsors = {
       website: "https://digital-expert.online/en/",
       image: "images/sponsors/logo-digital-expert.svg",
     },
+    {
+      name: "Kube events",
+      image: "images/sponsors/kube-events.png",
+      website: "https://kube.events/",
+    },
+    {
+      name: "Kube careers",
+      image: "images/sponsors/kube-career.png",
+      website: "https://kube.careers/",
+    },
   ],
   supporters: [],
 };
