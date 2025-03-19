@@ -97,6 +97,7 @@ import TalkDetailContainer2024 from "./views/MeetingDetail/TalkDetailContainer20
 import SpeakerDetailContainer2024 from "./2024/SpeakerDetail/SpeakerDetailContainer2024";
 import CfpSection2024 from "./2024/Cfp/CfpSection2024";
 import Workshops from "./views/Workshops/Workshops";
+import Schedule2024 from "./2024/Schedule/Schedule2024";
 
 const StyledAppWrapper = styled.div`
   position: relative;
@@ -342,7 +343,7 @@ const App: FC<React.PropsWithChildren<unknown>> = () => {
             path={ROUTE_2024_SCHEDULE}
             element={
               <React.Suspense fallback={<Loading />}>
-                <Schedule2023 />
+                <Schedule2024 />
               </React.Suspense>
             }
           />

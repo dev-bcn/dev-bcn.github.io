@@ -6,21 +6,23 @@ import MoreThanBlueWhiteIcon from "../../assets/images/LessThanBlueWhiteIcon.svg
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import TitleSection from "../../components/SectionTitle/TitleSection";
 import { useWindowSize } from "react-use";
-import data from "../../data/2023.json";
-import {
-  StyledLessIcon,
-  StyledMoreIcon,
-  StyledScheduleSection,
-} from "../../styles/Schedule/Schedule.style";
-import * as Sentry from "@sentry/react";
+import data from "../../data/2024.json";
 
-const Schedule2023: FC<React.PropsWithChildren<unknown>> = () => {
+import * as Sentry from "@sentry/react";
+import { Link } from "react-router";
+import {
+    StyledMoreIcon,
+    StyledScheduleSection
+} from "../../styles/Schedule/Schedule.style";
+import {StyledLessIcon} from "../../views/Travel/Venue";
+
+const Schedule2024: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
 
   React.useEffect(() => {
-    document.title = `Schedule - DevBcn - ${data.edition}`;
+    document.title = `Schedule — ${data.title} — ${data.edition}`;
 
-    fetch("https://sessionize.com/api/v2/a2sw0wks/view/GridSmart")
+    fetch("https://sessionize.com/api/v2/w8mdb9k5/view/GridSmart")
       .then((value) => value.text())
       .then((value) => {
         const sched = document.getElementById("#schedule");
@@ -48,20 +50,31 @@ const Schedule2023: FC<React.PropsWithChildren<unknown>> = () => {
             <StyledMoreIcon src={MoreThanBlueWhiteIcon} />
           </>
         )}
-        {!data.schedule.enabled && (
+        {data.schedule.enabled ? (
+          <>
+            <Link
+              to="/live-view"
+              style={{
+                textDecoration: "none",
+                fontWeight: "bold",
+                margin: "0.5rem",
+              }}
+            >
+              📅 See Live schedule
+            </Link>
+            <div style={{ width: "100%", margin: "0 auto" }} id="#schedule">
+              &nbsp;
+            </div>
+          </>
+        ) : (
           <p style={{ color: Color.DARK_BLUE }}>
             Schedule is not available yet. Keep in touch on social media as we
             announce the speakers and their talks/workshops
           </p>
-        )}
-        {data.schedule.enabled && (
-          <div style={{ width: "100%", margin: "0 auto" }} id="#schedule">
-            &nbsp;
-          </div>
         )}
       </StyledScheduleSection>
     </SectionWrapper>
   );
 };
 
-export default Schedule2023;
+export default Schedule2024;

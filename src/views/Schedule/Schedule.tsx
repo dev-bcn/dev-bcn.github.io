@@ -7,13 +7,13 @@ import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import TitleSection from "../../components/SectionTitle/TitleSection";
 import { useWindowSize } from "react-use";
 import data from "../../data/2024.json";
-import {
-  StyledLessIcon,
-  StyledMoreIcon,
-  StyledScheduleSection,
-} from "./Schedule.style";
+
 import * as Sentry from "@sentry/react";
 import { Link } from "react-router";
+import {
+    StyledLessIcon, StyledMoreIcon,
+    StyledScheduleSection
+} from "../../styles/Schedule/Schedule.style";
 
 const Schedule: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();

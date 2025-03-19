@@ -6,7 +6,7 @@ import {
     StyledWelcomerText,
     StyledWelcomerTextContainer,
     StyledWelcomerTextLink
-} from "../Schedule.style";
+} from "../../../styles/Schedule/Schedule.style";
 
 type AvatarCardProps = {
   meet: {
