@@ -38,7 +38,29 @@ const StyledSlideText = styled.p`
 const SpeakerSwiper: FC<React.PropsWithChildren<unknown>> = () => {
     const {isLoading, data, error} = useFetchSpeakers();
 
-    const swiperSpeakers = data?.sort(() => 0.5 - Math.random()).slice(0, 20);
+    // Securely shuffle the speakers using Fisher-Yates algorithm with crypto API
+const swiperSpeakers = React.useMemo(() => {
+    if (!data) return null;
+    
+    // Create a copy of the data to avoid mutating the original
+    const speakersCopy = [...data];
+    
+    // Fisher-Yates shuffle with crypto.getRandomValues for secure randomization
+    for (let i = speakersCopy.length - 1; i > 0; i--) {
+        // Generate a secure random value using crypto API
+        const randomBuffer = new Uint32Array(1);
+        window.crypto.getRandomValues(randomBuffer);
+        
+        // Use the random value to get an index between 0 and i (inclusive)
+        const j = randomBuffer[0] % (i + 1);
+        
+        // Swap elements at i and j
+        [speakersCopy[i], speakersCopy[j]] = [speakersCopy[j], speakersCopy[i]];
+    }
+    
+    // Return the first 20 speakers from the shuffled array
+    return speakersCopy.slice(0, 20);
+}, [data]);
 
     if (error) {
         Sentry.captureException(error);
