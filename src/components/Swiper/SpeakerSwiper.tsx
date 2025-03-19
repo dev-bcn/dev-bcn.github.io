@@ -2,14 +2,14 @@ import React, {FC} from "react";
 import {Autoplay, Parallax} from "swiper";
 import {Swiper, SwiperSlide} from "swiper/react";
 import styled from "styled-components";
-import {Color} from "../../../../styles/colors";
+import {Color} from "../../styles/colors";
 import "swiper/swiper-bundle.min.css";
-import "./SpeakersCarousel.scss";
-import conferenceData from "../../../../data/2025.json";
-import {useFetchSpeakers} from "../../../Speakers/UseFetchSpeakers";
+import "../../views/Home/components/SpeakersCarousel/SpeakersCarousel.scss";
+import conferenceData from "../../data/2025.json";
+import {useFetchSpeakers} from "../../views/Speakers/UseFetchSpeakers";
 import * as Sentry from "@sentry/react";
-import {ISpeaker} from "../../../../types/speakers";
-import {ROUTE_SPEAKER_DETAIL} from "../../../../constants/routes";
+import {ISpeaker} from "../../types/speakers";
+import {ROUTE_SPEAKER_DETAIL} from "../../constants/routes";
 import {Link} from "react-router";
 
 const StyledSlideImage = styled.img`

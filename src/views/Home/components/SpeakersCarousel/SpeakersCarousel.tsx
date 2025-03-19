@@ -12,7 +12,7 @@ import TitleSection from "../../../../components/SectionTitle/TitleSection";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import { ROUTE_SPEAKERS } from "../../../../constants/routes";
-import SpeakerSwiper from "./SpeakerSwiper";
+import SpeakerSwiper from "../../../../components/Swiper/SpeakerSwiper";
 import { useWindowSize } from "react-use";
 
 const StyledSpeakersContainer = styled.section`
