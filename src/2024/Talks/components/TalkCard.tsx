@@ -6,7 +6,7 @@ import {
     ROUTE_2024_TALK_DETAIL,
 } from "../../../constants/routes";
 import {Color} from "../../../styles/colors";
-import {StyledJobsInfo} from "../../../views/JobOffers/components/JobsCard";
+import {StyledJobsInfo} from "../../../components/JobOffers/JobsCard";
 import {
     StyledSessionCard,
     StyledSessionText,

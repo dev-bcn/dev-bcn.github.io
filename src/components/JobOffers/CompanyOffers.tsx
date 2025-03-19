@@ -1,8 +1,7 @@
 import React from "react";
-import { CompanyProps } from "./JobsData";
 import { Color } from "../../styles/colors";
-import LinkedinIcon from "../../components/Icons/Linkedin";
-import TwitterIcon from "../../components/Icons/Twitter";
+import LinkedinIcon from "../Icons/Linkedin";
+import TwitterIcon from "../Icons/Twitter";
 import {
   CompanyContainer,
   CompanyDescription,
@@ -12,9 +11,12 @@ import {
   OfferLocation,
   OfferText,
   OfferTitle,
-} from "./JobOffers.Style";
+} from "../../styles/JobOffers/JobOffers.Style";
+import {CompanyProps} from "../../types/jobOffers";
 
-const CompanyOffers: React.FC<React.PropsWithChildren<CompanyProps>> = ({ company }) => (
+const CompanyOffers: React.FC<React.PropsWithChildren<CompanyProps>> = ({
+  company,
+}) => (
   <CompanyContainer id={company.name.replaceAll(" ", "-").toLowerCase()}>
     <div
       style={{
@@ -22,6 +24,7 @@ const CompanyOffers: React.FC<React.PropsWithChildren<CompanyProps>> = ({ compan
         height: "55vh",
         backgroundColor: Color.SKY_BLUE,
         padding: "0.5rem",
+        borderRadius: "2rem",
       }}
     >
       <a
@@ -34,7 +37,7 @@ const CompanyOffers: React.FC<React.PropsWithChildren<CompanyProps>> = ({ compan
       </a>
       <CompanyName>{company.name}</CompanyName>
       <CompanyDescription>{company.description}</CompanyDescription>
-      <p>
+      <p style={{ margin: "1rem" }}>
         {company.linkedin && (
           <LinkedinIcon
             color={Color.DARK_BLUE}

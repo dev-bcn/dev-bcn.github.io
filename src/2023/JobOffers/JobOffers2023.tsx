@@ -10,30 +10,19 @@ import TitleSection from "../../components/SectionTitle/TitleSection";
 import { useWindowSize } from "react-use";
 import data from "../../data/2023.json";
 import {
-  Companies,
-  CompanyNameLink,
-  StyledLessIcon,
-  StyledMoreIcon,
-  StyledTitleContainer,
-} from "./JobOffers.Style";
-import CompanyOffers from "./CompanyOffers";
+  Companies, CompanyNameLink, StyledLessIcon, StyledMoreIcon,
+  StyledTitleContainer
+} from "../../styles/JobOffers/JobOffers.Style";
+import CompanyOffers from "../../components/JobOffers/CompanyOffers";
 
 const NoOffersAvailable = () => (
-  <>
-    {!data.jobOffers.enabled && (
       <h4 style={{ color: Color.DARK_BLUE }}>No job offers available yet</h4>
-    )}
-  </>
 );
 
 const MoreThanLessThan = (props: { width: number }) => (
-  <>
-    {props.width > MOBILE_BREAKPOINT && (
-      <>
+<>
         <StyledLessIcon src={LessThanBlueIcon} />
         <StyledMoreIcon src={MoreThanBlueIcon} />
-      </>
-    )}
   </>
 );
 
@@ -54,8 +43,8 @@ const JobOffers2023: FC<React.PropsWithChildren<unknown>> = () => {
             color={Color.BLACK_BLUE}
           />
         </StyledTitleContainer>
-        <MoreThanLessThan width={width} />
-        <NoOffersAvailable />
+        {width > MOBILE_BREAKPOINT && <MoreThanLessThan width={width} />}
+        {!data.jobOffers.enabled && <NoOffersAvailable />}
         {data.jobOffers.enabled && (
           <div id="job-offers">
             <Companies id="companies">

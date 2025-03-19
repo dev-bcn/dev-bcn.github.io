@@ -19,25 +19,17 @@ import {
 import CompanyOffers from "../../components/JobOffers/CompanyOffers";
 
 const NoOffersAvailable = () => (
+  <h4 style={{ color: Color.DARK_BLUE }}>No job offers available yet</h4>
+);
+
+const MoreThanLessThan = () => (
   <>
-    {!data.jobOffers.enabled && (
-      <h4 style={{ color: Color.DARK_BLUE }}>No job offers available yet</h4>
-    )}
+    <StyledLessIcon src={LessThanBlueIcon} />
+    <StyledMoreIcon src={MoreThanBlueIcon} />
   </>
 );
 
-const MoreThanLessThan = (props: { width: number }) => (
-  <>
-    {props.width > MOBILE_BREAKPOINT && (
-      <>
-        <StyledLessIcon src={LessThanBlueIcon} />
-        <StyledMoreIcon src={MoreThanBlueIcon} />
-      </>
-    )}
-  </>
-);
-
-const JobOffers: FC<React.PropsWithChildren<unknown>> = () => {
+const JobOffers2024: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
 
   React.useEffect(() => {
@@ -54,8 +46,8 @@ const JobOffers: FC<React.PropsWithChildren<unknown>> = () => {
             color={Color.BLACK_BLUE}
           />
         </StyledTitleContainer>
-        <MoreThanLessThan width={width} />
-        <NoOffersAvailable />
+        {width > MOBILE_BREAKPOINT && <MoreThanLessThan/>}
+        {!data.jobOffers.enabled && <NoOffersAvailable />}
         {data.jobOffers.enabled && (
           <div id="job-offers">
             <Companies id="companies">
@@ -80,4 +72,4 @@ const JobOffers: FC<React.PropsWithChildren<unknown>> = () => {
   );
 };
 
-export default JobOffers;
+export default JobOffers2024;

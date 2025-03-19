@@ -1,4 +1,4 @@
-import { Company } from "../../views/JobOffers/JobsData";
+import {Company} from "../../types/jobOffers";
 
 export const jobOffers: Company[] = [
   {
@@ -727,6 +727,3 @@ export const jobOffers: Company[] = [
   },
 ];
 
-export interface CompanyProps {
-  company: Company;
-}

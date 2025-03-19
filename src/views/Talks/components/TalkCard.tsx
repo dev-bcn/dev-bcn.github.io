@@ -1,6 +1,6 @@
 import React, {FC} from "react";
 import {Link} from "react-router";
-import {StyledJobsInfo} from "../../JobOffers/components/JobsCard";
+import {StyledJobsInfo} from "../../../components/JobOffers/JobsCard";
 import {Tag} from "../../../components/Tag/Tag";
 import {
     ROUTE_SPEAKER_DETAIL,

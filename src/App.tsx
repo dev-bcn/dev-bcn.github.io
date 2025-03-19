@@ -98,6 +98,7 @@ import SpeakerDetailContainer2024 from "./2024/SpeakerDetail/SpeakerDetailContai
 import CfpSection2024 from "./2024/Cfp/CfpSection2024";
 import Workshops from "./views/Workshops/Workshops";
 import Schedule2024 from "./2024/Schedule/Schedule2024";
+import JobOffers2024 from "./2024/JobOffers/JobOffers2024";
 
 const StyledAppWrapper = styled.div`
   position: relative;
@@ -359,7 +360,7 @@ const App: FC<React.PropsWithChildren<unknown>> = () => {
             path={ROUTE_2024_JOB_OFFERS}
             element={
               <React.Suspense fallback={<Loading />}>
-                <JobOffers2023 />
+                <JobOffers2024 />
               </React.Suspense>
             }
           />

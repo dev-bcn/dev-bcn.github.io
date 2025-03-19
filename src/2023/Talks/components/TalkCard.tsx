@@ -1,6 +1,5 @@
 import React, {FC} from "react";
 import {Link} from "react-router";
-import {StyledJobsInfo} from "../../JobOffers/components/JobsCard";
 import {Tag} from "../../../components/Tag/Tag";
 import {
     ROUTE_2023_TALK_DETAIL,
@@ -24,6 +23,7 @@ import {
     SessionCategory,
     SessionSpeaker
 } from "../../../types/sessions";
+import {StyledJobsInfo} from "../../../components/JobOffers/JobsCard";
 
 interface TalkCardProps {
     index: number;
