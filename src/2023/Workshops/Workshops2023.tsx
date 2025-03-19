@@ -13,10 +13,10 @@ import TitleSection from "../../components/SectionTitle/TitleSection";
 import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
 import { useFetchTalks } from "../Talks/UseFetchTalks";
 import * as Sentry from "@sentry/react";
-import { TalkCard } from "../Talks/components/TalkCard";
 import conferenceData from "../../data/2023.json";
 import styled from "styled-components";
 import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
+import {TalkCard} from "../../components/Talk/TalkCard";
 
 const StyledSection = styled.section`
    {
@@ -97,11 +97,10 @@ const Workshops2023: FC<React.PropsWithChildren<unknown>> = () => {
               upcoming announcements
             </p>
           )}
-          {workshops?.map((track, index) => (
+          {workshops?.map((track) => (
             <TalkCard
               talk={track}
               key={track.id}
-              index={index}
               showTrack={true}
             />
           ))}

@@ -3,9 +3,9 @@ import {TalkCard} from "./TalkCard";
 import {
     StyledSessionSection,
     StyledTrackInfo
-} from "../../../views/Talks/Talks.style";
+} from "../../views/Talks/Talks.style";
 
-import {IGroup} from "../../../types/sessions";
+import {IGroup} from "../../types/sessions";
 
 interface TrackInfoProps {
     track: IGroup;

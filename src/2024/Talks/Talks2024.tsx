@@ -19,7 +19,7 @@ import {
     StyledTitleIcon,
     StyledWaveContainer
 } from "../../views/Talks/Talks.style";
-import TrackInformation from "./components/TrackInformation";
+import TrackInformation from "../../components/Talk/TrackInformation";
 
 interface TrackInfo {
     name: string;

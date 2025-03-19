@@ -1,30 +1,30 @@
 import React, {FC} from "react";
 import {Link} from "react-router";
-import {Tag} from "../../../components/Tag/Tag";
+import {Tag} from "../Tag/Tag";
 import {
     ROUTE_2024_SPEAKER_DETAIL,
     ROUTE_2024_TALK_DETAIL,
-} from "../../../constants/routes";
-import {Color} from "../../../styles/colors";
-import {StyledJobsInfo} from "../../../components/JobOffers/JobsCard";
+} from "../../constants/routes";
+import {Color} from "../../styles/colors";
+import {StyledJobsInfo} from "../JobOffers/JobsCard";
 import {
     StyledSessionCard,
     StyledSessionText,
     StyledTagsWrapper,
     StyledTalkSpeaker,
     StyledTalkTitle
-} from "../../../views/Talks/Talks.style";
-import {StyledVoteTalkLink} from "../../../views/MeetingDetail/MeetingDetail";
+} from "../../views/Talks/Talks.style";
+import {StyledVoteTalkLink} from "../../views/MeetingDetail/MeetingDetail";
 import {
     extractSessionCategoryInfo,
     extractSessionTags
-} from "../../../services/sessionsAdapter";
+} from "../../services/sessionsAdapter";
 import {
     CategoryItemEnum,
     QuestionAnswers,
     SessionCategory,
     SessionSpeaker
-} from "../../../types/sessions";
+} from "../../types/sessions";
 
 export interface TalkCardProps {
     talk: {
