@@ -40,7 +40,7 @@ export const sponsors: Sponsors = {
     {
       name: "Kube careers",
       image: "images/sponsors/kube-career.png",
-      website: "https://kube.careers//",
+      website: "https://kube.careers/",
     },
   ],
   supporters: [],
