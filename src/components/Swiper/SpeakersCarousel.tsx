@@ -1,19 +1,13 @@
-import { Color } from "../../../../styles/colors";
-
 import { FC } from "react";
 import { Link } from "react-router";
-import LessThanBlueWhiteIcon from ".././../../../assets/images/MoreThanBlueIcon.svg";
-import SectionWrapper from "../../../../components/SectionWrapper/SectionWrapper";
-import {
-  BIGGER_BREAKPOINT,
-  TABLET_BREAKPOINT,
-} from "../../../../constants/BreakPoints";
-import TitleSection from "../../../../components/SectionTitle/TitleSection";
+import LessThanBlueWhiteIcon from "../../assets/images/LessThanBlueIcon.svg";
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import { ROUTE_SPEAKERS } from "../../../../constants/routes";
-import SpeakerSwiper from "../../../../components/Swiper/SpeakerSwiper";
-import { useWindowSize } from "react-use";
+import SpeakerSwiper from "./SpeakerSwiper";
+import { Color } from "../../styles/colors";
+import { TABLET_BREAKPOINT } from "../../constants/BreakPoints";
+import SectionWrapper from "../SectionWrapper/SectionWrapper";
+import TitleSection from "../SectionTitle/TitleSection";
 
 const StyledSpeakersContainer = styled.section`
   background-color: ${Color.LIGHT_BLUE};
@@ -62,26 +56,33 @@ const StyledBlueSlash = styled(motion.p)`
   height: 100%;
 `;
 
-const SpeakersCarousel: FC<React.PropsWithChildren<unknown>> = () => {
-  const { width } = useWindowSize();
+interface Props {
+  speakersLink: string;
+  sessionizeUrl: string;
+}
+
+const SpeakersCarousel: FC<React.PropsWithChildren<Props>> = ({
+  speakersLink,
+  sessionizeUrl,
+}) => {
   return (
     <SectionWrapper color={Color.LIGHT_BLUE}>
       <StyledSpeakersContainer>
         <StyledTitleWrapper>
           <TitleSection
             title="SPEAKERS"
-            subtitle="Are you passionate about tech and love sharing ideas? Don't miss out on DevBcn! It's a fantastic chance to connect with like-minded techies, showcase your expertise, and contribute to the vibrant tech community. Join us as a speaker and make an impact! Let's innovate and inspire together at this exciting event"
+            subtitle="Are you a technology company? Interested in meeting
+        enthusiasts and geek people for technology? This is a
+        priceless opportunity to participate in the first Barcelona Developers Conference in Spain, to pr mote your company
+        and to support technological communities."
             color={Color.WHITE}
           />
         </StyledTitleWrapper>
-        <SpeakerSwiper />
+        <SpeakerSwiper sessionizeUrl={sessionizeUrl} />
         <StyledLink>
-          <Link to={ROUTE_SPEAKERS} className="link--text">
+          <Link to={speakersLink} className="link--text">
             <StyledSubtitle> View all speakers</StyledSubtitle>
-            <StyledLessThanRed
-              alt="view speakers"
-              src={LessThanBlueWhiteIcon}
-            />
+            <StyledLessThanRed src={LessThanBlueWhiteIcon} />
           </Link>
         </StyledLink>
         <StyledBottomSlash
@@ -89,12 +90,10 @@ const SpeakersCarousel: FC<React.PropsWithChildren<unknown>> = () => {
           animate={{ x: 0 }}
           transition={{ duration: 6 }}
         >
-          {width > BIGGER_BREAKPOINT && (
-            <StyledBlueSlash>
-              / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
-              / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /{" "}
-            </StyledBlueSlash>
-          )}
+          <StyledBlueSlash>
+            / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+            / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /{" "}
+          </StyledBlueSlash>
         </StyledBottomSlash>
       </StyledSpeakersContainer>
     </SectionWrapper>

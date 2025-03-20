@@ -2,12 +2,13 @@ import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
 import React, { FC } from "react";
 import Faqs from "./components/Faqs/Faqs";
 import Home from "./components/Home/Home";
-import SpeakersCarousel from "./components/SpeakersCarousel/SpeakersCarousel";
 import Sponsors from "./components/Sponsors/Sponsors";
 import styled from "styled-components";
 import data from "../../data/2023.json";
 import { useLocation } from "react-router";
 import { useDocumentTitleUpdater } from "../../services/useDocumentTitleUpdate";
+import SpeakersCarousel from "../../components/Swiper/SpeakersCarousel";
+import {ROUTE_2023_SPEAKERS} from "../../constants/routes";
 
 const StyledContainer = styled.div`
   padding-bottom: 10rem;
@@ -32,7 +33,7 @@ export const Home2023Wrapper: FC<React.PropsWithChildren<unknown>> = () => {
     <StyledContainer id="home-wrapper">
       <Home />
       <Faqs />
-      <SpeakersCarousel />
+      <SpeakersCarousel speakersLink={ROUTE_2023_SPEAKERS} sessionizeUrl={data.sessionizeUrl} />
       <Sponsors />
     </StyledContainer>
   );

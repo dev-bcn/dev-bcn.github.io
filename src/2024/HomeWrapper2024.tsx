@@ -1,18 +1,16 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
 
 import { useLocation } from "react-router";
 import { BIG_BREAKPOINT } from "../constants/BreakPoints";
-
-import { useEventEdition } from "../views/Home/UseEventEdition";
+import conferenceData from "../data/2024.json";
 import Faqs from "../views/Home/components/Faqs/Faqs";
 
 import Home from "./Home/Home";
-import SpeakersCarousel from "./SpeakersCarousel/SpeakersCarousel";
 import Sponsors from "./Sponsors/Sponsors";
-
-import { Edition } from "../types/types";
 import { useDocumentTitleUpdater } from "../services/useDocumentTitleUpdate";
+import SpeakersCarousel from "../components/Swiper/SpeakersCarousel";
+import { ROUTE_2024_SPEAKERS } from "../constants/routes";
 
 const StyledContainer = styled.div`
   padding-bottom: 10rem;
@@ -24,23 +22,24 @@ const StyledContainer = styled.div`
 
 export const HomeWrapper2024: FC<React.PropsWithChildren<unknown>> = () => {
   const { hash } = useLocation();
-  const [edition, setEdition] = useState<Edition>();
 
-  useEventEdition(setEdition);
   React.useEffect(() => {
     if (hash != null && hash !== "") {
       const scroll = document.getElementById(hash.substring(1));
       scroll?.scrollIntoView();
     }
-  }, [hash, edition]);
+  }, [hash]);
 
-  useDocumentTitleUpdater("Home", edition?.edition ?? "2024");
+  useDocumentTitleUpdater("Home", conferenceData.edition);
 
   return (
     <StyledContainer id="home-wrapper">
       <Home />
       <Faqs />
-      <SpeakersCarousel />
+      <SpeakersCarousel
+        speakersLink={ROUTE_2024_SPEAKERS}
+        sessionizeUrl={conferenceData.sessionizeUrl}
+      />
       <Sponsors />
     </StyledContainer>
   );
