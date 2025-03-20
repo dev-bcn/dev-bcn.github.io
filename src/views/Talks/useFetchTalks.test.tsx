@@ -1,33 +1,27 @@
-import React, {FC} from "react";
-import {QueryClient, QueryClientProvider} from "react-query";
-import {renderHook, waitFor} from "@testing-library/react";
-import axios, {AxiosHeaders, AxiosResponse} from "axios";
-import {faker} from "@faker-js/faker";
-import {useFetchLiveView, useFetchTalksById,} from "./UseFetchTalks";
-import {UngroupedSession} from "./liveView.types";
+import React, { FC } from "react";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { renderHook, waitFor } from "@testing-library/react";
+import axios, { AxiosHeaders, AxiosResponse } from "axios";
+import { faker } from "@faker-js/faker";
+import { useFetchTalksById } from "./UseFetchTalks";
 import {
   extractSessionCategoryInfo,
   extractSessionSlides,
   extractSessionTags,
-  sessionAdapter
+  sessionAdapter,
 } from "../../services/sessionsAdapter";
 import {
   CategoryItemEnum,
   IMeeting,
   QuestionAnswers,
   Session,
-  SessionCategory
+  SessionCategory,
 } from "../../types/sessions";
 
 jest.mock("axios");
 const mockedAxios = axios as jest.Mocked<typeof axios>;
 const axiosHeaders = new AxiosHeaders();
 const queryClient = new QueryClient();
-const wrapper: FC<React.PropsWithChildren<React.PropsWithChildren<{}>>> = ({
-  children,
-}) => (
-  <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
-);
 
 describe("sessionAdapter", () => {
   test("returns empty strings when session is undefined", () => {
@@ -347,76 +341,11 @@ describe("Fetch Talks by id", () => {
     await waitFor(() => !result.current.isLoading);
     expect(mockedAxios.get).toHaveBeenNthCalledWith(
       1,
-        "https://sessionize.com/api/v2/xhudniix/view/Sessions",
+      "https://sessionize.com/api/v2/xhudniix/view/Sessions",
     );
     expect(mockedAxios.get).toHaveReturnedTimes(1);
     //expect(result.current.isLoading).toEqual(false);
     expect(result.current.error).toEqual(null);
     //expect(result.current.data).toEqual(sessionAdapter(payload.data));
-  });
-});
-
-describe("Fetch Live session talks", () => {
-  afterEach(() => {
-    jest.clearAllMocks();
-    queryClient.clear();
-  });
-
-  it.skip("fetches and returns ungrouped talks data", async () => {
-    const payload: AxiosResponse<UngroupedSession> = {
-      status: 200,
-      statusText: "OK",
-      headers: {},
-      config: {
-        headers: axiosHeaders,
-      },
-      data: {
-        id: faker.string.uuid(),
-        title: faker.lorem.lines(1),
-        description: faker.lorem.lines(2),
-        startsAt: faker.date.past().toLocaleString(),
-        endsAt: faker.date.past().toLocaleString(),
-        isConfirmed: true,
-        isInformed: true,
-        isPlenumSession: false,
-        liveURL: null,
-        isServiceSession: false,
-        status: "Accepted",
-        room: "Main Stage",
-        roomID: faker.number.int(),
-        questionAnswers: [],
-        recordingURL: null,
-        categories: [
-          {
-            id: faker.number.int(),
-            name: "Session format",
-            sort: 0,
-            categoryItems: [],
-          },
-        ],
-        speakers: [
-          {
-            id: faker.string.uuid(),
-            name: faker.person.fullName(),
-          },
-        ],
-      },
-    };
-
-    mockedAxios.get.mockResolvedValue(payload);
-
-    const { result } = renderHook(() => useFetchLiveView(), {
-      wrapper,
-    });
-
-    await waitFor(() => {
-      expect(result.current.isSuccess).toBe(true);
-    });
-
-    expect(mockedAxios.get).toHaveBeenCalledWith(
-      "https://sessionize.com/api/v2/ezm48alx/view/Sessions",
-    );
-    //expect(result.current.data).toStrictEqual(payload.data);
-    expect(result.current.error).toBeNull();
   });
 });

@@ -1,6 +1,6 @@
 import {BIG_BREAKPOINT} from "../../constants/BreakPoints";
 
-import {FC, Suspense, useEffect} from "react";
+import { FC, Suspense } from "react";
 import MoreThanIcon from "../../assets/images/MoreThanBlueIcon.svg";
 import LessThan from "../../assets/images/MoreThanIcon.svg";
 import SlashesWhite from "../../assets/images/SlashesWhite.svg";
@@ -31,7 +31,8 @@ import {StyledTalkDescription} from "./SpeakerDetail.style";
 import {Link} from "react-router";
 import {Color} from "../../styles/colors";
 import conferenceData from "../../data/2024.json";
-import {ISpeaker} from "../../types/speakers";
+import { ISpeaker } from "../../types/speakers";
+import { useDocumentTitleUpdater } from "../../services/useDocumentTitleUpdate";
 
 interface ISpeakerDetailProps {
   speaker: ISpeaker;
@@ -40,9 +41,7 @@ interface ISpeakerDetailProps {
 const SpeakerDetail: FC<React.PropsWithChildren<ISpeakerDetailProps>> = ({ speaker }) => {
   const { width } = useWindowSize();
 
-  useEffect(() => {
-    document.title = `${speaker.fullName} — ${conferenceData.title} — ${conferenceData.edition}`;
-  }, [speaker.fullName]);
+  useDocumentTitleUpdater(speaker.fullName, conferenceData.edition);
 
   const hasSessions = (): boolean =>
     (speaker.sessions && speaker.sessions.length > 0) || false;

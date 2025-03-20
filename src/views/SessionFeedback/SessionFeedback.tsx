@@ -16,6 +16,7 @@ import { Color } from "../../styles/colors";
 import { Link } from "react-router";
 import { ROUTE_TALK_DETAIL } from "../../constants/routes";
 import data from "../../data/2024.json";
+import { useDocumentTitleUpdater } from "../../services/useDocumentTitleUpdate";
 
 const SessionFeedback: FC<React.PropsWithChildren<unknown>> = () => {
   const bodyTemplate = React.useCallback(
@@ -65,9 +66,7 @@ const SessionFeedback: FC<React.PropsWithChildren<unknown>> = () => {
     </div>
   );
 
-  React.useEffect(() => {
-    document.title = `Session Feedback — ${data.title} - ${data.edition}`;
-  });
+  useDocumentTitleUpdater("Session Feedback", data.edition);
 
   const header = renderHeader();
 

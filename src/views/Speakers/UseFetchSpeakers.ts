@@ -1,13 +1,14 @@
 import { useQuery, UseQueryResult } from "react-query";
 import axios from "axios";
 import { speakerAdapter } from "../../services/speakerAdapter";
-import { ISpeaker } from "../../types/speakers";
+import {  ISpeaker } from "../../types/speakers";
 
-export const useFetchSpeakers = (id?: string): UseQueryResult<ISpeaker[]> => {
-  return useQuery("api-speakers", async () => {
-    const serverResponse = await axios.get(
-      "https://sessionize.com/api/v2/xhudniix/view/Speakers",
-    );
+export const useFetchSpeakers = (
+  url: string = "https://sessionize.com/api/v2/xhudniix",
+  id?: string,
+): UseQueryResult<ISpeaker[]> => {
+  return useQuery(["api-speakers", url], async () => {
+    const serverResponse = await axios.get(`${url}/view/Speakers`);
     let returnData;
     if (id !== undefined) {
       returnData = serverResponse.data.filter(

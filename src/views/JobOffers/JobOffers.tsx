@@ -17,6 +17,7 @@ import {
   StyledTitleContainer,
 } from "../../styles/JobOffers/JobOffers.Style";
 import CompanyOffers from "../../components/JobOffers/CompanyOffers";
+import { useDocumentTitleUpdater } from "../../services/useDocumentTitleUpdate";
 
 const NoOffersAvailable = () => (
   <>
@@ -40,9 +41,7 @@ const MoreThanLessThan = (props: { width: number }) => (
 const JobOffers: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
 
-  React.useEffect(() => {
-    document.title = `Job Offers - ${data.title} - ${data.edition}`;
-  }, []);
+  useDocumentTitleUpdater("Job Offers", data.edition);
 
   return (
     <SectionWrapper color={Color.WHITE} marginTop={6} paddingBottom={100}>

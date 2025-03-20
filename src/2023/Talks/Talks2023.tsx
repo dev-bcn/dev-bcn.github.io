@@ -13,11 +13,12 @@ import {
   StyledWaveContainer,
 } from "./Talks.style";
 import { useFetchTalks } from "./UseFetchTalks";
-import * as Sentry from "@sentry/react";
 import { Dropdown, DropdownChangeEvent } from "primereact/dropdown";
 import "primereact/resources/primereact.min.css";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "../../styles/theme.css";
+import { useSentryErrorReport } from "../../services/useSentryErrorReport";
+import { useDocumentTitleUpdater } from "../../services/useDocumentTitleUpdate";
 import TrackInformation from "../../components/Talk/TrackInformation";
 
 interface TrackInfo {
@@ -27,7 +28,7 @@ interface TrackInfo {
 
 const Talks2023: FC<React.PropsWithChildren<unknown>> = () => {
   const [selectedGroupId, setSelectedGroupId] = useState<TrackInfo | null>(
-    null
+    null,
   );
   const { isLoading, error, data } = useFetchTalks();
 
@@ -36,9 +37,6 @@ const Talks2023: FC<React.PropsWithChildren<unknown>> = () => {
       sessionStorage.getItem("selectedGroupCode");
     const sessionSelectedGroupName =
       sessionStorage.getItem("selectedGroupName");
-
-    document.title = `Talks - DevBcn - ${conferenceData.edition}`;
-
     if (sessionSelectedGroupCode && sessionSelectedGroupName) {
       setSelectedGroupId({
         name: sessionSelectedGroupName,
@@ -47,9 +45,8 @@ const Talks2023: FC<React.PropsWithChildren<unknown>> = () => {
     }
   }, []);
 
-  if (error) {
-    Sentry.captureException(error);
-  }
+  useDocumentTitleUpdater("Talks ", conferenceData.edition);
+  useSentryErrorReport(error);
 
   const dropDownOptions = [
     { name: "All Tracks", code: undefined },
