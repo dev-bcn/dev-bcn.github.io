@@ -4,6 +4,8 @@ import Button from "../../../../components/UI/Button";
 import styled from "styled-components";
 import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
 import { gaEventTracker } from "../../../../components/analytics/Analytics";
+import { useDateInterval } from "../../../../hooks/useDateInterval";
+import { useUrlBuilder } from "../../../../services/urlBuilder";
 
 const StyledActionDiv = styled.div`
   display: flex;
@@ -16,16 +18,8 @@ const StyledActionDiv = styled.div`
 `;
 
 const ActionButtons: FC<React.PropsWithChildren<unknown>> = () => {
-  const ticketStartDay = new Date(data.tickets.startDay);
-  const ticketEndDay = new Date(data.tickets.endDay);
-  const CFPStartDay = new Date(data.cfp.startDay);
-  const CFPEndDay = new Date(data.cfp.endDay);
-  const sponsorshipStartDay = new Date(data.tickets.startDay);
-  const sponsorshipEndDay = new Date(data.tickets.endDay);
-  const today = new Date();
-
-  const isBetween = (startDay: Date, endDay: Date): boolean =>
-    startDay < new Date() && endDay > today;
+  const { isTicketsDisabled, isSponsorDisabled, isCfpDisabled } =
+    useDateInterval(new Date(), data);
 
   const trackSponsorshipInfo = useCallback(() => {
     gaEventTracker("sponsorship", "sponsorship");
@@ -41,27 +35,24 @@ const ActionButtons: FC<React.PropsWithChildren<unknown>> = () => {
 
   return (
     <StyledActionDiv>
-      {isBetween(ticketStartDay, ticketEndDay) && (
-        <Button
-          onClick={trackTickets}
-          text="🎟️ Buy Tickets"
-          link="https://tickets.devbcn.com/event/devbcn-2023"
-        />
-      )}
-      {isBetween(CFPStartDay, CFPEndDay) && (
-        <Button
-          onClick={trackCFP}
-          text="📢 Call For Papers"
-          link={data.cfp.link}
-        />
-      )}
-      {isBetween(sponsorshipStartDay, sponsorshipEndDay) && (
-        <Button
-          onClick={trackSponsorshipInfo}
-          text="🤝 Sponsorship"
-          link="mailto:sponsors@devbcn.com?subject=devBcn sponsorship"
-        />
-      )}
+      <Button
+        onClick={trackTickets}
+        text="🎟️ Buy Tickets"
+        link={useUrlBuilder("https://tickets.devbcn.com/event/devbcn-2023")}
+        disabled={isTicketsDisabled}
+      />
+      <Button
+        onClick={trackCFP}
+        text="📢 Call For Papers"
+        link={data.cfp.link}
+        disabled={isCfpDisabled}
+      />
+      <Button
+        onClick={trackSponsorshipInfo}
+        text="🤝 Sponsorship"
+        link="mailto:sponsors@devbcn.com?subject=devBcn sponsorship"
+        disabled={isSponsorDisabled}
+      />
     </StyledActionDiv>
   );
 };
