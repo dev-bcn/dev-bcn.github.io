@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
 import { gaEventTracker } from "../../../../components/analytics/Analytics";
 import { useDateInterval } from "../../../../hooks/useDateInterval";
+import {useUrlBuilder} from "../../../../services/urlBuilder";
 
 const StyledActionDiv = styled.div`
   display: flex;
@@ -38,10 +39,7 @@ const ActionButtons: FC<React.PropsWithChildren<unknown>> = () => {
         onClick={trackTickets}
         text="🎟️ Buy Tickets"
         subtext="February 1st, 2025"
-        link={
-          "https://tickets.devbcn.com/event/devbcn-2025" +
-          window.location.search
-        }
+        link={useUrlBuilder("https://tickets.devbcn.com/event/devbcn-2025")}
         disabled={isTicketsDisabled}
       />
       <Button
