@@ -1,10 +1,10 @@
-import {FC, useCallback} from "react";
+import { FC, useCallback } from "react";
 import data from "../../../../data/2025.json";
 import Button from "../../../../components/UI/Button";
 import styled from "styled-components";
-import {isWithinInterval} from "date-fns";
-import {BIG_BREAKPOINT} from "../../../../constants/BreakPoints";
-import {gaEventTracker} from "../../../../components/analytics/Analytics";
+import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
+import { gaEventTracker } from "../../../../components/analytics/Analytics";
+import { useDateInterval } from "../../../../hooks/useDateInterval";
 
 const StyledActionDiv = styled.div`
   display: flex;
@@ -17,17 +17,8 @@ const StyledActionDiv = styled.div`
 `;
 
 const ActionButtons: FC<React.PropsWithChildren<unknown>> = () => {
-  const ticketStartDay = new Date(data.tickets.startDay);
-  const ticketEndDay = new Date(data.tickets.endDay);
-  const CFPStartDay = new Date(data.cfp.startDay);
-  const CFPEndDay = new Date(data.cfp.endDay);
-  const sponsorshipStartDay = new Date(data.sponsors.startDate);
-  const sponsorshipEndDay = new Date(data.sponsors.endDate);
-  const today = new Date();
-
-
-  const isBetween = (startDay: Date, endDay: Date): boolean =>
-      isWithinInterval(today, {start: startDay, end:endDay});
+  const { isTicketsDisabled, isSponsorDisabled, isCfpDisabled } =
+    useDateInterval(new Date(), data);
 
   const trackSponsorshipInfo = useCallback(() => {
     gaEventTracker("sponsorship", "sponsorship");
@@ -41,30 +32,32 @@ const ActionButtons: FC<React.PropsWithChildren<unknown>> = () => {
     gaEventTracker("CFP", "CFP");
   }, []);
 
-
   return (
     <StyledActionDiv>
       <Button
         onClick={trackTickets}
         text="🎟️ Buy Tickets"
         subtext="February 1st, 2025"
-        link="https://tickets.devbcn.com/event/devbcn-2025"
-        disabled={!isBetween(ticketStartDay, ticketEndDay)}
+        link={
+          "https://tickets.devbcn.com/event/devbcn-2025" +
+          window.location.search
+        }
+        disabled={isTicketsDisabled}
       />
-        <Button
-          onClick={trackCFP}
-          text="📢 Call For Papers"
-          subtext="January 1st, 2025"
-          link={data.cfp.link}
-          disabled={!isBetween(CFPStartDay, CFPEndDay)}
-        />
-        <Button
-          onClick={trackSponsorshipInfo}
-          text="🤝 Sponsorship"
-          target="_self"
-          link="/sponsorship"
-          disabled={!isBetween(sponsorshipStartDay, sponsorshipEndDay)}
-        />
+      <Button
+        onClick={trackCFP}
+        text="📢 Call For Papers"
+        subtext="January 1st, 2025"
+        link={data.cfp.link}
+        disabled={isCfpDisabled}
+      />
+      <Button
+        onClick={trackSponsorshipInfo}
+        text="🤝 Sponsorship"
+        target="_self"
+        link="/sponsorship"
+        disabled={isSponsorDisabled}
+      />
     </StyledActionDiv>
   );
 };
