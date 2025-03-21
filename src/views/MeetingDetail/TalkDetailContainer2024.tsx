@@ -4,7 +4,7 @@ import NotFoundError from "../../components/NotFoundError/NotFoundError";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import styled from "styled-components";
 import {useParams} from "react-router";
-import conferenceData from "../../data/2024.json";
+import conferenceData from "../../data/2025.json";
 import {useFetchTalksById} from "../Talks/UseFetchTalks";
 import * as Sentry from "@sentry/react";
 import {useFetchSpeakers} from "../Speakers/UseFetchSpeakers";
