@@ -30,7 +30,7 @@ import {ROUTE_SPEAKERS, ROUTE_TALK_DETAIL} from "../../constants/routes";
 import {StyledTalkDescription} from "./SpeakerDetail.style";
 import {Link} from "react-router";
 import {Color} from "../../styles/colors";
-import conferenceData from "../../data/2024.json";
+import conferenceData from "../../data/2025.json";
 import {ISpeaker} from "../../types/speakers";
 
 interface ISpeakerDetailProps {
