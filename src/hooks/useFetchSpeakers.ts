@@ -9,7 +9,7 @@ const URLS = {
   2024: "https://sessionize.com/api/v2/teq4asez/view/Speakers"
 };
 
-export const useFetchSpeakers = (urlOrId?: string, id?: string): UseQueryResult<ISpeaker[]> => {
+export const useFetchSpeakers = (yearOrUrl?: string, id?: string): UseQueryResult<ISpeaker[]> => {
   // Determine if the first parameter is a URL or an ID
   let url = URLS.default;
   let speakerId = id;
