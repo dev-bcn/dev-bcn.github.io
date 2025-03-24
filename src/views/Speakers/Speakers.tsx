@@ -20,7 +20,7 @@ import {
 import webData from "../../data/2024.json";
 import Button from "../../components/UI/Button";
 import {gaEventTracker} from "../../components/analytics/Analytics";
-import {useFetchSpeakers} from "./UseFetchSpeakers";
+import {useFetchSpeakers} from "../../hooks/useFetchSpeakers";
 import * as Sentry from "@sentry/react";
 import {ISpeaker} from "../../types/speakers";
 

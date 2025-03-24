@@ -5,7 +5,7 @@ import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import SpeakerDetail from "./SpeakerDetail";
 import {useParams} from "react-router";
 import conferenceData from "../../data/2024.json";
-import {useFetchSpeakers} from "../Speakers/UseFetchSpeakers";
+import {useFetchSpeakers} from "../../hooks/useFetchSpeakers";
 import * as Sentry from "@sentry/react";
 import {StyledContainer} from "../../views/SpeakerDetail/Speaker.style";
 import {StyledWaveContainer} from "../../views/Talks/Talks.style";
@@ -13,7 +13,7 @@ import {StyledWaveContainer} from "../../views/Talks/Talks.style";
 const SpeakerDetailContainer2024: FC<React.PropsWithChildren<unknown>> = () => {
     const {id} = useParams<{ id: string }>();
 
-    const {isLoading, error, data} = useFetchSpeakers(id);
+    const {isLoading, error, data} = useFetchSpeakers("2024", id);
 
     if (error) {
         Sentry.captureException(error);

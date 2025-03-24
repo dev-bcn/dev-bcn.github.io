@@ -19,7 +19,7 @@ import {
 import webData from "../../data/2024.json";
 import Button from "../../components/UI/Button";
 import {gaEventTracker} from "../../components/analytics/Analytics";
-import {useFetchSpeakers} from "./UseFetchSpeakers";
+import {useFetchSpeakers} from "../../hooks/useFetchSpeakers";
 import * as Sentry from "@sentry/react";
 import {SpeakerCard} from "../../views/Speakers/components/SpeakersCard";
 import {ISpeaker} from "../../types/speakers";
@@ -41,7 +41,7 @@ const Speakers2024: FC<React.PropsWithChildren<unknown>> = () => {
     const isBetween = (startDay: Date, endDay: Date): boolean =>
         startDay < new Date() && endDay > today;
 
-    const {error, data, isLoading} = useFetchSpeakers();
+    const {error, data, isLoading} = useFetchSpeakers("2024");
 
     if (error) {
         Sentry.captureException(error);

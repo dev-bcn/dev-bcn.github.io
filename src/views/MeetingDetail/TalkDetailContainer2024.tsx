@@ -7,7 +7,7 @@ import {useParams} from "react-router";
 import conferenceData from "../../data/2025.json";
 import {useFetchTalksById} from "../Talks/UseFetchTalks";
 import * as Sentry from "@sentry/react";
-import {useFetchSpeakers} from "../Speakers/UseFetchSpeakers";
+import {useFetchSpeakers} from "../../hooks/useFetchSpeakers";
 import MeetingDetail from "./MeetingDetail";
 import {ISpeaker} from "../../types/speakers";
 import {sessionAdapter} from "../../services/sessionsAdapter";

@@ -7,7 +7,7 @@ import {useParams} from "react-router";
 import conferenceData from "../../data/2024.json";
 import {useFetchTalksById} from "../Talks/UseFetchTalks";
 import * as Sentry from "@sentry/react";
-import {useFetchSpeakers} from "../Speakers/UseFetchSpeakers";
+import {useFetchSpeakers} from "../../hooks/useFetchSpeakers";
 import MeetingDetail from "./MeetingDetail";
 
 import {ISpeaker} from "../../types/speakers";
@@ -20,7 +20,7 @@ const StyledContainer = styled.div`
 const MeetingDetailContainer: FC<React.PropsWithChildren<unknown>> = () => {
     const {id} = useParams<{ id: string }>();
     const {isLoading, error, data} = useFetchTalksById(id!);
-    const {data: speakerData} = useFetchSpeakers();
+    const {data: speakerData} = useFetchSpeakers("2024");
 
     const getTalkSpeakers = (
         data: Session[] | undefined,
