@@ -12,7 +12,7 @@ import {
   StyledTitleIcon,
   StyledWaveContainer,
 } from "./Talks.style";
-import { useFetchTalks } from "./UseFetchTalks";
+import { useFetchTalks } from "../../hooks/useFetchTalks";
 import * as Sentry from "@sentry/react";
 import { Dropdown, DropdownChangeEvent } from "primereact/dropdown";
 import "primereact/resources/primereact.min.css";
@@ -27,9 +27,9 @@ interface TrackInfo {
 
 const Talks2023: FC<React.PropsWithChildren<unknown>> = () => {
   const [selectedGroupId, setSelectedGroupId] = useState<TrackInfo | null>(
-    null
+    null,
   );
-  const { isLoading, error, data } = useFetchTalks();
+  const { isLoading, error, data } = useFetchTalks("2023");
 
   useEffect(() => {
     const sessionSelectedGroupCode =

@@ -11,32 +11,32 @@ import {
 import LessThanDarkBlueIcon from "../../assets/images/LessThanDarkBlueIcon.svg";
 import TitleSection from "../../components/SectionTitle/TitleSection";
 import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
-import { useFetchTalks } from "../Talks/UseFetchTalks";
+import { useFetchTalks } from "../../hooks/useFetchTalks";
 import * as Sentry from "@sentry/react";
 import conferenceData from "../../data/2023.json";
 import styled from "styled-components";
 import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
-import {TalkCard} from "../../components/Talk/TalkCard";
+import { TalkCard } from "../../components/Talk/TalkCard";
 
 const StyledSection = styled.section`
-   {
+{
     display: flex;
     padding: 0 10rem;
     flex-wrap: wrap;
-  }
+}
 
-  @media (max-width: ${BIG_BREAKPOINT}px) {
-    padding: 1rem;
-    flex-direction: column;
-  }
+    @media (max-width: ${BIG_BREAKPOINT}px) {
+        padding: 1rem;
+        flex-direction: column;
+    }
 
-  & > div {
-    margin: 1rem;
-    min-width: 14%;
-  }
+    & > div {
+        margin: 1rem;
+        min-width: 14%;
+    }
 `;
 const Workshops2023: FC<React.PropsWithChildren<unknown>> = () => {
-  const { isLoading, data, error } = useFetchTalks();
+  const { isLoading, data, error } = useFetchTalks("2023");
   useEffect(() => {
     document.title = `Workshops - DevBcn - ${conferenceData.edition}`;
   }, []);
@@ -49,8 +49,8 @@ const Workshops2023: FC<React.PropsWithChildren<unknown>> = () => {
     ?.flatMap((group) => group.sessions)
     .filter((session) =>
       session.categories.some((category) =>
-        category.categoryItems.some((item) => categoryItemIds.has(item.id))
-      )
+        category.categoryItems.some((item) => categoryItemIds.has(item.id)),
+      ),
     );
   //endregion
 
@@ -98,11 +98,7 @@ const Workshops2023: FC<React.PropsWithChildren<unknown>> = () => {
             </p>
           )}
           {workshops?.map((track) => (
-            <TalkCard
-              talk={track}
-              key={track.id}
-              showTrack={true}
-            />
+            <TalkCard talk={track} key={track.id} showTrack={true} />
           ))}
         </StyledSection>
         <StyledMarginBottom />

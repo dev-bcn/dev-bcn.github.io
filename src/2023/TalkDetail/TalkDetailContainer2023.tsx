@@ -1,24 +1,24 @@
-import {Color} from "../../styles/colors";
-import React, {FC, useEffect} from "react";
+import { Color } from "../../styles/colors";
+import React, { FC, useEffect } from "react";
 import NotFoundError from "../../components/NotFoundError/NotFoundError";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import styled from "styled-components";
-import {useParams} from "react-router";
+import { useParams } from "react-router";
 import conferenceData from "../../data/2023.json";
-import {useFetchTalksById} from "../Talks/UseFetchTalks";
+import { useFetchTalksById } from "../../hooks/useFetchTalks";
 import * as Sentry from "@sentry/react";
-import {useFetchSpeakers} from "../../hooks/useFetchSpeakers";
-import {Session} from "../../types/sessions";
+import { useFetchSpeakers } from "../../hooks/useFetchSpeakers";
+import { Session } from "../../types/sessions";
 import TalkDetail from "./TalkDetail";
-import {ISpeaker} from "../../types/speakers";
-import {sessionAdapter} from "../../services/sessionsAdapter";
+import { ISpeaker } from "../../types/speakers";
+import { sessionAdapter } from "../../services/sessionsAdapter";
 
 const StyledContainer = styled.div`
   background-color: ${Color.WHITE};
 `;
 const TalkDetailContainer2023: FC<React.PropsWithChildren<unknown>> = () => {
   const { id } = useParams<{ id: string }>();
-  const { isLoading, error, data } = useFetchTalksById(id!);
+  const { isLoading, error, data } = useFetchTalksById(id!, "2023");
   const { data: speakerData } = useFetchSpeakers("2023");
 
   const getTalkSpeakers = (

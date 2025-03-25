@@ -1,5 +1,5 @@
 import React, { FC, useCallback, useEffect, useMemo } from "react";
-import { useFetchLiveView } from "./UseFetchTalks";
+import { useFetchLiveView } from "../../hooks/useFetchTalks";
 import Loading from "../../components/Loading/Loading";
 import { UngroupedSession } from "./liveView.types";
 import conference from "../../data/2024.json";
