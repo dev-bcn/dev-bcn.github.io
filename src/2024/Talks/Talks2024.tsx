@@ -19,7 +19,7 @@ import {
   StyledTitleIcon,
   StyledWaveContainer,
 } from "../../views/Talks/Talks.style";
-import TrackInformation from "../../components/Talk/TrackInformation";
+import TrackInformation from "../../components/common/TrackInformation";
 
 interface TrackInfo {
   name: string;
@@ -128,7 +128,11 @@ const Talks2024: FC<React.PropsWithChildren<unknown>> = () => {
                   />
                 </div>
                 {filteredTalks.map((track) => (
-                  <TrackInformation key={track.groupId} track={track} />
+                  <TrackInformation
+                    key={track.groupId}
+                    track={track}
+                    year={conferenceData.edition}
+                  />
                 ))}
               </>
             )

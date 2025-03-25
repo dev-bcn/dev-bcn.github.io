@@ -16,15 +16,13 @@ import { Session } from "../../types/sessions";
 const StyledContainer = styled.div`
   background-color: ${Color.WHITE};
 `;
-const TalkDetailContainer2024: FC<React.PropsWithChildren<unknown>> = () => {
+const TalkDetailContainer: FC<React.PropsWithChildren<unknown>> = () => {
   const { id } = useParams<{ id: string }>();
   const { isLoading, error, data } = useFetchTalksById(id!);
   const { data: speakerData } = useFetchSpeakers();
 
-  const getTalkSpeakers = (
-    data: Session[] | undefined,
-  ): string[] | undefined => {
-    const speakers = data?.[0]?.speakers;
+  const getTalkSpeakers = (data: Session | undefined): string[] | undefined => {
+    const speakers = data?.speakers;
     return speakers?.map((speaker) => speaker.id);
   };
 
@@ -33,12 +31,10 @@ const TalkDetailContainer2024: FC<React.PropsWithChildren<unknown>> = () => {
     (speaker) => talkSpeakers?.includes(speaker.id),
   );
 
-  const adaptedMeeting = sessionAdapter(data?.at(0));
+  const adaptedMeeting = sessionAdapter(data);
 
   useEffect(() => {
-    document.title = `${data?.at(0)?.title} - DevBcn - ${
-      conferenceData.edition
-    }`;
+    document.title = `${data?.title} - DevBcn - ${conferenceData.edition}`;
   }, [data]);
 
   if (error) {
@@ -67,4 +63,4 @@ const TalkDetailContainer2024: FC<React.PropsWithChildren<unknown>> = () => {
   );
 };
 
-export default TalkDetailContainer2024;
+export default TalkDetailContainer;

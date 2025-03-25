@@ -7,7 +7,7 @@ import {
   SessionSpeaker
 } from "../../types/sessions";
 
-export const talkCardAdapter = (session: UngroupedSession): TalkCardProps => {
+export const talkCardAdapter = (session: UngroupedSession, year: string = "2024"): TalkCardProps => {
   return {
     talk: {
       id: parseInt(session.id),
@@ -32,6 +32,7 @@ export const talkCardAdapter = (session: UngroupedSession): TalkCardProps => {
         answer: qa.answer,
       })) as QuestionAnswers[],
     },
+    year,
     showTrack: true, // Default value, adjust as necessary
   };
 };

@@ -12,7 +12,7 @@ import {
   StyledTitleIcon,
   StyledWaveContainer,
 } from "./Talks.style";
-import TrackInformation from "./components/TrackInformation";
+import TrackInformation from "../../components/common/TrackInformation";
 import { useFetchTalks } from "../../hooks/useFetchTalks";
 import * as Sentry from "@sentry/react";
 import { Dropdown, DropdownChangeEvent } from "primereact/dropdown";
@@ -127,7 +127,11 @@ const Talks: FC<React.PropsWithChildren<unknown>> = () => {
                   />
                 </div>
                 {filteredTalks.map((track) => (
-                  <TrackInformation key={track.groupId} track={track} />
+                  <TrackInformation
+                    key={track.groupId}
+                    track={track}
+                    year={conferenceData.edition}
+                  />
                 ))}
               </>
             )

@@ -18,7 +18,7 @@ import { Dropdown, DropdownChangeEvent } from "primereact/dropdown";
 import "primereact/resources/primereact.min.css";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "../../styles/theme.css";
-import TrackInformation from "../../components/Talk/TrackInformation";
+import TrackInformation from "../../components/common/TrackInformation";
 
 interface TrackInfo {
   name: string;
@@ -126,7 +126,11 @@ const Talks2023: FC<React.PropsWithChildren<unknown>> = () => {
                 />
               </div>
               {filteredTalks.map((track) => (
-                <TrackInformation key={track.groupId} track={track} />
+                <TrackInformation
+                  key={track.groupId}
+                  track={track}
+                  year={conferenceData.edition}
+                />
               ))}
             </>
           )}

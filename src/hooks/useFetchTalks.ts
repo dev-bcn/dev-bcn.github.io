@@ -59,7 +59,7 @@ export const useFetchTalksById = (
   id: string,
   urlOrYear?: string,
 ): UseQueryResult<Session> => {
-  return useFetchTalksBase<Session>("talks", urlOrYear, (data) => {
+  return useFetchTalksBase<Session>("talks", urlOrYear, (data: any[]) => {
     const sessions = data
       .map((track: IGroup) => track.sessions)
       .flat(1)

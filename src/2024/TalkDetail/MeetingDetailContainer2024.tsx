@@ -17,15 +17,13 @@ import { sessionAdapter } from "../../services/sessionsAdapter";
 const StyledContainer = styled.div`
   background-color: ${Color.WHITE};
 `;
-const MeetingDetailContainer: FC<React.PropsWithChildren<unknown>> = () => {
+const MeetingDetailContainer2024: FC<React.PropsWithChildren<unknown>> = () => {
   const { id } = useParams<{ id: string }>();
   const { isLoading, error, data } = useFetchTalksById(id!, "2024");
   const { data: speakerData } = useFetchSpeakers("2024");
 
-  const getTalkSpeakers = (
-    data: Session[] | undefined,
-  ): string[] | undefined => {
-    const speakers = data?.[0]?.speakers;
+  const getTalkSpeakers = (data: Session | undefined): string[] | undefined => {
+    const speakers = data?.speakers;
     return speakers?.map((speaker) => speaker.id);
   };
 
@@ -34,12 +32,10 @@ const MeetingDetailContainer: FC<React.PropsWithChildren<unknown>> = () => {
     (speaker) => talkSpeakers?.includes(speaker.id),
   );
 
-  const adaptedMeeting = sessionAdapter(data?.at(0));
+  const adaptedMeeting = sessionAdapter(data);
 
   useEffect(() => {
-    document.title = `${data?.at(0)?.title} - DevBcn - ${
-      conferenceData.edition
-    }`;
+    document.title = `${data?.title} - DevBcn - ${conferenceData.edition}`;
   }, [data]);
 
   if (error) {
@@ -68,4 +64,4 @@ const MeetingDetailContainer: FC<React.PropsWithChildren<unknown>> = () => {
   );
 };
 
-export default MeetingDetailContainer;
+export default MeetingDetailContainer2024;

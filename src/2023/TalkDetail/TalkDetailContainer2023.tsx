@@ -21,10 +21,8 @@ const TalkDetailContainer2023: FC<React.PropsWithChildren<unknown>> = () => {
   const { isLoading, error, data } = useFetchTalksById(id!, "2023");
   const { data: speakerData } = useFetchSpeakers("2023");
 
-  const getTalkSpeakers = (
-    data: Session[] | undefined,
-  ): string[] | undefined => {
-    const speakers = data?.[0]?.speakers;
+  const getTalkSpeakers = (data: Session | undefined): string[] | undefined => {
+    const speakers = data?.speakers;
     return speakers?.map((speaker) => speaker.id);
   };
 
@@ -33,12 +31,10 @@ const TalkDetailContainer2023: FC<React.PropsWithChildren<unknown>> = () => {
     (speaker) => talkSpeakers?.includes(speaker.id),
   );
 
-  const adaptedMeeting = sessionAdapter(data?.at(0));
+  const adaptedMeeting = sessionAdapter(data);
 
   useEffect(() => {
-    document.title = `${data?.at(0)?.title} - DevBcn - ${
-      conferenceData.edition
-    }`;
+    document.title = `${data?.title} - DevBcn - ${conferenceData.edition}`;
   }, [data]);
 
   if (error) {
