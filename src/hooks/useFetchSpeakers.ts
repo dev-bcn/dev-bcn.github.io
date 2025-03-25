@@ -6,26 +6,29 @@ import { ISpeaker } from "../types/speakers";
 const URLS = {
   default: "https://sessionize.com/api/v2/xhudniix/view/Speakers",
   2023: "https://sessionize.com/api/v2/ttsitynd/view/Speakers",
-  2024: "https://sessionize.com/api/v2/teq4asez/view/Speakers"
+  2024: "https://sessionize.com/api/v2/teq4asez/view/Speakers",
 };
 
-export const useFetchSpeakers = (yearOrUrl?: string, id?: string): UseQueryResult<ISpeaker[]> => {
+export const useFetchSpeakers = (
+  yearOrUrl?: string,
+  id?: string,
+): UseQueryResult<ISpeaker[]> => {
   // Determine if the first parameter is a URL or an ID
   let url = URLS.default;
   let speakerId = id;
 
-  if (urlOrId) {
+  if (yearOrUrl) {
     // If urlOrId starts with http, it's a URL
-    if (urlOrId.startsWith("http")) {
-      url = urlOrId;
-    } 
+    if (yearOrUrl.startsWith("http")) {
+      url = yearOrUrl;
+    }
     // If urlOrId is a year key in URLS, use that URL
-    else if (urlOrId in URLS) {
-      url = URLS[urlOrId as keyof typeof URLS];
-    } 
+    else if (yearOrUrl in URLS) {
+      url = URLS[yearOrUrl as keyof typeof URLS];
+    }
     // Otherwise, it's an ID
     else {
-      speakerId = urlOrId;
+      speakerId = yearOrUrl;
     }
   }
 
