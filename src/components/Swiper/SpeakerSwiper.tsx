@@ -6,7 +6,7 @@ import {Color} from "../../styles/colors";
 import "swiper/swiper-bundle.min.css";
 import "../../views/Home/components/SpeakersCarousel/SpeakersCarousel.scss";
 import conferenceData from "../../data/2025.json";
-import {useFetchSpeakers} from "../../views/Speakers/UseFetchSpeakers";
+import {useFetchSpeakers} from "../../hooks/useFetchSpeakers";
 import * as Sentry from "@sentry/react";
 import {ISpeaker} from "../../types/speakers";
 import {ROUTE_SPEAKER_DETAIL} from "../../constants/routes";

@@ -12,13 +12,13 @@ import {
   StyledTitleIcon,
   StyledWaveContainer,
 } from "./Talks.style";
-import { useFetchTalks } from "./UseFetchTalks";
+import { useFetchTalks } from "../../hooks/useFetchTalks";
 import * as Sentry from "@sentry/react";
 import { Dropdown, DropdownChangeEvent } from "primereact/dropdown";
 import "primereact/resources/primereact.min.css";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "../../styles/theme.css";
-import TrackInformation from "../../components/Talk/TrackInformation";
+import TrackInformation from "../../components/common/TrackInformation";
 
 interface TrackInfo {
   name: string;
@@ -27,9 +27,9 @@ interface TrackInfo {
 
 const Talks2023: FC<React.PropsWithChildren<unknown>> = () => {
   const [selectedGroupId, setSelectedGroupId] = useState<TrackInfo | null>(
-    null
+    null,
   );
-  const { isLoading, error, data } = useFetchTalks();
+  const { isLoading, error, data } = useFetchTalks("2023");
 
   useEffect(() => {
     const sessionSelectedGroupCode =
@@ -126,7 +126,11 @@ const Talks2023: FC<React.PropsWithChildren<unknown>> = () => {
                 />
               </div>
               {filteredTalks.map((track) => (
-                <TrackInformation key={track.groupId} track={track} />
+                <TrackInformation
+                  key={track.groupId}
+                  track={track}
+                  year={conferenceData.edition}
+                />
               ))}
             </>
           )}

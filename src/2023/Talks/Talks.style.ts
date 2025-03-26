@@ -47,10 +47,15 @@ export const StyledSessionText = styled.div`
 export const StyledSessionCard = styled.div`
   align-items: center;
   /*min-width: 20%;
-  max-width: 50%;*/
+    max-width: 50%;*/
   margin: 0.5rem 1rem 1rem;
   flex-grow: 2;
-  background: linear-gradient(-45deg, ${Color.DARK_BLUE}, ${Color.LIGHT_BLUE}, ${Color.DARK_BLUE});
+  background: linear-gradient(
+    -45deg,
+    ${Color.DARK_BLUE},
+    ${Color.LIGHT_BLUE},
+    ${Color.DARK_BLUE}
+  );
   background-size: 200% 200%;
   border-radius: 10px;
   padding: 15px;
@@ -82,12 +87,12 @@ export const StyledTalkTitle = styled(Link)`
   }
 `;
 export const StyledTrackInfo = styled.h2`
-   {
+{
     color: ${Color.DARK_BLUE};
     margin-top: 50px;
     margin-left: 40px;
     margin-bottom: 20px;
-  }
+}
 `;
 export const StyledSessionSection = styled.section`
   display: flex;
@@ -98,20 +103,23 @@ export const StyledSessionSection = styled.section`
 
 export const StyledTalkSpeaker = styled.p`
   font-size: 1em;
+
   a:before {
     content: "🧑🏻‍💻 ";
   }
+
   a {
     text-decoration: none;
     color: ${Color.WHITE};
   }
+
   a:hover {
     color: ${Color.DARK_BLUE};
   }
 `;
 
 export const StyledSelectTrack = styled.select`
-   {
+{
     padding: 5px;
     color: ${Color.YELLOW};
     background-color: ${Color.LIGHT_BLUE};
@@ -119,5 +127,5 @@ export const StyledSelectTrack = styled.select`
     border: none;
     font-size: 1.2em;
     max-width: 15%;
-  }
+}
 `;

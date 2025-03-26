@@ -1,16 +1,10 @@
 import LiveView from "./LiveView";
-import { QueryClient, QueryClientProvider } from "react-query";
-import { render, screen } from "@testing-library/react";
 import React from "react";
+import { renderWithQueryClient, screen } from "../../utils/testing/testUtils";
 
 describe("Live view component", () => {
   it("renders without crashing", () => {
-    const queryClient = new QueryClient();
-    render(
-      <QueryClientProvider client={queryClient}>
-        <LiveView />
-      </QueryClientProvider>,
-    );
+    renderWithQueryClient(<LiveView />);
     const titleElement = screen.getByText(/Live Schedule/);
     expect(titleElement).toBeInTheDocument();
   });

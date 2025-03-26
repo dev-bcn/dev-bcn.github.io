@@ -1,4 +1,4 @@
-import {FC, Suspense} from "react";
+import { FC, Suspense } from "react";
 import {
   StyledImageAnimation,
   StyledSpeakerCard,
@@ -7,22 +7,38 @@ import {
   StyledSpeakerText,
   StyledSpeakerTitle,
 } from "./SpeakerCard.Style";
-import {Link} from "react-router";
-import {ROUTE_SPEAKER_DETAIL} from "../../../constants/routes";
+import { Link } from "react-router";
+import {
+  ROUTE_2023_SPEAKER_DETAIL,
+  ROUTE_2024_SPEAKER_DETAIL,
+  ROUTE_SPEAKER_DETAIL,
+} from "../../../constants/routes";
 import Loading from "../../../assets/images/logo.png";
-import {ISpeaker} from "../../../types/speakers";
+import { ISpeaker } from "../../../types/speakers";
 
 type SpeakerCardProps = {
   speaker: ISpeaker;
+  year: string;
+};
+
+export const getSpeakerRoute = (year: string): string => {
+  if (year === "2023") {
+    return ROUTE_2023_SPEAKER_DETAIL;
+  }
+  if (year === "2024") {
+    return ROUTE_2024_SPEAKER_DETAIL;
+  }
+  return ROUTE_SPEAKER_DETAIL;
 };
 
 export const SpeakerCard: FC<React.PropsWithChildren<SpeakerCardProps>> = ({
   speaker,
+  year,
 }) => {
   return (
     <StyledSpeakerCard>
       <Link
-          to={`${ROUTE_SPEAKER_DETAIL}/${speaker.id}`}
+        to={`${getSpeakerRoute(year)}/${speaker.id}`}
         style={{ textDecoration: "none" }}
       >
         <StyledSpeakerImageContainer>

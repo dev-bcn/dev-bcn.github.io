@@ -4,22 +4,22 @@ import NotFoundError from "../../components/NotFoundError/NotFoundError";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import styled from "styled-components";
 import { useParams } from "react-router";
-import conferenceData from "../../data/2023.json";
+import conferenceData from "../../data/2025.json";
 import { useFetchTalksById } from "../../hooks/useFetchTalks";
 import * as Sentry from "@sentry/react";
 import { useFetchSpeakers } from "../../hooks/useFetchSpeakers";
-import { Session } from "../../types/sessions";
-import TalkDetail from "./TalkDetail";
+import MeetingDetail from "./MeetingDetail";
 import { ISpeaker } from "../../types/speakers";
 import { sessionAdapter } from "../../services/sessionsAdapter";
+import { Session } from "../../types/sessions";
 
 const StyledContainer = styled.div`
   background-color: ${Color.WHITE};
 `;
-const TalkDetailContainer2023: FC<React.PropsWithChildren<unknown>> = () => {
+const TalkDetailContainer: FC<React.PropsWithChildren<unknown>> = () => {
   const { id } = useParams<{ id: string }>();
-  const { isLoading, error, data } = useFetchTalksById(id!, "2023");
-  const { data: speakerData } = useFetchSpeakers("2023");
+  const { isLoading, error, data } = useFetchTalksById(id!);
+  const { data: speakerData } = useFetchSpeakers();
 
   const getTalkSpeakers = (data: Session | undefined): string[] | undefined => {
     const speakers = data?.speakers;
@@ -49,7 +49,10 @@ const TalkDetailContainer2023: FC<React.PropsWithChildren<unknown>> = () => {
           sessionSpeakers !== undefined &&
           sessionSpeakers.length > 0 &&
           adaptedMeeting !== undefined && (
-            <TalkDetail speakers={sessionSpeakers} meeting={adaptedMeeting} />
+            <MeetingDetail
+              speakers={sessionSpeakers}
+              meeting={adaptedMeeting}
+            />
           )}
         {!isLoading &&
           (!sessionSpeakers ||
@@ -60,4 +63,4 @@ const TalkDetailContainer2023: FC<React.PropsWithChildren<unknown>> = () => {
   );
 };
 
-export default TalkDetailContainer2023;
+export default TalkDetailContainer;

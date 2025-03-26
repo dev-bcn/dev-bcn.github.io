@@ -1,15 +1,8 @@
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=dev-bcn_dev-bcn.github.io&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=dev-bcn_dev-bcn.github.io)
-
-![](src/assets/images/1500x500.jpeg)
-
 # DevBcn - Barcelona Developers Conference Website
 
 ## Project Overview
 
-This repository contains the official website for the Barcelona Developers
-Conference (DevBcn), a tech conference held in Barcelona, Spain. The website
-serves as the primary platform for conference information, including schedules,
-speaker profiles, talk details, venue information, and registration.
+This repository contains the official website for the Barcelona Developers Conference (DevBcn), a tech conference held in Barcelona, Spain. The website serves as the primary platform for conference information, including schedules, speaker profiles, talk details, venue information, and registration.
 
 ## Technology Stack
 
@@ -27,12 +20,11 @@ speaker profiles, talk details, venue information, and registration.
 The project follows a standard React application structure:
 
 - `src/`: Source code
-    - `assets/`: Static assets like images
-    - `components/`: Reusable UI components
-    - `hooks/`: Custom React hooks (e.g., useFetchSpeakers, useFetchTalks)
-    - `views/`: Page components
-    - `2024/`: Components specific to the 2024 conference edition
-    - `2023/`: Components specific to the 2023 conference edition
+  - `assets/`: Static assets like images
+  - `components/`: Reusable UI components
+  - `hooks/`: Custom React hooks (e.g., useFetchSpeakers, useFetchTalks)
+  - `views/`: Page components
+  - `2024/`: Components specific to the 2024 conference
 
 ## Development Workflow
 
@@ -50,7 +42,6 @@ The project follows a standard React application structure:
 - `npm run test-coverage`: Run tests with coverage reporting
 - `npm run build`: Build for production
 - `npm run deploy`: Deploy to GitHub Pages
-- `npm run eject`: Eject from Create React App (not recommended)
 
 ## Contribution Guidelines
 
@@ -64,7 +55,6 @@ When contributing to this project, please:
 
 ## Contact
 
-For questions or issues related to the DevBcn website, please open an issue in
-this repository.
+For questions or issues related to the DevBcn website, please open an issue in this repository.
 
 Visit the live site at [https://www.devbcn.com](https://www.devbcn.com)

@@ -7,7 +7,7 @@ import "swiper/swiper-bundle.min.css";
 import "./SpeakersCarousel.scss";
 import { Link } from "react-router";
 import { ROUTE_SPEAKER_DETAIL } from "../../../../constants/routes";
-import { useFetchSpeakers } from "../../../Speakers/UseFetchSpeakers";
+import { useFetchSpeakers } from "../../../../hooks/useFetchSpeakers";
 import * as Sentry from "@sentry/react";
 
 const StyledSlideImage = styled.img`
@@ -35,7 +35,7 @@ const StyledSlideText = styled.p`
   color: white;
 `;
 const SpeakerSwiper: FC<React.PropsWithChildren<unknown>> = () => {
-  const { isLoading, data, error } = useFetchSpeakers();
+  const { isLoading, data, error } = useFetchSpeakers("2023");
 
   const swiperSpeakers = data?.sort(() => 0.5 - Math.random()).slice(0, 20);
 

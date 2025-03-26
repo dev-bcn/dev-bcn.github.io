@@ -10,23 +10,23 @@ import {
 } from "../../constants/routes";
 
 const StyledSection = styled.section`
-   {
+{
     padding-top: 48px;
-  }
+}
 
-  .top {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 50px));
-    height: 51px;
-    background-color: ${Color.DARK_BLUE};
-    border-top: 1px solid ${Color.DARK_BLUE};
-  }
+    .top {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 50px));
+        height: 51px;
+        background-color: ${Color.DARK_BLUE};
+        border-top: 1px solid ${Color.DARK_BLUE};
+    }
 
-  .bottom {
-    clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 100%);
-    margin-top: -50px;
-    height: 50px;
-    background-color: ${Color.WHITE};
-  }
+    .bottom {
+        clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 100%);
+        margin-top: -50px;
+        height: 50px;
+        background-color: ${Color.WHITE};
+    }
 `;
 
 const StyledWave = styled.section`
@@ -36,15 +36,15 @@ const StyledWave = styled.section`
 `;
 
 const StyledLogo = styled.img`
-   {
+{
     max-width: 30vw;
     flex: 2 1 auto;
     padding-bottom: 50px;
-  }
-  @media only screen and (max-width: ${BIG_BREAKPOINT}px) {
-    padding-bottom: 20px;
-    max-width: 65vw;
-  }
+}
+    @media only screen and (max-width: ${BIG_BREAKPOINT}px) {
+        padding-bottom: 20px;
+        max-width: 65vw;
+    }
 `;
 
 const Heading = styled.h1`
@@ -68,17 +68,17 @@ const StyledP = styled.p`
 `;
 
 const FlexDiv = styled.div`
-   {
+{
     display: flex;
     width: 20%;
     margin: 0 auto;
     flex-direction: column;
     padding-bottom: 20px;
-  }
-  @media only screen and (max-width: ${BIG_BREAKPOINT}px) {
-    width: 60%;
-    padding-bottom: 0.5rem;
-  }
+}
+    @media only screen and (max-width: ${BIG_BREAKPOINT}px) {
+        width: 60%;
+        padding-bottom: 0.5rem;
+    }
 `;
 
 const StyledParagraph = styled.section`

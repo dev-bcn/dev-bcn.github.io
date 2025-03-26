@@ -6,7 +6,7 @@ import "swiper/swiper-bundle.min.css";
 import "./SpeakersCarousel.scss";
 import {Link} from "react-router";
 import conferenceData from "../../data/2024.json";
-import {useFetchSpeakers} from "../Speakers/UseFetchSpeakers";
+import {useFetchSpeakers} from "../../hooks/useFetchSpeakers";
 import * as Sentry from "@sentry/react";
 import {Color} from "../../styles/colors";
 import {ROUTE_SPEAKER_DETAIL} from "../../constants/routes";
@@ -36,28 +36,28 @@ const StyledSlideText = styled.p`
     color: white;
 `;
 const SpeakerSwiper: FC<React.PropsWithChildren<unknown>> = () => {
-    const {isLoading, data, error} = useFetchSpeakers();
+    const {isLoading, data, error} = useFetchSpeakers("2024");
 
     // Securely shuffle the speakers using Fisher-Yates algorithm with crypto API
 const swiperSpeakers = React.useMemo(() => {
     if (!data) return null;
-    
+
     // Create a copy of the data to avoid mutating the original
     const speakersCopy = [...data];
-    
+
     // Fisher-Yates shuffle with crypto.getRandomValues for secure randomization
     for (let i = speakersCopy.length - 1; i > 0; i--) {
         // Generate a secure random value using crypto API
         const randomBuffer = new Uint32Array(1);
         window.crypto.getRandomValues(randomBuffer);
-        
+
         // Use the random value to get an index between 0 and i (inclusive)
         const j = randomBuffer[0] % (i + 1);
-        
+
         // Swap elements at i and j
         [speakersCopy[i], speakersCopy[j]] = [speakersCopy[j], speakersCopy[i]];
     }
-    
+
     // Return the first 20 speakers from the shuffled array
     return speakersCopy.slice(0, 20);
 }, [data]);

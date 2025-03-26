@@ -6,7 +6,7 @@ import SpeakerDetail from "./SpeakerDetail";
 import { useParams } from "react-router";
 import { StyledContainer, StyledWaveContainer } from "./Speaker.style";
 import conferenceData from "../../data/2025.json";
-import { useFetchSpeakers } from "../Speakers/UseFetchSpeakers";
+import { useFetchSpeakers } from "../../hooks/useFetchSpeakers";
 import * as Sentry from "@sentry/react";
 
 const SpeakerDetailContainer: FC<React.PropsWithChildren<unknown>> = () => {
