@@ -90,9 +90,9 @@ describe("navigation pages", () => {
     expect(() => screen.getByText("JOB OFFERS")).toThrow();
     //const user = userEvent.setup();
     /*await user.click(screen.getByText("JOB OFFERS"));
-        expect(
-          await screen.findByText("Have a look at some opportunities"),
-        ).not.toBeInTheDocument();*/
+            expect(
+              await screen.findByText("Have a look at some opportunities"),
+            ).not.toBeInTheDocument();*/
   });
 
   //Reason: not enabled yet
