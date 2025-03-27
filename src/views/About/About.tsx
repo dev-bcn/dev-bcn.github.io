@@ -16,7 +16,7 @@ import {
 } from "../Speakers/Speakers.style";
 import { StyledMarginBottom } from "../Talks/Talks.style";
 import data from "../../data/2024.json";
-import { useDocumentTitleUpdater } from "../../services/useDocumentTitleUpdate";
+import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
 
 const StyledUsersWrapper = styled.div`
   padding-top: 5rem;

@@ -4,9 +4,9 @@ import Loading from "../../components/Loading/Loading";
 import { UngroupedSession } from "./liveView.types";
 import conference from "../../data/2024.json";
 import { TalkCard } from "./components/TalkCard";
-import * as Sentry from "@sentry/react";
 import { StyledMain } from "./Talks.style";
 import { talkCardAdapter } from "./TalkCardAdapter";
+import { useSentryErrorReport } from "../../hooks/useSentryErrorReport";
 
 const LiveView: FC<React.PropsWithChildren<unknown>> = () => {
   const { isLoading, error, data } = useFetchLiveView();
@@ -33,11 +33,7 @@ const LiveView: FC<React.PropsWithChildren<unknown>> = () => {
     document.title = `Live view - ${conference.title} - ${conference.edition} Edition`;
   }, []);
 
-  useEffect(() => {
-    if (error) {
-      Sentry.captureException(error);
-    }
-  }, [error]);
+  useSentryErrorReport(error);
 
   return (
     <StyledMain>

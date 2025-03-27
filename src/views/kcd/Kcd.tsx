@@ -16,7 +16,7 @@ import { useWindowSize } from "react-use";
 import youtube from "../../assets/images/youtube.svg";
 import linkedinIcon from "../../assets/images/linkedinIcon.svg";
 import twitterIcon from "../../assets/images/twitterIcon.svg";
-import { useDocumentTitleUpdater } from "../../services/useDocumentTitleUpdate";
+import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
 
 const StyledParagraph = styled.p`
   color: white;

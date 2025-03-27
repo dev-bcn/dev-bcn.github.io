@@ -12,11 +12,11 @@ import LessThanDarkBlueIcon from "../../assets/images/LessThanDarkBlueIcon.svg";
 import TitleSection from "../../components/SectionTitle/TitleSection";
 import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
 import { useFetchTalks } from "../../hooks/useFetchTalks";
-import * as Sentry from "@sentry/react";
 import { TalkCard } from "../Talks/components/TalkCard";
 import conferenceData from "../../data/2025.json";
 import styled from "styled-components";
 import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
+import { useSentryErrorReport } from "../../hooks/useSentryErrorReport";
 
 const StyledSection = styled.section`
 {
@@ -55,9 +55,7 @@ const Workshops: FC<React.PropsWithChildren<unknown>> = () => {
     );
   //endregion
 
-  if (error) {
-    Sentry.captureException(error);
-  }
+  useSentryErrorReport(error);
 
   return (
     <>
@@ -100,7 +98,12 @@ const Workshops: FC<React.PropsWithChildren<unknown>> = () => {
             </p>
           ) : (
             workshops?.map((track) => (
-              <TalkCard talk={track} key={track.id} showTrack={true} />
+              <TalkCard
+                talk={track}
+                key={track.id}
+                showTrack={true}
+                year={conferenceData.edition}
+              />
             ))
           )}
         </StyledSection>

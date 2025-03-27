@@ -21,7 +21,7 @@ import {
   StyledAboutImage,
   StyledSocialIconsWrapper,
 } from "../../views/About/components/Style.AboutCard";
-import { useDocumentTitleUpdater } from "../../services/useDocumentTitleUpdate";
+import {useDocumentTitleUpdater} from "../../hooks/useDocumentTitleUpdate";
 
 export const CfpTrackComponent: FC<React.PropsWithChildren<CfpTrackProps>> = ({
   track,

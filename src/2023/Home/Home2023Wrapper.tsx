@@ -6,9 +6,9 @@ import Sponsors from "./components/Sponsors/Sponsors";
 import styled from "styled-components";
 import data from "../../data/2023.json";
 import { useLocation } from "react-router";
-import { useDocumentTitleUpdater } from "../../services/useDocumentTitleUpdate";
 import SpeakersCarousel from "../../components/Swiper/SpeakersCarousel";
-import {ROUTE_2023_SPEAKERS} from "../../constants/routes";
+import { ROUTE_2023_SPEAKERS } from "../../constants/routes";
+import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
 
 const StyledContainer = styled.div`
   padding-bottom: 10rem;
@@ -33,7 +33,10 @@ export const Home2023Wrapper: FC<React.PropsWithChildren<unknown>> = () => {
     <StyledContainer id="home-wrapper">
       <Home />
       <Faqs />
-      <SpeakersCarousel speakersLink={ROUTE_2023_SPEAKERS} sessionizeUrl={data.sessionizeUrl} />
+      <SpeakersCarousel
+        speakersLink={ROUTE_2023_SPEAKERS}
+        sessionizeUrl={data.sessionizeUrl}
+      />
       <Sponsors />
     </StyledContainer>
   );

@@ -16,13 +16,14 @@ import { Color } from "../../styles/colors";
 import { Link } from "react-router";
 import { ROUTE_TALK_DETAIL } from "../../constants/routes";
 import data from "../../data/2024.json";
-import { useDocumentTitleUpdater } from "../../services/useDocumentTitleUpdate";
+import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
 
 const SessionFeedback: FC<React.PropsWithChildren<unknown>> = () => {
   const bodyTemplate = React.useCallback(
-    (field: keyof MeasurableSessionRating) => (session: SessionRating) =>
-      <Rating value={session[field]} readOnly cancel={false} />,
-    []
+    (field: keyof MeasurableSessionRating) => (session: SessionRating) => (
+      <Rating value={session[field]} readOnly cancel={false} />
+    ),
+    [],
   );
 
   const TitleTemplate = (session: SessionRating) =>

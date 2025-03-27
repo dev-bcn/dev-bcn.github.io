@@ -22,7 +22,7 @@ import { AutoPlay } from "@egjs/flicking-plugins";
 import "@egjs/react-flicking/dist/flicking.css";
 import Button from "../../components/UI/Button";
 import { gaEventTracker } from "../../components/analytics/Analytics";
-import { useDocumentTitleUpdater } from "../../services/useDocumentTitleUpdate";
+import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
 
 const StyledWaveContainer = styled.div`
   background: ${Color.DARK_BLUE};

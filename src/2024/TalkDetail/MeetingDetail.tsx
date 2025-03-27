@@ -41,7 +41,7 @@ import {
 import { StyledTitle } from "../Home/Style.Home";
 import { ISpeaker } from "../../types/speakers";
 import { IMeeting } from "../../types/sessions";
-import { useDocumentTitleUpdater } from "../../services/useDocumentTitleUpdate";
+import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
 
 const getVideoHeight = (windowWidth: number) => {
   let videoHeight;

@@ -7,10 +7,10 @@ import styled from "styled-components";
 import conferenceData from "../../data/2025.json";
 import { useLocation } from "react-router";
 
-import { useDocumentTitleUpdater } from "../../services/useDocumentTitleUpdate";
 import SpeakersCarousel from "../../components/Swiper/SpeakersCarousel";
 import { ROUTE_SPEAKERS } from "../../constants/routes";
 import { ErrorBoundary } from "react-error-boundary";
+import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
 
 const StyledContainer = styled.div`
   padding-bottom: 10rem;

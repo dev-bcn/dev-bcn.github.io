@@ -6,7 +6,7 @@ import { StyledWaveContainer } from "../Speakers/Speakers.style";
 import styled from "styled-components";
 import { Color } from "../../styles/colors";
 import { Accommodation } from "./Accommodation";
-import { useDocumentTitleUpdater } from "../../services/useDocumentTitleUpdate";
+import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
 
 const StyledTravel = styled.div`
   max-width: 85rem;

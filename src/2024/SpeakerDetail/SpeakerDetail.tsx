@@ -33,7 +33,7 @@ import {
 } from "../../views/SpeakerDetail/Speaker.style";
 import { StyledTalkDescription } from "../../views/SpeakerDetail/SpeakerDetail.style";
 import { ISpeaker } from "../../types/speakers";
-import { useDocumentTitleUpdater } from "../../services/useDocumentTitleUpdate";
+import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
 
 interface ISpeakerDetailProps {
   speaker: ISpeaker;
