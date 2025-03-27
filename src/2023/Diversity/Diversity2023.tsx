@@ -8,7 +8,7 @@ import {
   ROUTE_CODE_OF_CONDUCT,
   ROUTE_CONDITIONS,
 } from "../../constants/routes";
-import { useDocumentTitleUpdater } from "../../services/useDocumentTitleUpdate";
+import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
 
 const StyledSection = styled.section`
 {

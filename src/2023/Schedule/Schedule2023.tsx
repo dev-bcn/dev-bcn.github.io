@@ -13,7 +13,7 @@ import {
   StyledScheduleSection,
 } from "../../styles/Schedule/Schedule.style";
 import * as Sentry from "@sentry/react";
-import { useDocumentTitleUpdater } from "../../services/useDocumentTitleUpdate";
+import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
 
 const Schedule2023: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();

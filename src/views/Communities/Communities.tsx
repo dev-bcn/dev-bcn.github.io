@@ -4,13 +4,13 @@ import TwitterIcon from "../../components/Icons/Twitter";
 import { Color } from "../../styles/colors";
 import WebsiteIcon from "../../components/Icons/website";
 import data from "../../data/2024.json";
-import { useDocumentTitleUpdater } from "../../services/useDocumentTitleUpdate";
+import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
 
 const Heading = styled.h1`
-   {
+{
     padding-top: 10rem;
     font-size: 2rem;
-  }
+}
 `;
 const Paragraph = styled.p`
   padding-bottom: 10rem;

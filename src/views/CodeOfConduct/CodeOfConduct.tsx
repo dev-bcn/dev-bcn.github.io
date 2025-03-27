@@ -21,7 +21,7 @@ import {
 import { StyledMarginBottom, StyledTagsWrapper } from "../Talks/Talks.style";
 import data from "../../data/2024.json";
 import { format } from "date-fns";
-import { useDocumentTitleUpdater } from "../../services/useDocumentTitleUpdate";
+import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
 
 const StyledWaveContainer = styled.div`
   background: ${Color.DARK_BLUE};

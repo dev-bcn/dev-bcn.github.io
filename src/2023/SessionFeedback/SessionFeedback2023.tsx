@@ -15,7 +15,7 @@ import { FilterMatchMode } from "primereact/api";
 import { Color } from "../../styles/colors";
 import { Link } from "react-router";
 import { ROUTE_TALK_DETAIL } from "../../constants/routes";
-import { useDocumentTitleUpdater } from "../../services/useDocumentTitleUpdate";
+import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
 
 const SessionFeedback2023: FC<React.PropsWithChildren<unknown>> = () => {
   const bodyTemplate = React.useCallback(

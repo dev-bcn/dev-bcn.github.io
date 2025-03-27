@@ -8,9 +8,9 @@ import Faqs from "../views/Home/components/Faqs/Faqs";
 
 import Home from "./Home/Home";
 import Sponsors from "./Sponsors/Sponsors";
-import { useDocumentTitleUpdater } from "../services/useDocumentTitleUpdate";
 import SpeakersCarousel from "../components/Swiper/SpeakersCarousel";
 import { ROUTE_2024_SPEAKERS } from "../constants/routes";
+import { useDocumentTitleUpdater } from "../hooks/useDocumentTitleUpdate";
 
 const StyledContainer = styled.div`
   padding-bottom: 10rem;

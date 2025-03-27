@@ -8,7 +8,7 @@ import "./SpeakersCarousel.scss";
 import { Link } from "react-router";
 import { ROUTE_SPEAKER_DETAIL } from "../../../../constants/routes";
 import { useFetchSpeakers } from "../../../../hooks/useFetchSpeakers";
-import * as Sentry from "@sentry/react";
+import { useSentryErrorReport } from "../../../../hooks/useSentryErrorReport";
 
 const StyledSlideImage = styled.img`
   display: block;
@@ -39,9 +39,7 @@ const SpeakerSwiper: FC<React.PropsWithChildren<unknown>> = () => {
 
   const swiperSpeakers = data?.sort(() => 0.5 - Math.random()).slice(0, 20);
 
-  if (error) {
-    Sentry.captureException(error);
-  }
+  useSentryErrorReport(error);
 
   return (
     <>
