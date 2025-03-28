@@ -17,32 +17,23 @@ import {
   StyledTitleContainer,
 } from "../../styles/JobOffers/JobOffers.Style";
 import CompanyOffers from "../../components/JobOffers/CompanyOffers";
+import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
 
 const NoOffersAvailable = () => (
-  <>
-    {!data.jobOffers.enabled && (
-      <h4 style={{ color: Color.DARK_BLUE }}>No job offers available yet</h4>
-    )}
-  </>
+  <h4 style={{ color: Color.DARK_BLUE }}>No job offers available yet</h4>
 );
 
-const MoreThanLessThan = (props: { width: number }) => (
+const MoreThanLessThan = () => (
   <>
-    {props.width > MOBILE_BREAKPOINT && (
-      <>
-        <StyledLessIcon src={LessThanBlueIcon} />
-        <StyledMoreIcon src={MoreThanBlueIcon} />
-      </>
-    )}
+    <StyledLessIcon src={LessThanBlueIcon} />
+    <StyledMoreIcon src={MoreThanBlueIcon} />
   </>
 );
 
 const JobOffers: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
 
-  React.useEffect(() => {
-    document.title = `Job Offers - ${data.title} - ${data.edition}`;
-  }, []);
+  useDocumentTitleUpdater("Job Offers", data.edition);
 
   return (
     <SectionWrapper color={Color.WHITE} marginTop={6} paddingBottom={100}>
@@ -54,9 +45,8 @@ const JobOffers: FC<React.PropsWithChildren<unknown>> = () => {
             color={Color.BLACK_BLUE}
           />
         </StyledTitleContainer>
-        <MoreThanLessThan width={width} />
-        <NoOffersAvailable />
-        {data.jobOffers.enabled && (
+        {width > MOBILE_BREAKPOINT && <MoreThanLessThan width={width} />}
+        {data.jobOffers.enabled ? (
           <div id="job-offers">
             <Companies id="companies">
               {jobOffers.map((company) => (
@@ -74,6 +64,8 @@ const JobOffers: FC<React.PropsWithChildren<unknown>> = () => {
               ))}
             </div>
           </div>
+        ) : (
+          <NoOffersAvailable />
         )}
       </section>
     </SectionWrapper>

@@ -13,13 +13,14 @@ import {
   StyledScheduleSection,
 } from "../../styles/Schedule/Schedule.style";
 import * as Sentry from "@sentry/react";
+import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
 
 const Schedule2023: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
 
-  React.useEffect(() => {
-    document.title = `Schedule - DevBcn - ${data.edition}`;
+  useDocumentTitleUpdater("Schedule", data.edition);
 
+  React.useEffect(() => {
     fetch("https://sessionize.com/api/v2/a2sw0wks/view/GridSmart")
       .then((value) => value.text())
       .then((value) => {

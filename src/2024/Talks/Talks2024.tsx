@@ -7,7 +7,6 @@ import { Color } from "../../styles/colors";
 import conferenceData from "../../data/2024.json";
 
 import { useFetchTalks } from "../../hooks/useFetchTalks";
-import * as Sentry from "@sentry/react";
 import { Dropdown, DropdownChangeEvent } from "primereact/dropdown";
 import "primereact/resources/primereact.min.css";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
@@ -20,6 +19,7 @@ import {
   StyledWaveContainer,
 } from "../../views/Talks/Talks.style";
 import TrackInformation from "../../components/common/TrackInformation";
+import { useSentryErrorReport } from "../../hooks/useSentryErrorReport";
 
 interface TrackInfo {
   name: string;
@@ -48,9 +48,7 @@ const Talks2024: FC<React.PropsWithChildren<unknown>> = () => {
     }
   }, []);
 
-  if (error) {
-    Sentry.captureException(error);
-  }
+  useSentryErrorReport(error);
 
   const dropDownOptions = [
     { name: "All Tracks", code: undefined },

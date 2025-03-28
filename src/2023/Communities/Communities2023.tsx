@@ -3,6 +3,7 @@ import styled from "styled-components";
 import TwitterIcon from "../../components/Icons/Twitter";
 import { Color } from "../../styles/colors";
 import WebsiteIcon from "../../components/Icons/website";
+import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
 
 const Heading = styled.h1`
   padding-top: 10rem;
@@ -29,9 +30,7 @@ const FoSS = styled.div`
 `;
 
 const Communities2023: FC<React.PropsWithChildren<unknown>> = () => {
-  React.useEffect(() => {
-    document.title = "Communities";
-  });
+  useDocumentTitleUpdater("Communities", "2023");
   return (
     <>
       <Heading>FOSS & Diversity Communities</Heading>

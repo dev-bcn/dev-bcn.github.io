@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from "react";
+import React, { FC } from "react";
 import TitleSection from "../../components/SectionTitle/TitleSection";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import { BIG_BREAKPOINT, MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
@@ -21,6 +21,7 @@ import {
 import { StyledMarginBottom, StyledTagsWrapper } from "../Talks/Talks.style";
 import data from "../../data/2024.json";
 import { format } from "date-fns";
+import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
 
 const StyledWaveContainer = styled.div`
   background: ${Color.DARK_BLUE};
@@ -82,9 +83,7 @@ const StyleMoreIcon = styled.img`
 export const CodeOfConduct: FC<React.PropsWithChildren> = () => {
   const { width } = useWindowSize();
 
-  useEffect(() => {
-    document.title = `Code of Conduct — ${data.title} — ${data.edition}`;
-  });
+  useDocumentTitleUpdater("Code of Conduct", data.edition);
 
   return (
     <>

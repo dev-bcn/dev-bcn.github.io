@@ -21,6 +21,7 @@ UI
 Veepee
 amycuddyTED
 analytics
+crypto
 dataTransformer
 devbcn
 dom
@@ -28,6 +29,7 @@ etDpvu
 fJV
 favicon
 ftazo
+getRandomValues
 github
 githubusercontent
 groupMap

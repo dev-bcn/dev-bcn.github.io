@@ -10,28 +10,30 @@ import TitleSection from "../../components/SectionTitle/TitleSection";
 import { useWindowSize } from "react-use";
 import data from "../../data/2023.json";
 import {
-  Companies, CompanyNameLink, StyledLessIcon, StyledMoreIcon,
-  StyledTitleContainer
+  Companies,
+  CompanyNameLink,
+  StyledLessIcon,
+  StyledMoreIcon,
+  StyledTitleContainer,
 } from "../../styles/JobOffers/JobOffers.Style";
 import CompanyOffers from "../../components/JobOffers/CompanyOffers";
+import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
 
 const NoOffersAvailable = () => (
-      <h4 style={{ color: Color.DARK_BLUE }}>No job offers available yet</h4>
+  <h4 style={{ color: Color.DARK_BLUE }}>No job offers available yet</h4>
 );
 
-const MoreThanLessThan = (props: { width: number }) => (
-<>
-        <StyledLessIcon src={LessThanBlueIcon} />
-        <StyledMoreIcon src={MoreThanBlueIcon} />
+const MoreThanLessThan = () => (
+  <>
+    <StyledLessIcon src={LessThanBlueIcon} />
+    <StyledMoreIcon src={MoreThanBlueIcon} />
   </>
 );
 
 const JobOffers2023: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
 
-  React.useEffect(() => {
-    document.title = `Job Offers - DevBcn - ${data.edition}`;
-  }, []);
+  useDocumentTitleUpdater("Job Offers", data.edition);
 
   return (
     <SectionWrapper color={Color.WHITE} marginTop={6} paddingBottom={100}>
@@ -43,7 +45,7 @@ const JobOffers2023: FC<React.PropsWithChildren<unknown>> = () => {
             color={Color.BLACK_BLUE}
           />
         </StyledTitleContainer>
-        {width > MOBILE_BREAKPOINT && <MoreThanLessThan width={width} />}
+        {width > MOBILE_BREAKPOINT && <MoreThanLessThan />}
         {!data.jobOffers.enabled && <NoOffersAvailable />}
         {data.jobOffers.enabled && (
           <div id="job-offers">

@@ -11,16 +11,16 @@ import data from "../../data/2024.json";
 import * as Sentry from "@sentry/react";
 import { Link } from "react-router";
 import {
-    StyledLessIcon, StyledMoreIcon,
-    StyledScheduleSection
+  StyledLessIcon,
+  StyledMoreIcon,
+  StyledScheduleSection,
 } from "../../styles/Schedule/Schedule.style";
+import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
 
 const Schedule: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
 
   React.useEffect(() => {
-    document.title = `Schedule — ${data.title} — ${data.edition}`;
-
     fetch("https://sessionize.com/api/v2/w8mdb9k5/view/GridSmart")
       .then((value) => value.text())
       .then((value) => {
@@ -31,6 +31,8 @@ const Schedule: FC<React.PropsWithChildren<unknown>> = () => {
       })
       .catch((err) => Sentry.captureException(err));
   }, []);
+
+  useDocumentTitleUpdater("Schedule", data.edition);
 
   return (
     <SectionWrapper color={Color.WHITE} marginTop={6}>

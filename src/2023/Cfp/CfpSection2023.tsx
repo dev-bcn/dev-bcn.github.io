@@ -21,6 +21,7 @@ import {
   StyledAboutImage,
   StyledSocialIconsWrapper,
 } from "../../views/About/components/Style.AboutCard";
+import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
 
 const TrackName = styled.h2`
   padding-top: 1.2rem;
@@ -75,9 +76,8 @@ const CfpTrackComponent: FC<React.PropsWithChildren<CfpTrackProps>> = ({
 
 const CfpSection2023: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
-  React.useEffect(() => {
-    document.title = `CFP Committee - DevBcn - ${conferenceData.edition}`;
-  }, []);
+
+  useDocumentTitleUpdater("CFP Committee", conferenceData.edition);
   return (
     <>
       <SectionWrapper color={Color.WHITE} marginTop={5}>

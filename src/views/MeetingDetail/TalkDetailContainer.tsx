@@ -6,12 +6,12 @@ import styled from "styled-components";
 import { useParams } from "react-router";
 import conferenceData from "../../data/2025.json";
 import { useFetchTalksById } from "../../hooks/useFetchTalks";
-import * as Sentry from "@sentry/react";
 import { useFetchSpeakers } from "../../hooks/useFetchSpeakers";
 import MeetingDetail from "./MeetingDetail";
 import { ISpeaker } from "../../types/speakers";
 import { sessionAdapter } from "../../services/sessionsAdapter";
 import { Session } from "../../types/sessions";
+import { useSentryErrorReport } from "../../hooks/useSentryErrorReport";
 
 const StyledContainer = styled.div`
   background-color: ${Color.WHITE};
@@ -37,9 +37,7 @@ const TalkDetailContainer: FC<React.PropsWithChildren<unknown>> = () => {
     document.title = `${data?.title} - DevBcn - ${conferenceData.edition}`;
   }, [data]);
 
-  if (error) {
-    Sentry.captureException(error);
-  }
+  useSentryErrorReport(error);
 
   return (
     <StyledContainer>

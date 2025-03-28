@@ -3,13 +3,13 @@ import {
   LARGE_BREAKPOINT,
   MOBILE_BREAKPOINT,
 } from "../../constants/BreakPoints";
-import {Color} from "../../styles/colors";
-import React, {FC, Suspense, useEffect} from "react";
+import { Color } from "../../styles/colors";
+import React, { FC, Suspense } from "react";
 import LessThanIconWhite from "../../assets/images/LessThanIconWhite.svg";
 import LessThanIcon from "../../assets/images/LessThanBlueIcon.svg";
 import MoreThanIcon from "../../assets/images/MoreThanBlueIcon.svg";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import {useWindowSize} from "react-use";
+import { useWindowSize } from "react-use";
 import {
   StyledContainer,
   StyledDescription,
@@ -27,14 +27,15 @@ import {
   StyledVideoContainer,
   StyledVideoTagsContainer,
 } from "./Style.MeetingDetail";
-import {Link} from "react-router";
+import { Link } from "react-router";
 import {
   ROUTE_2023_SPEAKER_DETAIL,
   ROUTE_2023_TALKS,
 } from "../../constants/routes";
 import conferenceData from "../../data/2023.json";
-import {Tag} from "../../components/Tag/Tag";
-import {IMeetingDetailProps, MyType} from "../../types/sessions";
+import { Tag } from "../../components/Tag/Tag";
+import { IMeetingDetailProps, MyType } from "../../types/sessions";
+import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
 
 const getVideoHeight = (windowWidth: number) => {
   let videoHeight;
@@ -102,9 +103,7 @@ const TalkDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
 }) => {
   const { width } = useWindowSize();
 
-  useEffect(() => {
-    document.title = `${meeting.title} - DevBcn ${conferenceData.edition}`;
-  }, [meeting.title]);
+  useDocumentTitleUpdater(meeting.title, conferenceData.edition);
 
   const finalMeetingInfo: MyType = {
     ...meeting,
@@ -135,12 +134,20 @@ const TalkDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
               {meeting.track}
 
               {meeting.slidesURL !== "" && (
-                <p style={{ textAlign: "left", marginTop: "0.6rem" }}>
+                <p
+                  style={{
+                    textAlign: "left",
+                    marginTop: "0.6rem",
+                  }}
+                >
                   <a
                     href={meeting.slidesURL}
                     target="_blank"
                     rel="noreferrer"
-                    style={{ textDecoration: "none", color: Color.DARK_BLUE }}
+                    style={{
+                      textDecoration: "none",
+                      color: Color.DARK_BLUE,
+                    }}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -185,9 +192,7 @@ const TalkDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
             ></iframe>
           )}
           <StyledVideoTagsContainer>
-            {meeting.videoTags?.map((tag) => (
-              <Tag text={tag} key={tag} />
-            ))}
+            {meeting.videoTags?.map((tag) => <Tag text={tag} key={tag} />)}
           </StyledVideoTagsContainer>
           <div style={{ width: "100%", textAlign: "center" }}>
             <Link

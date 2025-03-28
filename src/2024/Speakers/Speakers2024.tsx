@@ -20,18 +20,14 @@ import webData from "../../data/2024.json";
 import Button from "../../components/UI/Button";
 import { gaEventTracker } from "../../components/analytics/Analytics";
 import { useFetchSpeakers } from "../../hooks/useFetchSpeakers";
-import * as Sentry from "@sentry/react";
 import { SpeakerCard } from "../../views/Speakers/components/SpeakersCard";
 import { ISpeaker } from "../../types/speakers";
+import { useSentryErrorReport } from "../../hooks/useSentryErrorReport";
 
-const LessThanGreaterThan = (props: { width: number }) => (
+const LessThanGreaterThan = () => (
   <>
-    {props.width > MOBILE_BREAKPOINT && (
-      <>
-        <StyledLessIcon src={LessThanBlueIcon} />
-        <StyledMoreIcon src={MoreThanBlueIcon} />
-      </>
-    )}
+    <StyledLessIcon src={LessThanBlueIcon} />
+    <StyledMoreIcon src={MoreThanBlueIcon} />
   </>
 );
 
@@ -43,9 +39,7 @@ const Speakers2024: FC<React.PropsWithChildren<unknown>> = () => {
 
   const { error, data, isLoading } = useFetchSpeakers("2024");
 
-  if (error) {
-    Sentry.captureException(error);
-  }
+  useSentryErrorReport(error);
 
   const trackCFP = useCallback(() => {
     gaEventTracker("CFP", "CFP");
@@ -69,7 +63,7 @@ const Speakers2024: FC<React.PropsWithChildren<unknown>> = () => {
             Technologies and in the JCP."
             color={Color.WHITE}
           />
-          <LessThanGreaterThan width={width} />
+          {width > MOBILE_BREAKPOINT && <LessThanGreaterThan/>}
           <SpeakersCardsContainer>
             {isLoading && <p>Loading...</p>}
             {isBetween(CFPStartDay, CFPEndDay) && (

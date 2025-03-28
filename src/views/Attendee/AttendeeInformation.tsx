@@ -1,37 +1,38 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import { Color } from "../../styles/colors";
 import styled from "styled-components";
 import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
 import data from "../../data/2024.json";
 import { format } from "date-fns";
+import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
 
 const PrePartyImg = styled.img`
-   {
+{
     width: 20vw;
     border-radius: 3%;
     margin: 0.3rem;
     padding: 0.2rem;
     border: 1px solid ${Color.DARK_BLUE};
     transition: 0.5s linear;
-  }
+}
 
-  &:hover {
-    filter: brightness(1.2);
-  }
+    &:hover {
+        filter: brightness(1.2);
+    }
 `;
 
 const PartyImg = styled.img`
-   {
+{
     width: 20vw;
     border-radius: 3%;
     margin: 0.3rem;
     padding: 0.2rem;
     border: 1px solid ${Color.SKY_BLUE};
-  }
+}
 
-  &:hover {
-    filter: brightness(1.2);
-  }
+    &:hover {
+        filter: brightness(1.2);
+    }
 `;
 
 const MobileSection = styled.section`
@@ -45,10 +46,10 @@ const MobileSection = styled.section`
 `;
 
 const PrePartySection = styled.section`
-   {
+{
     background-color: ${Color.LIGHT_BLUE};
     padding: 50px 100px 20px;
-  }
+}
 `;
 
 const NetworkingPartySection = styled.section`
@@ -64,9 +65,7 @@ const SectionWrapper = styled.div`
 const AttendeeInformation: FC<React.PropsWithChildren<unknown>> = () => {
   const formattedDate = format(new Date(data.startDay), "EEEE, MMMM do");
 
-  useEffect(() => {
-    document.title = `Attendee information — ${data.title} — ${data.edition}`;
-  }, []);
+  useDocumentTitleUpdater("Attendee information", data.edition);
 
   return (
     <main>
@@ -145,7 +144,11 @@ const AttendeeInformation: FC<React.PropsWithChildren<unknown>> = () => {
         <SectionWrapper>
           <h2 style={{ color: Color.SKY_BLUE }}>Networking Party</h2>
           <p
-            style={{ color: Color.WHITE, margin: "20px", textAlign: "justify" }}
+            style={{
+              color: Color.WHITE,
+              margin: "20px",
+              textAlign: "justify",
+            }}
           >
             Only for a selected audience, we'll deliver a networking party with
             dinner, orchestra, and Karaoke. These tickets will be distributed
@@ -157,7 +160,11 @@ const AttendeeInformation: FC<React.PropsWithChildren<unknown>> = () => {
           </p>
           <PartyImg src="/images/party/entry-pass.png" alt="party" />
           <p
-            style={{ color: Color.WHITE, margin: "20px", textAlign: "center" }}
+            style={{
+              color: Color.WHITE,
+              margin: "20px",
+              textAlign: "center",
+            }}
           >
             <strong>{formattedDate} from 20:00 to 22:00</strong>
           </p>
@@ -212,7 +219,13 @@ const AttendeeInformation: FC<React.PropsWithChildren<unknown>> = () => {
             <p>
               Get the most out of the app and have a more productive experience!
             </p>
-            <div style={{ textAlign: "left", fontSize: "14px", clear: "both" }}>
+            <div
+              style={{
+                textAlign: "left",
+                fontSize: "14px",
+                clear: "both",
+              }}
+            >
               {" "}
               <div style={{ clear: "both" }}>
                 {" "}
