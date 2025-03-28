@@ -31,7 +31,7 @@ jest.mock("@sentry/react", () => ({
 }));
 
 // Mock the 2024.json data
-jest.mock("../../data/2024.json", () => ({
+jest.mock("../../data/2025.json", () => ({
   hideSpeakers: false,
   edition: "2024",
   title: "DevBcn",
@@ -91,7 +91,7 @@ describe("Speakers component", () => {
     });
 
     // Temporarily override the hideSpeakers value
-    const originalModule = jest.requireMock("../../data/2024.json");
+    const originalModule = jest.requireMock("../../data/2025.json");
     const originalHideSpeakers = originalModule.hideSpeakers;
     originalModule.hideSpeakers = true;
 
