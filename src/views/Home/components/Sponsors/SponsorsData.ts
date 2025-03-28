@@ -23,6 +23,11 @@ export const sponsors: Sponsors = {
       website: "https://www.caixabanktech.com/es/pagina-de-inicio/",
       image: "images/sponsors/caixabank-tech.png",
     },
+    {
+      name: "Sopra Steria",
+      image: "/images/sponsors/sopra.png",
+      website: "https://www.soprasteria.es/",
+    },
   ],
   basic: [],
   communities: [],
