@@ -80,7 +80,7 @@ const StyleMoreIcon = styled.img`
   }
 `;
 
-export const CodeOfConduct: FC<React.PropsWithChildren> = () => {
+const CodeOfConduct: FC<React.PropsWithChildren> = () => {
   const { width } = useWindowSize();
 
   useDocumentTitleUpdater("Code of Conduct", data.edition);
@@ -302,5 +302,5 @@ export const CodeOfConduct: FC<React.PropsWithChildren> = () => {
     </>
   );
 };
-
 CodeOfConduct.displayName = "CodeOfConduct";
+export default CodeOfConduct;
