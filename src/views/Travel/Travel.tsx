@@ -5,7 +5,7 @@ import data from "../../data/2024.json";
 import { StyledWaveContainer } from "../Speakers/Speakers.style";
 import styled from "styled-components";
 import { Color } from "../../styles/colors";
-import { Accommodation } from "./Accommodation";
+import Accommodation from "./Accommodation";
 import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
 
 const StyledTravel = styled.div`
