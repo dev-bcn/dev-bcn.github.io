@@ -33,6 +33,11 @@ export const sponsors: Sponsors = {
       image: "/images/sponsors/logo-elastic-horizontal-color.png",
       website: "https://www.elastic.co/",
     },
+    {
+      name: "Manychat",
+      website: "https://manychat.com/",
+      image: "/images/sponsors/logo-manychat.webp",
+    },
   ],
   basic: [],
   communities: [],
