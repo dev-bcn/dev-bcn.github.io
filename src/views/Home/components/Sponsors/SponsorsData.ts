@@ -28,6 +28,11 @@ export const sponsors: Sponsors = {
       image: "/images/sponsors/sopra.png",
       website: "https://www.soprasteria.es/",
     },
+    {
+      name: "Elastic",
+      image: "/images/sponsors/logo-elastic-horizontal-color.png",
+      website: "https://www.elastic.co/",
+    },
   ],
   basic: [],
   communities: [],
