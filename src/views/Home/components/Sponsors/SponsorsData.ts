@@ -35,7 +35,7 @@ export const sponsors: Sponsors = {
     },
     {
       name: "Manychat",
-      website: "https://manychat.com/",
+      website: "https://careers.manychat.com/",
       image: "/images/sponsors/logo-manychat.webp",
     },
   ],
