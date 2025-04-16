@@ -1,6 +1,4 @@
-import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
 import { NavigationItem } from "./NavigationData";
-import { useWindowSize } from "react-use";
 import { NavMenu, StyledLink, SubLink, SubMenu } from "./Style.Navigation";
 import { NavLink } from "react-router";
 import { FC } from "react";
@@ -14,30 +12,25 @@ export const HorizontalMenu: FC<React.PropsWithChildren<Props>> = ({
   navItems,
   subMenuItems,
 }) => {
-  const { width } = useWindowSize();
   return (
-    <>
-      {width > BIG_BREAKPOINT && (
-        <div className="horizontal-navigation">
-          {navItems.map((item) => (
-            <StyledLink key={item.id} to={item.link}>
-              {item.id}
-            </StyledLink>
-          ))}
-          {subMenuItems.length > 0 && (
-            <NavMenu style={{ position: "relative" }}>
-              News{" "}
-              <SubMenu>
-                {subMenuItems.map((item) => (
-                  <SubLink key={item.id}>
-                    <NavLink to={item.link}>{item.id}</NavLink>
-                  </SubLink>
-                ))}
-              </SubMenu>
-            </NavMenu>
-          )}
-        </div>
+    <div className="horizontal-navigation">
+      {navItems.map((item) => (
+        <StyledLink key={item.id} to={item.link}>
+          {item.id}
+        </StyledLink>
+      ))}
+      {subMenuItems.length > 0 && (
+        <NavMenu style={{ position: "relative" }}>
+          News{" "}
+          <SubMenu>
+            {subMenuItems.map((item) => (
+              <SubLink key={item.id}>
+                <NavLink to={item.link}>{item.id}</NavLink>
+              </SubLink>
+            ))}
+          </SubMenu>
+        </NavMenu>
       )}
-    </>
+    </div>
   );
 };
