@@ -99,7 +99,7 @@
     "gh-pages": "^6.3.0",
     "prettier": "^3.5.1",
     "react-ga": "^3.3.1",
-    "react-test-renderer": "^18.3.1"
+    "react-test-renderer": "^19.1.0"
   },
   "bundleDependencies": [
     "clsx"
