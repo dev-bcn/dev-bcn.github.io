@@ -4,7 +4,7 @@ import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
 import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
 import TitleSection from "../../components/SectionTitle/TitleSection";
 import { Color } from "../../styles/colors";
-import conferenceData from "../../data/2024.json";
+import conferenceData from "../../data/2025.json";
 import {
   StyledMarginBottom,
   StyledSpeakersSection,
@@ -65,9 +65,9 @@ const Talks: FC<React.PropsWithChildren<unknown>> = () => {
 
   const onChangeSelectedTrack = (e: DropdownChangeEvent) => {
     const value = e.value;
-    setSelectedGroupId(value || null);
-    sessionStorage.setItem("selectedGroupCode", value?.code || "");
-    sessionStorage.setItem("selectedGroupName", value?.name || "");
+    setSelectedGroupId(value ?? null);
+    sessionStorage.setItem("selectedGroupCode", value?.code ?? "");
+    sessionStorage.setItem("selectedGroupName", value?.name ?? "");
   };
   return (
     <>
