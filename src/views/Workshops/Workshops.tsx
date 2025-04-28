@@ -42,7 +42,7 @@ const Workshops: FC<React.PropsWithChildren<unknown>> = () => {
   }, []);
 
   //region workshops
-  const workshopCategoryList = new Set([149213]);
+  const workshopCategoryList = new Set([326133]);
 
   const workshops = data
     ?.flatMap((group) => group.sessions)
