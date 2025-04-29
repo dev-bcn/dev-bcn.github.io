@@ -38,6 +38,11 @@ export const sponsors: Sponsors = {
       website: "https://careers.manychat.com/",
       image: "/images/sponsors/logo-manychat.webp",
     },
+    {
+      name: "Snowflake",
+      website: "https://www.snowflake.com/en/developers/",
+      image: "/images/sponsors/logo-snowflake.png",
+    },
   ],
   basic: [],
   communities: [],
