@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
 import { gaEventTracker } from "../../../../components/analytics/Analytics";
 import { useDateInterval } from "../../../../hooks/useDateInterval";
-import {useUrlBuilder} from "../../../../services/urlBuilder";
+import { useUrlBuilder } from "../../../../services/urlBuilder";
 
 const StyledActionDiv = styled.div`
   display: flex;
@@ -40,21 +40,22 @@ const ActionButtons: FC<React.PropsWithChildren<unknown>> = () => {
         text="🎟️ Buy Tickets"
         subtext="February 1st, 2025"
         link={useUrlBuilder("https://tickets.devbcn.com/event/devbcn-2025")}
-        disabled={isTicketsDisabled}
+        isDisabled={isTicketsDisabled}
       />
       <Button
         onClick={trackCFP}
         text="📢 Call For Papers"
         subtext="January 1st, 2025"
         link={data.cfp.link}
-        disabled={isCfpDisabled}
+        isDisabled={isCfpDisabled}
+        isVisible={false}
       />
       <Button
         onClick={trackSponsorshipInfo}
         text="🤝 Sponsorship"
         target="_self"
         link="/sponsorship"
-        disabled={isSponsorDisabled}
+        isDisabled={isSponsorDisabled}
       />
     </StyledActionDiv>
   );

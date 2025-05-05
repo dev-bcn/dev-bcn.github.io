@@ -39,19 +39,19 @@ const ActionButtons: FC<React.PropsWithChildren<unknown>> = () => {
         onClick={trackTickets}
         text="🎟️ Buy Tickets"
         link={useUrlBuilder("https://tickets.devbcn.com/event/devbcn-2023")}
-        disabled={isTicketsDisabled}
+        isDisabled={isTicketsDisabled}
       />
       <Button
         onClick={trackCFP}
         text="📢 Call For Papers"
         link={data.cfp.link}
-        disabled={isCfpDisabled}
+        isDisabled={isCfpDisabled}
       />
       <Button
         onClick={trackSponsorshipInfo}
         text="🤝 Sponsorship"
         link="mailto:sponsors@devbcn.com?subject=devBcn sponsorship"
-        disabled={isSponsorDisabled}
+        isDisabled={isSponsorDisabled}
       />
     </StyledActionDiv>
   );
