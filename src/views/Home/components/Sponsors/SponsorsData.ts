@@ -62,6 +62,11 @@ export const sponsors: Sponsors = {
       image: "images/sponsors/kube-career.png",
       website: "https://kube.careers/",
     },
+    {
+      name: "CIO Insights",
+      website: "https://www.cioinsights.com/",
+      image: "images/sponsors/cio-insights.png",
+    },
   ],
   supporters: [],
 };
