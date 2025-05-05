@@ -9,6 +9,7 @@ import requests
 from PIL import Image, UnidentifiedImageError
 
 import sys
+
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from data_fetcher import DataFetcher
@@ -30,10 +31,10 @@ class TestDataFetcher(unittest.TestCase):
         mock_get.return_value = mock_response
 
         # Test
-        result = self.fetcher.fetch_json("http://example.com/api")
+        result = self.fetcher.fetch_json("https://example.com/api")
 
         # Verify
-        mock_get.assert_called_once_with("http://example.com/api", timeout=5)
+        mock_get.assert_called_once_with("https://example.com/api", timeout=5)
         mock_response.raise_for_status.assert_called_once()
         self.assertEqual(result, {"key": "value"})
 
@@ -45,7 +46,7 @@ class TestDataFetcher(unittest.TestCase):
 
         # Test
         with self.assertRaises(requests.RequestException):
-            self.fetcher.fetch_json("http://example.com/api")
+            self.fetcher.fetch_json("https://example.com/api")
 
     @patch('requests.get')
     @patch('PIL.Image.open')
@@ -62,10 +63,11 @@ class TestDataFetcher(unittest.TestCase):
         mock_open.return_value = mock_image
 
         # Test
-        result = self.fetcher.fetch_image("http://example.com/image.jpg")
+        result = self.fetcher.fetch_image("https://example.com/image.jpg")
 
         # Verify
-        mock_get.assert_called_once_with("http://example.com/image.jpg", timeout=5)
+        mock_get.assert_called_once_with("https://example.com/image.jpg",
+                                         timeout=5)
         mock_response.raise_for_status.assert_called_once()
         mock_image.convert.assert_called_once_with("RGBA")
         self.assertEqual(result, mock_image)
@@ -78,7 +80,7 @@ class TestDataFetcher(unittest.TestCase):
 
         # Test
         with self.assertRaises(requests.RequestException):
-            self.fetcher.fetch_image("http://example.com/image.jpg")
+            self.fetcher.fetch_image("https://example.com/image.jpg")
 
     @patch('requests.get')
     @patch('PIL.Image.open')
@@ -94,7 +96,7 @@ class TestDataFetcher(unittest.TestCase):
 
         # Test
         with self.assertRaises(IOError):
-            self.fetcher.fetch_image("http://example.com/image.jpg")
+            self.fetcher.fetch_image("https://example.com/image.jpg")
 
     @patch('PIL.Image.open')
     def test_load_local_image_success(self, mock_open):
@@ -142,10 +144,10 @@ class TestDataFetcher(unittest.TestCase):
         ]
 
         # Test
-        result = self.fetcher.fetch_speakers("http://example.com/speakers")
+        result = self.fetcher.fetch_speakers("https://example.com/speakers")
 
         # Verify
-        mock_fetch_json.assert_called_once_with("http://example.com/speakers")
+        mock_fetch_json.assert_called_once_with("https://example.com/speakers")
         self.assertEqual(result, {
             "1": {"id": "1", "name": "Speaker 1"},
             "2": {"id": "2", "name": "Speaker 2"}
@@ -172,10 +174,11 @@ class TestDataFetcher(unittest.TestCase):
         ]
 
         # Test
-        result = self.fetcher.fetch_sessions_by_track("http://example.com/sessions")
+        result = self.fetcher.fetch_sessions_by_track(
+            "https://example.com/sessions")
 
         # Verify
-        mock_fetch_json.assert_called_once_with("http://example.com/sessions")
+        mock_fetch_json.assert_called_once_with("https://example.com/sessions")
         self.assertEqual(result, {
             "Track 1": [
                 {"id": "1", "title": "Session 1"},
@@ -193,10 +196,11 @@ class TestDataFetcher(unittest.TestCase):
         mock_fetch_json.return_value = []
 
         # Test
-        result = self.fetcher.fetch_sessions_by_track("http://example.com/sessions")
+        result = self.fetcher.fetch_sessions_by_track(
+            "https://example.com/sessions")
 
         # Verify
-        mock_fetch_json.assert_called_once_with("http://example.com/sessions")
+        mock_fetch_json.assert_called_once_with("https://example.com/sessions")
         self.assertEqual(result, {})
 
 
