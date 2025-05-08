@@ -14,7 +14,7 @@ import {
 } from "./Talks.style";
 import TrackInformation from "../../components/common/TrackInformation";
 import { useFetchTalks } from "../../hooks/useFetchTalks";
-import { Dropdown, DropdownChangeEvent } from "primereact/dropdown";
+import { SelectButton, SelectButtonChangeEvent } from "primereact/selectbutton";
 import "primereact/resources/primereact.min.css";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "../../styles/theme.css";
@@ -49,13 +49,19 @@ const Talks: FC<React.PropsWithChildren<unknown>> = () => {
 
   useSentryErrorReport(error);
 
-  const dropDownOptions = [
+  const removeParenthesesContent = (text: string): string => {
+    return text.replace(/\s*\([^)]*\)/g, "");
+  };
+
+  const trackOptions = [
     { name: "All Tracks", code: undefined },
     ...(data !== undefined
-      ? data.flatMap((group) => ({
-          code: group.groupId.toString(),
-          name: group.groupName,
-        }))
+      ? data
+          .flatMap((group) => ({
+            code: group.groupId.toString(),
+            name: removeParenthesesContent(group.groupName),
+          }))
+          .sort((a, b) => a.name.localeCompare(b.name))
       : []),
   ];
 
@@ -63,7 +69,7 @@ const Talks: FC<React.PropsWithChildren<unknown>> = () => {
     ? data?.filter((talk) => talk.groupId.toString() === selectedGroupId.code)
     : data;
 
-  const onChangeSelectedTrack = (e: DropdownChangeEvent) => {
+  const onChangeSelectedTrack = (e: SelectButtonChangeEvent) => {
     const value = e.value;
     setSelectedGroupId(value ?? null);
     sessionStorage.setItem("selectedGroupCode", value?.code ?? "");
@@ -104,7 +110,7 @@ const Talks: FC<React.PropsWithChildren<unknown>> = () => {
           {isLoading && <h1>Loading </h1>}
           {conferenceData.hideTalks ? (
             <p style={{ color: Color.WHITE, textAlign: "center" }}>
-              No talks selected yet. Keep in touch in our social media for
+              No talks selected yet. Keep in tap in our social media for
               upcoming announcements
             </p>
           ) : (
@@ -115,14 +121,46 @@ const Talks: FC<React.PropsWithChildren<unknown>> = () => {
                   <label htmlFor="group-id-select">
                     <strong>Filter by Track: </strong>
                   </label>
-                  <Dropdown
-                    value={selectedGroupId}
-                    onChange={onChangeSelectedTrack}
-                    options={dropDownOptions}
-                    placeholder="Select Track"
-                    optionLabel="name"
-                    className="w-full md:w-14rem"
-                  />
+                  <div
+                    style={{
+                      display: "flex",
+                      flexWrap: "wrap",
+                      gap: "0.5rem",
+                      marginTop: "0.5rem",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <SelectButton
+                      value={selectedGroupId}
+                      onChange={onChangeSelectedTrack}
+                      options={trackOptions}
+                      optionLabel="name"
+                      style={{
+                        display: "flex",
+                        flexWrap: "wrap",
+                        gap: "0.5rem",
+                      }}
+                      itemTemplate={(option) => (
+                        <div
+                          style={{
+                            padding: "0.5rem 1rem",
+                            borderRadius: "2rem",
+                            backgroundColor:
+                              selectedGroupId?.code === option.code
+                                ? Color.LIGHT_BLUE
+                                : "transparent",
+                            color:
+                              selectedGroupId?.code === option.code
+                                ? Color.WHITE
+                                : Color.SKY_BLUE,
+                            cursor: "pointer",
+                          }}
+                        >
+                          {option.name}
+                        </div>
+                      )}
+                    />
+                  </div>
                 </div>
                 {filteredTalks.map((track) => (
                   <TrackInformation

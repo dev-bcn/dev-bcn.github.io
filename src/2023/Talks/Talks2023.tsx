@@ -49,12 +49,17 @@ const Talks2023: FC<React.PropsWithChildren<unknown>> = () => {
 
   useSentryErrorReport(error);
 
+  // Helper function to remove text between parentheses
+  const removeParenthesesContent = (text: string): string => {
+    return text.replace(/\s*\([^)]*\)/g, '');
+  };
+
   const dropDownOptions = [
     { name: "All Tracks", code: undefined },
     ...(data !== undefined
       ? data.flatMap((group) => ({
           code: group.groupId.toString(),
-          name: group.groupName,
+          name: removeParenthesesContent(group.groupName),
         }))
       : []),
   ];
