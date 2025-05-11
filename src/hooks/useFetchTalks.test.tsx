@@ -15,13 +15,14 @@ import {
   getQueryClientWrapper,
   SESSION_URLS,
 } from "../utils/testing/testUtils";
+import { vi } from "vitest";
 
-jest.mock("axios");
+vi.mock("axios");
 const mockedAxios = axios as jest.Mocked<typeof axios>;
 
 describe("useFetchTalks", () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it("should use default URL when no parameter is provided", async () => {
@@ -100,7 +101,7 @@ describe("useFetchTalks", () => {
 
 describe("useFetchTalksById", () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it("should use default URL when no parameter is provided", async () => {
@@ -159,7 +160,7 @@ describe("useFetchTalksById", () => {
 
 describe("useFetchLiveView", () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it("should use default URL when no parameter is provided", async () => {

@@ -1,14 +1,15 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import ActionButtons from "./InfoButtons";
 import { gaEventTracker } from "../../../../components/analytics/Analytics";
+import { vi } from "vitest";
 
-jest.mock("../../../../components/analytics/Analytics", () => ({
-  gaEventTracker: jest.fn(),
+vi.mock("../../../../components/analytics/Analytics", () => ({
+  gaEventTracker: vi.fn(),
 }));
 
 describe("ActionButtons", () => {
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   test("renders two action buttons", () => {
@@ -29,7 +30,7 @@ describe("ActionButtons", () => {
 
     expect(gaEventTracker).toHaveBeenCalledWith(
       "attendee-info",
-      "attendee-infos"
+      "attendee-infos",
     );
   });
 

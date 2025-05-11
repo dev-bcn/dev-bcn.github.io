@@ -10,7 +10,7 @@ import {
   SPEAKER_URLS,
 } from "../utils/testing/testUtils";
 
-jest.mock("axios");
+vi.mock("axios");
 const mockedAxios = axios as jest.Mocked<typeof axios>;
 
 // Create mock speakers
@@ -41,10 +41,10 @@ const payload = createMockAxiosResponse([mockSpeaker1, mockSpeaker2]);
 
 describe("fetch speaker hook and speaker adapter", () => {
   beforeAll(() => {
-    jest.mock("axios");
+    vi.mock("axios");
   });
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it("should adapt from a server response with default URL", async () => {

@@ -1,7 +1,7 @@
 import { useQuery, UseQueryResult } from "react-query";
 import axios from "axios";
 import { speakerAdapter } from "../services/speakerAdapter";
-import { ISpeaker } from "../types/speakers";
+import { IResponse, ISpeaker } from "../types/speakers";
 
 const URLS = {
   default: "https://sessionize.com/api/v2/xhudniix/view/Speakers",
@@ -34,7 +34,7 @@ export const useFetchSpeakers = (
 
   return useQuery("api-speakers", async () => {
     const serverResponse = await axios.get(url);
-    let returnData;
+    let returnData: IResponse[];
     if (speakerId !== undefined) {
       returnData = serverResponse.data.filter(
         (speaker: { id: string }) => speaker.id === speakerId,

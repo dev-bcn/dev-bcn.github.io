@@ -38,17 +38,17 @@ const StyledWaveContainer = styled.div`
 `;
 
 const revealAnimation = keyframes`
-    from {
-        opacity: 0;
-        translate: 0 100px;
-    }
-    50% {
-        opacity: .5;
-    }
-    to {
-        opacity: 1;
-        translate: 0 0;
-    }`;
+  from {
+    opacity: 0;
+    translate: 0 100px;
+  }
+  50% {
+    opacity: .5;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }`;
 
 const StyledImage = styled.img`
   aspect-ratio: 120/49;

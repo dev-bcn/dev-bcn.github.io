@@ -1,11 +1,12 @@
 import { act, renderHook } from "@testing-library/react";
 import { useSponsorsHook } from "./useSponsorsHook";
 import React, { FC } from "react";
+import { vi } from "vitest";
 import { buildSlashes } from "../../../../services/buildSlashes";
 
 // Mock the buildSlashes function
-jest.mock("../../../../services/buildSlashes", () => ({
-  buildSlashes: jest.fn((count: number) => "//".repeat(count)),
+vi.mock("../../../../services/buildSlashes", () => ({
+  buildSlashes: vi.fn((count: number) => "//".repeat(count)),
 }));
 
 const wrapper: FC<React.PropsWithChildren<React.PropsWithChildren<{}>>> = ({
@@ -17,7 +18,7 @@ const wrapper: FC<React.PropsWithChildren<React.PropsWithChildren<{}>>> = ({
 describe("useSponsorsHook", () => {
   beforeEach(() => {
     // Clear mock calls between tests
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it("should initialize with default values", () => {
@@ -26,7 +27,7 @@ describe("useSponsorsHook", () => {
       { wrapper },
     );
 
-    expect(result.current.slashes).toBe(undefined); // 2 groups of '//'
+    expect(result.current.slashes).toBe("////"); // 2 groups of '//'
     expect(result.current.isHovered).toBe(false);
     expect(typeof result.current.width).toBe("number");
   });
@@ -78,13 +79,13 @@ describe("useSponsorsHook", () => {
 
     // Initial render with 2 groups
     expect(buildSlashes).toHaveBeenCalledWith(2);
-    expect(result.current.slashes).toBe(undefined);
+    expect(result.current.slashes).toBe("////");
 
     // Update to 3 groups
     rerender({ numberOfSlashGroups: 3 });
 
     expect(buildSlashes).toHaveBeenCalledWith(3);
-    expect(result.current.slashes).toBe(undefined);
+    expect(result.current.slashes).toBe("//////");
   });
 
   it("should memoize hover handlers", () => {

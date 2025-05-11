@@ -8,30 +8,30 @@ import {
 import { useFetchSpeakers } from "../../hooks/useFetchSpeakers";
 import userEvent from "@testing-library/user-event";
 import { gaEventTracker } from "../../components/analytics/Analytics";
-
+import { vi } from "vitest";
 // Mock the useFetchSpeakers hook
-jest.mock("../../hooks/useFetchSpeakers");
+vi.mock("../../hooks/useFetchSpeakers");
 const mockedUseFetchSpeakers = useFetchSpeakers as jest.MockedFunction<
   typeof useFetchSpeakers
 >;
 
 // Mock the gaEventTracker
-jest.mock("../../components/analytics/Analytics", () => ({
+vi.mock("../../components/analytics/Analytics", () => ({
   gaEventTracker: jest.fn(),
 }));
 
 // Mock the useWindowSize hook
-jest.mock("react-use", () => ({
-  useWindowSize: jest.fn(),
+vi.mock("react-use", () => ({
+  useWindowSize: vi.fn(),
 }));
 
 // Mock Sentry
-jest.mock("@sentry/react", () => ({
+vi.mock("@sentry/react", () => ({
   captureException: jest.fn(),
 }));
 
 // Mock the 2024.json data
-jest.mock("../../data/2025.json", () => ({
+vi.mock("../../data/2025.json", () => ({
   hideSpeakers: false,
   edition: "2024",
   title: "DevBcn",
@@ -44,7 +44,7 @@ jest.mock("../../data/2025.json", () => ({
 
 describe("Speakers component", () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     require("react-use").useWindowSize.mockReturnValue({ width: 1200 });
   });
 
