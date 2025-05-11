@@ -8,7 +8,10 @@ import linkedinIcon from "../../assets/images/linkedinIcon.svg";
 import twitterIcon from "../../assets/images/twitterIcon.svg";
 import { useWindowSize } from "react-use";
 
-import { ROUTE_SPEAKERS, ROUTE_TALK_DETAIL } from "../../constants/routes";
+import {
+  ROUTE_2024_SPEAKERS,
+  ROUTE_2024_TALK_DETAIL,
+} from "../../constants/routes";
 import { Link } from "react-router";
 import { Color } from "../../styles/colors";
 import conferenceData from "../../data/2024.json";
@@ -122,7 +125,7 @@ const SpeakerDetail: FC<React.PropsWithChildren<ISpeakerDetailProps>> = ({
                     {speaker?.sessions?.map((session) => (
                       <li key={session.id}>
                         <StyledTalkDescription
-                          to={`${ROUTE_TALK_DETAIL}/${session.id}`}
+                          to={`${ROUTE_2024_TALK_DETAIL}/${session.id}`}
                         >
                           <StyledSpeakerTitle>
                             <img
@@ -141,7 +144,7 @@ const SpeakerDetail: FC<React.PropsWithChildren<ISpeakerDetailProps>> = ({
               )}
 
               <Link
-                to={ROUTE_SPEAKERS}
+                to={ROUTE_2024_SPEAKERS}
                 style={{
                   color: Color.BLACK_BLUE,
                   fontWeight: "bold",

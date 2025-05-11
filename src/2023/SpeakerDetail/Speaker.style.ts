@@ -117,23 +117,7 @@ export const StyledName = styled.h3`
     text-align: left;
   }
 `;
-export const StyledSpeakerImgBorder = styled.div`
-  width: 100%;
-  height: 300px;
-  margin-bottom: 0.75rem;
-  padding: 0.3rem;
-  border: 1px solid ${Color.YELLOW};
 
-  @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    padding: 0.2rem;
-    height: 250px;
-  }
-
-  @media only screen and (min-width: ${LARGE_BREAKPOINT}px) {
-    padding: 0.2rem;
-    height: 325px;
-  }
-`;
 export const StyledSpeakerImg = styled.img`
   border-radius: 10px;
   padding: 5px;
@@ -190,16 +174,3 @@ export const StyledSocialMediaIcon = styled.img<{ noMargin?: boolean }>`
     margin-right: ${({ noMargin }) => (noMargin ? "0" : "0.5rem")};
   }
 `;
-export const rightVariants = {
-  initial: {
-    x: "100%",
-    opacity: 0,
-  },
-  animate: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.7,
-    },
-  },
-};
