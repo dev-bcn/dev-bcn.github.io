@@ -27,7 +27,7 @@ describe("useSponsorsHook", () => {
       { wrapper },
     );
 
-    expect(result.current.slashes).toBe("////"); // 2 groups of '//'
+    expect(result.current.slashes).toBe("////");
     expect(result.current.isHovered).toBe(false);
     expect(typeof result.current.width).toBe("number");
   });

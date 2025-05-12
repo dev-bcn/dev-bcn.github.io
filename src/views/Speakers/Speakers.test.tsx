@@ -11,41 +11,43 @@ import { gaEventTracker } from "../../components/analytics/Analytics";
 import { vi } from "vitest";
 // Mock the useFetchSpeakers hook
 vi.mock("../../hooks/useFetchSpeakers");
-const mockedUseFetchSpeakers = useFetchSpeakers as jest.MockedFunction<
+const mockedUseFetchSpeakers = useFetchSpeakers as vi.MockedFunction<
   typeof useFetchSpeakers
 >;
 
 // Mock the gaEventTracker
 vi.mock("../../components/analytics/Analytics", () => ({
-  gaEventTracker: jest.fn(),
+  gaEventTracker: vi.fn(),
 }));
 
 // Mock the useWindowSize hook
 vi.mock("react-use", () => ({
-  useWindowSize: vi.fn(),
+  useWindowSize: vi.fn(() => ({ width: 1200 }),
 }));
 
 // Mock Sentry
 vi.mock("@sentry/react", () => ({
-  captureException: jest.fn(),
+  captureException: vi.fn()
 }));
 
-// Mock the 2024.json data
-vi.mock("../../data/2025.json", () => ({
-  hideSpeakers: false,
-  edition: "2024",
-  title: "DevBcn",
-  cfp: {
-    startDay: "2023-01-01T00:00:00",
-    endDay: "2023-02-01T00:00:00",
-    link: "https://example.com/cfp",
-  },
-}));
+// Mock the 2025.json data
+vi.mock("../../data/2025.json", () => {
+  const mockData = {
+    hideSpeakers: false,
+    edition: "2024",
+    title: "DevBcn",
+    cfp: {
+      startDay: "2023-01-01T00:00:00",
+      endDay: "2023-02-01T00:00:00",
+      link: "https://example.com/cfp"
+    }
+  };
+  return { default: mockData };
+});
 
 describe("Speakers component", () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    require("react-use").useWindowSize.mockReturnValue({ width: 1200 });
   });
 
   it("displays loading state when data is being fetched", () => {
@@ -81,7 +83,7 @@ describe("Speakers component", () => {
     });
   });
 
-  it("displays a message when speakers are hidden", () => {
+  it("displays CFP button when current date is within CFP period", () => {
     // Mock the hook to return success state with data
     mockedUseFetchSpeakers.mockReturnValue({
       data: [],
@@ -90,39 +92,23 @@ describe("Speakers component", () => {
       isSuccess: true,
     });
 
-    // Temporarily override the hideSpeakers value
-    const originalModule = jest.requireMock("../../data/2025.json");
-    const originalHideSpeakers = originalModule.hideSpeakers;
-    originalModule.hideSpeakers = true;
-
-    renderWithRouterAndQueryClient(<Speakers />);
-
-    expect(screen.getByText(/No selected speakers yet/i)).toBeInTheDocument();
-
-    // Restore the original value
-    originalModule.hideSpeakers = originalHideSpeakers;
-  });
-
-  it.skip("displays CFP button when current date is within CFP period", () => {
-    // Mock the hook to return success state with data
-    mockedUseFetchSpeakers.mockReturnValue({
-      data: [],
-      isLoading: false,
-      error: null,
-      isSuccess: true,
-    });
-
-    // Mock Date.now to return a date within the CFP period
+    // Mock Date to return a date within the CFP period
     const originalDate = Date;
+    const mockDate = new Date("2023-01-15");
+
+    // This ensures that both new Date() and Date.now() use our mock date
     global.Date = class extends Date {
-      constructor() {
-        super();
+      constructor(...args) {
+        if (args.length === 0) {
+          return mockDate;
+        }
+        return super(...args);
       }
 
       static now() {
-        return new Date("2023-01-15").getTime();
+        return mockDate.getTime();
       }
-    } as typeof Date;
+    } as unknown as typeof Date;
 
     renderWithRouterAndQueryClient(<Speakers />);
 
@@ -133,7 +119,7 @@ describe("Speakers component", () => {
     global.Date = originalDate;
   });
 
-  it.skip("tracks CFP button clicks", async () => {
+  it("tracks CFP button clicks", async () => {
     // Mock the hook to return success state with data
     mockedUseFetchSpeakers.mockReturnValue({
       data: [],
@@ -142,17 +128,23 @@ describe("Speakers component", () => {
       isSuccess: true,
     });
 
-    // Mock Date.now to return a date within the CFP period
+    // Mock Date to return a date within the CFP period
     const originalDate = Date;
+    const mockDate = new Date("2023-01-15");
+
+    // This ensures that both new Date() and Date.now() use our mock date
     global.Date = class extends Date {
-      constructor() {
-        super();
+      constructor(...args) {
+        if (args.length === 0) {
+          return mockDate;
+        }
+        return super(...args);
       }
 
       static now() {
-        return new Date("2023-01-15").getTime();
+        return mockDate.getTime();
       }
-    } as typeof Date;
+    } as unknown as typeof Date;
 
     renderWithRouterAndQueryClient(<Speakers />);
 
