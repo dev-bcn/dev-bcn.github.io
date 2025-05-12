@@ -50,7 +50,7 @@ const Talks: FC<React.PropsWithChildren<unknown>> = () => {
   useSentryErrorReport(error);
 
   const removeParenthesesContent = (text: string): string => {
-    return text.replace(/\s*\([^)]*\)/g, "");
+    return text?.replace(/\s*\([^)]*\)/g, "");
   };
 
   const trackOptions = [
@@ -58,7 +58,7 @@ const Talks: FC<React.PropsWithChildren<unknown>> = () => {
     ...(data !== undefined
       ? data
           .flatMap((group) => ({
-            code: group.groupId.toString(),
+            code: group?.groupId?.toString(),
             name: removeParenthesesContent(group.groupName),
           }))
           .sort((a, b) => a.name.localeCompare(b.name))

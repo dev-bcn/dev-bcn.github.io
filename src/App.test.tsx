@@ -5,8 +5,9 @@ import React from "react";
 import userEvent from "@testing-library/user-event";
 import { IResponse } from "./types/speakers";
 import axios, { AxiosHeaders, AxiosResponse } from "axios";
+import { vi } from "vitest";
 
-jest.mock("axios");
+vi.mock("axios");
 const mockedAxios = axios as jest.Mocked<typeof axios>;
 const axiosHeaders = new AxiosHeaders();
 const payload: AxiosResponse<IResponse[]> = {
@@ -67,11 +68,11 @@ const payload: AxiosResponse<IResponse[]> = {
 
 describe("navigation pages", () => {
   beforeAll(() => {
-    jest.mock("axios");
+    vi.mock("axios");
     mockedAxios.get.mockImplementation(() => Promise.resolve(payload));
   });
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   test("it render the HOME page", async () => {
@@ -164,7 +165,6 @@ describe("navigation pages", () => {
             ).not.toBeInTheDocument();*/
   });
 
-  //Reason: not enabled yet
   test("it render the CFP page", async () => {
     render(
       <React.Suspense fallback={<span>Loading...</span>}>
