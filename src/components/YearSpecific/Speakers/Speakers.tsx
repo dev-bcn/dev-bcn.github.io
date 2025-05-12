@@ -17,11 +17,12 @@ import {
   StyledWaveContainer,
 } from "./Speakers.style";
 import Button from "../../../components/UI/Button";
-import { gaEventTracker } from "../../../components/analytics/Analytics";
+import { gaEventTracker } from "../../analytics/Analytics";
 import { useFetchSpeakers } from "../../../hooks/useFetchSpeakers";
 import { ISpeaker } from "../../../types/speakers";
 import { SpeakerCard } from "../../../views/Speakers/components/SpeakersCard";
 import { useSentryErrorReport } from "../../../hooks/useSentryErrorReport";
+import { Edition } from "../../../types/types";
 
 const LessThanGreaterThan = () => (
   <>
@@ -32,7 +33,7 @@ const LessThanGreaterThan = () => (
 
 interface SpeakersProps {
   year: string;
-  webData: any;
+  webData: Edition;
 }
 
 const Speakers: FC<SpeakersProps> = ({ year, webData }) => {
@@ -67,7 +68,7 @@ const Speakers: FC<SpeakersProps> = ({ year, webData }) => {
             Technologies and in the JCP."
             color={Color.WHITE}
           />
-          {width > MOBILE_BREAKPOINT && <LessThanGreaterThan/>}
+          {width > MOBILE_BREAKPOINT && <LessThanGreaterThan />}
           <SpeakersCardsContainer>
             {isLoading && <p>Loading...</p>}
             {isBetween(CFPStartDay, CFPEndDay) && (

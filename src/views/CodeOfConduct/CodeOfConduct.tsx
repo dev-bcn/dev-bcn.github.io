@@ -11,7 +11,7 @@ import MoreThanBlue from "../../assets/images/LessThanBlueWhiteIcon.svg";
 import MoreThanTransparentIcon from "../../assets/images/MoreThanTransparentIcon.svg";
 import { RightHashWithText } from "../../components/RightHashWithText/RightHashWithText";
 import { Tag } from "../../components/Tag/Tag";
-import styled from "styled-components";
+import { styled } from "styled-components";
 import { useWindowSize } from "react-use";
 import {
   StyledLessIcon,
@@ -189,9 +189,9 @@ const CodeOfConduct: FC<React.PropsWithChildren> = () => {
               </li>
               <li>
                 Please note that by attending our events, you are subject to
-                being photographed or videotaped. If you wear a "No photos or
-                video" sticker the official photographer will take that into
-                account for closeup pictures.
+                being photographed or videotaped. If you wear a &#34;No photos
+                or video&#34; sticker the official photographer will take that
+                into account for closeup pictures.
               </li>
             </ul>
             <h4>3. Unacceptable behavior</h4>
@@ -214,7 +214,7 @@ const CodeOfConduct: FC<React.PropsWithChildren> = () => {
               </li>
               <li>
                 Posting or threatening to post personally identifiable
-                information about other people ("doxing").
+                information about other people (&#34;doxing&#34;).
               </li>
               <li>
                 Wearing or displaying signs of discrimination (e.g. logos of
@@ -230,9 +230,9 @@ const CodeOfConduct: FC<React.PropsWithChildren> = () => {
                 restrooms or where participants are resting).
               </li>
               <li>
-                Inappropriate physical contact. They must have someone's verbal
-                consent before touching them. Dressing or acting in a certain
-                way is not consent.
+                Inappropriate physical contact. They must have someone&#39;s
+                verbal consent before touching them. Dressing or acting in a
+                certain way is not consent.
               </li>
               <li>
                 Unwanted sexual attention. This includes sexual comments or

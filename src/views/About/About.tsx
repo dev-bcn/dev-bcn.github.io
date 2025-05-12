@@ -7,7 +7,7 @@ import MoreThanBlueWhiteIcon from "../../assets/images/MoreThanBlueWhiteIcon.svg
 import { useWindowSize } from "react-use";
 import { aboutData } from "./AboutData";
 import { AboutCard } from "./components/AboutCard";
-import styled from "styled-components";
+import { styled } from "styled-components";
 import { Color } from "../../styles/colors";
 import {
   StyledLessIcon,

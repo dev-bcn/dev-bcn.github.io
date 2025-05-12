@@ -9,7 +9,7 @@ vi.mock("../../../../services/buildSlashes", () => ({
   buildSlashes: vi.fn((count: number) => "//".repeat(count)),
 }));
 
-const wrapper: FC<React.PropsWithChildren<React.PropsWithChildren<{}>>> = ({
+const wrapper: FC<React.PropsWithChildren<React.PropsWithChildren<object>>> = ({
   children,
 }) => {
   return <div id={"Slashes"}>{children}</div>;

@@ -1,7 +1,7 @@
 import { FC, useCallback } from "react";
 import data from "../../../../data/2025.json";
 import Button from "../../../../components/UI/Button";
-import styled from "styled-components";
+import { styled } from "styled-components";
 import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
 import { gaEventTracker } from "../../../../components/analytics/Analytics";
 import { useDateInterval } from "../../../../hooks/useDateInterval";

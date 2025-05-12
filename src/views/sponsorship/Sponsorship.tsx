@@ -7,7 +7,7 @@ import LessThanBlue from "../../assets/images/MoreThanBlueWhiteIcon.svg";
 import LessThanTransparentIcon from "../../assets/images/LessThanTransparentIcon.svg";
 import MoreThanBlue from "../../assets/images/LessThanBlueWhiteIcon.svg";
 import MoreThanTransparentIcon from "../../assets/images/MoreThanTransparentIcon.svg";
-import styled from "styled-components";
+import { styled } from "styled-components";
 import { useWindowSize } from "react-use";
 import {
   StyledLessIcon,
@@ -218,9 +218,9 @@ const Sponsorship: FC<React.PropsWithChildren<unknown>> = () => {
                 {format(new Date(data.startDay), "MMMM do")} —
                 {" ".concat(format(data.endDay, "do"))}
               </strong>{" "}
-              at the iconic La Farga, Hospitalet de Llobregat. This year, we're
-              diving deep into the realms of Java, JVM, Cloud, DevOps, Frontend
-              technologies, Leadership strategies, and groundbreaking
+              at the iconic La Farga, Hospitalet de Llobregat. This year,
+              we&#39;re diving deep into the realms of Java, JVM, Cloud, DevOps,
+              Frontend technologies, Leadership strategies, and groundbreaking
               advancements in Big Data and AI.
             </p>
             <h4>A New Era of Tech Innovation</h4>
@@ -232,8 +232,8 @@ const Sponsorship: FC<React.PropsWithChildren<unknown>> = () => {
             </p>
             <h4>Tailored Sponsorship Opportunities</h4>
             <p>
-              While we're keeping the details of our sponsorship packages
-              exclusive, we promise they're more engaging and impactful than
+              While we&#39;re keeping the details of our sponsorship packages
+              exclusive, we promise they&#39;re more engaging and impactful than
               ever. Curious? Access our{" "}
               <strong>
                 <a
@@ -278,7 +278,7 @@ const Sponsorship: FC<React.PropsWithChildren<unknown>> = () => {
             <h4>Join us on this exciting journey</h4>
             <p>
               To discuss how we can align our sponsorship opportunities with
-              your brand's vision, contact us at{" "}
+              your brand&#39;s vision, contact us at{" "}
               <a href="mailto:sponsors@devbcn.com"> sponsors@devbcn.com</a>
             </p>
             <p>

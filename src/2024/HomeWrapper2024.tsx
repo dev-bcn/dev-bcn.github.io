@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import styled from "styled-components";
+import { styled } from "styled-components";
 
 import { useLocation } from "react-router";
 import { BIG_BREAKPOINT } from "../constants/BreakPoints";

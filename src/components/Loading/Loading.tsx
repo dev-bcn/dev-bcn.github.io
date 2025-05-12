@@ -1,7 +1,7 @@
 import { FC } from "react";
 import Logo from "../../assets/images/logo.svg";
 import { Color } from "../../styles/colors";
-import styled from "styled-components";
+import { styled } from "styled-components";
 
 export const StyledLoadingImage = styled.img`
   opacity: 100;

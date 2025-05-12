@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import styled from "styled-components";
+import { styled } from "styled-components";
 import { Color } from "../../styles/colors";
 import data from "../../data/2024.json";
 import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";

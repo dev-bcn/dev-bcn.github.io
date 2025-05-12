@@ -3,7 +3,6 @@ import ActionButtons from "./InfoButtons";
 import { gaEventTracker } from "../../../../components/analytics/Analytics";
 
 import { vi } from "vitest";
-import { vi } from "vitest";
 
 vi.mock("../../../../components/analytics/Analytics", () => ({
   gaEventTracker: vi.fn(),

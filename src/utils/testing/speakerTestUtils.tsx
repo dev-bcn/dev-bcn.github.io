@@ -52,7 +52,7 @@ export function renderWithRouter(
   ui: React.ReactElement,
   options?: Omit<RenderOptions, "wrapper">,
 ): RenderResult {
-  const wrapper: React.FC<React.PropsWithChildren<{}>> = ({ children }) => (
+  const wrapper: React.FC<React.PropsWithChildren<object>> = ({ children }) => (
     <BrowserRouter>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
@@ -78,7 +78,7 @@ export function renderWithRouterAndQueryClient(
     },
   });
 
-  const wrapper: React.FC<React.PropsWithChildren<{}>> = ({ children }) => (
+  const wrapper: React.FC<React.PropsWithChildren<object>> = ({ children }) => (
     <BrowserRouter>
       <QueryClientProvider client={queryClient}>
         <Suspense fallback={<div>Loading...</div>}>

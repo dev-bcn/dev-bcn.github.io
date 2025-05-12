@@ -1,5 +1,5 @@
 import { FC } from "react";
-import styled from "styled-components";
+import { styled } from "styled-components";
 import { Link } from "react-router";
 import { ROUTE_HOME } from "../../constants/routes";
 
@@ -54,18 +54,18 @@ const Cookies: FC<React.PropsWithChildren<unknown>> = () => {
             <td rowSpan={2}>DEPENDING ON THE ENTITY THAT MANAGES THEM</td>
             <td>OWN COOKIES</td>
             <td>
-              These are sent to the user's terminal equipment from a computer or
-              domain managed by the publisher itself and from which the service
-              requested by the user is provided.
+              These are sent to the user&#39;s terminal equipment from a
+              computer or domain managed by the publisher itself and from which
+              the service requested by the user is provided.
             </td>
           </tr>
           <tr>
             <td>THIRD PARTY COOKIES</td>
             <td>
-              Cookies are those that are sent to the user's terminal equipment
-              from a computer or domain that is not managed by the editor, but
-              by another entity that processes the data obtained through the
-              cookies.
+              Cookies are those that are sent to the user&#39;s terminal
+              equipment from a computer or domain that is not managed by the
+              editor, but by another entity that processes the data obtained
+              through the cookies.
             </td>
           </tr>
           <tr>
@@ -102,7 +102,7 @@ const Cookies: FC<React.PropsWithChildren<unknown>> = () => {
             <td>CUSTOMIZATION COOKIES</td>
             <td>
               They allow the application of specific characteristics for the
-              user's navigation through the website (e.g. language).
+              user&#39;s navigation through the website (e.g. language).
             </td>
           </tr>
           <tr>
@@ -160,7 +160,7 @@ const Cookies: FC<React.PropsWithChildren<unknown>> = () => {
       </ul>
       <p>
         For more information about the processing of personal data, we recommend
-        you to visit our Privacy Policy" section.
+        you to visit our Privacy Policy&#34; section.
       </p>
       <p>
         <strong>LAST UPDATE: December 29, 2022</strong>

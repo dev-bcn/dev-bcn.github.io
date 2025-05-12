@@ -39,6 +39,7 @@ const mockedUseFetchSpeakers = useFetchSpeakers as jest.MockedFunction<
 describe("Speakers2024 component", () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     require("react-use").useWindowSize.mockReturnValue({ width: 1200 });
   });
 

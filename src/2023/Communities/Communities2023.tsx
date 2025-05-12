@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import styled from "styled-components";
+import { styled } from "styled-components";
 import TwitterIcon from "../../components/Icons/Twitter";
 import { Color } from "../../styles/colors";
 import WebsiteIcon from "../../components/Icons/website";
@@ -116,18 +116,19 @@ const Communities2023: FC<React.PropsWithChildren<unknown>> = () => {
                   organization, funded by individual donations and corporate
                   sponsors. Our all-volunteer board oversees more than 350
                   leading Open Source projects, including Apache HTTP Server --
-                  the world's most popular Web server software. The ASF provides
-                  an established framework for intellectual property and
-                  financial contributions that limits potential legal exposure
-                  for our project committers. Through the ASF's meritocratic
-                  process known as `The Apache Way,`` more than 850 individual
-                  Members and 8,200 Committers successfully collaborate to
-                  develop freely available enterprise-grade software that
-                  benefits millions of users worldwide: projects distribute
-                  thousands of software solutions under the Apache License; and
-                  the community actively participates in ASF mailing lists,
-                  mentoring initiatives, and ApacheCon (the Foundation's
-                  official user conference), trainings, and other events.
+                  the world&#39;s most popular Web server software. The ASF
+                  provides an established framework for intellectual property
+                  and financial contributions that limits potential legal
+                  exposure for our project committers. Through the ASF&#39;s
+                  meritocratic process known as `The Apache Way,`` more than 850
+                  individual Members and 8,200 Committers successfully
+                  collaborate to develop freely available enterprise-grade
+                  software that benefits millions of users worldwide: projects
+                  distribute thousands of software solutions under the Apache
+                  License; and the community actively participates in ASF
+                  mailing lists, mentoring initiatives, and ApacheCon (the
+                  Foundation&#39;s official user conference), trainings, and
+                  other events.
                 </div>
               </div>
             </div>
@@ -214,7 +215,7 @@ const Communities2023: FC<React.PropsWithChildren<unknown>> = () => {
           </div>
         </div>
       </FoSS>
-      <Paragraph>Don't forget to visit them !!!!</Paragraph>
+      <Paragraph>Don&#39;t forget to visit them !!!!</Paragraph>
     </>
   );
 };

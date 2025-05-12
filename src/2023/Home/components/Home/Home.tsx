@@ -22,7 +22,7 @@ import {
 } from "./Style.Home";
 import logo from "../../../../assets/images/logo.png";
 import ActionButtons from "../ActionButtons/ActionButtons";
-import styled from "styled-components";
+import { styled } from "styled-components";
 import { Color } from "../../../../styles/colors";
 import InfoButtons from "../InfoButtons/InfoButtons";
 import MultimediaInfoButtons from "../MultimediaInfoButtons/MultimediaInfoButtons";

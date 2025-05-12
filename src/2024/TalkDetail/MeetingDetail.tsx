@@ -18,7 +18,7 @@ import {
 } from "../../constants/routes";
 import conferenceData from "../../data/2024.json";
 import { Tag } from "../../components/Tag/Tag";
-import styled from "styled-components";
+import { styled } from "styled-components";
 import { AddToCalendarButton } from "add-to-calendar-button-react";
 import {
   StyledContainer,

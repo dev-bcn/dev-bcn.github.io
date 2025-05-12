@@ -1,20 +1,20 @@
-import styled, {keyframes} from "styled-components";
-import {Color} from "../../../../styles/colors";
-import {motion} from "framer-motion";
-import {BIG_BREAKPOINT} from "../../../../constants/BreakPoints";
+import { styled, keyframes } from "styled-components";
+import { Color } from "../../../../styles/colors";
+import { motion } from "framer-motion";
+import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
 
 const revealAnimation = keyframes`
-    from {
-        opacity: 0;
-        translate: 0 100px;
-    }
-    50% {
-        opacity: .5;
-    }
-    to {
-        opacity: 1;
-        translate: 0 0;
-    }`;
+  from {
+    opacity: 0;
+    translate: 0 100px;
+  }
+  50% {
+    opacity: .5;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }`;
 
 export type FaqCardType = {
   faq: {
@@ -94,7 +94,7 @@ export const StyledFaqCard = styled.div`
   }
 `;
 export const StyledFaqImageContainer = styled.div.withConfig({
-    shouldForwardProp: (prop) => !['padding'].includes(prop),
+  shouldForwardProp: (prop) => !["padding"].includes(prop),
 })<{ padding: string }>`
   position: relative;
   @media (min-width: 800px) {

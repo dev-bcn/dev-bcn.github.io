@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import { styled } from "styled-components";
 import { BIG_BREAKPOINT, LARGE_BREAKPOINT } from "../../constants/BreakPoints";
 import { motion } from "framer-motion";
 import { Color } from "../../styles/colors";
@@ -51,10 +51,11 @@ export const StyledDescription = styled.p`
 `;
 
 export const StyledExtraInfo = styled.p`
-   {
-    margin-top: 10px;
-    color: ${Color.LIGHT_BLUE};
-  }
+{
+  margin-top: 10px;
+  color: ${Color.LIGHT_BLUE};
+}
+
   & strong {
     color: ${Color.DARK_BLUE};
   }
@@ -153,10 +154,11 @@ export const StyledRightContainer = styled.div`
 `;
 
 export const StyledNameContainer = styled.div`
-   {
-    width: 50%;
-    text-align: center;
-  }
+{
+  width: 50%;
+  text-align: center;
+}
+
   & a {
     text-decoration: none;
     color: ${Color.LIGHT_BLUE};

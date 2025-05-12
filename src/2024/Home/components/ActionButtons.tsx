@@ -1,6 +1,6 @@
 import { FC, useCallback } from "react";
 import data from "../../../data/2024.json";
-import styled from "styled-components";
+import { styled } from "styled-components";
 import { BIG_BREAKPOINT } from "../../../constants/BreakPoints";
 import { gaEventTracker } from "../../../components/analytics/Analytics";
 import Button from "../../../components/UI/Button";

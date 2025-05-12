@@ -22,12 +22,12 @@ vi.mock("../../components/analytics/Analytics", () => ({
 
 // Mock the useWindowSize hook
 vi.mock("react-use", () => ({
-  useWindowSize: vi.fn(() => ({ width: 1200 }),
+  useWindowSize: vi.fn(() => ({ width: 1200 })),
 }));
 
 // Mock Sentry
 vi.mock("@sentry/react", () => ({
-  captureException: vi.fn()
+  captureException: vi.fn(,
 }));
 
 // Mock the 2025.json data
@@ -40,7 +40,7 @@ vi.mock("../../data/2025.json", () => {
       startDay: "2023-01-01T00:00:00",
       endDay: "2023-02-01T00:00:00",
       link: "https://example.com/cfp"
-    }
+    },
   };
   return { default: mockData };
 });

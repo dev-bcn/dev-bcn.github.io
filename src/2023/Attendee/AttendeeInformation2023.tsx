@@ -1,17 +1,17 @@
 import { FC } from "react";
 import { Color } from "../../styles/colors";
-import styled from "styled-components";
+import { styled } from "styled-components";
 import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
 
 const PrePartyImg = styled.img`
-   {
+{
     width: 20vw;
     border-radius: 3%;
     margin: 0.3rem;
     padding: 0.2rem;
     border: 1px solid ${Color.DARK_BLUE};
     transition: 0.5s linear;
-  }
+}
 
   &:hover {
     filter: brightness(1.2);
@@ -19,13 +19,13 @@ const PrePartyImg = styled.img`
 `;
 
 const PartyImg = styled.img`
-   {
+{
     width: 20vw;
     border-radius: 3%;
     margin: 0.3rem;
     padding: 0.2rem;
     border: 1px solid ${Color.SKY_BLUE};
-  }
+}
 
   &:hover {
     filter: brightness(1.2);
@@ -43,10 +43,10 @@ const MobileSection = styled.section`
 `;
 
 const PrePartySection = styled.section`
-   {
+{
     background-color: ${Color.LIGHT_BLUE};
     padding: 50px 100px 20px;
-  }
+}
 `;
 
 const NetworkingPartySection = styled.section`
@@ -66,15 +66,15 @@ const AttendeeInformation2023: FC<React.PropsWithChildren<unknown>> = () => {
         Attendee information
       </h1>
       <p style={{ margin: "20px" }}>
-        Here's some important information to get the most of your attendance to
-        DevBcn 2023.
+        Here&#39;s some important information to get the most of your attendance
+        to DevBcn 2023.
       </p>
       <PrePartySection id="pre-party">
         <SectionWrapper>
           <h2 style={{ color: Color.DARK_BLUE }}>Pre-Party</h2>
           <p style={{ textAlign: "justify", margin: "15px" }}>
-            We believe that learning and enjoyment go hand in hand. That's why
-            we have organized a pre-party session sponsored by{" "}
+            We believe that learning and enjoyment go hand in hand. That&#39;s
+            why we have organized a pre-party session sponsored by{" "}
             <a
               target="_blank"
               rel="noreferrer noopener"
@@ -86,9 +86,9 @@ const AttendeeInformation2023: FC<React.PropsWithChildren<unknown>> = () => {
             <strong>Monday, July 3rd from 19:00 to 20:00</strong>. During this
             time, you can unwind, socialize, and have a great time with fellow
             participants. Indulge in tasty snacks and beverages while engaging
-            in friendly games of air hockey and table football. It's a fantastic
-            opportunity to network, relax, and set the tone for the upcoming
-            conference. We can't wait to see you there!
+            in friendly games of air hockey and table football. It&#39;s a
+            fantastic opportunity to network, relax, and set the tone for the
+            upcoming conference. We can&#39;t wait to see you there!
           </p>
           <p>
             <PrePartyImg
@@ -137,19 +137,27 @@ const AttendeeInformation2023: FC<React.PropsWithChildren<unknown>> = () => {
         <SectionWrapper>
           <h2 style={{ color: Color.SKY_BLUE }}>Networking Party</h2>
           <p
-            style={{ color: Color.WHITE, margin: "20px", textAlign: "justify" }}
+            style={{
+              color: Color.WHITE,
+              margin: "20px",
+              textAlign: "justify",
+            }}
           >
-            Only for a selected audience, we'll deliver a networking party with
-            dinner, orchestra, and Karaoke. These tickets will be distributed
-            among the sponsors, and they are they only ones who can provide you
-            one, so make sure to contact them at their booth or through the
-            mobile app throughout the day to get one. They will organize
-            constests and raffles, so make sure to participate in them all to
-            increase your chance of attending.
+            Only for a selected audience, we&#39;ll deliver a networking party
+            with dinner, orchestra, and Karaoke. These tickets will be
+            distributed among the sponsors, and they are they only ones who can
+            provide you one, so make sure to contact them at their booth or
+            through the mobile app throughout the day to get one. They will
+            organize constests and raffles, so make sure to participate in them
+            all to increase your chance of attending.
           </p>
           <PartyImg src="/images/party/entry-pass.png" alt="party" />
           <p
-            style={{ color: Color.WHITE, margin: "20px", textAlign: "center" }}
+            style={{
+              color: Color.WHITE,
+              margin: "20px",
+              textAlign: "center",
+            }}
           >
             <strong>Monday, July 3rd from 20:00 to 22:00</strong>
           </p>
@@ -204,7 +212,13 @@ const AttendeeInformation2023: FC<React.PropsWithChildren<unknown>> = () => {
             <p>
               Get the most out of the app and have a more productive experience!
             </p>
-            <div style={{ textAlign: "left", fontSize: "14px", clear: "both" }}>
+            <div
+              style={{
+                textAlign: "left",
+                fontSize: "14px",
+                clear: "both,
+              }}
+            >
               {" "}
               <div style={{ clear: "both" }}>
                 {" "}

@@ -45,7 +45,7 @@ vi.mock("./views/Home/HomeWrapper", () => ({
 vi.mock("./views/Travel/Travel", () => ({
   default: vi.fn(() => (
     <div data-testid="travel">
-      <h1>La Farga Centre d'Activitats</h1>
+      <h1>La Farga Centre d&#39;Activitats</h1>
     </div>
   )),
 }));

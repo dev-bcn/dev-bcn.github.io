@@ -7,7 +7,7 @@ import {
 } from "../Speakers/Speakers.style";
 import TitleSection from "../../components/SectionTitle/TitleSection";
 import { StyledSectionsSeparator } from "../CodeOfConduct/CodeOfConduct";
-import styled, { keyframes } from "styled-components";
+import { styled, keyframes } from "styled-components";
 import data from "../../data/2024.json";
 import { MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
 import LessThanBlue from "../../assets/images/MoreThanBlueWhiteIcon.svg";

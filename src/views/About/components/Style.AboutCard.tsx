@@ -1,17 +1,17 @@
-import styled, { keyframes } from "styled-components";
+import { styled, keyframes } from "styled-components";
 
 const revealAnimation = keyframes`
-    from {
-        opacity: 0;
-        translate: 0 100px;
-    }
-    50% {
-        opacity: .5;
-    }
-    to {
-        opacity: 1;
-        translate: 0 0;
-    }`;
+  from {
+    opacity: 0;
+    translate: 0 100px;
+  }
+  50% {
+    opacity: .5;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }`;
 
 export const StyledAboutCard = styled.div`
   display: flex;

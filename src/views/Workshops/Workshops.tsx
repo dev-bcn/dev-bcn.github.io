@@ -14,26 +14,26 @@ import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
 import { useFetchTalks } from "../../hooks/useFetchTalks";
 import { TalkCard } from "../Talks/components/TalkCard";
 import conferenceData from "../../data/2025.json";
-import styled from "styled-components";
+import { styled } from "styled-components";
 import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
 import { useSentryErrorReport } from "../../hooks/useSentryErrorReport";
 
 const StyledSection = styled.section`
 {
-    display: flex;
-    padding: 0 10rem;
-    flex-wrap: wrap;
+  display: flex;
+  padding: 0 10rem;
+  flex-wrap: wrap;
 }
 
-    @media (max-width: ${BIG_BREAKPOINT}px) {
-        padding: 1rem;
-        flex-direction: column;
-    }
+  @media (max-width: ${BIG_BREAKPOINT}px) {
+    padding: 1rem;
+    flex-direction: column;
+  }
 
-    & > div {
-        margin: 1rem;
-        min-width: 14%;
-    }
+  & > div {
+    margin: 1rem;
+    min-width: 14%;
+  }
 `;
 const Workshops: FC<React.PropsWithChildren<unknown>> = () => {
   const { isLoading, data, error } = useFetchTalks();

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import { styled } from "styled-components";
 import { motion } from "framer-motion";
 import { BIG_BREAKPOINT, TABLET_BREAKPOINT } from "../../constants/BreakPoints";
 import { Color } from "../../styles/colors";

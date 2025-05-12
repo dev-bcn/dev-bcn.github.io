@@ -19,7 +19,7 @@ export function renderWithQueryClient(
     },
   });
 
-  const wrapper: FC<React.PropsWithChildren<{}>> = ({ children }) => (
+  const wrapper: FC<React.PropsWithChildren<object>> = ({ children }) => (
     <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
   );
 
@@ -36,7 +36,7 @@ export function getQueryClientWrapper() {
     },
   });
 
-  const wrapper: FC<React.PropsWithChildren<{}>> = ({ children }) => (
+  const wrapper: FC<React.PropsWithChildren<object>> = ({ children }) => (
     <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
   );
 

@@ -20,6 +20,7 @@ import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
 
 const SessionFeedback: FC<React.PropsWithChildren<unknown>> = () => {
   const bodyTemplate = React.useCallback(
+    // eslint-disable-next-line react/display-name
     (field: keyof MeasurableSessionRating) => (session: SessionRating) => (
       <Rating value={session[field]} readOnly cancel={false} />
     ),
@@ -45,7 +46,7 @@ const SessionFeedback: FC<React.PropsWithChildren<unknown>> = () => {
 
   const onGlobalFilterChange = (e: { target: { value: any } }) => {
     const value = e.target.value;
-    let _filters = { ...filters };
+    const _filters = { ...filters };
 
     _filters["global"].value = value;
 
