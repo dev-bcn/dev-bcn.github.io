@@ -1,6 +1,7 @@
 import { defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react";
 import pkg from "./package.json";
+import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -12,8 +13,17 @@ export default defineConfig(({ mode }) => {
     plugins: [react()],
     resolve: {
       alias: {
-        // If you have any path aliases in your tsconfig.json, you should define them here too
-        // For example: '@components': resolve(__dirname, './src/components')
+        // Path aliases matching those in tsconfig.json
+        "@components": path.resolve(__dirname, "./src/components"),
+        "@constants": path.resolve(__dirname, "./src/constants"),
+        "@services": path.resolve(__dirname, "./src/services"),
+        "@hooks": path.resolve(__dirname, "./src/hooks"),
+        "@assets": path.resolve(__dirname, "./src/assets"),
+        "@styles": path.resolve(__dirname, "./src/styles"),
+        "@views": path.resolve(__dirname, "./src/views"),
+        "@utils": path.resolve(__dirname, "./src/utils"),
+        "@data": path.resolve(__dirname, "./src/data"),
+        "@types": path.resolve(__dirname, "./src/types"),
       },
     },
     define: {

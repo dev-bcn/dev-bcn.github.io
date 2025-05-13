@@ -1,8 +1,5 @@
 import { styled } from "styled-components";
-import {
-  BIG_BREAKPOINT,
-  LARGE_BREAKPOINT,
-} from "../../../../constants/BreakPoints";
+import { BIG_BREAKPOINT, LARGE_BREAKPOINT } from "@constants/BreakPoints";
 import { motion } from "framer-motion";
 
 const SponsorMargin = 11;
@@ -223,10 +220,7 @@ export const StyledSponsorIconMicro = styled.img`
     margin-left: 2.5rem;
   }
 `;
-
-export const StyledSponsorBadgeLeft = styled(motion.div).withConfig({
-  shouldForwardProp: (prop) => !["position"].includes(prop,
-})<{
+export const StyledSponsorBadgeLeft = styled(motion.div)<{
   color: string;
   position: "left" | "right";
 }>`

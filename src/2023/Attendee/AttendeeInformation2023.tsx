@@ -1,16 +1,16 @@
 import { FC } from "react";
-import { Color } from "../../styles/colors";
+import { Color } from "@styles/colors";
 import { styled } from "styled-components";
-import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
+import { BIG_BREAKPOINT } from "@constants/BreakPoints";
 
 const PrePartyImg = styled.img`
 {
-    width: 20vw;
-    border-radius: 3%;
-    margin: 0.3rem;
-    padding: 0.2rem;
-    border: 1px solid ${Color.DARK_BLUE};
-    transition: 0.5s linear;
+  width: 20vw;
+  border-radius: 3%;
+  margin: 0.3rem;
+  padding: 0.2rem;
+  border: 1px solid ${Color.DARK_BLUE};
+  transition: 0.5s linear;
 }
 
   &:hover {
@@ -20,11 +20,11 @@ const PrePartyImg = styled.img`
 
 const PartyImg = styled.img`
 {
-    width: 20vw;
-    border-radius: 3%;
-    margin: 0.3rem;
-    padding: 0.2rem;
-    border: 1px solid ${Color.SKY_BLUE};
+  width: 20vw;
+  border-radius: 3%;
+  margin: 0.3rem;
+  padding: 0.2rem;
+  border: 1px solid ${Color.SKY_BLUE};
 }
 
   &:hover {
@@ -44,8 +44,8 @@ const MobileSection = styled.section`
 
 const PrePartySection = styled.section`
 {
-    background-color: ${Color.LIGHT_BLUE};
-    padding: 50px 100px 20px;
+  background-color: ${Color.LIGHT_BLUE};
+  padding: 50px 100px 20px;
 }
 `;
 
@@ -216,7 +216,7 @@ const AttendeeInformation2023: FC<React.PropsWithChildren<unknown>> = () => {
               style={{
                 textAlign: "left",
                 fontSize: "14px",
-                clear: "both,
+                clear: "both",
               }}
             >
               {" "}

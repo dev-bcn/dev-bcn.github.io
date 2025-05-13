@@ -1,22 +1,22 @@
-import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import { Color } from "../../styles/colors";
+import SectionWrapper from "@components/SectionWrapper/SectionWrapper";
+import { Color } from "@styles/colors";
 import {
   StyledLessIcon,
   StyledMoreIcon,
   StyledSpeakersSection,
 } from "../Speakers/Speakers.style";
-import TitleSection from "../../components/SectionTitle/TitleSection";
+import TitleSection from "@components/SectionTitle/TitleSection";
 import { StyledSectionsSeparator } from "../CodeOfConduct/CodeOfConduct";
-import { styled, keyframes } from "styled-components";
-import data from "../../data/2024.json";
-import { MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
+import { keyframes, styled } from "styled-components";
+import data from "@data/2024.json";
+import { MOBILE_BREAKPOINT } from "@constants/BreakPoints";
 import LessThanBlue from "../../assets/images/MoreThanBlueWhiteIcon.svg";
 import MoreThanBlue from "../../assets/images/LessThanBlueWhiteIcon.svg";
 import { useWindowSize } from "react-use";
 import youtube from "../../assets/images/youtube.svg";
 import linkedinIcon from "../../assets/images/linkedinIcon.svg";
 import twitterIcon from "../../assets/images/twitterIcon.svg";
-import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
+import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
 
 const StyledParagraph = styled.p`
   color: white;
