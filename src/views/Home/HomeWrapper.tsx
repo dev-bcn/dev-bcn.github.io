@@ -1,15 +1,15 @@
-import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
+import { BIG_BREAKPOINT } from "@constants/BreakPoints";
 import React, { FC } from "react";
 import Faqs from "./components/Faqs/Faqs";
 import Home from "./components/Home/Home";
 import Sponsors from "./components/Sponsors/Sponsors";
 import { styled } from "styled-components";
-import conferenceData from "../../data/2025.json";
+import conferenceData from "@data/2025.json";
 import { useLocation } from "react-router";
 
-import SpeakersCarousel from "../../components/Swiper/SpeakersCarousel";
-import { ROUTE_SPEAKERS } from "../../constants/routes";
-import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
+import SpeakersCarousel from "@components/Swiper/SpeakersCarousel";
+import { ROUTE_SPEAKERS } from "@constants/routes";
+import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
 
 const StyledContainer = styled.div`
   padding-bottom: 10rem;
@@ -38,6 +38,7 @@ const HomeWrapper: FC<React.PropsWithChildren<unknown>> = () => {
         <SpeakersCarousel
           sessionizeUrl={conferenceData.sessionizeUrl}
           speakersLink={ROUTE_SPEAKERS}
+          isEnabled={conferenceData.carrousel.enabled}
         />
       )}
       <Sponsors />

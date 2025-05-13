@@ -1,14 +1,14 @@
-import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
+import { BIG_BREAKPOINT } from "@constants/BreakPoints";
 import React, { FC } from "react";
 import Faqs from "./components/Faqs/Faqs";
 import Home from "./components/Home/Home";
 import Sponsors from "./components/Sponsors/Sponsors";
 import { styled } from "styled-components";
-import data from "../../data/2023.json";
+import data from "@data/2023.json";
 import { useLocation } from "react-router";
-import SpeakersCarousel from "../../components/Swiper/SpeakersCarousel";
-import { ROUTE_2023_SPEAKERS } from "../../constants/routes";
-import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
+import SpeakersCarousel from "@components/Swiper/SpeakersCarousel";
+import { ROUTE_2023_SPEAKERS } from "@constants/routes";
+import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
 
 const StyledContainer = styled.div`
   padding-bottom: 10rem;
@@ -35,7 +35,8 @@ export const Home2023Wrapper: FC<React.PropsWithChildren<unknown>> = () => {
       <Faqs />
       <SpeakersCarousel
         speakersLink={ROUTE_2023_SPEAKERS}
-        sessionizeUrl={data.sessionizeUrl}
+        sessionizeUrl={data.edition}
+        isEnabled={data.carrousel.enabled}
       />
       <Sponsors />
     </StyledContainer>

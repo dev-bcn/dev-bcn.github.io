@@ -1,7 +1,8 @@
 import { useQuery, UseQueryResult } from "react-query";
 import axios from "axios";
-import { speakerAdapter } from "../services/speakerAdapter";
-import { IResponse, ISpeaker } from "../types/speakers";
+import { speakerAdapter } from "@services/speakerAdapter";
+// @ts-expect-error some weird error when importing types
+import { IResponse, ISpeaker } from "@types/speakers";
 
 const URLS = {
   default: "https://sessionize.com/api/v2/xhudniix/view/Speakers",

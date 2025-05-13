@@ -2,15 +2,15 @@ import React, { FC } from "react";
 import { styled } from "styled-components";
 
 import { useLocation } from "react-router";
-import { BIG_BREAKPOINT } from "../constants/BreakPoints";
-import conferenceData from "../data/2024.json";
+import { BIG_BREAKPOINT } from "@constants/BreakPoints";
+import conferenceData from "@data/2024.json";
 import Faqs from "../views/Home/components/Faqs/Faqs";
 
 import Home from "./Home/Home";
 import Sponsors from "./Sponsors/Sponsors";
 import SpeakersCarousel from "../components/Swiper/SpeakersCarousel";
-import { ROUTE_2024_SPEAKERS } from "../constants/routes";
-import { useDocumentTitleUpdater } from "../hooks/useDocumentTitleUpdate";
+import { ROUTE_2024_SPEAKERS } from "@constants/routes";
+import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
 
 const StyledContainer = styled.div`
   padding-bottom: 10rem;
@@ -39,6 +39,7 @@ export const HomeWrapper2024: FC<React.PropsWithChildren<unknown>> = () => {
       <SpeakersCarousel
         speakersLink={ROUTE_2024_SPEAKERS}
         sessionizeUrl={conferenceData.sessionizeUrl}
+        isEnabled={conferenceData.carrousel.enabled}
       />
       <Sponsors />
     </StyledContainer>
