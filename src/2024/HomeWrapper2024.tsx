@@ -11,7 +11,6 @@ import Sponsors from "./Sponsors/Sponsors";
 import SpeakersCarousel from "../components/Swiper/SpeakersCarousel";
 import { ROUTE_2024_SPEAKERS } from "@constants/routes";
 import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
-import data from "@data/2023.json";
 
 const StyledContainer = styled.div`
   padding-bottom: 10rem;
@@ -40,7 +39,7 @@ export const HomeWrapper2024: FC<React.PropsWithChildren<unknown>> = () => {
       <SpeakersCarousel
         speakersLink={ROUTE_2024_SPEAKERS}
         sessionizeUrl={conferenceData.sessionizeUrl}
-        isEnabled={data.carrousel.enabled}
+        isEnabled={conferenceData.carrousel.enabled}
       />
       <Sponsors />
     </StyledContainer>
