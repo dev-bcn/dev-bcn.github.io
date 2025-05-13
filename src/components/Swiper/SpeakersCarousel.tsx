@@ -4,8 +4,8 @@ import LessThanBlueWhiteIcon from "../../assets/images/LessThanBlueIcon.svg";
 import { motion } from "framer-motion";
 import { styled } from "styled-components";
 import SpeakerSwiper from "./SpeakerSwiper";
-import { Color } from "../../styles/colors";
-import { TABLET_BREAKPOINT } from "../../constants/BreakPoints";
+import { Color } from "@styles/colors";
+import { TABLET_BREAKPOINT } from "@constants/BreakPoints";
 import SectionWrapper from "../SectionWrapper/SectionWrapper";
 import TitleSection from "../SectionTitle/TitleSection";
 
@@ -59,11 +59,13 @@ const StyledBlueSlash = styled(motion.p)`
 interface Props {
   speakersLink: string;
   sessionizeUrl: string;
+  isEnabled: boolean;
 }
 
 const SpeakersCarousel: FC<React.PropsWithChildren<Props>> = ({
   speakersLink,
   sessionizeUrl,
+  isEnabled,
 }) => {
   return (
     <SectionWrapper color={Color.LIGHT_BLUE}>
@@ -78,7 +80,7 @@ const SpeakersCarousel: FC<React.PropsWithChildren<Props>> = ({
             color={Color.WHITE}
           />
         </StyledTitleWrapper>
-        <SpeakerSwiper sessionizeUrl={sessionizeUrl} />
+        <SpeakerSwiper url={sessionizeUrl} isEnabled={isEnabled} />
         <StyledLink>
           <Link to={speakersLink} className="link--text">
             <StyledSubtitle> View all speakers</StyledSubtitle>

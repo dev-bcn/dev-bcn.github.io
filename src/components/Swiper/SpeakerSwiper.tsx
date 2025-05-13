@@ -2,15 +2,15 @@ import React, { FC } from "react";
 import { Autoplay, Parallax } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { styled } from "styled-components";
-import { Color } from "../../styles/colors";
+import { Color } from "@styles/colors";
 import "swiper/swiper-bundle.min.css";
 import "../../components/Swiper/SpeakersCarousel.scss";
-import conferenceData from "../../data/2025.json";
-import { useFetchSpeakers } from "../../hooks/useFetchSpeakers";
-import { ISpeaker } from "../../types/speakers";
-import { ROUTE_SPEAKER_DETAIL } from "../../constants/routes";
+import { useFetchSpeakers } from "@hooks/useFetchSpeakers";
+// @ts-expect-error some weird error when importing types
+import { ISpeaker } from "@types/speakers";
+import { ROUTE_SPEAKER_DETAIL } from "@constants/routes";
 import { Link } from "react-router";
-import { useSentryErrorReport } from "../../hooks/useSentryErrorReport";
+import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
 
 const StyledSlideImage = styled.img`
   display: block;
@@ -36,8 +36,17 @@ const StyledSlideText = styled.p`
   font-size: 0.875rem;
   color: white;
 `;
-const SpeakerSwiper: FC<React.PropsWithChildren<unknown>> = () => {
-  const { isLoading, data, error } = useFetchSpeakers();
+
+interface Props {
+  isEnabled: boolean;
+  url: string;
+}
+
+const SpeakerSwiper: FC<React.PropsWithChildren<Props>> = ({
+  isEnabled,
+  url,
+}) => {
+  const { isLoading, data, error } = useFetchSpeakers(url);
 
   const cachedSpeakers = React.useMemo(() => {
     return data?.toSorted(() => 0.5 - Math.random()).slice(0, 20);
@@ -48,7 +57,7 @@ const SpeakerSwiper: FC<React.PropsWithChildren<unknown>> = () => {
   return (
     <>
       {isLoading && <p>Loading</p>}
-      {conferenceData.carrousel.enabled && cachedSpeakers && (
+      {isEnabled && cachedSpeakers && (
         <Swiper
           autoplay={{
             delay: 500,
