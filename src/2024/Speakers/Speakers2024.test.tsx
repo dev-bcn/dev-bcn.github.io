@@ -20,7 +20,22 @@ vi.mock("react-use", () => ({
 vi.mock("@sentry/react", () => ({
   captureException: vi.fn(),
 }));
-vi.mock("@data/2024.json", () => ({
+vi.mock("@data/2024.json", () => {
+  return {
+    default: {
+      hideSpeakers: false,
+      edition: "2024",
+      title: "DevBcn",
+      cfp: {
+        startDay: "2023-01-01T00:00:00",
+        endDay: "2023-02-01T00:00:00",
+        link: "https://example.com/cfp",
+      },
+    },
+  };
+});
+
+const initialMock2024Data = {
   hideSpeakers: false,
   edition: "2024",
   title: "DevBcn",
@@ -29,7 +44,8 @@ vi.mock("@data/2024.json", () => ({
     endDay: "2023-02-01T00:00:00",
     link: "https://example.com/cfp",
   },
-}));
+};
+const mutableMock2024Data = { ...initialMock2024Data };
 
 const mockedUseFetchSpeakers = useFetchSpeakers as MockedFunction<
   typeof useFetchSpeakers
@@ -78,7 +94,6 @@ describe("Speakers2024 component", () => {
   });
 
   it("displays a message when hideSpeakers is true", () => {
-    // Mock the hook to return success state with data
     mockedUseFetchSpeakers.mockReturnValue({
       data: [],
       isLoading: false,
@@ -86,17 +101,14 @@ describe("Speakers2024 component", () => {
       isSuccess: true,
     });
 
-    // Temporarily override the hideSpeakers value
-    const originalModule = jest.requireMock("../../data/2024.json");
-    const originalHideSpeakers = originalModule.hideSpeakers;
-    originalModule.hideSpeakers = true;
+    // Modify the hideSpeakers property of our mutable mock data
+    mutableMock2024Data.hideSpeakers = true;
 
     renderWithRouterAndQueryClient(<Speakers2024 />);
 
     expect(screen.getByText(/No selected speakers yet/i)).toBeInTheDocument();
 
-    // Restore the original value
-    originalModule.hideSpeakers = originalHideSpeakers;
+    // No need to manually restore here; beforeEach will reset it for the next test.
   });
 
   it("calls useFetchSpeakers with the correct year", () => {
