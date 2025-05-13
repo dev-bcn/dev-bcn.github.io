@@ -21,28 +21,33 @@ export const sponsors: Sponsors = {
     {
       name: "Caixabank Tech",
       website: "https://www.caixabanktech.com/es/pagina-de-inicio/",
-      image: "images/sponsors/caixabank-tech.png"
+      image: "images/sponsors/caixabank-tech.png",
     },
     {
       name: "Sopra Steria",
       image: "/images/sponsors/sopra.png",
-      website: "https://www.soprasteria.es/"
+      website: "https://www.soprasteria.es/",
     },
     {
       name: "Elastic",
       image: "/images/sponsors/logo-elastic-horizontal-color.png",
-      website: "https://www.elastic.co/"
+      website: "https://www.elastic.co/",
     },
     {
       name: "Manychat",
       website: "https://careers.manychat.com/",
-      image: "/images/sponsors/logo-manychat.webp"
+      image: "/images/sponsors/logo-manychat.webp",
     },
     {
       name: "Snowflake",
       website: "https://www.snowflake.com/en/developers/",
-      image: "/images/sponsors/logo-snowflake.png"
-    }
+      image: "/images/sponsors/logo-snowflake.png",
+    },
+    {
+      name: "Clever Cloud",
+      image: "images/sponsors/clever-cloud.png",
+      website: "https://www.clever-cloud.com/",
+    },
   ],
   basic: [],
   communities: [],
@@ -50,28 +55,23 @@ export const sponsors: Sponsors = {
     {
       name: "Digital Expert Online",
       website: "https://digital-expert.online/en/",
-      image: "images/sponsors/logo-digital-expert.svg"
+      image: "images/sponsors/logo-digital-expert.svg",
     },
     {
       name: "Kube events",
       image: "images/sponsors/kube-events.png",
-      website: "https://kube.events/"
+      website: "https://kube.events/",
     },
     {
       name: "Kube careers",
       image: "images/sponsors/kube-career.png",
-      website: "https://kube.careers/"
+      website: "https://kube.careers/",
     },
     {
       name: "CIO Insights",
       website: "https://www.cioinsights.com/",
-      image: "images/sponsors/cio-insights.png"
+      image: "images/sponsors/cio-insights.png",
     },
-    {
-      name: "Clever Cloud",
-      image: "images/sponsors/clever-cloud.png",
-      website: "https://www.clever-cloud.com/"
-    }
   ],
-  supporters: []
+  supporters: [],
 };
