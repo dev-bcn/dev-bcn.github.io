@@ -9,35 +9,35 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: checkout
-      uses: actions/checkout@v3
+      - name: checkout
+        uses: actions/checkout@v3
 
-    - name: Use Node.js 20.x
-      uses: actions/setup-node@v3
-      with:
-        node-version: 20.x
-        
-    - name: Cache node modules
-      id: cache-npm
-      uses: actions/cache@v3
-      with:
-        path: ~/.npm
-        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-build-${{ env.cache-name }}-
-          ${{ runner.os }}-build-
-          ${{ runner.os }}-
+      - name: Use Node.js 24.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 24.x
 
-    - name: Build & deploy
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        REACT_APP_NAME: ${{ secrets.REACT_APP_VERSION }}
-        SENTRY_ENVIRONMENT: ${{ secrets.SENTRY_ENVIRONMENT}}
-        REACT_APP_VERSION: ${{ secrets.REACT_APP_VERSION }}
-        REACT_APP_MAP_API_KEY: ${{ secrets.REACT_APP_MAP_API_KEY }}
-        REACT_APP_GOOGLE_ANALYTICS_API_KEY: ${{ secrets.REACT_APP_GOOGLE_ANALYTICS_API_KEY}}
-      run: |
-        git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-        npm i
-        npm run build
-        npx gh-pages --branch gh-pages --dist build -u "github-actions-bot <support+actions@github.com>"
+      - name: Cache node modules
+        id: cache-npm
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Build & deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REACT_APP_NAME: ${{ secrets.REACT_APP_VERSION }}
+          SENTRY_ENVIRONMENT: ${{ secrets.SENTRY_ENVIRONMENT}}
+          REACT_APP_VERSION: ${{ secrets.REACT_APP_VERSION }}
+          REACT_APP_MAP_API_KEY: ${{ secrets.REACT_APP_MAP_API_KEY }}
+          REACT_APP_GOOGLE_ANALYTICS_API_KEY: ${{ secrets.REACT_APP_GOOGLE_ANALYTICS_API_KEY}}
+        run: |
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          npm i
+          npm run build
+          npx gh-pages --branch gh-pages --dist build -u "github-actions-bot <support+actions@github.com>"
