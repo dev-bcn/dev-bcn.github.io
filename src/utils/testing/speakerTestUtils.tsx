@@ -1,13 +1,11 @@
 import React, { Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router";
-import { ISpeaker } from "../../types/speakers";
+import { ISpeaker } from "@types/speakers";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { render, RenderOptions, RenderResult } from "@testing-library/react";
 
-// Re-export everything from testing-library
 export * from "@testing-library/react";
 
-// Create mock speaker data
 export const createMockSpeaker = (overrides = {}): ISpeaker => ({
   id: "1",
   fullName: "John Smith",
@@ -35,7 +33,6 @@ export const createMockSpeaker = (overrides = {}): ISpeaker => ({
   ...overrides,
 });
 
-// Create an array of mock speakers
 export const createMockSpeakers = (count: number): ISpeaker[] => {
   return Array.from({ length: count }, (_, i) =>
     createMockSpeaker({
@@ -47,7 +44,6 @@ export const createMockSpeakers = (count: number): ISpeaker[] => {
   );
 };
 
-// Create a custom render function that includes the BrowserRouter
 export function renderWithRouter(
   ui: React.ReactElement,
   options?: Omit<RenderOptions, "wrapper">,
@@ -65,7 +61,6 @@ export function renderWithRouter(
   return render(ui, { wrapper, ...options });
 }
 
-// Create a custom render function that includes both BrowserRouter and QueryClientProvider
 export function renderWithRouterAndQueryClient(
   ui: React.ReactElement,
   options?: Omit<RenderOptions, "wrapper">,
@@ -92,18 +87,3 @@ export function renderWithRouterAndQueryClient(
 
   return render(ui, { wrapper, ...options });
 }
-
-// Mock the useFetchSpeakers hook
-export const mockUseFetchSpeakers = (
-  data: ISpeaker[] | null = null,
-  isLoading = false,
-  error: Error | null = null,
-  isSuccess = !isLoading && !error,
-) => {
-  return {
-    data,
-    isLoading,
-    error,
-    isSuccess,
-  };
-};

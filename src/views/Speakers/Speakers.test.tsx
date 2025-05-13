@@ -8,10 +8,10 @@ import {
 import { useFetchSpeakers } from "../../hooks/useFetchSpeakers";
 import userEvent from "@testing-library/user-event";
 import { gaEventTracker } from "../../components/analytics/Analytics";
-import { vi } from "vitest";
+import { type MockedFunction, vi } from "vitest";
 // Mock the useFetchSpeakers hook
 vi.mock("../../hooks/useFetchSpeakers");
-const mockedUseFetchSpeakers = useFetchSpeakers as vi.MockedFunction<
+const mockedUseFetchSpeakers = useFetchSpeakers as MockedFunction<
   typeof useFetchSpeakers
 >;
 

@@ -4,25 +4,23 @@ import Speakers2024 from "./Speakers2024";
 import {
   createMockSpeakers,
   renderWithRouterAndQueryClient,
-} from "../../utils/testing/speakerTestUtils";
+} from "@utils/testing/speakerTestUtils";
 import { useFetchSpeakers } from "@hooks/useFetchSpeakers";
-import userEvent from "@testing-library/user-event";
+import { useWindowSize } from "react-use";
+import { type MockedFunction, vi } from "vitest";
 
-import { vi } from "vitest";
-import { gaEventTracker } from "@components/analytics/Analytics";
+vi.mock("@hooks/useFetchSpeakers");
 
-vi.mock("../../hooks/useFetchSpeakers");
-
-vi.mock("../../components/analytics/Analytics", () => ({
-  gaEventTracker: jest.fn(),
+vi.mock("@components/analytics/Analytics", () => ({
+  gaEventTracker: vi.fn(),
 }));
 vi.mock("react-use", () => ({
   useWindowSize: vi.fn(),
 }));
 vi.mock("@sentry/react", () => ({
-  captureException: jest.fn(),
+  captureException: vi.fn(),
 }));
-vi.mock("../../data/2024.json", () => ({
+vi.mock("@data/2024.json", () => ({
   hideSpeakers: false,
   edition: "2024",
   title: "DevBcn",
@@ -33,15 +31,17 @@ vi.mock("../../data/2024.json", () => ({
   },
 }));
 
-const mockedUseFetchSpeakers = useFetchSpeakers as jest.MockedFunction<
+const mockedUseFetchSpeakers = useFetchSpeakers as MockedFunction<
   typeof useFetchSpeakers
 >;
 
 describe("Speakers2024 component", () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
-    require("react-use").useWindowSize.mockReturnValue({ width: 1200 });
+    (useWindowSize as MockedFunction<typeof useWindowSize>).mockReturnValue({
+      width: 1200,
+      height: 0,
+    });
   });
 
   it("displays loading state when data is being fetched", () => {
@@ -97,70 +97,6 @@ describe("Speakers2024 component", () => {
 
     // Restore the original value
     originalModule.hideSpeakers = originalHideSpeakers;
-  });
-
-  it.skip("displays CFP button when current date is within CFP period", () => {
-    // Mock the hook to return success state with data
-    mockedUseFetchSpeakers.mockReturnValue({
-      data: [],
-      isLoading: false,
-      error: null,
-      isSuccess: true,
-    });
-
-    // Mock Date to return a date within the CFP period
-    const originalDate = Date;
-    const mockDate = new Date("2023-01-15");
-    global.Date = class extends Date {
-      constructor() {
-        return mockDate;
-      }
-
-      static now() {
-        return mockDate.getTime();
-      }
-    } as unknown as typeof Date;
-
-    renderWithRouterAndQueryClient(<Speakers2024 />);
-
-    const cfpButton = screen.getByText(/Apply to be a Speaker/i);
-    expect(cfpButton).toBeInTheDocument();
-
-    // Restore original Date
-    global.Date = originalDate;
-  });
-
-  it.skip("tracks CFP button clicks", async () => {
-    // Mock the hook to return success state with data
-    mockedUseFetchSpeakers.mockReturnValue({
-      data: [],
-      isLoading: false,
-      error: null,
-      isSuccess: true,
-    });
-
-    // Mock Date to return a date within the CFP period
-    const originalDate = Date;
-    const mockDate = new Date("2023-01-15");
-    global.Date = class extends Date {
-      constructor() {
-        return mockDate;
-      }
-
-      static now() {
-        return mockDate.getTime();
-      }
-    } as unknown as typeof Date;
-
-    renderWithRouterAndQueryClient(<Speakers2024 />);
-
-    const cfpButton = screen.getByText(/Apply to be a Speaker/i);
-    await userEvent.click(cfpButton);
-
-    expect(gaEventTracker).toHaveBeenCalledWith("CFP", "CFP");
-
-    // Restore original Date
-    global.Date = originalDate;
   });
 
   it("calls useFetchSpeakers with the correct year", () => {

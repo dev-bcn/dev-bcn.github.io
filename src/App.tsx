@@ -47,7 +47,7 @@ import {
   ROUTE_TALKS,
   ROUTE_TRAVEL,
   ROUTE_WORKSHOPS,
-} from "./constants/routes";
+} from "@constants/routes";
 
 import Footer from "./components/Footer/Footer";
 import HomeWrapper from "./views/Home/HomeWrapper";
@@ -57,7 +57,7 @@ import SpeakerDetailContainer from "./views/SpeakerDetail/SpeakerDetailContainer
 import { styled } from "styled-components";
 import React, { FC } from "react";
 import { CookieConsent } from "react-cookie-consent";
-import { Color } from "./styles/colors";
+import { Color } from "@styles/colors";
 import Loading from "./components/Loading/Loading";
 import { QueryClient, QueryClientProvider } from "react-query";
 import Talks from "./views/Talks/Talks";

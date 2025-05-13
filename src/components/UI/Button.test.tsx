@@ -3,7 +3,7 @@ import Button from "./Button";
 import { vi } from "vitest";
 
 vi.mock("../../components/analytics/Analytics", () => ({
-  gaEventTracker: jest.fn(),
+  gaEventTracker: vi.fn(),
 }));
 
 describe("Button", () => {
