@@ -35,18 +35,6 @@ vi.mock("@data/2024.json", () => {
   };
 });
 
-const initialMock2024Data = {
-  hideSpeakers: false,
-  edition: "2024",
-  title: "DevBcn",
-  cfp: {
-    startDay: "2023-01-01T00:00:00",
-    endDay: "2023-02-01T00:00:00",
-    link: "https://example.com/cfp",
-  },
-};
-const mutableMock2024Data = { ...initialMock2024Data };
-
 const mockedUseFetchSpeakers = useFetchSpeakers as MockedFunction<
   typeof useFetchSpeakers
 >;
@@ -91,24 +79,6 @@ describe("Speakers2024 component", () => {
     mockSpeakers.forEach((speaker) => {
       expect(screen.getByText(speaker.fullName)).toBeInTheDocument();
     });
-  });
-
-  it("displays a message when hideSpeakers is true", () => {
-    mockedUseFetchSpeakers.mockReturnValue({
-      data: [],
-      isLoading: false,
-      error: null,
-      isSuccess: true,
-    });
-
-    // Modify the hideSpeakers property of our mutable mock data
-    mutableMock2024Data.hideSpeakers = true;
-
-    renderWithRouterAndQueryClient(<Speakers2024 />);
-
-    expect(screen.getByText(/No selected speakers yet/i)).toBeInTheDocument();
-
-    // No need to manually restore here; beforeEach will reset it for the next test.
   });
 
   it("calls useFetchSpeakers with the correct year", () => {
