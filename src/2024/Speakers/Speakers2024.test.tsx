@@ -5,10 +5,11 @@ import {
   createMockSpeakers,
   renderWithRouterAndQueryClient,
 } from "../../utils/testing/speakerTestUtils";
-import { useFetchSpeakers } from "../../hooks/useFetchSpeakers";
+import { useFetchSpeakers } from "@hooks/useFetchSpeakers";
 import userEvent from "@testing-library/user-event";
-import { gaEventTracker } from "../../components/analytics/Analytics";
+
 import { vi } from "vitest";
+import { gaEventTracker } from "@components/analytics/Analytics";
 
 vi.mock("../../hooks/useFetchSpeakers");
 
