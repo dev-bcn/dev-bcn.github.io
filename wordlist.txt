@@ -82,6 +82,7 @@ useFetchSpeakers
 useFetchTalks
 veepee
 vilojona
+vite
 vitejs
 webfonts
 webpack
