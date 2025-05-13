@@ -10,13 +10,13 @@ import App from "./App";
 import React, { useEffect } from "react";
 import { createRoot } from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
-import ReactGa from "react-ga";
+import { initialize } from "react-ga";
 import * as Sentry from "@sentry/react";
 import Loading from "./components/Loading/Loading";
 
 const trackingID =
   process.env.REACT_APP_GOOGLE_ANALYTICS_API_KEY ?? "G-0BG1LNPT11";
-ReactGa.initialize(trackingID);
+initialize(trackingID);
 
 Sentry.init({
   dsn: "https://fdfaeed3901d43a299b95c534e42a4c1@o194303.ingest.sentry.io/4504348314435584",
