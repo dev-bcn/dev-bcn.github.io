@@ -27,7 +27,7 @@ vi.mock("react-use", () => ({
 
 // Mock Sentry
 vi.mock("@sentry/react", () => ({
-  captureException: vi.fn(,
+  captureException: vi.fn(),
 }));
 
 // Mock the 2025.json data
@@ -39,7 +39,7 @@ vi.mock("../../data/2025.json", () => {
     cfp: {
       startDay: "2023-01-01T00:00:00",
       endDay: "2023-02-01T00:00:00",
-      link: "https://example.com/cfp"
+      link: "https://example.com/cfp",
     },
   };
   return { default: mockData };
