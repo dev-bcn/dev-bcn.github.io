@@ -1,9 +1,6 @@
-import styled from "styled-components";
-import {
-  BIG_BREAKPOINT,
-  LARGE_BREAKPOINT,
-} from "../../../../constants/BreakPoints";
-import {motion} from "framer-motion";
+import { styled } from "styled-components";
+import { BIG_BREAKPOINT, LARGE_BREAKPOINT } from "@constants/BreakPoints";
+import { motion } from "framer-motion";
 
 const SponsorMargin = 11;
 const sponsorMarginDesktop = 11;
@@ -95,7 +92,7 @@ export const StyledSponsorLogosContainer = styled.div`
   }
 `;
 export const StyledLogos = styled.div.withConfig({
-  shouldForwardProp: (prop) => !['position'].includes(prop),
+  shouldForwardProp: (prop) => !["position"].includes(prop),
 })<{ position?: "left" | "right" }>`
   display: flex;
   width: 100%;
@@ -223,10 +220,7 @@ export const StyledSponsorIconMicro = styled.img`
     margin-left: 2.5rem;
   }
 `;
-
-export const StyledSponsorBadgeLeft = styled(motion.div).withConfig({
-  shouldForwardProp: (prop) => !['position'].includes(prop),
-})<{
+export const StyledSponsorBadgeLeft = styled(motion.div)<{
   color: string;
   position: "left" | "right";
 }>`

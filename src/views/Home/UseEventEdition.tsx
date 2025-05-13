@@ -1,8 +1,9 @@
-import {useEffect} from "react";
-import {useParams} from "react-router";
+import { useEffect } from "react";
+import { useParams } from "react-router";
+import { Edition } from "../../types/types";
 
-export function useEventEdition(setEdition: (data: any) => void) {
-  let { year } = useParams();
+export function useEventEdition(setEdition: (data: Edition) => void) {
+  const { year } = useParams();
 
   useEffect(() => {
     // Fallback to the current year if no year is provided in the URL

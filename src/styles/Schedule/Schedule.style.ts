@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import {BIG_BREAKPOINT, TABLET_BREAKPOINT} from "../../constants/BreakPoints";
+import { styled } from "styled-components";
+import { BIG_BREAKPOINT, TABLET_BREAKPOINT } from "../../constants/BreakPoints";
 import SpeakersWelcome from "../../assets/images/SpeakersWelcomer.jpg";
 import SpeakersPlanning from "../../assets/images/SpeakersPlanning.jpg";
 
@@ -57,18 +57,18 @@ export const StyledTracksContainer = styled.div`
   }
 `;
 export const StyledTrack = styled.div<{
-    background: string;
-    color: string;
-    width: string;
+  background: string;
+  color: string;
+  width: string;
 }>`
-  width: ${({width}) => {
+  width: ${({ width }) => {
     return width;
   }};
   padding: 0.5rem 0;
-  background: ${({background}) => {
+  background: ${({ background }) => {
     return background;
   }};
-  color: ${({color}) => {
+  color: ${({ color }) => {
     return color;
   }};
   font-family: "Square 721 Regular", sans-serif;
@@ -89,16 +89,16 @@ export const StyledWelcomerTextContainer = styled.div`
   left: 0.5rem;
 `;
 export const StyledWelcomerText = styled.p<{ color: string }>`
-  color: ${({color}) => {
+  color: ${({ color }) => {
     return color;
-}};
+  }};
   font-family: "Square 721 Regular", sans-serif;
   text-align: start;
 `;
 export const StyledWelcomerTextLink = styled.p<{ color: string }>`
-  color: ${({color}) => {
+  color: ${({ color }) => {
     return color;
-}};
+  }};
   font-family: "Square 721 Regular", sans-serif;
   text-align: start;
 

@@ -1,34 +1,32 @@
-import React, {FC, Suspense} from "react";
+import React, { FC, Suspense } from "react";
 import venue from "../../assets/images/la-farga.png";
 import GoogleMapReact from "google-map-react";
 import "./map.css";
 import FGC from "../../assets/images/fgc.png";
-import styled from "styled-components";
+import { styled } from "styled-components";
 import TitleSection from "../../components/SectionTitle/TitleSection";
-import {Color} from "../../styles/colors";
+import { Color } from "../../styles/colors";
 import {
-    BIG_BREAKPOINT,
-    MAX_WIDTH,
-    MOBILE_BREAKPOINT,
+  BIG_BREAKPOINT,
+  MAX_WIDTH,
+  MOBILE_BREAKPOINT,
 } from "../../constants/BreakPoints";
 import LessThanBlue from "../../assets/images/MoreThanBlueWhiteIcon.svg";
 import MoreThanBlue from "../../assets/images/LessThanBlueWhiteIcon.svg";
-import {useWindowSize} from "react-use";
+import { useWindowSize } from "react-use";
 import LocationIcon from "../../assets/images/LocationIcon.svg";
 import Logo from "../../assets/images/logo.svg";
-import {StyledLoadingImage} from "../../components/Loading/Loading";
+import { StyledLoadingImage } from "../../components/Loading/Loading";
 
 const StyledVenue = styled.div`
+  padding: 0.5rem 2rem 0.5rem;
+  text-align: left;
+  max-width: ${MAX_WIDTH}px;
+  margin: 0 auto;
 
-    padding: 0.5rem 2rem 0.5rem;
-    text-align: left;
-    max-width: ${MAX_WIDTH}px;
-    margin: 0 auto;
-
-    @media (max-width: ${BIG_BREAKPOINT}px) {
-      padding: 100px 1rem 50px;
-    }
-
+  @media (max-width: ${BIG_BREAKPOINT}px) {
+    padding: 100px 1rem 50px;
+  }
 
   .image {
     img.venue {
@@ -177,10 +175,11 @@ export const Venue: FC<React.PropsWithChildren<unknown>> = () => {
             target="_blank"
             title="La Farga"
           >
-            La Farga Centre d'Activitats
+            La Farga Centre d&#39;Activitats
           </a>
           <p>
-            carrer Barcelona, 2. 08901 L'Hospitalet de Llobregat Telf. 932615200
+            carrer Barcelona, 2. 08901 L&#39;Hospitalet de Llobregat Telf.
+            932615200
           </p>
           <h4>
             Access by <strong>public transportation:</strong>{" "}

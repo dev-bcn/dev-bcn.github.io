@@ -1,6 +1,6 @@
 import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
 import { FC, ReactNode } from "react";
-import styled from "styled-components";
+import { styled } from "styled-components";
 
 const StyledPageWrapper = styled.div`
   padding-bottom: 20rem;
@@ -14,7 +14,9 @@ interface IPageWrapperProps {
   children: ReactNode;
 }
 
-const PageWrapper: FC<React.PropsWithChildren<IPageWrapperProps>> = ({ children }) => {
+const PageWrapper: FC<React.PropsWithChildren<IPageWrapperProps>> = ({
+  children,
+}) => {
   return <StyledPageWrapper>{children}</StyledPageWrapper>;
 };
 

@@ -1,6 +1,6 @@
 import { FC, Suspense } from "react";
 import Photo from "../../assets/images/after-hours.jpg";
-import styled from "styled-components";
+import { styled } from "styled-components";
 import { Color } from "../../styles/colors";
 import Logo from "../../assets/images/logo.svg";
 import { StyledLoadingImage } from "../../components/Loading/Loading";
@@ -38,14 +38,14 @@ export const ToBarcelona: FC<React.PropsWithChildren<unknown>> = () => {
       <h2>Travel to Barcelona</h2>
       <p>
         Few European cities can offer you the wide diversity of cultural
-        experience that you'll find here in Barcelona, attracting millions of
-        travellers year on year, many of which decide to stay. The mild climate,
-        beautiful coastline, small and winding streets, charming architecture
-        that takes you back in time, delicious and affordable food make it a
-        perfect place to host such a conference. Couple that with the luxury of
-        4.2 km of beach only a short walk from the city centre, warm sunshine
-        most of the year, you have have the perfect setting for an enriching and
-        relaxing experience.
+        experience that you&#39;ll find here in Barcelona, attracting millions
+        of travellers year on year, many of which decide to stay. The mild
+        climate, beautiful coastline, small and winding streets, charming
+        architecture that takes you back in time, delicious and affordable food
+        make it a perfect place to host such a conference. Couple that with the
+        luxury of 4.2 km of beach only a short walk from the city centre, warm
+        sunshine most of the year, you have have the perfect setting for an
+        enriching and relaxing experience.
       </p>
 
       <p>
@@ -75,10 +75,10 @@ export const ToBarcelona: FC<React.PropsWithChildren<unknown>> = () => {
       <h3>Platja de la Barceloneta</h3>
       <p>
         This beach is inextricably linked to the fishing quarter of the same
-        name, Barceloneta, Barcelona's classic neighbourhood by the sea, where
-        the people of Barcelona love to come and eat fish and seafood dishes and
-        "tapas". Within walking distance from the above Barri Gòtic and La
-        Rambla street (across the marina).
+        name, Barceloneta, Barcelona&#39;s classic neighbourhood by the sea,
+        where the people of Barcelona love to come and eat fish and seafood
+        dishes and &#34;tapas&#34;. Within walking distance from the above Barri
+        Gòtic and La Rambla street (across the marina).
       </p>
     </StyledSection>
   );

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import { styled } from "styled-components";
 import { BIG_BREAKPOINT, TABLET_BREAKPOINT } from "../../constants/BreakPoints";
 import { Color } from "../colors";
 
@@ -116,13 +116,13 @@ export const OfferLink = styled.a`
   font-weight: bold;
 `;
 export const Companies = styled.div`
-   {
-    padding: 1.5rem;
-    position: sticky;
-    top: 64px;
-    text-align: center;
-    background-color: ${Color.WHITE};
-  }
+{
+  padding: 1.5rem;
+  position: sticky;
+  top: 64px;
+  text-align: center;
+  background-color: ${Color.WHITE};
+}
 
   @media (max-width: ${BIG_BREAKPOINT}px) {
     background-color: ${Color.YELLOW};

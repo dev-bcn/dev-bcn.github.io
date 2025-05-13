@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router";
 
 import { Color } from "../../styles/colors";
-import styled from "styled-components";
+import { styled } from "styled-components";
 
 const StyledBreadcrumbsWrapper = styled.div`
   display: flex;
@@ -32,7 +32,7 @@ const StyledLink = styled(Link)`
 `;
 
 const getLinkData = (page: string) => {
-  const links: any = {
+  const links: Record<string, { name: string; urlParam: string }> = {
     codeOfConduct: { name: "Code Of Conduct", urlParam: "codeOfConduct" },
     schedule: { name: "Schedule", urlParam: "schedule" },
     meetingDetail: { name: "Meetings", urlParam: "schedule" },
@@ -53,7 +53,7 @@ const getLinkData = (page: string) => {
   if (!returnValue) {
     const tempName = page.split("-");
 
-    let talkOrMeetingName = tempName.join(" ");
+    const talkOrMeetingName = tempName.join(" ");
 
     returnValue = { name: talkOrMeetingName, urlParam: page };
   }

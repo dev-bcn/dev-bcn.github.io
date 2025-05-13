@@ -1,5 +1,5 @@
 import { FC } from "react";
-import styled from "styled-components";
+import { styled } from "styled-components";
 import { Color } from "../../styles/colors";
 import { motion } from "framer-motion";
 import LocationIcon from "../../assets/images/LocationIcon.svg";
@@ -8,8 +8,7 @@ import {
   StyledFaqText,
   StyledFaqTitle,
 } from "../../views/Home/components/Faqs/Faqs.style";
-import {Offer} from "../../types/jobOffers";
-
+import { Offer } from "../../types/jobOffers";
 
 export type IJobsCardProps = {
   offer: Offer;

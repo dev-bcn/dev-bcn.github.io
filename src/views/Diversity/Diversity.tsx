@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { Color } from "../../styles/colors";
 import data from "../../data/2024.json";
-import styled from "styled-components";
+import { styled } from "styled-components";
 import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
 import { Link } from "react-router";
 import {
@@ -12,22 +12,22 @@ import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
 
 const StyledSection = styled.section`
 {
-    padding-top: 48px;
+  padding-top: 48px;
 }
 
-    .top {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 50px));
-        height: 51px;
-        background-color: ${Color.DARK_BLUE};
-        border-top: 1px solid ${Color.DARK_BLUE};
-    }
+  .top {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 50px));
+    height: 51px;
+    background-color: ${Color.DARK_BLUE};
+    border-top: 1px solid ${Color.DARK_BLUE};
+  }
 
-    .bottom {
-        clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 100%);
-        margin-top: -50px;
-        height: 50px;
-        background-color: ${Color.WHITE};
-    }
+  .bottom {
+    clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 100%);
+    margin-top: -50px;
+    height: 50px;
+    background-color: ${Color.WHITE};
+  }
 `;
 
 const StyledWave = styled.section`
@@ -38,14 +38,14 @@ const StyledWave = styled.section`
 
 const StyledLogo = styled.img`
 {
-    max-width: 30vw;
-    flex: 2 1 auto;
-    padding-bottom: 50px;
+  max-width: 30vw;
+  flex: 2 1 auto;
+  padding-bottom: 50px;
 }
-    @media only screen and (max-width: ${BIG_BREAKPOINT}px) {
-        padding-bottom: 20px;
-        max-width: 65vw;
-    }
+  @media only screen and (max-width: ${BIG_BREAKPOINT}px) {
+    padding-bottom: 20px;
+    max-width: 65vw;
+  }
 `;
 
 const Heading = styled.h1`
@@ -180,8 +180,8 @@ const Diversity: FC<React.PropsWithChildren<unknown>> = () => {
               </div>
               <div className="paragraph">
                 <p>
-                  All applications' information will be kept confidential and
-                  used exclusively for this campaign.
+                  All applications&#39; information will be kept confidential
+                  and used exclusively for this campaign.
                 </p>
               </div>
             </div>

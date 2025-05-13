@@ -2,7 +2,7 @@ import { FC } from "react";
 import { Link } from "react-router";
 import LessThanBlueWhiteIcon from "../../assets/images/LessThanBlueIcon.svg";
 import { motion } from "framer-motion";
-import styled from "styled-components";
+import { styled } from "styled-components";
 import SpeakerSwiper from "./SpeakerSwiper";
 import { Color } from "../../styles/colors";
 import { TABLET_BREAKPOINT } from "../../constants/BreakPoints";

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import { styled } from "styled-components";
 import { Color } from "../../styles/colors";
 import { BIG_BREAKPOINT, TABLET_BREAKPOINT } from "../../constants/BreakPoints";
 import { Link } from "react-router";
@@ -88,10 +88,10 @@ export const StyledTalkTitle = styled(Link)`
 `;
 export const StyledTrackInfo = styled.h2`
 {
-    color: ${Color.DARK_BLUE};
-    margin-top: 50px;
-    margin-left: 40px;
-    margin-bottom: 20px;
+  color: ${Color.DARK_BLUE};
+  margin-top: 50px;
+  margin-left: 40px;
+  margin-bottom: 20px;
 }
 `;
 export const StyledSessionSection = styled.section`
@@ -120,12 +120,12 @@ export const StyledTalkSpeaker = styled.p`
 
 export const StyledSelectTrack = styled.select`
 {
-    padding: 5px;
-    color: ${Color.YELLOW};
-    background-color: ${Color.LIGHT_BLUE};
-    font-family: "Square 721 Regular", sans-serif;
-    border: none;
-    font-size: 1.2em;
-    max-width: 15%;
+  padding: 5px;
+  color: ${Color.YELLOW};
+  background-color: ${Color.LIGHT_BLUE};
+  font-family: "Square 721 Regular", sans-serif;
+  border: none;
+  font-size: 1.2em;
+  max-width: 15%;
 }
 `;

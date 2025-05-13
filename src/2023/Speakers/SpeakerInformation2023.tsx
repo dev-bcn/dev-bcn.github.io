@@ -1,5 +1,5 @@
 import { FC } from "react";
-import styled from "styled-components";
+import { styled } from "styled-components";
 import { Color } from "../../styles/colors";
 import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
 
@@ -9,27 +9,27 @@ const Heading = styled.h1`
 `;
 
 const Paragraph = styled.p`
-   {
-    font-family: "Square 721 Regular", sans-serif;
-    margin: 1rem;
-  }
+{
+  font-family: "Square 721 Regular", sans-serif;
+  margin: 1rem;
+}
 `;
 
 const List = styled.ul`
-   {
-    padding: 0.2rem 0.5rem;
-    margin: 0.5rem 1rem;
-  }
+{
+  padding: 0.2rem 0.5rem;
+  margin: 0.5rem 1rem;
+}
 `;
 
 const Image = styled.img`
-   {
-    width: 20vw;
-    border: 1px solid ${Color.DARK_BLUE};
-    margin: 1.5rem;
-    padding: 3px;
-    border-radius: 1rem;
-  }
+{
+  width: 20vw;
+  border: 1px solid ${Color.DARK_BLUE};
+  margin: 1.5rem;
+  padding: 3px;
+  border-radius: 1rem;
+}
   @media (max-width: ${BIG_BREAKPOINT}px) {
     width: 70vw;
     border-radius: 0.5rem;
@@ -54,8 +54,8 @@ const SpeakerInformation2023: FC<React.PropsWithChildren<unknown>> = () => {
       >
         <Heading>Speakers activities plan</Heading>
         <Paragraph>
-          Here's the detailed information on the speakers activities for Sunday,
-          July 1st, 2023.
+          Here&#39;s the detailed information on the speakers activities for
+          Sunday, July 1st, 2023.
         </Paragraph>
         <div style={{ textAlign: "center" }}>
           <Image src="/images/activities/bus.jpg" alt="drinks" />

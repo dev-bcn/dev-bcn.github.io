@@ -16,7 +16,7 @@ import LinkedinIcon from "../../components/Icons/Linkedin";
 
 import conferenceData from "../../data/2023.json";
 import { CfpTrackProps, data } from "./CfpData";
-import styled from "styled-components";
+import { styled } from "styled-components";
 import {
   StyledAboutImage,
   StyledSocialIconsWrapper,

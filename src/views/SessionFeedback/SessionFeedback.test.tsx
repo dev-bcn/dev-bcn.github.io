@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import SessionFeedback from "./SessionFeedback";
 
 // Mock sessionData
-jest.mock("./sessionData", () => ({
+vi.mock("./sessionData", () => ({
   sessionData: [
     {
       id: "1",

@@ -1,12 +1,9 @@
 import Countdown from "react-countdown";
 import { FC } from "react";
-import data from "../../../../data/2023.json";
-import LessThanIcon from "../../../../assets/images/MoreThanBlueWhiteIcon.svg";
-import SectionWrapper from "../../../../components/SectionWrapper/SectionWrapper";
-import {
-  BIG_BREAKPOINT,
-  LARGE_BREAKPOINT,
-} from "../../../../constants/BreakPoints";
+import data from "@data/2023.json";
+import LessThanIcon from "@assets/images/MoreThanBlueWhiteIcon.svg";
+import SectionWrapper from "@components/SectionWrapper/SectionWrapper";
+import { BIG_BREAKPOINT, LARGE_BREAKPOINT } from "@constants/BreakPoints";
 import { useWindowSize } from "react-use";
 import {
   StyledBlueSlash,
@@ -20,14 +17,14 @@ import {
   StyledTopSlash,
   StyleHomeContainer,
 } from "./Style.Home";
-import logo from "../../../../assets/images/logo.png";
+import logo from "@assets/images/logo.png";
 import ActionButtons from "../ActionButtons/ActionButtons";
-import styled from "styled-components";
-import { Color } from "../../../../styles/colors";
+import { styled } from "styled-components";
+import { Color } from "@styles/colors";
 import InfoButtons from "../InfoButtons/InfoButtons";
 import MultimediaInfoButtons from "../MultimediaInfoButtons/MultimediaInfoButtons";
-import CountDownCompleted from "../../../../views/Home/components/Home/components/CountDownCompleted";
-import TimeCountDown from "../../../../views/Home/components/Home/components/TimeCountdown";
+import CountDownCompleted from "@views/Home/components/Home/components/CountDownCompleted";
+import TimeCountDown from "@views/Home/components/Home/components/TimeCountdown";
 
 const StyledLogo = styled.img`
   margin: 20px;

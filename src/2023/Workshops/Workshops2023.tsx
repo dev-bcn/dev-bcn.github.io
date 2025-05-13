@@ -13,27 +13,27 @@ import TitleSection from "../../components/SectionTitle/TitleSection";
 import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
 import { useFetchTalks } from "../../hooks/useFetchTalks";
 import conferenceData from "../../data/2023.json";
-import styled from "styled-components";
+import { styled } from "styled-components";
 import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
 import { TalkCard } from "../../components/Talk/TalkCard";
 import { useSentryErrorReport } from "../../hooks/useSentryErrorReport";
 
 const StyledSection = styled.section`
 {
-    display: flex;
-    padding: 0 10rem;
-    flex-wrap: wrap;
+  display: flex;
+  padding: 0 10rem;
+  flex-wrap: wrap;
 }
 
-    @media (max-width: ${BIG_BREAKPOINT}px) {
-        padding: 1rem;
-        flex-direction: column;
-    }
+  @media (max-width: ${BIG_BREAKPOINT}px) {
+    padding: 1rem;
+    flex-direction: column;
+  }
 
-    & > div {
-        margin: 1rem;
-        min-width: 14%;
-    }
+  & > div {
+    margin: 1rem;
+    min-width: 14%;
+  }
 `;
 const Workshops2023: FC<React.PropsWithChildren<unknown>> = () => {
   const { isLoading, data, error } = useFetchTalks("2023");

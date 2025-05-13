@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import {Color} from "../../styles/colors";
-import {BIG_BREAKPOINT} from "../../constants/BreakPoints";
+import { styled } from "styled-components";
+import { Color } from "../../styles/colors";
+import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
 
 export const StyledFooterAbsoluteContainer = styled.div`
   position: absolute;
@@ -64,7 +64,7 @@ export const StyledFlexCol = styled.div`
 `;
 
 export const StyledFlexRow = styled.div.withConfig({
-    shouldForwardProp: (prop) => !['justify'].includes(prop),
+  shouldForwardProp: (prop) => !["justify"].includes(prop),
 })<{ justify?: string }>`
   width: 100%;
   display: flex;

@@ -1,5 +1,3 @@
-import { Company } from "../../types/JobOffers";
+import { Company } from "../../types/jobOffers";
 
-export const jobOffers: Company[] = [
-
-];
+export const jobOffers: Company[] = [];

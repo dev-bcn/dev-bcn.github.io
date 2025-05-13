@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { Autoplay, Parallax } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import styled from "styled-components";
+import { styled } from "styled-components";
 import { Color } from "../../styles/colors";
 import "swiper/swiper-bundle.min.css";
 import "../../components/Swiper/SpeakersCarousel.scss";

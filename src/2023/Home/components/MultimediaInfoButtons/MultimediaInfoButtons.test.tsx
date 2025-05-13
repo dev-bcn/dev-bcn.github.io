@@ -1,14 +1,15 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import MultimediaInfoButtons from "./MultimediaInfoButtons";
 import { gaEventTracker } from "../../../../components/analytics/Analytics";
+import { vi } from "vitest";
 
-jest.mock("../../../../components/analytics/Analytics", () => ({
-  gaEventTracker: jest.fn(),
+vi.mock("../../../../components/analytics/Analytics", () => ({
+  gaEventTracker: vi.fn(),
 }));
 
 describe("ActionButtons", () => {
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   test("renders two action buttons", () => {

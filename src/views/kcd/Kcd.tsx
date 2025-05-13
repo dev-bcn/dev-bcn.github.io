@@ -1,22 +1,22 @@
-import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import { Color } from "../../styles/colors";
+import SectionWrapper from "@components/SectionWrapper/SectionWrapper";
+import { Color } from "@styles/colors";
 import {
   StyledLessIcon,
   StyledMoreIcon,
   StyledSpeakersSection,
 } from "../Speakers/Speakers.style";
-import TitleSection from "../../components/SectionTitle/TitleSection";
+import TitleSection from "@components/SectionTitle/TitleSection";
 import { StyledSectionsSeparator } from "../CodeOfConduct/CodeOfConduct";
-import styled, { keyframes } from "styled-components";
-import data from "../../data/2024.json";
-import { MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
-import LessThanBlue from "../../assets/images/MoreThanBlueWhiteIcon.svg";
-import MoreThanBlue from "../../assets/images/LessThanBlueWhiteIcon.svg";
+import { keyframes, styled } from "styled-components";
+import data from "@data/2024.json";
+import { MOBILE_BREAKPOINT } from "@constants/BreakPoints";
+import LessThanBlue from "@assets/images/MoreThanBlueWhiteIcon.svg";
+import MoreThanBlue from "@assets/images/LessThanBlueWhiteIcon.svg";
 import { useWindowSize } from "react-use";
-import youtube from "../../assets/images/youtube.svg";
-import linkedinIcon from "../../assets/images/linkedinIcon.svg";
-import twitterIcon from "../../assets/images/twitterIcon.svg";
-import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
+import youtube from "@assets/images/youtube.svg";
+import linkedinIcon from "@assets/images/linkedinIcon.svg";
+import twitterIcon from "@assets/images/twitterIcon.svg";
+import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
 
 const StyledParagraph = styled.p`
   color: white;
@@ -38,17 +38,17 @@ const StyledWaveContainer = styled.div`
 `;
 
 const revealAnimation = keyframes`
-    from {
-        opacity: 0;
-        translate: 0 100px;
-    }
-    50% {
-        opacity: .5;
-    }
-    to {
-        opacity: 1;
-        translate: 0 0;
-    }`;
+  from {
+    opacity: 0;
+    translate: 0 100px;
+  }
+  50% {
+    opacity: .5;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }`;
 
 const StyledImage = styled.img`
   aspect-ratio: 120/49;

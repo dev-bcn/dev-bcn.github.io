@@ -3,7 +3,7 @@ import React, { FC } from "react";
 import Faqs from "./components/Faqs/Faqs";
 import Home from "./components/Home/Home";
 import Sponsors from "./components/Sponsors/Sponsors";
-import styled from "styled-components";
+import { styled } from "styled-components";
 import data from "../../data/2023.json";
 import { useLocation } from "react-router";
 import SpeakersCarousel from "../../components/Swiper/SpeakersCarousel";

@@ -20,7 +20,7 @@ const FaqCard: FC<React.PropsWithChildren<FaqCardType>> = ({ faq, index }) => {
         <Suspense fallback={<StyledLoadingImage src={Logo} />}>
           <StyledFaqImage
             alt={`DevBcn — image ${index}`}
-            src={require(`../../../../../assets/images/FaqsImage${index}.jpg`)}
+            src={`/images/FaqsImage${index}.jpg`}
           />
         </Suspense>
       </StyledFaqImageContainer>

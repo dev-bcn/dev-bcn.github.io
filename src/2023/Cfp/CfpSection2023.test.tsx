@@ -1,3 +1,10 @@
+import { vi } from "vitest";
+
+// Mock useWindowSize to control the window size in tests
+vi.mock("react-use", () => ({
+  useWindowSize: vi.fn(),
+}));
+
 import React from "react";
 import { render, screen, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
@@ -6,17 +13,11 @@ import { useWindowSize } from "react-use";
 import conferenceData from "../../data/2023.json";
 import { data } from "./CfpData";
 
-// Mock useWindowSize to control the window size in tests
-jest.mock("react-use", () => ({
-  ...jest.requireActual("react-use"),
-  useWindowSize: jest.fn(),
-}));
-
 describe("CfpSection2023", () => {
   beforeEach(() => {
     // Reset the mock before each test
-    (useWindowSize as jest.Mock).mockReset();
-    (useWindowSize as jest.Mock).mockReturnValue({ width: 1024 }); // Default width
+    useWindowSize.mockReset();
+    useWindowSize.mockReturnValue({ width: 1024 }); // Default width
   });
 
   it("should render without crashing", () => {

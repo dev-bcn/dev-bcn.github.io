@@ -1,7 +1,7 @@
 import { BIG_BREAKPOINT, LARGE_BREAKPOINT } from "../../constants/BreakPoints";
 import { Color } from "../../styles/colors";
 import { FC } from "react";
-import styled from "styled-components";
+import { styled } from "styled-components";
 
 interface ISectionTitleProps {
   title: string;
@@ -51,7 +51,11 @@ const StyledSubTitle = styled.p`
   }
 `;
 
-const TitleSection: FC<React.PropsWithChildren<ISectionTitleProps>> = ({ title, subtitle, color }) => {
+const TitleSection: FC<React.PropsWithChildren<ISectionTitleProps>> = ({
+  title,
+  subtitle,
+  color,
+}) => {
   return (
     <StyledTitleContainer>
       <StyledTitle color={color}>/ {title}</StyledTitle>

@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { motion } from "framer-motion";
-import styled from "styled-components";
+import { styled } from "styled-components";
 import { MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
 
 export type TLateralHashWithText = {
@@ -32,10 +32,9 @@ const StyledSlashText = styled.h1<{ color: string }>`
   }
 `;
 
-export const RightHashWithText: FC<React.PropsWithChildren<TLateralHashWithText>> = ({
-  color,
-  text,
-}) => {
+export const RightHashWithText: FC<
+  React.PropsWithChildren<TLateralHashWithText>
+> = ({ color, text }) => {
   return (
     <StyledRightSlashWrapper
       initial={{ x: "100%" }}

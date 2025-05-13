@@ -31,7 +31,7 @@ import { Link } from "react-router";
 import { ROUTE_SPEAKER_DETAIL, ROUTE_TALKS } from "../../constants/routes";
 import conferenceData from "../../data/2025.json";
 import { Tag } from "../../components/Tag/Tag";
-import styled from "styled-components";
+import { styled } from "styled-components";
 import { AddToCalendarButton } from "add-to-calendar-button-react";
 import { IMeetingDetailProps, MyType } from "../../types/sessions";
 import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";

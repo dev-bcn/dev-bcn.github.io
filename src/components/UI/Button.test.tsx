@@ -1,15 +1,16 @@
 import { render, screen } from "@testing-library/react";
 import Button from "./Button";
+import { vi } from "vitest";
 
-jest.mock("../../components/analytics/Analytics", () => ({
-  gaEventTracker: jest.fn(),
+vi.mock("../../components/analytics/Analytics", () => ({
+  gaEventTracker: vi.fn(),
 }));
 
 describe("Button", () => {
-  const mockOnClick = jest.fn();
+  const mockOnClick = vi.fn();
 
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   test("renders button with text", () => {

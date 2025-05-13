@@ -12,14 +12,15 @@ import "primereact/resources/primereact.min.css";
 import "primereact/resources/themes/lara-light-blue/theme.css";
 import { InputText } from "primereact/inputtext";
 import { FilterMatchMode } from "primereact/api";
-import { Color } from "../../styles/colors";
+import { Color } from "@styles/colors";
 import { Link } from "react-router";
-import { ROUTE_TALK_DETAIL } from "../../constants/routes";
-import data from "../../data/2024.json";
-import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
+import { ROUTE_TALK_DETAIL } from "@constants/routes";
+import data from "@data/2024.json";
+import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
 
 const SessionFeedback: FC<React.PropsWithChildren<unknown>> = () => {
   const bodyTemplate = React.useCallback(
+    // eslint-disable-next-line react/display-name
     (field: keyof MeasurableSessionRating) => (session: SessionRating) => (
       <Rating value={session[field]} readOnly cancel={false} />
     ),
@@ -45,7 +46,7 @@ const SessionFeedback: FC<React.PropsWithChildren<unknown>> = () => {
 
   const onGlobalFilterChange = (e: { target: { value: any } }) => {
     const value = e.target.value;
-    let _filters = { ...filters };
+    const _filters = { ...filters };
 
     _filters["global"].value = value;
 

@@ -1,22 +1,22 @@
 import React, { FC } from "react";
-import TitleSection from "../../components/SectionTitle/TitleSection";
-import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import { MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
-import LessThanBlueWhiteIcon from "../../assets/images/LessThanBlueWhiteIcon.svg";
-import MoreThanBlueWhiteIcon from "../../assets/images/MoreThanBlueWhiteIcon.svg";
+import TitleSection from "@components/SectionTitle/TitleSection";
+import SectionWrapper from "@components/SectionWrapper/SectionWrapper";
+import { MOBILE_BREAKPOINT } from "@constants/BreakPoints";
+import LessThanBlueWhiteIcon from "@assets/images/LessThanBlueWhiteIcon.svg";
+import MoreThanBlueWhiteIcon from "@assets/images/MoreThanBlueWhiteIcon.svg";
 import { useWindowSize } from "react-use";
 import { aboutData } from "./AboutData";
 import { AboutCard } from "./components/AboutCard";
-import styled from "styled-components";
-import { Color } from "../../styles/colors";
+import { styled } from "styled-components";
+import { Color } from "@styles/colors";
 import {
   StyledLessIcon,
   StyledMoreIcon,
   StyledSpeakersSection,
 } from "../Speakers/Speakers.style";
 import { StyledMarginBottom } from "../Talks/Talks.style";
-import data from "../../data/2024.json";
-import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
+import data from "@data/2024.json";
+import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
 
 const StyledUsersWrapper = styled.div`
   padding-top: 5rem;
