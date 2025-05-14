@@ -15,10 +15,10 @@ import {
   getQueryClientWrapper,
   SESSION_URLS,
 } from "../utils/testing/testUtils";
-import { vi } from "vitest";
+import { type MockedFunction, vi } from "vitest";
 
 vi.mock("axios");
-const mockedAxios = axios as jest.Mocked<typeof axios>;
+const mockedAxios = axios as unknown as MockedFunction<typeof axios>;
 
 describe("useFetchTalks", () => {
   beforeEach(() => {

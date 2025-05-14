@@ -1,11 +1,11 @@
-import { styled, keyframes } from "styled-components";
-import { Color } from "../../styles/colors";
+import { keyframes, styled } from "styled-components";
+import { Color } from "@styles/colors";
 import {
   BIG_BREAKPOINT,
   LARGE_BREAKPOINT,
   TABLET_BREAKPOINT,
-} from "../../constants/BreakPoints";
-import { motion } from "framer-motion";
+} from "@constants/BreakPoints";
+import { motion } from "motion/react";
 
 const revealAnimation = keyframes`
   from {

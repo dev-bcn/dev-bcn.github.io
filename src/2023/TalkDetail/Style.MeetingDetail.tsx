@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
-import { BIG_BREAKPOINT, LARGE_BREAKPOINT } from "../../constants/BreakPoints";
-import { motion } from "framer-motion";
-import { Color } from "../../styles/colors";
+import { BIG_BREAKPOINT } from "@constants/BreakPoints";
+import { motion } from "motion/react";
+import { Color } from "@styles/colors";
 
 export const StyledContainer = styled.div`
   padding-top: 2rem;
@@ -51,10 +51,8 @@ export const StyledDescription = styled.p`
 `;
 
 export const StyledExtraInfo = styled.p`
-{
   margin-top: 10px;
   color: ${Color.LIGHT_BLUE};
-}
 
   & strong {
     color: ${Color.DARK_BLUE};
@@ -134,18 +132,6 @@ export const StyledDetailsContainer = styled.div`
     padding: 3rem 0 4rem 3rem;
   }
 `;
-
-export const StyledImageContainer = styled.div`
-  flex-direction: column;
-  width: 25%;
-  padding: 0 1rem;
-  display: none;
-
-  @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    display: flex;
-  }
-`;
-
 export const StyledRightContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -154,10 +140,8 @@ export const StyledRightContainer = styled.div`
 `;
 
 export const StyledNameContainer = styled.div`
-{
   width: 50%;
   text-align: center;
-}
 
   & a {
     text-decoration: none;
@@ -178,94 +162,4 @@ export const StyledName = styled.h3`
   @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
     margin-bottom: 0;
   }
-`;
-
-export const StyledSpeakerImgBorder = styled.div`
-  width: 100%;
-  height: 300px;
-  margin-bottom: 0.75rem;
-  padding: 0.3rem;
-  border: 1px solid ${Color.YELLOW};
-
-  @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    padding: 0.2rem;
-    height: 200px;
-  }
-
-  @media only screen and (min-width: ${LARGE_BREAKPOINT}px) {
-    padding: 0.2rem;
-    height: 275px;
-  }
-`;
-
-export const StyledSpeakerImg = styled.div<{ photo: string }>`
-  width: 100%;
-  height: 100%;
-  background-image: url(${({ photo }) => photo});
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-`;
-
-export const StyledSlashes = styled.img`
-  width: 80%;
-  margin-bottom: 0.75rem;
-
-  @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    margin-bottom: 0;
-    width: 75%;
-  }
-`;
-
-export const StyledSpeakerTitle = styled.h4`
-  font-size: 1.15rem;
-  margin-bottom: 1rem;
-
-  @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    text-align: left;
-  }
-`;
-
-export const StyledSocialMediaContainer = styled.div`
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  margin-bottom: 0.75rem;
-`;
-
-export const StyledSpeakerDescription = styled.p`
-  text-align: justify;
-
-  @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    padding-right: 4rem;
-  }
-`;
-
-export const StyledLink = styled.a`
-  text-decoration: none;
-  color: ${Color.WHITE};
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-`;
-
-export const StyledSocialMediaIcon = styled.img<{ noMargin?: boolean }>`
-  height: 1.5rem;
-  margin-right: ${({ noMargin }) => (noMargin ? "0" : "0.75rem")};
-
-  @media only screen and (min-width: ${BIG_BREAKPOINT}px) {
-    margin-right: ${({ noMargin }) => (noMargin ? "0" : "0.5rem")};
-  }
-`;
-
-export const StyledAbsoluteSlashes = styled.div`
-  position: absolute;
-  display: flex;
-  align-items: center;
-  color: ${Color.DARK_BLUE};
-  font-size: 2rem;
-  height: 2rem;
-  font-weight: 900;
-  bottom: -0.65rem;
-  left: 0;
 `;

@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Link } from "react-router";
-import LessThanBlueWhiteIcon from "../../assets/images/LessThanBlueIcon.svg";
-import { motion } from "framer-motion";
+import LessThanBlueWhiteIcon from "@assets/images/LessThanBlueIcon.svg";
+import { motion } from "motion/react";
 import { styled } from "styled-components";
 import SpeakerSwiper from "./SpeakerSwiper";
 import { Color } from "@styles/colors";

@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import { BIG_BREAKPOINT } from "@constants/BreakPoints";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 export const StyledSponsorsContainer = styled.div`
   position: relative;
