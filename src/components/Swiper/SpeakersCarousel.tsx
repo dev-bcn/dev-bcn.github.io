@@ -73,10 +73,7 @@ const SpeakersCarousel: FC<React.PropsWithChildren<Props>> = ({
         <StyledTitleWrapper>
           <TitleSection
             title="SPEAKERS"
-            subtitle="Are you a technology company? Interested in meeting
-        enthusiasts and geek people for technology? This is a
-        priceless opportunity to participate in the first Barcelona Developers Conference in Spain, to pr mote your company
-        and to support technological communities."
+            subtitle="Get inspired by industry leaders, innovative thinkers, and expert developers who will share their knowledge and experiences at Barcelona Developers Conference. Our diverse lineup of speakers brings cutting-edge insights and practical expertise across multiple technology domains."
             color={Color.WHITE}
           />
         </StyledTitleWrapper>
