@@ -177,7 +177,7 @@ describe("fetch speaker hook and speaker adapter", () => {
       headers: { Accept: "application/json; charset=utf-8" },
     });
     expect(mockedSentry.captureException).toHaveBeenCalledWith(networkError);
-    expect(result.current.data).toEqual({});
+    expect(result.current.data).toEqual([]);
   });
 
   it("should handle CORS errors with proper headers", async () => {
@@ -198,7 +198,7 @@ describe("fetch speaker hook and speaker adapter", () => {
       headers: { Accept: "application/json; charset=utf-8" },
     });
     expect(mockedSentry.captureException).toHaveBeenCalledWith(corsError);
-    expect(result.current.data).toEqual({});
+    expect(result.current.data).toEqual([]);
   });
 
   it("should handle empty responses", async () => {

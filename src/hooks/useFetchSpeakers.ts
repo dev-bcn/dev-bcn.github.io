@@ -45,7 +45,7 @@ export const useFetchSpeakers = (
       return speakerAdapter(returnData);
     } catch (e) {
       Sentry.captureException(e);
-      return {};
+      return [];
     }
   });
 };
