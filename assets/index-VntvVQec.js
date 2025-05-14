@@ -872,10 +872,7 @@ Error:`,i)}}function $te(){return yte(e=>{Zd("cls",{metric:e}),iR=e},{reportAllC
   font-size: 2rem;
   overflow-y: hidden;
   height: 100%;
-`,bS=({speakersLink:e,sessionizeUrl:t,isEnabled:n})=>d.jsx(Yt,{color:P.LIGHT_BLUE,children:d.jsxs(Xre,{children:[d.jsx(Qre,{children:d.jsx(hr,{title:"SPEAKERS",subtitle:`Are you a technology company? Interested in meeting
-        enthusiasts and geek people for technology? This is a
-        priceless opportunity to participate in the first Barcelona Developers Conference in Spain, to pr mote your company
-        and to support technological communities.`,color:P.WHITE})}),d.jsx(Zre,{url:t,isEnabled:n}),d.jsx(Jre,{children:d.jsxs(On,{to:e,className:"link--text",children:[d.jsx(eie,{children:" View all speakers"}),d.jsx(tie,{src:lo})]})}),d.jsx(nie,{initial:{x:"-100%"},animate:{x:0},transition:{duration:6},children:d.jsxs(rie,{children:["/ / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /"," "]})})]})}),mr=(e,t)=>{he.useEffect(()=>{document.title=`${e} — DevBcn - Barcelona Developers Conference — ${t}`},[e,t])},iie=I.div`
+`,bS=({speakersLink:e,sessionizeUrl:t,isEnabled:n})=>d.jsx(Yt,{color:P.LIGHT_BLUE,children:d.jsxs(Xre,{children:[d.jsx(Qre,{children:d.jsx(hr,{title:"SPEAKERS",subtitle:"Get inspired by industry leaders, innovative thinkers, and expert developers who will share their knowledge and experiences at Barcelona Developers Conference. Our diverse lineup of speakers brings cutting-edge insights and practical expertise across multiple technology domains.",color:P.WHITE})}),d.jsx(Zre,{url:t,isEnabled:n}),d.jsx(Jre,{children:d.jsxs(On,{to:e,className:"link--text",children:[d.jsx(eie,{children:" View all speakers"}),d.jsx(tie,{src:lo})]})}),d.jsx(nie,{initial:{x:"-100%"},animate:{x:0},transition:{duration:6},children:d.jsxs(rie,{children:["/ / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /"," "]})})]})}),mr=(e,t)=>{he.useEffect(()=>{document.title=`${e} — DevBcn - Barcelona Developers Conference — ${t}`},[e,t])},iie=I.div`
   padding-bottom: 10rem;
 
   @media only screen and (max-width: ${ne}px) {
