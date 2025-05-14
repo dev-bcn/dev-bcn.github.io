@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
-import { BIG_BREAKPOINT, LARGE_BREAKPOINT } from "../../constants/BreakPoints";
-import { motion } from "framer-motion";
-import { Color } from "../../styles/colors";
+import { BIG_BREAKPOINT, LARGE_BREAKPOINT } from "@constants/BreakPoints";
+import { motion } from "motion/react";
+import { Color } from "@styles/colors";
 
 export const StyledContainer = styled.div`
   padding-top: 2rem;

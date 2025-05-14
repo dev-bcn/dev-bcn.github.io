@@ -1,6 +1,7 @@
 import { renderHook, waitFor } from "@testing-library/react";
 import { useFetchSpeakers } from "./useFetchSpeakers";
 import axios from "axios";
+import * as Sentry from "@sentry/react";
 import { speakerAdapter } from "../services/speakerAdapter";
 import { IResponse } from "../types/speakers";
 import {
@@ -9,9 +10,12 @@ import {
   getQueryClientWrapper,
   SPEAKER_URLS,
 } from "../utils/testing/testUtils";
+import { vi } from "vitest";
 
 vi.mock("axios");
+vi.mock("@sentry/react");
 const mockedAxios = axios as jest.Mocked<typeof axios>;
+const mockedSentry = vi.mocked(Sentry);
 
 // Create mock speakers
 const mockSpeaker1 = createMockSpeaker();
@@ -40,9 +44,6 @@ const mockSpeaker2 = createMockSpeaker({
 const payload = createMockAxiosResponse([mockSpeaker1, mockSpeaker2]);
 
 describe("fetch speaker hook and speaker adapter", () => {
-  beforeAll(() => {
-    vi.mock("axios");
-  });
   beforeEach(() => {
     vi.clearAllMocks();
   });
@@ -56,7 +57,10 @@ describe("fetch speaker hook and speaker adapter", () => {
     });
     await waitFor(() => result.current.isSuccess, {});
     await waitFor(() => !result.current.isLoading, {});
-    expect(mockedAxios.get).toHaveBeenCalledWith(SPEAKER_URLS.DEFAULT);
+
+    expect(mockedAxios.get).toHaveBeenCalledWith(SPEAKER_URLS.DEFAULT, {
+      headers: { Accept: "application/json; charset=utf-8" },
+    });
     expect(result.current.isLoading).toEqual(false);
     expect(result.current.error).toEqual(null);
     expect(result.current.data).toEqual(speakerAdapter(payload.data));
@@ -75,7 +79,9 @@ describe("fetch speaker hook and speaker adapter", () => {
     await waitFor(() => result.current.isSuccess);
     await waitFor(() => !result.current.isLoading, {});
     //then
-    expect(mockedAxios.get).toHaveBeenCalledWith(SPEAKER_URLS.DEFAULT);
+    expect(mockedAxios.get).toHaveBeenCalledWith(SPEAKER_URLS.DEFAULT, {
+      headers: { Accept: "application/json; charset=utf-8" },
+    });
     expect(result.current.data).toEqual(speakerAdapter(expectedPayload));
   });
 
@@ -88,7 +94,10 @@ describe("fetch speaker hook and speaker adapter", () => {
     });
     await waitFor(() => result.current.isSuccess, {});
     await waitFor(() => !result.current.isLoading, {});
-    expect(mockedAxios.get).toHaveBeenCalledWith(SPEAKER_URLS["2023"]);
+
+    expect(mockedAxios.get).toHaveBeenCalledWith(SPEAKER_URLS["2023"], {
+      headers: { Accept: "application/json; charset=utf-8" },
+    });
     expect(result.current.isLoading).toEqual(false);
     expect(result.current.error).toEqual(null);
     expect(result.current.data).toEqual(speakerAdapter(payload.data));
@@ -103,7 +112,10 @@ describe("fetch speaker hook and speaker adapter", () => {
     });
     await waitFor(() => result.current.isSuccess, {});
     await waitFor(() => !result.current.isLoading, {});
-    expect(mockedAxios.get).toHaveBeenCalledWith(SPEAKER_URLS["2024"]);
+
+    expect(mockedAxios.get).toHaveBeenCalledWith(SPEAKER_URLS["2024"], {
+      headers: { Accept: "application/json; charset=utf-8" },
+    });
     expect(result.current.isLoading).toEqual(false);
     expect(result.current.error).toEqual(null);
     expect(result.current.data).toEqual(speakerAdapter(payload.data));
@@ -119,7 +131,10 @@ describe("fetch speaker hook and speaker adapter", () => {
     });
     await waitFor(() => result.current.isSuccess, {});
     await waitFor(() => !result.current.isLoading, {});
-    expect(mockedAxios.get).toHaveBeenCalledWith(customUrl);
+
+    expect(mockedAxios.get).toHaveBeenCalledWith(customUrl, {
+      headers: { Accept: "application/json; charset=utf-8" },
+    });
     expect(result.current.isLoading).toEqual(false);
     expect(result.current.error).toEqual(null);
     expect(result.current.data).toEqual(speakerAdapter(payload.data));
@@ -139,7 +154,69 @@ describe("fetch speaker hook and speaker adapter", () => {
     await waitFor(() => result.current.isSuccess);
     await waitFor(() => !result.current.isLoading, {});
     //then
-    expect(mockedAxios.get).toHaveBeenCalledWith(customUrl);
+    expect(mockedAxios.get).toHaveBeenCalledWith(customUrl, {
+      headers: { Accept: "application/json; charset=utf-8" },
+    });
     expect(result.current.data).toEqual(speakerAdapter(expectedPayload));
+  });
+
+  it("should handle network errors and report to Sentry", async () => {
+    // Given
+    const { wrapper } = getQueryClientWrapper();
+    const networkError = new Error("Network Error");
+    mockedAxios.get.mockRejectedValueOnce(networkError);
+
+    // When
+    const { result } = renderHook(() => useFetchSpeakers(), {
+      wrapper,
+    });
+    await waitFor(() => result.current.isSuccess);
+
+    // Then
+    expect(mockedAxios.get).toHaveBeenCalledWith(SPEAKER_URLS.DEFAULT, {
+      headers: { Accept: "application/json; charset=utf-8" },
+    });
+    expect(mockedSentry.captureException).toHaveBeenCalledWith(networkError);
+    expect(result.current.data).toEqual({});
+  });
+
+  it("should handle CORS errors with proper headers", async () => {
+    // Given
+    const { wrapper } = getQueryClientWrapper();
+    const corsError = new Error("Failed to fetch");
+    corsError.name = "TypeError";
+    mockedAxios.get.mockRejectedValueOnce(corsError);
+
+    // When
+    const { result } = renderHook(() => useFetchSpeakers(), {
+      wrapper,
+    });
+    await waitFor(() => result.current.isSuccess);
+
+    // Then
+    expect(mockedAxios.get).toHaveBeenCalledWith(SPEAKER_URLS.DEFAULT, {
+      headers: { Accept: "application/json; charset=utf-8" },
+    });
+    expect(mockedSentry.captureException).toHaveBeenCalledWith(corsError);
+    expect(result.current.data).toEqual({});
+  });
+
+  it("should handle empty responses", async () => {
+    // Given
+    const { wrapper } = getQueryClientWrapper();
+    const emptyPayload = createMockAxiosResponse([]);
+    mockedAxios.get.mockResolvedValueOnce(emptyPayload);
+
+    // When
+    const { result } = renderHook(() => useFetchSpeakers(), {
+      wrapper,
+    });
+    await waitFor(() => result.current.isSuccess);
+
+    // Then
+    expect(mockedAxios.get).toHaveBeenCalledWith(SPEAKER_URLS.DEFAULT, {
+      headers: { Accept: "application/json; charset=utf-8" },
+    });
+    expect(result.current.data).toEqual(speakerAdapter([]));
   });
 });

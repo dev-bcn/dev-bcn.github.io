@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
-import { Color } from "../../../../styles/colors";
-import { motion } from "framer-motion";
-import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
+import { Color } from "@styles/colors";
+import { motion } from "motion/react";
+import { BIG_BREAKPOINT } from "@constants/BreakPoints";
 
 export type FaqCardType = {
   faq: {

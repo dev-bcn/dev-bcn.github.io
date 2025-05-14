@@ -36,7 +36,7 @@ const HomeWrapper: FC<React.PropsWithChildren<unknown>> = () => {
       <Home />
       {conferenceData?.carrousel.enabled && (
         <SpeakersCarousel
-          sessionizeUrl={conferenceData.sessionizeUrl}
+          sessionizeUrl={"default"}
           speakersLink={ROUTE_SPEAKERS}
           isEnabled={conferenceData.carrousel.enabled}
         />

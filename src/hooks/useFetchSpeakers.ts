@@ -1,6 +1,7 @@
 import { useQuery, UseQueryResult } from "react-query";
 import axios from "axios";
 import { speakerAdapter } from "@services/speakerAdapter";
+import * as Sentry from "@sentry/react";
 // @ts-expect-error some weird error when importing types
 import { IResponse, ISpeaker } from "@types/speakers";
 
@@ -14,36 +15,37 @@ export const useFetchSpeakers = (
   yearOrUrl?: string,
   id?: string,
 ): UseQueryResult<ISpeaker[]> => {
-  // Determine if the first parameter is a URL or an ID
   let url = URLS.default;
   let speakerId = id;
 
   if (yearOrUrl) {
-    // If urlOrId starts with http, it's a URL
     if (yearOrUrl.startsWith("http")) {
       url = yearOrUrl;
-    }
-    // If urlOrId is a year key in URLS, use that URL
-    else if (yearOrUrl in URLS) {
+    } else if (yearOrUrl in URLS) {
       url = URLS[yearOrUrl as keyof typeof URLS];
-    }
-    // Otherwise, it's an ID
-    else {
+    } else {
       speakerId = yearOrUrl;
     }
   }
 
   return useQuery("api-speakers", async () => {
-    const serverResponse = await axios.get(url);
-    let returnData: IResponse[];
-    if (speakerId !== undefined) {
-      returnData = serverResponse.data.filter(
-        (speaker: { id: string }) => speaker.id === speakerId,
-      );
-    } else {
-      returnData = serverResponse.data;
-    }
+    try {
+      const serverResponse = await axios.get(url, {
+        headers: { Accept: "application/json; charset=utf-8" },
+      });
+      let returnData: IResponse[];
+      if (speakerId !== undefined) {
+        returnData = serverResponse.data.filter(
+          (speaker: { id: string }) => speaker.id === speakerId,
+        );
+      } else {
+        returnData = serverResponse.data;
+      }
 
-    return speakerAdapter(returnData);
+      return speakerAdapter(returnData);
+    } catch (e) {
+      Sentry.captureException(e);
+      return {};
+    }
   });
 };
