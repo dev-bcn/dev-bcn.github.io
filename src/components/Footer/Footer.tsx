@@ -1,15 +1,17 @@
-import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
+import { BIG_BREAKPOINT } from "@constants/BreakPoints";
 import { FC } from "react";
-import LessThanBlueIcon from "../../assets/images/LessThanBlueIcon.svg";
-import emailIcon from "../../assets/images/emailIcon.svg";
-import flickrIcon from "../../assets/images/flickr.svg";
-import linkedinIcon from "../../assets/images/linkedinIcon.svg";
-import logo from "../../assets/images/devBcn.png";
-import twitterIcon from "../../assets/images/twitterIcon.svg";
+import LessThanBlueIcon from "@assets/images/LessThanBlueIcon.svg";
+import emailIcon from "@assets/images/emailIcon.svg";
+import blueskyIcon from "@assets/images/blueskyIcon.svg";
+import instagramIcon from "@assets/images/instagramIcon.svg";
+import flickrIcon from "@assets/images/flickr.svg";
+import linkedinIcon from "@assets/images/linkedinIcon.svg";
+import logo from "@assets/images/devBcn.png";
+import twitterIcon from "@assets/images/twitterIcon.svg";
 import { useNavigate } from "react-router";
 import { useWindowSize } from "react-use";
-import data from "../../data/2024.json";
-import youtubeIcon from "../../assets/images/youtubeIcon.svg";
+import data from "@data/2024.json";
+import youtubeIcon from "@assets/images/youtubeIcon.svg";
 import {
   StyledAbsoluteImg,
   StyledFlexCol,
@@ -71,6 +73,22 @@ const Footer: FC<React.PropsWithChildren<unknown>> = () => {
               <StyledLink target={"_blank"} href={data.linkedin}>
                 <StyledFooterIcon
                   src={linkedinIcon}
+                  alt="facebook"
+                  height={24}
+                  width={24}
+                />
+              </StyledLink>
+              <StyledLink target={"_blank"} href={data.bluesky}>
+                <StyledFooterIcon
+                  src={blueskyIcon}
+                  alt="facebook"
+                  height={24}
+                  width={24}
+                />
+              </StyledLink>
+              <StyledLink target={"_blank"} href={data.instagram}>
+                <StyledFooterIcon
+                  src={instagramIcon}
                   alt="facebook"
                   height={24}
                   width={24}

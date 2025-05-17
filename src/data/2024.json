@@ -6,7 +6,7 @@
   "cfp": {
     "startDay": "2024-01-01T00:00:00",
     "endDay": "2024-04-01T00:00:00",
-    "link":"https://sessionize.com/devbcn-2024/"
+    "link": "https://sessionize.com/devbcn-2024/"
   },
   "diversity": true,
   "edition": "2024",
@@ -17,10 +17,12 @@
   "github": "https://github.com/devbcn",
   "hideSpeakers": false,
   "hideTalks": false,
+  "instagram": "https://www.instagram.com/devbcn.conf/",
   "jobOffers": {
     "enabled": true
   },
   "linkedin": "https://www.linkedin.com/company/devbcn",
+  "bluesky": "https://bsky.app/profile/devbcn.bsky.social",
   "schedule": {
     "enabled": true
   },
