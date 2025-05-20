@@ -38,7 +38,7 @@ export const HomeWrapper2024: FC<React.PropsWithChildren<unknown>> = () => {
       <Faqs />
       <SpeakersCarousel
         speakersLink={ROUTE_2024_SPEAKERS}
-        sessionizeUrl={conferenceData.sessionizeUrl}
+        sessionizeUrl={conferenceData.edition}
         isEnabled={conferenceData.carrousel.enabled}
       />
       <Sponsors />
