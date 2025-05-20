@@ -49,7 +49,9 @@ const SpeakerSwiper: FC<React.PropsWithChildren<Props>> = ({
   const { isLoading, data, error } = useFetchSpeakers(url);
 
   const cachedSpeakers = React.useMemo(() => {
-    return data?.toSorted(() => 0.5 - Math.random()).slice(0, 20);
+    return data
+      ? [...data].sort(() => 0.5 - Math.random()).slice(0, 20)
+      : undefined;
   }, [data]);
 
   useSentryErrorReport(error);
