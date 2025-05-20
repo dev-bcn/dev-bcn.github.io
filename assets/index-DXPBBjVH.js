@@ -540,7 +540,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     padding: 0 5rem;
   }
 `,oJ=L.h1`
-  color: ${e=>e.color?e.color:P.WHITE};
+  color: ${e=>e.color??P.WHITE};
   font-family: "Square 721 Regular", sans-serif;
   padding-bottom: 1.5rem;
   text-align: center;
@@ -550,7 +550,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     padding-bottom: unset;
   }
 `,sJ=L.p`
-  color: ${e=>e.color?e.color:P.WHITE};
+  color: ${e=>e.color??P.WHITE};
   @media (min-width: 480px) {
     width: 70%;
   }
