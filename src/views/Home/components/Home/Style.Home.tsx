@@ -31,7 +31,7 @@ export const StyleHomeContainer = styled.div`
   flex-direction: column;
 `;
 
-export const StyledTitleContainer = styled.div`
+export const StyledTitleContainer = styled(motion.div)`
   background-color: ${(props) => props.color ?? Color.DARK_BLUE};
   border-radius: 10px;
   width: 70%;
@@ -43,14 +43,14 @@ export const StyledTitleContainer = styled.div`
   }
 `;
 
-export const StyledTitle = styled.h1`
+export const StyledTitle = styled(motion.h1)`
   padding: 0.5rem 1rem;
   color: ${Color.WHITE};
   font-family: "Square 721 Regular", sans-serif;
 `;
 
-export const StyledSubtitle = styled.h2`
-  color: ${(props) => props.color ?? Color.WHITE};
+export const StyledSubtitle = styled(motion.h2)`
+  color: ${(props: { color: string }) => props.color ?? Color.WHITE};
   font-family: "DejaVu Sans ExtraLight", sans-serif;
   font-size: 1.25rem;
   text-shadow: 1px 1px 1px black;
@@ -164,7 +164,7 @@ export const StyledPlusSign = styled.span`
     margin: 0;
   }
 `;
-export const StyledLogoDiv = styled.div`
+export const StyledLogoDiv = styled(motion.div)`
   padding-top: 4rem;
   padding-bottom: 2rem;
   display: flex;
