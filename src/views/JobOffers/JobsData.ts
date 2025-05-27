@@ -14,7 +14,7 @@ export const jobOffers: Company[] = [
     offers: [
       {
         id: "7bedcb50-4a71-43a2-abff-029961262952",
-        url: "https://caixabanktech.com/es/job/software-engineer-javapython/\n",
+        url: "https://caixabanktech.com/es/job/software-engineer-javapython/", // Removed newline
         title: "Software Engineer Java+Python",
         text:
           "Programación y desarrollo de productos, proyectos y soluciones en el sector financiero\n" +
