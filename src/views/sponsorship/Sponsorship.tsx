@@ -23,7 +23,7 @@ import "@egjs/react-flicking/dist/flicking.css";
 import Button from "@components/UI/Button";
 import { gaEventTracker } from "@components/analytics/Analytics";
 import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
-import { AnimatePresence, motion, useInView } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 const StyledWaveContainer = styled.div`
   background: ${Color.DARK_BLUE};
@@ -100,7 +100,6 @@ const Sponsorship: FC<React.PropsWithChildren<unknown>> = () => {
     new AutoPlay({ duration: 2000, direction: "NEXT", stopOnHover: false }),
   ];
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
   const listVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -268,7 +267,7 @@ const Sponsorship: FC<React.PropsWithChildren<unknown>> = () => {
           <motion.div
             ref={sectionRef}
             initial={{ opacity: 0, y: 50 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
             <StyledSponsorshipText>
