@@ -1,23 +1,23 @@
-import { MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
-import { Color } from "../../styles/colors";
+import { MOBILE_BREAKPOINT } from "@constants/BreakPoints";
+import { Color } from "@styles/colors";
 import { jobOffers } from "./JobsData";
 
 import React, { FC } from "react";
-import LessThanBlueIcon from "../../assets/images/LessThanBlueIcon.svg";
-import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
-import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import TitleSection from "../../components/SectionTitle/TitleSection";
+import LessThanBlueIcon from "@assets/images/LessThanBlueIcon.svg";
+import MoreThanBlueIcon from "@assets/images/MoreThanBlueIcon.svg";
+import SectionWrapper from "@components/SectionWrapper/SectionWrapper";
+import TitleSection from "@components/SectionTitle/TitleSection";
 import { useWindowSize } from "react-use";
-import data from "../../data/2024.json";
+import data from "@data/2024.json";
 import {
   Companies,
   CompanyNameLink,
   StyledLessIcon,
   StyledMoreIcon,
   StyledTitleContainer,
-} from "../../styles/JobOffers/JobOffers.Style";
-import CompanyOffers from "../../components/JobOffers/CompanyOffers";
-import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
+} from "@styles/JobOffers/JobOffers.Style";
+import CompanyOffers from "@components/JobOffers/CompanyOffers";
+import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
 
 const NoOffersAvailable = () => (
   <h4 style={{ color: Color.DARK_BLUE }}>No job offers available yet</h4>
@@ -45,7 +45,7 @@ const JobOffers: FC<React.PropsWithChildren<unknown>> = () => {
             color={Color.BLACK_BLUE}
           />
         </StyledTitleContainer>
-        {width > MOBILE_BREAKPOINT && <MoreThanLessThan width={width} />}
+        {width > MOBILE_BREAKPOINT && <MoreThanLessThan />}
         {data.jobOffers.enabled ? (
           <div id="job-offers">
             <Companies id="companies">

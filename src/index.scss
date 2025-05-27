@@ -1,6 +1,7 @@
 @import '/src/styles/colors.scss';
 @import "sessionize-colors";
 @import "2024.scss";
+@import 'bootstrap/dist/css/bootstrap.min.css';
 
 root {
   scroll-padding-top: 240px;
@@ -64,4 +65,149 @@ p {
 
 .sz-session--service .sz-session__card {
   color: #8ec9ee;
+}
+
+/* job Offers */
+
+.card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.company-logo {
+  max-height: 80px;
+  object-fit: contain;
+}
+
+.location-badge {
+  border-radius: 20px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background-color: rgba(4, 150, 255, 0.1);
+  color: var(--primary);
+}
+
+.job-title {
+  color: var(--secondary);
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.company-name {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1.75rem;
+}
+
+.section-title {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 2rem;
+  margin-top: 4rem;
+  color: var(--secondary);
+  font-weight: 700;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background-color: var(--primary);
+  border-radius: 2px;
+}
+
+.job-description {
+  text-align: justify;
+}
+
+.job-text {
+  white-space: pre-line;
+  text-align: left;
+}
+
+.apply-btn {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: white;
+  font-weight: 500;
+}
+
+.apply-btn:hover {
+  background-color: var(--success);
+  border-color: var(--success);
+}
+
+.social-icon {
+  color: var(--primary);
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.social-icon:hover {
+  color: var(--secondary);
+  transform: scale(1.1);
+}
+
+/* Animation classes */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Header styling */
+.header {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem 0;
+}
+
+/* Filters */
+.filters {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: #f8f9fa;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .company-logo {
+    max-height: 60px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .job-title {
+    font-size: 1.1rem;
+  }
+
+  .company-name {
+    font-size: 1.5rem;
+  }
 }
