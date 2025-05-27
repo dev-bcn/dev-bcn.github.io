@@ -49,7 +49,7 @@ export default defineConfig(({ mode }) => {
     server: {
       port: 3000, // Match CRA's default port
     },
-    base: "/", // Set the base path for your application
+    base: "/",
     test: {
       globals: true,
       environment: "jsdom",
@@ -59,6 +59,9 @@ export default defineConfig(({ mode }) => {
         provider: "v8",
         reporter: ["text", "json", "html"],
       },
+    },
+    optimizeDeps: {
+      exclude: ["lucide-react"],
     },
   };
 });

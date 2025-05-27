@@ -3,11 +3,13 @@ import {
   ROUTE_CFP,
   ROUTE_CODE_OF_CONDUCT,
   ROUTE_HOME,
+  ROUTE_JOB_OFFERS,
   ROUTE_SPEAKERS,
   ROUTE_SPONSORSHIP,
   ROUTE_TALKS,
-  ROUTE_TRAVEL, ROUTE_WORKSHOPS,
-} from "../../constants/routes";
+  ROUTE_TRAVEL,
+  ROUTE_WORKSHOPS,
+} from "@constants/routes";
 
 export interface NavigationItem {
   id: string;
@@ -21,7 +23,7 @@ export const navigationItems2025: NavigationItem[] = [
   //{ id: "SCHEDULE", link: ROUTE_SCHEDULE },
   { id: "Talks", link: ROUTE_TALKS },
   { id: "Workshops", link: ROUTE_WORKSHOPS },
-  //{ id: "JOB OFFERS", link: ROUTE_JOB_OFFERS },
+  { id: "JOB OFFERS", link: ROUTE_JOB_OFFERS },
   //{ id: "Communities", link: ROUTE_COMMUNITIES },
   { id: "Speakers", link: ROUTE_SPEAKERS },
   { id: "About Us", link: ROUTE_ABOUT_US },

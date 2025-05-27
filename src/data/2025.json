@@ -18,7 +18,7 @@
   "hideSpeakers": false,
   "hideTalks": false,
   "jobOffers": {
-    "enabled": false
+    "enabled": true
   },
   "linkedin": "https://www.linkedin.com/company/devbcn",
   "schedule": {

@@ -90,7 +90,6 @@ import Accommodation from "./views/Travel/Accommodation";
 import Schedule from "./views/Schedule/Schedule";
 import Diversity from "./views/Diversity/Diversity";
 import LiveView from "./views/Talks/LiveView";
-import JobOffers from "./views/JobOffers/JobOffers";
 import { HomeWrapper2024 } from "./2024/HomeWrapper2024";
 import Speakers2024 from "./components/YearSpecific/Speakers/Speakers2024";
 import Talks2024 from "./2024/Talks/Talks2024";
@@ -101,6 +100,7 @@ import Workshops from "./views/Workshops/Workshops";
 import Schedule2024 from "./2024/Schedule/Schedule2024";
 import JobOffers2024 from "./2024/JobOffers/JobOffers2024";
 import MeetingDetailContainer2024 from "./2024/TalkDetail/MeetingDetailContainer2024";
+import JobOffersList from "@components/JobOffers/JobOffersList";
 
 const StyledAppWrapper = styled.div`
   position: relative;
@@ -209,7 +209,7 @@ const App: FC<React.PropsWithChildren<unknown>> = () => {
               path={ROUTE_JOB_OFFERS}
               element={
                 <React.Suspense fallback={<Loading />}>
-                  <JobOffers />
+                  <JobOffersList />
                 </React.Suspense>
               }
             />
