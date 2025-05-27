@@ -44,7 +44,7 @@ export const jobOffers: Company[] = [
       {
         id: "93c2f7fd-8718-4368-983e-2e8d28fdf06c",
         text:
-          "AS A PRODUCTION SOFTWARE ENGINEER AT SNOWFLAKE, YOU WILL:<br/>" +
+          "as a Production Software Engineer at Snowflake, you will:<br/>" +
           "* Design, lead and own significant projects with an impact felt far beyond your team. <br/>" +
           "* Contribute to the design and operation of our highly reliable, secure, scalable, and performant infrastructure<br/>" +
           "* Develop the software to grow our fleet of services and deployments<br/>" +
@@ -53,7 +53,7 @@ export const jobOffers: Company[] = [
           "* Plan and lead complex technical projects while partnering with a wide variety of teams within the company",
         url: "https://careers.snowflake.com/us/en/job/SNCOUS1B155129FA6D439B9893A51A1E6AFCA8EXTERNALENUS8C40EA83A7D34DF691A7CCB73954E02D/Production-Software-Engineer",
         location: "Hybrid",
-        title: "",
+        title: "PRODUCTION SOFTWARE ENGINEER",
       },
       {
         id: "d17366a8-6ab1-4908-aa8c-1ccc3897f97c",

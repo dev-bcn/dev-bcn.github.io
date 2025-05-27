@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Alert, Col, Container, Row } from "react-bootstrap";
+// @ts-expect-error some quirky
 import { motion } from "framer-motion";
 import { jobOffers } from "@views/JobOffers/JobsData";
 import CompanyCard from "./CompanyCard";
 import JobFilters from "./JobFilters";
+// @ts-expect-error some quirky
 import { Company, Offer } from "@types/jobOffers";
 
 const JobOffersList: React.FC = () => {
@@ -23,7 +25,7 @@ const JobOffersList: React.FC = () => {
         .map((company) => {
           const filteredOffers = company.offers.filter(
             (offer: Offer) =>
-              offer.title.toLowerCase().includes(term) ??
+              offer.title.toLowerCase().includes(term) ||
               offer.text.toLowerCase().includes(term),
           );
 
@@ -115,9 +117,8 @@ const JobOffersList: React.FC = () => {
         onLocationChange={handleLocationChange}
         onClearFilters={handleClearFilters}
       />
-
       {noResults ? (
-        <Alert variant="info\" className="text-center">
+        <Alert variant="info" className="text-center">
           No job offers match your search criteria. Try adjusting your filters.
         </Alert>
       ) : (

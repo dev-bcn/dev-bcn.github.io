@@ -44,10 +44,6 @@ const CompanyCard: React.FC<CompanyCardProps> = ({ company, index }) => {
                 src={company.logo}
                 alt={`${company.name} logo`}
                 className="company-logo"
-                onError={(e: { target: HTMLImageElement }) => {
-                  const target = e.target;
-                  target.src = company.logo;
-                }}
               />
             </Col>
             <Col md={7}>
