@@ -55,6 +55,12 @@ export const sponsors: Sponsors = {
       website: "https://www.opentrends.net/en",
       image: "images/sponsors/seidor.png",
     },
+    {
+      name: "Grupo Castilla",
+      image: "images/sponsors/grupo-castilla.png",
+      website:
+        "https://www.grupocastilla.es/servicios-rrhh/consultoria-tecnologica/",
+    },
   ],
   communities: [],
   media_partners: [
