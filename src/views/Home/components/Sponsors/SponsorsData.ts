@@ -71,6 +71,11 @@ export const sponsors: Sponsors = {
       website: "https://boxlang.io/",
       image: "images/sponsors/boxlang.png",
     },
+    {
+      name: "Preply",
+      website: "https://preply.com/en/careers",
+      image: "images/sponsors/preply.svg",
+    },
   ],
   communities: [],
   media_partners: [
