@@ -61,6 +61,16 @@ export const sponsors: Sponsors = {
       website:
         "https://www.grupocastilla.es/servicios-rrhh/consultoria-tecnologica/",
     },
+    {
+      name: "FOR GOOD AI",
+      website: "https://zencoder.ai/",
+      image: "images/sponsors/zencoder.png",
+    },
+    {
+      name: "ORTUS SOLUTIONS",
+      website: "https://boxlang.io/",
+      image: "images/sponsors/boxlang.png",
+    },
   ],
   communities: [],
   media_partners: [
