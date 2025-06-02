@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Color } from "../../styles/colors";
+import { Color } from "@styles/colors";
 import { StyledTagText, StyledTagWrapper } from "./Style.Tag";
 
 type TagProps = {
@@ -65,7 +65,10 @@ export const colorTagByText = (text: string): string => {
   return "#000000";
 };
 
-export const Tag: FC<React.PropsWithChildren<TagProps>> = ({ text, textColor }) => {
+export const Tag: FC<React.PropsWithChildren<TagProps>> = ({
+  text,
+  textColor,
+}) => {
   const color = colorTagByText(text);
   return (
     <StyledTagWrapper borderColor={color}>
