@@ -22,7 +22,7 @@
   },
   "linkedin": "https://www.linkedin.com/company/devbcn",
   "schedule": {
-    "enabled": false
+    "enabled": true
   },
   "sessionizeUrl": "https://sessionize.com/api/v2/xhudniix",
   "showCountdown": true,
