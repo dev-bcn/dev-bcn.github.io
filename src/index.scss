@@ -1,4 +1,4 @@
-@import '/src/styles/colors.scss';
+@import "/src/styles/colors.scss";
 @import "sessionize-colors";
 @import "2024.scss";
 @import 'bootstrap/dist/css/bootstrap.min.css';
@@ -72,14 +72,14 @@ p {
 .card {
   border: none;
   border-radius: 12px;
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 0 0 0 #002454;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 1px 1px 1px 1px #002454;
 }
 
 .company-logo {
@@ -114,7 +114,7 @@ p {
   display: inline-block;
   margin-bottom: 2rem;
   margin-top: 4rem;
-  color: var(--secondary);
+  color: #4798CA;
   font-weight: 700;
 }
 
@@ -139,26 +139,26 @@ p {
 }
 
 .apply-btn {
-  background-color: var(--accent);
-  border-color: var(--accent);
+  background-color: #002454;
+  border-color: #4798CA;
   color: white;
   font-weight: 500;
 }
 
 .apply-btn:hover {
-  background-color: var(--success);
-  border-color: var(--success);
+  background-color: #003780;
+  border-color: #357196;
 }
 
 .social-icon {
-  color: var(--primary);
+  color: #002454;
   font-size: 1.5rem;
   margin-right: 1rem;
   transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .social-icon:hover {
-  color: var(--secondary);
+  color: #4798CA;
   transform: scale(1.1);
 }
 
