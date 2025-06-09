@@ -1,15 +1,16 @@
 import React, { FC, useMemo } from "react";
-import TalkCard from "./TalkCard";
+import { TalkCard } from "./TalkCard";
 import {
   StyledSessionSection,
   StyledTrackInfo,
-} from "../../views/Talks/Talks.style";
+} from "@views/Talks/Talks.style";
 
-import { IGroup } from "../../types/sessions";
+import { IGroup } from "@types/sessions";
 
 interface TrackInfoProps {
   track: IGroup;
   year: string;
+  openFeedbackId: string;
 }
 
 const useGenerateAnchorName = (trackName: string) => {
@@ -24,6 +25,7 @@ const useGenerateAnchorName = (trackName: string) => {
 const TrackInformation: FC<React.PropsWithChildren<TrackInfoProps>> = ({
   track,
   year,
+  openFeedbackId,
 }) => {
   const anchorName = useGenerateAnchorName(track.groupName);
 
@@ -33,7 +35,12 @@ const TrackInformation: FC<React.PropsWithChildren<TrackInfoProps>> = ({
       <StyledSessionSection>
         {Array.isArray(track.sessions) &&
           track.sessions.map((session) => (
-            <TalkCard talk={session} key={session.id} year={year} />
+            <TalkCard
+              talk={session}
+              key={session.id}
+              year={year}
+              openFeedbackId={openFeedbackId}
+            />
           ))}
       </StyledSessionSection>
     </div>

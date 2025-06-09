@@ -1,25 +1,25 @@
 import React, { FC, useEffect, useState } from "react";
-import LessThanDarkBlueIcon from "../../assets/images/LessThanDarkBlueIcon.svg";
-import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
-import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import TitleSection from "../../components/SectionTitle/TitleSection";
-import { Color } from "../../styles/colors";
-import conferenceData from "../../data/2024.json";
+import LessThanDarkBlueIcon from "@assets/images/LessThanDarkBlueIcon.svg";
+import MoreThanBlueIcon from "@assets/images/MoreThanBlueIcon.svg";
+import SectionWrapper from "@components/SectionWrapper/SectionWrapper";
+import TitleSection from "@components/SectionTitle/TitleSection";
+import { Color } from "@styles/colors";
+import conferenceData from "@data/2024.json";
 
-import { useFetchTalks } from "../../hooks/useFetchTalks";
+import { useFetchTalks } from "@hooks/useFetchTalks";
 import { Dropdown, DropdownChangeEvent } from "primereact/dropdown";
 import "primereact/resources/primereact.min.css";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
-import "../../styles/theme.css";
+import "@styles/theme.css";
 import {
   StyledMarginBottom,
   StyledSpeakersSection,
   StyledTitleContainer,
   StyledTitleIcon,
   StyledWaveContainer,
-} from "../../views/Talks/Talks.style";
-import TrackInformation from "../../components/common/TrackInformation";
-import { useSentryErrorReport } from "../../hooks/useSentryErrorReport";
+} from "@views/Talks/Talks.style";
+import TrackInformation from "@components/common/TrackInformation";
+import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
 
 interface TrackInfo {
   name: string;
@@ -52,7 +52,7 @@ const Talks2024: FC<React.PropsWithChildren<unknown>> = () => {
 
   // Helper function to remove text between parentheses
   const removeParenthesesContent = (text: string): string => {
-    return text.replace(/\s*\([^)]*\)/g, '');
+    return text.replace(/\s*\([^)]*\)/g, "");
   };
 
   const dropDownOptions = [
@@ -135,6 +135,7 @@ const Talks2024: FC<React.PropsWithChildren<unknown>> = () => {
                     key={track.groupId}
                     track={track}
                     year={conferenceData.edition}
+                    openFeedbackId={conferenceData.openFeedbackId}
                   />
                 ))}
               </>
