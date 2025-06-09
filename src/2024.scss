@@ -1,238 +1,238 @@
-@import "sessionize-colors";
+@use "sessionize-colors";
 
 /* Day One*/
 /* Registration */
 [data-sessionid="8435a81a-8dfb-4267-886a-87ae40905875"].sz-session .sz-session__card {
-  background-color: $coffee-break-bg-color !important;
-  color: $session-room-color !important;
+  background-color: sessionize-colors.$coffee-break-bg-color !important;
+  color: sessionize-colors.$session-room-color !important;
 
   .sz-session__room {
-    background-color: $session-room-bg-color !important;
-    color: $session-room-color !important;
+    background-color: sessionize-colors.$session-room-bg-color !important;
+    color: sessionize-colors.$session-room-color !important;
   }
 
   h3 {
-    color: $session-room-color !important;
+    color: sessionize-colors.$session-room-color !important;
   }
 }
 
 /* Welcome */
 [data-sessionid="4a967fde-5fb6-458a-a5c0-c104255a6041"].sz-session .sz-session__card {
-  background-color: $green-background !important;
-  color: $green-font-color !important;
+  background-color: sessionize-colors.$green-background !important;
+  color: sessionize-colors.$green-font-color !important;
 
   .sz-session__room {
-    background-color: $green-font-color !important;
-    color: $session-room-color !important;
+    background-color: sessionize-colors.$green-font-color !important;
+    color: sessionize-colors.$session-room-color !important;
   }
 }
 
 /* Key notes*/
 [data-sessionid="ac7c0c14-9240-4e2d-8e3b-0473bedf4fdc"].sz-session .sz-session__card {
-  background-color: $coffee-break-bg-color !important;
-  color: $session-room-color !important;
+  background-color: sessionize-colors.$coffee-break-bg-color !important;
+  color: sessionize-colors.$session-room-color !important;
 
   .sz-session__room {
-    background-color: $session-room-bg-color !important;
-    color: $session-room-color !important;
+    background-color: sessionize-colors.$session-room-bg-color !important;
+    color: sessionize-colors.$session-room-color !important;
   }
 }
 
 [data-sessionid="ace92e60-c495-47fb-8687-50fac95aa7e4"].sz-session .sz-session__card {
-  background-color: $coffee-break-bg-color !important;
-  color: $session-room-color !important;
+  background-color: sessionize-colors.$coffee-break-bg-color !important;
+  color: sessionize-colors.$session-room-color !important;
 
   .sz-session__room {
-    background-color: $session-room-bg-color !important;
-    color: $session-room-color !important;
+    background-color: sessionize-colors.$session-room-bg-color !important;
+    color: sessionize-colors.$session-room-color !important;
   }
 }
 
 /* Coffee Break */
 [data-sessionid="930dc095-74fb-4d53-84f7-0ee956a28d01"].sz-session .sz-session__card {
-  background-color: $brown-background !important;
-  color: $brown-font-color !important;
+  background-color: sessionize-colors.$brown-background !important;
+  color: sessionize-colors.$brown-font-color !important;
 
   .sz-session__room {
-    background-color: $brown-font-color !important;
-    color: $session-room-color !important;
+    background-color: sessionize-colors.$brown-font-color !important;
+    color: sessionize-colors.$session-room-color !important;
   }
 }
 
 [data-sessionid="8953bdc4-554b-4d64-9fcb-ba45ee2b14f2"].sz-session .sz-session__card {
-  background-color: $brown-background !important;
-  color: $brown-font-color !important;
+  background-color: sessionize-colors.$brown-background !important;
+  color: sessionize-colors.$brown-font-color !important;
 
   .sz-session__room {
-    background-color: $brown-font-color !important;
-    color: $session-room-color !important;
+    background-color: sessionize-colors.$brown-font-color !important;
+    color: sessionize-colors.$session-room-color !important;
   }
 }
 
 /* Session break*/
 [data-sessionid="7695b84c-3702-4a05-9f0e-2c6a64763fa1"].sz-session .sz-session__card {
-  background-color: $green-background !important;
-  color: $green-font-color !important;
+  background-color: sessionize-colors.$green-background !important;
+  color: sessionize-colors.$green-font-color !important;
 
   .sz-session__room {
-    background-color: $green-font-color !important;
-    color: $session-room-color !important;
+    background-color: sessionize-colors.$green-font-color !important;
+    color: sessionize-colors.$session-room-color !important;
   }
 }
 
 [data-sessionid="17c309a4-644e-4d6a-b995-94da6913d122"].sz-session .sz-session__card {
-  background-color: $green-background !important;
-  color: $green-font-color !important;
+  background-color: sessionize-colors.$green-background !important;
+  color: sessionize-colors.$green-font-color !important;
 
   .sz-session__room {
-    background-color: $green-font-color !important;
-    color: $session-room-color !important;
+    background-color: sessionize-colors.$green-font-color !important;
+    color: sessionize-colors.$session-room-color !important;
   }
 }
 
 [data-sessionid="7423b937-8940-4cb9-8559-4b3f56dce045"].sz-session .sz-session__card {
-  background-color: $green-background !important;
-  color: $green-font-color !important;
+  background-color: sessionize-colors.$green-background !important;
+  color: sessionize-colors.$green-font-color !important;
 
   .sz-session__room {
-    background-color: $green-font-color !important;
-    color: $session-room-color !important;
+    background-color: sessionize-colors.$green-font-color !important;
+    color: sessionize-colors.$session-room-color !important;
   }
 }
 
 /* Lunch */
 [data-sessionid="2bc67340-100a-4d0c-8608-2e6853bed7fd"].sz-session > .sz-session__card {
-  background-color: $coffee-break-bg-color !important;
-  color: $session-room-color !important;
+  background-color: sessionize-colors.$coffee-break-bg-color !important;
+  color: sessionize-colors.$session-room-color !important;
 
   .sz-session__room {
-    background-color: $session-room-bg-color !important;
-    color: $session-room-color !important;
+    background-color: sessionize-colors.$session-room-bg-color !important;
+    color: sessionize-colors.$session-room-color !important;
   }
 }
 
 /* Pre-party*/
 [data-sessionid="d3c25ccb-8f68-46d0-9052-f9cf74beb893"].sz-session > .sz-session__card {
-  background-color: $coffee-break-bg-color !important;
-  color: $session-room-color !important;
+  background-color: sessionize-colors.$coffee-break-bg-color !important;
+  color: sessionize-colors.$session-room-color !important;
 
   .sz-session__room {
-    background-color: $session-room-bg-color !important;
-    color: $session-room-color !important;
+    background-color: sessionize-colors.$session-room-bg-color !important;
+    color: sessionize-colors.$session-room-color !important;
   }
 }
 /* Party */
 [data-sessionid="39348cfa-e30c-420d-858a-59f08853ebbf"].sz-session > .sz-session__card {
-  background-color: $coffee-break-bg-color !important;
-  color: $session-room-color !important;
+  background-color: sessionize-colors.$coffee-break-bg-color !important;
+  color: sessionize-colors.$session-room-color !important;
 
   .sz-session__room {
-    background-color: $session-room-bg-color !important;
-    color: $session-room-color !important;
+    background-color: sessionize-colors.$session-room-bg-color !important;
+    color: sessionize-colors.$session-room-color !important;
   }
 }
 
 /* Day Two*/
 /* Registration */
 [data-sessionid="690482bf-cdc3-4053-8295-55f25a221192"].sz-session .sz-session__card {
-  background-color: $coffee-break-bg-color !important;
-  color: $session-room-color !important;
+  background-color: sessionize-colors.$coffee-break-bg-color !important;
+  color: sessionize-colors.$session-room-color !important;
 
   .sz-session__room {
-    background-color: $session-room-bg-color !important;
-    color: $session-room-color !important;
+    background-color: sessionize-colors.$session-room-bg-color !important;
+    color: sessionize-colors.$session-room-color !important;
   }
 
   h3 {
-    color: $session-room-color !important;
+    color: sessionize-colors.$session-room-color !important;
   }
 }
 
 /* Session break*/
 [data-sessionid="e51ff3b7-1484-438a-8cf7-0de708ff9c65"].sz-session .sz-session__card {
-  background-color: $green-background !important;
-  color: $green-font-color !important;
+  background-color: sessionize-colors.$green-background !important;
+  color: sessionize-colors.$green-font-color !important;
 
   .sz-session__room {
-    background-color: $green-font-color !important;
-    color: $session-room-color !important;
+    background-color: sessionize-colors.$green-font-color !important;
+    color: sessionize-colors.$session-room-color !important;
   }
 }
 
 [data-sessionid="583e5458-14bd-4fc5-8bfe-1b4eb66c0f58"].sz-session .sz-session__card {
-  background-color: $green-background !important;
-  color: $green-font-color !important;
+  background-color: sessionize-colors.$green-background !important;
+  color: sessionize-colors.$green-font-color !important;
 
   .sz-session__room {
-    background-color: $green-font-color !important;
-    color: $session-room-color !important;
+    background-color: sessionize-colors.$green-font-color !important;
+    color: sessionize-colors.$session-room-color !important;
   }
 }
 
 [data-sessionid="b87625b8-c346-4f43-8c8c-cec0f965c082"].sz-session .sz-session__card {
-  background-color: $green-background !important;
-  color: $green-font-color !important;
+  background-color: sessionize-colors.$green-background !important;
+  color: sessionize-colors.$green-font-color !important;
 
   .sz-session__room {
-    background-color: $green-font-color !important;
-    color: $session-room-color !important;
+    background-color: sessionize-colors.$green-font-color !important;
+    color: sessionize-colors.$session-room-color !important;
   }
 }
 
 /* Coffee Break */
 [data-sessionid="20b61513-0ed5-4f58-854f-522a54b3cded"].sz-session .sz-session__card {
-  background-color: $brown-background !important;
-  color: $brown-font-color !important;
+  background-color: sessionize-colors.$brown-background !important;
+  color: sessionize-colors.$brown-font-color !important;
 
   .sz-session__room {
-    background-color: $brown-font-color !important;
-    color: $session-room-color !important;
+    background-color: sessionize-colors.$brown-font-color !important;
+    color: sessionize-colors.$session-room-color !important;
   }
 }
 
 [data-sessionid="1f59a120-5e71-4cc8-8981-e6fca7b1db57"].sz-session .sz-session__card {
-  background-color: $brown-background !important;
-  color: $brown-font-color !important;
+  background-color: sessionize-colors.$brown-background !important;
+  color: sessionize-colors.$brown-font-color !important;
 
   .sz-session__room {
-    background-color: $brown-font-color !important;
-    color: $session-room-color !important;
+    background-color: sessionize-colors.$brown-font-color !important;
+    color: sessionize-colors.$session-room-color !important;
   }
 }
 
 /* Lunch */
 [data-sessionid="a0f61349-b0cc-44f8-8276-698d8500efa0"].sz-session > .sz-session__card {
-  background-color: $coffee-break-bg-color !important;
-  color: $session-room-color !important;
+  background-color: sessionize-colors.$coffee-break-bg-color !important;
+  color: sessionize-colors.$session-room-color !important;
 
   .sz-session__room {
-    background-color: $session-room-bg-color !important;
-    color: $session-room-color !important;
+    background-color: sessionize-colors.$session-room-bg-color !important;
+    color: sessionize-colors.$session-room-color !important;
   }
 }
 
 /* Keynote*/
 [data-sessionid="80df1351-67de-42d8-883d-ba71f08cbbd9"].sz-session .sz-session__card {
-  background-color: $coffee-break-bg-color !important;
-  color: $session-room-color !important;
+  background-color: sessionize-colors.$coffee-break-bg-color !important;
+  color: sessionize-colors.$session-room-color !important;
 
   .sz-session__room {
-    background-color: $session-room-bg-color !important;
-    color: $session-room-color !important;
+    background-color: sessionize-colors.$session-room-bg-color !important;
+    color: sessionize-colors.$session-room-color !important;
   }
 }
 
 /* Closing */
 [data-sessionid="5826876e-d9ad-4bdc-97a9-9ad1a9665f21"].sz-session .sz-session__card {
-  background-color: $coffee-break-bg-color !important;
-  color: $session-room-color !important;
+  background-color: sessionize-colors.$coffee-break-bg-color !important;
+  color: sessionize-colors.$session-room-color !important;
 
   .sz-session__room {
-    background-color: $session-room-bg-color !important;
-    color: $session-room-color !important;
+    background-color: sessionize-colors.$session-room-bg-color !important;
+    color: sessionize-colors.$session-room-color !important;
   }
 
   h3 {
-    color: $session-room-color !important;
+    color: sessionize-colors.$session-room-color !important;
   }
 }
