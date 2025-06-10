@@ -1,5 +1,5 @@
 import React from "react";
-import CommonTalkCard, { TalkCardProps } from "../common/TalkCard";
+import { TalkCard as CommonTalkCard, TalkCardProps } from "../common/TalkCard";
 
 export type { TalkCardProps };
 

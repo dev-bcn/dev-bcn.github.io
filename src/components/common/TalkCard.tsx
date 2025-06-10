@@ -8,8 +8,8 @@ import {
   ROUTE_2024_TALK_DETAIL,
   ROUTE_SPEAKER_DETAIL,
   ROUTE_TALK_DETAIL,
-} from "../../constants/routes";
-import { Color } from "../../styles/colors";
+} from "@constants/routes";
+import { Color } from "@styles/colors";
 import { StyledJobsInfo } from "../JobOffers/JobsCard";
 import {
   StyledSessionCard,
@@ -17,18 +17,18 @@ import {
   StyledTagsWrapper,
   StyledTalkSpeaker,
   StyledTalkTitle,
-} from "../../views/Talks/Talks.style";
-import { StyledVoteTalkLink } from "../../views/MeetingDetail/MeetingDetail";
+} from "@views/Talks/Talks.style";
+import { StyledVoteTalkLink } from "@views/MeetingDetail/MeetingDetail";
 import {
   extractSessionCategoryInfo,
   extractSessionTags,
-} from "../../services/sessionsAdapter";
+} from "@services/sessionsAdapter";
 import {
   CategoryItemEnum,
   QuestionAnswers,
   SessionCategory,
   SessionSpeaker,
-} from "../../types/sessions";
+} from "@types/sessions";
 
 export interface TalkCardProps {
   talk: {
@@ -43,6 +43,7 @@ export interface TalkCardProps {
     categories: SessionCategory[];
     questionAnswers: QuestionAnswers[];
   };
+  openFeedbackId: string;
   year: string;
   showTrack?: boolean;
 }
@@ -73,6 +74,7 @@ export const TalkCard: FC<React.PropsWithChildren<TalkCardProps>> = ({
   showTrack = false,
   talk,
   year,
+  openFeedbackId,
 }) => {
   return (
     <StyledSessionCard>
@@ -110,9 +112,9 @@ export const TalkCard: FC<React.PropsWithChildren<TalkCardProps>> = ({
             return <Tag key={tag} text={tag} textColor={Color.WHITE} />;
           })}
         </StyledTagsWrapper>
-        <section style={{ display: "none" }}>
+        <section style={{ display: "block" }}>
           <StyledVoteTalkLink
-            href={`https://openfeedback.io/devbcn24/0/${talk.id}`}
+            href={`https://openfeedback.io/${openFeedbackId}/0/${talk.id}`}
             target={"_blank"}
             rel="noreferrer noopener"
           >
@@ -123,5 +125,3 @@ export const TalkCard: FC<React.PropsWithChildren<TalkCardProps>> = ({
     </StyledSessionCard>
   );
 };
-
-export default TalkCard;

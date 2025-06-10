@@ -1,10 +1,10 @@
 import React, { FC, useEffect, useState } from "react";
-import LessThanDarkBlueIcon from "../../assets/images/LessThanDarkBlueIcon.svg";
-import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
-import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import TitleSection from "../../components/SectionTitle/TitleSection";
-import { Color } from "../../styles/colors";
-import conferenceData from "../../data/2023.json";
+import LessThanDarkBlueIcon from "@assets/images/LessThanDarkBlueIcon.svg";
+import MoreThanBlueIcon from "@assets/images/MoreThanBlueIcon.svg";
+import SectionWrapper from "@components/SectionWrapper/SectionWrapper";
+import TitleSection from "@components/SectionTitle/TitleSection";
+import { Color } from "@styles/colors";
+import conferenceData from "@data/2023.json";
 import {
   StyledMarginBottom,
   StyledSpeakersSection,
@@ -12,13 +12,13 @@ import {
   StyledTitleIcon,
   StyledWaveContainer,
 } from "./Talks.style";
-import { useFetchTalks } from "../../hooks/useFetchTalks";
+import { useFetchTalks } from "@hooks/useFetchTalks";
 import { Dropdown, DropdownChangeEvent } from "primereact/dropdown";
 import "primereact/resources/primereact.min.css";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
-import "../../styles/theme.css";
-import TrackInformation from "../../components/common/TrackInformation";
-import { useSentryErrorReport } from "../../hooks/useSentryErrorReport";
+import "@styles/theme.css";
+import TrackInformation from "@components/common/TrackInformation";
+import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
 
 interface TrackInfo {
   name: string;
@@ -51,7 +51,7 @@ const Talks2023: FC<React.PropsWithChildren<unknown>> = () => {
 
   // Helper function to remove text between parentheses
   const removeParenthesesContent = (text: string): string => {
-    return text.replace(/\s*\([^)]*\)/g, '');
+    return text.replace(/\s*\([^)]*\)/g, "");
   };
 
   const dropDownOptions = [
@@ -133,6 +133,7 @@ const Talks2023: FC<React.PropsWithChildren<unknown>> = () => {
                   key={track.groupId}
                   track={track}
                   year={conferenceData.edition}
+                  openFeedbackId={conferenceData.openFeedbackId}
                 />
               ))}
             </>

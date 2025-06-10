@@ -1,10 +1,10 @@
 import React, { FC, useEffect, useState } from "react";
-import LessThanDarkBlueIcon from "../../assets/images/LessThanDarkBlueIcon.svg";
-import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
-import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import TitleSection from "../../components/SectionTitle/TitleSection";
-import { Color } from "../../styles/colors";
-import conferenceData from "../../data/2025.json";
+import LessThanDarkBlueIcon from "@assets/images/LessThanDarkBlueIcon.svg";
+import MoreThanBlueIcon from "@assets/images/MoreThanBlueIcon.svg";
+import SectionWrapper from "@components/SectionWrapper/SectionWrapper";
+import TitleSection from "@components/SectionTitle/TitleSection";
+import { Color } from "@styles/colors";
+import conferenceData from "@data/2025.json";
 import {
   StyledMarginBottom,
   StyledSpeakersSection,
@@ -12,13 +12,13 @@ import {
   StyledTitleIcon,
   StyledWaveContainer,
 } from "./Talks.style";
-import TrackInformation from "../../components/common/TrackInformation";
-import { useFetchTalks } from "../../hooks/useFetchTalks";
+import TrackInformation from "@components/common/TrackInformation";
+import { useFetchTalks } from "@hooks/useFetchTalks";
 import { SelectButton, SelectButtonChangeEvent } from "primereact/selectbutton";
 import "primereact/resources/primereact.min.css";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
-import "../../styles/theme.css";
-import { useSentryErrorReport } from "../../hooks/useSentryErrorReport";
+import "@styles/theme.css";
+import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
 
 interface TrackInfo {
   name: string;
@@ -167,6 +167,7 @@ const Talks: FC<React.PropsWithChildren<unknown>> = () => {
                     key={track.groupId}
                     track={track}
                     year={conferenceData.edition}
+                    openFeedbackId={conferenceData.openFeedbackId}
                   />
                 ))}
               </>

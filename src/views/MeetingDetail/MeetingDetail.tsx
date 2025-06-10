@@ -105,6 +105,7 @@ export const StyledVoteTalkLink = styled.a`
 const MeetingDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
   meeting,
   speakers: mySpeakers,
+  openFeedbackId,
 }) => {
   const { width } = useWindowSize();
 
@@ -199,9 +200,9 @@ const MeetingDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
           <StyledVideoTagsContainer>
             {meeting.videoTags?.map((tag) => <Tag text={tag} key={tag} />)}
           </StyledVideoTagsContainer>
-          <section style={{ display: "none" }}>
+          <section style={{ display: "block" }}>
             <StyledVoteTalkLink
-              href={`https://openfeedback.io/devbcn24/0/${meeting.id}`}
+              href={`https://openfeedback.io/${openFeedbackId}/0/${meeting.id}`}
               target={"_blank"}
               rel="noreferrer noopener"
             >
