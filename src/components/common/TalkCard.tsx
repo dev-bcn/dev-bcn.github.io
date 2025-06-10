@@ -112,7 +112,7 @@ export const TalkCard: FC<React.PropsWithChildren<TalkCardProps>> = ({
             return <Tag key={tag} text={tag} textColor={Color.WHITE} />;
           })}
         </StyledTagsWrapper>
-        <section style={{ display: "none" }}>
+        <section style={{ display: "block" }}>
           <StyledVoteTalkLink
             href={`https://openfeedback.io/${openFeedbackId}/0/${talk.id}`}
             target={"_blank"}
