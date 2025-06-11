@@ -21,7 +21,7 @@ export const sponsors: Sponsors = {
     {
       name: "Caixabank Tech",
       website: "https://www.caixabanktech.com/es/pagina-de-inicio/",
-      image: "images/sponsors/caixabank-tech.png",
+      image: "/images/sponsors/caixabank-tech.png",
     },
     {
       name: "Sopra Steria",
@@ -45,41 +45,41 @@ export const sponsors: Sponsors = {
     },
     {
       name: "Clever Cloud",
-      image: "images/sponsors/clever-cloud.png",
+      image: "/images/sponsors/clever-cloud.png",
       website: "https://www.clever-cloud.com/",
     },
     {
       name: "Vonage",
       website: "https://vonage.dev/DevBcn",
-      image: "/images/sponsors/vonage.png",
+      image: "/images/sponsors/vonage.jpg",
     },
   ],
   basic: [
     {
       name: "Seidor",
       website: "https://www.opentrends.net/en",
-      image: "images/sponsors/seidor.png",
+      image: "/images/sponsors/seidor.png",
     },
     {
       name: "Grupo Castilla",
-      image: "images/sponsors/grupo-castilla.png",
+      image: "/images/sponsors/grupo-castilla.png",
       website:
         "https://www.grupocastilla.es/servicios-rrhh/consultoria-tecnologica/",
     },
     {
       name: "FOR GOOD AI",
       website: "https://zencoder.ai/",
-      image: "images/sponsors/zencoder.png",
+      image: "/images/sponsors/zencoder.png",
     },
     {
       name: "ORTUS SOLUTIONS",
       website: "https://boxlang.io/",
-      image: "images/sponsors/boxlang.png",
+      image: "/images/sponsors/boxlang.png",
     },
     {
       name: "Preply",
       website: "https://preply.com/en/careers",
-      image: "images/sponsors/preply.svg",
+      image: "/images/sponsors/preply.svg",
     },
   ],
   communities: [],
@@ -87,22 +87,22 @@ export const sponsors: Sponsors = {
     {
       name: "Digital Expert Online",
       website: "https://digital-expert.online/en/",
-      image: "images/sponsors/logo-digital-expert.svg",
+      image: "/images/sponsors/logo-digital-expert.svg",
     },
     {
       name: "Kube events",
-      image: "images/sponsors/kube-events.png",
+      image: "/images/sponsors/kube-events.png",
       website: "https://kube.events/",
     },
     {
       name: "Kube careers",
-      image: "images/sponsors/kube-career.png",
+      image: "/images/sponsors/kube-career.png",
       website: "https://kube.careers/",
     },
     {
       name: "CIO Insights",
       website: "https://www.cioinsights.com/",
-      image: "images/sponsors/cio-insights.png",
+      image: "/images/sponsors/cio-insights.png",
     },
   ],
   supporters: [],
