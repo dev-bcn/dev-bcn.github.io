@@ -12,7 +12,7 @@ export interface Company {
 export interface Offer {
   id: string;
   title: string;
-  location: string;
+  location: "Hybrid" | "Remote" | "Onsite";
   text: string;
   url: string;
 }

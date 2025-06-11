@@ -86,6 +86,13 @@ export const jobOffers: Company[] = [
         location: "Hybrid",
         url: "https://grnh.se/883ec4c92us",
       },
+      {
+        id: "ba549acc-fcb2-48e4-b5f5-4a9a92da2d50",
+        title: "Full-Stack Developer, Tech Core, Internal Tools",
+        text: "We’re looking for a Fullstack Developer who can build internal systems that matter. You’ll work across different domains, connect with third-party platforms, and help improve how our support, sales, and product teams operate day to day. If you're confident across the stack (ours includes PHP, JS (React/Redux), PostgreSQL, ElasticSearch, Redis, AWS), we’d love to meet you.",
+        location: "Hybrid",
+        url: "https://grnh.se/6765cd942us",
+      },
     ],
   },
 ];
