@@ -48,6 +48,11 @@ export const sponsors: Sponsors = {
       image: "images/sponsors/clever-cloud.png",
       website: "https://www.clever-cloud.com/",
     },
+    {
+      name: "Vonage",
+      website: "https://vonage.dev/DevBcn",
+      image: "images/sponsors/vonage.png",
+    },
   ],
   basic: [
     {
