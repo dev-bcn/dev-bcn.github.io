@@ -51,7 +51,7 @@ export const sponsors: Sponsors = {
     {
       name: "Vonage",
       website: "https://vonage.dev/DevBcn",
-      image: "images/sponsors/vonage.png",
+      image: "/images/sponsors/vonage.png",
     },
   ],
   basic: [
