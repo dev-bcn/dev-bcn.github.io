@@ -53,6 +53,11 @@ export const sponsors: Sponsors = {
       website: "https://vonage.dev/DevBcn",
       image: "/images/sponsors/vonage.jpg",
     },
+    {
+      name: "NUBANK",
+      image: "/images/sponsors/datomic.svg",
+      website: "https://nubank.com.br/",
+    },
   ],
   basic: [
     {
