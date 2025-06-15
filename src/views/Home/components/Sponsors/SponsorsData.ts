@@ -81,6 +81,11 @@ export const sponsors: Sponsors = {
       website: "https://preply.com/en/careers",
       image: "/images/sponsors/preply.svg",
     },
+    {
+      name: "Dow Jones",
+      image: "/images/sponsors/dow-jones.png",
+      website: "https://www.dowjones.com/",
+    },
   ],
   communities: [],
   media_partners: [
