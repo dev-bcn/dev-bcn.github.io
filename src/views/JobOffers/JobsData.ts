@@ -95,4 +95,27 @@ export const jobOffers: Company[] = [
       },
     ],
   },
+  {
+    id: "f4dcca5c-f088-478d-bec1-a51bc26c22be",
+    name: "Vonage",
+    description:
+      "Vonage is a cloud communications platform that allows developers to integrate voice, video and messaging into their applications using their communication APIs.",
+    logo: "/images/sponsors/vonage.jpg",
+    url: "https://vonage.dev/DevBcn",
+    linkedin: "https://www.linkedin.com/company/vonage",
+    twitter: "https://x.com/vonagedev",
+    offers: [
+      {
+        id: "52fbc1b1-54ab-4ec1-8fd4-a2690a7f5737",
+        text:
+          "Vonage is the emerging leader in the $100B+ cloud communications platform (CPaaS) market. Customers like Airbnb, Viber, Whatsapp, Snapchat, and many others depend on our APIs and SDKs to connect with their customers all over the world. As businesses continue to shift to a real-time, customer-centric communications model, we are experiencing a time of impressive growth.\n" +
+          "\n" +
+          "We are looking for Full-Stack Web Developers (frontend focus), Frontend Native SDET, and Java Software Engineers to join our team. You'll enhance the developer experience and improve the capabilities of our video APIs, help drive innovation, and contribute across the Vonage Video Platform.",
+        title:
+          "Full-Stack Web Developers (frontend focus), Frontend Native SDET, and Java Software Engineers",
+        url: "https://www.vonage.com/careers/search/#loc=4059203002&dept=4027008002&page=1&sort=desc",
+        location: "Remote",
+      },
+    ],
+  },
 ];
