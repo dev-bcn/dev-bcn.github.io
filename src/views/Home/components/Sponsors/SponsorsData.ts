@@ -92,7 +92,13 @@ export const sponsors: Sponsors = {
       website: "https://www.dowjones.com/",
     },
   ],
-  communities: [],
+  communities: [
+    {
+      name: "Step4ward",
+      image: "images/sponsors/step4ward.png",
+      website: "https://bit.ly/step4wardhome",
+    },
+  ],
   media_partners: [
     {
       name: "Digital Expert Online",
