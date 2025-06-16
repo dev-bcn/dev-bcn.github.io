@@ -1,10 +1,10 @@
 import { styled } from "styled-components";
-import { Color } from "../../styles/colors";
+import { Color } from "@styles/colors";
 import {
   BIG_BREAKPOINT,
   MOBILE_BREAKPOINT,
   TABLET_BREAKPOINT,
-} from "../../constants/BreakPoints";
+} from "@constants/BreakPoints";
 import { Link } from "react-router";
 
 export const StyledTitleContainer = styled.div`
@@ -95,7 +95,14 @@ export const StyledSessionSection = styled.section`
   align-items: stretch;
   width: 90%;
 `;
+export const StyledAgenda = styled.div`
+  display: flex;
+  margin: 1rem;
 
+  @media (max-width: ${MOBILE_BREAKPOINT}px) {
+    flex-direction: column;
+  }
+`;
 export const StyledTalkSpeaker = styled.p`
   font-size: 1em;
 
