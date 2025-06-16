@@ -1,19 +1,21 @@
 import { isWithinInterval } from "date-fns";
 
 type DateInterval = {
-  tickets:{
-    startDay: string,
-    endDay: string,
-  },
-  cfp:{
-    startDay: string,
-    endDay: string,
-  },
-  sponsors:{
-    startDate: string,
-    endDate: string,
-  }
-}
+  cfp: {
+    startDay: string;
+    endDay: string;
+  };
+  endDay: string;
+  sponsors: {
+    startDate: string;
+    endDate: string;
+  };
+  startDay: string;
+  tickets: {
+    startDay: string;
+    endDay: string;
+  };
+};
 
 export const useDateInterval = (today: Date, edition: DateInterval) => {
   const ticketStartDay = new Date(edition.tickets.startDay);
@@ -22,6 +24,8 @@ export const useDateInterval = (today: Date, edition: DateInterval) => {
   const CFPEndDay = new Date(edition.cfp.endDay);
   const sponsorStartDay = new Date(edition.sponsors.startDate);
   const sponsorEndDay = new Date(edition.sponsors.endDate);
+  const conferenceStartDay = new Date(edition.startDay);
+  const conferenceEndDay = new Date(edition.endDay);
 
   return {
     isTicketsDisabled: !isWithinInterval(today, {
@@ -35,6 +39,10 @@ export const useDateInterval = (today: Date, edition: DateInterval) => {
     isSponsorDisabled: !isWithinInterval(today, {
       start: sponsorStartDay,
       end: sponsorEndDay,
+    }),
+    isConferenceActive: isWithinInterval(today, {
+      start: conferenceStartDay,
+      end: conferenceEndDay,
     }),
   };
 };

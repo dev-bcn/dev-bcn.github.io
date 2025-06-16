@@ -7,22 +7,18 @@ import { TalkCard } from "./components/TalkCard";
 import { StyledMain } from "./Talks.style";
 import { talkCardAdapter } from "./TalkCardAdapter";
 import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
+import { useDateInterval } from "@hooks/useDateInterval";
+import { isWithinInterval } from "date-fns";
 
 const LiveView: FC<React.PropsWithChildren<unknown>> = () => {
   const { isLoading, error, data } = useFetchLiveView();
   const today = useMemo(() => new Date(), []);
-
-  const isBetween = useCallback(
-    (today: Date, startDate: string, endDate: string): boolean => {
-      return today >= new Date(startDate) && today <= new Date(endDate);
-    },
-    [],
-  );
+  const { isConferenceActive } = useDateInterval(today, conference);
 
   const getPredicate = useCallback(
     () => (session: UngroupedSession) =>
-      isBetween(today, session.startsAt, session.endsAt),
-    [today, isBetween],
+      isWithinInterval(today, { start: session.startsAt, end: session.endsAt }),
+    [today],
   );
 
   const filteredTalks = useMemo(() => {
@@ -48,9 +44,7 @@ const LiveView: FC<React.PropsWithChildren<unknown>> = () => {
 
       {isLoading && <Loading />}
       <article>Live Schedule</article>
-      {!isBetween(today, conference.startDay, conference.endDay) && (
-        <h4>The live schedule is not ready yet</h4>
-      )}
+      {!isConferenceActive && <h4>The live schedule is not ready yet</h4>}
       {filteredTalks?.map((session) => (
         <TalkCard key={session.id} {...talkCardAdapter(session)} />
       ))}
