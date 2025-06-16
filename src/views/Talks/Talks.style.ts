@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 import { Color } from "@styles/colors";
+import { motion } from "motion/react";
 import {
   BIG_BREAKPOINT,
   MOBILE_BREAKPOINT,
@@ -48,17 +49,17 @@ export const StyledSessionText = styled.div`
     text-align: left;
   }
 `;
-export const StyledSessionCard = styled.div`
+export const StyledSessionCard = styled(motion.div)`
   align-items: center;
   margin: 0.3rem 1rem 1rem;
-  flex-grow: 2;
+  flex-grow: 4;
   background-color: ${Color.DARK_BLUE};
   background-size: 200% 200%;
   border-radius: 10px;
   padding: 15px;
   @media (min-width: 800px) {
     text-align: left;
-    max-width: 900px;
+    max-width: 359px;
     margin-bottom: 1.5rem;
   }
 `;

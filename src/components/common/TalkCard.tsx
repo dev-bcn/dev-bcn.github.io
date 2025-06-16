@@ -77,7 +77,12 @@ export const TalkCard: FC<React.PropsWithChildren<TalkCardProps>> = ({
   openFeedbackId,
 }) => {
   return (
-    <StyledSessionCard>
+    <StyledSessionCard
+      initial={{ opacity: "0" }}
+      animate={{ opacity: "100%" }}
+      exit={{ opacity: "0" }}
+      transition={{ duration: 0.5 }}
+    >
       <StyledJobsInfo>
         <StyledTalkTitle to={`${getTalkDetailRoute(year)}/${talk.id}`}>
           {talk.title}

@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useEffect, useMemo } from "react";
+import React, { FC, useCallback, useEffect, useMemo, useState } from "react";
 import { useFetchLiveView } from "@hooks/useFetchTalks";
 import Loading from "@components/Loading/Loading";
 import { UngroupedSession } from "./liveView.types";
@@ -9,18 +9,30 @@ import { talkCardAdapter } from "./TalkCardAdapter";
 import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
 import { useDateInterval } from "@hooks/useDateInterval";
 import { isWithinInterval } from "date-fns";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { ROUTE_SCHEDULE } from "@constants/routes";
+import { AnimatePresence } from "framer-motion";
 
 const LiveView: FC<React.PropsWithChildren<unknown>> = () => {
   const { isLoading, error, data } = useFetchLiveView();
-  const today = useMemo(() => new Date(), []);
-  const { isConferenceActive } = useDateInterval(today, conference);
+  const [currentTime, setCurrentTime] = useState<Date>(new Date());
+  const { isConferenceActive } = useDateInterval(currentTime, conference);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 60000);
+
+    return () => clearInterval(intervalId);
+  }, []);
 
   const getPredicate = useCallback(
     () => (session: UngroupedSession) =>
-      isWithinInterval(today, { start: session.startsAt, end: session.endsAt }),
-    [today],
+      isWithinInterval(currentTime, {
+        start: session.startsAt,
+        end: session.endsAt,
+      }),
+    [currentTime],
   );
 
   const filteredTalks = useMemo(() => {
@@ -45,24 +57,47 @@ const LiveView: FC<React.PropsWithChildren<unknown>> = () => {
       </h1>
 
       {isLoading && <Loading />}
-      <article>Live Schedule</article>
+      <article>
+        {`${currentTime.toLocaleDateString()} - ${currentTime.toLocaleTimeString()}`}{" "}
+        - Live Schedule
+      </article>
 
       {!isConferenceActive && <h4>The live schedule is not ready yet</h4>}
       <StyledAgenda>
-        {filteredTalks?.map((session) => (
-          <TalkCard key={session.id} {...talkCardAdapter(session)} />
-        ))}
+        <AnimatePresence>
+          {isConferenceActive && filteredTalks?.length === 0 && (
+            <p style={{ textAlign: "center", flexGrow: "4" }}>
+              No sessions available, enjoy the break!
+            </p>
+          )}
+          {filteredTalks?.map((session) => (
+            <TalkCard key={session.id} {...talkCardAdapter(session)} />
+          ))}
+        </AnimatePresence>
       </StyledAgenda>
-      <Link
-        to={ROUTE_SCHEDULE}
-        style={{
-          textDecoration: "none",
-          fontWeight: "bold",
-          margin: "0.5rem",
-        }}
-      >
-        📅 Back to schedule
-      </Link>
+      {process.env.NODE_ENV === "test" ? (
+        <a
+          href={ROUTE_SCHEDULE}
+          style={{
+            textDecoration: "none",
+            fontWeight: "bold",
+            margin: "0.5rem",
+          }}
+        >
+          📅 Back to schedule
+        </a>
+      ) : (
+        <Link
+          to={ROUTE_SCHEDULE}
+          style={{
+            textDecoration: "none",
+            fontWeight: "bold",
+            margin: "0.5rem",
+          }}
+        >
+          📅 Back to schedule
+        </Link>
+      )}
     </StyledMain>
   );
 };

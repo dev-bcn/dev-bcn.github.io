@@ -2,7 +2,10 @@
 
 ## Project Overview
 
-This repository contains the official website for the Barcelona Developers Conference (DevBcn), a tech conference held in Barcelona, Spain. The website serves as the primary platform for conference information, including schedules, speaker profiles, talk details, venue information, and registration.
+This repository contains the official website for the Barcelona Developers
+Conference (DevBcn), a tech conference held in Barcelona, Spain. The website
+serves as the primary platform for conference information, including schedules,
+speaker profiles, talk details, venue information, and registration.
 
 ## Technology Stack
 
@@ -12,7 +15,7 @@ This repository contains the official website for the Barcelona Developers Confe
 - **Styling**: Styled Components and SASS
 - **UI Components**: PrimeReact, Swiper, Framer Motion
 - **Maps Integration**: Google Map React
-- **Testing**: Jest, React Testing Library
+- **Testing**: vitest, React Testing Library
 - **Deployment**: GitHub Pages
 
 ## Project Structure
@@ -20,11 +23,11 @@ This repository contains the official website for the Barcelona Developers Confe
 The project follows a standard React application structure:
 
 - `src/`: Source code
-  - `assets/`: Static assets like images
-  - `components/`: Reusable UI components
-  - `hooks/`: Custom React hooks (e.g., useFetchSpeakers, useFetchTalks)
-  - `views/`: Page components
-  - `2024/`: Components specific to the 2024 conference
+    - `assets/`: Static assets like images
+    - `components/`: Reusable UI components
+    - `hooks/`: Custom React hooks (e.g., useFetchSpeakers, useFetchTalks)
+    - `views/`: Page components
+    - `2024/`: Components specific to the 2024 conference
 
 ## Development Workflow
 
@@ -55,6 +58,7 @@ When contributing to this project, please:
 
 ## Contact
 
-For questions or issues related to the DevBcn website, please open an issue in this repository.
+For questions or issues related to the DevBcn website, please open an issue in
+this repository.
 
 Visit the live site at [https://www.devbcn.com](https://www.devbcn.com)
