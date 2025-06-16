@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { render, RenderOptions, RenderResult } from "@testing-library/react";
 import { AxiosHeaders, AxiosResponse } from "axios";
-import { MemoryRouter } from "react-router";
+import { MemoryRouter } from "react-router-dom";
 
 export * from "@testing-library/react";
 
