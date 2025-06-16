@@ -16,7 +16,13 @@ export interface Sponsor {
 
 export const sponsors: Sponsors = {
   top: [],
-  premium: [],
+  premium: [
+    {
+      name: "Dynatrace",
+      image: "images/sponsors/dynatrace.png",
+      website: "https://www.dynatrace.com/",
+    },
+  ],
   regular: [
     {
       name: "Caixabank Tech",
