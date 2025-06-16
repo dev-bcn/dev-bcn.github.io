@@ -4,11 +4,13 @@ import Loading from "@components/Loading/Loading";
 import { UngroupedSession } from "./liveView.types";
 import conference from "@data/2025.json";
 import { TalkCard } from "./components/TalkCard";
-import { StyledMain } from "./Talks.style";
+import { StyledAgenda, StyledMain } from "./Talks.style";
 import { talkCardAdapter } from "./TalkCardAdapter";
 import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
 import { useDateInterval } from "@hooks/useDateInterval";
 import { isWithinInterval } from "date-fns";
+import { Link } from "react-router";
+import { ROUTE_SCHEDULE } from "@constants/routes";
 
 const LiveView: FC<React.PropsWithChildren<unknown>> = () => {
   const { isLoading, error, data } = useFetchLiveView();
@@ -22,7 +24,7 @@ const LiveView: FC<React.PropsWithChildren<unknown>> = () => {
   );
 
   const filteredTalks = useMemo(() => {
-    return data?.sessions?.filter(getPredicate());
+    return data?.filter(getPredicate());
   }, [data, getPredicate]);
 
   useEffect(() => {
@@ -44,10 +46,23 @@ const LiveView: FC<React.PropsWithChildren<unknown>> = () => {
 
       {isLoading && <Loading />}
       <article>Live Schedule</article>
+
       {!isConferenceActive && <h4>The live schedule is not ready yet</h4>}
-      {filteredTalks?.map((session) => (
-        <TalkCard key={session.id} {...talkCardAdapter(session)} />
-      ))}
+      <StyledAgenda>
+        {filteredTalks?.map((session) => (
+          <TalkCard key={session.id} {...talkCardAdapter(session)} />
+        ))}
+      </StyledAgenda>
+      <Link
+        to={ROUTE_SCHEDULE}
+        style={{
+          textDecoration: "none",
+          fontWeight: "bold",
+          margin: "0.5rem",
+        }}
+      >
+        📅 Back to schedule
+      </Link>
     </StyledMain>
   );
 };

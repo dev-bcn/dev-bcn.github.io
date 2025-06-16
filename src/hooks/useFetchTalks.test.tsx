@@ -10,7 +10,6 @@ import { IGroup } from "../types/sessions";
 import {
   createMockAxiosResponse,
   createMockGroup,
-  createMockLiveview,
   createMockSession,
   getQueryClientWrapper,
   SESSION_URLS,
@@ -156,6 +155,60 @@ describe("useFetchTalksById", () => {
     const expectedData = mockData[0].sessions[0];
     expect(result.current.data).toEqual(expectedData);
   });
+
+  it("should use 2024 URL when '2024' is provided", async () => {
+    const mockSession = createMockSession({
+      track: "",
+      description: "",
+      startsAt: "2024-01-01T00:00:00",
+    });
+    const mockData: IGroup[] = [
+      createMockGroup({
+        groupName: "test ",
+        sessions: [mockSession],
+      }),
+    ];
+    const payload = createMockAxiosResponse(mockData);
+
+    mockedAxios.get.mockResolvedValue(payload);
+
+    const { wrapper } = getQueryClientWrapper();
+    const { result } = renderHook(() => useFetchTalksById("123", "2024"), {
+      wrapper,
+    });
+
+    await waitFor(() => result.current.isSuccess);
+    await waitFor(() => !result.current.isLoading);
+
+    expect(mockedAxios.get).toHaveBeenCalledWith(SESSION_URLS["2024"]);
+    const expectedData = mockData[0].sessions[0];
+    expect(result.current.data).toEqual(expectedData);
+  });
+
+  it("should use custom URL when a URL is provided", async () => {
+    const mockSession = createMockSession();
+    const mockData: IGroup[] = [
+      createMockGroup({
+        sessions: [mockSession],
+      }),
+    ];
+    const payload = createMockAxiosResponse(mockData);
+
+    mockedAxios.get.mockResolvedValue(payload);
+
+    const { wrapper } = getQueryClientWrapper();
+    const customUrl = "https://example.com/api/sessions";
+    const { result } = renderHook(() => useFetchTalksById("123", customUrl), {
+      wrapper,
+    });
+
+    await waitFor(() => result.current.isSuccess);
+    await waitFor(() => !result.current.isLoading);
+
+    expect(mockedAxios.get).toHaveBeenCalledWith(customUrl);
+    const expectedData = mockData[0].sessions[0];
+    expect(result.current.data).toEqual(expectedData);
+  });
 });
 
 describe("useFetchLiveView", () => {
@@ -164,8 +217,13 @@ describe("useFetchLiveView", () => {
   });
 
   it("should use default URL when no parameter is provided", async () => {
-    const mockData = createMockLiveview();
-    const payload = createMockAxiosResponse([mockData]);
+    const mockSession = createMockSession();
+    const mockData: IGroup[] = [
+      createMockGroup({
+        sessions: [mockSession],
+      }),
+    ];
+    const payload = createMockAxiosResponse(mockData);
 
     mockedAxios.get.mockResolvedValue(payload);
 
@@ -178,12 +236,50 @@ describe("useFetchLiveView", () => {
     await waitFor(() => !result.current.isLoading);
 
     expect(mockedAxios.get).toHaveBeenCalledWith(SESSION_URLS.DEFAULT);
-    expect(result.current.data).toEqual(payload.data[0]);
+    expect(result.current.data).toEqual([mockSession]);
+  });
+
+  it("should use 2023 URL when '2023' is provided", async () => {
+    const mockSession = createMockSession({
+      track: "",
+      description: "",
+      startsAt: "2023-01-01T00:00:00",
+    });
+    const mockData: IGroup[] = [
+      createMockGroup({
+        groupName: "test ",
+        sessions: [mockSession],
+      }),
+    ];
+    const payload = createMockAxiosResponse(mockData);
+
+    mockedAxios.get.mockResolvedValue(payload);
+
+    const { wrapper } = getQueryClientWrapper();
+    const { result } = renderHook(() => useFetchLiveView("2023"), {
+      wrapper,
+    });
+
+    await waitFor(() => result.current.isSuccess);
+    await waitFor(() => !result.current.isLoading);
+
+    expect(mockedAxios.get).toHaveBeenCalledWith(SESSION_URLS["2023"]);
+    expect(result.current.data).toEqual([mockSession]);
   });
 
   it("should use 2024 URL when '2024' is provided", async () => {
-    const mockData = createMockLiveview();
-    const payload = createMockAxiosResponse([mockData]);
+    const mockSession = createMockSession({
+      track: "",
+      description: "",
+      startsAt: "2024-01-01T00:00:00",
+    });
+    const mockData: IGroup[] = [
+      createMockGroup({
+        groupName: "test ",
+        sessions: [mockSession],
+      }),
+    ];
+    const payload = createMockAxiosResponse(mockData);
 
     mockedAxios.get.mockResolvedValue(payload);
 
@@ -196,6 +292,30 @@ describe("useFetchLiveView", () => {
     await waitFor(() => !result.current.isLoading);
 
     expect(mockedAxios.get).toHaveBeenCalledWith(SESSION_URLS["2024"]);
-    expect(result.current.data).toEqual(payload.data[0]);
+    expect(result.current.data).toEqual([mockSession]);
+  });
+
+  it("should use custom URL when a URL is provided", async () => {
+    const mockSession = createMockSession();
+    const mockData: IGroup[] = [
+      createMockGroup({
+        sessions: [mockSession],
+      }),
+    ];
+    const payload = createMockAxiosResponse(mockData);
+
+    mockedAxios.get.mockResolvedValue(payload);
+
+    const { wrapper } = getQueryClientWrapper();
+    const customUrl = "https://example.com/api/sessions";
+    const { result } = renderHook(() => useFetchLiveView(customUrl), {
+      wrapper,
+    });
+
+    await waitFor(() => result.current.isSuccess);
+    await waitFor(() => !result.current.isLoading);
+
+    expect(mockedAxios.get).toHaveBeenCalledWith(customUrl);
+    expect(result.current.data).toEqual([mockSession]);
   });
 });

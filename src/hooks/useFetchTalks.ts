@@ -1,7 +1,8 @@
 import { useQuery, UseQueryResult } from "react-query";
 import axios from "axios";
-import { Liveview } from "../views/Talks/liveView.types";
-import { IGroup, Session } from "../types/sessions";
+import { UngroupedSession } from "@views/Talks/liveView.types";
+// @ts-expect-error some quirky import
+import { IGroup, Session } from "@types/sessions";
 
 const URLS = {
   default: "https://sessionize.com/api/v2/xhudniix/view/Sessions",
@@ -41,7 +42,8 @@ const getUrl = (urlOrYear?: string): string => {
 const useFetchTalksBase = <T>(
   queryKey: string,
   urlOrYear?: string,
-  dataTransformer: (data: any) => T = (data) => data,
+  dataTransformer: (data: IGroup[]) => T = (data: IGroup[]) =>
+    data as unknown as T,
 ): UseQueryResult<T> => {
   const url = getUrl(urlOrYear);
 
@@ -59,7 +61,7 @@ export const useFetchTalksById = (
   id: string,
   urlOrYear?: string,
 ): UseQueryResult<Session> => {
-  return useFetchTalksBase<Session>("talks", urlOrYear, (data: any[]) => {
+  return useFetchTalksBase<Session>("talks", urlOrYear, (data: IGroup[]) => {
     const sessions = data
       .map((track: IGroup) => track.sessions)
       .flat(1)
@@ -70,8 +72,11 @@ export const useFetchTalksById = (
 
 export const useFetchLiveView = (
   urlOrYear?: string,
-): UseQueryResult<Liveview> => {
-  return useFetchTalksBase<Liveview>("api-talks", urlOrYear, (data) =>
-    data.at(0),
+): UseQueryResult<UngroupedSession[]> => {
+  return useFetchTalksBase<Session[]>(
+    "api-talks",
+    urlOrYear,
+    (data): UngroupedSession[] =>
+      data.map((track: IGroup) => track.sessions).flat(1),
   );
 };

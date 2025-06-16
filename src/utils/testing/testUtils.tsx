@@ -2,11 +2,10 @@ import React, { FC } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { render, RenderOptions, RenderResult } from "@testing-library/react";
 import { AxiosHeaders, AxiosResponse } from "axios";
+import { MemoryRouter } from "react-router";
 
-// Re-export everything from testing-library
 export * from "@testing-library/react";
 
-// Create a custom render function that includes the QueryClientProvider
 export function renderWithQueryClient(
   ui: React.ReactElement,
   options?: Omit<RenderOptions, "wrapper">,
@@ -26,7 +25,27 @@ export function renderWithQueryClient(
   return render(ui, { wrapper, ...options });
 }
 
-// Create a function to get a QueryClient and wrapper for use with renderHook
+export function renderWithQueryClientAndRouter(
+  ui: React.ReactElement,
+  options?: Omit<RenderOptions, "wrapper">,
+): RenderResult {
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        retry: false,
+      },
+    },
+  });
+
+  const wrapper: FC<React.PropsWithChildren<object>> = ({ children }) => (
+    <QueryClientProvider client={queryClient}>
+      <MemoryRouter initialEntries={["/"]}>{children}</MemoryRouter>
+    </QueryClientProvider>
+  );
+
+  return render(ui, { wrapper, ...options });
+}
+
 export function getQueryClientWrapper() {
   const queryClient = new QueryClient({
     defaultOptions: {
@@ -43,7 +62,6 @@ export function getQueryClientWrapper() {
   return { queryClient, wrapper };
 }
 
-// Create a function to create a mock axios response
 export function createMockAxiosResponse<T>(data: T): AxiosResponse<T> {
   const axiosHeaders = new AxiosHeaders();
   return {
@@ -57,21 +75,18 @@ export function createMockAxiosResponse<T>(data: T): AxiosResponse<T> {
   };
 }
 
-// Session URLs
 export const SESSION_URLS = {
   DEFAULT: "https://sessionize.com/api/v2/xhudniix/view/Sessions",
   "2023": "https://sessionize.com/api/v2/ttsitynd/view/Sessions",
   "2024": "https://sessionize.com/api/v2/teq4asez/view/Sessions",
 };
 
-// Speaker URLs
 export const SPEAKER_URLS = {
   DEFAULT: "https://sessionize.com/api/v2/xhudniix/view/Speakers",
   "2023": "https://sessionize.com/api/v2/ttsitynd/view/Speakers",
   "2024": "https://sessionize.com/api/v2/teq4asez/view/Speakers",
 };
 
-// Mock data factories
 export const createMockSpeaker = (overrides = {}) => ({
   id: "1",
   fullName: "John Smith",
@@ -133,14 +148,6 @@ export const createMockSession = (overrides = {}) => ({
 export const createMockGroup = (overrides = {}) => ({
   groupId: 1,
   groupName: "Test Group",
-  isDefault: false,
-  sessions: [],
-  ...overrides,
-});
-
-export const createMockLiveview = (overrides = {}) => ({
-  groupID: null,
-  groupName: "",
   isDefault: false,
   sessions: [],
   ...overrides,
