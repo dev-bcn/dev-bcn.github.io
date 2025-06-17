@@ -200,6 +200,27 @@
         return Array.from(n);
     }
 
+    // Sessionize embed code
+    function insertFeedbackLink(modalNode, sessionId) {
+        const sessionDiv = modalNode.querySelector('.sz-session');
+        if (!sessionDiv) return;
+
+        const feedbackLink = document.createElement("a");
+        feedbackLink.href = "https://openfeedback.io/TG4hBcL7iPtV2LecVdHu/0/" + sessionId;
+        feedbackLink.target = "_blank";
+        feedbackLink.textContent = "Give Feedback on OpenFeedback";
+        feedbackLink.style.display = "block";
+        feedbackLink.style.margin = "1em 0";
+        feedbackLink.style.color = "white";
+
+        const desc = sessionDiv.querySelector('.sz-session__description');
+        if (desc && desc.parentNode) {
+            desc.parentNode.insertBefore(feedbackLink, desc.nextSibling);
+        } else {
+            sessionDiv.appendChild(feedbackLink);
+        }
+    }
+
     let _slicedToArray = function () {
         function n(n, t) {
             let r = [], u = !0, f = !1, e = undefined, i, o;
@@ -226,12 +247,13 @@
     }(), sessionize;
     typeof sessionize == "undefined" && (sessionize = {});
     sessionize.showModal = function (n, t, i) {
+        const sessionType = t;
         const r = document.getElementById("sz-modal-container"),
             u = new XMLHttpRequest;
         return r.innerHTML = "<div class=\"sz-modal-overlay\"><div class=\"sz-spinner\"><\/div><\/div>", r.classList.remove("is-hidden"), u.onreadystatechange = function () {
             let t, n;
             if (this.readyState === 4 && this.status === 200) {
-                for (r.innerHTML = this.responseText, r.classList.remove("is-hidden"), t = document.getElementsByClassName("sz-modal__close-on-click"), n = 0; n < t.length; n++) t[n].onclick = function () {
+                for (r.innerHTML = this.responseText, sessionType === "session" && insertFeedbackLink(r, i), r.classList.remove("is-hidden"), t = document.getElementsByClassName("sz-modal__close-on-click"), n = 0; n < t.length; n++) t[n].onclick = function () {
                     document.getElementById("sz-modal-container").classList.add("is-hidden");
                 };
                 sessionize.getLocalTimes();
