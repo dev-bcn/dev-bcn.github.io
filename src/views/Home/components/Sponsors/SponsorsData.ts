@@ -102,6 +102,12 @@ export const sponsors: Sponsors = {
       image: "images/sponsors/azul.png",
       website: "https://www.azul.com",
     },
+    {
+      name: "Glovo",
+      website:
+        "https://jobs.glovoapp.com/departments/engineering-2/?d=engineering&l=barcelona-hq",
+      image: "images/sponsors/glovo.png",
+    },
   ],
   communities: [
     {

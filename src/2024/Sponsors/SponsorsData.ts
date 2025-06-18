@@ -123,12 +123,6 @@ export const sponsors: Sponsors = {
       image: "images/sponsors/axa.png",
       website: "https://www.axapartners.es/es",
     },
-    {
-      name: "Glovo",
-      website:
-        "https://jobs.glovoapp.com/departments/engineering-2/?d=engineering&l=barcelona-hq",
-      image: "images/sponsors/glovo.png",
-    },
   ],
   communities: [
     {
