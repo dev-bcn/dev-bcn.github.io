@@ -97,6 +97,11 @@ export const sponsors: Sponsors = {
       image: "/images/sponsors/dow-jones.png",
       website: "https://www.dowjones.com/",
     },
+    {
+      name: "Azul",
+      image: "images/sponsors/azul.png",
+      website: "https://www.azul.com",
+    },
   ],
   communities: [
     {
