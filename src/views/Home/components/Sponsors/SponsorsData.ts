@@ -109,6 +109,11 @@ export const sponsors: Sponsors = {
       image: "images/sponsors/step4ward.png",
       website: "https://bit.ly/step4wardhome",
     },
+    {
+      name: "Migracode Barcelona",
+      image: "images/sponsors/migracode.jpg",
+      website: "https://www.migracode.org/",
+    },
   ],
   media_partners: [
     {
