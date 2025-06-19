@@ -145,7 +145,7 @@ export const sponsors: Sponsors = {
     {
       name: "Codely",
       image: "images/sponsors/codely.png",
-      website: "https://codely.com/pro/jbcnconf22",
+      website: "https://codely.com/",
     },
   ],
   supporters: [],
