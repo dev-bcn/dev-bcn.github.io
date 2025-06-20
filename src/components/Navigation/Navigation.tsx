@@ -1,12 +1,12 @@
 import { AnimatePresence } from "framer-motion";
 import { FC, useEffect, useState } from "react";
-import { BIG_BREAKPOINT, MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
+import { BIG_BREAKPOINT, MOBILE_BREAKPOINT } from "@constants/BreakPoints";
 import { useLocation, useNavigate } from "react-router";
 import Breadcrumbs from "./Breadcrumbs";
-import CloseIcon from "../../assets/images/CloseIcon.svg";
-import NavigationLogo from "../../assets/images/devBcn.png";
-import { ROUTE_HOME, ROUTE_HOME_ALTERNATE } from "../../constants/routes";
-import TicketsImage from "../../assets/images/TicketsImage.svg";
+import CloseIcon from "@assets/images/CloseIcon.svg";
+import NavigationLogo from "@assets/images/devBcn.png";
+import { ROUTE_HOME, ROUTE_HOME_ALTERNATE } from "@constants/routes";
+import TicketsImage from "@assets/images/TicketsImage.svg";
 import { navigationItems2025, subMenuItems2025 } from "./NavigationData";
 import {
   navigationItems2023,
