@@ -1,19 +1,14 @@
 import React, { FC } from "react";
-import { Color } from "../../styles/colors";
-import data from "../../data/2024.json";
+import { Color } from "@styles/colors";
+import data from "@data/2024.json";
 import { styled } from "styled-components";
-import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
+import { BIG_BREAKPOINT } from "@constants/BreakPoints";
 import { Link } from "react-router";
-import {
-  ROUTE_CODE_OF_CONDUCT,
-  ROUTE_CONDITIONS,
-} from "../../constants/routes";
-import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
+import { ROUTE_CODE_OF_CONDUCT, ROUTE_CONDITIONS } from "@constants/routes";
+import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
 
 const StyledSection = styled.section`
-{
   padding-top: 48px;
-}
 
   .top {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 50px));
@@ -37,11 +32,10 @@ const StyledWave = styled.section`
 `;
 
 const StyledLogo = styled.img`
-{
   max-width: 30vw;
   flex: 2 1 auto;
   padding-bottom: 50px;
-}
+
   @media only screen and (max-width: ${BIG_BREAKPOINT}px) {
     padding-bottom: 20px;
     max-width: 65vw;
@@ -49,6 +43,8 @@ const StyledLogo = styled.img`
 `;
 
 const Heading = styled.h1`
+  margin-top: 2rem;
+  font-family: "Square 721 Regular", sans-serif;
   color: ${Color.WHITE};
   font-size: 2.5em;
 `;
@@ -56,7 +52,8 @@ const Heading = styled.h1`
 const StyledP = styled.p`
   text-align: justify;
   color: ${Color.DARK_BLUE};
-  margin: 15px 3%;
+  margin: 2rem auto;
+  max-width: 70vw;
 
   @media (max-width: ${BIG_BREAKPOINT}px) {
     margin: 15px 10%;
@@ -82,7 +79,8 @@ const FlexDiv = styled.div`
 const StyledParagraph = styled.section`
   text-align: left;
   color: ${Color.DARK_BLUE};
-  margin: 15px 3%;
+  margin: 1rem auto;
+  max-width: 70vw;
 
   h2 {
     padding-bottom: 15px;
@@ -125,18 +123,18 @@ const Diversity: FC<React.PropsWithChildren<unknown>> = () => {
 
       <StyledP>
         We must thank{" "}
-        <a href="https://careers.ocadogroup.com/where-we-are/europe/development-centre-barcelona?utm_source=event&utm_medium=other&utm_campaign=ot_event_bcn_devbcn_website">
-          Ocado
-        </a>{" "}
+        <strong>
+          <a href="https://nubank.com.br/">NUBANK</a>
+        </strong>{" "}
         for making this possible!
       </StyledP>
       <FlexDiv>
         <a
-          href="https://careers.ocadogroup.com/where-we-are/europe/development-centre-barcelona?utm_source=event&utm_medium=other&utm_campaign=ot_event_bcn_devbcn_website"
+          href="https://nubank.com.br/"
           target="_blank"
           rel="noreferrer noopener"
         >
-          <StyledLogo alt="Ocado" src="images/sponsors/ocado.png" />
+          <StyledLogo alt="NUBANK" src="/images/sponsors/datomic.svg" />
         </a>
       </FlexDiv>
       <>
@@ -170,7 +168,7 @@ const Diversity: FC<React.PropsWithChildren<unknown>> = () => {
                   <a
                     rel="noreferrer"
                     target="_blank"
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSdyRqQkh2iRD_QxzAwodIM1cXmO_Q4hNGojXnFli-crob2QUQ/viewform"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSdvMulz0x6epQUZl7rQr0JsrOp0eRtY1IYwp2sXPCqlAH9WzA/viewform?usp=sharing&ouid=111571095373139083277"
                   >
                     application form
                   </a>{" "}

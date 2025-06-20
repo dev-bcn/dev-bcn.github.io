@@ -2,6 +2,7 @@ import {
   ROUTE_ABOUT_US,
   ROUTE_CFP,
   ROUTE_CODE_OF_CONDUCT,
+  ROUTE_DIVERSITY,
   ROUTE_HOME,
   ROUTE_JOB_OFFERS,
   ROUTE_SCHEDULE,
@@ -33,7 +34,7 @@ export const navigationItems2025: NavigationItem[] = [
 ];
 
 export const subMenuItems2025: NavigationItem[] = [
-  //{ id: "DIVERSITY", link: ROUTE_DIVERSITY },
+  { id: "DIVERSITY", link: ROUTE_DIVERSITY },
   { id: "Cfp Committee", link: ROUTE_CFP },
   //{ id: "Accommodation", link: ROUTE_ACCOMMODATION },
   //{ id: "Attendee information", link: ROUTE_ATTENDEE },
