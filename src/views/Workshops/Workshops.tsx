@@ -1,6 +1,6 @@
 import React, { FC, useEffect } from "react";
-import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import { Color } from "../../styles/colors";
+import SectionWrapper from "@components/SectionWrapper/SectionWrapper";
+import { Color } from "@styles/colors";
 import {
   StyledMarginBottom,
   StyledSpeakersSection,
@@ -8,22 +8,20 @@ import {
   StyledTitleIcon,
   StyledWaveContainer,
 } from "../Talks/Talks.style";
-import LessThanDarkBlueIcon from "../../assets/images/LessThanDarkBlueIcon.svg";
-import TitleSection from "../../components/SectionTitle/TitleSection";
-import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
-import { useFetchTalks } from "../../hooks/useFetchTalks";
+import LessThanDarkBlueIcon from "@assets/images/LessThanDarkBlueIcon.svg";
+import TitleSection from "@components/SectionTitle/TitleSection";
+import MoreThanBlueIcon from "@assets/images/MoreThanBlueIcon.svg";
+import { useFetchTalks } from "@hooks/useFetchTalks";
 import { TalkCard } from "../Talks/components/TalkCard";
-import conferenceData from "../../data/2025.json";
+import conferenceData from "@data/2025.json";
 import { styled } from "styled-components";
-import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
-import { useSentryErrorReport } from "../../hooks/useSentryErrorReport";
+import { BIG_BREAKPOINT } from "@constants/BreakPoints";
+import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
 
 const StyledSection = styled.section`
-{
   display: flex;
   padding: 0 10rem;
   flex-wrap: wrap;
-}
 
   @media (max-width: ${BIG_BREAKPOINT}px) {
     padding: 1rem;
@@ -103,6 +101,7 @@ const Workshops: FC<React.PropsWithChildren<unknown>> = () => {
                 key={track.id}
                 showTrack={true}
                 year={conferenceData.edition}
+                openFeedbackId={conferenceData.openFeedbackId}
               />
             ))
           )}
