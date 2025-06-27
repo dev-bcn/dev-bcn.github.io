@@ -20,7 +20,7 @@ const StyledContainer = styled.div`
   }
 `;
 
-const HomeWrapper2024: FC<React.PropsWithChildren<unknown>> = () => {
+export const HomeWrapper2024: FC<React.PropsWithChildren<unknown>> = () => {
   const { hash } = useLocation();
 
   React.useEffect(() => {
@@ -45,5 +45,3 @@ const HomeWrapper2024: FC<React.PropsWithChildren<unknown>> = () => {
     </StyledContainer>
   );
 };
-
-export default HomeWrapper2024;
