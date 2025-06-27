@@ -1,0 +1,2 @@
+import{j as n}from"./index-CqNmxiVQ.js";import{T as t}from"./TalkCard-IX0ebE9g.js";try{let e=typeof window<"u"?window:typeof global<"u"?global:typeof globalThis<"u"?globalThis:typeof self<"u"?self:{},d=new e.Error().stack;d&&(e._sentryDebugIds=e._sentryDebugIds||{},e._sentryDebugIds[d]="6e8bbc48-34d4-4cd7-b065-c030f7e30c2e",e._sentryDebugIdIdentifier="sentry-dbid-6e8bbc48-34d4-4cd7-b065-c030f7e30c2e")}catch{}const o=e=>n.jsx(t,{...e});export{o as T};
+//# sourceMappingURL=TalkCard-7BG_0utd.js.map
