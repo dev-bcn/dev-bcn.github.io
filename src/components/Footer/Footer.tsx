@@ -1,17 +1,8 @@
 import { BIG_BREAKPOINT } from "@constants/BreakPoints";
 import { FC } from "react";
-import LessThanBlueIcon from "@assets/images/LessThanBlueIcon.svg";
-import emailIcon from "@assets/images/emailIcon.svg";
-import blueskyIcon from "@assets/images/blueskyIcon.svg";
-import instagramIcon from "@assets/images/instagramIcon.svg";
-import flickrIcon from "@assets/images/flickr.svg";
-import linkedinIcon from "@assets/images/linkedinIcon.svg";
-import logo from "@assets/images/devBcn.png";
-import twitterIcon from "@assets/images/twitterIcon.svg";
 import { useNavigate } from "react-router";
 import { useWindowSize } from "react-use";
 import data from "@data/2024.json";
-import youtubeIcon from "@assets/images/youtubeIcon.svg";
 import {
   StyledAbsoluteImg,
   StyledFlexCol,
@@ -24,7 +15,7 @@ import {
   StyledLink,
 } from "./Styles.Footer";
 
-const Footer: FC<React.PropsWithChildren<unknown>> = () => {
+export const Footer: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
 
   const navigate = useNavigate();
@@ -38,7 +29,10 @@ const Footer: FC<React.PropsWithChildren<unknown>> = () => {
     <StyledFooterAbsoluteContainer className="Footer">
       <StyledFooterContainer>
         <StyledFooterItem>
-          <StyledAbsoluteImg alt="less than - icon" src={LessThanBlueIcon} />
+          <StyledAbsoluteImg
+            alt="less than - icon"
+            src="/images/LessThanBlueIcon.svg"
+          />
         </StyledFooterItem>
         <StyledFooterItem>
           <StyledFlexCol>
@@ -49,14 +43,14 @@ const Footer: FC<React.PropsWithChildren<unknown>> = () => {
               <StyledLink target={"_blank"} href={data.twitter}>
                 <StyledFooterIcon
                   alt="twitter"
-                  src={twitterIcon}
+                  src="/images/twitterIcon.svg"
                   height={24}
                   width={24}
                 />
               </StyledLink>
               <StyledLink target={"_blank"} href={data.youtube}>
                 <StyledFooterIcon
-                  src={youtubeIcon}
+                  src="/images/youtubeIcon.svg"
                   alt="youtube"
                   height={24}
                   width={24}
@@ -64,7 +58,7 @@ const Footer: FC<React.PropsWithChildren<unknown>> = () => {
               </StyledLink>
               <StyledLink target={"_blank"} href={data.flickr}>
                 <StyledFooterIcon
-                  src={flickrIcon}
+                  src="/images/flickr.svg"
                   alt="facebook"
                   height={24}
                   width={24}
@@ -72,7 +66,7 @@ const Footer: FC<React.PropsWithChildren<unknown>> = () => {
               </StyledLink>
               <StyledLink target={"_blank"} href={data.linkedin}>
                 <StyledFooterIcon
-                  src={linkedinIcon}
+                  src="/images/linkedinIcon.svg"
                   alt="facebook"
                   height={24}
                   width={24}
@@ -80,7 +74,7 @@ const Footer: FC<React.PropsWithChildren<unknown>> = () => {
               </StyledLink>
               <StyledLink target={"_blank"} href={data.bluesky}>
                 <StyledFooterIcon
-                  src={blueskyIcon}
+                  src="/images/blueskyIcon.svg"
                   alt="facebook"
                   height={24}
                   width={24}
@@ -88,7 +82,7 @@ const Footer: FC<React.PropsWithChildren<unknown>> = () => {
               </StyledLink>
               <StyledLink target={"_blank"} href={data.instagram}>
                 <StyledFooterIcon
-                  src={instagramIcon}
+                  src="/images/instagramIcon.svg"
                   alt="facebook"
                   height={24}
                   width={24}
@@ -101,7 +95,7 @@ const Footer: FC<React.PropsWithChildren<unknown>> = () => {
         <StyledFooterItem>
           <StyledImg
             alt="DevBcn"
-            src={logo}
+            src="/images/devBcn.png"
             width={140}
             height={72}
             onClick={handleLogoClick}
@@ -113,7 +107,7 @@ const Footer: FC<React.PropsWithChildren<unknown>> = () => {
             <StyledFlexRow>
               <StyledLink href={`mailto: ${data.email}`}>
                 <StyledFooterIcon
-                  src={emailIcon}
+                  src="/images/emailIcon.svg"
                   alt="email"
                   height={24}
                   width={24}
@@ -129,5 +123,3 @@ const Footer: FC<React.PropsWithChildren<unknown>> = () => {
     </StyledFooterAbsoluteContainer>
   );
 };
-
-export default Footer;
