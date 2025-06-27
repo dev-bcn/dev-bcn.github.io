@@ -19,7 +19,7 @@ import Button from "@components/UI/Button";
 import { gaEventTracker } from "@components/analytics/Analytics";
 import { useFetchSpeakers } from "@hooks/useFetchSpeakers";
 import { SpeakerCard } from "@views/Speakers/components/SpeakersCard";
-import { ISpeaker } from "../../types/speakers";
+import { ISpeaker } from "@/types/speakers";
 import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
 
 const LessThanGreaterThan = () => (

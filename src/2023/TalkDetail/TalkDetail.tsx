@@ -25,14 +25,11 @@ import {
   StyledVideoTagsContainer,
 } from "./Style.MeetingDetail";
 import { Link } from "react-router";
-import {
-  ROUTE_2023_SPEAKER_DETAIL,
-  ROUTE_2023_TALKS,
-} from "../../constants/routes";
+import { ROUTE_2023_SPEAKER_DETAIL, ROUTE_2023_TALKS } from "@constants/routes";
 import conferenceData from "../../data/2023.json";
-import { Tag } from "../../components/Tag/Tag";
-import { IMeetingDetailProps, MyType } from "../../types/sessions";
-import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
+import { Tag } from "@components/Tag/Tag";
+import { IMeetingDetailProps, MyType } from "@/types/sessions";
+import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
 
 const getVideoHeight = (windowWidth: number) => {
   let videoHeight;
