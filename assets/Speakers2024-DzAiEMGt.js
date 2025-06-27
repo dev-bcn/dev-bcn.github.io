@@ -1,2 +1,0 @@
-import{j as n,i as r}from"./index-CqNmxiVQ.js";import{S as a}from"./Speakers-jqhN4zuI.js";import"./SpeakersCard-BbSOTsvD.js";try{let e=typeof window<"u"?window:typeof global<"u"?global:typeof globalThis<"u"?globalThis:typeof self<"u"?self:{},t=new e.Error().stack;t&&(e._sentryDebugIds=e._sentryDebugIds||{},e._sentryDebugIds[t]="6322c51e-843d-4b56-ac20-a444e9647ae9",e._sentryDebugIdIdentifier="sentry-dbid-6322c51e-843d-4b56-ac20-a444e9647ae9")}catch{}const i=()=>n.jsx(a,{year:"2024",webData:r});export{i as Speakers2024};
-//# sourceMappingURL=Speakers2024-DzAiEMGt.js.map
