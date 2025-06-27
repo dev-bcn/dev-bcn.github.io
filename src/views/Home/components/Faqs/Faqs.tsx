@@ -4,6 +4,7 @@ import FaqCard from "./components/FaqsCard";
 import { useWindowSize } from "react-use";
 import { MOBILE_BREAKPOINT } from "@constants/BreakPoints";
 import { StyledLoadingImage } from "@components/Loading/Loading";
+// @ts-expect-error some quirky import
 import { motion } from "motion/react";
 import { faqsData } from "./FaqsData";
 import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";

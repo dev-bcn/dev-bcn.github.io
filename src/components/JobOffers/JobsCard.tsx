@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { styled } from "styled-components";
 import { Color } from "@styles/colors";
+// @ts-expect-error some quirky import
 import { motion } from "motion/react";
 import {
   StyledFaqCard,

@@ -127,6 +127,7 @@ describe("Live view component", () => {
   let clearIntervalMock: MockedFunction<typeof global.clearInterval>;
 
   beforeEach(() => {
+    // @ts-expect-error I dont understand this
     setIntervalMock = vi.fn(() => {
       return 123;
     });
@@ -158,6 +159,18 @@ describe("Live view component", () => {
       isFetching: true,
       refetch: vi.fn(),
       remove: vi.fn(),
+      isLoadingError: false,
+      isRefetchError: false,
+      dataUpdatedAt: 0,
+      errorUpdatedAt: 0,
+      failureCount: 0,
+      errorUpdateCount: 0,
+      isFetched: false,
+      isFetchedAfterMount: false,
+      isPlaceholderData: false,
+      isPreviousData: false,
+      isRefetching: false,
+      isStale: false,
     });
 
     renderWithQueryClientAndRouter(<LiveView />);
@@ -177,6 +190,18 @@ describe("Live view component", () => {
       isFetching: false,
       refetch: vi.fn(),
       remove: vi.fn(),
+      isLoadingError: false,
+      isRefetchError: false,
+      dataUpdatedAt: 0,
+      errorUpdatedAt: 0,
+      failureCount: 0,
+      errorUpdateCount: 0,
+      isFetched: false,
+      isFetchedAfterMount: false,
+      isPlaceholderData: false,
+      isPreviousData: false,
+      isRefetching: false,
+      isStale: false,
     });
 
     const { unmount } = renderWithQueryClientAndRouter(<LiveView />);

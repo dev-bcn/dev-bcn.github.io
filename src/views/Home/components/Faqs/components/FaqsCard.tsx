@@ -1,5 +1,6 @@
 import React, { FC, Suspense } from "react";
 import { StyledLoadingImage } from "@components/Loading/Loading";
+// @ts-expect-error some quirky import
 import { motion } from "motion/react";
 import {
   FaqCardType,

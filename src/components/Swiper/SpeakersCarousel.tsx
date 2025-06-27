@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { Link } from "react-router";
+// @ts-expect-error some quirky import
 import { motion } from "motion/react";
 import { styled } from "styled-components";
 import SpeakerSwiper from "./SpeakerSwiper";

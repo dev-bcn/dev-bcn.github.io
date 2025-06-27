@@ -4,6 +4,7 @@ import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
 import { BIGGER_BREAKPOINT } from "@constants/BreakPoints";
 import TimeCountDown from "./components/TimeCountdown";
 import { useWindowSize } from "react-use";
+// @ts-expect-error some quirky import
 import { motion } from "motion/react";
 import {
   StyledBlueSlash,

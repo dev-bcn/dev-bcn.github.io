@@ -18,18 +18,6 @@ export const createMockSpeaker = (overrides = {}): ISpeaker => ({
       name: "sample session",
     },
   ],
-  links: [
-    {
-      linkType: "Twitter",
-      url: "https://twitter.com/johnsmith",
-      title: "",
-    },
-    {
-      linkType: "LinkedIn",
-      url: "https://linkedin.com/in/johnsmith",
-      title: "",
-    },
-  ],
   ...overrides,
 });
 

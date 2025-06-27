@@ -19,6 +19,7 @@ import "@egjs/react-flicking/dist/flicking.css";
 import Button from "@components/UI/Button";
 import { gaEventTracker } from "@components/analytics/Analytics";
 import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
+// @ts-expect-error some quirky import
 import { AnimatePresence, motion } from "framer-motion";
 
 const StyledWaveContainer = styled.div`
