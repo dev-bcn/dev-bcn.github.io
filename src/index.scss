@@ -1,6 +1,6 @@
-@import "/src/styles/colors.scss";
-@import "sessionize-colors";
-@import "2024.scss";
+@use "/src/styles/colors.scss";
+@use "sessionize-colors";
+@use "2024.scss" as _2024;
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
 root {
