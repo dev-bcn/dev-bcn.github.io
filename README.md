@@ -1,6 +1,6 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=dev-bcn_dev-bcn.github.io&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=dev-bcn_dev-bcn.github.io)
 
-![](src/assets/images/1500x500.jpeg)
+![](/public/images/1500x500.jpeg)
 
 # DevBcn - Barcelona Developers Conference Website
 
@@ -46,7 +46,7 @@ Available aliases:
 - `@constants/*` - Constants from `src/constants/`
 - `@services/*` - Services from `src/services/`
 - `@hooks/*` - Hooks from `src/hooks/`
-- `@assets/*` - Assets from `src/assets/`
+- `@/assets/*` - Assets from `src/assets/`
 - `@styles/*` - Styles from `src/styles/`
 - `@views/*` - Views from `src/views/`
 - `@utils/*` - Utilities from `src/utils/`

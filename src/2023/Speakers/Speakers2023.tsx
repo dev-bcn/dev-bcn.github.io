@@ -1,10 +1,8 @@
-import { MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
-import { Color } from "../../styles/colors";
+import { MOBILE_BREAKPOINT } from "@constants/BreakPoints";
+import { Color } from "@styles/colors";
 import { FC, useCallback, useEffect } from "react";
-import LessThanBlueIcon from "../../assets/images/LessThanBlueIcon.svg";
-import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
-import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import TitleSection from "../../components/SectionTitle/TitleSection";
+import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
+import TitleSection from "@components/SectionTitle/TitleSection";
 import { useWindowSize } from "react-use";
 import {
   SpeakersCardsContainer,
@@ -16,18 +14,18 @@ import {
   StyledSpeakersSection,
   StyledWaveContainer,
 } from "./Speakers.style";
-import webData from "../../data/2023.json";
-import Button from "../../components/UI/Button";
-import { gaEventTracker } from "../../components/analytics/Analytics";
-import { useFetchSpeakers } from "../../hooks/useFetchSpeakers";
-import { ISpeaker } from "../../types/speakers";
-import { SpeakerCard } from "../../views/Speakers/components/SpeakersCard";
-import { useSentryErrorReport } from "../../hooks/useSentryErrorReport";
+import webData from "@data/2023.json";
+import Button from "@components/UI/Button";
+import { gaEventTracker } from "@components/analytics/Analytics";
+import { useFetchSpeakers } from "@hooks/useFetchSpeakers";
+import { ISpeaker } from "@/types/speakers";
+import { SpeakerCard } from "@views/Speakers/components/SpeakersCard";
+import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
 
 const LessThanGreaterThan = () => (
   <>
-    <StyledLessIcon src={LessThanBlueIcon} />
-    <StyledMoreIcon src={MoreThanBlueIcon} />
+    <StyledLessIcon src="/images/LessThanBlueIcon.svg" />
+    <StyledMoreIcon src="/images/MoreThanBlueIcon.svg" />
   </>
 );
 
@@ -63,7 +61,7 @@ const Speakers2023: FC<React.PropsWithChildren<unknown>> = () => {
             Technologies and in the JCP."
             color={Color.WHITE}
           />
-          {width > MOBILE_BREAKPOINT && <LessThanGreaterThan/>}
+          {width > MOBILE_BREAKPOINT && <LessThanGreaterThan />}
           <SpeakersCardsContainer>
             {isLoading && <p>Loading...</p>}
             {isBetween(CFPStartDay, CFPEndDay) && (

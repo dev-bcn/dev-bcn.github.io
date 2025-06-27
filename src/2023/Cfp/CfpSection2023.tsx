@@ -1,27 +1,25 @@
 import React, { FC } from "react";
-import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import { Color } from "../../styles/colors";
+import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
+import { Color } from "@styles/colors";
 import {
   StyledLessIcon,
   StyledMoreIcon,
   StyledSpeakersSection,
 } from "../Speakers/Speakers.style";
-import TitleSection from "../../components/SectionTitle/TitleSection";
-import { MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
-import MoreThanBlueWhiteIcon from "../../assets/images/MoreThanBlueWhiteIcon.svg";
-import LessThanBlueWhiteIcon from "../../assets/images/LessThanBlueWhiteIcon.svg";
+import TitleSection from "@components/SectionTitle/TitleSection";
+import { MOBILE_BREAKPOINT } from "@constants/BreakPoints";
 import { useWindowSize } from "react-use";
-import TwitterIcon from "../../components/Icons/Twitter";
-import LinkedinIcon from "../../components/Icons/Linkedin";
+import TwitterIcon from "@components/Icons/Twitter";
+import LinkedinIcon from "@components/Icons/Linkedin";
 
-import conferenceData from "../../data/2023.json";
+import conferenceData from "@data/2023.json";
 import { CfpTrackProps, data } from "./CfpData";
 import { styled } from "styled-components";
 import {
   StyledAboutImage,
   StyledSocialIconsWrapper,
-} from "../../views/About/components/Style.AboutCard";
-import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
+} from "@views/About/components/Style.AboutCard";
+import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
 
 const TrackName = styled.h2`
   padding-top: 1.2rem;
@@ -94,11 +92,11 @@ const CfpSection2023: FC<React.PropsWithChildren<unknown>> = () => {
             <>
               <StyledLessIcon
                 title="Less than - icon"
-                src={MoreThanBlueWhiteIcon}
+                src="/images/MoreThanBlueWhiteIcon.svg"
               />
               <StyledMoreIcon
                 title="more than - icon"
-                src={LessThanBlueWhiteIcon}
+                src="/images/LessThanBlueWhiteIcon.svg"
               />
             </>
           )}

@@ -1,12 +1,8 @@
 import { FC, useRef } from "react";
 import TitleSection from "@components/SectionTitle/TitleSection";
-import SectionWrapper from "@components/SectionWrapper/SectionWrapper";
+import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
 import { BIG_BREAKPOINT, MOBILE_BREAKPOINT } from "@constants/BreakPoints";
 import { Color } from "@styles/colors";
-import LessThanBlue from "@assets/images/MoreThanBlueWhiteIcon.svg";
-import LessThanTransparentIcon from "@assets/images/LessThanTransparentIcon.svg";
-import MoreThanBlue from "@assets/images/LessThanBlueWhiteIcon.svg";
-import MoreThanTransparentIcon from "@assets/images/MoreThanTransparentIcon.svg";
 import { styled } from "styled-components";
 import { useWindowSize } from "react-use";
 import {
@@ -146,8 +142,8 @@ const Sponsorship: FC<React.PropsWithChildren<unknown>> = () => {
           </motion.div>
           {width > MOBILE_BREAKPOINT && (
             <>
-              <StyledLessIcon src={LessThanBlue} />
-              <StyledMoreIcon src={MoreThanBlue} />
+              <StyledLessIcon src="/images/MoreThanBlueWhiteIcon.svg" />
+              <StyledMoreIcon src="/images/LessThanBlueWhiteIcon.svg" />
             </>
           )}
         </StyledSpeakersSection>
@@ -251,14 +247,14 @@ const Sponsorship: FC<React.PropsWithChildren<unknown>> = () => {
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.5 }}
               >
-                <StyleMoreIcon src={LessThanTransparentIcon} />
+                <StyleMoreIcon src="/images/LessThanTransparentIcon.svg" />
               </motion.div>
               <motion.div
                 initial={{ x: 100, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.5 }}
               >
-                <StyleLessIcon src={MoreThanTransparentIcon} />
+                <StyleLessIcon src="/images/MoreThanTransparentIcon.svg" />
               </motion.div>
             </>
           )}

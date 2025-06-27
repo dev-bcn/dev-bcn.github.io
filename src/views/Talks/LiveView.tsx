@@ -1,6 +1,6 @@
 import React, { FC, useCallback, useEffect, useMemo, useState } from "react";
 import { useFetchLiveView } from "@hooks/useFetchTalks";
-import Loading from "@components/Loading/Loading";
+import { Loading } from "@components/Loading/Loading";
 import { UngroupedSession } from "./liveView.types";
 import conference from "@data/2025.json";
 import { TalkCard } from "./components/TalkCard";
@@ -11,9 +11,10 @@ import { useDateInterval } from "@hooks/useDateInterval";
 import { isWithinInterval } from "date-fns";
 import { Link } from "react-router-dom";
 import { ROUTE_SCHEDULE } from "@constants/routes";
+// @ts-expect-error some quirky import
 import { AnimatePresence } from "framer-motion";
 
-const LiveView: FC<React.PropsWithChildren<unknown>> = () => {
+export const LiveView: FC<React.PropsWithChildren<unknown>> = () => {
   const { isLoading, error, data } = useFetchLiveView();
   const [currentTime, setCurrentTime] = useState<Date>(new Date());
   const { isConferenceActive } = useDateInterval(currentTime, conference);
@@ -48,7 +49,7 @@ const LiveView: FC<React.PropsWithChildren<unknown>> = () => {
   return (
     <StyledMain>
       <img
-        src="images/logo.png"
+        src="/images/logo.png"
         alt={conference.title}
         style={{ width: "25%" }}
       />
@@ -101,5 +102,3 @@ const LiveView: FC<React.PropsWithChildren<unknown>> = () => {
     </StyledMain>
   );
 };
-
-export default LiveView;

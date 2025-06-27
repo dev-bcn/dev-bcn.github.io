@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { styled } from "styled-components";
-import { Color } from "../../styles/colors";
-import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
+import { Color } from "@styles/colors";
+import { BIG_BREAKPOINT } from "@constants/BreakPoints";
 
 const StyledAccommodation = styled.div`
 {
@@ -112,7 +112,7 @@ const StyledAccommodation = styled.div`
   }
 `;
 
-const Accommodation: FC<React.PropsWithChildren<unknown>> = () => {
+export const Accommodation: FC<React.PropsWithChildren<unknown>> = () => {
   return (
     <StyledAccommodation>
       <div className="container">
@@ -150,5 +150,3 @@ const Accommodation: FC<React.PropsWithChildren<unknown>> = () => {
     </StyledAccommodation>
   );
 };
-
-export default Accommodation;

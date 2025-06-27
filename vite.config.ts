@@ -1,15 +1,11 @@
-import { defineConfig, loadEnv } from "vite";
+import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { sentryVitePlugin } from "@sentry/vite-plugin";
 import pkg from "./package.json";
 import path from "path";
+import { VitePWA } from "vite-plugin-pwa";
 
-// https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
-  // Load env file based on `mode` in the current directory.
-  // Set the third parameter to '' to load all env regardless of the `VITE_` prefix.
-  const env = loadEnv(mode, process.cwd(), "");
-
   return {
     plugins: [
       react(),
@@ -17,6 +13,33 @@ export default defineConfig(({ mode }) => {
         authToken: process.env.SENTRY_AUTH_TOKEN,
         org: "dev-bcn",
         project: "devbcn",
+      }),
+
+      VitePWA({
+        registerType: "autoUpdate",
+        includeAssets: [
+          "favicon.ico",
+          "apple-touch-icon.png",
+          "maskable_icon_x192.png",
+        ],
+        manifest: {
+          name: "DevBcn",
+          short_name: "DevBcn",
+          description: "DevBcn - The developer conference in Barcelona",
+          theme_color: "#ffffff",
+          icons: [
+            {
+              src: "logo192.png",
+              sizes: "192x192",
+              type: "image/png",
+            },
+            {
+              src: "logo512.png",
+              sizes: "512x512",
+              type: "image/png",
+            },
+          ],
+        },
       }),
     ],
     resolve: {
@@ -26,33 +49,23 @@ export default defineConfig(({ mode }) => {
         "@constants": path.resolve(__dirname, "./src/constants"),
         "@services": path.resolve(__dirname, "./src/services"),
         "@hooks": path.resolve(__dirname, "./src/hooks"),
-        "@assets": path.resolve(__dirname, "./src/assets"),
+        "@/assets": path.resolve(__dirname, "./src/assets"),
         "@styles": path.resolve(__dirname, "./src/styles"),
         "@views": path.resolve(__dirname, "./src/views"),
         "@utils": path.resolve(__dirname, "./src/utils"),
         "@data": path.resolve(__dirname, "./src/data"),
-        "@types": path.resolve(__dirname, "./src/types"),
+        "@/types": path.resolve(__dirname, "./src/types"),
+        "lucide-react": "lucide-react",
       },
     },
     define: {
-      // Create a shim for the process.env object
       "process.env": {
-        // Map REACT_APP_ environment variables to VITE_ ones
-        REACT_APP_GOOGLE_ANALYTICS_API_KEY: JSON.stringify(
-          env.VITE_GOOGLE_ANALYTICS_API_KEY ||
-            env.REACT_APP_GOOGLE_ANALYTICS_API_KEY ||
-            "G-0BG1LNPT11",
-        ),
-        REACT_APP_MAP_API_KEY: JSON.stringify(
-          env.VITE_MAP_API_KEY || env.REACT_APP_MAP_API_KEY || "",
-        ),
-        // Add standard environment variables
         NODE_ENV: JSON.stringify(mode),
         npm_package_version: JSON.stringify(pkg.version),
       },
     },
     build: {
-      outDir: "build", // Match CRA's output directory
+      outDir: "build",
       sourcemap: true,
     },
     server: {

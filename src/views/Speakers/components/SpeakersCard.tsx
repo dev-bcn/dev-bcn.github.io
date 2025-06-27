@@ -12,9 +12,8 @@ import {
   ROUTE_2023_SPEAKER_DETAIL,
   ROUTE_2024_SPEAKER_DETAIL,
   ROUTE_SPEAKER_DETAIL,
-} from "../../../constants/routes";
-import Loading from "../../../assets/images/logo.png";
-import { ISpeaker } from "../../../types/speakers";
+} from "@constants/routes";
+import { ISpeaker } from "@/types/speakers";
 
 type SpeakerCardProps = {
   speaker: ISpeaker;
@@ -42,7 +41,7 @@ export const SpeakerCard: FC<React.PropsWithChildren<SpeakerCardProps>> = ({
         style={{ textDecoration: "none" }}
       >
         <StyledSpeakerImageContainer>
-          <Suspense fallback={Loading}>
+          <Suspense fallback={<img src="/images/logo.png" alt="loading" />}>
             <StyledSpeakerImage src={speaker.speakerImage} />
           </Suspense>
           <StyledImageAnimation />

@@ -1,41 +1,41 @@
 import React, { FC } from "react";
 import { styled } from "styled-components";
-import { Color } from "../../styles/colors";
-import data from "../../data/2024.json";
-import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
+import { Color } from "@styles/colors";
+import data from "@data/2024.json";
+import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
 
 const StyledDiv = styled.div`
 {
-    width: 70%;
-    margin: 90px auto;
+  width: 70%;
+  margin: 90px auto;
 }
 
-    p {
-        text-align: justify;
-        margin: 5px;
-    }
+  p {
+    text-align: justify;
+    margin: 5px;
+  }
 
-    h1,
-    h2,
-    h3,
-    h4 {
-        text-align: left;
-        margin-top: 10px;
-        margin-bottom: 20px;
-    }
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
 
-    li {
-        margin-left: 30px;
-        text-align: left;
-    }
+  li {
+    margin-left: 30px;
+    text-align: left;
+  }
 
-    hr {
-        color: ${Color.DARK_BLUE};
-        margin: 20px;
-    }
+  hr {
+    color: ${Color.DARK_BLUE};
+    margin: 20px;
+  }
 `;
 
-const Conditions: FC<React.PropsWithChildren<unknown>> = () => {
+export const Conditions: FC<React.PropsWithChildren<unknown>> = () => {
   useDocumentTitleUpdater("Communities", data.edition);
 
   return (

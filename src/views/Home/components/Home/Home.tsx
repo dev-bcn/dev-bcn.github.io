@@ -1,7 +1,6 @@
 import Countdown from "react-countdown";
 import React, { FC } from "react";
-import LessThanIcon from "@assets/images/MoreThanBlueWhiteIcon.svg";
-import SectionWrapper from "@components/SectionWrapper/SectionWrapper";
+import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
 import { BIGGER_BREAKPOINT } from "@constants/BreakPoints";
 import TimeCountDown from "./components/TimeCountdown";
 import { useWindowSize } from "react-use";
@@ -116,7 +115,10 @@ const Home: FC<React.PropsWithChildren<unknown>> = () => {
           {edition?.showInfoButtons && <InfoButtons />}
 
           {width > BIGGER_BREAKPOINT && (
-            <StyledLessThan alt="Icon" src={LessThanIcon} />
+            <StyledLessThan
+              alt="Icon"
+              src="/images/MoreThanBlueWhiteIcon.svg"
+            />
           )}
           {width > BIGGER_BREAKPOINT && (
             <StyledTopSlash

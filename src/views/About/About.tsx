@@ -1,9 +1,7 @@
 import React, { FC } from "react";
 import TitleSection from "@components/SectionTitle/TitleSection";
-import SectionWrapper from "@components/SectionWrapper/SectionWrapper";
+import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
 import { MOBILE_BREAKPOINT } from "@constants/BreakPoints";
-import LessThanBlueWhiteIcon from "@assets/images/LessThanBlueWhiteIcon.svg";
-import MoreThanBlueWhiteIcon from "@assets/images/MoreThanBlueWhiteIcon.svg";
 import { useWindowSize } from "react-use";
 import { aboutData } from "./AboutData";
 import { AboutCard } from "./components/AboutCard";
@@ -55,8 +53,8 @@ const About: FC<React.PropsWithChildren<unknown>> = () => {
         />
         {width > MOBILE_BREAKPOINT && (
           <>
-            <StyledLessIcon src={MoreThanBlueWhiteIcon} />
-            <StyledMoreIcon src={LessThanBlueWhiteIcon} />
+            <StyledLessIcon src="/images/MoreThanBlueWhiteIcon.svg" />
+            <StyledMoreIcon src="/images/LessThanBlueWhiteIcon.svg" />
           </>
         )}
         <StyledUsersWrapper>

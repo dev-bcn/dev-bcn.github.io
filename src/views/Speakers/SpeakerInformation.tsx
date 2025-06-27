@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { styled } from "styled-components";
-import { Color } from "../../styles/colors";
-import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
-import data from "../../data/2024.json";
+import { Color } from "@styles/colors";
+import { BIG_BREAKPOINT } from "@constants/BreakPoints";
+import data from "@data/2024.json";
 import { format } from "date-fns";
 
 const Heading = styled.h1`
@@ -38,7 +38,7 @@ const Image = styled.img`
   }
 `;
 
-const SpeakerInformation: FC<React.PropsWithChildren<unknown>> = () => {
+export const SpeakerInformation: FC<React.PropsWithChildren<unknown>> = () => {
   const startDate = new Date(data.startDay);
   const speakersActivityDate = startDate.setDate(startDate.getDate() - 1);
   return (
@@ -157,5 +157,3 @@ const SpeakerInformation: FC<React.PropsWithChildren<unknown>> = () => {
     </main>
   );
 };
-
-export default SpeakerInformation;

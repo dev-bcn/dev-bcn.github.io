@@ -1,19 +1,12 @@
 import { Color } from "@styles/colors";
 import { FC, Suspense } from "react";
 import FaqCard from "./components/FaqsCard";
-import LessThanIcon from "@assets/images/LessThanBlueIcon.svg";
-import MoreThanIcon from "@assets/images/LessThanBlueWhiteIcon.svg";
-import SectionWrapper from "@components/SectionWrapper/SectionWrapper";
-import { motion } from "motion/react";
-import { faqsData } from "./FaqsData";
 import { useWindowSize } from "react-use";
 import { MOBILE_BREAKPOINT } from "@constants/BreakPoints";
-import flickr from "@assets/images/flickr.svg";
-import youtube from "@assets/images/youtube.svg";
-import image1 from "@assets/images/devbcn-1.jpg";
-import image2 from "@assets/images/devbcn2.jpg";
-import Logo from "@assets/images/logo.svg";
 import { StyledLoadingImage } from "@components/Loading/Loading";
+import { motion } from "motion/react";
+import { faqsData } from "./FaqsData";
+import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
 import {
   StyledFaqSection,
   StyledH2,
@@ -53,24 +46,24 @@ const Faqs: FC<React.PropsWithChildren<unknown>> = () => {
             >
               <StyledH2>Check last DevBcn edition</StyledH2>
             </motion.div>
-            <Suspense fallback={<StyledLoadingImage src={Logo} />}>
+            <Suspense fallback={<StyledLoadingImage src="/images/logo.svg" />}>
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.7 }}
                 whileHover={{ scale: 1.05 }}
               >
-                <StyledImage src={image1} alt="DevBcn 2023" />
+                <StyledImage src="/images/devbcn-1.jpg" alt="DevBcn 2023" />
               </motion.div>
             </Suspense>
-            <Suspense fallback={<StyledLoadingImage src={Logo} />}>
+            <Suspense fallback={<StyledLoadingImage src="/images/logo.svg" />}>
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.9 }}
                 whileHover={{ scale: 1.05 }}
               >
-                <StyledImage src={image2} alt="DevBcn 2023" />
+                <StyledImage src="/images/devbcn2.jpg" alt="DevBcn 2023" />
               </motion.div>
             </Suspense>
             <motion.div
@@ -119,7 +112,12 @@ const Faqs: FC<React.PropsWithChildren<unknown>> = () => {
                 rel="noreferrer"
                 target="_blank"
               >
-                <img src={flickr} alt="flickr" height={32} width={32} />
+                <img
+                  src="/images/flickr.svg"
+                  alt="flickr"
+                  height={32}
+                  width={32}
+                />
               </a>
             </motion.div>
             <motion.div
@@ -134,7 +132,12 @@ const Faqs: FC<React.PropsWithChildren<unknown>> = () => {
                 rel="noreferrer"
                 target="_blank"
               >
-                <img src={youtube} alt="Youtube" height={32} width={32} />
+                <img
+                  src="/images/youtube.svg"
+                  alt="Youtube"
+                  height={32}
+                  width={32}
+                />
               </a>
             </motion.div>
           </motion.div>
@@ -145,14 +148,20 @@ const Faqs: FC<React.PropsWithChildren<unknown>> = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 1.9 }}
               >
-                <StyleMoreIcon alt="More than — icon" src={MoreThanIcon} />
+                <StyleMoreIcon
+                  alt="More than — icon"
+                  src="/images/LessThanBlueWhiteIcon.svg"
+                />
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 2.1 }}
               >
-                <StyleLessIcon alt="Lees than — icon" src={LessThanIcon} />
+                <StyleLessIcon
+                  alt="Lees than — icon"
+                  src="/images/LessThanBlueIcon.svg"
+                />
               </motion.div>
             </>
           )}

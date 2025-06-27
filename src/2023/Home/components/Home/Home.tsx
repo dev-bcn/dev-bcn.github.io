@@ -1,10 +1,6 @@
 import Countdown from "react-countdown";
 import { FC } from "react";
 import data from "@data/2023.json";
-import LessThanIcon from "@assets/images/MoreThanBlueWhiteIcon.svg";
-import SectionWrapper from "@components/SectionWrapper/SectionWrapper";
-import { BIG_BREAKPOINT, LARGE_BREAKPOINT } from "@constants/BreakPoints";
-import { useWindowSize } from "react-use";
 import {
   StyledBlueSlash,
   StyledBottomSlash,
@@ -17,7 +13,8 @@ import {
   StyledTopSlash,
   StyleHomeContainer,
 } from "./Style.Home";
-import logo from "@assets/images/logo.png";
+import { useWindowSize } from "react-use";
+import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
 import ActionButtons from "../ActionButtons/ActionButtons";
 import { styled } from "styled-components";
 import { Color } from "@styles/colors";
@@ -25,6 +22,7 @@ import InfoButtons from "../InfoButtons/InfoButtons";
 import MultimediaInfoButtons from "../MultimediaInfoButtons/MultimediaInfoButtons";
 import CountDownCompleted from "@views/Home/components/Home/components/CountDownCompleted";
 import TimeCountDown from "@views/Home/components/Home/components/TimeCountdown";
+import { BIG_BREAKPOINT, LARGE_BREAKPOINT } from "@constants/BreakPoints";
 
 const StyledLogo = styled.img`
   margin: 20px;
@@ -41,7 +39,7 @@ const Home: FC<React.PropsWithChildren<unknown>> = () => {
     <StyledHomaImage>
       <SectionWrapper color="transparent">
         <StyleHomeContainer>
-          <StyledLogo src={logo} alt="DevBcn logo" />
+          <StyledLogo src="/images/logo.png" alt="DevBcn logo" />
           <StyledTitleContainer>
             <StyledTitle>The Barcelona Developers Conference 2023</StyledTitle>
             <StyledSubtitle>
@@ -87,7 +85,9 @@ const Home: FC<React.PropsWithChildren<unknown>> = () => {
             DevBcn 2023 edition resources
           </h2>
           <MultimediaInfoButtons />
-          {width > LARGE_BREAKPOINT && <StyledLessThan src={LessThanIcon} />}
+          {width > LARGE_BREAKPOINT && (
+            <StyledLessThan src={"/images/MoreThanBlueWhiteIcon.svg"} />
+          )}
           <StyledTopSlash
             initial={{ x: "100%" }}
             animate={{ x: 0 }}

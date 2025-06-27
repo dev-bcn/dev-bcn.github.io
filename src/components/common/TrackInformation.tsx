@@ -5,7 +5,7 @@ import {
   StyledTrackInfo,
 } from "@views/Talks/Talks.style";
 
-import { IGroup } from "@types/sessions";
+import { IGroup } from "@/types/sessions";
 
 interface TrackInfoProps {
   track: IGroup;

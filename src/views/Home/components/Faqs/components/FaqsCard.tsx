@@ -1,5 +1,4 @@
 import React, { FC, Suspense } from "react";
-import Logo from "@assets/images/logo.svg";
 import { StyledLoadingImage } from "@components/Loading/Loading";
 import { motion } from "motion/react";
 import {
@@ -26,7 +25,7 @@ const FaqCard: FC<React.PropsWithChildren<FaqCardType>> = ({ faq, index }) => {
       whileInView={{ opacity: 1 }}
     >
       <StyledFaqImageContainer padding={isOdd ? "0 1rem 0 0" : "0 0 0 1rem"}>
-        <Suspense fallback={<StyledLoadingImage src={Logo} />}>
+        <Suspense fallback={<StyledLoadingImage src="/images/logo.svg" />}>
           <StyledFaqImage
             alt={`DevBcn — image ${index}`}
             src={`/images/FaqsImage${index}.jpg`}

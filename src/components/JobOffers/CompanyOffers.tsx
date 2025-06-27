@@ -13,7 +13,7 @@ import {
   OfferTitle,
 } from "@styles/JobOffers/JobOffers.Style";
 // @ts-expect-error some quirky
-import { CompanyProps } from "@types/jobOffers";
+import { CompanyProps } from "@/types/jobOffers";
 
 const CompanyOffers: React.FC<React.PropsWithChildren<CompanyProps>> = ({
   company,

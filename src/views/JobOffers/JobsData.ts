@@ -1,5 +1,4 @@
-// @ts-expect-error some quirky
-import { Company } from "@types/jobOffers";
+import { Company } from "@/types/jobOffers";
 
 export const jobOffers: Company[] = [
   {

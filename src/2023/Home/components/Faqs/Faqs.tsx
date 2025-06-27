@@ -1,17 +1,10 @@
-import { Color } from "../../../../styles/colors";
+import { Color } from "@styles/colors";
 import { FC, Suspense } from "react";
 import FaqCard from "./components/FaqsCard";
-import LessThanIcon from "../../../../assets/images/LessThanBlueIcon.svg";
-import MoreThanIcon from "../../../../assets/images/LessThanBlueWhiteIcon.svg";
-import SectionWrapper from "../../../../components/SectionWrapper/SectionWrapper";
-import { faqsData } from "./FaqsData";
 import { useWindowSize } from "react-use";
-import { MOBILE_BREAKPOINT } from "../../../../constants/BreakPoints";
-import flickr from "../../../../assets/images/flickr.svg";
-import youtube from "../../../../assets/images/youtube.svg";
-import slides from "../../../../assets/images/slides.png";
-import Logo from "../../../../assets/images/logo.svg";
-import { StyledLoadingImage } from "../../../../components/Loading/Loading";
+import { MOBILE_BREAKPOINT } from "@constants/BreakPoints";
+import { StyledLoadingImage } from "@components/Loading/Loading";
+import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
 import {
   StyledFaqSection,
   StyledH2,
@@ -21,6 +14,7 @@ import {
   StyleLessIcon,
   StyleMoreIcon,
 } from "./Faqs.style";
+import { faqsData } from "@views/Home/components/Faqs/FaqsData";
 
 const Faqs: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
@@ -34,13 +28,17 @@ const Faqs: FC<React.PropsWithChildren<unknown>> = () => {
           <div id="last-jbcnconf">&nbsp;</div>
           <div style={{ width: "60%" }}>
             <StyledH2>Check last JBCNConf edition</StyledH2>
-            <Suspense fallback={<StyledLoadingImage src={Logo} />}>
+            <Suspense
+              fallback={<StyledLoadingImage src={"/images/logo.svg"} />}
+            >
               <StyledImage
                 src="images/jbcnconf/jbcnconf-1.jpg"
                 alt="JBCNConf"
               />
             </Suspense>
-            <Suspense fallback={<StyledLoadingImage src={Logo} />}>
+            <Suspense
+              fallback={<StyledLoadingImage src={"/images/logo.svg"} />}
+            >
               <StyledImage
                 src="images/jbcnconf/jbcnconf-2.jpg"
                 alt="JBCNConf - Keynote"
@@ -58,27 +56,42 @@ const Faqs: FC<React.PropsWithChildren<unknown>> = () => {
               rel="noreferrer"
               target="_blank"
             >
-              <img src={flickr} alt="flickr" height={32} width={32} />
+              <img
+                src="/images/flickr.svg"
+                alt="flickr"
+                height={32}
+                width={32}
+              />
             </a>
             <a
               href="https://www.youtube.com/watch?v=zFPpwRyl4Iw&list=PLo0fJV3LkR3z42GevLgXlQfNFP2qfgtrq"
               rel="noreferrer"
               target="_blank"
             >
-              <img src={youtube} alt="Youtube" height={32} width={32} />
+              <img
+                src="/images/youtube.svg"
+                alt="Youtube"
+                height={32}
+                width={32}
+              />
             </a>
             <a
               href="https://docs.google.com/presentation/d/1t1RnYOqcoP8Bo1GVyiGyW-mY_2bBpUspnW8nqXDUbGI/edit?usp=sharing"
               rel="noreferrer"
               target="_blank"
             >
-              <img src={slides} alt="Summary Slides" height={32} width={32} />
+              <img
+                src="/images/slides.png"
+                alt="Summary Slides"
+                height={32}
+                width={32}
+              />
             </a>
           </div>
           {width > MOBILE_BREAKPOINT && (
             <>
-              <StyleMoreIcon src={MoreThanIcon} />
-              <StyleLessIcon src={LessThanIcon} />
+              <StyleMoreIcon src="/images/LessThanBlueWhiteIcon.svg" />
+              <StyleLessIcon src="/images/LessThanBlueIcon.svg" />
             </>
           )}
         </StyledFaqSection>

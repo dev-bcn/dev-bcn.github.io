@@ -1,12 +1,10 @@
+// @ts-expect-error some quirky import
 import { AnimatePresence } from "framer-motion";
 import { FC, useEffect, useState } from "react";
 import { BIG_BREAKPOINT, MOBILE_BREAKPOINT } from "@constants/BreakPoints";
 import { useLocation, useNavigate } from "react-router";
 import Breadcrumbs from "./Breadcrumbs";
-import CloseIcon from "@assets/images/CloseIcon.svg";
-import NavigationLogo from "@assets/images/devBcn.png";
 import { ROUTE_HOME, ROUTE_HOME_ALTERNATE } from "@constants/routes";
-import TicketsImage from "@assets/images/TicketsImage.svg";
 import { navigationItems2025, subMenuItems2025 } from "./NavigationData";
 import {
   navigationItems2023,
@@ -33,7 +31,7 @@ import {
   subMenuItems2024,
 } from "../../2024/Navigation/NavigationData";
 
-const Navigation: FC<React.PropsWithChildren<unknown>> = () => {
+export const Navigation: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
   const [isOpened, setIsOpened] = useState(false);
   const [navItems, setNavItems] = useState(navigationItems2025);
@@ -91,7 +89,7 @@ const Navigation: FC<React.PropsWithChildren<unknown>> = () => {
         <StyledHeader>
           <StyledHeaderLogo
             alt="DevBcn — logo"
-            src={NavigationLogo}
+            src="/images/devBcn.png"
             onClick={handleLogoClick}
           />
           {width > BIG_BREAKPOINT && (
@@ -116,12 +114,12 @@ const Navigation: FC<React.PropsWithChildren<unknown>> = () => {
           >
             <StyledNavigation>
               <StyledMenuIcon
-                src={CloseIcon}
+                src="/images/CloseIcon.svg"
                 onClick={handleSetMenu}
                 whileTap={{ scale: 0.8 }}
               />
               <StyledNavigationLogo
-                src={NavigationLogo}
+                src="/images/devBcn.png"
                 onClick={() => {
                   navigate(ROUTE_HOME);
                   handleSetMenu();
@@ -151,7 +149,7 @@ const Navigation: FC<React.PropsWithChildren<unknown>> = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <StyledNavLinkHighlightedImage src={TicketsImage} />
+                <StyledNavLinkHighlightedImage src="/images/TicketsImage.svg" />
               </StyledTicketLink>
             </StyledNavigation>
             {width > MOBILE_BREAKPOINT && <StyledClipPath />}
@@ -161,5 +159,3 @@ const Navigation: FC<React.PropsWithChildren<unknown>> = () => {
     </>
   );
 };
-
-export default Navigation;

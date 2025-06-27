@@ -5,10 +5,7 @@ import {
 } from "@constants/BreakPoints";
 import { Color } from "@styles/colors";
 import React, { FC, Suspense } from "react";
-import LessThanIconWhite from "@assets/images/LessThanIconWhite.svg";
-import LessThanIcon from "@assets/images/LessThanBlueIcon.svg";
-import MoreThanIcon from "@assets/images/MoreThanBlueIcon.svg";
-import SectionWrapper from "@components/SectionWrapper/SectionWrapper";
+import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
 import { useWindowSize } from "react-use";
 import {
   StyledContainer,
@@ -33,7 +30,7 @@ import conferenceData from "@data/2025.json";
 import { Tag } from "@components/Tag/Tag";
 import { styled } from "styled-components";
 import { AddToCalendarButton } from "add-to-calendar-button-react";
-import { IMeetingDetailProps, MyType } from "@types/sessions";
+import { IMeetingDetailProps, MyType } from "@/types/sessions";
 import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
 
 const getVideoHeight = (windowWidth: number) => {
@@ -124,7 +121,7 @@ const MeetingDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
             initial="initial"
             animate="animate"
             variants={leftVariants}
-            src={LessThanIcon}
+            src="/images/LessThanBlueIcon.svg"
           />
           <StyledFlexCol
             initial="initial"
@@ -179,7 +176,7 @@ const MeetingDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
             initial="initial"
             animate="animate"
             variants={rightVariants}
-            src={MoreThanIcon}
+            src="/images/MoreThanBlueIcon.svg"
           />
         </StyledMeetingTitleContainer>
         <StyledVideoContainer
@@ -225,7 +222,7 @@ const MeetingDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
           </section>
         </StyledVideoContainer>
         <StyledSpeakerDetailContainer className="speaker-details-Container">
-          <StyledLessThan src={LessThanIconWhite} />
+          <StyledLessThan src="/images/LessThanIconWhite.svg" />
           <StyledDetailsContainer className="details-container-inner">
             <StyledRightContainer>
               {finalMeetingInfo.speakers?.map((speaker) => (

@@ -1,10 +1,8 @@
-import { Color } from "../../../../styles/colors";
+import { Color } from "@styles/colors";
 import React, { FC } from "react";
 
-import LessThanBlueIcon from "../../../../assets/images/MoreThanBlueWhiteIcon.svg";
-import LessThanBlueWhiteIcon from "../../../../assets/images/LessThanBlueWhiteIcon.svg";
-import SectionWrapper from "../../../../components/SectionWrapper/SectionWrapper";
-import TitleSection from "../../../../components/SectionTitle/TitleSection";
+import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
+import TitleSection from "@components/SectionTitle/TitleSection";
 import {
   StyledSponsorsContainer,
   StyledTitleContainer,
@@ -23,7 +21,10 @@ const Sponsors: FC<React.PropsWithChildren<unknown>> = () => (
   <SectionWrapper color={Color.WHITE}>
     <StyledSponsorsContainer id="sponsors">
       <StyledTitleContainer className="TitleContainer">
-        <StyledTitleImg alt="Less than - icon" src={LessThanBlueIcon} />
+        <StyledTitleImg
+          alt="Less than - icon"
+          src="/images/MoreThanBlueWhiteIcon.svg"
+        />
         <TitleSection
           data-testid="sponsors-box"
           title="SPONSORS"
@@ -33,7 +34,10 @@ const Sponsors: FC<React.PropsWithChildren<unknown>> = () => (
         and to support technological communities."
           color={Color.DARK_BLUE}
         />
-        <StyledTitleImg alt="more than - icon" src={LessThanBlueWhiteIcon} />
+        <StyledTitleImg
+          alt="more than - icon"
+          src="/images/LessThanBlueWhiteIcon.svg"
+        />
       </StyledTitleContainer>
       <TopSponsors sponsors={sponsors.top} />
       <PremiumSponsors sponsors={sponsors.premium} />

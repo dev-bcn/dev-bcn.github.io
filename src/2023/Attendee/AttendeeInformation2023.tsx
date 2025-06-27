@@ -59,7 +59,9 @@ const SectionWrapper = styled.div`
   max-width: 1280px;
 `;
 
-const AttendeeInformation2023: FC<React.PropsWithChildren<unknown>> = () => {
+export const AttendeeInformation2023: FC<
+  React.PropsWithChildren<unknown>
+> = () => {
   return (
     <main>
       <h1 style={{ color: Color.LIGHT_BLUE, paddingTop: "100px" }}>
@@ -357,4 +359,5 @@ const AttendeeInformation2023: FC<React.PropsWithChildren<unknown>> = () => {
     </main>
   );
 };
+
 export default AttendeeInformation2023;

@@ -1,26 +1,24 @@
 import React, { FC } from "react";
-import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import { Color } from "../../styles/colors";
+import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
+import { Color } from "@styles/colors";
 import {
   StyledLessIcon,
   StyledMoreIcon,
   StyledSpeakersSection,
 } from "../Speakers/Speakers.style";
-import TitleSection from "../../components/SectionTitle/TitleSection";
-import { MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
-import MoreThanBlueWhiteIcon from "../../assets/images/MoreThanBlueWhiteIcon.svg";
-import LessThanBlueWhiteIcon from "../../assets/images/LessThanBlueWhiteIcon.svg";
+import TitleSection from "@components/SectionTitle/TitleSection";
+import { MOBILE_BREAKPOINT } from "@constants/BreakPoints";
 import { useWindowSize } from "react-use";
-import TwitterIcon from "../../components/Icons/Twitter";
-import LinkedinIcon from "../../components/Icons/Linkedin";
+import TwitterIcon from "@components/Icons/Twitter";
+import LinkedinIcon from "@components/Icons/Linkedin";
 import {
   StyledAboutImage,
   StyledSocialIconsWrapper,
 } from "../About/components/Style.AboutCard";
-import conferenceData from "../../data/2025.json";
+import conferenceData from "@data/2025.json";
 import { CfpTrackProps, data } from "./CfpData";
 import { MemberName, TrackName } from "./Cfp.style";
-import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
+import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
 
 export const CfpTrackComponent: FC<React.PropsWithChildren<CfpTrackProps>> = ({
   track,
@@ -82,8 +80,8 @@ const CfpSection: FC<React.PropsWithChildren<unknown>> = () => {
           />
           {width > MOBILE_BREAKPOINT && (
             <>
-              <StyledLessIcon src={MoreThanBlueWhiteIcon} />
-              <StyledMoreIcon src={LessThanBlueWhiteIcon} />
+              <StyledLessIcon src="/images/MoreThanBlueWhiteIcon.svg" />
+              <StyledMoreIcon src="/images/LessThanBlueWhiteIcon.svg" />
             </>
           )}
         </StyledSpeakersSection>

@@ -91,7 +91,7 @@ const StyledParagraph = styled.section`
   }
 `;
 
-const Diversity: FC<React.PropsWithChildren<unknown>> = () => {
+export const Diversity: FC<React.PropsWithChildren<unknown>> = () => {
   useDocumentTitleUpdater("Diversity", data.edition);
 
   return (
@@ -241,4 +241,3 @@ const Diversity: FC<React.PropsWithChildren<unknown>> = () => {
     </StyledSection>
   );
 };
-export default Diversity;

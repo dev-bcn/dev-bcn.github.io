@@ -36,12 +36,9 @@ interface ISectionWrapperProps {
   children: ReactNode;
 }
 
-const SectionWrapper: FC<React.PropsWithChildren<ISectionWrapperProps>> = ({
-  children,
-  color,
-  marginTop = 0,
-  paddingBottom = 0,
-}) => {
+export const SectionWrapper: FC<
+  React.PropsWithChildren<ISectionWrapperProps>
+> = ({ children, color, marginTop = 0, paddingBottom = 0 }) => {
   return (
     <StyledSectionWrapper
       color={color}
@@ -54,5 +51,3 @@ const SectionWrapper: FC<React.PropsWithChildren<ISectionWrapperProps>> = ({
     </StyledSectionWrapper>
   );
 };
-
-export default SectionWrapper;

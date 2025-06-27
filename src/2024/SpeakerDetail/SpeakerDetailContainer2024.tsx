@@ -1,16 +1,18 @@
-import { Color } from "../../styles/colors";
+import { Color } from "@styles/colors";
 
 import React, { FC } from "react";
-import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
+import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
 import SpeakerDetail from "./SpeakerDetail";
 import { useParams } from "react-router";
-import conferenceData from "../../data/2024.json";
-import { useFetchSpeakers } from "../../hooks/useFetchSpeakers";
-import { StyledContainer } from "../../views/SpeakerDetail/Speaker.style";
-import { StyledWaveContainer } from "../../views/Talks/Talks.style";
-import { useSentryErrorReport } from "../../hooks/useSentryErrorReport";
+import conferenceData from "@data/2024.json";
+import { useFetchSpeakers } from "@hooks/useFetchSpeakers";
+import { StyledContainer } from "@views/SpeakerDetail/Speaker.style";
+import { StyledWaveContainer } from "@views/Talks/Talks.style";
+import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
 
-const SpeakerDetailContainer2024: FC<React.PropsWithChildren<unknown>> = () => {
+export const SpeakerDetailContainer2024: FC<
+  React.PropsWithChildren<unknown>
+> = () => {
   const { id } = useParams<{ id: string }>();
 
   const { isLoading, error, data } = useFetchSpeakers("2024", id);
@@ -46,5 +48,3 @@ const SpeakerDetailContainer2024: FC<React.PropsWithChildren<unknown>> = () => {
     </StyledContainer>
   );
 };
-
-export default SpeakerDetailContainer2024;

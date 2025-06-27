@@ -3,9 +3,7 @@ import { Color } from "@styles/colors";
 import { jobOffers } from "./JobsData";
 
 import React, { FC } from "react";
-import LessThanBlueIcon from "@assets/images/LessThanBlueIcon.svg";
-import MoreThanBlueIcon from "@assets/images/MoreThanBlueIcon.svg";
-import SectionWrapper from "@components/SectionWrapper/SectionWrapper";
+import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
 import TitleSection from "@components/SectionTitle/TitleSection";
 import { useWindowSize } from "react-use";
 import data from "@data/2024.json";
@@ -25,8 +23,8 @@ const NoOffersAvailable = () => (
 
 const MoreThanLessThan = () => (
   <>
-    <StyledLessIcon src={LessThanBlueIcon} />
-    <StyledMoreIcon src={MoreThanBlueIcon} />
+    <StyledLessIcon src="/images/LessThanBlueIcon.svg" />
+    <StyledMoreIcon src="/images/MoreThanBlueIcon.svg" />
   </>
 );
 

@@ -4,10 +4,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { styled } from "styled-components";
 import { Color } from "@styles/colors";
 import "swiper/swiper-bundle.min.css";
-import "../../components/Swiper/SpeakersCarousel.scss";
+import "@components/Swiper/SpeakersCarousel.scss";
 import { useFetchSpeakers } from "@hooks/useFetchSpeakers";
-// @ts-expect-error some weird error when importing types
-import { ISpeaker } from "@types/speakers";
+import { ISpeaker } from "@/types/speakers";
 import { ROUTE_SPEAKER_DETAIL } from "@constants/routes";
 import { Link } from "react-router";
 import { useSentryErrorReport } from "@hooks/useSentryErrorReport";

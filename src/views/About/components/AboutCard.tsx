@@ -1,6 +1,6 @@
 import { FC, Suspense } from "react";
-import LinkedinIcon from "../../../components/Icons/Linkedin";
-import TwitterIcon from "../../../components/Icons/Twitter";
+import LinkedinIcon from "@components/Icons/Linkedin";
+import TwitterIcon from "@components/Icons/Twitter";
 import {
   StyledAboutCard,
   StyledAboutImage,
@@ -8,8 +8,7 @@ import {
   StyledAboutName,
   StyledSocialIconsWrapper,
 } from "./Style.AboutCard";
-import { StyledLoadingImage } from "../../../components/Loading/Loading";
-import Logo from "../../../assets/images/logo.svg";
+import { StyledLoadingImage } from "@components/Loading/Loading";
 
 type AboutCardProps = {
   person: {
@@ -24,9 +23,11 @@ type AboutCardProps = {
   };
 };
 
-export const AboutCard: FC<React.PropsWithChildren<AboutCardProps>> = ({ person }) => (
+export const AboutCard: FC<React.PropsWithChildren<AboutCardProps>> = ({
+  person,
+}) => (
   <StyledAboutCard>
-    <Suspense fallback={<StyledLoadingImage src={Logo} />}>
+    <Suspense fallback={<StyledLoadingImage src="/images/logo.svg" />}>
       <StyledAboutImage src={person.profileUrl.href} />
     </Suspense>
     <StyledAboutName color={person.nameColor}>{person.name}</StyledAboutName>

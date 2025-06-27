@@ -42,3 +42,5 @@ export const Home2023Wrapper: FC<React.PropsWithChildren<unknown>> = () => {
     </StyledContainer>
   );
 };
+
+export default Home2023Wrapper;
