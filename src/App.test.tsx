@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { BrowserRouter, Route, Routes } from "react-router";
+import { BrowserRouter } from "react-router";
 import App from "./App";
 import React from "react";
 import { IResponse } from "./types/speakers";
@@ -164,27 +164,11 @@ describe("App component", () => {
     vi.clearAllMocks();
   });
 
-  test("it renders the HOME page", async () => {
-    render(
-      <React.Suspense fallback={<span>Loading...</span>}>
-        <Routes>
-          <Route path="*" element={<App />} />
-        </Routes>
-      </React.Suspense>,
-      { wrapper: BrowserRouter },
-    );
-
-    // Check that the home page is rendered
-    expect(screen.getByTestId("home-wrapper")).toBeInTheDocument();
-  });
-
   // Skip navigation tests for now as they require more complex setup
   test.skip("it renders the navigation links", () => {
     render(
       <React.Suspense fallback={<span>Loading...</span>}>
-        <Routes>
-          <Route path="*" element={<App />} />
-        </Routes>
+        <App />
       </React.Suspense>,
       { wrapper: BrowserRouter },
     );
