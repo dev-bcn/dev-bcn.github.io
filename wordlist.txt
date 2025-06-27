@@ -65,6 +65,7 @@ param
 pbs
 png
 px
+pwa
 queryKey
 rd
 robotstxt
