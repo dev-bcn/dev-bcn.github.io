@@ -1,27 +1,25 @@
 import React, { FC } from "react";
-import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import { Color } from "../../styles/colors";
+import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
+import { Color } from "@styles/colors";
 import {
   StyledLessIcon,
   StyledMoreIcon,
   StyledSpeakersSection,
 } from "../Speakers/Speakers.style";
-import TitleSection from "../../components/SectionTitle/TitleSection";
-import { MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
-import MoreThanBlueWhiteIcon from "../../assets/images/MoreThanBlueWhiteIcon.svg";
-import LessThanBlueWhiteIcon from "../../assets/images/LessThanBlueWhiteIcon.svg";
+import TitleSection from "@components/SectionTitle/TitleSection";
+import { MOBILE_BREAKPOINT } from "@constants/BreakPoints";
 import { useWindowSize } from "react-use";
-import TwitterIcon from "../../components/Icons/Twitter";
-import LinkedinIcon from "../../components/Icons/Linkedin";
+import TwitterIcon from "@components/Icons/Twitter";
+import LinkedinIcon from "@components/Icons/Linkedin";
 
-import conferenceData from "../../data/2024.json";
+import conferenceData from "@data/2024.json";
 import { CfpTrackProps, data } from "./CfpData";
 import { MemberName, TrackName } from "./Cfp.style";
 import {
   StyledAboutImage,
   StyledSocialIconsWrapper,
-} from "../../views/About/components/Style.AboutCard";
-import {useDocumentTitleUpdater} from "../../hooks/useDocumentTitleUpdate";
+} from "@views/About/components/Style.AboutCard";
+import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
 
 export const CfpTrackComponent: FC<React.PropsWithChildren<CfpTrackProps>> = ({
   track,
@@ -63,33 +61,33 @@ export const CfpTrackComponent: FC<React.PropsWithChildren<CfpTrackProps>> = ({
 
 const CfpSection2024: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
-    useDocumentTitleUpdater("CFP Committee", conferenceData.edition);
-    return (
-      <>
-        <SectionWrapper color={Color.WHITE} marginTop={5}>
-          <StyledSpeakersSection>
-            <TitleSection
-              title="CFP Committee"
-              subtitle="We're excited to announce the members of the Call for Papers committee
+  useDocumentTitleUpdater("CFP Committee", conferenceData.edition);
+  return (
+    <>
+      <SectionWrapper color={Color.WHITE} marginTop={5}>
+        <StyledSpeakersSection>
+          <TitleSection
+            title="CFP Committee"
+            subtitle="We're excited to announce the members of the Call for Papers committee
           for the next DevBcn conference! These experienced professionals will
           be reviewing and selecting the best talks and workshops for the
           upcoming event."
-              color={Color.BLUE}
-            />
-            {width > MOBILE_BREAKPOINT && (
-              <>
-                <StyledLessIcon src={MoreThanBlueWhiteIcon} />
-                <StyledMoreIcon src={LessThanBlueWhiteIcon} />
-              </>
-            )}
-          </StyledSpeakersSection>
-          {data.map((track) => (
-            <CfpTrackComponent key={track.id} track={track} />
-          ))}
-        </SectionWrapper>
-        <div style={{ height: "350px" }}>&nbsp;</div>
-      </>
-    );
+            color={Color.BLUE}
+          />
+          {width > MOBILE_BREAKPOINT && (
+            <>
+              <StyledLessIcon src="/images/MoreThanBlueWhiteIcon.svg" />
+              <StyledMoreIcon src="/images/LessThanBlueWhiteIcon.svg" />
+            </>
+          )}
+        </StyledSpeakersSection>
+        {data.map((track) => (
+          <CfpTrackComponent key={track.id} track={track} />
+        ))}
+      </SectionWrapper>
+      <div style={{ height: "350px" }}>&nbsp;</div>
+    </>
+  );
 };
 
 export default CfpSection2024;

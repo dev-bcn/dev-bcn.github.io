@@ -4,11 +4,11 @@ import { styled } from "styled-components";
 import { useLocation } from "react-router";
 import { BIG_BREAKPOINT } from "@constants/BreakPoints";
 import conferenceData from "@data/2024.json";
-import Faqs from "../views/Home/components/Faqs/Faqs";
+import Faqs from "@views/Home/components/Faqs/Faqs";
 
 import Home from "./Home/Home";
 import Sponsors from "./Sponsors/Sponsors";
-import SpeakersCarousel from "../components/Swiper/SpeakersCarousel";
+import SpeakersCarousel from "@components/Swiper/SpeakersCarousel";
 import { ROUTE_2024_SPEAKERS } from "@constants/routes";
 import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
 
@@ -20,7 +20,7 @@ const StyledContainer = styled.div`
   }
 `;
 
-export const HomeWrapper2024: FC<React.PropsWithChildren<unknown>> = () => {
+const HomeWrapper2024: FC<React.PropsWithChildren<unknown>> = () => {
   const { hash } = useLocation();
 
   React.useEffect(() => {
@@ -45,3 +45,5 @@ export const HomeWrapper2024: FC<React.PropsWithChildren<unknown>> = () => {
     </StyledContainer>
   );
 };
+
+export default HomeWrapper2024;

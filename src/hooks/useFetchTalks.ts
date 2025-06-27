@@ -1,8 +1,8 @@
 import { useQuery, UseQueryResult } from "react-query";
 import axios from "axios";
 import { UngroupedSession } from "@views/Talks/liveView.types";
-// @ts-expect-error some quirky import
-import { IGroup, Session } from "@types/sessions";
+
+import { IGroup, Session } from "@/types/sessions";
 
 const URLS = {
   default: "https://sessionize.com/api/v2/xhudniix/view/Sessions",
@@ -47,10 +47,17 @@ const useFetchTalksBase = <T>(
 ): UseQueryResult<T> => {
   const url = getUrl(urlOrYear);
 
-  return useQuery(queryKey, async () => {
-    const response = await axios.get(url);
-    return dataTransformer(response.data);
-  });
+  return useQuery(
+    queryKey,
+    async () => {
+      const response = await axios.get(url);
+      return dataTransformer(response.data);
+    },
+    {
+      cacheTime: 1800000, // 30 minutes
+      staleTime: 1800000, // 30 minutes
+    },
+  );
 };
 
 export const useFetchTalks = (urlOrYear?: string): UseQueryResult<IGroup[]> => {

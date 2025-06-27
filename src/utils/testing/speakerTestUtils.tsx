@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router";
-import { ISpeaker } from "@types/speakers";
+import { ISpeaker } from "@/types/speakers";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { render, RenderOptions, RenderResult } from "@testing-library/react";
 

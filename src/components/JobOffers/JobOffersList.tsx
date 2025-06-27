@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Alert, Col, Container, Row } from "react-bootstrap";
-// @ts-expect-error some quirky
+// @ts-expect-error some quirky import
 import { motion } from "framer-motion";
 import { jobOffers } from "@views/JobOffers/JobsData";
 import CompanyCard from "./CompanyCard";
 import JobFilters from "./JobFilters";
-// @ts-expect-error some quirky
-import { Company, Offer } from "@types/jobOffers";
+import { Company, Offer } from "@/types/jobOffers";
 
 const JobOffersList: React.FC = () => {
   const [filteredCompanies, setFilteredCompanies] =

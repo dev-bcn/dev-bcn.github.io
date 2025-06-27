@@ -1,11 +1,9 @@
-import { MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
-import { Color } from "../../styles/colors";
+import { MOBILE_BREAKPOINT } from "@constants/BreakPoints";
+import { Color } from "@styles/colors";
 import { FC, useCallback, useEffect } from "react";
-import LessThanBlueIcon from "../../assets/images/LessThanBlueIcon.svg";
-import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
-import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
+import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
 import { SpeakerCard } from "./components/SpeakersCard";
-import TitleSection from "../../components/SectionTitle/TitleSection";
+import TitleSection from "@components/SectionTitle/TitleSection";
 import { useWindowSize } from "react-use";
 import {
   SpeakersCardsContainer,
@@ -17,17 +15,17 @@ import {
   StyledSpeakersSection,
   StyledWaveContainer,
 } from "./Speakers.style";
-import webData from "../../data/2025.json";
-import Button from "../../components/UI/Button";
-import { gaEventTracker } from "../../components/analytics/Analytics";
-import { useFetchSpeakers } from "../../hooks/useFetchSpeakers";
-import { ISpeaker } from "../../types/speakers";
-import { useSentryErrorReport } from "../../hooks/useSentryErrorReport";
+import webData from "@data/2025.json";
+import Button from "@components/UI/Button";
+import { gaEventTracker } from "@components/analytics/Analytics";
+import { useFetchSpeakers } from "@hooks/useFetchSpeakers";
+import { ISpeaker } from "@/types/speakers";
+import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
 
 const LessThanGreaterThan = () => (
   <>
-    <StyledLessIcon src={LessThanBlueIcon} />
-    <StyledMoreIcon src={MoreThanBlueIcon} />
+    <StyledLessIcon src="/images/LessThanBlueIcon.svg" />
+    <StyledMoreIcon src="/images/MoreThanBlueIcon.svg" />
   </>
 );
 
@@ -63,7 +61,7 @@ const Speakers: FC<React.PropsWithChildren<unknown>> = () => {
             Technologies and in the JCP."
             color={Color.WHITE}
           />
-          {width > MOBILE_BREAKPOINT && <LessThanGreaterThan/>}
+          {width > MOBILE_BREAKPOINT && <LessThanGreaterThan />}
           <SpeakersCardsContainer>
             {isLoading && <p>Loading...</p>}
             {isBetween(CFPStartDay, CFPEndDay) && (

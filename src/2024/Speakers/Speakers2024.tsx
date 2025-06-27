@@ -1,9 +1,7 @@
 import { MOBILE_BREAKPOINT } from "@constants/BreakPoints";
 import { Color } from "@styles/colors";
 import React, { FC, useCallback, useEffect } from "react";
-import LessThanBlueIcon from "../../assets/images/LessThanBlueIcon.svg";
-import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
-import SectionWrapper from "@components/SectionWrapper/SectionWrapper";
+import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
 import TitleSection from "@components/SectionTitle/TitleSection";
 import { useWindowSize } from "react-use";
 import {
@@ -21,13 +19,13 @@ import Button from "@components/UI/Button";
 import { gaEventTracker } from "@components/analytics/Analytics";
 import { useFetchSpeakers } from "@hooks/useFetchSpeakers";
 import { SpeakerCard } from "@views/Speakers/components/SpeakersCard";
-import { ISpeaker } from "@types/speakers";
+import { ISpeaker } from "../../types/speakers";
 import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
 
 const LessThanGreaterThan = () => (
   <>
-    <StyledLessIcon src={LessThanBlueIcon} />
-    <StyledMoreIcon src={MoreThanBlueIcon} />
+    <StyledLessIcon src="/images/LessThanBlueIcon.svg" />
+    <StyledMoreIcon src="/images/MoreThanBlueIcon.svg" />
   </>
 );
 

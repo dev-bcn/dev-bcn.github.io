@@ -1,6 +1,6 @@
 import React, { FC, useCallback, useEffect, useMemo } from "react";
 import { useFetchLiveView } from "@hooks/useFetchTalks";
-import Loading from "@components/Loading/Loading";
+import { Loading } from "@components/Loading/Loading";
 import conference from "@data/2024.json";
 import { UngroupedSession } from "@views/Talks/liveView.types";
 import { TalkCard } from "@views/Talks/components/TalkCard";

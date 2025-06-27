@@ -19,7 +19,7 @@ const StyledContainer = styled.div`
   }
 `;
 
-const HomeWrapper: FC<React.PropsWithChildren<unknown>> = () => {
+export const HomeWrapper: FC<React.PropsWithChildren<unknown>> = () => {
   const { hash } = useLocation();
 
   React.useEffect(() => {

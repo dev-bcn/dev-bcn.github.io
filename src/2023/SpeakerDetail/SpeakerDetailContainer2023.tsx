@@ -1,13 +1,13 @@
-import { Color } from "../../styles/colors";
+import { Color } from "@styles/colors";
 
 import React, { FC } from "react";
-import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
+import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
 import SpeakerDetail2023 from "./SpeakerDetail2023";
 import { useParams } from "react-router";
 import { StyledContainer, StyledWaveContainer } from "./Speaker.style";
-import conferenceData from "../../data/2023.json";
-import { useFetchSpeakers } from "../../hooks/useFetchSpeakers";
-import { useSentryErrorReport } from "../../hooks/useSentryErrorReport";
+import conferenceData from "@data/2023.json";
+import { useFetchSpeakers } from "@hooks/useFetchSpeakers";
+import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
 
 const SpeakerDetailContainer2023: FC<React.PropsWithChildren<unknown>> = () => {
   const { id } = useParams<{ id: string }>();

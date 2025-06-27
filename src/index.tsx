@@ -5,17 +5,17 @@ import {
   matchRoutes,
   useLocation,
   useNavigationType,
-} from "react-router";
+} from "react-router-dom";
 import App from "./App";
 import React, { useEffect } from "react";
 import { createRoot } from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
 import { initialize } from "react-ga";
 import * as Sentry from "@sentry/react";
-import Loading from "./components/Loading/Loading";
+import { Loading } from "@components/Loading/Loading";
 
 const trackingID =
-  process.env.REACT_APP_GOOGLE_ANALYTICS_API_KEY ?? "G-0BG1LNPT11";
+  import.meta.env.VITE_GOOGLE_ANALYTICS_API_KEY ?? "G-0BG1LNPT11";
 initialize(trackingID);
 
 Sentry.init({
@@ -39,13 +39,11 @@ if (!rootElement) throw new Error("Failed to find the root element");
 const root = createRoot(rootElement);
 
 root.render(
-  <React.StrictMode>
-    <React.Suspense fallback={<Loading />}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </React.Suspense>
-  </React.StrictMode>,
+  <React.Suspense fallback={<Loading />}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.Suspense>,
 );
 
 // If you want to start measuring performance in your app, pass a function

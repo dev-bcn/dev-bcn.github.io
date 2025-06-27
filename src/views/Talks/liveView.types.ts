@@ -1,5 +1,4 @@
-// @ts-expect-error some quirky
-import { Session } from "@types/sessions";
+import { Session } from "@/types/sessions";
 
 export interface UngroupedSession
   extends Omit<Session, "slidesURL" | "recordingUrl"> {

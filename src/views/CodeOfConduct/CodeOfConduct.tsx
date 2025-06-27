@@ -1,16 +1,12 @@
 import React, { FC } from "react";
-import TitleSection from "../../components/SectionTitle/TitleSection";
-import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import { BIG_BREAKPOINT, MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
-import { Color } from "../../styles/colors";
+import TitleSection from "@components/SectionTitle/TitleSection";
+import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
+import { BIG_BREAKPOINT, MOBILE_BREAKPOINT } from "@constants/BreakPoints";
+import { Color } from "@styles/colors";
 import { CodeOfConductTags } from "./CodeOfConductData";
-import { LeftHashWithText } from "../../components/LeftHashWithText/LeftHashWithText";
-import LessThanBlue from "../../assets/images/MoreThanBlueWhiteIcon.svg";
-import LessThanTransparentIcon from "../../assets/images/LessThanTransparentIcon.svg";
-import MoreThanBlue from "../../assets/images/LessThanBlueWhiteIcon.svg";
-import MoreThanTransparentIcon from "../../assets/images/MoreThanTransparentIcon.svg";
-import { RightHashWithText } from "../../components/RightHashWithText/RightHashWithText";
-import { Tag } from "../../components/Tag/Tag";
+import { LeftHashWithText } from "@components/LeftHashWithText/LeftHashWithText";
+import { RightHashWithText } from "@components/RightHashWithText/RightHashWithText";
+import { Tag } from "@components/Tag/Tag";
 import { styled } from "styled-components";
 import { useWindowSize } from "react-use";
 import {
@@ -19,9 +15,9 @@ import {
   StyledSpeakersSection,
 } from "../Speakers/Speakers.style";
 import { StyledMarginBottom, StyledTagsWrapper } from "../Talks/Talks.style";
-import data from "../../data/2024.json";
+import data from "@data/2024.json";
 import { format } from "date-fns";
-import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
+import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
 
 const StyledWaveContainer = styled.div`
   background: ${Color.DARK_BLUE};
@@ -99,8 +95,8 @@ const CodeOfConduct: FC<React.PropsWithChildren> = () => {
           />
           {width > MOBILE_BREAKPOINT && (
             <>
-              <StyledLessIcon src={LessThanBlue} />
-              <StyledMoreIcon src={MoreThanBlue} />
+              <StyledLessIcon src="/images/MoreThanBlueWhiteIcon.svg" />
+              <StyledMoreIcon src="/images/LessThanBlueWhiteIcon.svg" />
             </>
           )}
         </StyledSpeakersSection>
@@ -134,8 +130,8 @@ const CodeOfConduct: FC<React.PropsWithChildren> = () => {
         <RightHashWithText color={Color.DARK_BLUE} text="CODE OF CONDUCT" />
         {width > MOBILE_BREAKPOINT && (
           <>
-            <StyleMoreIcon src={LessThanTransparentIcon} />
-            <StyleLessIcon src={MoreThanTransparentIcon} />
+            <StyleMoreIcon src="/images/LessThanTransparentIcon.svg" />
+            <StyleLessIcon src="/images/MoreThanTransparentIcon.svg" />
           </>
         )}
         <StyledSpeakersSection>

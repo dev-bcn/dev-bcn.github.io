@@ -1,13 +1,12 @@
 import React from "react";
 import { Badge, Button, Card, Col, Row } from "react-bootstrap";
 import { ExternalLink, MapPin } from "lucide-react";
-// @ts-expect-error some quirky
+// @ts-expect-error some quirky import
 import { motion } from "framer-motion";
-// @ts-expect-error some quirky
-import { Offer as JobOffer } from "@types/jobOffers";
+import { Offer } from "@/types/jobOffers";
 
 interface JobOfferCardProps {
-  jobOffer: JobOffer;
+  jobOffer: Offer;
   companyName: string;
   index: number;
 }

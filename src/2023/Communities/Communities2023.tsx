@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 import { styled } from "styled-components";
-import TwitterIcon from "../../components/Icons/Twitter";
-import { Color } from "../../styles/colors";
-import WebsiteIcon from "../../components/Icons/website";
-import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
+import TwitterIcon from "@components/Icons/Twitter";
+import { Color } from "@styles/colors";
+import WebsiteIcon from "@components/Icons/website";
+import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
 
 const Heading = styled.h1`
   padding-top: 10rem;
@@ -29,7 +29,7 @@ const FoSS = styled.div`
   }
 `;
 
-const Communities2023: FC<React.PropsWithChildren<unknown>> = () => {
+export const Communities2023: FC<React.PropsWithChildren<unknown>> = () => {
   useDocumentTitleUpdater("Communities", "2023");
   return (
     <>
@@ -219,4 +219,5 @@ const Communities2023: FC<React.PropsWithChildren<unknown>> = () => {
     </>
   );
 };
+
 export default Communities2023;

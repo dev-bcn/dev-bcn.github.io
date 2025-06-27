@@ -1,6 +1,6 @@
 import React, { FC, useEffect } from "react";
-import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import { Color } from "../../styles/colors";
+import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
+import { Color } from "@styles/colors";
 import {
   StyledMarginBottom,
   StyledSpeakersSection,
@@ -8,15 +8,13 @@ import {
   StyledTitleIcon,
   StyledWaveContainer,
 } from "../Talks/Talks.style";
-import LessThanDarkBlueIcon from "../../assets/images/LessThanDarkBlueIcon.svg";
-import TitleSection from "../../components/SectionTitle/TitleSection";
-import MoreThanBlueIcon from "../../assets/images/MoreThanBlueIcon.svg";
-import { useFetchTalks } from "../../hooks/useFetchTalks";
-import conferenceData from "../../data/2023.json";
+import TitleSection from "@components/SectionTitle/TitleSection";
+import { useFetchTalks } from "@hooks/useFetchTalks";
+import conferenceData from "@data/2023.json";
 import { styled } from "styled-components";
-import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
-import { TalkCard } from "../../components/Talk/TalkCard";
-import { useSentryErrorReport } from "../../hooks/useSentryErrorReport";
+import { BIG_BREAKPOINT } from "@constants/BreakPoints";
+import { TalkCard } from "@components/Talk/TalkCard";
+import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
 
 const StyledSection = styled.section`
 {
@@ -61,7 +59,7 @@ const Workshops2023: FC<React.PropsWithChildren<unknown>> = () => {
       <SectionWrapper color={Color.DARK_BLUE} marginTop={5}>
         <StyledSpeakersSection>
           <StyledTitleContainer>
-            <StyledTitleIcon src={LessThanDarkBlueIcon} />
+            <StyledTitleIcon src="/images/LessThanDarkBlueIcon.svg" />
             <TitleSection
               title="Workshops"
               subtitle="Speakers coming from all corners of the world join us to
@@ -70,7 +68,7 @@ const Workshops2023: FC<React.PropsWithChildren<unknown>> = () => {
               Technologies and in the JCP."
               color={Color.WHITE}
             />
-            <StyledTitleIcon src={MoreThanBlueIcon} />
+            <StyledTitleIcon src="/images/MoreThanBlueIcon.svg" />
           </StyledTitleContainer>
         </StyledSpeakersSection>
       </SectionWrapper>
@@ -101,6 +99,7 @@ const Workshops2023: FC<React.PropsWithChildren<unknown>> = () => {
               key={track.id}
               showTrack={true}
               year={conferenceData.edition}
+              openFeedbackId={conferenceData.openFeedbackId}
             />
           ))}
         </StyledSection>

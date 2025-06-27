@@ -1,19 +1,17 @@
-import { MOBILE_BREAKPOINT } from "../../constants/BreakPoints";
-import { Color } from "../../styles/colors";
+import { MOBILE_BREAKPOINT } from "@constants/BreakPoints";
+import { Color } from "@styles/colors";
 import React, { FC } from "react";
-import LessThanBlueWhiteIcon from "../../assets/images/MoreThanBlueWhiteIcon.svg";
-import MoreThanBlueWhiteIcon from "../../assets/images/LessThanBlueWhiteIcon.svg";
-import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import TitleSection from "../../components/SectionTitle/TitleSection";
+import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
+import TitleSection from "@components/SectionTitle/TitleSection";
 import { useWindowSize } from "react-use";
-import data from "../../data/2023.json";
+import data from "@data/2023.json";
 import {
   StyledLessIcon,
   StyledMoreIcon,
   StyledScheduleSection,
-} from "../../styles/Schedule/Schedule.style";
+} from "@styles/Schedule/Schedule.style";
 import * as Sentry from "@sentry/react";
-import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
+import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
 
 const Schedule2023: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
@@ -45,8 +43,8 @@ const Schedule2023: FC<React.PropsWithChildren<unknown>> = () => {
         />
         {width > MOBILE_BREAKPOINT && (
           <>
-            <StyledLessIcon src={LessThanBlueWhiteIcon} />
-            <StyledMoreIcon src={MoreThanBlueWhiteIcon} />
+            <StyledLessIcon src="/images/MoreThanBlueWhiteIcon.svg" />
+            <StyledMoreIcon src="/images/LessThanBlueWhiteIcon.svg" />
           </>
         )}
         {!data.schedule.enabled && (

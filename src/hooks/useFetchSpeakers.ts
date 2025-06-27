@@ -2,8 +2,7 @@ import { useQuery, UseQueryResult } from "react-query";
 import axios from "axios";
 import { speakerAdapter } from "@services/speakerAdapter";
 import * as Sentry from "@sentry/react";
-// @ts-expect-error some weird error when importing types
-import { IResponse, ISpeaker } from "@types/speakers";
+import { IResponse, ISpeaker } from "@/types/speakers";
 
 const URLS = {
   default: "https://sessionize.com/api/v2/xhudniix/view/Speakers",
@@ -28,24 +27,31 @@ export const useFetchSpeakers = (
     }
   }
 
-  return useQuery("api-speakers", async () => {
-    try {
-      const serverResponse = await axios.get(url, {
-        headers: { Accept: "application/json; charset=utf-8" },
-      });
-      let returnData: IResponse[];
-      if (speakerId !== undefined) {
-        returnData = serverResponse.data.filter(
-          (speaker: { id: string }) => speaker.id === speakerId,
-        );
-      } else {
-        returnData = serverResponse.data;
-      }
+  return useQuery(
+    "api-speakers",
+    async () => {
+      try {
+        const serverResponse = await axios.get(url, {
+          headers: { Accept: "application/json; charset=utf-8" },
+        });
+        let returnData: IResponse[];
+        if (speakerId !== undefined) {
+          returnData = serverResponse.data.filter(
+            (speaker: { id: string }) => speaker.id === speakerId,
+          );
+        } else {
+          returnData = serverResponse.data;
+        }
 
-      return speakerAdapter(returnData);
-    } catch (e) {
-      Sentry.captureException(e);
-      return [];
-    }
-  });
+        return speakerAdapter(returnData);
+      } catch (e) {
+        Sentry.captureException(e);
+        return [];
+      }
+    },
+    {
+      cacheTime: 1800000, // 30 minutes
+      staleTime: 1800000, // 30 minutes
+    },
+  );
 };

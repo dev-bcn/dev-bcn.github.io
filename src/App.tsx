@@ -35,59 +35,81 @@ import {
   ROUTE_WORKSHOPS,
 } from "@constants/routes";
 
-import Footer from "./components/Footer/Footer";
-import HomeWrapper from "./views/Home/HomeWrapper";
-import Navigation from "./components/Navigation/Navigation";
-import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
-import SpeakerDetailContainer from "./views/SpeakerDetail/SpeakerDetailContainer";
+import { Footer } from "@components/Footer/Footer";
+import { HomeWrapper } from "@views/Home/HomeWrapper";
+import { Navigation } from "@components/Navigation/Navigation";
+import { ScrollToTop } from "@components/ScrollToTop/ScrollToTop";
+import { SpeakerDetailContainer } from "@views/SpeakerDetail/SpeakerDetailContainer";
 import { styled } from "styled-components";
 import React, { FC, lazy, Suspense } from "react";
 import { CookieConsent } from "react-cookie-consent";
 import { Color } from "@styles/colors";
-import Loading from "./components/Loading/Loading";
+import { Loading } from "@components/Loading/Loading";
 import { QueryClient, QueryClientProvider } from "react-query";
-import SessionFeedback2023 from "./2023/SessionFeedback/SessionFeedback2023";
-import AttendeeInformation2023 from "./2023/Attendee/AttendeeInformation2023";
-import Communities2023 from "./2023/Communities/Communities2023";
-import SpeakerInformation2023 from "./2023/Speakers/SpeakerInformation2023";
+import { SessionFeedback2023 } from "./2023/SessionFeedback/SessionFeedback2023";
+import { AttendeeInformation2023 } from "./2023/Attendee/AttendeeInformation2023";
+import { Communities2023 } from "./2023/Communities/Communities2023";
+import { SpeakerInformation2023 } from "./2023/Speakers/SpeakerInformation2023";
 
 const Talks = lazy(() => import("./views/Talks/Talks"));
 const Conditions = lazy(() => import("./views/Conditions/Conditions"));
 const Cookies = lazy(() => import("./views/Cookies/Cookies"));
 const Speakers = lazy(() => import("./views/Speakers/Speakers"));
-const SpeakerInformation = lazy(
-  () => import("./views/Speakers/SpeakerInformation"),
+const SpeakerInformation = lazy(() =>
+  import("./views/Speakers/SpeakerInformation").then((value) => ({
+    default: value.SpeakerInformation,
+  })),
 );
 const About = lazy(() => import("./views/About/About"));
 const Travel = lazy(() => import("./views/Travel/Travel"));
-const NotFoundError = lazy(
-  () => import("./components/NotFoundError/NotFoundError"),
+const NotFoundError = lazy(() =>
+  import("./components/NotFoundError/NotFoundError").then((value) => ({
+    default: value.NotFoundError,
+  })),
 );
 const Kcd = lazy(() => import("./views/kcd/Kcd"));
 const Sponsorship = lazy(() => import("./views/sponsorship/Sponsorship"));
 const CfpSection = lazy(() => import("./views/Cfp/CfpSection"));
 const CodeOfConduct = lazy(() => import("./views/CodeOfConduct/CodeOfConduct"));
-const Accommodation = lazy(() => import("./views/Travel/Accommodation"));
+const Accommodation = lazy(() =>
+  import("./views/Travel/Accommodation").then((value) => ({
+    default: value.Accommodation,
+  })),
+);
 const Schedule = lazy(() => import("./views/Schedule/Schedule"));
-const Diversity = lazy(() => import("./views/Diversity/Diversity"));
-const LiveView = lazy(() => import("./views/Talks/LiveView"));
+const Diversity = lazy(() =>
+  import("./views/Diversity/Diversity").then((value) => ({
+    default: value.Diversity,
+  })),
+);
+const LiveView = lazy(() =>
+  import("./views/Talks/LiveView").then((value) => ({
+    default: value.LiveView,
+  })),
+);
 const HomeWrapper2024 = lazy(() => import("./2024/HomeWrapper2024"));
-const Speakers2024 = lazy(
-  () => import("./components/YearSpecific/Speakers/Speakers2024"),
+const Speakers2024 = lazy(() =>
+  import("./components/YearSpecific/Speakers/Speakers2024").then((value) => ({
+    default: value.Speakers2024,
+  })),
 );
 const Talks2024 = lazy(() => import("./2024/Talks/Talks2024"));
 const TalkDetailContainer = lazy(
   () => import("./views/MeetingDetail/TalkDetailContainer"),
 );
-const SpeakerDetailContainer2024 = lazy(
-  () => import("./2024/SpeakerDetail/SpeakerDetailContainer2024"),
+const SpeakerDetailContainer2024 = lazy(() =>
+  import("./2024/SpeakerDetail/SpeakerDetailContainer2024").then((value) => ({
+    default: value.SpeakerDetailContainer2024,
+  })),
 );
 const CfpSection2024 = lazy(() => import("./2024/Cfp/CfpSection2024"));
 const Workshops = lazy(() => import("./views/Workshops/Workshops"));
 const Schedule2024 = lazy(() => import("./2024/Schedule/Schedule2024"));
 const JobOffers2024 = lazy(() => import("./2024/JobOffers/JobOffers2024"));
-const MeetingDetailContainer2024 = lazy(
-  () => import("./2024/TalkDetail/MeetingDetailContainer2024"),
+const MeetingDetailContainer2024 = lazy(() =>
+  import("./2024/TalkDetail/MeetingDetailContainer2024").then((value) => ({
+    default: value.MeetingDetailContainer2024,
+  })),
 );
 const JobOffersList = lazy(() => import("@components/JobOffers/JobOffersList"));
 const Routes2023 = lazy(() => import("./2023/Routes"));

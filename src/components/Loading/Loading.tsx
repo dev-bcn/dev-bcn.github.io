@@ -1,6 +1,5 @@
 import { FC } from "react";
-import Logo from "../../assets/images/logo.svg";
-import { Color } from "../../styles/colors";
+import { Color } from "@styles/colors";
 import { styled } from "styled-components";
 
 export const StyledLoadingImage = styled.img`
@@ -22,7 +21,7 @@ export const StyledLoadingImage = styled.img`
   }
 `;
 
-const Loading: FC<React.PropsWithChildren<unknown>> = () => {
+export const Loading: FC<React.PropsWithChildren<unknown>> = () => {
   return (
     <div
       style={{
@@ -34,7 +33,7 @@ const Loading: FC<React.PropsWithChildren<unknown>> = () => {
     >
       <StyledLoadingImage
         alt="Loading..."
-        src={Logo}
+        src="/images/logo.svg"
         width="292"
         height="200"
       />
@@ -44,5 +43,3 @@ const Loading: FC<React.PropsWithChildren<unknown>> = () => {
     </div>
   );
 };
-
-export default Loading;

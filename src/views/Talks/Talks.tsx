@@ -1,7 +1,5 @@
 import React, { FC, useEffect, useState } from "react";
-import LessThanDarkBlueIcon from "@assets/images/LessThanDarkBlueIcon.svg";
-import MoreThanBlueIcon from "@assets/images/MoreThanBlueIcon.svg";
-import SectionWrapper from "@components/SectionWrapper/SectionWrapper";
+import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
 import TitleSection from "@components/SectionTitle/TitleSection";
 import { Color } from "@styles/colors";
 import conferenceData from "@data/2025.json";
@@ -15,7 +13,6 @@ import {
 import TrackInformation from "@components/common/TrackInformation";
 import { useFetchTalks } from "@hooks/useFetchTalks";
 import { SelectButton, SelectButtonChangeEvent } from "primereact/selectbutton";
-import "primereact/resources/primereact.min.css";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "@styles/theme.css";
 import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
@@ -80,7 +77,7 @@ const Talks: FC<React.PropsWithChildren<unknown>> = () => {
       <SectionWrapper color={Color.DARK_BLUE} marginTop={5}>
         <StyledSpeakersSection>
           <StyledTitleContainer>
-            <StyledTitleIcon src={LessThanDarkBlueIcon} />
+            <StyledTitleIcon src="/images/LessThanDarkBlueIcon.svg" />
             <TitleSection
               title="TALKS"
               subtitle="Speakers coming from all corners of the world join us to
@@ -89,7 +86,7 @@ const Talks: FC<React.PropsWithChildren<unknown>> = () => {
               Technologies and in the JCP."
               color={Color.WHITE}
             />
-            <StyledTitleIcon src={MoreThanBlueIcon} />
+            <StyledTitleIcon src="/images/MoreThanBlueIcon.svg" />
           </StyledTitleContainer>
         </StyledSpeakersSection>
       </SectionWrapper>

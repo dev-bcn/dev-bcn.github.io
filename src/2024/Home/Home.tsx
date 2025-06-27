@@ -1,6 +1,5 @@
 import Countdown from "react-countdown";
 import React, { FC } from "react";
-import LessThanIcon from "../../assets/images/MoreThanBlueWhiteIcon.svg";
 import { useWindowSize } from "react-use";
 import {
   StyledBlueSlash,
@@ -20,15 +19,15 @@ import {
 } from "./Style.Home";
 import { formatDateRange } from "./DateUtil";
 import { Link } from "react-router";
-import data from "../../data/2024.json";
-import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
-import { Color } from "../../styles/colors";
+import data from "@data/2024.json";
+import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
+import { Color } from "@styles/colors";
 
-import ActionButtons from "../../views/Home/components/ActionButtons/ActionButtons";
-import InfoButtons from "../../views/Home/components/InfoButtons/InfoButtons";
-import { BIGGER_BREAKPOINT } from "../../constants/BreakPoints";
-import CountDownCompleted from "../../views/Home/components/Home/components/CountDownCompleted";
-import TimeCountDown from "../../views/Home/components/Home/components/TimeCountdown";
+import ActionButtons from "@views/Home/components/ActionButtons/ActionButtons";
+import InfoButtons from "@views/Home/components/InfoButtons/InfoButtons";
+import { BIGGER_BREAKPOINT } from "@constants/BreakPoints";
+import CountDownCompleted from "@views/Home/components/Home/components/CountDownCompleted";
+import TimeCountDown from "@views/Home/components/Home/components/TimeCountdown";
 
 const Home: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
@@ -97,7 +96,10 @@ const Home: FC<React.PropsWithChildren<unknown>> = () => {
           {data?.showInfoButtons && <InfoButtons />}
 
           {width > BIGGER_BREAKPOINT && (
-            <StyledLessThan alt="Icon" src={LessThanIcon} />
+            <StyledLessThan
+              alt="Icon"
+              src="/images/MoreThanBlueWhiteIcon.svg"
+            />
           )}
           {width > BIGGER_BREAKPOINT && (
             <StyledTopSlash

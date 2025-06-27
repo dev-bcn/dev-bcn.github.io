@@ -1,4 +1,4 @@
-import SectionWrapper from "@components/SectionWrapper/SectionWrapper";
+import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
 import { Color } from "@styles/colors";
 import {
   StyledLessIcon,
@@ -10,12 +10,7 @@ import { StyledSectionsSeparator } from "../CodeOfConduct/CodeOfConduct";
 import { keyframes, styled } from "styled-components";
 import data from "@data/2024.json";
 import { MOBILE_BREAKPOINT } from "@constants/BreakPoints";
-import LessThanBlue from "@assets/images/MoreThanBlueWhiteIcon.svg";
-import MoreThanBlue from "@assets/images/LessThanBlueWhiteIcon.svg";
 import { useWindowSize } from "react-use";
-import youtube from "@assets/images/youtube.svg";
-import linkedinIcon from "@assets/images/linkedinIcon.svg";
-import twitterIcon from "@assets/images/twitterIcon.svg";
 import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
 
 const StyledParagraph = styled.p`
@@ -73,8 +68,14 @@ export default function Kcd() {
           />
           {width > MOBILE_BREAKPOINT && (
             <>
-              <StyledLessIcon alt="LessThanBlueWhiteIcon" src={LessThanBlue} />
-              <StyledMoreIcon alt="MoreThanBlue" src={MoreThanBlue} />
+              <StyledLessIcon
+                alt="LessThanBlueWhiteIcon"
+                src="/images/MoreThanBlueWhiteIcon.svg"
+              />
+              <StyledMoreIcon
+                alt="MoreThanBlue"
+                src="/images/LessThanBlueWhiteIcon.svg"
+              />
             </>
           )}
         </StyledSpeakersSection>
@@ -119,21 +120,36 @@ export default function Kcd() {
             target="_blank"
             rel="noreferrer"
           >
-            <img src={twitterIcon} alt="Twitter" height={32} width={32} />
+            <img
+              src="/images/twitterIcon.svg"
+              alt="Twitter"
+              height={32}
+              width={32}
+            />
           </a>
           <a
             href="https://www.linkedin.com/company/kcdspain/"
             target="_blank"
             rel="noreferrer"
           >
-            <img src={linkedinIcon} alt="LinkedIn" height={32} width={32} />
+            <img
+              src="/images/linkedinIcon.svg"
+              alt="LinkedIn"
+              height={32}
+              width={32}
+            />
           </a>
           <a
             href="https://www.youtube.com/channel/UC2666lycS6cx5a8KL_hBhKA"
             target="_blank"
             rel="noreferrer"
           >
-            <img src={youtube} alt="Youtube" height={32} width={32} />
+            <img
+              src="/images/youtube.svg"
+              alt="Youtube"
+              height={32}
+              width={32}
+            />
           </a>
         </div>
       </SectionWrapper>

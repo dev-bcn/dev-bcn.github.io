@@ -2,13 +2,10 @@ import {
   BIG_BREAKPOINT,
   LARGE_BREAKPOINT,
   MOBILE_BREAKPOINT,
-} from "../../constants/BreakPoints";
-import { Color } from "../../styles/colors";
+} from "@constants/BreakPoints";
+import { Color } from "@styles/colors";
 import React, { FC, Suspense } from "react";
-import LessThanIconWhite from "../../assets/images/LessThanIconWhite.svg";
-import LessThanIcon from "../../assets/images/LessThanBlueIcon.svg";
-import MoreThanIcon from "../../assets/images/MoreThanBlueIcon.svg";
-import SectionWrapper from "../../components/SectionWrapper/SectionWrapper";
+import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
 import { useWindowSize } from "react-use";
 import {
   StyledContainer,
@@ -118,7 +115,7 @@ const TalkDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
             initial="initial"
             animate="animate"
             variants={leftVariants}
-            src={LessThanIcon}
+            src="/images/LessThanBlueIcon.svg"
           />
           <StyledFlexCol
             initial="initial"
@@ -173,7 +170,7 @@ const TalkDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
             initial="initial"
             animate="animate"
             variants={rightVariants}
-            src={MoreThanIcon}
+            src="/images/MoreThanBlueIcon.svg"
           />
         </StyledMeetingTitleContainer>
         <StyledVideoContainer
@@ -209,7 +206,7 @@ const TalkDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
           </div>
         </StyledVideoContainer>
         <StyledSpeakerDetailContainer className="speaker-details-Container">
-          <StyledLessThan src={LessThanIconWhite} />
+          <StyledLessThan src="/images/LessThanIconWhite.svg" />
           <StyledDetailsContainer className="details-container-inner">
             <StyledRightContainer>
               {finalMeetingInfo.speakers?.map((speaker) => (

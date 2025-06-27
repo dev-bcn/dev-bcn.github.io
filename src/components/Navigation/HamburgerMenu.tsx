@@ -1,6 +1,5 @@
-import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
+import { BIG_BREAKPOINT } from "@constants/BreakPoints";
 import { StyledBlueHamburger } from "./Style.Navigation";
-import BlueHamburgerIcon from "../../assets/images/BlueHamburgerIcon.svg";
 import { useWindowSize } from "react-use";
 
 export const HamburgerMenu = (props: { onClick: () => void }) => {
@@ -11,7 +10,7 @@ export const HamburgerMenu = (props: { onClick: () => void }) => {
       {width <= BIG_BREAKPOINT && (
         <StyledBlueHamburger
           alt="Navigation Menu"
-          src={BlueHamburgerIcon}
+          src="/images/BlueHamburgerIcon.svg"
           whileTap={{ scale: 0.8 }}
           onClick={props.onClick}
         />

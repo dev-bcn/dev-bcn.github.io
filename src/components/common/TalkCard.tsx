@@ -28,7 +28,7 @@ import {
   QuestionAnswers,
   SessionCategory,
   SessionSpeaker,
-} from "@types/sessions";
+} from "@/types/sessions";
 
 export interface TalkCardProps {
   talk: {

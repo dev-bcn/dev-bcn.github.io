@@ -1,12 +1,12 @@
 import React, { FC } from "react";
 import { Venue } from "./Venue";
 import { ToBarcelona } from "./ToBarcelona";
-import data from "../../data/2024.json";
+import data from "@data/2024.json";
 import { StyledWaveContainer } from "../Speakers/Speakers.style";
 import { styled } from "styled-components";
-import { Color } from "../../styles/colors";
-import Accommodation from "./Accommodation";
-import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
+import { Color } from "@styles/colors";
+import { Accommodation } from "./Accommodation";
+import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
 
 const StyledTravel = styled.div`
   max-width: 85rem;

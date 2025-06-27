@@ -1,7 +1,5 @@
 import React, { FC, useEffect, useState } from "react";
-import LessThanDarkBlueIcon from "@assets/images/LessThanDarkBlueIcon.svg";
-import MoreThanBlueIcon from "@assets/images/MoreThanBlueIcon.svg";
-import SectionWrapper from "@components/SectionWrapper/SectionWrapper";
+import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
 import TitleSection from "@components/SectionTitle/TitleSection";
 import { Color } from "@styles/colors";
 import conferenceData from "@data/2023.json";
@@ -79,7 +77,7 @@ const Talks2023: FC<React.PropsWithChildren<unknown>> = () => {
       <SectionWrapper color={Color.DARK_BLUE} marginTop={5}>
         <StyledSpeakersSection>
           <StyledTitleContainer>
-            <StyledTitleIcon src={LessThanDarkBlueIcon} />
+            <StyledTitleIcon src="/images/LessThanDarkBlueIcon.svg" />
             <TitleSection
               title="TALKS"
               subtitle="Speakers coming from all corners of the world join us to
@@ -88,7 +86,7 @@ const Talks2023: FC<React.PropsWithChildren<unknown>> = () => {
               Technologies and in the JCP."
               color={Color.WHITE}
             />
-            <StyledTitleIcon src={MoreThanBlueIcon} />
+            <StyledTitleIcon src="/images/MoreThanBlueIcon.svg" />
           </StyledTitleContainer>
         </StyledSpeakersSection>
       </SectionWrapper>

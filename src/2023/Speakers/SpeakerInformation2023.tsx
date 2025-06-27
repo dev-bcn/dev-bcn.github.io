@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { styled } from "styled-components";
-import { Color } from "../../styles/colors";
-import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
+import { Color } from "@styles/colors";
+import { BIG_BREAKPOINT } from "@constants/BreakPoints";
 
 const Heading = styled.h1`
   font-family: "DejaVu Sans Condensed Bold", sans-serif;
@@ -36,7 +36,9 @@ const Image = styled.img`
   }
 `;
 
-const SpeakerInformation2023: FC<React.PropsWithChildren<unknown>> = () => {
+export const SpeakerInformation2023: FC<
+  React.PropsWithChildren<unknown>
+> = () => {
   return (
     <main
       style={{

@@ -1,12 +1,7 @@
-import {BIG_BREAKPOINT} from "../../constants/BreakPoints";
+import { BIG_BREAKPOINT } from "@constants/BreakPoints";
 
-import {FC, Suspense} from "react";
-import MoreThanIcon from "../../assets/images/MoreThanBlueIcon.svg";
-import LessThan from "../../assets/images/MoreThanIcon.svg";
-import SlashesWhite from "../../assets/images/SlashesWhite.svg";
-import linkedinIcon from "../../assets/images/linkedinIcon.svg";
-import twitterIcon from "../../assets/images/twitterIcon.svg";
-import {useWindowSize} from "react-use";
+import { FC, Suspense } from "react";
+import { useWindowSize } from "react-use";
 import {
   StyledDetailsContainer,
   StyledFlexCol,
@@ -26,20 +21,19 @@ import {
   StyledSpeakerImg,
   StyledSpeakerTitle,
 } from "./Speaker.style";
-import {
-  ROUTE_2023_SPEAKERS,
-  ROUTE_2023_TALK_DETAIL,
-} from "../../constants/routes";
-import {StyledTalkDescription} from "./SpeakerDetail.style";
-import {Link} from "react-router";
-import {Color} from "../../styles/colors";
-import {ISpeaker} from "../../types/speakers";
+import { ROUTE_2023_SPEAKERS, ROUTE_2023_TALK_DETAIL } from "@constants/routes";
+import { StyledTalkDescription } from "./SpeakerDetail.style";
+import { Link } from "react-router";
+import { Color } from "@styles/colors";
+import { ISpeaker } from "@/types/speakers";
 
 interface ISpeakerDetailProps {
   speaker: ISpeaker;
 }
 
-const SpeakerDetail2023: FC<React.PropsWithChildren<ISpeakerDetailProps>> = ({ speaker }) => {
+const SpeakerDetail2023: FC<React.PropsWithChildren<ISpeakerDetailProps>> = ({
+  speaker,
+}) => {
   const { width } = useWindowSize();
 
   const hasSessions = (): boolean =>
@@ -59,12 +53,15 @@ const SpeakerDetail2023: FC<React.PropsWithChildren<ISpeakerDetailProps>> = ({ s
             <StyledSocialMediaContainer>
               {speaker.twitterUrl && (
                 <StyledLink href={speaker.twitterUrl.url} target={"_blank"}>
-                  <StyledSocialMediaIcon src={twitterIcon} />
+                  <StyledSocialMediaIcon src="/images/twitterIcon.svg" />
                 </StyledLink>
               )}
               {speaker.linkedInUrl && (
                 <StyledLink href={speaker.linkedInUrl.url} target={"_blank"}>
-                  <StyledSocialMediaIcon src={linkedinIcon} noMargin />
+                  <StyledSocialMediaIcon
+                    src="/images/linkedinIcon.svg"
+                    noMargin
+                  />
                 </StyledLink>
               )}
             </StyledSocialMediaContainer>
@@ -84,7 +81,7 @@ const SpeakerDetail2023: FC<React.PropsWithChildren<ISpeakerDetailProps>> = ({ s
                 <StyledSocialMediaContainer>
                   {speaker.twitterUrl && (
                     <StyledLink href={speaker.twitterUrl.url} target={"_blank"}>
-                      <StyledSocialMediaIcon src={twitterIcon} />
+                      <StyledSocialMediaIcon src="/images/twitterIcon.svg" />
                     </StyledLink>
                   )}
                   {speaker.linkedInUrl && (
@@ -92,13 +89,16 @@ const SpeakerDetail2023: FC<React.PropsWithChildren<ISpeakerDetailProps>> = ({ s
                       href={speaker.linkedInUrl.url}
                       target={"_blank"}
                     >
-                      <StyledSocialMediaIcon src={linkedinIcon} noMargin />
+                      <StyledSocialMediaIcon
+                        src="/images/linkedinIcon.svg"
+                        noMargin
+                      />
                     </StyledLink>
                   )}
                 </StyledSocialMediaContainer>
               </>
             )}
-            <StyledSlashes src={SlashesWhite} />
+            <StyledSlashes src="/images/SlashesWhite.svg" />
           </StyledNameContainer>
           <StyledInfoContainer>
             <StyledFlexCol>
@@ -122,7 +122,7 @@ const SpeakerDetail2023: FC<React.PropsWithChildren<ISpeakerDetailProps>> = ({ s
                         >
                           <StyledSpeakerTitle>
                             <img
-                              src={LessThan}
+                              src="/images/MoreThanIcon.svg"
                               height={12}
                               alt="session"
                               style={{ paddingRight: "0.5rem" }}
@@ -148,7 +148,7 @@ const SpeakerDetail2023: FC<React.PropsWithChildren<ISpeakerDetailProps>> = ({ s
               </Link>
             </StyledFlexCol>
             <StyledMoreThanIconContainer>
-              <StyledMoreThanIcon src={MoreThanIcon} />
+              <StyledMoreThanIcon src="/images/MoreThanBlueIcon.svg" />
             </StyledMoreThanIconContainer>
           </StyledInfoContainer>
         </StyledRightContainer>

@@ -1,12 +1,11 @@
 import { FC } from "react";
 import { Link } from "react-router";
-import LessThanBlueWhiteIcon from "@assets/images/LessThanBlueIcon.svg";
 import { motion } from "motion/react";
 import { styled } from "styled-components";
 import SpeakerSwiper from "./SpeakerSwiper";
 import { Color } from "@styles/colors";
 import { TABLET_BREAKPOINT } from "@constants/BreakPoints";
-import SectionWrapper from "../SectionWrapper/SectionWrapper";
+import { SectionWrapper } from "../SectionWrapper/SectionWrapper";
 import TitleSection from "../SectionTitle/TitleSection";
 
 const StyledSpeakersContainer = styled.section`
@@ -81,7 +80,7 @@ const SpeakersCarousel: FC<React.PropsWithChildren<Props>> = ({
         <StyledLink>
           <Link to={speakersLink} className="link--text">
             <StyledSubtitle> View all speakers</StyledSubtitle>
-            <StyledLessThanRed src={LessThanBlueWhiteIcon} />
+            <StyledLessThanRed src="/images/LessThanBlueIcon.svg" />
           </Link>
         </StyledLink>
         <StyledBottomSlash
