@@ -49,7 +49,7 @@ export default defineConfig(({ mode }) => {
         "@constants": path.resolve(__dirname, "./src/constants"),
         "@services": path.resolve(__dirname, "./src/services"),
         "@hooks": path.resolve(__dirname, "./src/hooks"),
-        "@assets": path.resolve(__dirname, "./src/assets"),
+        "@/assets": path.resolve(__dirname, "./src/assets"),
         "@styles": path.resolve(__dirname, "./src/styles"),
         "@views": path.resolve(__dirname, "./src/views"),
         "@utils": path.resolve(__dirname, "./src/utils"),
