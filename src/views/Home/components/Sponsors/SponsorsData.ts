@@ -147,6 +147,11 @@ export const sponsors: Sponsors = {
       image: "images/sponsors/codely.png",
       website: "https://codely.com/",
     },
+    {
+      name: "Foojay",
+      image: "images/sponsors/foojay.jpg",
+      website: "https://foojay.io/",
+    },
   ],
   supporters: [],
 };
