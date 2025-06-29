@@ -103,7 +103,7 @@ describe("useFetchTalksById", () => {
     vi.clearAllMocks();
   });
 
-  it("should use default URL when no parameter is provided", async () => {
+  it("should fetch a single talk by id", async () => {
     const mockSession = createMockSession();
     const mockData: IGroup[] = [
       createMockGroup({

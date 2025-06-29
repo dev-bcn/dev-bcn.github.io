@@ -40,7 +40,7 @@ const getUrl = (urlOrYear?: string): string => {
  * @returns The query result
  */
 const useFetchTalksBase = <T>(
-  queryKey: string,
+  queryKey: string | (string | undefined)[],
   urlOrYear?: string,
   dataTransformer: (data: IGroup[]) => T = (data: IGroup[]) =>
     data as unknown as T,
@@ -68,13 +68,19 @@ export const useFetchTalksById = (
   id: string,
   urlOrYear?: string,
 ): UseQueryResult<Session> => {
-  return useFetchTalksBase<Session>("talks", urlOrYear, (data: IGroup[]) => {
-    const sessions = data
-      .map((track: IGroup) => track.sessions)
-      .flat(1)
-      .filter((session: { id: number | string }) => String(session.id) === id);
-    return sessions[0];
-  });
+  return useFetchTalksBase<Session>(
+    ["talks", id],
+    urlOrYear,
+    (data: IGroup[]) => {
+      const sessions = data
+        .map((track: IGroup) => track.sessions)
+        .flat(1)
+        .filter(
+          (session: { id: number | string }) => String(session.id) === id,
+        );
+      return sessions[0];
+    },
+  );
 };
 
 export const useFetchLiveView = (

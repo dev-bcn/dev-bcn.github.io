@@ -66,7 +66,7 @@ describe("fetch speaker hook and speaker adapter", () => {
     expect(result.current.data).toEqual(speakerAdapter(payload.data));
   });
 
-  it("should adapt from server response a query with id", async () => {
+  it("should filter by ID when an ID is passed", async () => {
     //Given
     const { wrapper } = getQueryClientWrapper();
     mockedAxios.get.mockResolvedValueOnce(payload);

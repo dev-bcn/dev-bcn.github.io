@@ -28,7 +28,7 @@ export const useFetchSpeakers = (
   }
 
   return useQuery(
-    "api-speakers",
+    ["api-speakers", speakerId],
     async () => {
       try {
         const serverResponse = await axios.get(url, {
@@ -50,8 +50,8 @@ export const useFetchSpeakers = (
       }
     },
     {
-      cacheTime: 1800000, // 30 minutes
-      staleTime: 1800000, // 30 minutes
+      cacheTime: 1800000,
+      staleTime: 1800000,
     },
   );
 };
