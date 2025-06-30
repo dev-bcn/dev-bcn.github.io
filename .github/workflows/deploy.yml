@@ -38,6 +38,7 @@ jobs:
           VITE_APP_MAP_API_KEY: ${{ env.VITE_APP_MAP_API_KEY }}
           REACT_APP_GOOGLE_ANALYTICS_API_KEY: ${{ env.VITE_APP_MAP_API_KEY}}
         run: |
+          env | grep MAP
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
           npm i
           npm run build
