@@ -90,13 +90,16 @@ export const StyledMoreIcon = styled.img`
 `;
 
 interface LocationProps {
+  id: string;
   lat: number;
   lng: number;
   text: string;
+  subtext: string;
 }
 
 const AnyReactComponent: FC<React.PropsWithChildren<LocationProps>> = ({
   text,
+  subtext,
 }) => (
   <div
     style={{
@@ -104,42 +107,55 @@ const AnyReactComponent: FC<React.PropsWithChildren<LocationProps>> = ({
       background: Color.LIGHT_BLUE,
       padding: "15px 10px",
       display: "inline-flex",
-      textAlign: "center",
+      width: "fit-content",
+      textAlign: "left",
       alignItems: "center",
       justifyContent: "center",
-      borderRadius: "25%",
-      width: "100px",
-      height: "70px",
+      borderRadius: "10%",
       boxShadow: "1px 1px 1px darkgrey",
       transform: "translate(-50%, -50%)",
+      position: "absolute",
     }}
   >
     <a
       style={{
         textDecoration: "none",
-        fontWeight: "bold",
         color: Color.WHITE,
-        fontSize: "1.3em",
+        fontSize: "1 rem",
       }}
       href="https://goo.gl/maps/qaT5mCmi8ZkgCmteA"
       rel="noreferrer"
       target="_blank"
     >
-      <img src="/images/LocationIcon.svg" alt="La Farga" height={24} />
-      {text}
+      <strong>{text}</strong>
+      <p>{subtext}</p>
     </a>
   </div>
 );
 
 export const Venue: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
-  const location: LocationProps = {
-    text: "La Farga",
-    lat: 41.362,
-    lng: 2.1044,
+  const defaultLocation = {
+    lat: 41.361,
+    lng: 2.1041,
   };
+  const locations: Array<LocationProps> = [
+    {
+      id: "ab4186ca-dc31-419e-a684-f3e6d0e83e6e",
+      text: "Conference Talks",
+      subtext: "Carrer Barcelona, 12",
+      lat: 41.361529516457,
+      lng: 2.10421032792683,
+    },
+    {
+      id: "a6887def-70bd-473d-ac61-cd28392b3568",
+      text: "Workshops",
+      subtext: "Carrer Girona, 15",
+      lat: 41.36171121328454,
+      lng: 2.103491331747179,
+    },
+  ];
   const key = import.meta.env.VITE_APP_MAP_API_KEY ?? "";
-
   return (
     <StyledVenue>
       <TitleSection
@@ -205,14 +221,21 @@ export const Venue: FC<React.PropsWithChildren<unknown>> = () => {
         <div className="map">
           <GoogleMapReact
             bootstrapURLKeys={{ key }}
-            defaultCenter={location}
-            defaultZoom={16}
+            defaultCenter={defaultLocation}
+            center={defaultLocation}
+            defaultZoom={11}
+            zoom={18}
           >
-            <AnyReactComponent
-              lat={location.lat}
-              lng={location.lng}
-              text={location.text}
-            />
+            {locations.map((location) => (
+              <AnyReactComponent
+                id={location.id}
+                key={location.id}
+                lat={location.lat}
+                lng={location.lng}
+                subtext={location.subtext}
+                text={location.text}
+              />
+            ))}
           </GoogleMapReact>
         </div>
       </section>
