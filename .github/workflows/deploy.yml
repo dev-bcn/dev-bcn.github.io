@@ -16,6 +16,29 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
 
+      - name: Debug environment variables
+        env:
+          VITE_GOOGLE_ANALYTICS_API_KEY: ${{ secrets.VITE_GOOGLE_ANALYTICS_API_KEY }}
+          VITE_MAP_API_KEY: ${{ secrets.VITE_MAP_API_KEY }}
+        run: |
+          missing=false
+          
+          for var in VITE_GOOGLE_ANALYTICS_API_KEY VITE_MAP_API_KEY; do
+            if [ -z "${!var}" ]; then
+              echo "❌ $var is not set"
+              missing=true
+            else
+              echo "✅ $var is set"
+            fi
+          done
+          
+          if [ "$missing" = true ]; then
+            echo "::error ::One or more required env vars are missing"
+            exit 1
+          fi
+
+
+
       - name: Use Node.js 24.x
         uses: actions/setup-node@v3
         with:
@@ -32,8 +55,6 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      - name: Debug environment variables
-        run: printenv | sort | grep VITE
 
       - name: Build & deploy
         env:
@@ -41,8 +62,8 @@ jobs:
           REACT_APP_NAME: ${{ env.VERSION }}
           SENTRY_ENVIRONMENT: ${{ env.SENTRY_ENVIRONMENT}}
           REACT_APP_VERSION: ${{ env.VERSION }}
-          VITE_GOOGLE_ANALYTICS_API_KEY: ${{ env.VITE_GOOGLE_ANALYTICS_API_KEY }}
-          VITE_MAP_API_KEY: ${{ env.VITE_MAP_API_KEY }}
+          VITE_GOOGLE_ANALYTICS_API_KEY: ${{ secrets.VITE_GOOGLE_ANALYTICS_API_KEY }}
+          VITE_MAP_API_KEY: ${{ secrets.VITE_MAP_API_KEY }}
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
           npm i
