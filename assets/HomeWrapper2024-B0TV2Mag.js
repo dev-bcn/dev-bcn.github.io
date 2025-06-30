@@ -1,0 +1,40 @@
+import{o as l,l as j,j as e,S as x,i as o,L as f,e as i,a7 as S,a8 as v,a9 as B,aa as T,ab as C,ac as c,h as r,p as y,x as D,f as k,ad as I,ae as A,af as M,ag as E,ah as L,ai as R,aj as _,ak as K,v as $,g as F,al as G,am as P,an as U}from"./index-CyDvQTML.js";import{S as H,a as N,b as W,c as z,d as O,e as Y,f as m,g as J,h as n,i as q,j as V,k as X,l as Q,m as Z}from"./Style.Home-9x94bwic.js";try{let s=typeof window<"u"?window:typeof global<"u"?global:typeof globalThis<"u"?globalThis:typeof self<"u"?self:{},a=new s.Error().stack;a&&(s._sentryDebugIds=s._sentryDebugIds||{},s._sentryDebugIds[a]="cab1b199-fad1-4854-9602-19c8a7d829da",s._sentryDebugIdIdentifier="sentry-dbid-cab1b199-fad1-4854-9602-19c8a7d829da")}catch{}function ee(s,a){return s.getMonth()===a.getMonth()&&s.getFullYear()===a.getFullYear()?`${l(s,"MMMM do")} - ${l(a,"do, yyyy")}`:`${l(s,"MMMM do, yyyy")} - ${l(a,"MMMM do, yyyy")}`}const se=()=>{var a,p,g,d,h,w,u;const{width:s}=j();return e.jsx(H,{children:e.jsx(x,{color:"transparent",children:e.jsxs(N,{children:[e.jsxs(W,{children:[e.jsx(z,{src:"images/logo.png",alt:"DevBcn logo"}),e.jsx(O,{children:"+"}),e.jsx(Y,{src:"images/KCD-logo-white.png",alt:"KCD Barcelona"})]}),e.jsxs(m,{children:[e.jsxs(J,{children:["The Barcelona Developers Conference ",(a=o)==null?void 0:a.edition]}),e.jsxs(n,{children:["Former"," ",e.jsx("a",{href:"https://www.jbcnconf.com/2022/",target:"_blank",rel:"noreferrer",children:"JBCNConf"})," "]}),e.jsx(n,{children:"Multidisciplinary conference made for Developers and by Developers, to learn and share on the different modern software technologies used across the companies"}),e.jsx(n,{children:e.jsxs("small",{children:["Past events: ",e.jsx(f,{to:"/2023",children:"2023 edition"})]})})]}),e.jsxs(m,{color:i.LIGHT_BLUE,children:[e.jsx(n,{color:i.DARK_BLUE,children:((p=o)==null?void 0:p.startDay)&&o.endDay&&ee(new Date(o.startDay),new Date(o.endDay))}),e.jsx(n,{color:i.DARK_BLUE,children:"La Farga, Hospitalet, Barcelona"})]}),e.jsx(m,{color:i.DARK_BLUE,children:e.jsxs(n,{children:[(g=o)==null?void 0:g.trackNumber," tracks with the following topics: ",e.jsx("br",{}),(d=o)==null?void 0:d.tracks]})}),o.showCountdown&&e.jsx(S,{date:(h=o)==null?void 0:h.startDay,onComplete:B,renderer:v}),((w=o)==null?void 0:w.actionButtons)&&e.jsx(T,{}),((u=o)==null?void 0:u.showInfoButtons)&&e.jsx(C,{}),s>c&&e.jsx(q,{alt:"Icon",src:"/images/MoreThanBlueWhiteIcon.svg"}),s>c&&e.jsx(V,{initial:{x:"100%"},animate:{x:0},transition:{duration:4},children:e.jsxs(X,{children:["/ / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /"," "]})}),e.jsx(Q,{initial:{x:"-100%"},animate:{x:0},transition:{duration:6},children:s>c&&e.jsxs(Z,{children:["/ / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /"," "]})})]})})})},ae=r.div`
+  position: relative;
+  padding-top: 4rem;
+`,oe=r.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+`,b=r.img`
+  height: 4rem;
+  @media (min-width: 800px) {
+    height: 10rem;
+  }
+`;r(D.div)`
+  display: none;
+  position: absolute;
+  width: ${({position:s})=>s==="left"?"60%":"62%"};
+  clip-path: ${({position:s})=>s==="left"?"polygon(0 0, 100% 0, 92% 100%, 0% 100%)":"polygon(6% 0, 100% 0, 100% 100%, 0 100%)"};
+  top: 0;
+  bottom: 0;
+  background-color: ${({color:s})=>s};
+
+  left: ${({position:s})=>s==="left"?"0":"unset"};
+
+  right: ${({position:s})=>s==="right"?"0":"unset"};
+  z-index: 1;
+
+  @media (min-width: ${y}px) {
+    display: flex;
+  }
+`;const t={top:[{name:"DATASTAX",image:"images/sponsors/datastax.png",website:"https://www.datastax.com/"}],premium:[{name:"Allianz",image:"images/sponsors/allianz.png",website:"https://tech.allianz.com/en.html"},{name:"Barcelona JUG",image:"images/sponsors/bcn-jug.png",website:"https://www.meetup.com/barcelonajug/"},{name:"PREM.AI",website:"https://www.premai.io/",image:"images/sponsors/prem-ai.png"},{name:"Revolut",website:"https://www.revolut.com/working-at-revolut/",image:"images/sponsors/revolut.png"}],regular:[{name:"Sopra Steria",image:"/images/sponsors/sopra.png",website:"https://www.soprasteria.es/"},{name:"Caixabank Tech",website:"https://www.caixabanktech.com/es/pagina-de-inicio/",image:"images/sponsors/caixabank-tech.png"},{name:"Idealista",image:"images/sponsors/idealista.jpg",website:"https://www.idealista.com/info/trabaja-con-nosotros"},{name:"Clever Cloud",image:"images/sponsors/clever-cloud.png",website:"https://www.clever-cloud.com/"},{name:"ALTEN",image:"images/sponsors/alten.png",website:"https://www.alten.es/"},{name:"TIGERA",image:"images/sponsors/tigera.png",website:"https://www.tigera.io/"},{name:"Dynatrace",image:"images/sponsors/dynatrace.png",website:"https://www.dynatrace.com/"}],basic:[{name:"Seidor",website:"https://www.opentrends.net/en",image:"images/sponsors/seidor.png"},{name:"Perfect Scale",website:"https://www.perfectscale.io/",image:"images/sponsors/perfect-scale.png"},{name:"Auth0",image:"images/sponsors/auth0.png",website:"https://okta.com/careers"},{name:"Barcelona Activa",image:"images/sponsors/barcelona-activa.png",website:"https://www.barcelonactiva.cat/"},{name:"Reevo",image:"images/sponsors/reevo.png",website:"https://www.reevo.it/"},{name:"GFT",website:"https://www.gft.com/es/es/",image:"images/sponsors/GFT.jpg"},{name:"Grupo Castilla",image:"images/sponsors/grupo-castilla.png",website:"https://www.grupocastilla.es/servicios-rrhh/consultoria-tecnologica/"},{name:"Axa",image:"images/sponsors/axa.png",website:"https://www.axapartners.es/es"}],communities:[{name:"KCD Barcelona",website:"https://community.cncf.io/events/details/cncf-kcd-spain-presents-kcd-barcelona-2024/",image:"/images/KCD-logo-black.png"},{name:"Apache Foundation",image:"images/sponsors/apache-foundation.jpeg",website:"https://www.apache.org/"},{name:"Eclipse Foundation",image:"images/sponsors/eclipse-foundation.png",website:"https://www.eclipse.org/"},{name:"Foojay",image:"images/sponsors/foojay.jpg",website:"https://foojay.io/"},{name:"Migracode Barcelona",image:"images/sponsors/migracode.jpg",website:"https://www.migracode.org/"},{name:"Step4ward",image:"images/sponsors/step4ward.png",website:"https://bit.ly/step4wardhome"}],media_partners:[{name:"Kube events",image:"images/sponsors/kube-events.png",website:"https://kube.events/"},{name:"Kube careers",image:"images/sponsors/kube-career.png",website:"https://kube.careers//"}],supporters:[{name:"BarcelonaJS",website:"https://barcelonajs.com/",image:"images/sponsors/barcelona-js.png"}]},te=()=>e.jsx(x,{color:i.WHITE,children:e.jsxs(ae,{id:"sponsors",children:[e.jsxs(oe,{className:"TitleContainer",children:[e.jsx(b,{alt:"Less than - icon",src:"/images/MoreThanBlueWhiteIcon.svg"}),e.jsx(k,{"data-testid":"sponsors-box",title:"SPONSORS",subtitle:`Are you a technology company? Interested in meeting
+        enthusiasts and geek people for technology? This is a
+        priceless opportunity to participate in the first big physical multi-language conference in Barcelona, to promote your company
+        and to support technological communities.`,color:i.DARK_BLUE}),e.jsx(b,{alt:"more than - icon",src:"/images/LessThanBlueWhiteIcon.svg"})]}),e.jsx(I,{sponsors:t.top}),e.jsx(A,{sponsors:t.premium}),e.jsx(M,{sponsors:t.regular}),e.jsx(E,{sponsors:t.basic}),e.jsx(L,{sponsors:t.communities}),e.jsx(R,{sponsors:t.supporters}),e.jsx(_,{sponsors:t.media_partners})]})}),ne=r.div`
+  padding-bottom: 10rem;
+
+  @media only screen and (max-width: ${y}px) {
+    padding-bottom: 20rem;
+  }
+`,le=()=>{const{hash:s}=K();return $.useEffect(()=>{if(s!=null&&s!==""){const a=document.getElementById(s.substring(1));a==null||a.scrollIntoView()}},[s]),F("Home",o.edition),e.jsxs(ne,{id:"home-wrapper",children:[e.jsx(se,{}),e.jsx(G,{}),e.jsx(P,{speakersLink:U,sessionizeUrl:o.edition,isEnabled:o.carrousel.enabled}),e.jsx(te,{})]})};export{le as HomeWrapper2024};
+//# sourceMappingURL=HomeWrapper2024-B0TV2Mag.js.map
