@@ -10,8 +10,7 @@ jobs:
     env:
       SENTRY_ENVIRONMENT: production
       VITE_GOOGLE_ANALYTICS_API_KEY: ${{ secrets.VITE_GOOGLE_ANALYTICS_API_KEY }}
-      VITE_APP_MAP_API_KEY: ${{ secrets.VITE_APP_MAP_API_KEY }}
-
+      VITE_MAP_API_KEY: ${{ secrets.VITE_MAP_API_KEY }}
 
     steps:
       - name: checkout
@@ -43,7 +42,7 @@ jobs:
           SENTRY_ENVIRONMENT: ${{ env.SENTRY_ENVIRONMENT}}
           REACT_APP_VERSION: ${{ env.VERSION }}
           VITE_GOOGLE_ANALYTICS_API_KEY: ${{ env.VITE_GOOGLE_ANALYTICS_API_KEY }}
-          VITE_APP_MAP_API_KEY: ${{ env.VITE_APP_MAP_API_KEY }}
+          VITE_MAP_API_KEY: ${{ env.VITE_MAP_API_KEY }}
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
           npm i

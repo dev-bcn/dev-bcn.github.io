@@ -155,7 +155,7 @@ export const Venue: FC<React.PropsWithChildren<unknown>> = () => {
       lng: 2.103491331747179,
     },
   ];
-  const key = import.meta.env.VITE_APP_MAP_API_KEY ?? "";
+  const key = import.meta.env.VITE_MAP_API_KEY ?? "";
   return (
     <StyledVenue>
       <TitleSection
