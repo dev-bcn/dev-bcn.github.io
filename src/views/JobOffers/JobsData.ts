@@ -9,7 +9,7 @@ export const jobOffers: Company[] = [
     twitter: "",
     name: "CAIXABANK TECH",
     logo: "images/sponsors/caixabank-tech.png",
-    url: "https://caixabanktech.com/es/",
+    url: "https://caixabanktech.com/es/pagina-de-inicio/",
     offers: [
       {
         id: "7bedcb50-4a71-43a2-abff-029961262952",
@@ -107,13 +107,96 @@ export const jobOffers: Company[] = [
       {
         id: "52fbc1b1-54ab-4ec1-8fd4-a2690a7f5737",
         text:
-          "Vonage is the emerging leader in the $100B+ cloud communications platform (CPaaS) market. Customers like Airbnb, Viber, Whatsapp, Snapchat, and many others depend on our APIs and SDKs to connect with their customers all over the world. As businesses continue to shift to a real-time, customer-centric communications model, we are experiencing a time of impressive growth.\n" +
-          "\n" +
+          "Vonage is the emerging leader in the $100B+ cloud communications platform (CPaaS) market. Customers like Airbnb, Viber, Whatsapp, Snapchat, and many others depend on our APIs and SDKs to connect with their customers all over the world. As businesses continue to shift to a real-time, customer-centric communications model, we are experiencing a time of impressive growth.<br/>" +
+          "<br/>" +
           "We are looking for Full-Stack Web Developers (frontend focus), Frontend Native SDET, and Java Software Engineers to join our team. You'll enhance the developer experience and improve the capabilities of our video APIs, help drive innovation, and contribute across the Vonage Video Platform.",
         title:
           "Full-Stack Web Developers (frontend focus), Frontend Native SDET, and Java Software Engineers",
         url: "https://www.vonage.com/careers/search/#loc=4059203002&dept=4027008002&page=1&sort=desc",
         location: "Remote",
+      },
+    ],
+  },
+  {
+    id: "f4dcca5c-f088-478d-bec1-a51bc26c22be",
+    name: "Dynatrace",
+    url: "https://www.dynatrace.com/",
+    logo: "/images/sponsors/dynatrace.png",
+    description:
+      "Dynatrace, a Software Intelligence observability platform, delivers actionable answers—not just data—about application performance and system health. Following our acquisition of Metis, we’re building the most advanced database observability capabilities within the Dynatrace platform.",
+    offers: [
+      {
+        title: "Mid/Senior React Engineer",
+        text:
+          "Your role at Dynatrace<br/>" +
+          "React | Data Visualization | Distributed Systems | Open Source | Observability | APM  <br/>" +
+          "<br/>" +
+          "Do you love web development and innovation?  <br/>" +
+          "<br/>" +
+          "Do you feel comfortable both creating beautiful front-end UX components and developing efficient algorithms on the back-end side?  <br/>" +
+          "<br/>" +
+          "Do you want the features you develop to be used by thousands of the biggest companies around the world? <br/>" +
+          "<br/>" +
+          "Do you want to work in a high-scale SaaS product (+1300 AWS instances, +2.1Gbps incoming traffic)? <br/>" +
+          "<br/>" +
+          "Do you thrive for improving the quality bar of the teams you work with?  <br/>" +
+          "<br/>" +
+          "Are you a proactive team-player willing to join an outstanding work environment?  <br/>" +
+          "<br/>" +
+          " <br/>" +
+          "What are we looking for? <br/>" +
+          "<br/>" +
+          "We are looking for outstanding senior frontend developers who don’t stick too much to a single library/framework but rather have a broad and deep understanding of any reactive JavaScript framework, JavaScript in general, HTML, CSS/SCSS and web development in general. <br/>" +
+          "<br/>" +
+          "If you feel equally comfortable working with React, Angular, Vue or some other reactive FE framework as you are with vanilla JS and Web Components, and you don’t mind writing some back-end code from time to time, we want you in our team. ",
+        url: "https://careers.dynatrace.com/jobs/1252368200/",
+        location: "Hybrid",
+        id: "c1a39900-00e7-40a9-9bbc-45a02632bab8",
+      },
+      {
+        id: "4ac916e7-912f-410b-a1e0-90757da0c1d2",
+        title: "Principal Software Engineer",
+        text:
+          "Your role at Dynatrace<br/>" +
+          "Dynatrace, the world’s number one Software Intelligence monitoring platform, provides answers, not just data, about application performance and end-user experience. We’re looking for talented Software Engineers to make our product even better.<br/>" +
+          "<br/>" +
+          "Your role:<br/>" +
+          "<br/>" +
+          "You'll develop services in Java/Spring Boot for collecting data signals from multiple Cloud Providers.<br/>" +
+          "<br/>" +
+          "You'll work with the most popular Cloud Providers<br/>" +
+          "<br/>" +
+          "You will be a part of the whole implementation process, starting with talks with Product Managers and Architects through design, coding, and release preparation,<br/>" +
+          "<br/>" +
+          "You will have one day per sprint devoted just to self-development and mentoring from best-in-class software engineers,<br/>" +
+          "<br/>" +
+          "You will be working with highly skilled engineers who prioritize teamwork, using collaborative practices such as pair programming o build software end-to-end, including debugging, testing, and fixing.",
+        location: "Hybrid",
+        url: "https://careers.dynatrace.com/jobs/1297125400/",
+      },
+      {
+        id: "4dadca0e-38de-45fd-8a7d-ea55610fbafe",
+        title: "Full Stack Engineer - Business Analytics",
+        text:
+          "Your role at Dynatrace<br/>" +
+          "Are you enthusiastic about engineering, skilled in React and passionate about Business Analytics? Are you keen on leveraging data to drive business insights and aspire to contribute to a globally leading platform? Join our distributed, international team at Dynatrace, where we connect application performance and user experience to business metrics, enabling business and IT teams to collaborate through shared real-time perspectives.   <br/>" +
+          "<br/>" +
+          "The Business Analytics team enhances the Dynatrace platform with a suite of applications designed to provide our customers with actionable business insights. Our mission is to leverage data to measure the impact of IT service quality on business process KPIs. Our team is currently focused on developing four innovative applications. <br/>" +
+          "<br/>" +
+          "Our distributed Scrum teams build those applications using TypeScript and React and complement them with serverless functions in Typescript and Spring Boot applications. We turn large amounts of data into visualizations that deliver relevant business insights. <br/>" +
+          "<br/>" +
+          "<br/>" +
+          "Responsibilities: <br/>" +
+          "<br/>" +
+          "Design, develop, and maintain Dynatrace Apps based on our own design system Strato using React and TypeScript. <br/>" +
+          "<br/>" +
+          "Contribute serverless functions in TypeScript and RESTful endpoints to a Spring Boot application. <br/>" +
+          "<br/>" +
+          "Optimize and enhance our applications in collaboration with our stakeholders.<br/>" +
+          "<br/>" +
+          "Mentor and support colleagues, fostering an approachable and supportive environment",
+        location: "Hybrid",
+        url: "https://careers.dynatrace.com/jobs/1288590600/",
       },
     ],
   },

@@ -84,6 +84,7 @@ p {
 
 .company-logo {
   max-height: 80px;
+  max-width: 100%;
   object-fit: contain;
 }
 
@@ -92,8 +93,8 @@ p {
   padding: 0.25rem 0.75rem;
   font-size: 0.875rem;
   font-weight: 500;
-  background-color: rgba(4, 150, 255, 0.1);
-  color: var(--primary);
+  background-color: #0496ff;
+  color: white;
 }
 
 .job-title {
@@ -107,6 +108,11 @@ p {
   color: var(--primary);
   font-weight: 700;
   font-size: 1.75rem;
+}
+
+.company-link {
+  color: white;
+  background-color: #4798CA;
 }
 
 .section-title {

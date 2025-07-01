@@ -100,6 +100,7 @@ interface LocationProps {
 const AnyReactComponent: FC<React.PropsWithChildren<LocationProps>> = ({
   text,
   subtext,
+  id,
 }) => (
   <div
     style={{
@@ -118,6 +119,7 @@ const AnyReactComponent: FC<React.PropsWithChildren<LocationProps>> = ({
     }}
   >
     <a
+      id={id}
       style={{
         textDecoration: "none",
         color: Color.WHITE,

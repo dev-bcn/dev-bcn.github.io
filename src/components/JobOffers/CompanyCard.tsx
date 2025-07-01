@@ -42,19 +42,30 @@ const CompanyCard: React.FC<CompanyCardProps> = ({ company, index }) => {
                 whileHover={{ scale: 1.05 }}
                 src={company.logo}
                 alt={`${company.name} logo`}
-                className="company-logo"
+                className="company-logo max-w-44"
               />
             </Col>
-            <Col md={7}>
+            <Col md={8}>
               <h2 className="company-name">{company.name}</h2>
               <p className="mb-2">{company.description}</p>
               <div className="d-flex">
+                <motion.div whileHover={{ scale: 1.05 }}>
+                  <Button
+                    variant="outline-primary"
+                    href={company.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="d-flex align-items-center justify-content-center company-link mx-2"
+                  >
+                    <span className="me-1 mx-1">Visit</span>
+                    <ExternalLink size={16} />
+                  </Button>
+                </motion.div>
                 {company.linkedin && (
                   <a
                     href={company.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="me-3"
                   >
                     <Linkedin className="social-icon" />
                   </a>
@@ -69,20 +80,6 @@ const CompanyCard: React.FC<CompanyCardProps> = ({ company, index }) => {
                   </a>
                 )}
               </div>
-            </Col>
-            <Col md={1} className="text-center text-md-end mt-3 mt-md-0">
-              <motion.div whileHover={{ scale: 1.05 }}>
-                <Button
-                  variant="outline-primary"
-                  href={company.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="d-flex align-items-center justify-content-center"
-                >
-                  <span className="me-1">Visit</span>
-                  <ExternalLink size={16} />
-                </Button>
-              </motion.div>
             </Col>
           </Row>
         </Card.Body>
