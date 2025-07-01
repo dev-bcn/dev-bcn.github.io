@@ -1,5 +1,4 @@
 import React, { FC, Suspense } from "react";
-import GoogleMapReact from "google-map-react";
 import "./map.css";
 import { styled } from "styled-components";
 import TitleSection from "@components/SectionTitle/TitleSection";
@@ -89,75 +88,8 @@ export const StyledMoreIcon = styled.img`
   }
 `;
 
-interface LocationProps {
-  id: string;
-  lat: number;
-  lng: number;
-  text: string;
-  subtext: string;
-}
-
-const AnyReactComponent: FC<React.PropsWithChildren<LocationProps>> = ({
-  text,
-  subtext,
-  id,
-}) => (
-  <div
-    style={{
-      color: Color.WHITE,
-      background: Color.LIGHT_BLUE,
-      padding: "15px 10px",
-      display: "inline-flex",
-      width: "fit-content",
-      textAlign: "left",
-      alignItems: "center",
-      justifyContent: "center",
-      borderRadius: "10%",
-      boxShadow: "1px 1px 1px darkgrey",
-      transform: "translate(-50%, -50%)",
-      position: "absolute",
-    }}
-  >
-    <a
-      id={id}
-      style={{
-        textDecoration: "none",
-        color: Color.WHITE,
-        fontSize: "1 rem",
-      }}
-      href="https://goo.gl/maps/qaT5mCmi8ZkgCmteA"
-      rel="noreferrer"
-      target="_blank"
-    >
-      <strong>{text}</strong>
-      <p>{subtext}</p>
-    </a>
-  </div>
-);
-
 export const Venue: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
-  const defaultLocation = {
-    lat: 41.361,
-    lng: 2.1041,
-  };
-  const locations: Array<LocationProps> = [
-    {
-      id: "ab4186ca-dc31-419e-a684-f3e6d0e83e6e",
-      text: "Conference Talks",
-      subtext: "Carrer Barcelona, 12",
-      lat: 41.361529516457,
-      lng: 2.10421032792683,
-    },
-    {
-      id: "a6887def-70bd-473d-ac61-cd28392b3568",
-      text: "Workshops",
-      subtext: "Carrer Girona, 15",
-      lat: 41.36171121328454,
-      lng: 2.103491331747179,
-    },
-  ];
-  const key = import.meta.env.VITE_MAP_API_KEY ?? "";
   return (
     <StyledVenue>
       <TitleSection
@@ -193,9 +125,26 @@ export const Venue: FC<React.PropsWithChildren<unknown>> = () => {
             carrer Barcelona, 2. 08901 L&#39;Hospitalet de Llobregat Telf.
             932615200
           </p>
-          <h4>
-            Access by <strong>public transportation:</strong>{" "}
-          </h4>
+          <h4>Venue entrance</h4>
+          <p>
+            <a
+              rel={"noreferrer"}
+              href="https://maps.app.goo.gl/2zao7ynr4wE7UYDn8"
+              target={"_blank"}
+            >
+              <strong>A) Talks:</strong> Carrer Barcelona, 12
+            </a>
+          </p>
+          <p>
+            <a
+              rel={"noreferrer"}
+              href="https://maps.app.goo.gl/YwU14LoRvWmtXk138"
+              target={"_blank"}
+            >
+              <strong>B) Workshops:</strong> Carrer Girona, 15
+            </a>
+          </p>
+          <h4>Access by public transportation</h4>
           <p>
             🚝 <StyledTrainLine>R3</StyledTrainLine> Cercanías: Estación
             Hospitalet de Llobregat
@@ -221,24 +170,11 @@ export const Venue: FC<React.PropsWithChildren<unknown>> = () => {
           </p>
         </div>
         <div className="map">
-          <GoogleMapReact
-            bootstrapURLKeys={{ key }}
-            defaultCenter={defaultLocation}
-            center={defaultLocation}
-            defaultZoom={11}
-            zoom={18}
-          >
-            {locations.map((location) => (
-              <AnyReactComponent
-                id={location.id}
-                key={location.id}
-                lat={location.lat}
-                lng={location.lng}
-                subtext={location.subtext}
-                text={location.text}
-              />
-            ))}
-          </GoogleMapReact>
+          <img
+            src="/images/venue-entrance.png"
+            alt="Venue entrance"
+            style={{ maxWidth: "100%" }}
+          />
         </div>
       </section>
     </StyledVenue>
