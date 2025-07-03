@@ -120,6 +120,11 @@ export const sponsors: Sponsors = {
       image: "images/sponsors/migracode.jpg",
       website: "https://www.migracode.org/",
     },
+    {
+      name: "CodeWomen+",
+      image: "/images/sponsors/codewomen.png",
+      website: "https://codewomen.plus/",
+    },
   ],
   media_partners: [
     {
