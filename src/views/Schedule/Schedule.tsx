@@ -50,7 +50,7 @@ const Schedule: FC<React.PropsWithChildren<unknown>> = () => {
           </>
         )}
         {data.schedule.enabled ? (
-          <>
+          <div className={"flex items-center"}>
             <Link
               to="/live-view"
               style={{
@@ -61,10 +61,13 @@ const Schedule: FC<React.PropsWithChildren<unknown>> = () => {
             >
               📅 See Live schedule
             </Link>
+            <Link to={"https://t.me/ConfAiBot"}>
+              <img src={"images/confAiBot.png"} alt={"ConfAiBot"} />
+            </Link>
             <div style={{ width: "100%", margin: "0 auto" }} id="schedule">
               &nbsp;
             </div>
-          </>
+          </div>
         ) : (
           <p style={{ color: Color.DARK_BLUE }}>
             Schedule is not available yet. Keep in touch on social media as we
