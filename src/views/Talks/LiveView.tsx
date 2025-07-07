@@ -58,10 +58,6 @@ export const LiveView: FC<React.PropsWithChildren<unknown>> = () => {
       </h1>
 
       {isLoading && <Loading />}
-      <article>
-        {`${currentTime.toLocaleDateString()} - ${currentTime.toLocaleTimeString()}`}{" "}
-        - Live Schedule
-      </article>
 
       {!isConferenceActive && <h4>The live schedule is not ready yet</h4>}
       <StyledAgenda>
