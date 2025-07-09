@@ -1,5 +1,6 @@
 import {UngroupedSession} from "./liveView.types";
 import {TalkCardProps} from "./components/TalkCard";
+import conferenceData from "@data/2025.json";
 
 import {
   QuestionAnswers,
@@ -34,5 +35,6 @@ export const talkCardAdapter = (session: UngroupedSession, year: string = "2024"
     },
     year,
     showTrack: true, // Default value, adjust as necessary
+    openFeedbackId={conferenceData.openFeedbackId}
   };
 };
