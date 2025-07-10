@@ -35,6 +35,6 @@ export const talkCardAdapter = (session: UngroupedSession, year: string = "2024"
     },
     year,
     showTrack: true, // Default value, adjust as necessary
-    openFeedbackId={conferenceData.openFeedbackId}
+    openFeedbackId: conferenceData.openFeedbackId,
   };
 };
