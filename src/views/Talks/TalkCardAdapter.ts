@@ -1,16 +1,20 @@
-import {UngroupedSession} from "./liveView.types";
-import {TalkCardProps} from "./components/TalkCard";
+import { UngroupedSession } from "./liveView.types";
+import { TalkCardProps } from "./components/TalkCard";
 
 import {
   QuestionAnswers,
   SessionCategory,
-  SessionSpeaker
-} from "../../types/sessions";
+  SessionSpeaker,
+} from "@/types/sessions";
 
-export const talkCardAdapter = (session: UngroupedSession, year: string = "2024"): TalkCardProps => {
+export const talkCardAdapter = (
+  session: UngroupedSession,
+  year: string = "2024",
+): TalkCardProps => {
   return {
+    openFeedbackId: "",
     talk: {
-      id: parseInt(session.id),
+      id: session.id,
       title: session.title,
       talkImage: 1,
       speakers: session.speakers.map((speaker) => ({
@@ -20,7 +24,7 @@ export const talkCardAdapter = (session: UngroupedSession, year: string = "2024"
       level: "Beginner",
       link: "",
       tags: [],
-      track: session.room,
+      track: session.room ?? "Main Stage",
       categories: session.categories.map((category) => ({
         id: category.id,
         name: category.name,
@@ -33,6 +37,6 @@ export const talkCardAdapter = (session: UngroupedSession, year: string = "2024"
       })) as QuestionAnswers[],
     },
     year,
-    showTrack: true, // Default value, adjust as necessary
+    showTrack: true,
   };
 };

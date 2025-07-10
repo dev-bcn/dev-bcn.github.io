@@ -13,6 +13,7 @@ import { Link } from "react-router-dom";
 import { ROUTE_SCHEDULE } from "@constants/routes";
 // @ts-expect-error some quirky import
 import { AnimatePresence } from "framer-motion";
+import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
 
 export const LiveView: FC<React.PropsWithChildren<unknown>> = () => {
   const { isLoading, error, data } = useFetchLiveView();
@@ -40,10 +41,7 @@ export const LiveView: FC<React.PropsWithChildren<unknown>> = () => {
     return data?.filter(getPredicate());
   }, [data, getPredicate]);
 
-  useEffect(() => {
-    document.title = `Live view - ${conference.title} - ${conference.edition} Edition`;
-  }, []);
-
+  useDocumentTitleUpdater("Live View", conference.edition);
   useSentryErrorReport(error);
 
   return (
@@ -68,7 +66,11 @@ export const LiveView: FC<React.PropsWithChildren<unknown>> = () => {
             </p>
           )}
           {filteredTalks?.map((session) => (
-            <TalkCard key={session.id} {...talkCardAdapter(session)} />
+            <TalkCard
+              key={session.id}
+              {...talkCardAdapter(session)}
+              openFeedbackId={conference.openFeedbackId}
+            />
           ))}
         </AnimatePresence>
       </StyledAgenda>
