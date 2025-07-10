@@ -8,7 +8,7 @@ import { StyledAgenda, StyledMain } from "./Talks.style";
 import { talkCardAdapter } from "./TalkCardAdapter";
 import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
 import { useDateInterval } from "@hooks/useDateInterval";
-import { isWithinInterval } from "date-fns";
+import { addMinutes, isWithinInterval, subMinutes } from "date-fns";
 import { Link } from "react-router-dom";
 import { ROUTE_SCHEDULE } from "@constants/routes";
 // @ts-expect-error some quirky import
@@ -31,8 +31,8 @@ export const LiveView: FC<React.PropsWithChildren<unknown>> = () => {
   const getPredicate = useCallback(
     () => (session: UngroupedSession) =>
       isWithinInterval(currentTime, {
-        start: session.startsAt,
-        end: session.endsAt,
+        start: subMinutes(session.startsAt, 10),
+        end: addMinutes(session.endsAt, 30),
       }),
     [currentTime],
   );
