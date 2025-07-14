@@ -29,9 +29,7 @@ export const aboutData: Member[] = [
     nameColor: Color.DARK_BLUE,
     job: "Java engineer",
     jobColor: Color.BLUE,
-    profileUrl: new URL(
-      "https://pbs.twimg.com/profile_images/1376512940984123393/BvU6hkHj_400x400.jpg"
-    ),
+    profileUrl: new URL("https://www.devbcn.com/images/nacho.jpg"),
     twitterUrl: new URL("https://twitter.com/icougil"),
     linkedinUrl: new URL("https://www.linkedin.com/in/icougil"),
   },
