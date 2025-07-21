@@ -182,6 +182,7 @@ const Talks: FC<React.PropsWithChildren<unknown>> = () => {
             display: "flex",
             flexDirection: "column",
             margin: "1rem auto",
+            width: "70vw",
           }}
         >
           {topTenTalks.map((talk) => (

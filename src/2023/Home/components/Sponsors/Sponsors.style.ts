@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 import { BIG_BREAKPOINT } from "@constants/BreakPoints";
+// @ts-expect-error some quirky import message
 import { motion } from "motion/react";
 
 export const StyledSponsorsContainer = styled.div`
