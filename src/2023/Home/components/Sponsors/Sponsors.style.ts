@@ -9,7 +9,7 @@ export const StyledSponsorsContainer = styled.div`
 export const StyledTitleContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 `;
 export const StyledTitleImg = styled.img`
   height: 4rem;

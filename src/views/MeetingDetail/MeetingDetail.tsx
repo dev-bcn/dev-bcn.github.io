@@ -140,7 +140,8 @@ const MeetingDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
                 <p
                   style={{
                     textAlign: "left",
-                    marginTop: "0.6rem",
+                    marginTop: "0.5rem",
+                    marginBottom: "0.5rem",
                   }}
                 >
                   <a
@@ -166,7 +167,7 @@ const MeetingDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
                         d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
                       />
                     </svg>{" "}
-                    Slides
+                    <strong>Session Slides</strong>
                   </a>
                 </p>
               )}
@@ -195,7 +196,9 @@ const MeetingDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
             ></iframe>
           )}
           <StyledVideoTagsContainer>
-            {meeting.videoTags?.map((tag) => <Tag text={tag} key={tag} />)}
+            {meeting.videoTags?.map((tag) => (
+              <Tag text={tag} key={tag} />
+            ))}
           </StyledVideoTagsContainer>
           <section style={{ display: "block" }}>
             <StyledVoteTalkLink
@@ -218,7 +221,7 @@ const MeetingDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
               label="Add this session to your calendar"
               timeZone="currentBrowser"
               size="5"
-            ></AddToCalendarButton>
+            />
           </section>
         </StyledVideoContainer>
         <StyledSpeakerDetailContainer className="speaker-details-Container">
