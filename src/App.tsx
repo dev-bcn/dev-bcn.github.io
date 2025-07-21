@@ -64,6 +64,7 @@ import { SessionFeedback2023 } from "./2023/SessionFeedback/SessionFeedback2023"
 import { AttendeeInformation2023 } from "./2023/Attendee/AttendeeInformation2023";
 import { Communities2023 } from "./2023/Communities/Communities2023";
 import { SpeakerInformation2023 } from "./2023/Speakers/SpeakerInformation2023";
+import QrCodeSection from "@views/QrCode/QrCodeSection";
 
 //<editor-fold desc="2025">
 const Talks = lazy(() => import("./views/Talks/Talks"));
@@ -379,6 +380,14 @@ const App: FC<React.PropsWithChildren<unknown>> = () => {
           />
           {/* </editor-fold> */}
           {/* <editor-fold desc="2024 edition> */}
+          <Route
+            path="/qr-code"
+            element={
+              <React.Suspense fallback={<Loading />}>
+                <QrCodeSection />
+              </React.Suspense>
+            }
+          />
           <Route
             path={ROUTE_2024_HOME}
             element={

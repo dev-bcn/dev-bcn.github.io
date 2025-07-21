@@ -24,6 +24,8 @@ export interface SessionCategory {
 }
 
 export interface Session {
+  readonly room: string;
+  readonly roomId: number;
   readonly id: number;
   readonly title: string;
   readonly description: string;

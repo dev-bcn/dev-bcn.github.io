@@ -4,7 +4,7 @@ import {
   QuestionAnswers,
   Session,
   SessionCategory,
-} from "../types/sessions";
+} from "@/types/sessions";
 
 export const extractSessionTags = (
   questionAnswers: QuestionAnswers[],
