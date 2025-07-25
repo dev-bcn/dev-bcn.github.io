@@ -31,6 +31,11 @@ interface TopRatedTalk {
   link: string;
 }
 
+interface TopTalkWithSpeaker extends TopRatedTalk {
+  speakerImage: string;
+  award: string;
+}
+
 const Talks: FC<React.PropsWithChildren<unknown>> = () => {
   const [selectedGroupId, setSelectedGroupId] = useState<TrackInfo | null>(
     null,
@@ -134,6 +139,36 @@ const Talks: FC<React.PropsWithChildren<unknown>> = () => {
     },
   ];
 
+  const topThreeTalks: Array<TopTalkWithSpeaker> = [
+    {
+      id: "df057475-0b6a-4fab-8e0d-c5576230dd5c",
+      award: "Funniest talk",
+      speaker: "Victor Rentea",
+      speakerImage:
+        "https://sessionize.com/image/2fde-400o400o1-NVbZAJzrFZpcRjEe5khxjo.png",
+      talk: "Top 10 Rest API Design Falls",
+      link: ROUTE_MEETING_DETAIL_PLAIN.replace(":id", "838798"),
+    },
+    {
+      id: "d32cdd87-3c7d-47bb-98ec-b255d1e4b9ba",
+      speaker: "Laura Perea",
+      award: "Best Rated",
+      speakerImage:
+        "https://sessionize.com/image/8df6-400o400o1-LKJE9Ej5xvBK92FtxJDo6U.png",
+      talk: "GenAI among us",
+      link: ROUTE_MEETING_DETAIL_PLAIN.replace(":id", "945091"),
+    },
+    {
+      id: "11554c51-dc18-407b-b7b4-b8ad2f925b2a",
+      speaker: "Marc Nuri",
+      award: "Most original",
+      speakerImage:
+        "https://sessionize.com/image/3a9a-400o400o1-sJBQfR5Ki5BGPEDG8GQgKM.jpg",
+      talk: "Model Context Protocol Servers 101: Unlocking the Power of AI",
+      link: ROUTE_MEETING_DETAIL_PLAIN.replace(":id", "874255"),
+    },
+  ];
+
   const filteredTalks = selectedGroupId?.code
     ? data?.filter((talk) => talk.groupId.toString() === selectedGroupId.code)
     : data;
@@ -174,6 +209,40 @@ const Talks: FC<React.PropsWithChildren<unknown>> = () => {
           ></path>
         </svg>
       </StyledWaveContainer>
+      <SectionWrapper color={Color.LIGHT_BLUE} marginTop={1}>
+        <section
+          style={{
+            textAlign: "center",
+            display: "flex",
+            flexDirection: "row",
+            margin: "1rem auto",
+            width: "70vw",
+            alignItems: "center",
+            justifyContent: "space-evenly",
+          }}
+        >
+          {topThreeTalks.map((talk) => (
+            <article key={talk.id} style={{ maxWidth: "256px" }}>
+              <h3>{talk.award}</h3>
+              <Link
+                to={talk.link}
+                style={{ color: Color.BLACK_BLUE, textDecoration: "none" }}
+              >
+                <img
+                  src={talk.speakerImage}
+                  alt={talk.speaker}
+                  width={256}
+                  style={{ borderRadius: "5%" }}
+                />
+                <p>
+                  <strong>{talk.speaker}</strong>
+                </p>
+                <p>{talk.talk}</p>
+              </Link>
+            </article>
+          ))}
+        </section>
+      </SectionWrapper>
       <SectionWrapper color={Color.WHITE} marginTop={1}>
         <h2>🔝 Top Ten rated talks</h2>
         <section

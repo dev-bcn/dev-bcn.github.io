@@ -104,7 +104,97 @@ describe("Talks", () => {
     expect(dropdownElement).toBeInTheDocument();
   });
 
-  // Tests for the new topTenTalks array
+  // Tests for the topThreeTalks array
+  it("renders the top three talks section with correct awards", () => {
+    renderWithQueryClient(<Talks />);
+
+    // Check for award titles
+    expect(screen.getByText("Funniest talk")).toBeInTheDocument();
+    expect(screen.getByText("Best Rated")).toBeInTheDocument();
+    expect(screen.getByText("Most original")).toBeInTheDocument();
+  });
+
+  it("renders all top three talks with correct speaker names and talk titles", () => {
+    renderWithQueryClient(<Talks />);
+
+    // Check for speaker names
+    expect(screen.getByText("Victor Rentea")).toBeInTheDocument();
+    expect(screen.getByText("Laura Perea")).toBeInTheDocument();
+    expect(screen.getByText("Marc Nuri")).toBeInTheDocument();
+
+    // Check for talk titles
+    expect(
+      screen.getByText("Top 10 Rest API Design Falls"),
+    ).toBeInTheDocument();
+    expect(screen.getByText("GenAI among us")).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        "Model Context Protocol Servers 101: Unlocking the Power of AI",
+      ),
+    ).toBeInTheDocument();
+  });
+
+  it("renders top three talks with correct images", () => {
+    renderWithQueryClient(<Talks />);
+
+    // Check for images with correct src attributes
+    const images = screen.getAllByRole("img");
+    const speakerImages = images.filter(
+      (img) =>
+        img.getAttribute("alt") === "Victor Rentea" ||
+        img.getAttribute("alt") === "Laura Perea" ||
+        img.getAttribute("alt") === "Marc Nuri",
+    );
+
+    expect(speakerImages).toHaveLength(3);
+
+    const victorImage = speakerImages.find(
+      (img) => img.getAttribute("alt") === "Victor Rentea",
+    );
+    const lauraImage = speakerImages.find(
+      (img) => img.getAttribute("alt") === "Laura Perea",
+    );
+    const marcImage = speakerImages.find(
+      (img) => img.getAttribute("alt") === "Marc Nuri",
+    );
+
+    expect(victorImage).toHaveAttribute(
+      "src",
+      "https://sessionize.com/image/2fde-400o400o1-NVbZAJzrFZpcRjEe5khxjo.png",
+    );
+    expect(lauraImage).toHaveAttribute(
+      "src",
+      "https://sessionize.com/image/8df6-400o400o1-LKJE9Ej5xvBK92FtxJDo6U.png",
+    );
+    expect(marcImage).toHaveAttribute(
+      "src",
+      "https://sessionize.com/image/3a9a-400o400o1-sJBQfR5Ki5BGPEDG8GQgKM.jpg",
+    );
+  });
+
+  it("renders top three talks with correct links", () => {
+    renderWithQueryClient(<Talks />);
+
+    // Check that links are correctly formatted
+    const victorLink = screen.getByText("Victor Rentea").closest("a");
+    const lauraLink = screen.getByText("Laura Perea").closest("a");
+    const marcLink = screen.getByText("Marc Nuri").closest("a");
+
+    expect(victorLink).toHaveAttribute(
+      "href",
+      ROUTE_MEETING_DETAIL_PLAIN.replace(":id", "838798"),
+    );
+    expect(lauraLink).toHaveAttribute(
+      "href",
+      ROUTE_MEETING_DETAIL_PLAIN.replace(":id", "945091"),
+    );
+    expect(marcLink).toHaveAttribute(
+      "href",
+      ROUTE_MEETING_DETAIL_PLAIN.replace(":id", "874255"),
+    );
+  });
+
+  // Tests for the topTenTalks array
   it("renders the top ten talks section", () => {
     renderWithQueryClient(<Talks />);
     expect(screen.getByText("🔝 Top Ten rated talks")).toBeInTheDocument();
