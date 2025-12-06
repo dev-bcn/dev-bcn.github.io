@@ -160,7 +160,7 @@ const Faqs: FC<React.PropsWithChildren<unknown>> = () => {
                 transition={{ duration: 0.8, delay: 2.1 }}
               >
                 <StyleLessIcon
-                  alt="Lees than — icon"
+                  alt="Less than — icon"
                   src="/images/LessThanBlueIcon.svg"
                 />
               </motion.div>
