@@ -8,27 +8,8 @@ import {
 } from "./Sponsors.style";
 import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
 import TitleSection from "@components/SectionTitle/TitleSection";
-import { BasicSponsor } from "@views/Home/components/Sponsors/BasicSponsor";
-import { MediaPartners } from "@views/Home/components/Sponsors/MediaPartners";
-import { RegularSponsors } from "@views/Home/components/Sponsors/RegularSponsors";
-import { PremiumSponsors } from "@views/Home/components/Sponsors/PremiumSponsors";
-import { TopSponsors } from "@views/Home/components/Sponsors/TopSponsors";
-import { Communities } from "@views/Home/components/Sponsors/Communities";
-import { Supporters } from "@views/Home/components/Sponsors/Supporters";
+import { SponsorTier } from "@views/Home/components/Sponsors/SponsorTier";
 import { sponsors } from "./SponsorsData";
-
-export const buildSlashes = (module: number) => {
-  const slashesElement = document.getElementById("Slashes");
-
-  const slashesWidth = slashesElement?.offsetWidth ?? 0;
-
-  let slashes = "";
-  for (let index = 0; index < slashesWidth; index++) {
-    if (index % module === 0) slashes += "/ ";
-  }
-
-  return slashes;
-};
 
 const Sponsors: FC<React.PropsWithChildren<unknown>> = () => (
   <SectionWrapper color={Color.WHITE}>
@@ -52,15 +33,66 @@ const Sponsors: FC<React.PropsWithChildren<unknown>> = () => (
           src="/images/LessThanBlueWhiteIcon.svg"
         />
       </StyledTitleContainer>
-      <TopSponsors sponsors={sponsors.top} />
-      <PremiumSponsors sponsors={sponsors.premium} />
-      <RegularSponsors sponsors={sponsors.regular} />
-      <BasicSponsor sponsors={sponsors.basic} />
-      <Communities sponsors={sponsors.communities} />
-      <Supporters sponsors={sponsors.supporters} />
-      <MediaPartners sponsors={sponsors.media_partners} />
+      <SponsorTier
+        sponsors={sponsors.top}
+        title="TOP"
+        id="top-sponsors"
+        badgeColor={Color.BLUE}
+        badgePosition="left"
+        imageSize="premium"
+      />
+      <SponsorTier
+        sponsors={sponsors.premium}
+        title="PREMIUM"
+        id="premium-sponsors"
+        badgeColor={Color.DARK_BLUE}
+        badgePosition="right"
+        imageSize="premium"
+      />
+      <SponsorTier
+        sponsors={sponsors.regular}
+        title="REGULAR"
+        id="regular-sponsors"
+        badgeColor={Color.DARK_BLUE}
+        badgePosition="left"
+        imageSize="regular"
+      />
+      <SponsorTier
+        sponsors={sponsors.basic}
+        title="BASIC"
+        id="basic-sponsors"
+        badgeColor={Color.DARK_BLUE}
+        badgePosition="right"
+        imageSize="nano"
+      />
+      <SponsorTier
+        sponsors={sponsors.communities}
+        title="COMMUNITIES"
+        id="communities"
+        badgeColor={Color.DARK_BLUE}
+        badgePosition="left"
+        imageSize="micro"
+      />
+      <SponsorTier
+        sponsors={sponsors.supporters}
+        title="SUPPORTERS"
+        id="supporters"
+        badgeColor={Color.DARK_BLUE}
+        badgePosition="right"
+        imageSize="micro"
+        testId="supporters"
+      />
+      <SponsorTier
+        sponsors={sponsors.media_partners}
+        title="MEDIA PARTNERS"
+        id="media-partners"
+        badgeColor={Color.DARK_BLUE}
+        badgePosition="left"
+        imageSize="micro"
+      />
     </StyledSponsorsContainer>
   </SectionWrapper>
 );
 
 export default Sponsors;
+
