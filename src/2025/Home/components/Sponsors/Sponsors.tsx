@@ -7,14 +7,8 @@ import {
   StyledSponsorsContainer,
   StyledTitleContainer,
   StyledTitleImg,
-} from "./Sponsors.style";
-import { TopSponsors } from "./TopSponsors";
-import { RegularSponsors } from "./RegularSponsors";
-import { PremiumSponsors } from "./PremiumSponsors";
-import { BasicSponsor } from "./BasicSponsor";
-import { Communities } from "./Communities";
-import { MediaPartners } from "./MediaPartners";
-import { Supporters } from "./Supporters";
+} from "@views/Home/components/Sponsors/Sponsors.style";
+import { SponsorTier } from "@views/Home/components/Sponsors/SponsorTier";
 import { sponsors } from "./SponsorsData";
 
 const Sponsors: FC<React.PropsWithChildren<unknown>> = () => (
@@ -39,15 +33,66 @@ const Sponsors: FC<React.PropsWithChildren<unknown>> = () => (
           src="/images/LessThanBlueWhiteIcon.svg"
         />
       </StyledTitleContainer>
-      <TopSponsors sponsors={sponsors.top} />
-      <PremiumSponsors sponsors={sponsors.premium} />
-      <RegularSponsors sponsors={sponsors.regular} />
-      <BasicSponsor sponsors={sponsors.basic} />
-      <Communities sponsors={sponsors.communities} />
-      <Supporters sponsors={sponsors.supporters} />
-      <MediaPartners sponsors={sponsors.media_partners} />
+      <SponsorTier
+        sponsors={sponsors.top}
+        title="TOP"
+        id="top-sponsors"
+        badgeColor={Color.BLUE}
+        badgePosition="left"
+        imageSize="premium"
+      />
+      <SponsorTier
+        sponsors={sponsors.premium}
+        title="PREMIUM"
+        id="premium-sponsors"
+        badgeColor={Color.DARK_BLUE}
+        badgePosition="right"
+        imageSize="premium"
+      />
+      <SponsorTier
+        sponsors={sponsors.regular}
+        title="REGULAR"
+        id="regular-sponsors"
+        badgeColor={Color.DARK_BLUE}
+        badgePosition="left"
+        imageSize="regular"
+      />
+      <SponsorTier
+        sponsors={sponsors.basic}
+        title="BASIC"
+        id="basic-sponsors"
+        badgeColor={Color.DARK_BLUE}
+        badgePosition="right"
+        imageSize="nano"
+      />
+      <SponsorTier
+        sponsors={sponsors.communities}
+        title="COMMUNITIES"
+        id="communities"
+        badgeColor={Color.DARK_BLUE}
+        badgePosition="left"
+        imageSize="micro"
+      />
+      <SponsorTier
+        sponsors={sponsors.supporters}
+        title="SUPPORTERS"
+        id="supporters"
+        badgeColor={Color.DARK_BLUE}
+        badgePosition="right"
+        imageSize="micro"
+        testId="supporters"
+      />
+      <SponsorTier
+        sponsors={sponsors.media_partners}
+        title="MEDIA PARTNERS"
+        id="media-partners"
+        badgeColor={Color.DARK_BLUE}
+        badgePosition="left"
+        imageSize="micro"
+      />
     </StyledSponsorsContainer>
   </SectionWrapper>
 );
 
 export default Sponsors;
+
