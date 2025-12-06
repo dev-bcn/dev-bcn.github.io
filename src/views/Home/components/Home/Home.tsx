@@ -69,7 +69,7 @@ const Home: FC<React.PropsWithChildren<unknown>> = () => {
             >
               <small>
                 Past events: <Link to="/2025">2025 edition</Link> |{" "}
-                <Link to="/2024">2024 edition</Link>| {" "}
+                <Link to="/2024">2024 edition</Link> |{" "}
                 <Link to="/2023">2023 edition</Link>
               </small>
             </StyledSubtitle>
