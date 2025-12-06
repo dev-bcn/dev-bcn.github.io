@@ -46,6 +46,7 @@ export default defineConfig(({ mode }) => {
       alias: {
         // Path aliases matching those in tsconfig.json
         "@components": path.resolve(__dirname, "./src/components"),
+        "@config": path.resolve(__dirname, "./src/config"),
         "@constants": path.resolve(__dirname, "./src/constants"),
         "@services": path.resolve(__dirname, "./src/services"),
         "@hooks": path.resolve(__dirname, "./src/hooks"),

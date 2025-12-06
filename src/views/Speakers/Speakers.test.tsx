@@ -31,7 +31,7 @@ vi.mock("@sentry/react", () => ({
 }));
 
 // Mock the 2025.json data
-vi.mock("../../data/2025.json", () => {
+vi.mock("../../data/2026.json", () => {
   const mockData = {
     hideSpeakers: false,
     edition: "2024",

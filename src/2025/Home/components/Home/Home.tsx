@@ -25,7 +25,7 @@ import { Color } from "@styles/colors";
 import InfoButtons from "../InfoButtons/InfoButtons";
 import { formatDateRange } from "./DateUtil";
 import { Link } from "react-router";
-import edition from "@data/2026.json";
+import edition from "@data/2025.json";
 import CountDownCompleted from "./components/CountDownCompleted";
 
 const Home: FC<React.PropsWithChildren<unknown>> = () => {
@@ -68,8 +68,7 @@ const Home: FC<React.PropsWithChildren<unknown>> = () => {
               transition={{ duration: 0.5, delay: 1 }}
             >
               <small>
-                Past events: <Link to="/2025">2025 edition</Link> |{" "}
-                <Link to="/2024">2024 edition</Link>| {" "}
+                Past events: <Link to="/2024">2024 edition</Link> |{" "}
                 <Link to="/2023">2023 edition</Link>
               </small>
             </StyledSubtitle>

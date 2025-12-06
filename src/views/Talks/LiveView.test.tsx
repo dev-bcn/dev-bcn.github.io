@@ -3,7 +3,7 @@ import * as useFetchTalksModule from "@hooks/useFetchTalks";
 import { useFetchLiveView } from "@hooks/useFetchTalks";
 import { Loading } from "@components/Loading/Loading";
 import { UngroupedSession } from "./liveView.types";
-import conference from "@data/2025.json";
+import conference from "@data/2026.json";
 import { TalkCard } from "./components/TalkCard";
 import { StyledAgenda, StyledMain } from "./Talks.style";
 import { talkCardAdapter } from "./TalkCardAdapter";
