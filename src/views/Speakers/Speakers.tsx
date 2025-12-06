@@ -15,7 +15,7 @@ import {
   StyledSpeakersSection,
   StyledWaveContainer,
 } from "./Speakers.style";
-import webData from "@data/2025.json";
+import webData from "@data/2026.json";
 import Button from "@components/UI/Button";
 import { gaEventTracker } from "@components/analytics/Analytics";
 import { useFetchSpeakers } from "@hooks/useFetchSpeakers";
