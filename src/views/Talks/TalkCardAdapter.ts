@@ -1,5 +1,5 @@
 import { UngroupedSession } from "./liveView.types";
-import { TalkCardProps } from "./components/TalkCard";
+import { TalkCardProps } from "@components/common/TalkCard";
 
 import {
   QuestionAnswers,

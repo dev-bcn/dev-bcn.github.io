@@ -13,7 +13,7 @@ import { useFetchTalks } from "@hooks/useFetchTalks";
 import conferenceData from "@data/2023.json";
 import { styled } from "styled-components";
 import { BIG_BREAKPOINT } from "@constants/BreakPoints";
-import { TalkCard } from "@components/Talk/TalkCard";
+import { TalkCard } from "@components/common/TalkCard";
 import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
 
 const StyledSection = styled.section`

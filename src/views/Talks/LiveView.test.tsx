@@ -4,7 +4,7 @@ import { useFetchLiveView } from "@hooks/useFetchTalks";
 import { Loading } from "@components/Loading/Loading";
 import { UngroupedSession } from "./liveView.types";
 import conference from "@data/2026.json";
-import { TalkCard } from "./components/TalkCard";
+import { TalkCard } from "@components/common/TalkCard";
 import { StyledAgenda, StyledMain } from "./Talks.style";
 import { talkCardAdapter } from "./TalkCardAdapter";
 import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
