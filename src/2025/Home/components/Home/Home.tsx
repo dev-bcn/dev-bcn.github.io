@@ -4,6 +4,7 @@ import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
 import { BIGGER_BREAKPOINT } from "@constants/BreakPoints";
 import TimeCountDown from "./components/TimeCountdown";
 import { useWindowSize } from "react-use";
+import { useDateInterval } from "@hooks/useDateInterval";
 // @ts-expect-error some quirky import
 import { motion } from "motion/react";
 import {
@@ -20,7 +21,7 @@ import {
   StyledTopSlash,
   StyleHomeContainer,
 } from "./Style.Home";
-import ActionButtons from "../ActionButtons/ActionButtons";
+import ActionButtons from "@views/Home/components/ActionButtons/ActionButtons";
 import { Color } from "@styles/colors";
 import InfoButtons from "../InfoButtons/InfoButtons";
 import { formatDateRange } from "./DateUtil";
@@ -30,6 +31,8 @@ import CountDownCompleted from "./components/CountDownCompleted";
 
 const Home: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
+  const { isTicketsDisabled, isSponsorDisabled, isCfpDisabled } =
+    useDateInterval(new Date(), edition);
 
   return (
     <StyledHomeImage>
@@ -112,7 +115,17 @@ const Home: FC<React.PropsWithChildren<unknown>> = () => {
               renderer={TimeCountDown}
             />
           </motion.div>
-          {edition?.actionButtons && <ActionButtons />}
+          {edition?.actionButtons && (
+            <ActionButtons
+              isTicketsDisabled={isTicketsDisabled}
+              isCfpDisabled={isCfpDisabled}
+              isSponsorDisabled={isSponsorDisabled}
+              ticketsStartDay={edition.tickets.startDay}
+              cfpStartDay={edition.cfp.startDay}
+              cfpLink={edition.cfp.link}
+              edition={edition.edition}
+            />
+          )}
           {edition?.showInfoButtons && <InfoButtons />}
 
           {width > BIGGER_BREAKPOINT && (
