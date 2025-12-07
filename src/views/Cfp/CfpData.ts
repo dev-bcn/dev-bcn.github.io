@@ -1,17 +1,17 @@
-interface CFpTrack {
-    id: string;
-    name: string;
-    members: CfpMember[];
+export interface CfpTrack {
+  id: string;
+  name: string;
+  members: CfpMember[];
 }
 
 interface CfpMember {
-    name: string;
-    photo?: string;
-    linkedIn?: string;
-    twitter?: string;
+  name: string;
+  photo?: string;
+  linkedIn?: string;
+  twitter?: string;
 }
 
-export const data: CFpTrack[] = [
+export const data: CfpTrack[] = [
   {
     name: "Java & JVM",
     id: "656fece2-9447-4dbe-8a78-8dc6aa7124f2",
@@ -154,5 +154,5 @@ export const data: CFpTrack[] = [
 ];
 
 export interface CfpTrackProps {
-    track: CFpTrack;
+  track: CfpTrack;
 }

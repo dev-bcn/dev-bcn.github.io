@@ -1,7 +1,7 @@
 import React, { FC, useEffect } from "react";
 import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
 import { useFetchTalks } from "@hooks/useFetchTalks";
-import { TalkCard } from "../Talks/components/TalkCard";
+import { TalkCard } from "@components/common/TalkCard";
 import conferenceData from "@data/2025.json";
 import { styled } from "styled-components";
 import { BIG_BREAKPOINT } from "@constants/BreakPoints";

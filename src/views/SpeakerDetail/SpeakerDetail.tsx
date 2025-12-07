@@ -30,16 +30,22 @@ import { ISpeaker } from "@/types/speakers";
 
 interface ISpeakerDetailProps {
   speaker: ISpeaker;
+  edition?: string;
+  speakersRoute?: string;
+  talkDetailRoute?: string;
 }
 
 const SpeakerDetail: FC<React.PropsWithChildren<ISpeakerDetailProps>> = ({
   speaker,
+  edition = conferenceData.edition,
+  speakersRoute = ROUTE_SPEAKERS,
+  talkDetailRoute = ROUTE_TALK_DETAIL,
 }) => {
   const { width } = useWindowSize();
 
   useEffect(() => {
-    document.title = `${speaker.fullName} — ${conferenceData.title} — ${conferenceData.edition}`;
-  }, [speaker.fullName]);
+    document.title = `${speaker.fullName} — ${conferenceData.title} — ${edition}`;
+  }, [speaker.fullName, edition]);
 
   const hasSessions = (): boolean =>
     (speaker.sessions && speaker.sessions.length > 0) || false;
@@ -124,7 +130,7 @@ const SpeakerDetail: FC<React.PropsWithChildren<ISpeakerDetailProps>> = ({
                     {speaker?.sessions?.map((session) => (
                       <li key={session.id}>
                         <StyledTalkDescription
-                          to={`${ROUTE_TALK_DETAIL}/${session.id}`}
+                          to={`${talkDetailRoute}/${session.id}`}
                         >
                           <StyledSpeakerTitle>
                             <img
@@ -143,7 +149,7 @@ const SpeakerDetail: FC<React.PropsWithChildren<ISpeakerDetailProps>> = ({
               )}
 
               <Link
-                to={ROUTE_SPEAKERS}
+                to={speakersRoute}
                 style={{
                   color: Color.BLACK_BLUE,
                   fontWeight: "bold",

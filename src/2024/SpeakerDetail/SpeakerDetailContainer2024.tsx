@@ -1,8 +1,12 @@
 import { Color } from "@styles/colors";
+import {
+  ROUTE_2024_SPEAKERS,
+  ROUTE_2024_TALK_DETAIL,
+} from "@constants/routes";
 
 import React, { FC } from "react";
 import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
-import SpeakerDetail from "./SpeakerDetail";
+import SpeakerDetail from "@views/SpeakerDetail/SpeakerDetail";
 import { useParams } from "react-router";
 import conferenceData from "@data/2024.json";
 import { useFetchSpeakers } from "@hooks/useFetchSpeakers";
@@ -28,7 +32,12 @@ export const SpeakerDetailContainer2024: FC<
       <SectionWrapper color={Color.BLUE} marginTop={4}>
         {isLoading && <h2>Loading</h2>}
         {!isLoading && data && data.length > 0 ? (
-          <SpeakerDetail speaker={data[0]} />
+          <SpeakerDetail
+            speaker={data[0]}
+            edition="2024"
+            speakersRoute={ROUTE_2024_SPEAKERS}
+            talkDetailRoute={ROUTE_2024_TALK_DETAIL}
+          />
         ) : (
           "not found"
         )}
