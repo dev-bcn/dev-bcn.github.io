@@ -104,17 +104,19 @@ const Home: FC<React.PropsWithChildren<unknown>> = () => {
               La Farga, Hospitalet, Barcelona
             </StyledSubtitle>
           </StyledTitleContainer>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 1.8 }}
-          >
-            <Countdown
-              date={edition?.startDay}
-              onComplete={CountDownCompleted}
-              renderer={TimeCountDown}
-            />
-          </motion.div>
+          {edition?.showCountdown && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 1.8 }}
+            >
+              <Countdown
+                date={edition?.startDay}
+                onComplete={CountDownCompleted}
+                renderer={TimeCountDown}
+              />
+            </motion.div>
+          )}
           {edition?.actionButtons && (
             <ActionButtons
               isTicketsDisabled={isTicketsDisabled}
