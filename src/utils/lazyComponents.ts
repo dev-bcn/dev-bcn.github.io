@@ -126,8 +126,8 @@ export const HomeWrapper2024 = lazy(() =>
     }))
 );
 export const Speakers2024 = lazy(() =>
-    import("../components/YearSpecific/Speakers/Speakers2024").then((value) => ({
-        default: value.Speakers2024,
+    import("../2024/Speakers/SpeakersWrapper").then((value) => ({
+        default: value.SpeakersWrapper,
     }))
 );
 export const SpeakerDetailContainer2024 = lazy(() =>
@@ -135,8 +135,10 @@ export const SpeakerDetailContainer2024 = lazy(() =>
         default: value.SpeakerDetailContainer2024,
     }))
 );
-export const CfpSection2024 = lazy(() => import("../2024/Cfp/CfpSection2024"));
-export const Talks2024 = lazy(() => import("../2024/Talks/Talks2024"));
+export const CfpSection2024 = lazy(() =>
+    import("../2024/Cfp/CfpSectionWrapper")
+);
+export const Talks2024 = lazy(() => import("../2024/Talks/TalksWrapper"));
 export const Schedule2024 = lazy(() => import("../2024/Schedule/Schedule2024"));
 export const JobOffers2024 = lazy(() => import("../2024/JobOffers/JobOffers2024"));
 export const MeetingDetailContainer2024 = lazy(() =>
@@ -154,8 +156,8 @@ export const Diversity2023 = lazy(() => import("../2023/Diversity/Diversity2023"
 export const Schedule2023 = lazy(() => import("../2023/Schedule/Schedule2023"));
 export const Workshops2023 = lazy(() => import("../2023/Workshops/Workshops2023"));
 export const JobOffers2023 = lazy(() => import("../2023/JobOffers/JobOffers2023"));
-export const CfpSection2023 = lazy(() => import("../2023/Cfp/CfpSection2023"));
-export const Speakers2023 = lazy(() => import("../2023/Speakers/Speakers2023"));
+export const CfpSection2023 = lazy(() => import("../2023/Cfp/CfpSectionWrapper"));
+export const Speakers2023 = lazy(() => import("../2023/Speakers/SpeakersWrapper"));
 export const SpeakerDetailContainer2023 = lazy(
     () => import("../2023/SpeakerDetail/SpeakerDetailContainer2023")
 );

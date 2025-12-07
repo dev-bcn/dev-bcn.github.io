@@ -76,6 +76,26 @@ export interface IMeetingDetailProps {
   meeting: IMeeting;
   speakers?: ISpeaker[];
   openFeedbackId: string;
+  edition?: string;
+  speakerDetailRoute?: string;
+  talksRoute?: string;
+}
+
+export interface TrackInfo {
+  name: string;
+  code?: string;
+}
+
+export interface TopRatedTalk {
+  id: string;
+  speaker: string;
+  talk: string;
+  link: string;
+}
+
+export interface TopTalkWithSpeaker extends TopRatedTalk {
+  speakerImage: string;
+  award: string;
 }
 
 export type MyType = {

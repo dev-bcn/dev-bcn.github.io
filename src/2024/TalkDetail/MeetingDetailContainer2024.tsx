@@ -1,4 +1,8 @@
 import { Color } from "@styles/colors";
+import {
+  ROUTE_2024_SPEAKER_DETAIL,
+  ROUTE_2024_TALKS,
+} from "@constants/routes";
 import React, { FC, useEffect } from "react";
 import { NotFoundError } from "@components/NotFoundError/NotFoundError";
 import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
@@ -7,7 +11,7 @@ import { useParams } from "react-router";
 import conferenceData from "@data/2024.json";
 import { useFetchTalksById } from "@hooks/useFetchTalks";
 import { useFetchSpeakers } from "@hooks/useFetchSpeakers";
-import MeetingDetail from "./MeetingDetail";
+import MeetingDetail from "@views/MeetingDetail/MeetingDetail";
 
 import { ISpeaker } from "@/types/speakers";
 import { Session } from "@/types/sessions";
@@ -53,6 +57,10 @@ export const MeetingDetailContainer2024: FC<
             <MeetingDetail
               speakers={sessionSpeakers}
               meeting={adaptedMeeting}
+              edition="2024"
+              openFeedbackId="devbcn24"
+              speakerDetailRoute={ROUTE_2024_SPEAKER_DETAIL}
+              talksRoute={ROUTE_2024_TALKS}
             />
           )}
         {!isLoading &&
