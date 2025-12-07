@@ -1,6 +1,7 @@
 import Countdown from "react-countdown";
 import React, { FC } from "react";
 import { useWindowSize } from "react-use";
+import { useDateInterval } from "@hooks/useDateInterval";
 import {
   StyledBlueSlash,
   StyledBottomSlash,
@@ -31,6 +32,8 @@ import TimeCountDown from "@views/Home/components/Home/components/TimeCountdown"
 
 const Home: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
+  const { isTicketsDisabled, isSponsorDisabled, isCfpDisabled } =
+    useDateInterval(new Date(), data);
 
   return (
     <StyledHomeImage>
@@ -92,7 +95,17 @@ const Home: FC<React.PropsWithChildren<unknown>> = () => {
               renderer={TimeCountDown}
             />
           )}
-          {data?.actionButtons && <ActionButtons />}
+          {data?.actionButtons && (
+            <ActionButtons
+              isTicketsDisabled={isTicketsDisabled}
+              isCfpDisabled={isCfpDisabled}
+              isSponsorDisabled={isSponsorDisabled}
+              ticketsStartDay={data.tickets.startDay}
+              cfpStartDay={data.cfp.startDay}
+              cfpLink={data.cfp.link}
+              edition={data.edition}
+            />
+          )}
           {data?.showInfoButtons && <InfoButtons />}
 
           {width > BIGGER_BREAKPOINT && (
