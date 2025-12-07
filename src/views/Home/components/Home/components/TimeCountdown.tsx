@@ -1,6 +1,7 @@
-import React, {FC} from 'react';
+import React, { FC } from 'react';
 import {
     StyledTimerContainer,
+    StyledTimerNumber,
     StyledTimerLetters,
     StyleLine,
     TimeCountDownContainer
@@ -14,30 +15,30 @@ type TimeCountDownProps = {
 };
 
 const TimeCountDown: FC<React.PropsWithChildren<TimeCountDownProps>> = ({
-                                                                            days,
-                                                                            hours,
-                                                                            minutes,
-                                                                            seconds,
-                                                                        }) => {
+    days,
+    hours,
+    minutes,
+    seconds,
+}) => {
     return (
         <TimeCountDownContainer id="countdown-ongoing">
             <StyledTimerContainer>
-                <p>{days}</p>
+                <StyledTimerNumber>{days}</StyledTimerNumber>
                 <StyledTimerLetters>DAYS</StyledTimerLetters>
             </StyledTimerContainer>
-            <StyleLine/>
+            <StyleLine />
             <StyledTimerContainer>
-                <p>{hours}</p>
+                <StyledTimerNumber>{hours}</StyledTimerNumber>
                 <StyledTimerLetters>HOURS</StyledTimerLetters>
             </StyledTimerContainer>
-            <StyleLine/>
+            <StyleLine />
             <StyledTimerContainer>
-                <p>{minutes}</p>
+                <StyledTimerNumber>{minutes}</StyledTimerNumber>
                 <StyledTimerLetters>MINUTES</StyledTimerLetters>
             </StyledTimerContainer>
-            <StyleLine/>
+            <StyleLine />
             <StyledTimerContainer>
-                <p>{seconds}</p>
+                <StyledTimerNumber>{seconds}</StyledTimerNumber>
                 <StyledTimerLetters>SECONDS</StyledTimerLetters>
             </StyledTimerContainer>
         </TimeCountDownContainer>

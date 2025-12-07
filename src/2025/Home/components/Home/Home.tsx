@@ -2,7 +2,7 @@ import Countdown from "react-countdown";
 import React, { FC } from "react";
 import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
 import { BIGGER_BREAKPOINT } from "@constants/BreakPoints";
-import TimeCountDown from "./components/TimeCountdown";
+import TimeCountDown from "@views/Home/components/Home/components/TimeCountdown";
 import { useWindowSize } from "react-use";
 import { useDateInterval } from "@hooks/useDateInterval";
 // @ts-expect-error some quirky import
@@ -27,7 +27,7 @@ import InfoButtons from "../InfoButtons/InfoButtons";
 import { formatDateRange } from "./DateUtil";
 import { Link } from "react-router";
 import edition from "@data/2025.json";
-import CountDownCompleted from "./components/CountDownCompleted";
+import CountDownCompleted from "@views/Home/components/Home/components/CountDownCompleted";
 
 const Home: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();

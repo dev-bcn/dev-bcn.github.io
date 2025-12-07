@@ -20,7 +20,16 @@ export const StyledTimerContainer = styled.div`
   height: 5rem;
   justify-content: center;
   width: 5rem;
+  padding-top: 10px;
 `;
+
+export const StyledTimerNumber = styled.p`
+  color: white;
+  margin-bottom:5px;
+`;
+
+
+
 export const StyleLine = styled.div`
   width: 0.75rem;
   background: ${Color.DARK_BLUE};
