@@ -23,7 +23,7 @@ export const ROUTE_SESSION_FEEDBACK = "/session-feedback";
 export const ROUTE_TALK_DETAIL = "/talk";
 export const ROUTE_WORKSHOPS = "/workshops";
 export const ROUTE_MEETING_DETAIL_PLAIN = "/talk/:id";
-export const ROUTE_TRAVEL = "/travel";
+export const ROUTE_TRAVEL = ":id/travel";
 export const ROUTE_ACCOMMODATION = "/accommodation";
 
 // 2026
