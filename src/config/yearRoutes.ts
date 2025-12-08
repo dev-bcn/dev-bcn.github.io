@@ -21,6 +21,7 @@ export interface YearRouteComponents {
     attendee?: LazyExoticComponent<ComponentType<any>>;
     communities?: LazyExoticComponent<ComponentType<any>>;
     sponsorship?: LazyExoticComponent<ComponentType<any>>;
+    codeOfConduct?: LazyExoticComponent<ComponentType<any>>;
 }
 
 /**
@@ -41,6 +42,7 @@ export const yearRouteConfigs: Record<string, YearRouteComponents> = {
         speakerDetail: LazyComponents.SpeakerDetailContainer2026,
         talkDetail: LazyComponents.TalkDetailContainer2026,
         sponsorship: LazyComponents.Sponsorship,
+        codeOfConduct: LazyComponents.CodeOfConduct,
     },
     "2025": {
         home: LazyComponents.HomeWrapper2025,
@@ -58,6 +60,7 @@ export const yearRouteConfigs: Record<string, YearRouteComponents> = {
         attendee: LazyComponents.AttendeeInformation2025,
         communities: LazyComponents.Communities2025,
         sponsorship: LazyComponents.Sponsorship,
+        codeOfConduct: LazyComponents.CodeOfConduct,
     },
     "2024": {
         home: LazyComponents.HomeWrapper2024,
@@ -75,6 +78,7 @@ export const yearRouteConfigs: Record<string, YearRouteComponents> = {
         attendee: LazyComponents.AttendeeInformation2023,
         communities: LazyComponents.Communities2023,
         sponsorship: LazyComponents.Sponsorship,
+        codeOfConduct: LazyComponents.CodeOfConduct,
     },
     "2023": {
         home: LazyComponents.Home2023Wrapper,
@@ -92,6 +96,7 @@ export const yearRouteConfigs: Record<string, YearRouteComponents> = {
         communities: LazyComponents.Communities2023,
         speakerInfo: LazyComponents.SpeakerInformation2023,
         sponsorship: LazyComponents.Sponsorship,
+        codeOfConduct: LazyComponents.CodeOfConduct,
     },
 };
 
