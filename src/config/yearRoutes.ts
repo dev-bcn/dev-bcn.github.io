@@ -20,6 +20,7 @@ export interface YearRouteComponents {
     sessionFeedback?: LazyExoticComponent<ComponentType<any>>;
     attendee?: LazyExoticComponent<ComponentType<any>>;
     communities?: LazyExoticComponent<ComponentType<any>>;
+    sponsorship?: LazyExoticComponent<ComponentType<any>>;
 }
 
 /**
@@ -39,6 +40,7 @@ export const yearRouteConfigs: Record<string, YearRouteComponents> = {
         speakerInfo: LazyComponents.SpeakerInformation2026,
         speakerDetail: LazyComponents.SpeakerDetailContainer2026,
         talkDetail: LazyComponents.TalkDetailContainer2026,
+        sponsorship: LazyComponents.Sponsorship,
     },
     "2025": {
         home: LazyComponents.HomeWrapper2025,
@@ -55,6 +57,7 @@ export const yearRouteConfigs: Record<string, YearRouteComponents> = {
         sessionFeedback: LazyComponents.SessionFeedback2025,
         attendee: LazyComponents.AttendeeInformation2025,
         communities: LazyComponents.Communities2025,
+        sponsorship: LazyComponents.Sponsorship,
     },
     "2024": {
         home: LazyComponents.HomeWrapper2024,
@@ -71,6 +74,7 @@ export const yearRouteConfigs: Record<string, YearRouteComponents> = {
         sessionFeedback: LazyComponents.SessionFeedback2023,
         attendee: LazyComponents.AttendeeInformation2023,
         communities: LazyComponents.Communities2023,
+        sponsorship: LazyComponents.Sponsorship,
     },
     "2023": {
         home: LazyComponents.Home2023Wrapper,
@@ -87,6 +91,7 @@ export const yearRouteConfigs: Record<string, YearRouteComponents> = {
         attendee: LazyComponents.AttendeeInformation2023,
         communities: LazyComponents.Communities2023,
         speakerInfo: LazyComponents.SpeakerInformation2023,
+        sponsorship: LazyComponents.Sponsorship,
     },
 };
 
