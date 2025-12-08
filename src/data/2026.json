@@ -1,5 +1,6 @@
 {
     "actionButtons": true,
+    "brochure": "https://bit.ly/devbcn25-brochure-v3",
     "carrousel": {
         "enabled": false
     },
@@ -41,5 +42,6 @@
     "trackNumber": 5,
     "tracks": "Java & JVM | Cloud, DevOps, VMs, Kubernetes | Frontend, JavaScript, TypeScript, Angular, WASM | Leadership, Agile, Diversity | Big Data, Machine Learning, AI, Python",
     "twitter": "https://twitter.com/dev_bcn",
+    "venue": "World Trade Center, Barcelona",
     "youtube": "https://www.youtube.com/dev_bcn"
 }

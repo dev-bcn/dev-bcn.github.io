@@ -1,5 +1,6 @@
 {
   "actionButtons": false,
+  "brochure": "https://bit.ly/devbcn25-brochure-v3",
   "carrousel": {
     "enabled": true
   },
@@ -41,5 +42,6 @@
   "trackNumber": 7,
   "tracks": "Java | JVM | Go, Rust, C++, C# | Cloud, DevOps, VMs, Kubernetes | Frontend | Leadership, Agile, Diversity | Big Data, Machine Learning, AI, Python",
   "twitter": "https://twitter.com/dev_bcn",
+  "venue": "La Farga, Hospitalet de Llobregat",
   "youtube": "https://www.youtube.com/dev_bcn"
 }

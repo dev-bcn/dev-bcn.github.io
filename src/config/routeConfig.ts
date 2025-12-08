@@ -71,6 +71,9 @@ export const generateYearRoutes = (year: string): RouteConfig[] => {
     if (yearConfig.communities) {
         routesList.push({ path: `/${year}/communities`, component: yearConfig.communities });
     }
+    if (yearConfig.sponsorship) {
+        routesList.push({ path: `/${year}/sponsorship`, component: yearConfig.sponsorship });
+    }
 
     return routesList;
 };

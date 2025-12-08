@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { useParams } from "react-router";
 import { Venue } from "./Venue";
 import { ToBarcelona } from "./ToBarcelona";
