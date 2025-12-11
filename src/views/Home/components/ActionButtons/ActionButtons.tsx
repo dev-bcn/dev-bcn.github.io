@@ -69,7 +69,7 @@ const ActionButtons: FC<React.PropsWithChildren<ActionButtonsProps>> = ({
       />
       <Button
         onClick={trackCFP}
-        text="📢 Call For Papers"
+        text="📢 Become a Speaker"
         subtext={
           cfpStartDay
             ? formatDateWithOrdinal(new Date(cfpStartDay))
@@ -77,7 +77,7 @@ const ActionButtons: FC<React.PropsWithChildren<ActionButtonsProps>> = ({
         }
         link={cfpLink}
         isDisabled={isCfpDisabled}
-        isVisible={false}
+        isVisible={true}
       />
       <Button
         onClick={trackSponsorshipInfo}

@@ -83,7 +83,7 @@ const Faqs: FC<React.PropsWithChildren<unknown>> = () => {
               transition={{ duration: 0.5, delay: 1.3 }}
             >
               <StyledP>
-                Check for videos/photos andsummary of the DevBcn —{" "}
+                Check for videos/photos and summary of the DevBcn —{" "}
                 <StyledSummaryLink
                   href="https://youtu.be/k7iMIXtNKyo"
                   rel="noreferrer"
