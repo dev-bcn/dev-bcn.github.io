@@ -95,7 +95,7 @@ const Faqs: FC<React.PropsWithChildren<unknown>> = () => {
                   href="https://youtu.be/k7iMIXtNKyo"
                   rel="noreferrer"
                   target="_blank"
-                >
+                >{" "}
                   2024 edition —
                 </StyledSummaryLink>
                 <StyledSummaryLink
