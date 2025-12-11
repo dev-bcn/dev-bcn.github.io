@@ -7,7 +7,7 @@ export function useEventEdition(setEdition: (data: Edition) => void) {
 
   useEffect(() => {
     // Fallback to the current year if no year is provided in the URL
-    const editionYear = year ?? "2025";
+    const editionYear = year ?? "2026";
 
     import(`../../data/${editionYear}.json`)
       .then((data) => {

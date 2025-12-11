@@ -1,15 +1,19 @@
 // @ts-expect-error some quirky import
 import { AnimatePresence } from "framer-motion";
-import { FC, useEffect, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { BIG_BREAKPOINT, MOBILE_BREAKPOINT } from "@constants/BreakPoints";
 import { useLocation, useNavigate } from "react-router";
 import Breadcrumbs from "./Breadcrumbs";
 import { ROUTE_HOME, ROUTE_HOME_ALTERNATE } from "@constants/routes";
-import { navigationItems2025, subMenuItems2025 } from "./NavigationData";
+import { navigationItems2026, subMenuItems2026 } from "./NavigationData";
 import {
   navigationItems2023,
   subMenuItems2023,
 } from "../../2023/Navigation/NavigationData2023";
+import {
+  navigationItems2025 as navigationItems2025Archived,
+  subMenuItems2025 as subMenuItems2025Archived,
+} from "../../2025/Navigation/NavigationData2025";
 import { useWindowSize } from "react-use";
 import {
   StyledClipPath,
@@ -30,12 +34,11 @@ import {
   navigationItems2024,
   subMenuItems2024,
 } from "../../2024/Navigation/NavigationData";
-
 export const Navigation: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
   const [isOpened, setIsOpened] = useState(false);
-  const [navItems, setNavItems] = useState(navigationItems2025);
-  const [subNavItems, setSubNavItems] = useState(subMenuItems2025);
+  const [navItems, setNavItems] = useState(navigationItems2026);
+  const [subNavItems, setSubNavItems] = useState(subMenuItems2026);
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const handleLogoClick = () => {
@@ -47,7 +50,7 @@ export const Navigation: FC<React.PropsWithChildren<unknown>> = () => {
   const isHomePage = () => {
     return pathname === ROUTE_HOME || pathname === ROUTE_HOME_ALTERNATE;
   };
-
+  // ...
   useEffect(() => {
     const navMapping = {
       "/2024": {
@@ -58,9 +61,17 @@ export const Navigation: FC<React.PropsWithChildren<unknown>> = () => {
         navItems: navigationItems2023,
         subNavItems: subMenuItems2023,
       },
+      "/2025": {
+        navItems: navigationItems2025Archived,
+        subNavItems: subMenuItems2025Archived,
+      },
+      "/2026": {
+        navItems: navigationItems2026,
+        subNavItems: subMenuItems2026,
+      },
       default: {
-        navItems: navigationItems2025,
-        subNavItems: subMenuItems2025,
+        navItems: navigationItems2026,
+        subNavItems: subMenuItems2026,
       },
     };
 
@@ -80,7 +91,10 @@ export const Navigation: FC<React.PropsWithChildren<unknown>> = () => {
     if (pathname.startsWith("/2024")) {
       return "https://tickets.devbcn.com/event/devbcn-2024";
     }
-    return "https://tickets.devbcn.com/event/devbcn-2025";
+    if (pathname.startsWith("/2025")) {
+      return "https://tickets.devbcn.com/event/devbcn-2025";
+    }
+    return "https://tickets.devbcn.com/event/devbcn-2026";
   };
 
   return (

@@ -15,9 +15,20 @@ import {
   StyledSpeakersSection,
 } from "../Speakers/Speakers.style";
 import { StyledMarginBottom, StyledTagsWrapper } from "../Talks/Talks.style";
-import data from "@data/2024.json";
 import { format } from "date-fns";
 import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
+import { useParams } from "react-router";
+import data2023 from "@data/2023.json";
+import data2024 from "@data/2024.json";
+import data2025 from "@data/2025.json";
+import data2026 from "@data/2026.json";
+
+const editions: Record<string, typeof data2026> = {
+  "2023": data2023,
+  "2024": data2024,
+  "2025": data2025,
+  "2026": data2026,
+};
 
 const StyledWaveContainer = styled.div`
   background: ${Color.DARK_BLUE};
@@ -78,6 +89,9 @@ const StyleMoreIcon = styled.img`
 
 const CodeOfConduct: FC<React.PropsWithChildren> = () => {
   const { width } = useWindowSize();
+  const { id } = useParams<{ id: string }>();
+  const edition = id || "2026";
+  const data = editions[edition] || editions["2026"];
 
   useDocumentTitleUpdater("Code of Conduct", data.edition);
 

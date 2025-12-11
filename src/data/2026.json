@@ -1,0 +1,47 @@
+{
+    "actionButtons": true,
+    "brochure": "https://drive.google.com/file/d/1gl8rGHr5puw9-bbBV1I3LEm7N-GmrxHq/view?usp=sharing",
+    "carrousel": {
+        "enabled": false
+    },
+    "cfp": {
+        "startDay": "2026-01-01T00:00:00+01:00",
+        "endDay": "2026-03-01T00:00:00+01:00",
+        "link": "https://sessionize.com/devbcn26/"
+    },
+    "diversity": false,
+    "edition": "2026",
+    "email": "info@devbcn.com",
+    "endDay": "2026-06-17T19:00:00+01:00",
+    "facebook": "https://facebook.com/devbcn",
+    "flickr": "https://flickr.com/devbcn",
+    "github": "https://github.com/devbcn",
+    "hideSpeakers": true,
+    "hideTalks": true,
+    "jobOffers": {
+        "enabled": false
+    },
+    "linkedin": "https://www.linkedin.com/company/devbcn",
+    "openFeedbackId": "devbcn26",
+    "schedule": {
+        "enabled": false
+    },
+    "sessionizeUrl": "",
+    "showCountdown": true,
+    "showInfoButtons": false,
+    "sponsors": {
+        "startDate": "2025-12-01T09:00:00+01:00",
+        "endDate": "2026-06-18T09:00:00+01:00"
+    },
+    "startDay": "2026-06-16T08:00:00+01:00",
+    "tickets": {
+        "startDay": "2026-02-01T00:00:00+01:00",
+        "endDay": "2026-06-17T00:00:00+01:00"
+    },
+    "title": "DevBcn - Barcelona Developers Conference ",
+    "trackNumber": 5,
+    "tracks": "Java & JVM | Cloud, DevOps, VMs, Kubernetes | Frontend, JavaScript, TypeScript, Angular, WASM | Leadership, Agile, Diversity | Big Data, Machine Learning, AI, Python",
+    "twitter": "https://twitter.com/dev_bcn",
+    "venue": "World Trade Center, Barcelona",
+    "youtube": "https://www.youtube.com/dev_bcn"
+}

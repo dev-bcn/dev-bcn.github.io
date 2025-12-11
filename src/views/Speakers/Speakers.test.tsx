@@ -30,15 +30,15 @@ vi.mock("@sentry/react", () => ({
   captureException: vi.fn(),
 }));
 
-// Mock the 2025.json data
-vi.mock("../../data/2025.json", () => {
+// Mock the 2026.json data
+vi.mock("../../data/2026.json", () => {
   const mockData = {
     hideSpeakers: false,
-    edition: "2024",
+    edition: "2026",
     title: "DevBcn",
     cfp: {
-      startDay: "2023-01-01T00:00:00",
-      endDay: "2023-02-01T00:00:00",
+      startDay: "2026-01-01T00:00:00",
+      endDay: "2026-03-01T00:00:00",
       link: "https://example.com/cfp",
     },
   };
@@ -94,7 +94,7 @@ describe("Speakers component", () => {
 
     // Mock Date to return a date within the CFP period
     const originalDate = Date;
-    const mockDate = new Date("2023-01-15");
+    const mockDate = new Date("2026-01-15");
 
     // This ensures that both new Date() and Date.now() use our mock date
     global.Date = class extends Date {
@@ -130,7 +130,7 @@ describe("Speakers component", () => {
 
     // Mock Date to return a date within the CFP period
     const originalDate = Date;
-    const mockDate = new Date("2023-01-15");
+    const mockDate = new Date("2026-01-15");
 
     // This ensures that both new Date() and Date.now() use our mock date
     global.Date = class extends Date {

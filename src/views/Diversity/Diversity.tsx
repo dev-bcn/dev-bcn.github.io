@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { Color } from "@styles/colors";
-import data from "@data/2024.json";
+import data from "@data/2026.json";
 import { styled } from "styled-components";
 import { BIG_BREAKPOINT } from "@constants/BreakPoints";
 import { Link } from "react-router";
@@ -118,7 +118,7 @@ export const Diversity: FC<React.PropsWithChildren<unknown>> = () => {
 
       <StyledP>
         That’s why we are running again the diversity sponsorship for DevBcn{" "}
-        {parseInt(data.edition) + 1} 🎉
+        {parseInt(data.edition)} 🎉
       </StyledP>
 
       <StyledP>

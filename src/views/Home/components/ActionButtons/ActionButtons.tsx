@@ -4,8 +4,10 @@ import Button from "../../../../components/UI/Button";
 import { styled } from "styled-components";
 import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
 import { gaEventTracker } from "../../../../components/analytics/Analytics";
-import { useDateInterval } from "../../../../hooks/useDateInterval";
+
+
 import { useUrlBuilder } from "../../../../services/urlBuilder";
+import { formatDateWithOrdinal } from "../../../../components/date/dateUtils";
 
 const StyledActionDiv = styled.div`
   display: flex;
@@ -17,9 +19,26 @@ const StyledActionDiv = styled.div`
   }
 `;
 
-const ActionButtons: FC<React.PropsWithChildren<unknown>> = () => {
-  const { isTicketsDisabled, isSponsorDisabled, isCfpDisabled } =
-    useDateInterval(new Date(), data);
+interface ActionButtonsProps {
+  isTicketsDisabled: boolean;
+  isCfpDisabled: boolean;
+  isSponsorDisabled: boolean;
+  ticketsStartDay: string;
+  cfpStartDay: string;
+  cfpLink: string;
+  edition: string;
+}
+
+
+const ActionButtons: FC<React.PropsWithChildren<ActionButtonsProps>> = ({
+  isTicketsDisabled,
+  isCfpDisabled,
+  isSponsorDisabled,
+  ticketsStartDay,
+  cfpStartDay,
+  cfpLink,
+  edition,
+}) => {
 
   const trackSponsorshipInfo = useCallback(() => {
     gaEventTracker("sponsorship", "sponsorship");
@@ -38,17 +57,27 @@ const ActionButtons: FC<React.PropsWithChildren<unknown>> = () => {
       <Button
         onClick={trackTickets}
         text="🎟️ Buy Tickets"
-        subtext="February 1st, 2025"
-        link={useUrlBuilder("https://tickets.devbcn.com/event/devbcn-2025")}
+        subtext={
+          ticketsStartDay
+            ? formatDateWithOrdinal(new Date(ticketsStartDay))
+            : "Coming soon"
+        }
+        link={useUrlBuilder(
+          "https://tickets.devbcn.com/event/devbcn-" + edition,
+        )}
         isDisabled={isTicketsDisabled}
       />
       <Button
         onClick={trackCFP}
-        text="📢 Call For Papers"
-        subtext="January 1st, 2025"
-        link={data.cfp.link}
+        text="📢 Become a Speaker"
+        subtext={
+          cfpStartDay
+            ? formatDateWithOrdinal(new Date(cfpStartDay))
+            : "Coming soon"
+        }
+        link={cfpLink}
         isDisabled={isCfpDisabled}
-        isVisible={false}
+        isVisible={true}
       />
       <Button
         onClick={trackSponsorshipInfo}

@@ -15,8 +15,8 @@ import {
   StyledAboutImage,
   StyledSocialIconsWrapper,
 } from "../About/components/Style.AboutCard";
-import conferenceData from "@data/2025.json";
-import { CfpTrackProps, data } from "./CfpData";
+import conferenceData from "@data/2026.json";
+import { CfpTrack, CfpTrackProps, data } from "./CfpData";
 import { MemberName, TrackName } from "./Cfp.style";
 import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
 
@@ -58,13 +58,21 @@ export const CfpTrackComponent: FC<React.PropsWithChildren<CfpTrackProps>> = ({
   </>
 );
 
-const CfpSection: FC<React.PropsWithChildren<unknown>> = () => {
+interface CfpSectionProps {
+  conferenceConfig?: typeof conferenceData;
+  cfpData?: CfpTrack[];
+}
+
+const CfpSection: FC<React.PropsWithChildren<CfpSectionProps>> = ({
+  conferenceConfig = conferenceData,
+  cfpData = data,
+}) => {
   const { width } = useWindowSize();
 
-  useDocumentTitleUpdater("CFP Committee", conferenceData.edition);
+  useDocumentTitleUpdater("CFP Committee", conferenceConfig.edition);
 
   const isCFPCommitteeReady = (): boolean =>
-    data.every((track) => track.members.length > 0);
+    cfpData.every((track) => track.members.length > 0);
 
   return (
     <>
@@ -86,10 +94,10 @@ const CfpSection: FC<React.PropsWithChildren<unknown>> = () => {
           )}
         </StyledSpeakersSection>
         {!isCFPCommitteeReady() && (
-          <h1 style={{ color: "#002454" }}>CFP Committee in progress</h1>
+          <h1 style={{ color: "#002454", marginTop: "4rem" }}>CFP Committee {conferenceData.edition} in progress</h1>
         )}
         {isCFPCommitteeReady() &&
-          data.map((track) => (
+          cfpData.map((track) => (
             <CfpTrackComponent key={track.id} track={track} />
           ))}
       </SectionWrapper>

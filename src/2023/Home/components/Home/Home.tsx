@@ -14,8 +14,9 @@ import {
   StyleHomeContainer,
 } from "./Style.Home";
 import { useWindowSize } from "react-use";
+import { useDateInterval } from "@hooks/useDateInterval";
 import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
-import ActionButtons from "../ActionButtons/ActionButtons";
+import ActionButtons from "@views/Home/components/ActionButtons/ActionButtons";
 import { styled } from "styled-components";
 import { Color } from "@styles/colors";
 import InfoButtons from "../InfoButtons/InfoButtons";
@@ -33,6 +34,8 @@ const StyledLogo = styled.img`
 `;
 const Home: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
+  const { isTicketsDisabled, isSponsorDisabled, isCfpDisabled } =
+    useDateInterval(new Date(), data);
   const startDay = data.startDay;
 
   return (
@@ -79,7 +82,17 @@ const Home: FC<React.PropsWithChildren<unknown>> = () => {
               renderer={TimeCountDown}
             />
           )}
-          {data.actionButtons && <ActionButtons />}
+          {data.actionButtons && (
+            <ActionButtons
+              isTicketsDisabled={isTicketsDisabled}
+              isCfpDisabled={isCfpDisabled}
+              isSponsorDisabled={isSponsorDisabled}
+              ticketsStartDay={data.tickets.startDay}
+              cfpStartDay={data.cfp.startDay}
+              cfpLink={data.cfp.link}
+              edition={data.edition}
+            />
+          )}
           {data.showInfoButtons && <InfoButtons />}
           <h2 style={{ color: Color.LIGHT_BLUE, textShadow: "1px 1px #000" }}>
             DevBcn 2023 edition resources
