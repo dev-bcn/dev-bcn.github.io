@@ -94,7 +94,7 @@ const CfpSection: FC<React.PropsWithChildren<CfpSectionProps>> = ({
           )}
         </StyledSpeakersSection>
         {!isCFPCommitteeReady() && (
-          <h1 style={{ color: "#002454" }}>CFP Committee in progress</h1>
+          <h1 style={{ color: "#002454", marginTop: "4rem" }}>CFP Committee {conferenceData.edition} in progress</h1>
         )}
         {isCFPCommitteeReady() &&
           cfpData.map((track) => (

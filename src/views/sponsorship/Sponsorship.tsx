@@ -366,11 +366,11 @@ const Sponsorship: FC<React.PropsWithChildren<unknown>> = () => {
                 Let’s make DevBcn {data?.edition} an unforgettable experience
                 together! Stay updated and spread the excitement using{" "}
                 <a
-                  href="https://twitter.com/hashtag/devbcn25?src=hashtag_click"
+                  href={`https://twitter.com/hashtag/devbcn${data?.edition.substring(2)}?src=hashtag_click`}
                   target="_blank"
                   rel="noreferrer"
                 >
-                  #devbcn25.
+                  #devbcn{data?.edition.substring(2)}.
                 </a>
               </p>
               <p>
