@@ -24,7 +24,7 @@ import edition from "@data/2026.json";
 import CountDownCompleted from "./components/CountDownCompleted";
 
 const HomeWTC: FC<React.PropsWithChildren<unknown>> = () => {
-  const { width } = useWindowSize();
+  useWindowSize();
   const { isTicketsDisabled, isSponsorDisabled, isCfpDisabled } =
     useDateInterval(new Date(), edition);
 
