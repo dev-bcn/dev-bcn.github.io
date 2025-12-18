@@ -1,7 +1,7 @@
 import { BIG_BREAKPOINT } from "@constants/BreakPoints";
 import React, { FC } from "react";
 import Faqs from "./components/Faqs/Faqs";
-import Home from "./components/Home/Home";
+;
 import Sponsors from "./components/Sponsors/Sponsors";
 import { styled } from "styled-components";
 import conferenceData from "@data/2026.json";
@@ -10,6 +10,7 @@ import { useLocation } from "react-router";
 import SpeakersCarousel from "@components/Swiper/SpeakersCarousel";
 import { ROUTE_2026_SPEAKERS } from "@constants/routes";
 import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
+import HomeWTC from "./components/HomeWTC/HomeWTC";
 
 const StyledContainer = styled.div`
   padding-bottom: 10rem;
@@ -33,7 +34,7 @@ export const HomeWrapper: FC<React.PropsWithChildren<unknown>> = () => {
 
   return (
     <StyledContainer id="home-wrapper">
-      <Home />
+      <HomeWTC />
       {conferenceData?.carrousel.enabled && (
         <SpeakersCarousel
           sessionizeUrl={"default"}
