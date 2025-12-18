@@ -13,6 +13,7 @@ export enum Color {
   PURPLE = "#b000d0",
   RED = "#ff0000b0",
   SKY_BLUE = "#93d6ff",
+  TRANSPARENT = "transparent",
   WHITE = "#fffcf9",
   YELLOW = "#ffd166",
 }
