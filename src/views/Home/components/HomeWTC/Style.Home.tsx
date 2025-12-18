@@ -14,6 +14,12 @@ const images = [
   "/images/wtc-gemini-3.webp",
 ];
 
+interface StyledSubtitleProps {
+  color?: string;
+  fontWeight?: number;
+  shadow?: boolean;
+}
+
 export const StyledHomeImage = styled.div`
   padding: 70px 0 40px;
   background-image: 
@@ -64,12 +70,12 @@ export const StyledTitle = styled(motion.h1)`
   font-family: "Square 721 Regular", sans-serif;
 `;
 
-export const StyledSubtitle = styled(motion.h2)`
-  color: ${(props: { color: string }) => props.color ?? Color.WHITE};
+export const StyledSubtitle = styled(motion.h2) <StyledSubtitleProps>`
+  color: ${(props) => props.color ?? Color.WHITE};
   font-family: "DejaVu Sans ExtraLight", sans-serif;
   font-size: 1.25rem;
-  font-weight: ${(props: { fontWeight: number }) => props.fontWeight ?? 400};
-  text-shadow: ${(props: { shadow: boolean }) => props.shadow ? '2px 2px 2px rgba(0, 0, 0, 0.5)' : 'none'};
+  font-weight: ${(props) => props.fontWeight ?? 400};
+  text-shadow: ${(props) => props.shadow ? '2px 2px 2px rgba(0, 0, 0, 0.5)' : 'none'};
 
   padding: 0.25rem;
 
