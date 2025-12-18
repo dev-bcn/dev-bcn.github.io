@@ -20,7 +20,7 @@ import { Loading } from "@components/Loading/Loading";
 
 const Home2023Wrapper = lazy(() => import("./Home/Home2023Wrapper"));
 const Speakers2023 = lazy(
-  () => import("../components/YearSpecific/Speakers/Speakers2023"),
+  () => import("./Speakers/SpeakersWrapper"),
 );
 const SpeakerDetailContainer2023 = lazy(
   () => import("./SpeakerDetail/SpeakerDetailContainer2023"),
@@ -36,7 +36,7 @@ const SpeakerInformation2023 = lazy(
   () => import("./Speakers/SpeakerInformation2023"),
 );
 const Communities2023 = lazy(() => import("./Communities/Communities2023"));
-const CfpSection2023 = lazy(() => import("./Cfp/CfpSection2023"));
+const CfpSection2023 = lazy(() => import("./Cfp/CfpSectionWrapper"));
 const SessionFeedback2023 = lazy(
   () => import("./SessionFeedback/SessionFeedback2023"),
 );

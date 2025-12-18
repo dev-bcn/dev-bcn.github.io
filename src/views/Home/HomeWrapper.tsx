@@ -4,11 +4,11 @@ import Faqs from "./components/Faqs/Faqs";
 import Home from "./components/Home/Home";
 import Sponsors from "./components/Sponsors/Sponsors";
 import { styled } from "styled-components";
-import conferenceData from "@data/2025.json";
+import conferenceData from "@data/2026.json";
 import { useLocation } from "react-router";
 
 import SpeakersCarousel from "@components/Swiper/SpeakersCarousel";
-import { ROUTE_SPEAKERS } from "@constants/routes";
+import { ROUTE_2026_SPEAKERS } from "@constants/routes";
 import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
 
 const StyledContainer = styled.div`
@@ -29,7 +29,7 @@ export const HomeWrapper: FC<React.PropsWithChildren<unknown>> = () => {
     }
   }, [hash]);
 
-  useDocumentTitleUpdater("Home", conferenceData?.edition ?? "2025");
+  useDocumentTitleUpdater("Home", conferenceData?.edition ?? "2026");
 
   return (
     <StyledContainer id="home-wrapper">
@@ -37,7 +37,7 @@ export const HomeWrapper: FC<React.PropsWithChildren<unknown>> = () => {
       {conferenceData?.carrousel.enabled && (
         <SpeakersCarousel
           sessionizeUrl={"default"}
-          speakersLink={ROUTE_SPEAKERS}
+          speakersLink={ROUTE_2026_SPEAKERS}
           isEnabled={conferenceData.carrousel.enabled}
         />
       )}

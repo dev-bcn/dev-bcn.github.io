@@ -15,7 +15,7 @@ import {
   StyledSpeakersSection,
   StyledWaveContainer,
 } from "./Speakers.style";
-import webData from "@data/2025.json";
+import webData from "@data/2026.json";
 import Button from "@components/UI/Button";
 import { gaEventTracker } from "@components/analytics/Analytics";
 import { useFetchSpeakers } from "@hooks/useFetchSpeakers";
@@ -29,13 +29,19 @@ const LessThanGreaterThan = () => (
   </>
 );
 
-const Speakers: FC<React.PropsWithChildren<unknown>> = () => {
+interface SpeakersProps {
+  conferenceConfig?: typeof webData;
+}
+
+const Speakers: FC<React.PropsWithChildren<SpeakersProps>> = ({
+  conferenceConfig = webData,
+}) => {
   const { width } = useWindowSize();
   const today = new Date();
   const isBetween = (startDay: Date, endDay: Date): boolean =>
     startDay < new Date() && endDay > today;
 
-  const { error, data, isLoading } = useFetchSpeakers();
+  const { error, data, isLoading } = useFetchSpeakers(conferenceConfig.edition);
 
   useSentryErrorReport(error);
 
@@ -44,11 +50,11 @@ const Speakers: FC<React.PropsWithChildren<unknown>> = () => {
   }, []);
 
   useEffect(() => {
-    document.title = `Speakers — ${webData.title} — ${webData.edition}`;
+    document.title = `Speakers — ${conferenceConfig.title} — ${conferenceConfig.edition}`;
   });
 
-  const CFPStartDay = new Date(webData.cfp.startDay);
-  const CFPEndDay = new Date(webData.cfp.endDay);
+  const CFPStartDay = new Date(conferenceConfig.cfp.startDay);
+  const CFPEndDay = new Date(conferenceConfig.cfp.endDay);
   return (
     <>
       <SectionWrapper color={Color.DARK_BLUE} marginTop={5}>
@@ -75,11 +81,11 @@ const Speakers: FC<React.PropsWithChildren<unknown>> = () => {
                 <Button
                   onClick={trackCFP}
                   text="📢 Apply to be a Speaker"
-                  link={webData.cfp.link}
+                  link={conferenceConfig.cfp.link}
                 />
               </div>
             )}
-            {webData.hideSpeakers ? (
+            {conferenceConfig.hideSpeakers ? (
               <p style={{ color: Color.WHITE }}>
                 No selected speakers yet. Keep in touch in our social media for
                 upcoming announcements
@@ -89,7 +95,7 @@ const Speakers: FC<React.PropsWithChildren<unknown>> = () => {
                 <SpeakerCard
                   key={speaker.id}
                   speaker={speaker}
-                  year={webData.edition}
+                  year={conferenceConfig.edition}
                 />
               ))
             )}

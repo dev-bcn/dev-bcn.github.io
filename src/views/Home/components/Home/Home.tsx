@@ -4,6 +4,7 @@ import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
 import { BIGGER_BREAKPOINT } from "@constants/BreakPoints";
 import TimeCountDown from "./components/TimeCountdown";
 import { useWindowSize } from "react-use";
+import { useDateInterval } from "@hooks/useDateInterval";
 // @ts-expect-error some quirky import
 import { motion } from "motion/react";
 import {
@@ -25,11 +26,13 @@ import { Color } from "@styles/colors";
 import InfoButtons from "../InfoButtons/InfoButtons";
 import { formatDateRange } from "./DateUtil";
 import { Link } from "react-router";
-import edition from "@data/2025.json";
+import edition from "@data/2026.json";
 import CountDownCompleted from "./components/CountDownCompleted";
 
 const Home: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
+  const { isTicketsDisabled, isSponsorDisabled, isCfpDisabled } =
+    useDateInterval(new Date(), edition);
 
   return (
     <StyledHomeImage>
@@ -68,7 +71,8 @@ const Home: FC<React.PropsWithChildren<unknown>> = () => {
               transition={{ duration: 0.5, delay: 1 }}
             >
               <small>
-                Past events: <Link to="/2024">2024 edition</Link> |{" "}
+                Past events: <Link to="/2025">2025 edition</Link> |{" "}
+                <Link to="/2024">2024 edition</Link> |{" "}
                 <Link to="/2023">2023 edition</Link>
               </small>
             </StyledSubtitle>
@@ -98,7 +102,7 @@ const Home: FC<React.PropsWithChildren<unknown>> = () => {
                 )}
             </StyledSubtitle>
             <StyledSubtitle color={Color.DARK_BLUE}>
-              La Farga, Hospitalet, Barcelona
+              World Trade Center, Barcelona
             </StyledSubtitle>
           </StyledTitleContainer>
           <motion.div
@@ -112,7 +116,17 @@ const Home: FC<React.PropsWithChildren<unknown>> = () => {
               renderer={TimeCountDown}
             />
           </motion.div>
-          {edition?.actionButtons && <ActionButtons />}
+          {edition?.actionButtons && (
+            <ActionButtons
+              isTicketsDisabled={isTicketsDisabled}
+              isCfpDisabled={isCfpDisabled}
+              isSponsorDisabled={isSponsorDisabled}
+              ticketsStartDay={edition.tickets.startDay}
+              cfpStartDay={edition.cfp.startDay}
+              cfpLink={edition.cfp.link}
+              edition={edition.edition}
+            />
+          )}
           {edition?.showInfoButtons && <InfoButtons />}
 
           {width > BIGGER_BREAKPOINT && (

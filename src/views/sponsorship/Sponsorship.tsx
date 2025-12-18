@@ -11,7 +11,6 @@ import {
   StyledSpeakersSection,
 } from "../Speakers/Speakers.style";
 import { StyledMarginBottom } from "../Talks/Talks.style";
-import data from "@data/2025.json";
 import { format } from "date-fns";
 import Flicking from "@egjs/react-flicking";
 import { AutoPlay } from "@egjs/flicking-plugins";
@@ -21,6 +20,18 @@ import { gaEventTracker } from "@components/analytics/Analytics";
 import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
 // @ts-expect-error some quirky import
 import { AnimatePresence, motion } from "framer-motion";
+import { useParams } from "react-router";
+import data2023 from "@data/2023.json";
+import data2024 from "@data/2024.json";
+import data2025 from "@data/2025.json";
+import data2026 from "@data/2026.json";
+
+const editions: Record<string, typeof data2026> = {
+  "2023": data2023,
+  "2024": data2024,
+  "2025": data2025,
+  "2026": data2026,
+};
 
 const StyledWaveContainer = styled.div`
   background: ${Color.DARK_BLUE};
@@ -92,6 +103,9 @@ const StyleMoreIcon = styled.img`
 `;
 
 const Sponsorship: FC<React.PropsWithChildren<unknown>> = () => {
+  const { id } = useParams<{ id: string }>();
+  const edition = id || "2026";
+  const data = editions[edition] || editions["2026"];
   const { width } = useWindowSize();
   const plugins = [
     new AutoPlay({ duration: 2000, direction: "NEXT", stopOnHover: false }),
@@ -137,7 +151,7 @@ const Sponsorship: FC<React.PropsWithChildren<unknown>> = () => {
               subtitle={`The DevBcn is the yearly event organised by Conferencia DevBcn S.L. Conference Talks will held on ${format(
                 new Date(data.startDay),
                 "MMMM do, yyyy",
-              )} at La Farga, Hospitalet de Llobregat`}
+              )} at ${data.venue}`}
               color={Color.DARK_BLUE}
             />
           </motion.div>
@@ -275,7 +289,7 @@ const Sponsorship: FC<React.PropsWithChildren<unknown>> = () => {
                   {format(new Date(data.startDay), "MMMM do")} —
                   {" ".concat(format(data.endDay, "do"))}
                 </strong>{" "}
-                at the iconic La Farga, Hospitalet de Llobregat. This year,
+                at the iconic {data.venue}. This year,
                 we&#39;re diving deep into the realms of Java, JVM, Cloud,
                 DevOps, Frontend technologies, Leadership strategies, and
                 groundbreaking advancements in Big Data and AI.
@@ -294,7 +308,7 @@ const Sponsorship: FC<React.PropsWithChildren<unknown>> = () => {
                 than ever. Curious? Access our{" "}
                 <strong>
                   <a
-                    href="https://bit.ly/devbcn25-brochure-v3"
+                    href={data.brochure}
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -310,7 +324,7 @@ const Sponsorship: FC<React.PropsWithChildren<unknown>> = () => {
               >
                 <Button
                   text="Get the Brochure"
-                  link="https://bit.ly/devbcn25-brochure-v3"
+                  link={data.brochure}
                   onClick={handleCLick}
                 />
               </motion.div>
@@ -352,11 +366,11 @@ const Sponsorship: FC<React.PropsWithChildren<unknown>> = () => {
                 Let’s make DevBcn {data?.edition} an unforgettable experience
                 together! Stay updated and spread the excitement using{" "}
                 <a
-                  href="https://twitter.com/hashtag/devbcn25?src=hashtag_click"
+                  href={`https://twitter.com/hashtag/devbcn${data?.edition.substring(2)}?src=hashtag_click`}
                   target="_blank"
                   rel="noreferrer"
                 >
-                  #devbcn25.
+                  #devbcn{data?.edition.substring(2)}.
                 </a>
               </p>
               <p>
@@ -373,7 +387,7 @@ const Sponsorship: FC<React.PropsWithChildren<unknown>> = () => {
                 <iframe
                   width="1024"
                   height="768"
-                  src="https://www.youtube.com/embed/k7iMIXtNKyo"
+                  src="https://www.youtube.com/embed/AHWSu1WE288"
                   title="YouTube video player"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
@@ -381,6 +395,15 @@ const Sponsorship: FC<React.PropsWithChildren<unknown>> = () => {
               </motion.div>
               <h4>Explore DevBcn Talks Online!</h4>
               <ul>
+                <li>
+                  <a
+                    rel="noreferrer"
+                    target="_blank"
+                    href="https://youtube.com/playlist?list=PLzJFNZtyAbyyfUadLCuSc-8CdHct8NeSa&si=7lgKQAtEncL-332O"
+                  >
+                    🎥 DevBcn 2025 - recorded sessions
+                  </a>
+                </li>
                 <li>
                   <a
                     rel="noreferrer"

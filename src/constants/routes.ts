@@ -23,8 +23,49 @@ export const ROUTE_SESSION_FEEDBACK = "/session-feedback";
 export const ROUTE_TALK_DETAIL = "/talk";
 export const ROUTE_WORKSHOPS = "/workshops";
 export const ROUTE_MEETING_DETAIL_PLAIN = "/talk/:id";
-export const ROUTE_TRAVEL = "/travel";
+export const ROUTE_TRAVEL = ":id/travel";
 export const ROUTE_ACCOMMODATION = "/accommodation";
+
+// 2026
+
+export const ROUTE_2026_ATTENDEE = "/2026/attendee";
+export const ROUTE_2026_CFP = "/2026/cfp";
+export const ROUTE_2026_COMMUNITIES = "/2026/communities";
+export const ROUTE_2026_DIVERSITY = "/2026/diversity";
+export const ROUTE_2026_HOME = "/2026";
+export const ROUTE_2026_JOB_OFFERS = "/2026/jobOffers";
+export const ROUTE_2026_SCHEDULE = "/2026/schedule";
+export const ROUTE_2026_SESSION_FEEDBACK = "/2026/session-feedback";
+export const ROUTE_2026_SPEAKERS = "/2026/speakers";
+export const ROUTE_2026_SPEAKER_DETAIL = "/2026/speaker";
+export const ROUTE_2026_SPEAKER_DETAIL_PLAIN = "/2026/speaker/:id";
+export const ROUTE_2026_SPEAKER_INFO = "/2026/speaker-information";
+export const ROUTE_2026_TALKS = "/2026/talks";
+export const ROUTE_2026_TALK_DETAIL = "/2026/talk";
+export const ROUTE_2026_TALK_DETAIL_PLAIN = "/2026/talk/:id";
+export const ROUTE_2026_CODE_OF_CONDUCT = "/2026/codeOfConduct";
+export const ROUTE_2026_SPONSORSHIP = "/2026/sponsorship";
+export const ROUTE_2026_TRAVEL = "/2026/travel";
+export const ROUTE_2026_WORKSHOPS = "/2026/workshops";
+
+// 2025
+
+export const ROUTE_2025_ATTENDEE = "/2025/attendee";
+export const ROUTE_2025_CFP = "/2025/cfp";
+export const ROUTE_2025_COMMUNITIES = "/2025/communities";
+export const ROUTE_2025_DIVERSITY = "/2025/diversity";
+export const ROUTE_2025_HOME = "/2025";
+export const ROUTE_2025_JOB_OFFERS = "/2025/jobOffers";
+export const ROUTE_2025_SCHEDULE = "/2025/schedule";
+export const ROUTE_2025_SESSION_FEEDBACK = "/2025/session-feedback";
+export const ROUTE_2025_SPEAKERS = "/2025/speakers";
+export const ROUTE_2025_SPEAKER_DETAIL = "/2025/speaker";
+export const ROUTE_2025_SPEAKER_DETAIL_PLAIN = "/2025/speaker/:id";
+export const ROUTE_2025_SPEAKER_INFO = "/2025/speaker-information";
+export const ROUTE_2025_TALKS = "/2025/talks";
+export const ROUTE_2025_TALK_DETAIL = "/2025/talk";
+export const ROUTE_2025_TALK_DETAIL_PLAIN = "/2025/talk/:id";
+export const ROUTE_2025_WORKSHOPS = "/2025/workshops";
 
 // 2023
 

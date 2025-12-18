@@ -1,5 +1,6 @@
 {
-  "actionButtons": true,
+  "actionButtons": false,
+  "brochure": "https://bit.ly/devbcn25-brochure-v3",
   "carrousel": {
     "enabled": true
   },
@@ -26,8 +27,8 @@
     "enabled": true
   },
   "sessionizeUrl": "https://sessionize.com/api/v2/xhudniix",
-  "showCountdown": true,
-  "showInfoButtons": false,
+  "showCountdown": false,
+  "showInfoButtons": true,
   "sponsors": {
     "startDate": "2024-01-01T09:00:00+01:00",
     "endDate": "2025-07-11T09:00:00+01:00"
@@ -41,5 +42,6 @@
   "trackNumber": 5,
   "tracks": "Java & JVM | Cloud, DevOps, VMs, Kubernetes | Frontend, JavaScript, TypeScript, Angular, WASM | Leadership, Agile, Diversity | Big Data, Machine Learning, AI, Python",
   "twitter": "https://twitter.com/dev_bcn",
+  "venue": "La Farga, Hospitalet de Llobregat",
   "youtube": "https://www.youtube.com/dev_bcn"
 }

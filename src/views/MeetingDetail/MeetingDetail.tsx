@@ -103,10 +103,13 @@ const MeetingDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
   meeting,
   speakers: mySpeakers,
   openFeedbackId,
+  edition = conferenceData.edition,
+  speakerDetailRoute = ROUTE_SPEAKER_DETAIL,
+  talksRoute = ROUTE_TALKS,
 }) => {
   const { width } = useWindowSize();
 
-  useDocumentTitleUpdater(meeting.title, conferenceData.edition);
+  useDocumentTitleUpdater(meeting.title, edition);
 
   const finalMeetingInfo: MyType = {
     ...meeting,
@@ -242,7 +245,7 @@ const MeetingDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
                     />
                   </Suspense>
                   <StyledName>
-                    <Link to={`${ROUTE_SPEAKER_DETAIL}/${speaker.id}`}>
+                    <Link to={`${speakerDetailRoute}/${speaker.id}`}>
                       {speaker.fullName}
                     </Link>
                   </StyledName>
@@ -254,7 +257,7 @@ const MeetingDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
 
         <div>
           <Link
-            to={ROUTE_TALKS}
+            to={talksRoute}
             style={{
               color: Color.MAGENTA,
               fontWeight: "bold",
