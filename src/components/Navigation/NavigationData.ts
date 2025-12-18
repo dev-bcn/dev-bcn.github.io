@@ -32,5 +32,5 @@ export const navigationItems2026: NavigationItem[] = [
 export const subMenuItems2026: NavigationItem[] = [
   //{ id: "DIVERSITY", link: ROUTE_2026_DIVERSITY },
   { id: "CFP COMMITTEE", link: ROUTE_2026_CFP },
-  { id: "Accommodation", link: ROUTE_ACCOMMODATION },
+  //{ id: "Accommodation", link: ROUTE_ACCOMMODATION },
 ];
