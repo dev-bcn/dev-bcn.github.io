@@ -44,7 +44,7 @@ const StyledTitle = styled.h1`
   }
 `;
 
-const StyledSubTitle = styled.h3`
+const StyledSubTitle = styled.h4`
   color: ${(props) => props.color ?? Color.WHITE};
   margin-top: 1rem;
   @media (min-width: 480px) {
