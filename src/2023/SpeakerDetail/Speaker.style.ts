@@ -1,11 +1,12 @@
+import { motion } from "motion/react";
 import { styled } from "styled-components";
-import { Color } from "@styles/colors";
+
 import {
   BIG_BREAKPOINT,
   LARGE_BREAKPOINT,
   TABLET_BREAKPOINT,
 } from "@constants/BreakPoints";
-import { motion } from "motion/react";
+import { Color } from "@styles/colors";
 
 export const StyledContainer = styled.div`
   background-color: ${Color.BLUE};

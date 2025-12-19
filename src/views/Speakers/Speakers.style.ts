@@ -1,5 +1,6 @@
-import { styled } from "styled-components";
 import { motion } from "motion/react";
+import { styled } from "styled-components";
+
 import { BIG_BREAKPOINT, TABLET_BREAKPOINT } from "@constants/BreakPoints";
 import { Color } from "@styles/colors";
 

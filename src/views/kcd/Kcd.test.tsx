@@ -1,8 +1,9 @@
-import React from "react";
 import { cleanup, render, screen } from "@testing-library/react";
-import Kcd from "./Kcd";
-import { vi } from "vitest";
+import React from "react";
 import { useWindowSize } from "react-use";
+import { vi } from "vitest";
+
+import Kcd from "./Kcd";
 
 // Mock the useWindowSize hook and data
 vi.mock("react-use", () => ({

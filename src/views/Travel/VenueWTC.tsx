@@ -1,15 +1,18 @@
-import React, { FC, Suspense } from "react";
+import type { FC } from "react";
+
+import React, { Suspense } from "react";
 import "./map.css";
+import { useWindowSize } from "react-use";
 import { styled } from "styled-components";
+
+import { StyledLoadingImage } from "@components/Loading/Loading";
 import TitleSection from "@components/SectionTitle/TitleSection";
-import { Color } from "@styles/colors";
 import {
   BIG_BREAKPOINT,
   MAX_WIDTH,
   MOBILE_BREAKPOINT,
 } from "@constants/BreakPoints";
-import { useWindowSize } from "react-use";
-import { StyledLoadingImage } from "@components/Loading/Loading";
+import { Color } from "@styles/colors";
 
 const StyledVenue = styled.div`
   padding: 0.5rem 2rem 0.5rem;
@@ -121,17 +124,15 @@ export const VenueWTC: FC<React.PropsWithChildren<unknown>> = () => {
           >
             World Trade Center, Barcelona
           </a>
-          <p>
-            1ª planta Edif. Este, Moll de Barcelona, s/n, 08039 Barcelona
-          </p>
+          <p>1ª planta Edif. Este, Moll de Barcelona, s/n, 08039 Barcelona</p>
           <h4>Access by public transportation</h4>
-          <p>🚇 Metro: Líneas L3: Parada Drassanes, Línea L2: Parada Paral·lel.</p>
           <p>
-            🚍 Bus: Línea V11, parada Moll de Barcelona.
+            🚇 Metro: Líneas L3: Parada Drassanes, Línea L2: Parada Paral·lel.
           </p>
+          <p>🚍 Bus: Línea V11, parada Moll de Barcelona.</p>
           <p>
-            🚙 Access by <strong>car:</strong> via C-31 & B-10(14 minutes from the
-            Airport)
+            🚙 Access by <strong>car:</strong> via C-31 & B-10(14 minutes from
+            the Airport)
           </p>
           <h4>Paid parking options</h4>
           <p>

@@ -1,22 +1,23 @@
-import {
-  MeasurableSessionRating,
-  sessionData,
-  SessionRating,
-} from "./sessionData";
+import type { MeasurableSessionRating, SessionRating } from "./sessionData";
 
-import React, { FC } from "react";
+import { sessionData } from "./sessionData";
+
+import React from "react";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 import { Rating } from "primereact/rating";
 import "primereact/resources/primereact.min.css";
 import "primereact/resources/themes/lara-light-blue/theme.css";
-import { InputText } from "primereact/inputtext";
 import { FilterMatchMode } from "primereact/api";
-import { Color } from "@styles/colors";
+import { InputText } from "primereact/inputtext";
 import { Link } from "react-router";
+
 import { ROUTE_TALK_DETAIL } from "@constants/routes";
 import data from "@data/2024.json";
 import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
+import { Color } from "@styles/colors";
+
+import type { FC } from "react";
 
 const SessionFeedback: FC<React.PropsWithChildren<unknown>> = () => {
   const bodyTemplate = React.useCallback(

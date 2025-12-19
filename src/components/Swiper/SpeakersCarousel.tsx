@@ -1,13 +1,16 @@
-import { FC } from "react";
+import { motion } from "motion/react";
 import { Link } from "react-router";
 // @ts-expect-error some quirky import
-import { motion } from "motion/react";
 import { styled } from "styled-components";
-import SpeakerSwiper from "./SpeakerSwiper";
-import { Color } from "@styles/colors";
+
 import { TABLET_BREAKPOINT } from "@constants/BreakPoints";
-import { SectionWrapper } from "../SectionWrapper/SectionWrapper";
+import { Color } from "@styles/colors";
+
+import SpeakerSwiper from "./SpeakerSwiper";
 import TitleSection from "../SectionTitle/TitleSection";
+import { SectionWrapper } from "../SectionWrapper/SectionWrapper";
+
+import type { FC } from "react";
 
 const StyledSpeakersContainer = styled.section`
   background-color: ${Color.LIGHT_BLUE};

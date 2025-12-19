@@ -1,6 +1,8 @@
-import { FC, ReactNode } from "react";
-import { MAX_WIDTH } from "@constants/BreakPoints";
 import { styled } from "styled-components";
+
+import { MAX_WIDTH } from "@constants/BreakPoints";
+
+import type { FC, ReactNode } from "react";
 
 const StyledSectionWrapper = styled.div.withConfig({
   shouldForwardProp: (prop) => !["paddingBottom"].includes(prop),

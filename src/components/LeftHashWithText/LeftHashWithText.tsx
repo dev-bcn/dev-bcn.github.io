@@ -1,8 +1,10 @@
-import { FC } from "react";
 import { motion } from "motion/react";
 import { styled } from "styled-components";
-import { TLateralHashWithText } from "../RightHashWithText/RightHashWithText";
+
 import { MOBILE_BREAKPOINT } from "@constants/BreakPoints";
+
+import type { TLateralHashWithText } from "../RightHashWithText/RightHashWithText";
+import type { FC } from "react";
 
 const StyledLeftSlashWrapper = styled(motion.div)`
   display: flex;

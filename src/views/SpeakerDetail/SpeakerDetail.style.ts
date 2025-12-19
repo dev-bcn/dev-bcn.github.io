@@ -1,8 +1,9 @@
-import { styled } from "styled-components";
 import { motion } from "motion/react";
+import { Link } from "react-router";
+import { styled } from "styled-components";
+
 import { BIG_BREAKPOINT } from "@constants/BreakPoints";
 import { Color } from "@styles/colors";
-import { Link } from "react-router";
 
 /* eslint-disable @typescript-eslint/no-unused-expressions*/
 export const StyledTalkDescription = styled(Link)`

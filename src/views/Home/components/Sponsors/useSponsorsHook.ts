@@ -1,7 +1,7 @@
-import {useCallback, useEffect, useState} from "react";
-import {useWindowSize} from "react-use";
+import { useCallback, useEffect, useState } from "react";
+import { useWindowSize } from "react-use";
 
-import {buildSlashes} from "../../../../services/buildSlashes";
+import { buildSlashes } from "../../../../services/buildSlashes";
 
 /**
  * Configuration for the sponsors hook

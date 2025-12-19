@@ -1,9 +1,10 @@
-import React from "react";
 import { render, screen } from "@testing-library/react";
+import React from "react";
+
 import "@testing-library/jest-dom";
+import { data } from "./CfpData";
 import CfpSection from "./CfpSection";
 import conferenceData from "../../data/2026.json";
-import { data } from "./CfpData";
 
 describe("CfpSection", () => {
   it("sets document title on mount", () => {

@@ -1,14 +1,16 @@
-import { FC } from "react";
-import { Color } from "../../styles/colors";
-import data from "../../data/2023.json";
-import { styled } from "styled-components";
-import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
 import { Link } from "react-router";
+import { styled } from "styled-components";
+
+import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
 import {
   ROUTE_CODE_OF_CONDUCT,
   ROUTE_CONDITIONS,
 } from "../../constants/routes";
+import data from "../../data/2023.json";
 import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
+import { Color } from "../../styles/colors";
+
+import type { FC } from "react";
 
 const StyledSection = styled.section`
 {

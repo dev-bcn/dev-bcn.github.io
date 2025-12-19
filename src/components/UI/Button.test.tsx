@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
-import Button from "./Button";
 import { vi } from "vitest";
+
+import Button from "./Button";
 
 vi.mock("../../components/analytics/Analytics", () => ({
   gaEventTracker: vi.fn(),

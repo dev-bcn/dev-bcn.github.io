@@ -1,11 +1,14 @@
-import React, { FC, useMemo } from "react";
-import { TalkCard } from "./TalkCard";
+import React, { useMemo } from "react";
+
 import {
   StyledSessionSection,
   StyledTrackInfo,
 } from "@views/Talks/Talks.style";
 
-import { IGroup } from "@/types/sessions";
+import { TalkCard } from "./TalkCard";
+
+import type { IGroup } from "@/types/sessions";
+import type { FC } from "react";
 
 interface TrackInfoProps {
   track: IGroup;

@@ -1,9 +1,11 @@
-import { FC } from "react";
+import { format } from "date-fns";
 import { styled } from "styled-components";
-import { Color } from "@styles/colors";
+
 import { BIG_BREAKPOINT } from "@constants/BreakPoints";
 import data from "@data/2024.json";
-import { format } from "date-fns";
+import { Color } from "@styles/colors";
+
+import type { FC } from "react";
 
 const Heading = styled.h1`
   font-family: "DejaVu Sans Condensed Bold", sans-serif;

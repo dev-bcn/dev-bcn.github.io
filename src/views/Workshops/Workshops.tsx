@@ -1,10 +1,12 @@
-import React, { FC, useEffect } from "react";
-import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
-import { useFetchTalks } from "@hooks/useFetchTalks";
-import { TalkCard } from "@components/common/TalkCard";
-import conferenceData from "@data/2025.json";
+import React, { useEffect } from "react";
 import { styled } from "styled-components";
+
+import { TalkCard } from "@components/common/TalkCard";
+import TitleSection from "@components/SectionTitle/TitleSection";
+import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
 import { BIG_BREAKPOINT } from "@constants/BreakPoints";
+import conferenceData from "@data/2025.json";
+import { useFetchTalks } from "@hooks/useFetchTalks";
 import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
 import { Color } from "@styles/colors";
 import {
@@ -14,7 +16,8 @@ import {
   StyledTitleIcon,
   StyledWaveContainer,
 } from "@views/Talks/Talks.style";
-import TitleSection from "@components/SectionTitle/TitleSection";
+
+import type { FC } from "react";
 
 const StyledSection = styled.section`
   display: flex;

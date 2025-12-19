@@ -1,19 +1,24 @@
-import React, { FC, useCallback, useEffect, useMemo, useState } from "react";
-import { useFetchLiveView } from "@hooks/useFetchTalks";
-import { Loading } from "@components/Loading/Loading";
-import { UngroupedSession } from "./liveView.types";
-import conference from "@data/2025.json";
-import { TalkCard } from "@components/common/TalkCard";
-import { StyledAgenda, StyledMain } from "./Talks.style";
-import { talkCardAdapter } from "./TalkCardAdapter";
-import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
-import { useDateInterval } from "@hooks/useDateInterval";
 import { addMinutes, isWithinInterval, subMinutes } from "date-fns";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+
+import { TalkCard } from "@components/common/TalkCard";
+import { Loading } from "@components/Loading/Loading";
 import { ROUTE_SCHEDULE } from "@constants/routes";
-// @ts-expect-error some quirky import
-import { AnimatePresence } from "framer-motion";
+import conference from "@data/2025.json";
+import { useDateInterval } from "@hooks/useDateInterval";
 import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
+import { useFetchLiveView } from "@hooks/useFetchTalks";
+import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
+import { AnimatePresence } from "framer-motion";
+
+import { talkCardAdapter } from "./TalkCardAdapter";
+import { StyledAgenda, StyledMain } from "./Talks.style";
+
+// @ts-expect-error some quirky import
+
+import type { UngroupedSession } from "./liveView.types";
+import type { FC } from "react";
 
 export const LiveView: FC<React.PropsWithChildren<unknown>> = () => {
   const { isLoading, error, data } = useFetchLiveView();

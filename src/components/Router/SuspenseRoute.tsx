@@ -1,11 +1,14 @@
-import React, { FC, ReactElement, Suspense } from "react";
+import React, { Suspense } from "react";
 import { Route, RouteProps } from "react-router";
+
 import { Loading } from "@components/Loading/Loading";
 
+import type { FC, ReactElement } from "react";
+
 interface SuspenseRouteProps {
-    path: string;
-    element: ReactElement;
-    fallback?: ReactElement;
+  path: string;
+  element: ReactElement;
+  fallback?: ReactElement;
 }
 
 /**
@@ -13,14 +16,14 @@ interface SuspenseRouteProps {
  * Eliminates the need to manually wrap every route with React.Suspense
  */
 export const SuspenseRoute: FC<SuspenseRouteProps> = ({
-    path,
-    element,
-    fallback = <Loading />,
+  path,
+  element,
+  fallback = <Loading />,
 }) => {
-    return (
-        <Route
-            path={path}
-            element={<Suspense fallback={fallback}>{element}</Suspense>}
-        />
-    );
+  return (
+    <Route
+      path={path}
+      element={<Suspense fallback={fallback}>{element}</Suspense>}
+    />
+  );
 };

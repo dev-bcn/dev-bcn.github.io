@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router";
+
 import AttendeeInformation from "./AttendeeInformation";
 
 describe("Attendee information component", () => {
@@ -11,7 +12,7 @@ describe("Attendee information component", () => {
           <Route path={"*"} element={<AttendeeInformation />} />
         </Routes>
       </React.Suspense>,
-      { wrapper: BrowserRouter }
+      { wrapper: BrowserRouter },
     );
     const headingElement = screen.getByText("Attendee information");
     expect(headingElement).toBeInTheDocument();
@@ -23,7 +24,7 @@ describe("Attendee information component", () => {
           <Route path={"*"} element={<AttendeeInformation />} />
         </Routes>
       </React.Suspense>,
-      { wrapper: BrowserRouter }
+      { wrapper: BrowserRouter },
     );
     const headingElement = screen.getByAltText("Azul");
     expect(headingElement).toBeInTheDocument();

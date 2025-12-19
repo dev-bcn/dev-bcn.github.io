@@ -1,6 +1,8 @@
-import { talkCardAdapter } from "./TalkCardAdapter";
-import { UngroupedSession } from "./liveView.types";
 import { faker } from "@faker-js/faker";
+
+import { talkCardAdapter } from "./TalkCardAdapter";
+
+import type { UngroupedSession } from "./liveView.types";
 
 describe("talkCardAdapter", () => {
   it("should return the correct TalkCardProps object with default year", () => {

@@ -1,5 +1,6 @@
-import {
-  CategoryItemEnum,
+import { CategoryItemEnum } from "@/types/sessions";
+
+import type {
   IMeeting,
   QuestionAnswers,
   Session,

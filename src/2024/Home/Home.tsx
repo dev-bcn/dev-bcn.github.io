@@ -1,7 +1,21 @@
+import React from "react";
 import Countdown from "react-countdown";
-import React, { FC } from "react";
+import { Link } from "react-router";
 import { useWindowSize } from "react-use";
+
+import {
+  TimeCountDown,
+  CountDownCompleted,
+} from "@components/common/countdown";
+import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
+import { BIGGER_BREAKPOINT } from "@constants/BreakPoints";
+import data from "@data/2024.json";
 import { useDateInterval } from "@hooks/useDateInterval";
+import { Color } from "@styles/colors";
+import { formatDateRange } from "@utils/dateUtils";
+import ActionButtons from "@views/Home/components/ActionButtons/ActionButtons";
+import InfoButtons from "@views/Home/components/InfoButtons/InfoButtons";
+
 import {
   StyledBlueSlash,
   StyledBottomSlash,
@@ -18,19 +32,8 @@ import {
   StyledTopSlash,
   StyleHomeContainer,
 } from "./Style.Home";
-import { formatDateRange } from "@utils/dateUtils";
-import { Link } from "react-router";
-import data from "@data/2024.json";
-import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
-import { Color } from "@styles/colors";
 
-import ActionButtons from "@views/Home/components/ActionButtons/ActionButtons";
-import InfoButtons from "@views/Home/components/InfoButtons/InfoButtons";
-import { BIGGER_BREAKPOINT } from "@constants/BreakPoints";
-import {
-  TimeCountDown,
-  CountDownCompleted,
-} from "@components/common/countdown";
+import type { FC } from "react";
 
 const Home: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();

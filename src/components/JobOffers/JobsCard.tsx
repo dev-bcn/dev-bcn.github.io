@@ -1,14 +1,16 @@
-import { FC } from "react";
+import { motion } from "motion/react";
 import { styled } from "styled-components";
+
 import { Color } from "@styles/colors";
 // @ts-expect-error some quirky import
-import { motion } from "motion/react";
 import {
   StyledFaqCard,
   StyledFaqText,
   StyledFaqTitle,
 } from "@views/Home/components/Faqs/Faqs.style";
-import { Offer } from "@/types/jobOffers";
+
+import type { Offer } from "@/types/jobOffers";
+import type { FC } from "react";
 
 export type IJobsCardProps = {
   offer: Offer;

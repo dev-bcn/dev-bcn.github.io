@@ -1,20 +1,16 @@
 // @ts-expect-error some quirky import
-import { AnimatePresence } from "framer-motion";
-import React, { FC, useEffect, useState } from "react";
-import { BIG_BREAKPOINT, MOBILE_BREAKPOINT } from "@constants/BreakPoints";
+import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router";
-import Breadcrumbs from "./Breadcrumbs";
-import { ROUTE_HOME, ROUTE_HOME_ALTERNATE } from "@constants/routes";
-import { navigationItems2026, subMenuItems2026 } from "./NavigationData";
-import {
-  navigationItems2023,
-  subMenuItems2023,
-} from "../../2023/Navigation/NavigationData2023";
-import {
-  navigationItems2025 as navigationItems2025Archived,
-  subMenuItems2025 as subMenuItems2025Archived,
-} from "../../2025/Navigation/NavigationData2025";
 import { useWindowSize } from "react-use";
+
+import { BIG_BREAKPOINT, MOBILE_BREAKPOINT } from "@constants/BreakPoints";
+import { ROUTE_HOME, ROUTE_HOME_ALTERNATE } from "@constants/routes";
+import { AnimatePresence } from "framer-motion";
+
+import Breadcrumbs from "./Breadcrumbs";
+import { HamburgerMenu } from "./HamburgerMenu";
+import { HorizontalMenu } from "./HorizontalMenu";
+import { navigationItems2026, subMenuItems2026 } from "./NavigationData";
 import {
   StyledClipPath,
   StyledHeader,
@@ -28,12 +24,20 @@ import {
   StyledNavLinkHighlightedImage,
   StyledTicketLink,
 } from "./Style.Navigation";
-import { HorizontalMenu } from "./HorizontalMenu";
-import { HamburgerMenu } from "./HamburgerMenu";
+import {
+  navigationItems2023,
+  subMenuItems2023,
+} from "../../2023/Navigation/NavigationData2023";
 import {
   navigationItems2024,
   subMenuItems2024,
 } from "../../2024/Navigation/NavigationData";
+import {
+  navigationItems2025 as navigationItems2025Archived,
+  subMenuItems2025 as subMenuItems2025Archived,
+} from "../../2025/Navigation/NavigationData2025";
+
+import type { FC } from "react";
 export const Navigation: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
   const [isOpened, setIsOpened] = useState(false);

@@ -1,16 +1,18 @@
+import React, { Suspense } from "react";
+import { CookieConsent } from "react-cookie-consent";
+import { QueryClient, QueryClientProvider } from "react-query";
 import { Link, Route, Routes } from "react-router";
-import { ROUTE_COOKIES } from "@constants/routes";
+import { styled } from "styled-components";
 
 import { Footer } from "@components/Footer/Footer";
+import { Loading } from "@components/Loading/Loading";
 import { Navigation } from "@components/Navigation/Navigation";
 import { ScrollToTop } from "@components/ScrollToTop/ScrollToTop";
-import { styled } from "styled-components";
-import React, { FC, Suspense } from "react";
-import { CookieConsent } from "react-cookie-consent";
-import { Color } from "@styles/colors";
-import { Loading } from "@components/Loading/Loading";
-import { QueryClient, QueryClientProvider } from "react-query";
 import { getAllRoutes } from "@config/routeConfig";
+import { ROUTE_COOKIES } from "@constants/routes";
+import { Color } from "@styles/colors";
+
+import type { FC } from "react";
 
 const StyledAppWrapper = styled.div`
   position: relative;

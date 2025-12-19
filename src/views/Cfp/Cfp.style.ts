@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+
 import { Color } from "../../styles/colors";
 
 export const TrackName = styled.h2`

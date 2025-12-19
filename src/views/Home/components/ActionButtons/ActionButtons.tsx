@@ -1,13 +1,14 @@
-import { FC, useCallback } from "react";
-import data from "../../../../data/2025.json";
-import Button from "../../../../components/UI/Button";
+import { useCallback } from "react";
 import { styled } from "styled-components";
-import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
+
 import { gaEventTracker } from "../../../../components/analytics/Analytics";
-
-
-import { useUrlBuilder } from "../../../../services/urlBuilder";
 import { formatDateWithOrdinal } from "../../../../components/date/dateUtils";
+import Button from "../../../../components/UI/Button";
+import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
+import data from "../../../../data/2025.json";
+import { useUrlBuilder } from "../../../../services/urlBuilder";
+
+import type { FC } from "react";
 
 const StyledActionDiv = styled.div`
   display: flex;
@@ -29,7 +30,6 @@ interface ActionButtonsProps {
   edition: string;
 }
 
-
 const ActionButtons: FC<React.PropsWithChildren<ActionButtonsProps>> = ({
   isTicketsDisabled,
   isCfpDisabled,
@@ -39,7 +39,6 @@ const ActionButtons: FC<React.PropsWithChildren<ActionButtonsProps>> = ({
   cfpLink,
   edition,
 }) => {
-
   const trackSponsorshipInfo = useCallback(() => {
     gaEventTracker("sponsorship", "sponsorship");
   }, []);

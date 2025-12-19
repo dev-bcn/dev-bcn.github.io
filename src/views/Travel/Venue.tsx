@@ -1,15 +1,18 @@
-import React, { FC, Suspense } from "react";
+import type { FC } from "react";
+
+import React, { Suspense } from "react";
 import "./map.css";
+import { useWindowSize } from "react-use";
 import { styled } from "styled-components";
+
+import { StyledLoadingImage } from "@components/Loading/Loading";
 import TitleSection from "@components/SectionTitle/TitleSection";
-import { Color } from "@styles/colors";
 import {
   BIG_BREAKPOINT,
   MAX_WIDTH,
   MOBILE_BREAKPOINT,
 } from "@constants/BreakPoints";
-import { useWindowSize } from "react-use";
-import { StyledLoadingImage } from "@components/Loading/Loading";
+import { Color } from "@styles/colors";
 
 const StyledVenue = styled.div`
   padding: 0.5rem 2rem 0.5rem;

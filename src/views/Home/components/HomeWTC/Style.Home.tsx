@@ -1,8 +1,9 @@
+import { motion } from "motion/react";
 import { styled } from "styled-components";
+
+import { BIG_BREAKPOINT, BIGGER_BREAKPOINT } from "@constants/BreakPoints";
 import { Color } from "@styles/colors";
 // @ts-expect-error some quirky import
-import { motion } from "motion/react";
-import { BIG_BREAKPOINT, BIGGER_BREAKPOINT } from "@constants/BreakPoints";
 
 // By © Alice Wiegand / CC-BY-SA-3.0 (via Wikimedia Commons), CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=30463612
 // By © Felix König / CC-BY-3.0 (via Wikimedia Commons), CC BY-SA 3.0, https://commons.wikimedia.org/wiki/File:World_Trade_Center_Barcelona_2013_1.jpg

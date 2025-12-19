@@ -1,17 +1,19 @@
+import { useWindowSize } from "react-use";
+import { keyframes, styled } from "styled-components";
+
+import TitleSection from "@components/SectionTitle/TitleSection";
 import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
+import { MOBILE_BREAKPOINT } from "@constants/BreakPoints";
+import data from "@data/2024.json";
+import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
 import { Color } from "@styles/colors";
+
+import { StyledSectionsSeparator } from "../CodeOfConduct/CodeOfConduct";
 import {
   StyledLessIcon,
   StyledMoreIcon,
   StyledSpeakersSection,
 } from "../Speakers/Speakers.style";
-import TitleSection from "@components/SectionTitle/TitleSection";
-import { StyledSectionsSeparator } from "../CodeOfConduct/CodeOfConduct";
-import { keyframes, styled } from "styled-components";
-import data from "@data/2024.json";
-import { MOBILE_BREAKPOINT } from "@constants/BreakPoints";
-import { useWindowSize } from "react-use";
-import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
 
 const StyledParagraph = styled.p`
   color: white;

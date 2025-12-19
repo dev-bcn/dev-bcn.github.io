@@ -1,9 +1,21 @@
-import React, { FC, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
-import TitleSection from "@components/SectionTitle/TitleSection";
+import type { FC } from "react";
+
 import { Color } from "@styles/colors";
+
+import { SelectButton } from "primereact/selectbutton";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
+import TrackInformation from "@components/common/TrackInformation";
+import TitleSection from "@components/SectionTitle/TitleSection";
+import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
 import conferenceData from "@data/2025.json";
+import { useFetchTalks } from "@hooks/useFetchTalks";
+
+import "primereact/resources/themes/lara-light-indigo/theme.css";
+import "@styles/theme.css";
+import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
+
 import {
   StyledMarginBottom,
   StyledSpeakersSection,
@@ -11,17 +23,13 @@ import {
   StyledTitleIcon,
   StyledWaveContainer,
 } from "./Talks.style";
-import TrackInformation from "@components/common/TrackInformation";
-import { useFetchTalks } from "@hooks/useFetchTalks";
-import { SelectButton, SelectButtonChangeEvent } from "primereact/selectbutton";
-import "primereact/resources/themes/lara-light-indigo/theme.css";
-import "@styles/theme.css";
-import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
-import {
+
+import type {
   TopRatedTalk,
   TopTalkWithSpeaker,
   TrackInfo,
 } from "@/types/sessions";
+import type { SelectButtonChangeEvent } from "primereact/selectbutton";
 
 interface TalksProps {
   conferenceConfig?: typeof conferenceData;
@@ -65,15 +73,13 @@ const Talks: FC<React.PropsWithChildren<TalksProps>> = ({
     { name: "All Tracks", code: undefined },
     ...(data !== undefined
       ? data
-        .flatMap((group) => ({
-          code: group?.groupId?.toString(),
-          name: removeParenthesesContent(group.groupName),
-        }))
-        .sort((a, b) => a.name.localeCompare(b.name))
+          .flatMap((group) => ({
+            code: group?.groupId?.toString(),
+            name: removeParenthesesContent(group.groupName),
+          }))
+          .sort((a, b) => a.name.localeCompare(b.name))
       : []),
   ];
-
-
 
   const filteredTalks = selectedGroupId?.code
     ? data?.filter((talk) => talk.groupId.toString() === selectedGroupId.code)

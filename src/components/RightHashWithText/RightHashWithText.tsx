@@ -1,7 +1,9 @@
-import { FC } from "react";
 import { motion } from "motion/react";
 import { styled } from "styled-components";
+
 import { MOBILE_BREAKPOINT } from "@constants/BreakPoints";
+
+import type { FC } from "react";
 
 export type TLateralHashWithText = {
   color: string;

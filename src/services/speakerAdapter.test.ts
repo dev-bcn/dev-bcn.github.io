@@ -1,5 +1,6 @@
-import { IResponse, ISpeaker } from "../types/speakers";
 import { speakerAdapter } from "./speakerAdapter";
+
+import type { IResponse, ISpeaker } from "../types/speakers";
 
 describe("speakerAdapter", () => {
   it("should correctly adapt a single response to a speaker", () => {

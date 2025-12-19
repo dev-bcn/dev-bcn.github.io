@@ -1,13 +1,16 @@
-import { Color } from "@styles/colors";
-
-import React, { FC } from "react";
-import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
-import SpeakerDetail from "./SpeakerDetail";
+import React from "react";
 import { useParams } from "react-router";
-import { StyledContainer, StyledWaveContainer } from "./Speaker.style";
+
+import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
 import conferenceData from "@data/2025.json";
 import { useFetchSpeakers } from "@hooks/useFetchSpeakers";
 import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
+import { Color } from "@styles/colors";
+
+import { StyledContainer, StyledWaveContainer } from "./Speaker.style";
+import SpeakerDetail from "./SpeakerDetail";
+
+import type { FC } from "react";
 
 export const SpeakerDetailContainer: FC<
   React.PropsWithChildren<unknown>

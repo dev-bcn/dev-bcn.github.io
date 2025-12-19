@@ -1,13 +1,16 @@
-import { FC } from "react";
 import { useParams } from "react-router";
-import { Venue } from "./Venue";
-import { ToBarcelona } from "./ToBarcelona";
-import { StyledWaveContainer } from "../Speakers/Speakers.style";
 import { styled } from "styled-components";
-import { Color } from "@styles/colors";
-import { Accommodation } from "./Accommodation";
+
 import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
+import { Color } from "@styles/colors";
+
+import { Accommodation } from "./Accommodation";
+import { ToBarcelona } from "./ToBarcelona";
+import { Venue } from "./Venue";
 import { VenueWTC } from "./VenueWTC";
+import { StyledWaveContainer } from "../Speakers/Speakers.style";
+
+import type { FC } from "react";
 
 const StyledTravel = styled.div`
   max-width: 85rem;
@@ -40,9 +43,7 @@ const Travel: FC<React.PropsWithChildren<unknown>> = () => {
   useDocumentTitleUpdater("Travel", edition);
   return (
     <StyledTravel>
-      <section>
-        {edition === "2026" ? <VenueWTC /> : <Venue />}
-      </section>
+      <section>{edition === "2026" ? <VenueWTC /> : <Venue />}</section>
       <section style={{ display: "none" }}>
         <Accommodation />
         <div

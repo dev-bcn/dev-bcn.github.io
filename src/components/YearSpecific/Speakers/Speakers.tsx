@@ -1,9 +1,15 @@
-import { MOBILE_BREAKPOINT } from "@constants/BreakPoints";
-import { Color } from "@styles/colors";
-import React, { FC, useCallback, useEffect } from "react";
-import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
-import TitleSection from "@components/SectionTitle/TitleSection";
+import React, { useCallback, useEffect } from "react";
 import { useWindowSize } from "react-use";
+
+import TitleSection from "@components/SectionTitle/TitleSection";
+import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
+import Button from "@components/UI/Button";
+import { MOBILE_BREAKPOINT } from "@constants/BreakPoints";
+import { useFetchSpeakers } from "@hooks/useFetchSpeakers";
+import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
+import { Color } from "@styles/colors";
+import { SpeakerCard } from "@views/Speakers/components/SpeakersCard";
+
 import {
   SpeakersCardsContainer,
   StyledContainerLeftSlash,
@@ -14,13 +20,11 @@ import {
   StyledSpeakersSection,
   StyledWaveContainer,
 } from "./Speakers.style";
-import Button from "@components/UI/Button";
 import { gaEventTracker } from "../../analytics/Analytics";
-import { useFetchSpeakers } from "@hooks/useFetchSpeakers";
-import { ISpeaker } from "@/types/speakers";
-import { SpeakerCard } from "@views/Speakers/components/SpeakersCard";
-import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
-import { Edition } from "@/types/types";
+
+import type { ISpeaker } from "@/types/speakers";
+import type { Edition } from "@/types/types";
+import type { FC } from "react";
 
 const LessThanGreaterThan = () => (
   <>

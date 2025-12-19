@@ -1,13 +1,21 @@
+import { motion } from "motion/react";
+import React from "react";
 import Countdown from "react-countdown";
-import React, { FC } from "react";
-import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
+import { Link } from "react-router";
+
 import {
   TimeCountDown,
   CountDownCompleted,
 } from "@components/common/countdown";
+import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
+import edition from "@data/2026.json";
 import { useDateInterval } from "@hooks/useDateInterval";
+
 // @ts-expect-error some quirky import
-import { motion } from "motion/react";
+
+import { Color } from "@styles/colors";
+import { formatDateRange } from "@utils/dateUtils";
+
 import {
   StyledDevBcnLogo,
   StyledHomeImage,
@@ -18,11 +26,9 @@ import {
   StyleHomeContainer,
 } from "./Style.Home";
 import ActionButtons from "../ActionButtons/ActionButtons";
-import { Color } from "@styles/colors";
 import InfoButtons from "../InfoButtons/InfoButtons";
-import { formatDateRange } from "@utils/dateUtils";
-import { Link } from "react-router";
-import edition from "@data/2026.json";
+
+import type { FC } from "react";
 
 const HomeWTC: FC<React.PropsWithChildren<unknown>> = () => {
   const { isTicketsDisabled, isSponsorDisabled, isCfpDisabled } =

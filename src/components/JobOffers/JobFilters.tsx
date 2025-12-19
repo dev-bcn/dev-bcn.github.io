@@ -1,6 +1,7 @@
+import { Filter, MapPin, Search } from "lucide-react";
 import React, { useState } from "react";
 import { Button, Col, Form, InputGroup, Row } from "react-bootstrap";
-import { Filter, MapPin, Search } from "lucide-react";
+
 // @ts-expect-error some quirky
 import { motion } from "framer-motion";
 

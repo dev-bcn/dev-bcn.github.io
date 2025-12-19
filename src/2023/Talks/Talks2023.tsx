@@ -1,8 +1,20 @@
-import React, { FC, useEffect, useState } from "react";
-import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
+import type { FC } from "react";
+
 import TitleSection from "@components/SectionTitle/TitleSection";
-import { Color } from "@styles/colors";
+
+import { Dropdown } from "primereact/dropdown";
+import React, { useEffect, useState } from "react";
+
+import "primereact/resources/primereact.min.css";
+import "primereact/resources/themes/lara-light-indigo/theme.css";
+import "@styles/theme.css";
+import TrackInformation from "@components/common/TrackInformation";
+import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
 import conferenceData from "@data/2023.json";
+import { useFetchTalks } from "@hooks/useFetchTalks";
+import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
+import { Color } from "@styles/colors";
+
 import {
   StyledMarginBottom,
   StyledSpeakersSection,
@@ -10,13 +22,8 @@ import {
   StyledTitleIcon,
   StyledWaveContainer,
 } from "./Talks.style";
-import { useFetchTalks } from "@hooks/useFetchTalks";
-import { Dropdown, DropdownChangeEvent } from "primereact/dropdown";
-import "primereact/resources/primereact.min.css";
-import "primereact/resources/themes/lara-light-indigo/theme.css";
-import "@styles/theme.css";
-import TrackInformation from "@components/common/TrackInformation";
-import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
+
+import type { DropdownChangeEvent } from "primereact/dropdown";
 
 interface TrackInfo {
   name: string;

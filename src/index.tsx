@@ -1,4 +1,8 @@
 import "./index.scss";
+import * as Sentry from "@sentry/react";
+import React, { useEffect } from "react";
+import { createRoot } from "react-dom/client";
+import { initialize } from "react-ga";
 import {
   BrowserRouter,
   createRoutesFromChildren,
@@ -6,13 +10,11 @@ import {
   useLocation,
   useNavigationType,
 } from "react-router-dom";
-import App from "./App";
-import React, { useEffect } from "react";
-import { createRoot } from "react-dom/client";
-import reportWebVitals from "./reportWebVitals";
-import { initialize } from "react-ga";
-import * as Sentry from "@sentry/react";
+
 import { Loading } from "@components/Loading/Loading";
+
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
 const trackingID =
   import.meta.env.VITE_GOOGLE_ANALYTICS_API_KEY ?? "G-0BG1LNPT11";

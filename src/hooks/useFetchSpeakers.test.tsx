@@ -1,16 +1,18 @@
-import { renderHook, waitFor } from "@testing-library/react";
-import { useFetchSpeakers } from "./useFetchSpeakers";
-import axios from "axios";
 import * as Sentry from "@sentry/react";
+import { renderHook, waitFor } from "@testing-library/react";
+import axios from "axios";
+import { vi } from "vitest";
+
+import { useFetchSpeakers } from "./useFetchSpeakers";
 import { speakerAdapter } from "../services/speakerAdapter";
-import { IResponse } from "../types/speakers";
 import {
   createMockAxiosResponse,
   createMockSpeaker,
   getQueryClientWrapper,
   SPEAKER_URLS,
 } from "../utils/testing/testUtils";
-import { vi } from "vitest";
+
+import type { IResponse } from "../types/speakers";
 
 vi.mock("axios");
 vi.mock("@sentry/react");

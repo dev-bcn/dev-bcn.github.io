@@ -1,8 +1,9 @@
-import React from "react";
 import { render, screen } from "@testing-library/react";
+import React from "react";
+
 import "@testing-library/jest-dom";
-import { CfpTrackComponent } from "./CfpSection";
 import { data } from "./CfpData";
+import { CfpTrackComponent } from "./CfpSection";
 
 data.forEach((track, index) => {
   describe(`CfpTrackComponent with track ${index}`, () => {

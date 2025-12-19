@@ -1,12 +1,13 @@
-import { MOBILE_BREAKPOINT } from "@constants/BreakPoints";
-import { Color } from "@styles/colors";
-import { jobOffers } from "./JobsData";
-
-import React, { FC } from "react";
-import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
-import TitleSection from "@components/SectionTitle/TitleSection";
+import React from "react";
 import { useWindowSize } from "react-use";
+
+import CompanyOffers from "@components/JobOffers/CompanyOffers";
+import TitleSection from "@components/SectionTitle/TitleSection";
+import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
+import { MOBILE_BREAKPOINT } from "@constants/BreakPoints";
 import data from "@data/2023.json";
+import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
+import { Color } from "@styles/colors";
 import {
   Companies,
   CompanyNameLink,
@@ -14,8 +15,10 @@ import {
   StyledMoreIcon,
   StyledTitleContainer,
 } from "@styles/JobOffers/JobOffers.Style";
-import CompanyOffers from "@components/JobOffers/CompanyOffers";
-import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
+
+import { jobOffers } from "./JobsData";
+
+import type { FC } from "react";
 
 const NoOffersAvailable = () => (
   <h4 style={{ color: Color.DARK_BLUE }}>No job offers available yet</h4>

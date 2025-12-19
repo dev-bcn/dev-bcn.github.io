@@ -1,4 +1,7 @@
+import React, { lazy } from "react";
 import { Route } from "react-router-dom";
+
+import { Loading } from "@components/Loading/Loading";
 import {
   ROUTE_2023_ATTENDEE,
   ROUTE_2023_CFP,
@@ -15,13 +18,9 @@ import {
   ROUTE_2023_TALKS,
   ROUTE_2023_WORKSHOPS,
 } from "@constants/routes";
-import React, { lazy } from "react";
-import { Loading } from "@components/Loading/Loading";
 
 const Home2023Wrapper = lazy(() => import("./Home/Home2023Wrapper"));
-const Speakers2023 = lazy(
-  () => import("./Speakers/SpeakersWrapper"),
-);
+const Speakers2023 = lazy(() => import("./Speakers/SpeakersWrapper"));
 const SpeakerDetailContainer2023 = lazy(
   () => import("./SpeakerDetail/SpeakerDetailContainer2023"),
 );

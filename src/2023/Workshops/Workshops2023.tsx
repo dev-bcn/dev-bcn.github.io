@@ -1,6 +1,15 @@
-import React, { FC, useEffect } from "react";
+import React, { useEffect } from "react";
+import { styled } from "styled-components";
+
+import { TalkCard } from "@components/common/TalkCard";
+import TitleSection from "@components/SectionTitle/TitleSection";
 import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
+import { BIG_BREAKPOINT } from "@constants/BreakPoints";
+import conferenceData from "@data/2023.json";
+import { useFetchTalks } from "@hooks/useFetchTalks";
+import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
 import { Color } from "@styles/colors";
+
 import {
   StyledMarginBottom,
   StyledSpeakersSection,
@@ -8,13 +17,8 @@ import {
   StyledTitleIcon,
   StyledWaveContainer,
 } from "../Talks/Talks.style";
-import TitleSection from "@components/SectionTitle/TitleSection";
-import { useFetchTalks } from "@hooks/useFetchTalks";
-import conferenceData from "@data/2023.json";
-import { styled } from "styled-components";
-import { BIG_BREAKPOINT } from "@constants/BreakPoints";
-import { TalkCard } from "@components/common/TalkCard";
-import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
+
+import type { FC } from "react";
 
 const StyledSection = styled.section`
 {

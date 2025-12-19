@@ -1,4 +1,5 @@
-import React, { FC } from "react";
+import React from "react";
+
 import {
   StyledTimerContainer,
   StyledTimerNumber,
@@ -6,6 +7,8 @@ import {
   StyleLine,
   TimeCountDownContainer,
 } from "./countdown.style";
+
+import type { FC } from "react";
 
 interface TimeCountDownProps {
   days: number;

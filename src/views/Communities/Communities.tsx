@@ -1,10 +1,13 @@
-import React, { FC } from "react";
+import React from "react";
 import { styled } from "styled-components";
+
 import TwitterIcon from "../../components/Icons/Twitter";
-import { Color } from "../../styles/colors";
 import WebsiteIcon from "../../components/Icons/website";
 import data from "../../data/2024.json";
 import { useDocumentTitleUpdater } from "../../hooks/useDocumentTitleUpdate";
+import { Color } from "../../styles/colors";
+
+import type { FC } from "react";
 
 const Heading = styled.h1`
 {

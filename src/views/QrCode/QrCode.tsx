@@ -1,9 +1,12 @@
-import { ChangeEvent, FC, useMemo, useState } from "react";
-import QRCode from "react-qr-code";
-import { IGroup, Session } from "@/types/sessions";
 import { format, isWithinInterval, parseISO } from "date-fns";
+import { useMemo, useState } from "react";
+import QRCode from "react-qr-code";
+
 import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
 import { Color } from "@styles/colors";
+
+import type { IGroup, Session } from "@/types/sessions";
+import type { ChangeEvent, FC } from "react";
 
 interface QrCodeProps {
   currentDateTime: Date;

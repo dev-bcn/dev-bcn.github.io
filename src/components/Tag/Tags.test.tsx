@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
-import { colorTagByText, Tag } from "./Tag";
 import React from "react";
+
+import { colorTagByText, Tag } from "./Tag";
 
 describe("<Tags/>", () => {
   test("it render the Tag component", async () => {

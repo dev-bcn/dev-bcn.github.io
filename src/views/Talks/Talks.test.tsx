@@ -1,19 +1,22 @@
-import React from "react";
 import { screen, waitFor } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import React from "react";
+import { vi } from "vitest";
+
+import { ROUTE_MEETING_DETAIL_PLAIN } from "@constants/routes";
+import { useFetchTalks } from "@hooks/useFetchTalks";
+
 import Talks from "./Talks";
 import {
   createMockGroup,
   renderWithQueryClient,
 } from "../../utils/testing/testUtils";
-import { ROUTE_MEETING_DETAIL_PLAIN } from "@constants/routes";
-import { useFetchTalks } from "@hooks/useFetchTalks";
-import {
+
+import type {
   IGroup,
   TopRatedTalk,
   TopTalkWithSpeaker,
 } from "@/types/sessions";
-import userEvent from "@testing-library/user-event";
-import { vi } from "vitest";
 
 // Mock the useFetchTalks hook
 vi.mock("@hooks/useFetchTalks", () => ({
@@ -204,10 +207,7 @@ describe("Talks", () => {
   // Tests for the topThreeTalks array
   it("renders the top three talks section with correct awards", () => {
     renderWithQueryClient(
-      <Talks
-        topTenTalks={mockTopTenTalks}
-        topThreeTalks={mockTopThreeTalks}
-      />,
+      <Talks topTenTalks={mockTopTenTalks} topThreeTalks={mockTopThreeTalks} />,
     );
 
     // Check for award titles
@@ -218,10 +218,7 @@ describe("Talks", () => {
 
   it("renders all top three talks with correct speaker names and talk titles", () => {
     renderWithQueryClient(
-      <Talks
-        topTenTalks={mockTopTenTalks}
-        topThreeTalks={mockTopThreeTalks}
-      />,
+      <Talks topTenTalks={mockTopTenTalks} topThreeTalks={mockTopThreeTalks} />,
     );
 
     // Check for speaker names
@@ -243,10 +240,7 @@ describe("Talks", () => {
 
   it("renders top three talks with correct images", () => {
     renderWithQueryClient(
-      <Talks
-        topTenTalks={mockTopTenTalks}
-        topThreeTalks={mockTopThreeTalks}
-      />,
+      <Talks topTenTalks={mockTopTenTalks} topThreeTalks={mockTopThreeTalks} />,
     );
 
     // Check for images with correct src attributes
@@ -286,10 +280,7 @@ describe("Talks", () => {
 
   it("renders top three talks with correct links", () => {
     renderWithQueryClient(
-      <Talks
-        topTenTalks={mockTopTenTalks}
-        topThreeTalks={mockTopThreeTalks}
-      />,
+      <Talks topTenTalks={mockTopTenTalks} topThreeTalks={mockTopThreeTalks} />,
     );
 
     // Check that links are correctly formatted
@@ -314,20 +305,14 @@ describe("Talks", () => {
   // Tests for the topTenTalks array
   it("renders the top ten talks section", () => {
     renderWithQueryClient(
-      <Talks
-        topTenTalks={mockTopTenTalks}
-        topThreeTalks={mockTopThreeTalks}
-      />,
+      <Talks topTenTalks={mockTopTenTalks} topThreeTalks={mockTopThreeTalks} />,
     );
     expect(screen.getByText("🔝 Top Ten rated talks")).toBeInTheDocument();
   });
 
   it("renders all top ten talks with correct links", () => {
     renderWithQueryClient(
-      <Talks
-        topTenTalks={mockTopTenTalks}
-        topThreeTalks={mockTopThreeTalks}
-      />,
+      <Talks topTenTalks={mockTopTenTalks} topThreeTalks={mockTopThreeTalks} />,
     );
 
     // Check for specific talks

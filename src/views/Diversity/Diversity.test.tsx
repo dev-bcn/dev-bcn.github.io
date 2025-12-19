@@ -1,7 +1,8 @@
-import React from "react";
 import { render, screen } from "@testing-library/react";
-import { Diversity } from "./Diversity";
+import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router";
+
+import { Diversity } from "./Diversity";
 
 describe("Diversity component", () => {
   it("renders heading correctly", () => {

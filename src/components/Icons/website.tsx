@@ -1,12 +1,16 @@
-import { FC } from "react";
 import { StyledSocialMediaWrapper } from "./Twitter";
+
+import type { FC } from "react";
 
 interface IWebsiteIconProps {
   color: string;
   WebsiteUrl: string;
 }
 
-const WebsiteIcon: FC<React.PropsWithChildren<IWebsiteIconProps>> = ({ color, WebsiteUrl }) => {
+const WebsiteIcon: FC<React.PropsWithChildren<IWebsiteIconProps>> = ({
+  color,
+  WebsiteUrl,
+}) => {
   return (
     <StyledSocialMediaWrapper href={WebsiteUrl} target={"_blank"}>
       <svg

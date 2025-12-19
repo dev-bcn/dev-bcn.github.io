@@ -1,9 +1,11 @@
+import { ExternalLink, MapPin } from "lucide-react";
 import React from "react";
 import { Badge, Button, Card, Col, Row } from "react-bootstrap";
-import { ExternalLink, MapPin } from "lucide-react";
+
 // @ts-expect-error some quirky import
 import { motion } from "framer-motion";
-import { Offer } from "@/types/jobOffers";
+
+import type { Offer } from "@/types/jobOffers";
 
 interface JobOfferCardProps {
   jobOffer: Offer;

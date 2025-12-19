@@ -1,10 +1,11 @@
-import React from "react";
 import { screen } from "@testing-library/react";
+import React from "react";
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { SpeakersWrapper2025 } from "./SpeakersWrapper2025";
-import { renderWithRouterAndQueryClient } from "../../utils/testing/speakerTestUtils";
-import { useFetchSpeakers } from "../../hooks/useFetchSpeakers";
 import { type MockedFunction } from "vitest";
+
+import { SpeakersWrapper2025 } from "./SpeakersWrapper2025";
+import { useFetchSpeakers } from "../../hooks/useFetchSpeakers";
+import { renderWithRouterAndQueryClient } from "../../utils/testing/speakerTestUtils";
 
 // Mock the useFetchSpeakers hook
 vi.mock("@hooks/useFetchSpeakers");

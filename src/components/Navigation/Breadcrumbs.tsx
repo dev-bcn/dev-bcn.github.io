@@ -1,8 +1,10 @@
-import { FC, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router";
+import { styled } from "styled-components";
 
 import { Color } from "../../styles/colors";
-import { styled } from "styled-components";
+
+import type { FC } from "react";
 
 const StyledBreadcrumbsWrapper = styled.div`
   display: flex;
