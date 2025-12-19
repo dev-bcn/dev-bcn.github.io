@@ -1,8 +1,10 @@
+import { render } from "@testing-library/react";
 import React, { Suspense } from "react";
-import { BrowserRouter, Route, Routes } from "react-router";
-import { ISpeaker } from "@/types/speakers";
 import { QueryClient, QueryClientProvider } from "react-query";
-import { render, RenderOptions, RenderResult } from "@testing-library/react";
+import { BrowserRouter, Route, Routes } from "react-router";
+
+import type { ISpeaker } from "@/types/speakers";
+import type { RenderOptions, RenderResult } from "@testing-library/react";
 
 export * from "@testing-library/react";
 

@@ -1,7 +1,10 @@
-import { FC, Suspense } from "react";
+import { Suspense } from "react";
 import { styled } from "styled-components";
-import { Color } from "@styles/colors";
+
 import { StyledLoadingImage } from "@components/Loading/Loading";
+import { Color } from "@styles/colors";
+
+import type { FC } from "react";
 
 const StyledSection = styled.div`
   text-align: justify;

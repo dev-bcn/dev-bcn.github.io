@@ -1,6 +1,8 @@
-import { FC } from "react";
-import { Color } from "@styles/colors";
 import { styled } from "styled-components";
+
+import { Color } from "@styles/colors";
+
+import type { FC } from "react";
 
 export const StyledLoadingImage = styled.img`
   opacity: 100;

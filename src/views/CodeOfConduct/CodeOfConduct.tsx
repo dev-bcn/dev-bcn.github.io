@@ -1,33 +1,37 @@
-import React, { FC } from "react";
-import TitleSection from "@components/SectionTitle/TitleSection";
-import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
-import { BIG_BREAKPOINT, MOBILE_BREAKPOINT } from "@constants/BreakPoints";
-import { Color } from "@styles/colors";
-import { CodeOfConductTags } from "./CodeOfConductData";
+import { format } from "date-fns";
+import React from "react";
+import { useParams } from "react-router";
+import { useWindowSize } from "react-use";
+import { styled } from "styled-components";
+
 import { LeftHashWithText } from "@components/LeftHashWithText/LeftHashWithText";
 import { RightHashWithText } from "@components/RightHashWithText/RightHashWithText";
+import TitleSection from "@components/SectionTitle/TitleSection";
+import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
 import { Tag } from "@components/Tag/Tag";
-import { styled } from "styled-components";
-import { useWindowSize } from "react-use";
+import { BIG_BREAKPOINT, MOBILE_BREAKPOINT } from "@constants/BreakPoints";
+import data2023 from "@data/2023.json";
+import data2024 from "@data/2024.json";
+import data2025 from "@data/2025.json";
+import data2026 from "@data/2026.json";
+import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
+import { Color } from "@styles/colors";
+
+import { CodeOfConductTags } from "./CodeOfConductData";
 import {
   StyledLessIcon,
   StyledMoreIcon,
   StyledSpeakersSection,
 } from "../Speakers/Speakers.style";
 import { StyledMarginBottom, StyledTagsWrapper } from "../Talks/Talks.style";
-import { format } from "date-fns";
-import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
-import { useParams } from "react-router";
-import data2023 from "@data/2023.json";
-import data2024 from "@data/2024.json";
-import data2025 from "@data/2025.json";
-import data2026 from "@data/2026.json";
+
+import type { FC } from "react";
 
 const editions: Record<string, typeof data2026> = {
-  "2023": data2023,
-  "2024": data2024,
-  "2025": data2025,
-  "2026": data2026,
+  2023: data2023,
+  2024: data2024,
+  2025: data2025,
+  2026: data2026,
 };
 
 const StyledWaveContainer = styled.div`

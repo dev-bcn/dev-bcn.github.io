@@ -1,7 +1,8 @@
-import QrCode from "@views/QrCode/QrCode";
 import { useMemo } from "react";
+
 import conferenceData from "@data/2025.json";
 import { useFetchTalks } from "@hooks/useFetchTalks";
+import QrCode from "@views/QrCode/QrCode";
 
 const QrCodeSection = () => {
   const openFeedbackId = conferenceData.openFeedbackId;

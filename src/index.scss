@@ -1,7 +1,7 @@
 @use "/src/styles/colors.scss";
 @use "sessionize-colors";
 @use "2024.scss" as _2024;
-@import 'bootstrap/dist/css/bootstrap.min.css';
+@import "bootstrap/dist/css/bootstrap.min.css";
 
 root {
   scroll-padding-top: 240px;
@@ -16,25 +16,25 @@ root {
 
 @font-face {
   font-family: "Square 721 Regular";
-  src: url('./fonts/Square 721 Regular.otf');
+  src: url("./fonts/Square 721 Regular.otf");
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'DejaVu Sans Bold';
-  src: url('./fonts/DejaVu Sans Bold.ttf');
+  font-family: "DejaVu Sans Bold";
+  src: url("./fonts/DejaVu Sans Bold.ttf");
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'DejaVu Sans Condensed Bold';
-  src: url('./fonts/DejaVu Sans Condensed Bold.ttf');
+  font-family: "DejaVu Sans Condensed Bold";
+  src: url("./fonts/DejaVu Sans Condensed Bold.ttf");
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'DejaVu Sans ExtraLight';
-  src: url('./fonts/DejaVu Sans ExtraLight.ttf');
+  font-family: "DejaVu Sans ExtraLight";
+  src: url("./fonts/DejaVu Sans ExtraLight.ttf");
   font-display: swap;
 }
 
@@ -55,8 +55,8 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-  monospace;
+  font-family:
+    source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 p {
@@ -73,7 +73,9 @@ p {
   border: none;
   border-radius: 12px;
   box-shadow: 0 0 0 0 #002454;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   overflow: hidden;
 }
 
@@ -112,7 +114,7 @@ p {
 
 .company-link {
   color: white;
-  background-color: #4798CA;
+  background-color: #4798ca;
 }
 
 .section-title {
@@ -120,12 +122,12 @@ p {
   display: inline-block;
   margin-bottom: 2rem;
   margin-top: 4rem;
-  color: #4798CA;
+  color: #4798ca;
   font-weight: 700;
 }
 
 .section-title::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -10px;
   left: 0;
@@ -146,7 +148,7 @@ p {
 
 .apply-btn {
   background-color: #002454;
-  border-color: #4798CA;
+  border-color: #4798ca;
   color: white;
   font-weight: 500;
 }
@@ -160,11 +162,13 @@ p {
   color: #002454;
   font-size: 1.5rem;
   margin-right: 1rem;
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .social-icon:hover {
-  color: #4798CA;
+  color: #4798ca;
   transform: scale(1.1);
 }
 
@@ -172,7 +176,9 @@ p {
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
 }
 
 .fade-in.active {
@@ -227,4 +233,3 @@ p {
     margin-bottom: 400px;
   }
 }
-

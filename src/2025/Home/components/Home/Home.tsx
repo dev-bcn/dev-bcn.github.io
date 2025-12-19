@@ -1,15 +1,24 @@
+import { motion } from "motion/react";
+import React from "react";
 import Countdown from "react-countdown";
-import React, { FC } from "react";
-import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
-import { BIGGER_BREAKPOINT } from "@constants/BreakPoints";
+import { Link } from "react-router";
+import { useWindowSize } from "react-use";
+
 import {
   TimeCountDown,
   CountDownCompleted,
 } from "@components/common/countdown";
-import { useWindowSize } from "react-use";
+import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
+import { BIGGER_BREAKPOINT } from "@constants/BreakPoints";
+import edition from "@data/2025.json";
 import { useDateInterval } from "@hooks/useDateInterval";
+
 // @ts-expect-error some quirky import
-import { motion } from "motion/react";
+
+import { Color } from "@styles/colors";
+import { formatDateRange } from "@utils/dateUtils";
+import ActionButtons from "@views/Home/components/ActionButtons/ActionButtons";
+
 import {
   StyledBlueSlash,
   StyledBottomSlash,
@@ -24,12 +33,9 @@ import {
   StyledTopSlash,
   StyleHomeContainer,
 } from "./Style.Home";
-import ActionButtons from "@views/Home/components/ActionButtons/ActionButtons";
-import { Color } from "@styles/colors";
 import InfoButtons from "../InfoButtons/InfoButtons";
-import { formatDateRange } from "@utils/dateUtils";
-import { Link } from "react-router";
-import edition from "@data/2025.json";
+
+import type { FC } from "react";
 
 const Home: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();

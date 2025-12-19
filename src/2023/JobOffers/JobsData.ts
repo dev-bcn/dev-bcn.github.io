@@ -1,4 +1,4 @@
-import {Company} from "../../types/jobOffers";
+import type { Company } from "../../types/jobOffers";
 
 export const jobOffers: Company[] = [
   {
@@ -726,4 +726,3 @@ export const jobOffers: Company[] = [
     ],
   },
 ];
-

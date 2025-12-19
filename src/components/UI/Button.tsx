@@ -1,8 +1,11 @@
-import React, { FC, ReactNode } from "react";
-import { styled } from "styled-components";
-import { Color } from "../../styles/colors";
-import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
 import { clsx } from "clsx";
+import React from "react";
+import { styled } from "styled-components";
+
+import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
+import { Color } from "../../styles/colors";
+
+import type { FC, ReactNode } from "react";
 
 interface ButtonProps {
   text: string;

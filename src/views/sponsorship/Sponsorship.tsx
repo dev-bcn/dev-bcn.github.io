@@ -1,36 +1,41 @@
-import { FC, useRef } from "react";
+import type { FC } from "react";
+
+import { styled } from "styled-components";
+import { AutoPlay } from "@egjs/flicking-plugins";
+import Flicking from "@egjs/react-flicking";
+import { format } from "date-fns";
+import { useRef } from "react";
+
+import "@egjs/react-flicking/dist/flicking.css";
+// @ts-expect-error some quirky import
+import { useParams } from "react-router";
+import { useWindowSize } from "react-use";
+
+import { gaEventTracker } from "@components/analytics/Analytics";
 import TitleSection from "@components/SectionTitle/TitleSection";
 import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
+import Button from "@components/UI/Button";
 import { BIG_BREAKPOINT, MOBILE_BREAKPOINT } from "@constants/BreakPoints";
+import data2023 from "@data/2023.json";
+import data2024 from "@data/2024.json";
+import data2025 from "@data/2025.json";
+import data2026 from "@data/2026.json";
+import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
 import { Color } from "@styles/colors";
-import { styled } from "styled-components";
-import { useWindowSize } from "react-use";
+import { AnimatePresence, motion } from "framer-motion";
+
 import {
   StyledLessIcon,
   StyledMoreIcon,
   StyledSpeakersSection,
 } from "../Speakers/Speakers.style";
 import { StyledMarginBottom } from "../Talks/Talks.style";
-import { format } from "date-fns";
-import Flicking from "@egjs/react-flicking";
-import { AutoPlay } from "@egjs/flicking-plugins";
-import "@egjs/react-flicking/dist/flicking.css";
-import Button from "@components/UI/Button";
-import { gaEventTracker } from "@components/analytics/Analytics";
-import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
-// @ts-expect-error some quirky import
-import { AnimatePresence, motion } from "framer-motion";
-import { useParams } from "react-router";
-import data2023 from "@data/2023.json";
-import data2024 from "@data/2024.json";
-import data2025 from "@data/2025.json";
-import data2026 from "@data/2026.json";
 
 const editions: Record<string, typeof data2026> = {
-  "2023": data2023,
-  "2024": data2024,
-  "2025": data2025,
-  "2026": data2026,
+  2023: data2023,
+  2024: data2024,
+  2025: data2025,
+  2026: data2026,
 };
 
 const StyledWaveContainer = styled.div`
@@ -289,10 +294,10 @@ const Sponsorship: FC<React.PropsWithChildren<unknown>> = () => {
                   {format(new Date(data.startDay), "MMMM do")} —
                   {" ".concat(format(data.endDay, "do"))}
                 </strong>{" "}
-                at the iconic {data.venue}. This year,
-                we&#39;re diving deep into the realms of Java, JVM, Cloud,
-                DevOps, Frontend technologies, Leadership strategies, and
-                groundbreaking advancements in Big Data and AI.
+                at the iconic {data.venue}. This year, we&#39;re diving deep
+                into the realms of Java, JVM, Cloud, DevOps, Frontend
+                technologies, Leadership strategies, and groundbreaking
+                advancements in Big Data and AI.
               </p>
               <h4>A New Era of Tech Innovation</h4>
               <p>
@@ -307,11 +312,7 @@ const Sponsorship: FC<React.PropsWithChildren<unknown>> = () => {
                 exclusive, we promise they&#39;re more engaging and impactful
                 than ever. Curious? Access our{" "}
                 <strong>
-                  <a
-                    href={data.brochure}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
+                  <a href={data.brochure} target="_blank" rel="noreferrer">
                     detailed brochure
                   </a>{" "}
                 </strong>{" "}

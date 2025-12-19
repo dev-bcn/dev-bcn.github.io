@@ -1,8 +1,9 @@
-import { useQuery, UseQueryResult } from "react-query";
 import axios from "axios";
-import { UngroupedSession } from "@views/Talks/liveView.types";
+import { useQuery } from "react-query";
 
-import { IGroup, Session } from "@/types/sessions";
+import type { IGroup, Session } from "@/types/sessions";
+import type { UngroupedSession } from "@views/Talks/liveView.types";
+import type { UseQueryResult } from "react-query";
 
 const URLS = {
   default: "https://sessionize.com/api/v2/xhudniix/view/Sessions",

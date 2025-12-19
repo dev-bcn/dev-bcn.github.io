@@ -1,10 +1,13 @@
-import { Color } from "@styles/colors";
-import { FC, Suspense } from "react";
-import FaqCard from "./components/FaqsCard";
+import { Suspense } from "react";
 import { useWindowSize } from "react-use";
-import { MOBILE_BREAKPOINT } from "@constants/BreakPoints";
+
 import { StyledLoadingImage } from "@components/Loading/Loading";
 import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
+import { MOBILE_BREAKPOINT } from "@constants/BreakPoints";
+import { Color } from "@styles/colors";
+import { faqsData } from "@views/Home/components/Faqs/FaqsData";
+
+import FaqCard from "./components/FaqsCard";
 import {
   StyledFaqSection,
   StyledH2,
@@ -14,7 +17,8 @@ import {
   StyleLessIcon,
   StyleMoreIcon,
 } from "./Faqs.style";
-import { faqsData } from "@views/Home/components/Faqs/FaqsData";
+
+import type { FC } from "react";
 
 const Faqs: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();

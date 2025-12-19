@@ -1,4 +1,4 @@
-import { ISpeaker } from "./speakers";
+import type { ISpeaker } from "./speakers";
 
 export interface SessionSpeaker {
   readonly id: string;

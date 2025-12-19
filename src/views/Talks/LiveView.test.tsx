@@ -1,23 +1,29 @@
-import React, { FC, useCallback, useEffect, useMemo, useState } from "react";
+import { isWithinInterval } from "date-fns";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { type MockedFunction, vi } from "vitest";
+
+import { TalkCard } from "@components/common/TalkCard";
+import { Loading } from "@components/Loading/Loading";
+import { ROUTE_SCHEDULE } from "@constants/routes";
+import conference from "@data/2026.json";
+import { useDateInterval } from "@hooks/useDateInterval";
 import * as useFetchTalksModule from "@hooks/useFetchTalks";
 import { useFetchLiveView } from "@hooks/useFetchTalks";
-import { Loading } from "@components/Loading/Loading";
-import { UngroupedSession } from "./liveView.types";
-import conference from "@data/2026.json";
-import { TalkCard } from "@components/common/TalkCard";
-import { StyledAgenda, StyledMain } from "./Talks.style";
-import { talkCardAdapter } from "./TalkCardAdapter";
 import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
-import { useDateInterval } from "@hooks/useDateInterval";
-import { isWithinInterval } from "date-fns";
-import { ROUTE_SCHEDULE } from "@constants/routes";
-// @ts-expect-error some quirky import message
 import { AnimatePresence } from "framer-motion";
+
+import { talkCardAdapter } from "./TalkCardAdapter";
+import { StyledAgenda, StyledMain } from "./Talks.style";
+
+// @ts-expect-error some quirky import message
+
 import {
   renderWithQueryClientAndRouter,
   screen,
 } from "../../utils/testing/testUtils";
-import { type MockedFunction, vi } from "vitest";
+
+import type { UngroupedSession } from "./liveView.types";
+import type { FC } from "react";
 
 const LiveView: FC<React.PropsWithChildren<unknown>> = () => {
   const { isLoading, error, data } = useFetchLiveView();

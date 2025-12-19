@@ -1,7 +1,8 @@
-import { styled } from "styled-components";
-import { Color } from "@styles/colors";
 import { motion } from "motion/react";
+import { styled } from "styled-components";
+
 import { BIG_BREAKPOINT } from "@constants/BreakPoints";
+import { Color } from "@styles/colors";
 
 export const StyledHomaImage = styled.div`
   padding: 70px 0 40px;

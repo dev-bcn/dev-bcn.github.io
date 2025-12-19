@@ -1,10 +1,12 @@
 import { AnimatePresence } from "framer-motion";
-import { FC } from "react";
+
 import {
   leftVariants,
   rightVariants,
   StyledSponsorBadgeLeft,
 } from "./Sponsors.style";
+
+import type { FC } from "react";
 
 interface ISponsorBadgeProps {
   position: "left" | "right";

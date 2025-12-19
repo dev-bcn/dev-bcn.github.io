@@ -1,11 +1,10 @@
-import { UngroupedSession } from "./liveView.types";
-import { TalkCardProps } from "@components/common/TalkCard";
-
-import {
+import type { UngroupedSession } from "./liveView.types";
+import type {
   QuestionAnswers,
   SessionCategory,
   SessionSpeaker,
 } from "@/types/sessions";
+import type { TalkCardProps } from "@components/common/TalkCard";
 
 export const talkCardAdapter = (
   session: UngroupedSession,

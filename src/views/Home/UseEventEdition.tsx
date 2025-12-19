@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useParams } from "react-router";
-import { Edition } from "../../types/types";
+
+import type { Edition } from "../../types/types";
 
 export function useEventEdition(setEdition: (data: Edition) => void) {
   const { year } = useParams();
@@ -14,7 +15,6 @@ export function useEventEdition(setEdition: (data: Edition) => void) {
         setEdition(data); // Set the state of conferenceEdition
       })
       .catch((e) => {
-        // eslint-disable-next-line no-console
         console.error("Error loading conference edition data:", e);
         // Handle the error case, maybe setEdition to a default state
       });

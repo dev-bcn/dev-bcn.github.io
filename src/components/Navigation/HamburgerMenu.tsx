@@ -1,6 +1,8 @@
-import { BIG_BREAKPOINT } from "@constants/BreakPoints";
-import { StyledBlueHamburger } from "./Style.Navigation";
 import { useWindowSize } from "react-use";
+
+import { BIG_BREAKPOINT } from "@constants/BreakPoints";
+
+import { StyledBlueHamburger } from "./Style.Navigation";
 
 export const HamburgerMenu = (props: { onClick: () => void }) => {
   const { width } = useWindowSize();

@@ -1,6 +1,8 @@
-import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
-import { FC, ReactNode } from "react";
 import { styled } from "styled-components";
+
+import { BIG_BREAKPOINT } from "../../constants/BreakPoints";
+
+import type { FC, ReactNode } from "react";
 
 const StyledPageWrapper = styled.div`
   padding-bottom: 20rem;

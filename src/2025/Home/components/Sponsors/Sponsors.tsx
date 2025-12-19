@@ -1,15 +1,18 @@
-import { Color } from "@styles/colors";
-import React, { FC } from "react";
+import React from "react";
 
-import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
 import TitleSection from "@components/SectionTitle/TitleSection";
+import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
+import { Color } from "@styles/colors";
 import {
   StyledSponsorsContainer,
   StyledTitleContainer,
   StyledTitleImg,
 } from "@views/Home/components/Sponsors/Sponsors.style";
 import { SponsorTier } from "@views/Home/components/Sponsors/SponsorTier";
+
 import { sponsors } from "./SponsorsData";
+
+import type { FC } from "react";
 
 const Sponsors: FC<React.PropsWithChildren<unknown>> = () => (
   <SectionWrapper color={Color.WHITE}>
@@ -95,4 +98,3 @@ const Sponsors: FC<React.PropsWithChildren<unknown>> = () => (
 );
 
 export default Sponsors;
-

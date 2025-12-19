@@ -1,20 +1,24 @@
-import React, { FC } from "react";
+import React from "react";
+import { useWindowSize } from "react-use";
+import { styled } from "styled-components";
+
 import TitleSection from "@components/SectionTitle/TitleSection";
 import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
 import { MOBILE_BREAKPOINT } from "@constants/BreakPoints";
-import { useWindowSize } from "react-use";
+import data from "@data/2024.json";
+import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
+import { Color } from "@styles/colors";
+
 import { aboutData } from "./AboutData";
 import { AboutCard } from "./components/AboutCard";
-import { styled } from "styled-components";
-import { Color } from "@styles/colors";
 import {
   StyledLessIcon,
   StyledMoreIcon,
   StyledSpeakersSection,
 } from "../Speakers/Speakers.style";
 import { StyledMarginBottom } from "../Talks/Talks.style";
-import data from "@data/2024.json";
-import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
+
+import type { FC } from "react";
 
 const StyledUsersWrapper = styled.div`
   padding-top: 5rem;

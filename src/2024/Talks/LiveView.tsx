@@ -1,12 +1,15 @@
-import React, { FC, useCallback, useEffect, useMemo } from "react";
-import { useFetchLiveView } from "@hooks/useFetchTalks";
+import React, { useCallback, useEffect, useMemo } from "react";
+
+import { TalkCard } from "@components/common/TalkCard";
 import { Loading } from "@components/Loading/Loading";
 import conference from "@data/2024.json";
-import { UngroupedSession } from "@views/Talks/liveView.types";
-import { TalkCard } from "@components/common/TalkCard";
+import { useFetchLiveView } from "@hooks/useFetchTalks";
+import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
 import { talkCardAdapter } from "@views/Talks/TalkCardAdapter";
 import { StyledMain } from "@views/Talks/Talks.style";
-import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
+
+import type { UngroupedSession } from "@views/Talks/liveView.types";
+import type { FC } from "react";
 
 const LiveView: FC<React.PropsWithChildren<unknown>> = () => {
   const { isLoading, error, data } = useFetchLiveView("2024");

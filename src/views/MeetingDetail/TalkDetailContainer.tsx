@@ -1,17 +1,21 @@
-import { Color } from "@styles/colors";
-import React, { FC, useEffect } from "react";
+import React, { useEffect } from "react";
+import { useParams } from "react-router";
+import { styled } from "styled-components";
+
 import { NotFoundError } from "@components/NotFoundError/NotFoundError";
 import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
-import { styled } from "styled-components";
-import { useParams } from "react-router";
 import conferenceData from "@data/2025.json";
-import { useFetchTalksById } from "@hooks/useFetchTalks";
 import { useFetchSpeakers } from "@hooks/useFetchSpeakers";
-import MeetingDetail from "./MeetingDetail";
-import { ISpeaker } from "@/types/speakers";
-import { Session } from "@/types/sessions";
+import { useFetchTalksById } from "@hooks/useFetchTalks";
 import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
 import { sessionAdapter } from "@services/sessionsAdapter";
+import { Color } from "@styles/colors";
+
+import MeetingDetail from "./MeetingDetail";
+
+import type { Session } from "@/types/sessions";
+import type { ISpeaker } from "@/types/speakers";
+import type { FC } from "react";
 
 const StyledContainer = styled.div`
   background-color: ${Color.WHITE};

@@ -1,14 +1,16 @@
-import React from "react";
 import { screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import React from "react";
+import { type MockedFunction, vi } from "vitest";
+
 import Speakers from "./Speakers";
+import { gaEventTracker } from "../../components/analytics/Analytics";
+import { useFetchSpeakers } from "../../hooks/useFetchSpeakers";
 import {
   createMockSpeakers,
   renderWithRouterAndQueryClient,
 } from "../../utils/testing/speakerTestUtils";
-import { useFetchSpeakers } from "../../hooks/useFetchSpeakers";
-import userEvent from "@testing-library/user-event";
-import { gaEventTracker } from "../../components/analytics/Analytics";
-import { type MockedFunction, vi } from "vitest";
+
 // Mock the useFetchSpeakers hook
 vi.mock("../../hooks/useFetchSpeakers");
 const mockedUseFetchSpeakers = useFetchSpeakers as MockedFunction<

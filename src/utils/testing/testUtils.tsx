@@ -1,8 +1,12 @@
-import React, { FC } from "react";
+import { render } from "@testing-library/react";
+import { AxiosHeaders } from "axios";
+import React from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
-import { render, RenderOptions, RenderResult } from "@testing-library/react";
-import { AxiosHeaders, AxiosResponse } from "axios";
 import { MemoryRouter } from "react-router-dom";
+
+import type { RenderOptions, RenderResult } from "@testing-library/react";
+import type { AxiosResponse } from "axios";
+import type { FC } from "react";
 
 export * from "@testing-library/react";
 
@@ -77,14 +81,14 @@ export function createMockAxiosResponse<T>(data: T): AxiosResponse<T> {
 
 export const SESSION_URLS = {
   DEFAULT: "https://sessionize.com/api/v2/xhudniix/view/Sessions",
-  "2023": "https://sessionize.com/api/v2/ttsitynd/view/Sessions",
-  "2024": "https://sessionize.com/api/v2/teq4asez/view/Sessions",
+  2023: "https://sessionize.com/api/v2/ttsitynd/view/Sessions",
+  2024: "https://sessionize.com/api/v2/teq4asez/view/Sessions",
 };
 
 export const SPEAKER_URLS = {
   DEFAULT: "https://sessionize.com/api/v2/xhudniix/view/Speakers",
-  "2023": "https://sessionize.com/api/v2/ttsitynd/view/Speakers",
-  "2024": "https://sessionize.com/api/v2/teq4asez/view/Speakers",
+  2023: "https://sessionize.com/api/v2/ttsitynd/view/Speakers",
+  2024: "https://sessionize.com/api/v2/teq4asez/view/Speakers",
 };
 
 export const createMockSpeaker = (overrides = {}) => ({

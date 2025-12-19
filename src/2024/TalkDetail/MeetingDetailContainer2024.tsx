@@ -1,22 +1,21 @@
-import { Color } from "@styles/colors";
-import {
-  ROUTE_2024_SPEAKER_DETAIL,
-  ROUTE_2024_TALKS,
-} from "@constants/routes";
-import React, { FC, useEffect } from "react";
+import React, { useEffect } from "react";
+import { useParams } from "react-router";
+import { styled } from "styled-components";
+
 import { NotFoundError } from "@components/NotFoundError/NotFoundError";
 import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
-import { styled } from "styled-components";
-import { useParams } from "react-router";
+import { ROUTE_2024_SPEAKER_DETAIL, ROUTE_2024_TALKS } from "@constants/routes";
 import conferenceData from "@data/2024.json";
-import { useFetchTalksById } from "@hooks/useFetchTalks";
 import { useFetchSpeakers } from "@hooks/useFetchSpeakers";
+import { useFetchTalksById } from "@hooks/useFetchTalks";
+import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
+import { sessionAdapter } from "@services/sessionsAdapter";
+import { Color } from "@styles/colors";
 import MeetingDetail from "@views/MeetingDetail/MeetingDetail";
 
-import { ISpeaker } from "@/types/speakers";
-import { Session } from "@/types/sessions";
-import { sessionAdapter } from "@services/sessionsAdapter";
-import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
+import type { Session } from "@/types/sessions";
+import type { ISpeaker } from "@/types/speakers";
+import type { FC } from "react";
 
 const StyledContainer = styled.div`
   background-color: ${Color.WHITE};

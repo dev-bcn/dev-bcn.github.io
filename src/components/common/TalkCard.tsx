@@ -1,6 +1,7 @@
-import React, { FC } from "react";
+import React from "react";
 import { Link } from "react-router";
-import { Tag } from "../Tag/Tag";
+
+import { CategoryItemEnum } from "@/types/sessions";
 import {
   ROUTE_2023_SPEAKER_DETAIL,
   ROUTE_2023_TALK_DETAIL,
@@ -9,8 +10,12 @@ import {
   ROUTE_SPEAKER_DETAIL,
   ROUTE_TALK_DETAIL,
 } from "@constants/routes";
+import {
+  extractSessionCategoryInfo,
+  extractSessionTags,
+} from "@services/sessionsAdapter";
 import { Color } from "@styles/colors";
-import { StyledJobsInfo } from "../JobOffers/JobsCard";
+import { StyledVoteTalkLink } from "@views/MeetingDetail/MeetingDetail";
 import {
   StyledSessionCard,
   StyledSessionText,
@@ -18,17 +23,16 @@ import {
   StyledTalkSpeaker,
   StyledTalkTitle,
 } from "@views/Talks/Talks.style";
-import { StyledVoteTalkLink } from "@views/MeetingDetail/MeetingDetail";
-import {
-  extractSessionCategoryInfo,
-  extractSessionTags,
-} from "@services/sessionsAdapter";
-import {
-  CategoryItemEnum,
+
+import { StyledJobsInfo } from "../JobOffers/JobsCard";
+import { Tag } from "../Tag/Tag";
+
+import type {
   QuestionAnswers,
   SessionCategory,
   SessionSpeaker,
 } from "@/types/sessions";
+import type { FC } from "react";
 
 export interface TalkCardProps {
   talk: {

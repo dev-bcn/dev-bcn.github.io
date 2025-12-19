@@ -1,5 +1,8 @@
-import React, { FC } from "react";
+import React from "react";
+
 import { StyledSocialMediaWrapper } from "./Twitter";
+
+import type { FC } from "react";
 
 interface ILinkedinIconProps {
   color: string;

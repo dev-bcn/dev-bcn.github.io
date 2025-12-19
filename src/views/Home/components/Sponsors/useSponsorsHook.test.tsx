@@ -1,8 +1,11 @@
 import { act, renderHook } from "@testing-library/react";
-import { useSponsorsHook } from "./useSponsorsHook";
-import React, { FC } from "react";
+import React from "react";
 import { vi } from "vitest";
+
+import { useSponsorsHook } from "./useSponsorsHook";
 import { buildSlashes } from "../../../../services/buildSlashes";
+
+import type { FC } from "react";
 
 // Mock the buildSlashes function
 vi.mock("../../../../services/buildSlashes", () => ({

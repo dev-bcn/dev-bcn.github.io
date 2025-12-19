@@ -1,12 +1,18 @@
+import React, { Suspense } from "react";
+import { Link } from "react-router";
+import { useWindowSize } from "react-use";
+
+import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
+import { Tag } from "@components/Tag/Tag";
 import {
   BIG_BREAKPOINT,
   LARGE_BREAKPOINT,
   MOBILE_BREAKPOINT,
 } from "@constants/BreakPoints";
+import { ROUTE_2023_SPEAKER_DETAIL, ROUTE_2023_TALKS } from "@constants/routes";
+import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
 import { Color } from "@styles/colors";
-import React, { FC, Suspense } from "react";
-import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
-import { useWindowSize } from "react-use";
+
 import {
   StyledContainer,
   StyledDescription,
@@ -24,12 +30,10 @@ import {
   StyledVideoContainer,
   StyledVideoTagsContainer,
 } from "./Style.MeetingDetail";
-import { Link } from "react-router";
-import { ROUTE_2023_SPEAKER_DETAIL, ROUTE_2023_TALKS } from "@constants/routes";
 import conferenceData from "../../data/2023.json";
-import { Tag } from "@components/Tag/Tag";
-import { IMeetingDetailProps, MyType } from "@/types/sessions";
-import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
+
+import type { IMeetingDetailProps, MyType } from "@/types/sessions";
+import type { FC } from "react";
 
 const getVideoHeight = (windowWidth: number) => {
   let videoHeight;
@@ -186,7 +190,9 @@ const TalkDetail: FC<React.PropsWithChildren<IMeetingDetailProps>> = ({
             ></iframe>
           )}
           <StyledVideoTagsContainer>
-            {meeting.videoTags?.map((tag) => <Tag text={tag} key={tag} />)}
+            {meeting.videoTags?.map((tag) => (
+              <Tag text={tag} key={tag} />
+            ))}
           </StyledVideoTagsContainer>
           <div style={{ width: "100%", textAlign: "center" }}>
             <Link

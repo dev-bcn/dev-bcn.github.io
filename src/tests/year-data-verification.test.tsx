@@ -1,7 +1,7 @@
-import React from "react";
 import { render } from "@testing-library/react";
-import { describe, it, expect, vi, beforeEach } from "vitest";
+import React from "react";
 import { BrowserRouter } from "react-router-dom";
+import { describe, it, expect, vi, beforeEach } from "vitest";
 
 /**
  * Component-level tests to verify that year-specific wrapper components

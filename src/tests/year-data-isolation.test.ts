@@ -1,12 +1,12 @@
 import { describe, it, expect } from "vitest";
+
 import data2023 from "@data/2023.json";
 import data2024 from "@data/2024.json";
 import data2025 from "@data/2025.json";
 import data2026 from "@data/2026.json";
-import { data2025 as cfpData2025 } from "@views/Cfp/CfpData2025";
+import { SPEAKER_URLS, SESSION_URLS } from "@utils/testing/testUtils";
 import { data as cfpData2026 } from "@views/Cfp/CfpData";
-import { SPEAKER_URLS } from "@utils/testing/testUtils";
-import { SESSION_URLS } from "@utils/testing/testUtils";
+import { data2025 as cfpData2025 } from "@views/Cfp/CfpData2025";
 
 /**
  * Year Data Isolation Tests

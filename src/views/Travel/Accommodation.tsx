@@ -1,7 +1,10 @@
-import React, { FC } from "react";
+import React from "react";
 import { styled } from "styled-components";
-import { Color } from "@styles/colors";
+
 import { BIG_BREAKPOINT } from "@constants/BreakPoints";
+import { Color } from "@styles/colors";
+
+import type { FC } from "react";
 
 const StyledAccommodation = styled.div`
 {

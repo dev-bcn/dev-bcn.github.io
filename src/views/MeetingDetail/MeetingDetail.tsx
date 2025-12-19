@@ -1,12 +1,21 @@
+import { AddToCalendarButton } from "add-to-calendar-button-react";
+import React, { Suspense } from "react";
+import { Link } from "react-router";
+import { useWindowSize } from "react-use";
+import { styled } from "styled-components";
+
+import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
+import { Tag } from "@components/Tag/Tag";
 import {
   BIG_BREAKPOINT,
   LARGE_BREAKPOINT,
   MOBILE_BREAKPOINT,
 } from "@constants/BreakPoints";
+import { ROUTE_SPEAKER_DETAIL, ROUTE_TALKS } from "@constants/routes";
+import conferenceData from "@data/2025.json";
+import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
 import { Color } from "@styles/colors";
-import React, { FC, Suspense } from "react";
-import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
-import { useWindowSize } from "react-use";
+
 import {
   StyledContainer,
   StyledDescription,
@@ -24,14 +33,9 @@ import {
   StyledVideoContainer,
   StyledVideoTagsContainer,
 } from "./Style.MeetingDetail";
-import { Link } from "react-router";
-import { ROUTE_SPEAKER_DETAIL, ROUTE_TALKS } from "@constants/routes";
-import conferenceData from "@data/2025.json";
-import { Tag } from "@components/Tag/Tag";
-import { styled } from "styled-components";
-import { AddToCalendarButton } from "add-to-calendar-button-react";
-import { IMeetingDetailProps, MyType } from "@/types/sessions";
-import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
+
+import type { IMeetingDetailProps, MyType } from "@/types/sessions";
+import type { FC } from "react";
 
 const getVideoHeight = (windowWidth: number) => {
   let videoHeight;

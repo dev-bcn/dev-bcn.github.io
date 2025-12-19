@@ -1,9 +1,11 @@
-import React, { FC, Suspense } from "react";
-import { StyledLoadingImage } from "@components/Loading/Loading";
-// @ts-expect-error some quirky import
 import { motion } from "motion/react";
+import React, { Suspense } from "react";
+
+import { StyledLoadingImage } from "@components/Loading/Loading";
+
+// @ts-expect-error some quirky import
+
 import {
-  FaqCardType,
   StyledFaqCard,
   StyledFaqImage,
   StyledFaqImageContainer,
@@ -11,6 +13,9 @@ import {
   StyledFaqText,
   StyledFaqTitle,
 } from "../Faqs.style";
+
+import type { FaqCardType } from "../Faqs.style";
+import type { FC } from "react";
 
 const FaqCard: FC<React.PropsWithChildren<FaqCardType>> = ({ faq, index }) => {
   const isOdd = index % 2 === 0;

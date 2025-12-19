@@ -1,24 +1,29 @@
-import React, { FC } from "react";
+import React from "react";
+import { useWindowSize } from "react-use";
+
+import LinkedinIcon from "@components/Icons/Linkedin";
+import TwitterIcon from "@components/Icons/Twitter";
+import TitleSection from "@components/SectionTitle/TitleSection";
 import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
+import { MOBILE_BREAKPOINT } from "@constants/BreakPoints";
+import conferenceData from "@data/2026.json";
+import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
 import { Color } from "@styles/colors";
+
+import { MemberName, TrackName } from "./Cfp.style";
+import { data } from "./CfpData";
+import {
+  StyledAboutImage,
+  StyledSocialIconsWrapper,
+} from "../About/components/Style.AboutCard";
 import {
   StyledLessIcon,
   StyledMoreIcon,
   StyledSpeakersSection,
 } from "../Speakers/Speakers.style";
-import TitleSection from "@components/SectionTitle/TitleSection";
-import { MOBILE_BREAKPOINT } from "@constants/BreakPoints";
-import { useWindowSize } from "react-use";
-import TwitterIcon from "@components/Icons/Twitter";
-import LinkedinIcon from "@components/Icons/Linkedin";
-import {
-  StyledAboutImage,
-  StyledSocialIconsWrapper,
-} from "../About/components/Style.AboutCard";
-import conferenceData from "@data/2026.json";
-import { CfpTrack, CfpTrackProps, data } from "./CfpData";
-import { MemberName, TrackName } from "./Cfp.style";
-import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
+
+import type { CfpTrack, CfpTrackProps } from "./CfpData";
+import type { FC } from "react";
 
 export const CfpTrackComponent: FC<React.PropsWithChildren<CfpTrackProps>> = ({
   track,

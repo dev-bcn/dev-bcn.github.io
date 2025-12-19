@@ -1,12 +1,13 @@
-import { styled } from "styled-components";
-import { Color } from "@styles/colors";
 import { motion } from "motion/react";
+import { Link } from "react-router";
+import { styled } from "styled-components";
+
 import {
   BIG_BREAKPOINT,
   MOBILE_BREAKPOINT,
   TABLET_BREAKPOINT,
 } from "@constants/BreakPoints";
-import { Link } from "react-router";
+import { Color } from "@styles/colors";
 
 export const StyledTitleContainer = styled.div`
   display: flex;

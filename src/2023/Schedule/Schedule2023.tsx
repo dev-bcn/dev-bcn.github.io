@@ -1,17 +1,20 @@
-import { MOBILE_BREAKPOINT } from "@constants/BreakPoints";
-import { Color } from "@styles/colors";
-import React, { FC } from "react";
-import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
-import TitleSection from "@components/SectionTitle/TitleSection";
+import * as Sentry from "@sentry/react";
+import React from "react";
 import { useWindowSize } from "react-use";
+
+import TitleSection from "@components/SectionTitle/TitleSection";
+import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
+import { MOBILE_BREAKPOINT } from "@constants/BreakPoints";
 import data from "@data/2023.json";
+import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
+import { Color } from "@styles/colors";
 import {
   StyledLessIcon,
   StyledMoreIcon,
   StyledScheduleSection,
 } from "@styles/Schedule/Schedule.style";
-import * as Sentry from "@sentry/react";
-import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
+
+import type { FC } from "react";
 
 const Schedule2023: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();

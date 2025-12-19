@@ -1,5 +1,6 @@
 {
   "name": "devbcn",
+  "type": "module",
   "homepage": "https://www.devbcn.com",
   "version": "1.5.0",
   "private": true,
@@ -93,6 +94,7 @@
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.26",
     "gh-pages": "^6.3.0",
     "globals": "^16.5.0",
     "jsdom": "^27.3.0",

@@ -1,8 +1,9 @@
-import { BIG_BREAKPOINT } from "@constants/BreakPoints";
-import { FC } from "react";
 import { useNavigate } from "react-router";
 import { useWindowSize } from "react-use";
+
+import { BIG_BREAKPOINT } from "@constants/BreakPoints";
 import data from "@data/2024.json";
+
 import {
   StyledAbsoluteImg,
   StyledFlexCol,
@@ -14,6 +15,8 @@ import {
   StyledImg,
   StyledLink,
 } from "./Styles.Footer";
+
+import type { FC } from "react";
 
 export const Footer: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();

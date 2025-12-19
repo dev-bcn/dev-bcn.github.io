@@ -1,7 +1,9 @@
-import { NavigationItem } from "./NavigationData";
-import { NavMenu, StyledLink, SubLink, SubMenu } from "./Style.Navigation";
 import { NavLink } from "react-router";
-import { FC } from "react";
+
+import { NavMenu, StyledLink, SubLink, SubMenu } from "./Style.Navigation";
+
+import type { NavigationItem } from "./NavigationData";
+import type { FC } from "react";
 
 type Props = {
   navItems: NavigationItem[];

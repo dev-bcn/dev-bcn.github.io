@@ -1,10 +1,12 @@
+import { ExternalLink, Linkedin, Twitter } from "lucide-react";
 import React from "react";
 import { Button, Card, Col, Row } from "react-bootstrap";
-import { ExternalLink, Linkedin, Twitter } from "lucide-react";
+
 // @ts-expect-error some quirky import
-import { motion } from "framer-motion";
-import { Company } from "@/types/jobOffers";
 import JobOfferCard from "@components/JobOffers/JobOfferCard";
+import { motion } from "framer-motion";
+
+import type { Company } from "@/types/jobOffers";
 
 interface CompanyCardProps {
   company: Company;

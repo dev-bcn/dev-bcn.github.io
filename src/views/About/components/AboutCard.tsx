@@ -1,6 +1,9 @@
-import { FC, Suspense } from "react";
+import { Suspense } from "react";
+
 import LinkedinIcon from "@components/Icons/Linkedin";
 import TwitterIcon from "@components/Icons/Twitter";
+import { StyledLoadingImage } from "@components/Loading/Loading";
+
 import {
   StyledAboutCard,
   StyledAboutImage,
@@ -8,7 +11,8 @@ import {
   StyledAboutName,
   StyledSocialIconsWrapper,
 } from "./Style.AboutCard";
-import { StyledLoadingImage } from "@components/Loading/Loading";
+
+import type { FC } from "react";
 
 type AboutCardProps = {
   person: {

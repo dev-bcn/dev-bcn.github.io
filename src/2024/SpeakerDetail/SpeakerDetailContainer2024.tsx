@@ -1,18 +1,17 @@
-import { Color } from "@styles/colors";
-import {
-  ROUTE_2024_SPEAKERS,
-  ROUTE_2024_TALK_DETAIL,
-} from "@constants/routes";
-
-import React, { FC } from "react";
-import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
-import SpeakerDetail from "@views/SpeakerDetail/SpeakerDetail";
+import React from "react";
 import { useParams } from "react-router";
+
+import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
+import { ROUTE_2024_SPEAKERS, ROUTE_2024_TALK_DETAIL } from "@constants/routes";
 import conferenceData from "@data/2024.json";
 import { useFetchSpeakers } from "@hooks/useFetchSpeakers";
-import { StyledContainer } from "@views/SpeakerDetail/Speaker.style";
-import { StyledWaveContainer } from "@views/Talks/Talks.style";
 import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
+import { Color } from "@styles/colors";
+import { StyledContainer } from "@views/SpeakerDetail/Speaker.style";
+import SpeakerDetail from "@views/SpeakerDetail/SpeakerDetail";
+import { StyledWaveContainer } from "@views/Talks/Talks.style";
+
+import type { FC } from "react";
 
 export const SpeakerDetailContainer2024: FC<
   React.PropsWithChildren<unknown>

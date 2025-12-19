@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+
 import { BIG_BREAKPOINT, TABLET_BREAKPOINT } from "@constants/BreakPoints";
 
 export const StyledScheduleSection = styled.section`

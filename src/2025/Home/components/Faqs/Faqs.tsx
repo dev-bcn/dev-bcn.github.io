@@ -1,13 +1,16 @@
-import { Color } from "@styles/colors";
-import { FC, Suspense } from "react";
-import FaqCard from "./components/FaqsCard";
-import { useWindowSize } from "react-use";
-import { MOBILE_BREAKPOINT } from "@constants/BreakPoints";
-import { StyledLoadingImage } from "@components/Loading/Loading";
-// @ts-expect-error some quirky import
 import { motion } from "motion/react";
-import { faqsData } from "./FaqsData";
+import { Suspense } from "react";
+import { useWindowSize } from "react-use";
+
+import { StyledLoadingImage } from "@components/Loading/Loading";
 import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
+import { MOBILE_BREAKPOINT } from "@constants/BreakPoints";
+import { Color } from "@styles/colors";
+
+import FaqCard from "./components/FaqsCard";
+
+// @ts-expect-error some quirky import
+
 import {
   StyledFaqSection,
   StyledH2,
@@ -18,6 +21,9 @@ import {
   StyleLessIcon,
   StyleMoreIcon,
 } from "./Faqs.style";
+import { faqsData } from "./FaqsData";
+
+import type { FC } from "react";
 
 const Faqs: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();

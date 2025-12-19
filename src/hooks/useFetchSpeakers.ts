@@ -1,8 +1,11 @@
-import { useQuery, UseQueryResult } from "react-query";
-import axios from "axios";
-import { speakerAdapter } from "@services/speakerAdapter";
 import * as Sentry from "@sentry/react";
-import { IResponse, ISpeaker } from "@/types/speakers";
+import axios from "axios";
+import { useQuery } from "react-query";
+
+import { speakerAdapter } from "@services/speakerAdapter";
+
+import type { IResponse, ISpeaker } from "@/types/speakers";
+import type { UseQueryResult } from "react-query";
 
 const URLS = {
   default: "https://sessionize.com/api/v2/xhudniix/view/Speakers",

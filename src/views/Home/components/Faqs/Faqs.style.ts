@@ -1,7 +1,8 @@
-import { keyframes, styled } from "styled-components";
-import { Color } from "@styles/colors";
 import { motion } from "motion/react";
+import { keyframes, styled } from "styled-components";
+
 import { BIG_BREAKPOINT } from "@constants/BreakPoints";
+import { Color } from "@styles/colors";
 
 const revealAnimation = keyframes`
   from {
@@ -95,14 +96,14 @@ export const StyledFaqCard = styled.div`
 `;
 export const StyledFaqImageContainer = styled.div.withConfig({
   shouldForwardProp: (prop) => !["padding"].includes(prop),
-}) <{ padding: string }>`
+})<{ padding: string }>`
   position: relative;
   @media (min-width: 800px) {
     height: auto;
 
     padding: ${({ padding }) => {
-    return padding;
-  }};
+      return padding;
+    }};
   }
 `;
 export const StyledFaqImage = styled(motion.img)`
@@ -121,15 +122,15 @@ export const StyledFaqImage = styled(motion.img)`
     display: none;
   }
 `;
-export const StyledFaqInfo = styled(motion.div) <{ align: string }>`
+export const StyledFaqInfo = styled(motion.div)<{ align: string }>`
   display: flex;
   flex-direction: column;
   color: ${Color.WHITE};
   @media (min-width: 800px) {
     width: 60%;
     align-items: ${({ align }) => {
-    return align;
-  }};
+      return align;
+    }};
   }
 `;
 export const StyledFaqTitle = styled.h2`

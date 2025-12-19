@@ -1,12 +1,12 @@
 import { renderHook, waitFor } from "@testing-library/react";
 import axios from "axios";
+import { type MockedFunction, vi } from "vitest";
+
 import {
   useFetchLiveView,
   useFetchTalks,
   useFetchTalksById,
 } from "./useFetchTalks";
-
-import { IGroup } from "../types/sessions";
 import {
   createMockAxiosResponse,
   createMockGroup,
@@ -14,7 +14,8 @@ import {
   getQueryClientWrapper,
   SESSION_URLS,
 } from "../utils/testing/testUtils";
-import { type MockedFunction, vi } from "vitest";
+
+import type { IGroup } from "../types/sessions";
 
 vi.mock("axios");
 const mockedAxios = axios as unknown as MockedFunction<typeof axios>;

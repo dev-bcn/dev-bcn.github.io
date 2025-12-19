@@ -1,7 +1,6 @@
 import React from "react";
+
 import { Color } from "@styles/colors";
-import LinkedinIcon from "../Icons/Linkedin";
-import TwitterIcon from "../Icons/Twitter";
 import {
   CompanyContainer,
   CompanyDescription,
@@ -12,7 +11,11 @@ import {
   OfferText,
   OfferTitle,
 } from "@styles/JobOffers/JobOffers.Style";
-import { CompanyProps } from "@/types/jobOffers";
+
+import LinkedinIcon from "../Icons/Linkedin";
+import TwitterIcon from "../Icons/Twitter";
+
+import type { CompanyProps } from "@/types/jobOffers";
 
 const CompanyOffers: React.FC<React.PropsWithChildren<CompanyProps>> = ({
   company,

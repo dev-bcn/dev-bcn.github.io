@@ -1,10 +1,13 @@
-import React, { FC } from "react";
+import React from "react";
+
 import {
   StyledTimerContainer,
   StyledTimerLetters,
   StyleLine,
   TimeCountDownContainer,
 } from "./countdown.style";
+
+import type { FC } from "react";
 
 const CountDownCompleted: FC = () => {
   return (

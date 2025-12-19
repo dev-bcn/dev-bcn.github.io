@@ -1,4 +1,4 @@
-import { Session } from "@/types/sessions";
+import type { Session } from "@/types/sessions";
 
 export interface UngroupedSession
   extends Omit<Session, "slidesURL" | "recordingUrl"> {

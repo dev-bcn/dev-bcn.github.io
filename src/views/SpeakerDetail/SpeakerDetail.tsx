@@ -1,7 +1,12 @@
-import { BIG_BREAKPOINT } from "@constants/BreakPoints";
-
-import { FC, Suspense, useEffect } from "react";
+import { Suspense, useEffect } from "react";
+import { Link } from "react-router";
 import { useWindowSize } from "react-use";
+
+import { BIG_BREAKPOINT } from "@constants/BreakPoints";
+import { ROUTE_SPEAKERS, ROUTE_TALK_DETAIL } from "@constants/routes";
+import conferenceData from "@data/2025.json";
+import { Color } from "@styles/colors";
+
 import {
   StyledDetailsContainer,
   StyledFlexCol,
@@ -21,12 +26,10 @@ import {
   StyledSpeakerImg,
   StyledSpeakerTitle,
 } from "./Speaker.style";
-import { ROUTE_SPEAKERS, ROUTE_TALK_DETAIL } from "@constants/routes";
 import { StyledTalkDescription } from "./SpeakerDetail.style";
-import { Link } from "react-router";
-import { Color } from "@styles/colors";
-import conferenceData from "@data/2025.json";
-import { ISpeaker } from "@/types/speakers";
+
+import type { ISpeaker } from "@/types/speakers";
+import type { FC } from "react";
 
 interface ISpeakerDetailProps {
   speaker: ISpeaker;
