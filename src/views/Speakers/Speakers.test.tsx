@@ -100,11 +100,12 @@ describe("Speakers component", () => {
 
     // This ensures that both new Date() and Date.now() use our mock date
     global.Date = class extends Date {
-      constructor(...args) {
+      constructor(...args: unknown[]) {
+        super();
         if (args.length === 0) {
           return mockDate;
         }
-        return super(...args);
+        return new originalDate(...(args as ConstructorParameters<typeof originalDate>));
       }
 
       static now() {
@@ -136,11 +137,12 @@ describe("Speakers component", () => {
 
     // This ensures that both new Date() and Date.now() use our mock date
     global.Date = class extends Date {
-      constructor(...args) {
+      constructor(...args: unknown[]) {
+        super();
         if (args.length === 0) {
           return mockDate;
         }
-        return super(...args);
+        return new originalDate(...(args as ConstructorParameters<typeof originalDate>));
       }
 
       static now() {

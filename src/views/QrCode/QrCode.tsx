@@ -71,8 +71,8 @@ const QrCode: FC<React.PropsWithChildren<QrCodeProps>> = ({
     const qrCode: number = parseInt(e.target.value);
     e.preventDefault();
     setSelectedTrack(qrCode);
-    setSession(availableTalks?.filter((talk) => talk.roomId == qrCode)[0]);
-    if (session != undefined)
+    setSession(availableTalks?.filter((talk) => talk.roomId === qrCode)[0]);
+    if (session !== undefined)
       setQrValue(
         `https://openfeedback.io/${openFeedbackId}/${format(parseISO(session.startsAt), "yyyy-MM-dd")}/${session.id}`,
       );

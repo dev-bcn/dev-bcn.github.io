@@ -63,13 +63,6 @@ const StyledVenue = styled.div`
   }
 `;
 
-const StyledTrainLine = styled.span`
-  background-color: #00f200;
-  font-weight: bold;
-  padding: 1px 2px;
-  font-family: sans-serif;
-  font-size: 12px;
-`;
 export const StyledLessIcon = styled.img`
   position: absolute;
   left: -1rem;
