@@ -8,6 +8,7 @@ import type { RenderOptions, RenderResult } from "@testing-library/react";
 import type { AxiosResponse } from "axios";
 import type { FC } from "react";
 
+// eslint-disable-next-line react-refresh/only-export-components
 export * from "@testing-library/react";
 
 export function renderWithQueryClient(

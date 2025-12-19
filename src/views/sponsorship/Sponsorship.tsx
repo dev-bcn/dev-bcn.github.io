@@ -1,13 +1,15 @@
 import type { FC } from "react";
 
 import { styled } from "styled-components";
+
+import "@egjs/react-flicking/dist/flicking.css";
+// @ts-expect-error some quirky import
+
+
 import { AutoPlay } from "@egjs/flicking-plugins";
 import Flicking from "@egjs/react-flicking";
 import { format } from "date-fns";
 import { useRef } from "react";
-
-import "@egjs/react-flicking/dist/flicking.css";
-// @ts-expect-error some quirky import
 import { useParams } from "react-router";
 import { useWindowSize } from "react-use";
 

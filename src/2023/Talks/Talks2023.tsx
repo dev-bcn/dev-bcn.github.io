@@ -1,14 +1,15 @@
 import type { FC } from "react";
 
-import TitleSection from "@components/SectionTitle/TitleSection";
 
+import TrackInformation from "@components/common/TrackInformation";
+
+import "@styles/theme.css";
 import { Dropdown } from "primereact/dropdown";
-import React, { useEffect, useState } from "react";
-
 import "primereact/resources/primereact.min.css";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
-import "@styles/theme.css";
-import TrackInformation from "@components/common/TrackInformation";
+import React, { useEffect, useState } from "react";
+
+import TitleSection from "@components/SectionTitle/TitleSection";
 import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
 import conferenceData from "@data/2023.json";
 import { useFetchTalks } from "@hooks/useFetchTalks";
@@ -63,9 +64,9 @@ const Talks2023: FC<React.PropsWithChildren<unknown>> = () => {
     { name: "All Tracks", code: undefined },
     ...(data !== undefined
       ? data.flatMap((group) => ({
-          code: group.groupId.toString(),
-          name: removeParenthesesContent(group.groupName),
-        }))
+        code: group.groupId.toString(),
+        name: removeParenthesesContent(group.groupName),
+      }))
       : []),
   ];
 

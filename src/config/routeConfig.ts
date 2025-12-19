@@ -6,13 +6,15 @@ import * as LazyComponents from "../utils/lazyComponents";
 /**
  * Interface for a single route configuration
  */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export interface RouteConfig {
   path: string;
   component:
-    | React.LazyExoticComponent<React.ComponentType<any>>
-    | React.ComponentType<any>;
+  | React.LazyExoticComponent<React.ComponentType<any>>
+  | React.ComponentType<any>;
   exact?: boolean;
 }
+/* eslint-enable @typescript-eslint/no-explicit-any */
 
 /**
  * Generate routes for a specific year

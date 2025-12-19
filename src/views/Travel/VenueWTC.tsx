@@ -2,6 +2,8 @@ import type { FC } from "react";
 
 import React, { Suspense } from "react";
 import "./map.css";
+
+
 import { useWindowSize } from "react-use";
 import { styled } from "styled-components";
 

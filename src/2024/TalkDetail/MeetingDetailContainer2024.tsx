@@ -24,6 +24,7 @@ export const MeetingDetailContainer2024: FC<
   React.PropsWithChildren<unknown>
 > = () => {
   const { id } = useParams<{ id: string }>();
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const { isLoading, error, data } = useFetchTalksById(id!, "2024");
   const { data: speakerData } = useFetchSpeakers("2024");
 

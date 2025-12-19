@@ -2,14 +2,16 @@ import type { MeasurableSessionRating, SessionRating } from "./sessionData";
 
 import { sessionData } from "./sessionData";
 
-import React from "react";
-import { DataTable } from "primereact/datatable";
-import { Column } from "primereact/column";
-import { Rating } from "primereact/rating";
 import "primereact/resources/primereact.min.css";
 import "primereact/resources/themes/lara-light-blue/theme.css";
+
+
 import { FilterMatchMode } from "primereact/api";
+import { Column } from "primereact/column";
+import { DataTable } from "primereact/datatable";
 import { InputText } from "primereact/inputtext";
+import { Rating } from "primereact/rating";
+import React from "react";
 import { Link } from "react-router";
 
 import { ROUTE_TALK_DETAIL } from "@constants/routes";
@@ -40,11 +42,13 @@ export const SessionFeedback2023: FC<React.PropsWithChildren<unknown>> = () => {
     );
 
   const [globalFilterValue, setGlobalFilterValue] = React.useState("");
-  const [filters, setFilters] = React.useState({
+  const [filters, setFilters] = React.useState<{
+    global: { value: string | null; matchMode: FilterMatchMode };
+  }>({
     global: { value: null, matchMode: FilterMatchMode.CONTAINS },
   });
 
-  const onGlobalFilterChange = (e: { target: { value: any } }) => {
+  const onGlobalFilterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     const _filters = { ...filters };
 

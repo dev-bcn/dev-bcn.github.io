@@ -1,17 +1,20 @@
-import type { FC } from "react";
-
+import { styled } from "styled-components";
 import { Autoplay, Parallax } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { styled } from "styled-components";
 
 import { Color } from "@styles/colors";
 
+
+import type { FC } from "react";
+
+
 import "swiper/swiper-bundle.min.css";
-import { Link } from "react-router";
 
 import { ROUTE_SPEAKER_DETAIL } from "@constants/routes";
 import { useFetchSpeakers } from "@hooks/useFetchSpeakers";
 import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
+
+import { Link } from "react-router";
 
 const StyledSlideImage = styled.img`
   display: block;

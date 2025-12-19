@@ -3,6 +3,7 @@ import { styled } from "styled-components";
 
 import { BIG_BREAKPOINT, BIGGER_BREAKPOINT } from "@constants/BreakPoints";
 import { Color } from "@styles/colors";
+
 // @ts-expect-error some quirky import
 
 // By © Alice Wiegand / CC-BY-SA-3.0 (via Wikimedia Commons), CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=30463612
@@ -89,7 +90,7 @@ export const StyledTitle = styled(motion.h1)`
   font-family: "Square 721 Regular", sans-serif;
 `;
 
-export const StyledSubtitle = styled(motion.h2)<StyledSubtitleProps>`
+export const StyledSubtitle = styled(motion.h2) <StyledSubtitleProps>`
   color: ${(props) => props.color ?? Color.WHITE};
   font-family: "DejaVu Sans ExtraLight", sans-serif;
   font-size: 1.25rem;

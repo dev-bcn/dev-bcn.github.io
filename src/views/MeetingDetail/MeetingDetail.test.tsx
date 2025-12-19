@@ -1,6 +1,6 @@
+import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import React from "react";
-import "@testing-library/jest-dom";
 import { BrowserRouter } from "react-router";
 import { vi } from "vitest";
 
@@ -19,6 +19,7 @@ vi.mock("framer-motion", () => ({
       children: React.ReactNode;
       [key: string]: unknown;
     }) => <div {...props}>{children}</div>,
+    // eslint-disable-next-line jsx-a11y/alt-text
     img: (props: { [key: string]: unknown }) => <img {...props} />,
   },
 }));
