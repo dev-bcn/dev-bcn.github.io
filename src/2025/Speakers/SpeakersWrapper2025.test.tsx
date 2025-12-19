@@ -54,7 +54,7 @@ describe("SpeakersWrapper2025", () => {
       isLoading: false,
       error: null,
       isSuccess: true,
-    } as any);
+    } as ReturnType<typeof useFetchSpeakers>);
 
     renderWithRouterAndQueryClient(<SpeakersWrapper2025 />);
 
@@ -68,7 +68,7 @@ describe("SpeakersWrapper2025", () => {
       isLoading: false,
       error: null,
       isSuccess: true,
-    } as any);
+    } as ReturnType<typeof useFetchSpeakers>);
 
     renderWithRouterAndQueryClient(<SpeakersWrapper2025 />);
 
@@ -82,7 +82,7 @@ describe("SpeakersWrapper2025", () => {
       isLoading: false,
       error: null,
       isSuccess: true,
-    } as any);
+    } as ReturnType<typeof useFetchSpeakers>);
 
     renderWithRouterAndQueryClient(<SpeakersWrapper2025 />);
 

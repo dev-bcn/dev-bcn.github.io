@@ -1,4 +1,3 @@
-```typescript
 import { useUrlBuilder } from "./urlBuilder";
 
 // Mock window.location for the test

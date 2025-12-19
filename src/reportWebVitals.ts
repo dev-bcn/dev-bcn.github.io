@@ -1,4 +1,5 @@
 import { onCLS, onFCP, onLCP, onTTFB } from "web-vitals";
+
 import type { Metric } from "web-vitals";
 
 const reportWebVitals = (onPerfEntry?: (metric: Metric) => void) => {

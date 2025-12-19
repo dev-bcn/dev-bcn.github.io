@@ -1,5 +1,5 @@
 export interface Edition {
-  hideSpeakers: any;
+  hideSpeakers: boolean;
   actionButtons: boolean;
   carrousel: Carrousel;
   cfp: Cfp;
