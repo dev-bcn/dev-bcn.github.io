@@ -1,6 +1,0 @@
-import{j as n,d}from"./index-CTeuVKX9.js";(function(){try{var e=typeof window<"u"?window:typeof global<"u"?global:typeof globalThis<"u"?globalThis:typeof self<"u"?self:{};e.SENTRY_RELEASE={id:"1d089d517e41d782af78b0a70a6631d8b1e2fe7d"}}catch{}})();try{(function(){var e=typeof window<"u"?window:typeof global<"u"?global:typeof globalThis<"u"?globalThis:typeof self<"u"?self:{},t=new e.Error().stack;t&&(e._sentryDebugIds=e._sentryDebugIds||{},e._sentryDebugIds[t]="fb858927-4608-4f07-b277-11e1344a9914",e._sentryDebugIdIdentifier="sentry-dbid-fb858927-4608-4f07-b277-11e1344a9914")})()}catch{}const r=d.a`
-  height: 0.8rem;
-  max-width: 24px;
-  margin-right: 0.5rem;
-`,o=({color:e,twitterUrl:t})=>n.jsx(r,{href:t,target:"_blank",rel:"noopener noreferrer",children:n.jsx("svg",{"data-icon":"twitter-icon",xmlns:"http://www.w3.org/2000/svg",width:"24",height:"24",viewBox:"0 0 24 24",fill:e,stroke:e,strokeWidth:"0.5",strokeLinecap:"round",strokeLinejoin:"round",className:"feather feather-twitter",children:n.jsx("path",{d:"M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"})})});export{r as S,o as T};
-//# sourceMappingURL=Twitter-BLusCQuD.js.map
