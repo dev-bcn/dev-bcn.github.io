@@ -34,7 +34,7 @@ describe("Year Path Isolation - Route Configuration", () => {
 
       // Check for duplicates (excluding dynamic routes like :id)
       const staticPaths = paths.filter((p) => !p.includes(":"));
-      const uniquePaths = new Set(staticPaths);
+      const _uniquePaths = new Set(staticPaths);
 
       // Some paths might be intentionally shared (like shared routes)
       // but year-specific paths should be unique
