@@ -1,20 +1,19 @@
 import type { FC } from "react";
 
-import { Color } from "@styles/colors";
+import TrackInformation from "@components/common/TrackInformation";
 
+import "@styles/theme.css";
+import "primereact/resources/themes/lara-light-indigo/theme.css";
 import { SelectButton } from "primereact/selectbutton";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import TrackInformation from "@components/common/TrackInformation";
 import TitleSection from "@components/SectionTitle/TitleSection";
 import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
 import conferenceData from "@data/2025.json";
 import { useFetchTalks } from "@hooks/useFetchTalks";
-
-import "primereact/resources/themes/lara-light-indigo/theme.css";
-import "@styles/theme.css";
 import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
+import { Color } from "@styles/colors";
 
 import {
   StyledMarginBottom,
@@ -73,11 +72,11 @@ const Talks: FC<React.PropsWithChildren<TalksProps>> = ({
     { name: "All Tracks", code: undefined },
     ...(data !== undefined
       ? data
-          .flatMap((group) => ({
-            code: group?.groupId?.toString(),
-            name: removeParenthesesContent(group.groupName),
-          }))
-          .sort((a, b) => a.name.localeCompare(b.name))
+        .flatMap((group) => ({
+          code: group?.groupId?.toString(),
+          name: removeParenthesesContent(group.groupName),
+        }))
+        .sort((a, b) => a.name.localeCompare(b.name))
       : []),
   ];
 

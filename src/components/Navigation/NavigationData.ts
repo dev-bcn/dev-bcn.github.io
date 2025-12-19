@@ -1,10 +1,10 @@
 import {
+  ROUTE_2026_CFP,
   ROUTE_2026_CODE_OF_CONDUCT,
   ROUTE_2026_HOME,
   ROUTE_2026_SPONSORSHIP,
   ROUTE_2026_TRAVEL,
   ROUTE_ABOUT_US,
-  ROUTE_2026_CFP,
 } from "@constants/routes";
 
 export interface NavigationItem {

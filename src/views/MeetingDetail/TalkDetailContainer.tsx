@@ -22,6 +22,7 @@ const StyledContainer = styled.div`
 `;
 const TalkDetailContainer: FC<React.PropsWithChildren<unknown>> = () => {
   const { id } = useParams<{ id: string }>();
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const { isLoading, error, data } = useFetchTalksById(id!);
   const { data: speakerData } = useFetchSpeakers();
 

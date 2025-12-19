@@ -7,6 +7,8 @@ import {
   ROUTE_SPEAKER_DETAIL,
 } from "@constants/routes";
 
+
+
 import {
   StyledImageAnimation,
   StyledSpeakerCard,
@@ -24,6 +26,8 @@ type SpeakerCardProps = {
   year: string;
 };
 
+
+// eslint-disable-next-line react-refresh/only-export-components
 export const getSpeakerRoute = (year: string): string => {
   if (year === "2023") {
     return ROUTE_2023_SPEAKER_DETAIL;

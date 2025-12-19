@@ -1,15 +1,16 @@
-import { Column } from "primereact/column";
-import { DataTable } from "primereact/datatable";
-import { Rating } from "primereact/rating";
-import React from "react";
-import { Link } from "react-router";
-import "primereact/resources/primereact.min.css";
-import "primereact/resources/themes/lara-light-blue/theme.css";
-import { FilterMatchMode } from "primereact/api";
-import { InputText } from "primereact/inputtext";
-
 import { ROUTE_TALK_DETAIL } from "@constants/routes";
 import data from "@data/2024.json";
+
+import { FilterMatchMode } from "primereact/api";
+import { Column } from "primereact/column";
+import { DataTable } from "primereact/datatable";
+import { InputText } from "primereact/inputtext";
+import { Rating } from "primereact/rating";
+import "primereact/resources/primereact.min.css";
+import "primereact/resources/themes/lara-light-blue/theme.css";
+import React from "react";
+import { Link } from "react-router";
+
 import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
 import { Color } from "@styles/colors";
 

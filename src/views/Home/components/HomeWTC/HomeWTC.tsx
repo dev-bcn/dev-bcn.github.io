@@ -1,11 +1,12 @@
+
 import { motion } from "motion/react";
 import React from "react";
 import Countdown from "react-countdown";
 import { Link } from "react-router";
 
 import {
-  TimeCountDown,
   CountDownCompleted,
+  TimeCountDown,
 } from "@components/common/countdown";
 import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
 import edition from "@data/2026.json";

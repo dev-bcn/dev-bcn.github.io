@@ -1,7 +1,8 @@
-import React, { Suspense } from "react";
+import { Suspense } from "react";
 import { Route } from "react-router";
 
 import { Loading } from "@components/Loading/Loading";
+
 
 import type { FC, ReactElement } from "react";
 

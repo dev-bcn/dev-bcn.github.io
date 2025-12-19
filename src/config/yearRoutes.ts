@@ -1,11 +1,12 @@
 import * as LazyComponents from "../utils/lazyComponents";
 
-import type { LazyExoticComponent, ComponentType } from "react";
+import type { ComponentType, LazyExoticComponent } from "react";
 
 /**
  * Route configuration for a specific year
  * Maps route names to their lazy-loaded components
  */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export interface YearRouteComponents {
   home: LazyExoticComponent<ComponentType<any>>;
   schedule?: LazyExoticComponent<ComponentType<any>>;
@@ -24,6 +25,7 @@ export interface YearRouteComponents {
   sponsorship?: LazyExoticComponent<ComponentType<any>>;
   codeOfConduct?: LazyExoticComponent<ComponentType<any>>;
 }
+/* eslint-enable @typescript-eslint/no-explicit-any */
 
 /**
  * Year-specific route configurations

@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import type { ISpeaker } from "@/types/speakers";
 import type { RenderOptions, RenderResult } from "@testing-library/react";
 
+// eslint-disable-next-line react-refresh/only-export-components
 export * from "@testing-library/react";
 
 export const createMockSpeaker = (overrides = {}): ISpeaker => ({
