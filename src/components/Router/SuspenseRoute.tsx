@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import { Route, RouteProps } from "react-router";
+import { Route } from "react-router";
 
 import { Loading } from "@components/Loading/Loading";
 

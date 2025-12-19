@@ -5,7 +5,6 @@ import { gaEventTracker } from "../../../../components/analytics/Analytics";
 import { formatDateWithOrdinal } from "../../../../components/date/dateUtils";
 import Button from "../../../../components/UI/Button";
 import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
-import data from "../../../../data/2025.json";
 import { useUrlBuilder } from "../../../../services/urlBuilder";
 
 import type { FC } from "react";
