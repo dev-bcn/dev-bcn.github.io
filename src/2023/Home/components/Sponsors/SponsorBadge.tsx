@@ -4,7 +4,7 @@ import {
   leftVariants,
   rightVariants,
   StyledSponsorBadgeLeft,
-} from "./Sponsors.style";
+} from "@views/Home/components/Sponsors/Sponsors.style";
 
 import type { FC } from "react";
 
