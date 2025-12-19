@@ -21,45 +21,47 @@ interface StyledSubtitleProps {
 }
 
 export const StyledHomeImage = styled.div`
+  position: relative;
   padding: 70px 0 40px;
-  background-image:
-    linear-gradient(
+  background-image: url(${images[Math.floor(Math.random() * images.length)]});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(
       -45deg,
       ${Color.LIGHT_BLUE}70,
       ${Color.MAGENTA}70,
       ${Color.DARK_BLUE}70,
       ${Color.GREEN}70
-    ),
-    url(${images[Math.floor(Math.random() * images.length)]});
-  background-size:
-    400% 400%,
-    cover;
-  background-position:
-    0 50%,
-    center;
-  background-repeat: no-repeat;
-  animation: gradient 15s ease infinite;
+    );
+    background-size: 400% 400%;
+    background-position: 0 50%;
+    animation: gradient 15s ease infinite;
+  }
 
   @keyframes gradient {
     0% {
-      background-position:
-        0 50%,
-        center;
+      background-position: 0 50%;
     }
     50% {
-      background-position:
-        100% 50%,
-        center;
+      background-position: 100% 50%;
     }
     100% {
-      background-position:
-        0 50%,
-        center;
+      background-position: 0 50%;
     }
   }
 `;
 export const StyleHomeContainer = styled.div`
   position: relative;
+  z-index: 1;
   width: 100%;
   height: 100%;
   display: flex;
