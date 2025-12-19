@@ -40,11 +40,13 @@ const SessionFeedback: FC<React.PropsWithChildren<unknown>> = () => {
     );
 
   const [globalFilterValue, setGlobalFilterValue] = React.useState("");
-  const [filters, setFilters] = React.useState({
+  const [filters, setFilters] = React.useState<{
+    global: { value: string | null; matchMode: FilterMatchMode };
+  }>({
     global: { value: null, matchMode: FilterMatchMode.CONTAINS },
   });
 
-  const onGlobalFilterChange = (e: { target: { value: any } }) => {
+  const onGlobalFilterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     const _filters = { ...filters };
 
