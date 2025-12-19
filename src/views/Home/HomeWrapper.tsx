@@ -1,13 +1,11 @@
-import { BIG_BREAKPOINT } from "@constants/BreakPoints";
 
-import type { FC } from "react";
 
 import React from "react";
-
 import { useLocation } from "react-router";
 import { styled } from "styled-components";
 
 import SpeakersCarousel from "@components/Swiper/SpeakersCarousel";
+import { BIG_BREAKPOINT } from "@constants/BreakPoints";
 import { ROUTE_2026_SPEAKERS } from "@constants/routes";
 import conferenceData from "@data/2026.json";
 import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
@@ -15,6 +13,8 @@ import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
 import Faqs from "./components/Faqs/Faqs";
 import HomeWTC from "./components/HomeWTC/HomeWTC";
 import Sponsors from "./components/Sponsors/Sponsors";
+
+import type { FC } from "react";
 
 const StyledContainer = styled.div`
   padding-bottom: 10rem;
