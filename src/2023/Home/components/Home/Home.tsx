@@ -21,8 +21,10 @@ import { styled } from "styled-components";
 import { Color } from "@styles/colors";
 import InfoButtons from "../InfoButtons/InfoButtons";
 import MultimediaInfoButtons from "../MultimediaInfoButtons/MultimediaInfoButtons";
-import CountDownCompleted from "@views/Home/components/Home/components/CountDownCompleted";
-import TimeCountDown from "@views/Home/components/Home/components/TimeCountdown";
+import {
+  TimeCountDown,
+  CountDownCompleted,
+} from "@components/common/countdown";
 import { BIG_BREAKPOINT, LARGE_BREAKPOINT } from "@constants/BreakPoints";
 
 const StyledLogo = styled.img`

@@ -22,23 +22,39 @@ interface StyledSubtitleProps {
 
 export const StyledHomeImage = styled.div`
   padding: 70px 0 40px;
-  background-image: 
-    linear-gradient(-45deg, ${Color.LIGHT_BLUE}70, ${Color.MAGENTA}70, ${Color.DARK_BLUE}70, ${Color.GREEN}70),
+  background-image:
+    linear-gradient(
+      -45deg,
+      ${Color.LIGHT_BLUE}70,
+      ${Color.MAGENTA}70,
+      ${Color.DARK_BLUE}70,
+      ${Color.GREEN}70
+    ),
     url(${images[Math.floor(Math.random() * images.length)]});
-  background-size: 400% 400%, cover;
-  background-position: 0 50%, center;
+  background-size:
+    400% 400%,
+    cover;
+  background-position:
+    0 50%,
+    center;
   background-repeat: no-repeat;
   animation: gradient 15s ease infinite;
 
   @keyframes gradient {
     0% {
-      background-position: 0 50%, center;
+      background-position:
+        0 50%,
+        center;
     }
     50% {
-      background-position: 100% 50%, center;
+      background-position:
+        100% 50%,
+        center;
     }
     100% {
-      background-position: 0 50%, center;
+      background-position:
+        0 50%,
+        center;
     }
   }
 `;
@@ -70,12 +86,13 @@ export const StyledTitle = styled(motion.h1)`
   font-family: "Square 721 Regular", sans-serif;
 `;
 
-export const StyledSubtitle = styled(motion.h2) <StyledSubtitleProps>`
+export const StyledSubtitle = styled(motion.h2)<StyledSubtitleProps>`
   color: ${(props) => props.color ?? Color.WHITE};
   font-family: "DejaVu Sans ExtraLight", sans-serif;
   font-size: 1.25rem;
   font-weight: ${(props) => props.fontWeight ?? 400};
-  text-shadow: ${(props) => props.shadow ? '2px 2px 2px rgba(0, 0, 0, 0.5)' : 'none'};
+  text-shadow: ${(props) =>
+    props.shadow ? "2px 2px 2px rgba(0, 0, 0, 0.5)" : "none"};
 
   padding: 0.25rem;
 

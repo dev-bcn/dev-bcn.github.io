@@ -1,8 +1,10 @@
 import Countdown from "react-countdown";
 import React, { FC } from "react";
 import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
-import TimeCountDown from "./components/TimeCountdown";
-import { useWindowSize } from "react-use";
+import {
+  TimeCountDown,
+  CountDownCompleted,
+} from "@components/common/countdown";
 import { useDateInterval } from "@hooks/useDateInterval";
 // @ts-expect-error some quirky import
 import { motion } from "motion/react";
@@ -18,13 +20,11 @@ import {
 import ActionButtons from "../ActionButtons/ActionButtons";
 import { Color } from "@styles/colors";
 import InfoButtons from "../InfoButtons/InfoButtons";
-import { formatDateRange } from "./DateUtil";
+import { formatDateRange } from "@utils/dateUtils";
 import { Link } from "react-router";
 import edition from "@data/2026.json";
-import CountDownCompleted from "./components/CountDownCompleted";
 
 const HomeWTC: FC<React.PropsWithChildren<unknown>> = () => {
-  useWindowSize();
   const { isTicketsDisabled, isSponsorDisabled, isCfpDisabled } =
     useDateInterval(new Date(), edition);
 
@@ -39,7 +39,8 @@ const HomeWTC: FC<React.PropsWithChildren<unknown>> = () => {
           >
             <StyledDevBcnLogo src="images/logo.png" alt="DevBcn logo" />
           </StyledLogoDiv>
-          <StyledTitleContainer color={Color.TRANSPARENT}
+          <StyledTitleContainer
+            color={Color.TRANSPARENT}
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
@@ -51,7 +52,8 @@ const HomeWTC: FC<React.PropsWithChildren<unknown>> = () => {
             >
               The Barcelona Developers Conference {edition?.edition}
             </StyledTitle>
-            <StyledSubtitle fontWeight={600}
+            <StyledSubtitle
+              fontWeight={600}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.8 }}
@@ -59,7 +61,8 @@ const HomeWTC: FC<React.PropsWithChildren<unknown>> = () => {
               {edition?.trackNumber} tracks with the following topics: <br />
               {edition?.tracks}
             </StyledSubtitle>
-            <StyledSubtitle shadow={true}
+            <StyledSubtitle
+              shadow={true}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 1 }}

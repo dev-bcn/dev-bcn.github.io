@@ -18,7 +18,7 @@ import {
   StyledTopSlash,
   StyleHomeContainer,
 } from "./Style.Home";
-import { formatDateRange } from "./DateUtil";
+import { formatDateRange } from "@utils/dateUtils";
 import { Link } from "react-router";
 import data from "@data/2024.json";
 import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
@@ -27,8 +27,10 @@ import { Color } from "@styles/colors";
 import ActionButtons from "@views/Home/components/ActionButtons/ActionButtons";
 import InfoButtons from "@views/Home/components/InfoButtons/InfoButtons";
 import { BIGGER_BREAKPOINT } from "@constants/BreakPoints";
-import CountDownCompleted from "@views/Home/components/Home/components/CountDownCompleted";
-import TimeCountDown from "@views/Home/components/Home/components/TimeCountdown";
+import {
+  TimeCountDown,
+  CountDownCompleted,
+} from "@components/common/countdown";
 
 const Home: FC<React.PropsWithChildren<unknown>> = () => {
   const { width } = useWindowSize();
