@@ -1,10 +1,9 @@
+// @ts-expect-error some quirky import
 import { motion } from "motion/react";
 import { styled } from "styled-components";
 
 import { BIG_BREAKPOINT, BIGGER_BREAKPOINT } from "@constants/BreakPoints";
 import { Color } from "@styles/colors";
-
-// @ts-expect-error some quirky import
 
 // By © Alice Wiegand / CC-BY-SA-3.0 (via Wikimedia Commons), CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=30463612
 // By © Felix König / CC-BY-3.0 (via Wikimedia Commons), CC BY-SA 3.0, https://commons.wikimedia.org/wiki/File:World_Trade_Center_Barcelona_2013_1.jpg
@@ -54,6 +53,23 @@ export const StyledHomeImage = styled.div`
     animation: gradient 15s ease infinite;
   }
 
+  /* Static dark vignette overlay on top of animated gradient */
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(2px);
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.6)
+    );
+    pointer-events: none;
+  }
+
   @keyframes gradient {
     0% {
       background-position: 0 50%;
@@ -82,10 +98,16 @@ export const StyledTitleContainer = styled(motion.div)`
   border-radius: 10px;
   width: 70%;
   margin-bottom: 1rem;
-  padding: 10px 5px;
+  padding: 5px 20px;
 
   @media (max-width: ${BIG_BREAKPOINT}px) {
     width: 80%;
+    padding: 5px 10px;
+  }
+
+  @media (max-width: 480px) {
+    width: 90%;
+    padding: 5px 8px;
   }
 `;
 
@@ -93,21 +115,54 @@ export const StyledTitle = styled(motion.h1)`
   padding: 0.5rem 1rem;
   color: ${Color.WHITE};
   font-family: "Square 721 Regular", sans-serif;
+  font-weight: 800;
+  font-size: 3rem;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.9),
+    0 4px 8px rgba(0, 0, 0, 0.7),
+    0 8px 16px rgba(0, 0, 0, 0.5);
+
+  @media (max-width: ${BIG_BREAKPOINT}px) {
+    font-size: 2rem;
+    letter-spacing: 0.02em;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const StyledSubtitle = styled(motion.h2) <StyledSubtitleProps>`
   color: ${(props) => props.color ?? Color.WHITE};
   font-family: "DejaVu Sans ExtraLight", sans-serif;
-  font-size: 1.25rem;
-  font-weight: ${(props) => props.fontWeight ?? 400};
+  font-size: 1.5rem;
+  font-weight: ${(props) => props.fontWeight ?? 600};
+  letter-spacing: 0.02em;
   text-shadow: ${(props) =>
-    props.shadow ? "2px 2px 2px rgba(0, 0, 0, 0.5)" : "none"};
+    props.shadow
+      ? `0 1px 2px rgba(0, 0, 0, 0.9),
+         0 2px 4px rgba(0, 0, 0, 0.6),
+         0 4px 8px rgba(0, 0, 0, 0.4)`
+      : `0 1px 2px rgba(0, 0, 0, 0.8),
+         0 2px 4px rgba(0, 0, 0, 0.5)`};
 
-  padding: 0.25rem;
 
   a {
     text-decoration: none;
     color: ${Color.LIGHT_BLUE};
+    text-shadow: 
+      0 1px 2px rgba(0, 0, 0, 0.9),
+      0 2px 4px rgba(0, 0, 0, 0.6);
+  }
+
+  @media (max-width: ${BIG_BREAKPOINT}px) {
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
   }
 `;
 
@@ -166,7 +221,7 @@ export const StyledBlueSlash = styled(motion.p)`
   height: 100%;
 `;
 export const StyledDevBcnLogo = styled.img`
-  margin: 20px;
+  margin-top: 20px;
   height: 13rem;
   aspect-ratio: 800/327;
   transition: height 0.2s ease-in-out;
@@ -214,15 +269,17 @@ export const StyledPlusSign = styled.span`
   }
 `;
 export const StyledLogoDiv = styled(motion.div)`
-  padding-top: 4rem;
-  padding-bottom: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   display: flex;
 
   @media (max-width: ${BIGGER_BREAKPOINT}px) {
+    padding-top: 2rem;
     flex-direction: column;
   }
 
   @media (max-width: ${BIG_BREAKPOINT}px) {
+    padding-top: 1rem;
     flex-direction: column;
   }
 `;
