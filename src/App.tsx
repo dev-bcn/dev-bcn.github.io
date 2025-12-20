@@ -4,10 +4,12 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import { Link, Route, Routes } from "react-router";
 import { styled } from "styled-components";
 
+import { ResourcePreloader } from "@components/common/ResourcePreloader";
 import { Footer } from "@components/Footer/Footer";
 import { Loading } from "@components/Loading/Loading";
 import { Navigation } from "@components/Navigation/Navigation";
 import { ScrollToTop } from "@components/ScrollToTop/ScrollToTop";
+import { DEFAULT_PRELOAD_CONFIG } from "@config/preloadConfig";
 import { getAllRoutes } from "@config/routeConfig";
 import { ROUTE_COOKIES } from "@constants/routes";
 import { Color } from "@styles/colors";
@@ -52,6 +54,9 @@ const App: FC<React.PropsWithChildren<unknown>> = () => {
 
   return (
     <StyledAppWrapper className="AppWrapperAll">
+      {/* Preload critical resources for better performance */}
+      <ResourcePreloader {...DEFAULT_PRELOAD_CONFIG} />
+
       <QueryClientProvider client={queryClient}>
         <ScrollToTop />
         <Navigation />
