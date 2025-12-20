@@ -2,11 +2,12 @@ import React from "react";
 import { useLocation } from "react-router";
 import { styled } from "styled-components";
 
+import { PageMetadata } from "@components/common/PageMetadata";
 import SpeakersCarousel from "@components/Swiper/SpeakersCarousel";
+import { getPageMetadata } from "@config/metadata";
 import { BIG_BREAKPOINT } from "@constants/BreakPoints";
 import { ROUTE_2025_SPEAKERS } from "@constants/routes";
 import conferenceData from "@data/2025.json";
-import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
 
 import Faqs from "./components/Faqs/Faqs";
 import Home from "./components/Home/Home";
@@ -32,20 +33,22 @@ export const HomeWrapper2025: FC<React.PropsWithChildren<unknown>> = () => {
     }
   }, [hash]);
 
-  useDocumentTitleUpdater("Home", conferenceData?.edition ?? "2025");
-
   return (
-    <StyledContainer id="home-wrapper">
-      <Home />
-      {conferenceData?.carrousel.enabled && (
-        <SpeakersCarousel
-          sessionizeUrl={"default"}
-          speakersLink={ROUTE_2025_SPEAKERS}
-          isEnabled={conferenceData.carrousel.enabled}
-        />
-      )}
-      <Sponsors />
-      <Faqs />
-    </StyledContainer>
+    <>
+      <PageMetadata {...getPageMetadata("home2025")} />
+
+      <StyledContainer id="home-wrapper">
+        <Home />
+        {conferenceData?.carrousel.enabled && (
+          <SpeakersCarousel
+            sessionizeUrl={"default"}
+            speakersLink={ROUTE_2025_SPEAKERS}
+            isEnabled={conferenceData.carrousel.enabled}
+          />
+        )}
+        <Sponsors />
+        <Faqs />
+      </StyledContainer>
+    </>
   );
 };
