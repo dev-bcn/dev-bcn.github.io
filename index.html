@@ -1,116 +1,95 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <title>
-      DevBcn 2025 - Barcelona Developers Conference in Spain — July 08-10
-    </title>
-    <link href="https://www.google-analytics.com" rel="preconnect" />
-    <link href="https://www.devbcn.com" rel="canonical" />
-    <link as="image" href="/images/logo.png" rel="preload" />
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-0BG1LNPT11"
-    ></script>
-    <link href="/favicon.ico" rel="icon" />
-    <meta content="#002454" name="theme-color" />
-    <meta content="index,follow" lang="en" name="robots" />
-    <meta
-      content="DevBcn - Barcelona Developers Conference - July 8th - 10th 2025"
-      name="description"
-    />
-    <meta
-      content="conference, barcelona, frontend, backend, java, agile, kubernetes, agile, leadership, AI, ML, machine learning, artificial intelligence, cloud, security, frontend development, backend development, jvm, kotlin, DevOps"
-      name="keywords"
-    />
-    <!-- start: Facebook Open Graph -->
-    <meta
-      content="DevBcn 2025 - Barcelona Developers Conference in Spain — 8-10 — July"
-      property="og:title"
-    />
-    <meta
-      content="Home • DevBcn 2025. The Barcelona Developer Conference in Spain"
-      property="og:description"
-    />
-    <meta content="website" property="og:type" />
-    <meta content="en_GB" property="og:locale" />
-    <meta content="devbcn.com" property="og:site_name" />
-    <meta
-      content="https://www.devbcn.com/images/devbcn25.png"
-      property="og:image"
-    />
-    <meta content="https://www.devbcn.com" property="og:url" />
-    <!-- end: Facebook Open Graph -->
-    <!-- start: Twitter cards -->
-    <meta content="summary_large_image" name="twitter:card" />
-    <meta content="https://www.devbcn.com/" property="twitter:domain" />
-    <meta content="https://www.devbcn.com/" property="twitter:url" />
-    <meta content="@dev_bcn" name="twitter:site" />
-    <meta content="@dev_bcn" name="twitter:creator" />
-    <meta
-      content="https://www.devbcn.com/images/devbcn25.png"
-      name="twitter:image"
-    />
-    <meta
-      content="DevBcn - Barcelona Developers Conference in Spain"
-      name="twitter:image:alt"
-    />
-    <!-- for Slack -->
-    <meta content="Date" name="twitter:label1" />
-    <meta content="July 8th-10th, 2025" name="twitter:data1" />
-    <meta content="Location" name="twitter:label2" />
-    <meta content="La Farga, Barcelona" name="twitter:data2" />
-    <!-- end: Twitter cards -->
-    <link href="/apple-touch-icon.png" rel="apple-touch-icon" />
-    <!--
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>
+    DevBcn 2025 - Barcelona Developers Conference in Spain — July 08-10
+  </title>
+  <link href="https://www.google-analytics.com" rel="preconnect" />
+  <link href="https://www.devbcn.com" rel="canonical" />
+  <link as="image" href="/images/logo.webp" rel="preload" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0BG1LNPT11"></script>
+  <link href="/favicon.ico" rel="icon" />
+  <meta content="#002454" name="theme-color" />
+  <meta content="index,follow" lang="en" name="robots" />
+  <meta content="DevBcn - Barcelona Developers Conference - July 8th - 10th 2025" name="description" />
+  <meta
+    content="conference, barcelona, frontend, backend, java, agile, kubernetes, agile, leadership, AI, ML, machine learning, artificial intelligence, cloud, security, frontend development, backend development, jvm, kotlin, DevOps"
+    name="keywords" />
+  <!-- start: Facebook Open Graph -->
+  <meta content="DevBcn 2025 - Barcelona Developers Conference in Spain — 8-10 — July" property="og:title" />
+  <meta content="Home • DevBcn 2025. The Barcelona Developer Conference in Spain" property="og:description" />
+  <meta content="website" property="og:type" />
+  <meta content="en_GB" property="og:locale" />
+  <meta content="devbcn.com" property="og:site_name" />
+  <meta content="https://www.devbcn.com/images/devbcn25.png" property="og:image" />
+  <meta content="https://www.devbcn.com" property="og:url" />
+  <!-- end: Facebook Open Graph -->
+  <!-- start: Twitter cards -->
+  <meta content="summary_large_image" name="twitter:card" />
+  <meta content="https://www.devbcn.com/" property="twitter:domain" />
+  <meta content="https://www.devbcn.com/" property="twitter:url" />
+  <meta content="@dev_bcn" name="twitter:site" />
+  <meta content="@dev_bcn" name="twitter:creator" />
+  <meta content="https://www.devbcn.com/images/devbcn25.png" name="twitter:image" />
+  <meta content="DevBcn - Barcelona Developers Conference in Spain" name="twitter:image:alt" />
+  <!-- for Slack -->
+  <meta content="Date" name="twitter:label1" />
+  <meta content="July 8th-10th, 2025" name="twitter:data1" />
+  <meta content="Location" name="twitter:label2" />
+  <meta content="La Farga, Barcelona" name="twitter:data2" />
+  <!-- end: Twitter cards -->
+  <link href="/apple-touch-icon.png" rel="apple-touch-icon" />
+  <!--
     manifest.json provides metadata used when your web app is installed on a
     user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
   -->
-    <link href="/manifest.json" rel="manifest" />
-    <script type="text/javascript">
-      // Single Page Apps for GitHub Pages
-      // MIT License
-      // https://github.com/rafgraph/spa-github-pages
-      // This script checks to see if a redirect is present in the query string,
-      // converts it back into the correct url and adds it to the
-      // browser's history using window.history.replaceState(...),
-      // which won't cause the browser to attempt to load the new url.
-      // When the single page app is loaded further down in this file,
-      // the correct url will be waiting in the browser's history for
-      // the single page app to route accordingly.
-      (function (l) {
-        if (l.search[1] === "/") {
-          const decoded = l.search
-            .slice(1)
-            .split("&")
-            .map(function (s) {
-              return s.replace(/~and~/g, "&");
-            })
-            .join("?");
+  <link href="/manifest.json" rel="manifest" />
+  <script type="text/javascript">
+    // Single Page Apps for GitHub Pages
+    // MIT License
+    // https://github.com/rafgraph/spa-github-pages
+    // This script checks to see if a redirect is present in the query string,
+    // converts it back into the correct url and adds it to the
+    // browser's history using window.history.replaceState(...),
+    // which won't cause the browser to attempt to load the new url.
+    // When the single page app is loaded further down in this file,
+    // the correct url will be waiting in the browser's history for
+    // the single page app to route accordingly.
+    (function (l) {
+      if (l.search[1] === "/") {
+        const decoded = l.search
+          .slice(1)
+          .split("&")
+          .map(function (s) {
+            return s.replace(/~and~/g, "&");
+          })
+          .join("?");
 
-          window.history.replaceState(
-            null,
-            null,
-            l.pathname.slice(0, -1) + decoded + l.hash,
-          );
-        }
-      })(window.location);
-    </script>
-
-    <script>
-      window.dataLayer = window.dataLayer || [];
-
-      function gtag() {
-        dataLayer.push(arguments);
+        window.history.replaceState(
+          null,
+          null,
+          l.pathname.slice(0, -1) + decoded + l.hash,
+        );
       }
+    })(window.location);
+  </script>
 
-      gtag("js", new Date());
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-      gtag("config", "G-0BG1LNPT11");
-    </script>
-    <script type="application/ld+json">
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag("js", new Date());
+
+    gtag("config", "G-0BG1LNPT11");
+  </script>
+  <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Event",
@@ -133,7 +112,7 @@
         },
         "image": [
           "https://www.devbcn.com/images/devbcn25.png",
-          "https://www.devbcn.com/images/2023/FaqsImage0.png"
+          "https://www.devbcn.com/images/2023/FaqsImage0.webp"
         ],
         "performers": [],
         "description": "Multidisciplinary conference made for Developers and by Developers, to learn and share on the different modern software technologies used across the companies",
@@ -164,427 +143,422 @@
         }
       }
     </script>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <script type="text/javascript">
-      const _linkedin_partner_id = "8347945";
-      window._linkedin_data_partner_ids =
-        window._linkedin_data_partner_ids || [];
-      window._linkedin_data_partner_ids.push(_linkedin_partner_id);
-    </script>
-    <script type="text/javascript">
-      (function (l) {
-        if (!l) {
-          window.lintrk = function (a, b) {
-            window.lintrk.q.push([a, b]);
-          };
-          window.lintrk.q = [];
-        }
-        const s = document.getElementsByTagName("script")[0];
-        const b = document.createElement("script");
-        b.type = "text/javascript";
-        b.async = true;
-        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
-        s.parentNode.insertBefore(b, s);
-      })(window.lintrk);
-    </script>
-    <noscript
-      ><img
-        height="1"
-        width="1"
-        style="display: none"
-        alt=""
-        src="https://px.ads.linkedin.com/collect/?pid=8347945&fmt=gif"
-      />
-    </noscript>
-    <div id="root"></div>
-    <script type="module" src="/src/index.tsx"></script>
-    <script>
-      //<![CDATA[
-      "use strict";
+</head>
 
-      function _toConsumableArray(n) {
-        if (Array.isArray(n)) {
-          for (var t = 0, i = Array(n.length); t < n.length; t++) i[t] = n[t];
-          return i;
-        }
-        return Array.from(n);
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <script type="text/javascript">
+    const _linkedin_partner_id = "8347945";
+    window._linkedin_data_partner_ids =
+      window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+  </script>
+  <script type="text/javascript">
+    (function (l) {
+      if (!l) {
+        window.lintrk = function (a, b) {
+          window.lintrk.q.push([a, b]);
+        };
+        window.lintrk.q = [];
       }
+      const s = document.getElementsByTagName("script")[0];
+      const b = document.createElement("script");
+      b.type = "text/javascript";
+      b.async = true;
+      b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+      s.parentNode.insertBefore(b, s);
+    })(window.lintrk);
+  </script>
+  <noscript><img height="1" width="1" style="display: none" alt=""
+      src="https://px.ads.linkedin.com/collect/?pid=8347945&fmt=gif" />
+  </noscript>
+  <div id="root"></div>
+  <script type="module" src="/src/index.tsx"></script>
+  <script>
+    //<![CDATA[
+    "use strict";
 
-      // Sessionize embed code
-      function insertFeedbackLink(modalNode, sessionId) {
-        const sessionDiv = modalNode.querySelector(".sz-session");
-        if (!sessionDiv) return;
-
-        const feedbackLink = document.createElement("a");
-        feedbackLink.href =
-          "https://openfeedback.io/TG4hBcL7iPtV2LecVdHu/0/" + sessionId;
-        feedbackLink.target = "_blank";
-        feedbackLink.textContent = "Give Feedback on OpenFeedback";
-        feedbackLink.style.display = "block";
-        feedbackLink.style.margin = "1em 0";
-        feedbackLink.style.color = "white";
-
-        const desc = sessionDiv.querySelector(".sz-session__description");
-        if (desc && desc.parentNode) {
-          desc.parentNode.insertBefore(feedbackLink, desc.nextSibling);
-        } else {
-          sessionDiv.appendChild(feedbackLink);
-        }
+    function _toConsumableArray(n) {
+      if (Array.isArray(n)) {
+        for (var t = 0, i = Array(n.length); t < n.length; t++) i[t] = n[t];
+        return i;
       }
+      return Array.from(n);
+    }
 
-      let _slicedToArray = (function () {
-          function n(n, t) {
-            let r = [],
-              u = !0,
-              f = !1,
-              e = undefined,
-              i,
-              o;
-            try {
-              for (i = n[Symbol.iterator](); !(u = (o = i.next()).done); u = !0)
-                if ((r.push(o.value), t && r.length === t)) break;
-            } catch (s) {
-              f = !0;
-              e = s;
-            } finally {
-              try {
-                !u && i["return"] && i["return"]();
-              } finally {
-                if (f) throw e;
-              }
-            }
-            return r;
+    // Sessionize embed code
+    function insertFeedbackLink(modalNode, sessionId) {
+      const sessionDiv = modalNode.querySelector(".sz-session");
+      if (!sessionDiv) return;
+
+      const feedbackLink = document.createElement("a");
+      feedbackLink.href =
+        "https://openfeedback.io/TG4hBcL7iPtV2LecVdHu/0/" + sessionId;
+      feedbackLink.target = "_blank";
+      feedbackLink.textContent = "Give Feedback on OpenFeedback";
+      feedbackLink.style.display = "block";
+      feedbackLink.style.margin = "1em 0";
+      feedbackLink.style.color = "white";
+
+      const desc = sessionDiv.querySelector(".sz-session__description");
+      if (desc && desc.parentNode) {
+        desc.parentNode.insertBefore(feedbackLink, desc.nextSibling);
+      } else {
+        sessionDiv.appendChild(feedbackLink);
+      }
+    }
+
+    let _slicedToArray = (function () {
+      function n(n, t) {
+        let r = [],
+          u = !0,
+          f = !1,
+          e = undefined,
+          i,
+          o;
+        try {
+          for (i = n[Symbol.iterator](); !(u = (o = i.next()).done); u = !0)
+            if ((r.push(o.value), t && r.length === t)) break;
+        } catch (s) {
+          f = !0;
+          e = s;
+        } finally {
+          try {
+            !u && i["return"] && i["return"]();
+          } finally {
+            if (f) throw e;
           }
+        }
+        return r;
+      }
 
-          return function (t, i) {
-            if (Array.isArray(t)) return t;
-            if (Symbol.iterator in Object(t)) return n(t, i);
-            throw new TypeError(
-              "Invalid attempt to destructure non-iterable instance",
-            );
-          };
-        })(),
-        sessionize;
-      typeof sessionize == "undefined" && (sessionize = {});
-      sessionize.showModal = function (n, t, i) {
-        const sessionType = t;
-        const r = document.getElementById("sz-modal-container"),
-          u = new XMLHttpRequest();
-        return (
-          (r.innerHTML =
-            '<div class="sz-modal-overlay"><div class="sz-spinner"><\/div><\/div>'),
-          r.classList.remove("is-hidden"),
-          (u.onreadystatechange = function () {
-            let t, n;
-            if (this.readyState === 4 && this.status === 200) {
-              for (
-                r.innerHTML = this.responseText,
-                  sessionType === "session" && insertFeedbackLink(r, i),
-                  r.classList.remove("is-hidden"),
-                  t = document.getElementsByClassName(
-                    "sz-modal__close-on-click",
-                  ),
-                  n = 0;
-                n < t.length;
-                n++
-              )
-                t[n].onclick = function () {
-                  document
-                    .getElementById("sz-modal-container")
-                    .classList.add("is-hidden");
-                };
-              sessionize.getLocalTimes();
-              sessionize.manageActive();
-            } else
-              (this.status === 404 || this.status === 500) &&
-                r.classList.add("is-hidden");
-          }),
-          u.open(
-            "POST",
-            "https://sessionize.com/api/v2/" + n + "/" + t + "?id=" + i,
-            !0,
-          ),
-          u.send(),
-          !1
+      return function (t, i) {
+        if (Array.isArray(t)) return t;
+        if (Symbol.iterator in Object(t)) return n(t, i);
+        throw new TypeError(
+          "Invalid attempt to destructure non-iterable instance",
         );
       };
-      sessionize.initTabs = function () {
-        let i = document.getElementsByClassName("sz-tab-container"),
-          t,
-          r,
-          n;
-        if (i.length > 1) {
-          for (n = 0; n < i.length; n++)
-            i[n].classList.remove("sz-tab-container--active");
-          for (
-            t = document.getElementsByClassName("sz-tabs__item"),
-              t.length > 0 &&
-                ((r = document.getElementsByClassName(
-                  "sz-tabs__item--default",
-                )),
-                r.length > 0
-                  ? r[0].classList.add("sz-tabs__item--active")
-                  : t[0].classList.add("sz-tabs__item--active")),
-              sessionize.tabChanged(),
-              n = 0;
-            n < t.length;
-            n++
-          )
-            t[n].children[0].onclick = sessionize.tabChange;
-        }
-      };
-      sessionize.tabChange = function (n) {
-        for (
-          var t, r, u = document.getElementsByClassName("sz-tabs__item"), i = 0;
-          i < u.length;
-          i++
-        )
-          u[i].classList.remove("sz-tabs__item--active");
-        if (((t = undefined), n instanceof Event)) t = n.target.parentElement;
-        else if (n && n.indexOf("#") === 0) {
-          if (
-            ((r = document.querySelector('.sz-tabs__link[href="' + n + '"]')),
-            !r)
-          )
-            return (
-              console.error(
-                "Hash " +
-                  n +
-                  ' is invalid. Run "sessionize.help()" in the console to get the list of valid hashes.',
+    })(),
+      sessionize;
+    typeof sessionize == "undefined" && (sessionize = {});
+    sessionize.showModal = function (n, t, i) {
+      const sessionType = t;
+      const r = document.getElementById("sz-modal-container"),
+        u = new XMLHttpRequest();
+      return (
+        (r.innerHTML =
+          '<div class="sz-modal-overlay"><div class="sz-spinner"><\/div><\/div>'),
+        r.classList.remove("is-hidden"),
+        (u.onreadystatechange = function () {
+          let t, n;
+          if (this.readyState === 4 && this.status === 200) {
+            for (
+              r.innerHTML = this.responseText,
+              sessionType === "session" && insertFeedbackLink(r, i),
+              r.classList.remove("is-hidden"),
+              t = document.getElementsByClassName(
+                "sz-modal__close-on-click",
               ),
-              !1
-            );
-          t = r.parentElement;
-        }
-        return (
-          t.classList.add("sz-tabs__item--active"),
+              n = 0;
+              n < t.length;
+              n++
+            )
+              t[n].onclick = function () {
+                document
+                  .getElementById("sz-modal-container")
+                  .classList.add("is-hidden");
+              };
+            sessionize.getLocalTimes();
+            sessionize.manageActive();
+          } else
+            (this.status === 404 || this.status === 500) &&
+              r.classList.add("is-hidden");
+        }),
+        u.open(
+          "POST",
+          "https://sessionize.com/api/v2/" + n + "/" + t + "?id=" + i,
+          !0,
+        ),
+        u.send(),
+        !1
+      );
+    };
+    sessionize.initTabs = function () {
+      let i = document.getElementsByClassName("sz-tab-container"),
+        t,
+        r,
+        n;
+      if (i.length > 1) {
+        for (n = 0; n < i.length; n++)
+          i[n].classList.remove("sz-tab-container--active");
+        for (
+          t = document.getElementsByClassName("sz-tabs__item"),
+          t.length > 0 &&
+          ((r = document.getElementsByClassName(
+            "sz-tabs__item--default",
+          )),
+            r.length > 0
+              ? r[0].classList.add("sz-tabs__item--active")
+              : t[0].classList.add("sz-tabs__item--active")),
           sessionize.tabChanged(),
-          !1
-        );
-      };
-      sessionize.tabChanged = function () {
-        let i = document.getElementsByClassName("sz-tabs__item--active"),
-          t,
-          n,
-          r;
-        if (i.length > 0) {
-          for (
-            t = document.getElementsByClassName("sz-tab-container"), n = 0;
-            n < t.length;
-            n++
-          )
-            t[n].classList.remove("sz-tab-container--active");
-          r = i[0].children[0].href.split("#")[1];
-          document.getElementById(r).classList.add("sz-tab-container--active");
-        }
-      };
-      sessionize.help = function () {
-        let i;
-        let r;
-        let n = [],
-          e,
-          y,
-          t,
-          d,
-          u,
-          it,
-          f,
-          et;
-        n.push("---------------------");
-        n.push("SESSIONIZE EMBED HELP");
-        n.push("---------------------");
-        n.push("");
-        e = Array.prototype.slice.call(
-          document.querySelectorAll(".sz-tabs__link[href]"),
-        );
-        y = e
-          .map(function (n) {
-            return "  " + n.hash + " = " + n.innerText;
-          })
-          .join("\n");
-        n.push("DEFAULT GROUP SELECTION ON LOAD");
-        n.push("Add hash to URL and preselect a tab:");
-        e.length === 0 ? n.push("  (none available)") : n.push(y);
-        n.push("");
-        n.push("OPEN SESSION/SPEAKER MODAL ON LOAD (if modals are enabled)");
-        n.push("Add hash to URL:");
-        n.push("  #sz-session-<session_id> (e.g. #sz-session-12345)");
-        n.push(
-          "  #sz-speaker-<speaker_guid> (e.g. #sz-speaker-00000000-1111-2222-3333-444444444444)",
-        );
-        n.push("");
-        const st = Array.prototype.slice.call(
-            document.querySelectorAll(".sz-session__room"),
-          ),
-          p = st.map(function (n) {
-            const t = "sz-room--" + n.dataset.roomid,
-              i = document.querySelectorAll(".sz-room." + t).length > 0;
-            return { tag: n.textContent, class: t, hasHeader: i };
-          }),
-          ht = p.filter(function (n) {
-            return n.hasHeader;
-          }),
-          ct = Array.prototype.slice.call(document.querySelectorAll(".sz-tag")),
-          w = ct.map(function (n) {
-            let t = "";
-            return (
-              n.classList.forEach(function (n) {
-                n !== "sz-tag" && n.lastIndexOf("sz-tag_", 0) === 0 && (t = n);
-              }),
-              { tag: n.textContent, class: t }
-            );
-          }),
-          lt = [].concat(
-            _toConsumableArray(
-              new Set([].concat(_toConsumableArray(p), _toConsumableArray(w))),
+          n = 0;
+          n < t.length;
+          n++
+        )
+          t[n].children[0].onclick = sessionize.tabChange;
+      }
+    };
+    sessionize.tabChange = function (n) {
+      for (
+        var t, r, u = document.getElementsByClassName("sz-tabs__item"), i = 0;
+        i < u.length;
+        i++
+      )
+        u[i].classList.remove("sz-tabs__item--active");
+      if (((t = undefined), n instanceof Event)) t = n.target.parentElement;
+      else if (n && n.indexOf("#") === 0) {
+        if (
+          ((r = document.querySelector('.sz-tabs__link[href="' + n + '"]')),
+            !r)
+        )
+          return (
+            console.error(
+              "Hash " +
+              n +
+              ' is invalid. Run "sessionize.help()" in the console to get the list of valid hashes.',
             ),
+            !1
+          );
+        t = r.parentElement;
+      }
+      return (
+        t.classList.add("sz-tabs__item--active"),
+        sessionize.tabChanged(),
+        !1
+      );
+    };
+    sessionize.tabChanged = function () {
+      let i = document.getElementsByClassName("sz-tabs__item--active"),
+        t,
+        n,
+        r;
+      if (i.length > 0) {
+        for (
+          t = document.getElementsByClassName("sz-tab-container"), n = 0;
+          n < t.length;
+          n++
+        )
+          t[n].classList.remove("sz-tab-container--active");
+        r = i[0].children[0].href.split("#")[1];
+        document.getElementById(r).classList.add("sz-tab-container--active");
+      }
+    };
+    sessionize.help = function () {
+      let i;
+      let r;
+      let n = [],
+        e,
+        y,
+        t,
+        d,
+        u,
+        it,
+        f,
+        et;
+      n.push("---------------------");
+      n.push("SESSIONIZE EMBED HELP");
+      n.push("---------------------");
+      n.push("");
+      e = Array.prototype.slice.call(
+        document.querySelectorAll(".sz-tabs__link[href]"),
+      );
+      y = e
+        .map(function (n) {
+          return "  " + n.hash + " = " + n.innerText;
+        })
+        .join("\n");
+      n.push("DEFAULT GROUP SELECTION ON LOAD");
+      n.push("Add hash to URL and preselect a tab:");
+      e.length === 0 ? n.push("  (none available)") : n.push(y);
+      n.push("");
+      n.push("OPEN SESSION/SPEAKER MODAL ON LOAD (if modals are enabled)");
+      n.push("Add hash to URL:");
+      n.push("  #sz-session-<session_id> (e.g. #sz-session-12345)");
+      n.push(
+        "  #sz-speaker-<speaker_guid> (e.g. #sz-speaker-00000000-1111-2222-3333-444444444444)",
+      );
+      n.push("");
+      const st = Array.prototype.slice.call(
+        document.querySelectorAll(".sz-session__room"),
+      ),
+        p = st.map(function (n) {
+          const t = "sz-room--" + n.dataset.roomid,
+            i = document.querySelectorAll(".sz-room." + t).length > 0;
+          return { tag: n.textContent, class: t, hasHeader: i };
+        }),
+        ht = p.filter(function (n) {
+          return n.hasHeader;
+        }),
+        ct = Array.prototype.slice.call(document.querySelectorAll(".sz-tag")),
+        w = ct.map(function (n) {
+          let t = "";
+          return (
+            n.classList.forEach(function (n) {
+              n !== "sz-tag" && n.lastIndexOf("sz-tag_", 0) === 0 && (t = n);
+            }),
+            { tag: n.textContent, class: t }
+          );
+        }),
+        lt = [].concat(
+          _toConsumableArray(
+            new Set([].concat(_toConsumableArray(p), _toConsumableArray(w))),
           ),
-          o = {},
-          s = {},
-          h = {};
-        lt.sort(function (n, t) {
-          return n["class"] > t["class"] ? 1 : -1;
-        }).forEach(function (n) {
-          o[n["class"]] = n.tag;
-        });
-        ht.sort(function (n, t) {
-          return n["class"] > t["class"] ? 1 : -1;
-        }).forEach(function (n) {
-          s[n["class"]] = n.tag;
-        });
-        w.sort(function (n, t) {
-          return n["class"] > t["class"] ? 1 : -1;
-        }).forEach(function (n) {
-          h[n["class"]] = n.tag;
-        });
-        n.push("SESSION STYLING");
-        n.push("Style CSS classes to highlight sessions:");
-        let c = !0,
-          b = !1,
-          k = undefined;
+        ),
+        o = {},
+        s = {},
+        h = {};
+      lt.sort(function (n, t) {
+        return n["class"] > t["class"] ? 1 : -1;
+      }).forEach(function (n) {
+        o[n["class"]] = n.tag;
+      });
+      ht.sort(function (n, t) {
+        return n["class"] > t["class"] ? 1 : -1;
+      }).forEach(function (n) {
+        s[n["class"]] = n.tag;
+      });
+      w.sort(function (n, t) {
+        return n["class"] > t["class"] ? 1 : -1;
+      }).forEach(function (n) {
+        h[n["class"]] = n.tag;
+      });
+      n.push("SESSION STYLING");
+      n.push("Style CSS classes to highlight sessions:");
+      let c = !0,
+        b = !1,
+        k = undefined;
+      try {
+        for (
+          t = Object.entries(o)[Symbol.iterator]();
+          !(c = (d = t.next()).done);
+          c = !0
+        ) {
+          let g = _slicedToArray(d.value, 2);
+          i = g[0];
+          r = g[1];
+          n.push(
+            "  #sessionize .sz-session." +
+            i +
+            " { /* style for " +
+            r +
+            " */ }",
+          );
+          n.push(
+            "  #sessionize .sz-session." +
+            i +
+            " .sz-session__card { /* style for " +
+            r +
+            " for SMART GRID VIEW */ }",
+          );
+        }
+      } catch (l) {
+        b = !0;
+        k = l;
+      } finally {
         try {
-          for (
-            t = Object.entries(o)[Symbol.iterator]();
-            !(c = (d = t.next()).done);
-            c = !0
-          ) {
-            let g = _slicedToArray(d.value, 2);
-            i = g[0];
-            r = g[1];
-            n.push(
-              "  #sessionize .sz-session." +
-                i +
-                " { /* style for " +
-                r +
-                " */ }",
-            );
-            n.push(
-              "  #sessionize .sz-session." +
-                i +
-                " .sz-session__card { /* style for " +
-                r +
-                " for SMART GRID VIEW */ }",
-            );
-          }
-        } catch (l) {
-          b = !0;
-          k = l;
+          !c && t["return"] && t["return"]();
         } finally {
-          try {
-            !c && t["return"] && t["return"]();
-          } finally {
-            if (b) throw k;
-          }
+          if (b) throw k;
         }
-        Object.keys(o).length === 0 && n.push("  (none available)");
-        n.push("");
-        n.push("ROOM HEADER STYLING");
-        n.push("Style CSS classes to highlight room headers:");
-        let a = !0,
-          nt = !1,
-          tt = undefined;
+      }
+      Object.keys(o).length === 0 && n.push("  (none available)");
+      n.push("");
+      n.push("ROOM HEADER STYLING");
+      n.push("Style CSS classes to highlight room headers:");
+      let a = !0,
+        nt = !1,
+        tt = undefined;
+      try {
+        for (
+          u = Object.entries(s)[Symbol.iterator]();
+          !(a = (it = u.next()).done);
+          a = !0
+        ) {
+          const rt = _slicedToArray(it.value, 2);
+          i = rt[0];
+          r = rt[1];
+          n.push(
+            "  #sessionize .sz-cssgrid .sz-room." +
+            i +
+            " { /* style for " +
+            r +
+            " */ }",
+          );
+        }
+      } catch (l) {
+        nt = !0;
+        tt = l;
+      } finally {
         try {
-          for (
-            u = Object.entries(s)[Symbol.iterator]();
-            !(a = (it = u.next()).done);
-            a = !0
-          ) {
-            const rt = _slicedToArray(it.value, 2);
-            i = rt[0];
-            r = rt[1];
-            n.push(
-              "  #sessionize .sz-cssgrid .sz-room." +
-                i +
-                " { /* style for " +
-                r +
-                " */ }",
-            );
-          }
-        } catch (l) {
-          nt = !0;
-          tt = l;
+          !a && u["return"] && u["return"]();
         } finally {
-          try {
-            !a && u["return"] && u["return"]();
-          } finally {
-            if (nt) throw tt;
-          }
+          if (nt) throw tt;
         }
-        Object.keys(s).length === 0 && n.push("  (none available)");
-        n.push("");
-        n.push("CATEGORY STYLING");
-        n.push("Style CSS classes to highlight categories:");
-        let v = !0,
-          ut = !1,
-          ft = undefined;
+      }
+      Object.keys(s).length === 0 && n.push("  (none available)");
+      n.push("");
+      n.push("CATEGORY STYLING");
+      n.push("Style CSS classes to highlight categories:");
+      let v = !0,
+        ut = !1,
+        ft = undefined;
+      try {
+        for (
+          f = Object.entries(h)[Symbol.iterator]();
+          !(v = (et = f.next()).done);
+          v = !0
+        ) {
+          var ot = _slicedToArray(et.value, 2);
+          i = ot[0];
+          r = ot[1];
+          n.push(
+            "  #sessionize .sz-tag." + i + " { /* style for " + r + " */ }",
+          );
+        }
+      } catch (l) {
+        ut = !0;
+        ft = l;
+      } finally {
         try {
-          for (
-            f = Object.entries(h)[Symbol.iterator]();
-            !(v = (et = f.next()).done);
-            v = !0
-          ) {
-            var ot = _slicedToArray(et.value, 2);
-            i = ot[0];
-            r = ot[1];
-            n.push(
-              "  #sessionize .sz-tag." + i + " { /* style for " + r + " */ }",
-            );
-          }
-        } catch (l) {
-          ut = !0;
-          ft = l;
+          !v && f["return"] && f["return"]();
         } finally {
-          try {
-            !v && f["return"] && f["return"]();
-          } finally {
-            if (ut) throw ft;
-          }
+          if (ut) throw ft;
         }
-        Object.keys(h).length === 0 && n.push("  (none available)");
-        n.push("");
-        console.log(n.join("\n"));
-      };
-      sessionize.timeMode = "local";
-      sessionize.getLocalTimes = function () {
-        var u, f, n, t, i, r;
-        try {
-          u = Intl.DateTimeFormat().resolvedOptions().timeZone;
-          sessionize.localCityName = u
-            .split("/")[1]
-            .replace(new RegExp("_", "g"), " ");
-          sessionize.localCityName === "Kiev" &&
-            (sessionize.localCityName = "Kyiv");
-        } catch (e) {
-          sessionize.showLocalTimezone = !1;
-        }
-        ((f = document.getElementsByClassName("sz-timezone")),
+      }
+      Object.keys(h).length === 0 && n.push("  (none available)");
+      n.push("");
+      console.log(n.join("\n"));
+    };
+    sessionize.timeMode = "local";
+    sessionize.getLocalTimes = function () {
+      var u, f, n, t, i, r;
+      try {
+        u = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        sessionize.localCityName = u
+          .split("/")[1]
+          .replace(new RegExp("_", "g"), " ");
+        sessionize.localCityName === "Kiev" &&
+          (sessionize.localCityName = "Kyiv");
+      } catch (e) {
+        sessionize.showLocalTimezone = !1;
+      }
+      ((f = document.getElementsByClassName("sz-timezone")),
         f.length > 1 &&
-          (console.error("Invalid number of .sz-timezone elements"),
+        (console.error("Invalid number of .sz-timezone elements"),
           (sessionize.showLocalTimezone = !1)),
         sessionize.showLocalTimezone) &&
-          ((n = document.querySelectorAll("[data-sztz]")),
+        ((n = document.querySelectorAll("[data-sztz]")),
           (t = []),
           n.forEach(function (n) {
             t.includes(n.dataset.sztz) || t.push(n.dataset.sztz);
@@ -609,32 +583,32 @@
               });
               sessionize.hasDifferentTimes &&
                 (sessionize.showTimes(sessionize.timeMode),
-                sessionize.eventCityName &&
+                  sessionize.eventCityName &&
                   sessionize.localCityName &&
                   document.querySelector(".sz-timezone") &&
                   ((document.querySelector(
                     ".sz-timezone .sz-timezone__radio--local .sz-timezone__name",
                   ).innerHTML = sessionize.localCityName),
-                  (document.querySelector(
-                    ".sz-timezone .sz-timezone__radio--local .sz-timezone__tooltip",
-                  ).innerHTML = sessionize.localTimezone),
-                  (document.querySelector(
-                    '.sz-timezone .sz-timezone__radio--local input[type="radio"]',
-                  ).onchange = function () {
-                    sessionize.showTimes("local");
-                  }),
-                  (document.querySelector(
-                    ".sz-timezone .sz-timezone__radio--event .sz-timezone__name",
-                  ).innerHTML = sessionize.eventCityName),
-                  (document.querySelector(
-                    ".sz-timezone .sz-timezone__radio--event .sz-timezone__tooltip",
-                  ).innerHTML = sessionize.eventTimezone),
-                  (document.querySelector(
-                    '.sz-timezone .sz-timezone__radio--event input[type="radio"]',
-                  ).onchange = function () {
-                    sessionize.showTimes("event");
-                  }),
-                  (document.querySelector(".sz-timezone").style.display = "")));
+                    (document.querySelector(
+                      ".sz-timezone .sz-timezone__radio--local .sz-timezone__tooltip",
+                    ).innerHTML = sessionize.localTimezone),
+                    (document.querySelector(
+                      '.sz-timezone .sz-timezone__radio--local input[type="radio"]',
+                    ).onchange = function () {
+                      sessionize.showTimes("local");
+                    }),
+                    (document.querySelector(
+                      ".sz-timezone .sz-timezone__radio--event .sz-timezone__name",
+                    ).innerHTML = sessionize.eventCityName),
+                    (document.querySelector(
+                      ".sz-timezone .sz-timezone__radio--event .sz-timezone__tooltip",
+                    ).innerHTML = sessionize.eventTimezone),
+                    (document.querySelector(
+                      '.sz-timezone .sz-timezone__radio--event input[type="radio"]',
+                    ).onchange = function () {
+                      sessionize.showTimes("event");
+                    }),
+                    (document.querySelector(".sz-timezone").style.display = "")));
             } else
               (this.status === 404 || this.status === 500) &&
                 n.forEach(function (n) {
@@ -643,63 +617,64 @@
           }),
           i.open("POST", "https://sessionize.com/api/v2/sztz", !0),
           i.send(r));
-      };
-      sessionize.showTimes = function (n) {
-        var t;
-        sessionize.timeMode = n;
-        n === "event"
-          ? ((t = document.querySelectorAll("[data-sztz-e]")),
-            t.forEach(function (n) {
-              return (n.innerText = n.dataset.sztzE);
-            }))
-          : n === "local" &&
-            ((t = document.querySelectorAll("[data-sztz-l]")),
-            t.forEach(function (n) {
-              return (n.innerText = n.dataset.sztzL);
-            }));
-      };
-      sessionize.manageActive = function () {
-        var n = document.querySelectorAll("[data-szactive]");
-        n.forEach(function (n) {
-          var t = n.dataset.szactive.split("|"),
-            r = new Date(t[0]),
-            u = new Date(t[1]),
-            i = new Date();
-          r <= i && i <= u
-            ? n.classList.remove("is-disabled")
-            : n.classList.add("is-disabled");
-        });
-        window.setTimeout(sessionize.manageActive, 2e4);
-      };
-      sessionize.onLoad = function () {
-        var n;
-        sessionize.initTabs();
-        sessionize.getLocalTimes();
-        sessionize.manageActive();
-        window.location.hash &&
+    };
+    sessionize.showTimes = function (n) {
+      var t;
+      sessionize.timeMode = n;
+      n === "event"
+        ? ((t = document.querySelectorAll("[data-sztz-e]")),
+          t.forEach(function (n) {
+            return (n.innerText = n.dataset.sztzE);
+          }))
+        : n === "local" &&
+        ((t = document.querySelectorAll("[data-sztz-l]")),
+          t.forEach(function (n) {
+            return (n.innerText = n.dataset.sztzL);
+          }));
+    };
+    sessionize.manageActive = function () {
+      var n = document.querySelectorAll("[data-szactive]");
+      n.forEach(function (n) {
+        var t = n.dataset.szactive.split("|"),
+          r = new Date(t[0]),
+          u = new Date(t[1]),
+          i = new Date();
+        r <= i && i <= u
+          ? n.classList.remove("is-disabled")
+          : n.classList.add("is-disabled");
+      });
+      window.setTimeout(sessionize.manageActive, 2e4);
+    };
+    sessionize.onLoad = function () {
+      var n;
+      sessionize.initTabs();
+      sessionize.getLocalTimes();
+      sessionize.manageActive();
+      window.location.hash &&
         window.location.hash.lastIndexOf("#sz-tab-", 0) === 0
-          ? sessionize.tabChange(window.location.hash)
+        ? sessionize.tabChange(window.location.hash)
+        : window.location.hash &&
+          window.location.hash.lastIndexOf("#sz-speaker-", 0) === 0
+          ? ((n = window.location.hash.substr(12)),
+            sessionize.showModal("a2sw0wks", "speaker", n))
           : window.location.hash &&
-              window.location.hash.lastIndexOf("#sz-speaker-", 0) === 0
-            ? ((n = window.location.hash.substr(12)),
-              sessionize.showModal("a2sw0wks", "speaker", n))
-            : window.location.hash &&
-              window.location.hash.lastIndexOf("#sz-session-", 0) === 0 &&
-              ((n = window.location.hash.substr(12)),
-              sessionize.showModal("a2sw0wks", "session", n));
-        sessionize.event && window.dispatchEvent(sessionize.event);
-      };
-      typeof Event == "function" &&
-        (sessionize.event = new Event("sessionize.onload"));
-      typeof sessionize.loader == "undefined" &&
-        (window.onload = sessionize.onLoad);
+          window.location.hash.lastIndexOf("#sz-session-", 0) === 0 &&
+          ((n = window.location.hash.substr(12)),
+            sessionize.showModal("a2sw0wks", "session", n));
+      sessionize.event && window.dispatchEvent(sessionize.event);
+    };
+    typeof Event == "function" &&
+      (sessionize.event = new Event("sessionize.onload"));
+    typeof sessionize.loader == "undefined" &&
+      (window.onload = sessionize.onLoad);
 
-      sessionize.eventTimezone = "UTC+02";
-      sessionize.eventCityName = "L&#39;Hospitalet de Llobregat";
-      sessionize.showLocalTimezone = false;
-      sessionize.todayId = 45068;
+    sessionize.eventTimezone = "UTC+02";
+    sessionize.eventCityName = "L&#39;Hospitalet de Llobregat";
+    sessionize.showLocalTimezone = false;
+    sessionize.todayId = 45068;
 
-      //]]>
-    </script>
-  </body>
+    //]]>
+  </script>
+</body>
+
 </html>

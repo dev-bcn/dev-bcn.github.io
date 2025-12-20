@@ -5,8 +5,8 @@ import { Link } from "react-router";
 import { useWindowSize } from "react-use";
 
 import {
-  TimeCountDown,
   CountDownCompleted,
+  TimeCountDown,
 } from "@components/common/countdown";
 import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
 import { BIGGER_BREAKPOINT } from "@constants/BreakPoints";
@@ -19,6 +19,7 @@ import { Color } from "@styles/colors";
 import { formatDateRange } from "@utils/dateUtils";
 import ActionButtons from "@views/Home/components/ActionButtons/ActionButtons";
 
+import InfoButtons from "../InfoButtons/InfoButtons";
 import {
   StyledBlueSlash,
   StyledBottomSlash,
@@ -33,7 +34,6 @@ import {
   StyledTopSlash,
   StyleHomeContainer,
 } from "./Style.Home";
-import InfoButtons from "../InfoButtons/InfoButtons";
 
 import type { FC } from "react";
 
@@ -51,7 +51,7 @@ const Home: FC<React.PropsWithChildren<unknown>> = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
           >
-            <StyledDevBcnLogo src="images/logo.png" alt="DevBcn logo" />
+            <StyledDevBcnLogo src="images/logo.webp" alt="DevBcn logo" />
           </StyledLogoDiv>
           <StyledTitleContainer
             initial={{ opacity: 0, y: 50 }}
@@ -85,7 +85,7 @@ const Home: FC<React.PropsWithChildren<unknown>> = () => {
             </StyledSubtitle>
           </StyledTitleContainer>
           <motion.img
-            src="/images/devBcn-sponsorship.png"
+            src="/images/devBcn-sponsorship.webp"
             alt="DevBcn sponsorship value"
             width="635"
             height="125"

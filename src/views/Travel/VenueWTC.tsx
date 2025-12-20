@@ -104,7 +104,7 @@ export const VenueWTC: FC<React.PropsWithChildren<unknown>> = () => {
         <div className="image">
           <Suspense fallback={<StyledLoadingImage src="/images/logo.svg" />}>
             <img
-              src="/images/wtc.jpg"
+              src="/images/wtc.webp"
               style={{ aspectRatio: "285/173" }}
               alt="World Trade Center, Barcelona"
               className="venue"
@@ -141,7 +141,7 @@ export const VenueWTC: FC<React.PropsWithChildren<unknown>> = () => {
         </div>
         <div className="map">
           <img
-            src="/images/wtc-auditorio.jpg"
+            src="/images/wtc-auditorio.webp"
             alt="Venue entrance"
             style={{ maxWidth: "100%" }}
           />

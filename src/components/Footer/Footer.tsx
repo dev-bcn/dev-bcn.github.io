@@ -98,7 +98,7 @@ export const Footer: FC<React.PropsWithChildren<unknown>> = () => {
         <StyledFooterItem>
           <StyledImg
             alt="DevBcn"
-            src="/images/devBcn.png"
+            src="/images/devBcn.webp"
             width={140}
             height={72}
             onClick={handleLogoClick}

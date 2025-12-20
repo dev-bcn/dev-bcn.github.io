@@ -7,6 +7,18 @@ import { BIG_BREAKPOINT, MOBILE_BREAKPOINT } from "@constants/BreakPoints";
 import { ROUTE_HOME, ROUTE_HOME_ALTERNATE } from "@constants/routes";
 import { AnimatePresence } from "framer-motion";
 
+import {
+  navigationItems2023,
+  subMenuItems2023,
+} from "../../2023/Navigation/NavigationData2023";
+import {
+  navigationItems2024,
+  subMenuItems2024,
+} from "../../2024/Navigation/NavigationData";
+import {
+  navigationItems2025 as navigationItems2025Archived,
+  subMenuItems2025 as subMenuItems2025Archived,
+} from "../../2025/Navigation/NavigationData2025";
 import Breadcrumbs from "./Breadcrumbs";
 import { HamburgerMenu } from "./HamburgerMenu";
 import { HorizontalMenu } from "./HorizontalMenu";
@@ -24,18 +36,6 @@ import {
   StyledNavLinkHighlightedImage,
   StyledTicketLink,
 } from "./Style.Navigation";
-import {
-  navigationItems2023,
-  subMenuItems2023,
-} from "../../2023/Navigation/NavigationData2023";
-import {
-  navigationItems2024,
-  subMenuItems2024,
-} from "../../2024/Navigation/NavigationData";
-import {
-  navigationItems2025 as navigationItems2025Archived,
-  subMenuItems2025 as subMenuItems2025Archived,
-} from "../../2025/Navigation/NavigationData2025";
 
 import type { FC } from "react";
 export const Navigation: FC<React.PropsWithChildren<unknown>> = () => {
@@ -107,7 +107,7 @@ export const Navigation: FC<React.PropsWithChildren<unknown>> = () => {
         <StyledHeader>
           <StyledHeaderLogo
             alt="DevBcn — logo"
-            src="/images/devBcn.png"
+            src="/images/devBcn.webp"
             onClick={handleLogoClick}
           />
           {width > BIG_BREAKPOINT && (
@@ -137,7 +137,7 @@ export const Navigation: FC<React.PropsWithChildren<unknown>> = () => {
                 whileTap={{ scale: 0.8 }}
               />
               <StyledNavigationLogo
-                src="/images/devBcn.png"
+                src="/images/devBcn.webp"
                 onClick={() => {
                   navigate(ROUTE_HOME);
                   handleSetMenu();

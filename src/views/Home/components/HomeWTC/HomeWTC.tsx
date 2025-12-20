@@ -42,7 +42,7 @@ const HomeWTC: FC<React.PropsWithChildren<unknown>> = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
           >
-            <StyledDevBcnLogo src="images/logo.png" alt="DevBcn logo" />
+            <StyledDevBcnLogo src="images/logo.webp" alt="DevBcn logo" />
           </StyledLogoDiv>
           <StyledTitleContainer
             color={Color.TRANSPARENT}
@@ -80,7 +80,7 @@ const HomeWTC: FC<React.PropsWithChildren<unknown>> = () => {
             </StyledSubtitle>
           </StyledTitleContainer>
           <motion.img
-            src="/images/devBcn-sponsorship.png"
+            src="/images/devBcn-sponsorship.webp"
             alt="DevBcn sponsorship value"
             style={{ maxWidth: "100%", marginTop: "8rem" }}
             initial={{ opacity: 0, x: -50 }}
