@@ -2,11 +2,12 @@ import React from "react";
 import { useLocation } from "react-router";
 import { styled } from "styled-components";
 
+import { PageMetadata } from "@components/common/PageMetadata";
 import SpeakersCarousel from "@components/Swiper/SpeakersCarousel";
+import { getPageMetadata } from "@config/metadata";
 import { BIG_BREAKPOINT } from "@constants/BreakPoints";
 import { ROUTE_2023_SPEAKERS } from "@constants/routes";
 import data from "@data/2023.json";
-import { useDocumentTitleUpdater } from "@hooks/useDocumentTitleUpdate";
 
 import Faqs from "./components/Faqs/Faqs";
 import Home from "./components/Home/Home";
@@ -32,18 +33,21 @@ export const Home2023Wrapper: FC<React.PropsWithChildren<unknown>> = () => {
     }
   }, [hash]);
 
-  useDocumentTitleUpdater("Home", data.edition);
   return (
-    <StyledContainer id="home-wrapper">
-      <Home />
-      <Faqs />
-      <SpeakersCarousel
-        speakersLink={ROUTE_2023_SPEAKERS}
-        sessionizeUrl={data.edition}
-        isEnabled={data.carrousel.enabled}
-      />
-      <Sponsors />
-    </StyledContainer>
+    <>
+      <PageMetadata {...getPageMetadata("home2023")} />
+
+      <StyledContainer id="home-wrapper">
+        <Home />
+        <Faqs />
+        <SpeakersCarousel
+          speakersLink={ROUTE_2023_SPEAKERS}
+          sessionizeUrl={data.edition}
+          isEnabled={data.carrousel.enabled}
+        />
+        <Sponsors />
+      </StyledContainer>
+    </>
   );
 };
 
