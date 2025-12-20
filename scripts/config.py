@@ -9,7 +9,7 @@ from typing import Dict, Tuple
 @dataclass
 class Config:
     # Paths
-    LOGO_PATH: str = "../public/images/logo.png"
+    LOGO_PATH: str = "../public/images/logo.webp"
     FONT_PRIMARY: str = "../src/fonts/DejaVu Sans Bold.ttf"
     FONT_SECONDARY: str = "../src/fonts/Square 721 Regular.otf"
     OUTPUT_DIR: str = "output"

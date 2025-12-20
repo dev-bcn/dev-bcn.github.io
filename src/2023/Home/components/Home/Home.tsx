@@ -3,8 +3,8 @@ import { useWindowSize } from "react-use";
 import { styled } from "styled-components";
 
 import {
-  TimeCountDown,
   CountDownCompleted,
+  TimeCountDown,
 } from "@components/common/countdown";
 import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
 import { BIG_BREAKPOINT, LARGE_BREAKPOINT } from "@constants/BreakPoints";
@@ -13,6 +13,8 @@ import { useDateInterval } from "@hooks/useDateInterval";
 import { Color } from "@styles/colors";
 import ActionButtons from "@views/Home/components/ActionButtons/ActionButtons";
 
+import InfoButtons from "../InfoButtons/InfoButtons";
+import MultimediaInfoButtons from "../MultimediaInfoButtons/MultimediaInfoButtons";
 import {
   StyledBlueSlash,
   StyledBottomSlash,
@@ -25,8 +27,6 @@ import {
   StyledTopSlash,
   StyleHomeContainer,
 } from "./Style.Home";
-import InfoButtons from "../InfoButtons/InfoButtons";
-import MultimediaInfoButtons from "../MultimediaInfoButtons/MultimediaInfoButtons";
 
 import type { FC } from "react";
 
@@ -47,7 +47,7 @@ const Home: FC<React.PropsWithChildren<unknown>> = () => {
     <StyledHomaImage>
       <SectionWrapper color="transparent">
         <StyleHomeContainer>
-          <StyledLogo src="/images/logo.png" alt="DevBcn logo" />
+          <StyledLogo src="images/logo.webp" alt="DevBcn logo" />
           <StyledTitleContainer>
             <StyledTitle>The Barcelona Developers Conference 2023</StyledTitle>
             <StyledSubtitle>

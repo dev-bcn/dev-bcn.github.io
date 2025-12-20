@@ -14,8 +14,8 @@ import {
   StyledFaqTitle,
 } from "../Faqs.style";
 
-import type { FaqCardType } from "../Faqs.style";
 import type { FC } from "react";
+import type { FaqCardType } from "../Faqs.style";
 
 const FaqCard: FC<React.PropsWithChildren<FaqCardType>> = ({ faq, index }) => {
   const isOdd = index % 2 === 0;
@@ -34,7 +34,7 @@ const FaqCard: FC<React.PropsWithChildren<FaqCardType>> = ({ faq, index }) => {
         <Suspense fallback={<StyledLoadingImage src="/images/logo.svg" />}>
           <StyledFaqImage
             alt={`DevBcn — image ${index}`}
-            src={`/images/FaqsImage${index}.jpg`}
+            src={`/images/FaqsImage${index}.webp`}
             initial={{ opacity: 0, x: isOdd ? -50 : 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}

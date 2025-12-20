@@ -46,7 +46,7 @@ export const SpeakerCard: FC<React.PropsWithChildren<SpeakerCardProps>> = ({
         style={{ textDecoration: "none" }}
       >
         <StyledSpeakerImageContainer>
-          <Suspense fallback={<img src="/images/logo.png" alt="loading" />}>
+          <Suspense fallback={<img src="/images/logo.webp" alt="loading" />}>
             <StyledSpeakerImage src={speaker.speakerImage} />
           </Suspense>
           <StyledImageAnimation />

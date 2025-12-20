@@ -129,7 +129,7 @@ export const sponsors: Sponsors = {
       name: "KCD Barcelona",
       website:
         "https://community.cncf.io/events/details/cncf-kcd-spain-presents-kcd-barcelona-2024/",
-      image: "/images/KCD-logo-black.png",
+      image: "/images/KCD-logo-black.webp",
     },
     {
       name: "Apache Foundation",

@@ -4,8 +4,8 @@ import { Link } from "react-router";
 import { useWindowSize } from "react-use";
 
 import {
-  TimeCountDown,
   CountDownCompleted,
+  TimeCountDown,
 } from "@components/common/countdown";
 import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
 import { BIGGER_BREAKPOINT } from "@constants/BreakPoints";
@@ -45,10 +45,10 @@ const Home: FC<React.PropsWithChildren<unknown>> = () => {
       <SectionWrapper color="transparent">
         <StyleHomeContainer>
           <StyledLogoDiv>
-            <StyledDevBcnLogo src="images/logo.png" alt="DevBcn logo" />
+            <StyledDevBcnLogo src="images/logo.webp" alt="DevBcn logo" />
             <StyledPlusSign>+</StyledPlusSign>
             <StyledKcdLogo
-              src="images/KCD-logo-white.png"
+              src="images/KCD-logo-white.webp"
               alt="KCD Barcelona"
             />
           </StyledLogoDiv>

@@ -17,8 +17,8 @@ import { StyledAgenda, StyledMain } from "./Talks.style";
 
 // @ts-expect-error some quirky import
 
-import type { UngroupedSession } from "./liveView.types";
 import type { FC } from "react";
+import type { UngroupedSession } from "./liveView.types";
 
 export const LiveView: FC<React.PropsWithChildren<unknown>> = () => {
   const { isLoading, error, data } = useFetchLiveView();
@@ -52,7 +52,7 @@ export const LiveView: FC<React.PropsWithChildren<unknown>> = () => {
   return (
     <StyledMain>
       <img
-        src="/images/logo.png"
+        src="/images/logo.webp"
         alt={conference.title}
         style={{ width: "25%" }}
       />

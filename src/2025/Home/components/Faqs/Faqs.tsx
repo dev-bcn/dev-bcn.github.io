@@ -60,7 +60,7 @@ const Faqs: FC<React.PropsWithChildren<unknown>> = () => {
                 transition={{ duration: 0.6, delay: 0.7 }}
                 whileHover={{ scale: 1.05 }}
               >
-                <StyledImage src="/images/devbcn-1.jpg" alt="DevBcn 2023" />
+                <StyledImage src="/images/devbcn-1.webp" alt="DevBcn 2023" />
               </motion.div>
             </Suspense>
             <Suspense fallback={<StyledLoadingImage src="/images/logo.svg" />}>
@@ -70,7 +70,7 @@ const Faqs: FC<React.PropsWithChildren<unknown>> = () => {
                 transition={{ duration: 0.6, delay: 0.9 }}
                 whileHover={{ scale: 1.05 }}
               >
-                <StyledImage src="/images/devbcn2.jpg" alt="DevBcn 2023" />
+                <StyledImage src="/images/devbcn2.webp" alt="DevBcn 2023" />
               </motion.div>
             </Suspense>
             <motion.div

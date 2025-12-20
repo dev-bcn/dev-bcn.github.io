@@ -59,7 +59,7 @@ export const ToBarcelona: FC<React.PropsWithChildren<unknown>> = () => {
       <Suspense fallback={<StyledLoadingImage src="/images/logo.svg" />}>
         <img
           style={{ borderRadius: "1rem", aspectRatio: "602/367" }}
-          src="/images/after-hours.jpg"
+          src="/images/after-hours.webp"
           alt="Barcelona beach"
         />
       </Suspense>

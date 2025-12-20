@@ -111,7 +111,7 @@ export const Venue: FC<React.PropsWithChildren<unknown>> = () => {
         <div className="image">
           <Suspense fallback={<StyledLoadingImage src="/images/logo.svg" />}>
             <img
-              src="/images/la-farga.png"
+              src="/images/la-farga.webp"
               style={{ aspectRatio: "285/173" }}
               alt="La Farga"
               className="venue"

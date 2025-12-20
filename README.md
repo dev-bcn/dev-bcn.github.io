@@ -2,7 +2,7 @@
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=dev-bcn_dev-bcn.github.io&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=dev-bcn_dev-bcn.github.io)
 
-![DevBcn](/public/images/1500x500.jpeg)
+![DevBcn](/public/images/1500x500.webp)
 
 ## Project Overview
 

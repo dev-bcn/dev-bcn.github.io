@@ -11,8 +11,8 @@ import {
   StyledFaqTitle,
 } from "../Faqs.style";
 
-import type { FaqCardType } from "../Faqs.style";
 import type { FC } from "react";
+import type { FaqCardType } from "../Faqs.style";
 
 const FaqCard: FC<React.PropsWithChildren<FaqCardType>> = ({ faq, index }) => {
   const isOdd = index % 2 === 0;
@@ -21,7 +21,7 @@ const FaqCard: FC<React.PropsWithChildren<FaqCardType>> = ({ faq, index }) => {
     <StyledFaqCard className="faq-card">
       <StyledFaqImageContainer padding={isOdd ? "0 1rem 0 0" : "0 0 0 1rem"}>
         <Suspense fallback={<StyledLoadingImage src="/images/logo.svg" />}>
-          <StyledFaqImage src={`images/2023/FaqsImage${index}.png`} />
+          <StyledFaqImage src={`images/2023/FaqsImage${index}.webp`} />
         </Suspense>
       </StyledFaqImageContainer>
       <StyledFaqInfo align={isOdd ? "flex-start" : "flex-end"}>

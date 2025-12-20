@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import { describe, expect, it, beforeEach, afterEach } from "vitest";
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
 
 import { ResourcePreloader } from "./ResourcePreloader";
 
@@ -113,7 +113,7 @@ describe("ResourcePreloader", () => {
         preconnect={["https://fonts.googleapis.com"]}
         preload={[
           { href: "/fonts/inter.woff2", as: "font", type: "font/woff2" },
-          { href: "/images/logo.png", as: "image" },
+          { href: "/images/logo.webp", as: "image" },
         ]}
       />,
     );
