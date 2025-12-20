@@ -111,14 +111,14 @@ The import order issues can be fixed by:
 
 ```javascript
 groups: [
-  'builtin',      // Node.js built-ins
-  'external',     // npm packages
-  'internal',     // @alias imports
-  ['parent', 'sibling'], // relative imports
-  'index',
-  'object',
-  'type',         // type imports
-]
+  "builtin", // Node.js built-ins
+  "external", // npm packages
+  "internal", // @alias imports
+  ["parent", "sibling"], // relative imports
+  "index",
+  "object",
+  "type", // type imports
+];
 ```
 
 ## Next Steps

@@ -2,7 +2,7 @@ name: deploy website
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
@@ -22,7 +22,7 @@ jobs:
           VITE_MAP_API_KEY: ${{ secrets.VITE_MAP_API_KEY }}
         run: |
           missing=false
-          
+
           for var in VITE_GOOGLE_ANALYTICS_API_KEY VITE_MAP_API_KEY; do
             if [ -z "${!var}" ]; then
               echo "❌ $var is not set"
@@ -31,13 +31,11 @@ jobs:
               echo "✅ $var is set"
             fi
           done
-          
+
           if [ "$missing" = true ]; then
             echo "::error ::One or more required env vars are missing"
             exit 1
           fi
-
-
 
       - name: Use Node.js 24.x
         uses: actions/setup-node@v3
@@ -54,7 +52,6 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-
 
       - name: Build & deploy
         env:

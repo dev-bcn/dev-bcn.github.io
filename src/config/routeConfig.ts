@@ -10,8 +10,8 @@ import * as LazyComponents from "../utils/lazyComponents";
 export interface RouteConfig {
   path: string;
   component:
-  | React.LazyExoticComponent<React.ComponentType<any>>
-  | React.ComponentType<any>;
+    | React.LazyExoticComponent<React.ComponentType<any>>
+    | React.ComponentType<any>;
   exact?: boolean;
 }
 /* eslint-enable @typescript-eslint/no-explicit-any */

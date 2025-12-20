@@ -7,8 +7,6 @@ import {
   ROUTE_SPEAKER_DETAIL,
 } from "@constants/routes";
 
-
-
 import {
   StyledImageAnimation,
   StyledSpeakerCard,
@@ -25,7 +23,6 @@ type SpeakerCardProps = {
   speaker: ISpeaker;
   year: string;
 };
-
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const getSpeakerRoute = (year: string): string => {

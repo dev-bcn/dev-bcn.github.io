@@ -104,7 +104,9 @@ describe("Speakers component", () => {
         if (args.length === 0) {
           return mockDate;
         }
-        return new originalDate(...(args as ConstructorParameters<typeof originalDate>));
+        return new originalDate(
+          ...(args as ConstructorParameters<typeof originalDate>),
+        );
       }
 
       static now() {
@@ -141,7 +143,9 @@ describe("Speakers component", () => {
         if (args.length === 0) {
           return mockDate;
         }
-        return new originalDate(...(args as ConstructorParameters<typeof originalDate>));
+        return new originalDate(
+          ...(args as ConstructorParameters<typeof originalDate>),
+        );
       }
 
       static now() {

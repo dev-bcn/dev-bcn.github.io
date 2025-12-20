@@ -72,11 +72,11 @@ const Talks: FC<React.PropsWithChildren<TalksProps>> = ({
     { name: "All Tracks", code: undefined },
     ...(data !== undefined
       ? data
-        .flatMap((group) => ({
-          code: group?.groupId?.toString(),
-          name: removeParenthesesContent(group.groupName),
-        }))
-        .sort((a, b) => a.name.localeCompare(b.name))
+          .flatMap((group) => ({
+            code: group?.groupId?.toString(),
+            name: removeParenthesesContent(group.groupName),
+          }))
+          .sort((a, b) => a.name.localeCompare(b.name))
       : []),
   ];
 

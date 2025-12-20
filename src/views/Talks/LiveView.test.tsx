@@ -1,4 +1,3 @@
-
 import { isWithinInterval } from "date-fns";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { type MockedFunction, vi } from "vitest";
@@ -12,7 +11,6 @@ import * as useFetchTalksModule from "@hooks/useFetchTalks";
 import { useFetchLiveView } from "@hooks/useFetchTalks";
 import { useSentryErrorReport } from "@hooks/useSentryErrorReport";
 import { AnimatePresence } from "framer-motion";
-
 
 import { talkCardAdapter } from "./TalkCardAdapter";
 import { StyledAgenda, StyledMain } from "./Talks.style";

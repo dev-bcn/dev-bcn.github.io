@@ -5,7 +5,6 @@ import QRCode from "react-qr-code";
 import { SectionWrapper } from "@components/SectionWrapper/SectionWrapper";
 import { Color } from "@styles/colors";
 
-
 import type { IGroup, Session } from "@/types/sessions";
 import type { ChangeEvent, FC } from "react";
 

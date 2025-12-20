@@ -24,7 +24,7 @@ Files needing import order fixes:
 
 - `SessionFeedback.tsx` (6 errors) - Complex primereact imports
 - `Talks.tsx` (3 errors)
-- `Sponsorship.tsx` (3 errors)  
+- `Sponsorship.tsx` (3 errors)
 - `SpeakerSwiper.tsx` (2 errors)
 - `Venue.tsx`, `VenueWTC.tsx` (1 error each)
 - Various files with empty line issues (Faqs, HomeWTC, LiveView, etc.)

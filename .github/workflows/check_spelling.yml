@@ -2,27 +2,27 @@ name: check spelling
 on:
   pull_request:
     paths:
-    - '**.ts'
-    - '**.tsx'
-    - '**.txt'
-    - '**.html'
-    - '**.md'
+      - "**.ts"
+      - "**.tsx"
+      - "**.txt"
+      - "**.html"
+      - "**.md"
 jobs:
   spelling:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-      with:
-        ref: ${{ github.head_ref }}
-    - name: Cache node modules
-      id: cache-npm
-      uses: actions/cache@v3
-      with:
-        path: ~/.npm
-        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-build-${{ env.cache-name }}-
-          ${{ runner.os }}-build-
-          ${{ runner.os }}-        
-    - name: Check spelling
-      uses: UnicornGlobal/spellcheck-github-actions@master
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Cache node modules
+        id: cache-npm
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - name: Check spelling
+        uses: UnicornGlobal/spellcheck-github-actions@master

@@ -1,12 +1,7 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext",
-      "es2023"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext", "es2023"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -23,48 +18,19 @@
     "noEmitOnError": false,
     "baseUrl": "src",
     "paths": {
-      "@components/*": [
-        "components/*"
-      ],
-      "@config/*": [
-        "config/*"
-      ],
-      "@constants/*": [
-        "constants/*"
-      ],
-      "@services/*": [
-        "services/*"
-      ],
-      "@hooks/*": [
-        "hooks/*"
-      ],
-      "@styles/*": [
-        "styles/*"
-      ],
-      "@views/*": [
-        "views/*"
-      ],
-      "@utils/*": [
-        "utils/*"
-      ],
-      "@data/*": [
-        "data/*"
-      ],
-      "@/types/*": [
-        "types/*"
-      ]
+      "@components/*": ["components/*"],
+      "@config/*": ["config/*"],
+      "@constants/*": ["constants/*"],
+      "@services/*": ["services/*"],
+      "@hooks/*": ["hooks/*"],
+      "@styles/*": ["styles/*"],
+      "@views/*": ["views/*"],
+      "@utils/*": ["utils/*"],
+      "@data/*": ["data/*"],
+      "@/types/*": ["types/*"]
     },
-    "types": [
-      "@testing-library/jest-dom"
-    ]
+    "types": ["@testing-library/jest-dom"]
   },
-  "include": [
-    "src"
-  ],
-  "exclude": [
-    "**/*.test.ts",
-    "**/*.test.tsx",
-    "**/*.spec.ts",
-    "**/*.spec.tsx"
-  ]
+  "include": ["src"],
+  "exclude": ["**/*.test.ts", "**/*.test.tsx", "**/*.spec.ts", "**/*.spec.tsx"]
 }

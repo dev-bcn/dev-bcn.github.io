@@ -1,5 +1,12 @@
 import { screen } from "@testing-library/react";
-import { beforeEach, describe, expect, it, vi, type MockedFunction } from "vitest";
+import {
+  beforeEach,
+  describe,
+  expect,
+  it,
+  vi,
+  type MockedFunction,
+} from "vitest";
 
 import { SpeakersWrapper2025 } from "./SpeakersWrapper2025";
 import { useFetchSpeakers } from "../../hooks/useFetchSpeakers";

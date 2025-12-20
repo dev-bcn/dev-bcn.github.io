@@ -23,11 +23,11 @@ speaker profiles, talk details, venue information, and registration.
 The project follows a standard React application structure:
 
 - `src/`: Source code
-    - `assets/`: Static assets like images
-    - `components/`: Reusable UI components
-    - `hooks/`: Custom React hooks (e.g., useFetchSpeakers, useFetchTalks)
-    - `views/`: Page components
-    - `2024/`: Components specific to the 2024 conference
+  - `assets/`: Static assets like images
+  - `components/`: Reusable UI components
+  - `hooks/`: Custom React hooks (e.g., useFetchSpeakers, useFetchTalks)
+  - `views/`: Page components
+  - `2024/`: Components specific to the 2024 conference
 
 ## Development Workflow
 
