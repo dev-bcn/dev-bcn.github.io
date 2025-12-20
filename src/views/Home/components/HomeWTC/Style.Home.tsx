@@ -14,6 +14,11 @@ const images = [
   "/images/wtc-gemini-2.webp",
   "/images/wtc-gemini-1.webp",
   "/images/wtc-gemini-3.webp",
+  "images/venue/venue-1.webp",
+  "images/venue/venue-2.webp",
+  "images/venue/venue-3.webp",
+  "images/venue/venue-4.webp",
+  "images/venue/venue-5.webp",
 ];
 
 interface StyledSubtitleProps {
@@ -90,7 +95,7 @@ export const StyledTitle = styled(motion.h1)`
   font-family: "Square 721 Regular", sans-serif;
 `;
 
-export const StyledSubtitle = styled(motion.h2)<StyledSubtitleProps>`
+export const StyledSubtitle = styled(motion.h2) <StyledSubtitleProps>`
   color: ${(props) => props.color ?? Color.WHITE};
   font-family: "DejaVu Sans ExtraLight", sans-serif;
   font-size: 1.25rem;
