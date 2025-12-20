@@ -4,9 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import { Color } from "@styles/colors";
 
-
 import type { FC } from "react";
-
 
 import "swiper/swiper-bundle.min.css";
 

@@ -90,7 +90,7 @@ export const StyledTitle = styled(motion.h1)`
   font-family: "Square 721 Regular", sans-serif;
 `;
 
-export const StyledSubtitle = styled(motion.h2) <StyledSubtitleProps>`
+export const StyledSubtitle = styled(motion.h2)<StyledSubtitleProps>`
   color: ${(props) => props.color ?? Color.WHITE};
   font-family: "DejaVu Sans ExtraLight", sans-serif;
   font-size: 1.25rem;

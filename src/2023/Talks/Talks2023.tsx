@@ -1,6 +1,5 @@
 import type { FC } from "react";
 
-
 import TrackInformation from "@components/common/TrackInformation";
 
 import "@styles/theme.css";
@@ -64,9 +63,9 @@ const Talks2023: FC<React.PropsWithChildren<unknown>> = () => {
     { name: "All Tracks", code: undefined },
     ...(data !== undefined
       ? data.flatMap((group) => ({
-        code: group.groupId.toString(),
-        name: removeParenthesesContent(group.groupName),
-      }))
+          code: group.groupId.toString(),
+          name: removeParenthesesContent(group.groupName),
+        }))
       : []),
   ];
 

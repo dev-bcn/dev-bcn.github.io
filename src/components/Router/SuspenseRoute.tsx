@@ -3,7 +3,6 @@ import { Route } from "react-router";
 
 import { Loading } from "@components/Loading/Loading";
 
-
 import type { FC, ReactElement } from "react";
 
 interface SuspenseRouteProps {
