@@ -1,15 +1,16 @@
 import { useCallback } from "react";
 import { styled } from "styled-components";
 
-import { gaEventTracker } from "../../../../components/analytics/Analytics";
-import { formatDateWithOrdinal } from "../../../../components/date/dateUtils";
-import Button from "../../../../components/UI/Button";
-import { BIG_BREAKPOINT } from "../../../../constants/BreakPoints";
-import { useUrlBuilder } from "../../../../services/urlBuilder";
+import { gaEventTracker } from "@components/analytics/Analytics";
+import { formatDateWithOrdinal } from "@components/date/dateUtils";
+import Button from "@components/UI/Button";
+import { BIG_BREAKPOINT } from "@constants/BreakPoints";
+import { useUrlBuilder } from "@services/urlBuilder";
 
 import type { FC } from "react";
 
 const StyledActionDiv = styled.div`
+  margin-top: 2rem;
   display: flex;
   text-align: center;
 

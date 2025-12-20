@@ -12,10 +12,11 @@ import edition from "@data/2026.json";
 import { useDateInterval } from "@hooks/useDateInterval";
 
 // @ts-expect-error some quirky import
-
 import { Color } from "@styles/colors";
 import { formatDateRange } from "@utils/dateUtils";
 
+import ActionButtons from "../ActionButtons/ActionButtons";
+import InfoButtons from "../InfoButtons/InfoButtons";
 import {
   StyledDevBcnLogo,
   StyledHomeImage,
@@ -25,8 +26,6 @@ import {
   StyledTitleContainer,
   StyleHomeContainer,
 } from "./Style.Home";
-import ActionButtons from "../ActionButtons/ActionButtons";
-import InfoButtons from "../InfoButtons/InfoButtons";
 
 import type { FC } from "react";
 
@@ -59,33 +58,31 @@ const HomeWTC: FC<React.PropsWithChildren<unknown>> = () => {
               The Barcelona Developers Conference {edition?.edition}
             </StyledTitle>
             <StyledSubtitle
-              fontWeight={600}
+              fontWeight={700}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.7 }}
+            >
+              {edition?.startDay &&
+                edition.endDay &&
+                formatDateRange(
+                  new Date(edition.startDay),
+                  new Date(edition.endDay),
+                )}
+            </StyledSubtitle>
+            <StyledSubtitle
+              fontWeight={700}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.8 }}
             >
-              {edition?.trackNumber} tracks with the following topics: <br />
-              {edition?.tracks}
-            </StyledSubtitle>
-            <StyledSubtitle
-              shadow={true}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 1 }}
-            >
-              <small>
-                Past events: <Link to="/2025">2025 edition</Link> |{" "}
-                <Link to="/2024">2024 edition</Link> |{" "}
-                <Link to="/2023">2023 edition</Link>
-              </small>
+              World Trade Center, Barcelona
             </StyledSubtitle>
           </StyledTitleContainer>
           <motion.img
             src="/images/devBcn-sponsorship.png"
             alt="DevBcn sponsorship value"
-            width="635"
-            height="125"
-            style={{ aspectRatio: "127:25", maxWidth: "100%" }}
+            style={{ maxWidth: "100%", marginTop: "8rem" }}
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 1.2 }}
@@ -96,16 +93,25 @@ const HomeWTC: FC<React.PropsWithChildren<unknown>> = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1.5 }}
           >
-            <StyledSubtitle fontWeight={600}>
-              {edition?.startDay &&
-                edition.endDay &&
-                formatDateRange(
-                  new Date(edition.startDay),
-                  new Date(edition.endDay),
-                )}
+            <StyledSubtitle fontWeight={700}>
+              {edition?.trackNumber} tracks with the following topics:
             </StyledSubtitle>
             <StyledSubtitle fontWeight={600}>
-              World Trade Center, Barcelona
+              {edition?.tracks}
+            </StyledSubtitle>
+          </StyledTitleContainer>
+          <StyledTitleContainer
+            color={Color.TRANSPARENT}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.7 }}
+          >
+            <StyledSubtitle shadow={true}>
+              <small>
+                Past events: <Link to="/2025">2025 edition</Link> |{" "}
+                <Link to="/2024">2024 edition</Link> |{" "}
+                <Link to="/2023">2023 edition</Link>
+              </small>
             </StyledSubtitle>
           </StyledTitleContainer>
           <motion.div
