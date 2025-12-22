@@ -112,9 +112,33 @@ describe("TalkCard", () => {
     expect(talkLink.closest("a")).toHaveAttribute("href", "/2023/talk/123");
   });
 
+  it("links to correct talk detail route for 2025", () => {
+    renderTalkCard({ year: "2025" });
+    const talkLink = screen.getByText("Test Talk Title");
+    expect(talkLink.closest("a")).toHaveAttribute("href", "/2025/talk/123");
+  });
+
+  it("links to correct talk detail route for 2026", () => {
+    renderTalkCard({ year: "2026" });
+    const talkLink = screen.getByText("Test Talk Title");
+    expect(talkLink.closest("a")).toHaveAttribute("href", "/2026/talk/123");
+  });
+
   it("links to correct speaker detail route", () => {
     renderTalkCard({ year: "2024" });
     const speakerLink = screen.getByText("John Doe").closest("a");
     expect(speakerLink).toHaveAttribute("href", "/2024/speaker/speaker-1");
+  });
+
+  it("links to correct speaker detail route for 2025", () => {
+    renderTalkCard({ year: "2025" });
+    const speakerLink = screen.getByText("John Doe").closest("a");
+    expect(speakerLink).toHaveAttribute("href", "/2025/speaker/speaker-1");
+  });
+
+  it("links to correct speaker detail route for 2026", () => {
+    renderTalkCard({ year: "2026" });
+    const speakerLink = screen.getByText("John Doe").closest("a");
+    expect(speakerLink).toHaveAttribute("href", "/2026/speaker/speaker-1");
   });
 });

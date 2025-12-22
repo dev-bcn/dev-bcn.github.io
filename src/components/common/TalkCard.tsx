@@ -7,6 +7,10 @@ import {
   ROUTE_2023_TALK_DETAIL,
   ROUTE_2024_SPEAKER_DETAIL,
   ROUTE_2024_TALK_DETAIL,
+  ROUTE_2025_SPEAKER_DETAIL,
+  ROUTE_2025_TALK_DETAIL,
+  ROUTE_2026_SPEAKER_DETAIL,
+  ROUTE_2026_TALK_DETAIL,
   ROUTE_SPEAKER_DETAIL,
   ROUTE_TALK_DETAIL,
 } from "@constants/routes";
@@ -53,6 +57,12 @@ export interface TalkCardProps {
 }
 
 const getTalkDetailRoute = (year: string): string => {
+  if (year === "2026") {
+    return ROUTE_2026_TALK_DETAIL;
+  }
+  if (year === "2025") {
+    return ROUTE_2025_TALK_DETAIL;
+  }
   if (year === "2024") {
     return ROUTE_2024_TALK_DETAIL;
   }
@@ -64,11 +74,17 @@ const getTalkDetailRoute = (year: string): string => {
 };
 
 const getSpeakerDetailRoute = (year: string): string => {
-  if (year === "2023") {
-    return ROUTE_2023_SPEAKER_DETAIL;
+  if (year === "2026") {
+    return ROUTE_2026_SPEAKER_DETAIL;
+  }
+  if (year === "2025") {
+    return ROUTE_2025_SPEAKER_DETAIL;
   }
   if (year === "2024") {
     return ROUTE_2024_SPEAKER_DETAIL;
+  }
+  if (year === "2023") {
+    return ROUTE_2023_SPEAKER_DETAIL;
   }
 
   return ROUTE_SPEAKER_DETAIL;
