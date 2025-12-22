@@ -11,6 +11,7 @@ const URLS = {
   default: "https://sessionize.com/api/v2/xhudniix/view/Speakers",
   2023: "https://sessionize.com/api/v2/ttsitynd/view/Speakers",
   2024: "https://sessionize.com/api/v2/teq4asez/view/Speakers",
+  2025: "https://sessionize.com/api/v2/xhudniix/view/Speakers",
 };
 
 export const useFetchSpeakers = (

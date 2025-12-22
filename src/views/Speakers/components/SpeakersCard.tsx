@@ -4,6 +4,8 @@ import { Link } from "react-router";
 import {
   ROUTE_2023_SPEAKER_DETAIL,
   ROUTE_2024_SPEAKER_DETAIL,
+  ROUTE_2025_SPEAKER_DETAIL,
+  ROUTE_2026_SPEAKER_DETAIL,
   ROUTE_SPEAKER_DETAIL,
 } from "@constants/routes";
 
@@ -26,13 +28,18 @@ type SpeakerCardProps = {
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const getSpeakerRoute = (year: string): string => {
-  if (year === "2023") {
-    return ROUTE_2023_SPEAKER_DETAIL;
+  switch (year) {
+    case "2023":
+      return ROUTE_2023_SPEAKER_DETAIL;
+    case "2024":
+      return ROUTE_2024_SPEAKER_DETAIL;
+    case "2025":
+      return ROUTE_2025_SPEAKER_DETAIL;
+    case "2026":
+      return ROUTE_2026_SPEAKER_DETAIL;
+    default:
+      return ROUTE_SPEAKER_DETAIL;
   }
-  if (year === "2024") {
-    return ROUTE_2024_SPEAKER_DETAIL;
-  }
-  return ROUTE_SPEAKER_DETAIL;
 };
 
 export const SpeakerCard: FC<React.PropsWithChildren<SpeakerCardProps>> = ({

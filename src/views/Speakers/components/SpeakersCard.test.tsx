@@ -1,16 +1,17 @@
 import { screen } from "@testing-library/react";
-import React from "react";
 
-import { SpeakerCard, getSpeakerRoute } from "./SpeakersCard";
 import {
   ROUTE_2023_SPEAKER_DETAIL,
   ROUTE_2024_SPEAKER_DETAIL,
+  ROUTE_2025_SPEAKER_DETAIL,
+  ROUTE_2026_SPEAKER_DETAIL,
   ROUTE_SPEAKER_DETAIL,
 } from "../../../constants/routes";
 import {
   createMockSpeaker,
   renderWithRouter,
 } from "../../../utils/testing/speakerTestUtils";
+import { SpeakerCard, getSpeakerRoute } from "./SpeakersCard";
 
 describe("SpeakerCard", () => {
   const mockSpeaker = createMockSpeaker();
@@ -49,6 +50,28 @@ describe("SpeakerCard", () => {
     );
   });
 
+  it("creates a link to the correct speaker detail page for 2025", () => {
+    renderWithRouter(<SpeakerCard speaker={mockSpeaker} year="2025" />);
+
+    // Check that the link points to the correct route
+    const link = screen.getByRole("link");
+    expect(link).toHaveAttribute(
+      "href",
+      `${ROUTE_2025_SPEAKER_DETAIL}/${mockSpeaker.id}`,
+    );
+  });
+
+  it("creates a link to the correct speaker detail page for 2026", () => {
+    renderWithRouter(<SpeakerCard speaker={mockSpeaker} year="2026" />);
+
+    // Check that the link points to the correct route
+    const link = screen.getByRole("link");
+    expect(link).toHaveAttribute(
+      "href",
+      `${ROUTE_2026_SPEAKER_DETAIL}/${mockSpeaker.id}`,
+    );
+  });
+
   it("creates a link to the default speaker detail page for other years", () => {
     renderWithRouter(<SpeakerCard speaker={mockSpeaker} year="2022" />);
 
@@ -68,6 +91,14 @@ describe("getSpeakerRoute", () => {
 
   it("returns the 2024 route for year 2024", () => {
     expect(getSpeakerRoute("2024")).toBe(ROUTE_2024_SPEAKER_DETAIL);
+  });
+
+  it("returns the 2025 route for year 2025", () => {
+    expect(getSpeakerRoute("2025")).toBe(ROUTE_2025_SPEAKER_DETAIL);
+  });
+
+  it("returns the 2026 route for year 2026", () => {
+    expect(getSpeakerRoute("2026")).toBe(ROUTE_2026_SPEAKER_DETAIL);
   });
 
   it("returns the default route for other years", () => {

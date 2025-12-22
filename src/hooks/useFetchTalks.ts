@@ -9,6 +9,7 @@ const URLS = {
   default: "https://sessionize.com/api/v2/xhudniix/view/Sessions",
   2023: "https://sessionize.com/api/v2/ttsitynd/view/Sessions",
   2024: "https://sessionize.com/api/v2/teq4asez/view/Sessions",
+  2025: "https://sessionize.com/api/v2/xhudniix/view/Sessions",
 };
 
 /**

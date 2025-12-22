@@ -123,6 +123,24 @@ describe("fetch speaker hook and speaker adapter", () => {
     expect(result.current.data).toEqual(speakerAdapter(payload.data));
   });
 
+  it("should use 2025 URL when '2025' is passed", async () => {
+    const { wrapper } = getQueryClientWrapper();
+    mockedAxios.get.mockImplementation(() => Promise.resolve(payload));
+
+    const { result } = renderHook(() => useFetchSpeakers("2025"), {
+      wrapper,
+    });
+    await waitFor(() => result.current.isSuccess, {});
+    await waitFor(() => !result.current.isLoading, {});
+
+    expect(mockedAxios.get).toHaveBeenCalledWith(SPEAKER_URLS["2025"], {
+      headers: { Accept: "application/json; charset=utf-8" },
+    });
+    expect(result.current.isLoading).toEqual(false);
+    expect(result.current.error).toEqual(null);
+    expect(result.current.data).toEqual(speakerAdapter(payload.data));
+  });
+
   it("should use custom URL when a URL is passed", async () => {
     const { wrapper } = getQueryClientWrapper();
     mockedAxios.get.mockImplementation(() => Promise.resolve(payload));

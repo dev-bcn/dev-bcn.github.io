@@ -84,12 +84,14 @@ export const SESSION_URLS = {
   DEFAULT: "https://sessionize.com/api/v2/xhudniix/view/Sessions",
   2023: "https://sessionize.com/api/v2/ttsitynd/view/Sessions",
   2024: "https://sessionize.com/api/v2/teq4asez/view/Sessions",
+  2025: "https://sessionize.com/api/v2/xhudniix/view/Sessions",
 };
 
 export const SPEAKER_URLS = {
   DEFAULT: "https://sessionize.com/api/v2/xhudniix/view/Speakers",
   2023: "https://sessionize.com/api/v2/ttsitynd/view/Speakers",
   2024: "https://sessionize.com/api/v2/teq4asez/view/Speakers",
+  2025: "https://sessionize.com/api/v2/xhudniix/view/Speakers",
 };
 
 export const createMockSpeaker = (overrides = {}) => ({
