@@ -105,7 +105,7 @@
     "rollup-plugin-visualizer": "^6.0.3",
     "tailwindcss": "^4.1.11",
     "vite": "^7.1.12",
-    "vite-plugin-pwa": "^1.1.0",
+    "vite-plugin-pwa": "^1.2.0",
     "vitest": "^4.0.5"
   },
   "bundleDependencies": [
