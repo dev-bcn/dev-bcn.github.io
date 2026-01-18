@@ -104,7 +104,7 @@
     "react-test-renderer": "^19.0.0",
     "rollup-plugin-visualizer": "^6.0.3",
     "tailwindcss": "^4.1.11",
-    "vite": "^7.1.12",
+    "vite": "^7.3.1",
     "vite-plugin-pwa": "^1.2.0",
     "vitest": "^4.0.5"
   },
