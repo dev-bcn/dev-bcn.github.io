@@ -28,7 +28,7 @@ export const PageMetadata: FC<PageMetadataProps> = ({
   title,
   description,
   canonicalUrl,
-  ogImage = "https://www.devbcn.com/images/og-default.jpg",
+  ogImage = "https://www.devbcn.com/images/devbcn26.png",
   ogType = "website",
   twitterCard = "summary_large_image",
   keywords = [],

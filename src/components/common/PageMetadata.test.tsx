@@ -135,7 +135,7 @@ describe("PageMetadata", () => {
       'meta[property="og:image"]',
     ) as HTMLMetaElement;
     expect(ogImage?.content).toBe(
-      "https://www.devbcn.com/images/og-default.jpg",
+      "https://www.devbcn.com/images/devbcn26.png",
     );
   });
 
