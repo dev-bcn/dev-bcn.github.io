@@ -6,7 +6,7 @@ import type { PageMetadataProps } from "@components/common/PageMetadata";
  */
 
 const BASE_URL = "https://www.devbcn.com";
-const DEFAULT_OG_IMAGE = `${BASE_URL}/images/og-default.jpg`;
+const DEFAULT_OG_IMAGE = `${BASE_URL}/images/devbcn26.png`;
 
 export const METADATA_CONFIG: Record<
   string,
@@ -61,10 +61,14 @@ export const METADATA_CONFIG: Record<
   home2026: {
     title: "DevBcn 2026 - Barcelona Developer Conference",
     description:
-      "Save the date for DevBcn 2026! Barcelona's most anticipated developer conference returns with exciting content and opportunities.",
+      "DevBcn 2026 - Barcelona Developers Conference in Spain — June 16-17. Join us at the World Trade Center Barcelona.",
     canonicalUrl: `${BASE_URL}/2026`,
-    ogImage: `${BASE_URL}/images/og-2026.jpg`,
+    ogImage: `${BASE_URL}/images/devbcn26.png`,
     ogType: "event",
+    twitterLabel1: "Date",
+    twitterData1: "June 16th-17th, 2026",
+    twitterLabel2: "Location",
+    twitterData2: "World Trade Center, Barcelona",
     keywords: [
       "developer conference",
       "barcelona",

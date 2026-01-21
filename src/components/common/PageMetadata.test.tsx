@@ -156,4 +156,68 @@ describe("PageMetadata", () => {
     ) as HTMLMetaElement;
     expect(twitterCard?.content).toBe("summary_large_image");
   });
+
+  it("should render new default OpenGraph and Twitter tags", () => {
+    render(<PageMetadata title="Test Page" description="Test description" />);
+
+    const ogLocale = document.querySelector(
+      'meta[property="og:locale"]',
+    ) as HTMLMetaElement;
+    expect(ogLocale?.content).toBe("en_GB");
+
+    const twitterDomain = document.querySelector(
+      'meta[name="twitter:domain"]',
+    ) as HTMLMetaElement;
+    expect(twitterDomain?.content).toBe("https://www.devbcn.com/");
+
+    const twitterSite = document.querySelector(
+      'meta[name="twitter:site"]',
+    ) as HTMLMetaElement;
+    expect(twitterSite?.content).toBe("@dev_bcn");
+
+    const twitterCreator = document.querySelector(
+      'meta[name="twitter:creator"]',
+    ) as HTMLMetaElement;
+    expect(twitterCreator?.content).toBe("@dev_bcn");
+
+    const twitterAlt = document.querySelector(
+      'meta[name="twitter:image:alt"]',
+    ) as HTMLMetaElement;
+    expect(twitterAlt?.content).toBe(
+      "DevBcn - Barcelona Developers Conference in Spain",
+    );
+  });
+
+  it("should render Slack specific tags when provided", () => {
+    render(
+      <PageMetadata
+        title="Test Page"
+        description="Test description"
+        twitterLabel1="Date"
+        twitterData1="June 16-17"
+        twitterLabel2="Location"
+        twitterData2="BCN"
+      />,
+    );
+
+    const label1 = document.querySelector(
+      'meta[name="twitter:label1"]',
+    ) as HTMLMetaElement;
+    expect(label1?.content).toBe("Date");
+
+    const data1 = document.querySelector(
+      'meta[name="twitter:data1"]',
+    ) as HTMLMetaElement;
+    expect(data1?.content).toBe("June 16-17");
+
+    const label2 = document.querySelector(
+      'meta[name="twitter:label2"]',
+    ) as HTMLMetaElement;
+    expect(label2?.content).toBe("Location");
+
+    const data2 = document.querySelector(
+      'meta[name="twitter:data2"]',
+    ) as HTMLMetaElement;
+    expect(data2?.content).toBe("BCN");
+  });
 });
