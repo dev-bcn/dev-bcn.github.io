@@ -1,0 +1,14 @@
+import{C as n,a,j as e,d,M as c}from"./index-DxZQvJw7.js";import{L as l}from"./Linkedin-D83M1a3A.js";import{T as m}from"./Twitter-QIf8id2I.js";import{T as f}from"./TitleSection-HXkImr65.js";import{S as p}from"./SectionWrapper-Bk7haGVg.js";import{d as b}from"./2026-Bf2O2K5e.js";import{u as h}from"./useDocumentTitleUpdate-Cw4jPnc_.js";import{a as x,d as g}from"./Style.AboutCard-BYWg8lEA.js";import{S as u,a as j,b as y}from"./Speakers.style-enwIt1h0.js";(function(){try{var s=typeof window<"u"?window:typeof global<"u"?global:typeof globalThis<"u"?globalThis:typeof self<"u"?self:{};s.SENTRY_RELEASE={id:"04b4d4293ccff9bffe89eef70b331b85846896f6"};var t=new s.Error().stack;t&&(s._sentryDebugIds=s._sentryDebugIds||{},s._sentryDebugIds[t]="8d859982-6c14-4f99-bb50-bdf9e78865e2",s._sentryDebugIdIdentifier="sentry-dbid-8d859982-6c14-4f99-bb50-bdf9e78865e2")}catch{}})();const I=a.h2`
+  padding-top: 1.2rem;
+  padding-bottom: 0.8rem;
+  font-size: 1.5rem;
+  color: ${n.DARK_BLUE};
+`,T=a.h5`
+  font-size: 0.8rem;
+  color: ${n.DARK_BLUE};
+  text-align: left;
+`,S=[{name:"Java & JVM",id:"656fece2-9447-4dbe-8a78-8dc6aa7124f2",members:[]},{name:"Frontend",id:"2684b568-2836-4713-99af-643f8a4d7972",members:[]},{name:"AI, ML, Python",id:"c1ec728d-03c1-4d8d-9f56-637bc97f5a5b",members:[]},{name:"DevOps, Cloud, Kubernetes",id:"504cf03b-130d-4b70-a98c-c4faeb553b5e",members:[]},{name:"Agile, Leadership, Diversity",id:"1d04d5bf-4b94-4e56-b0c6-ee93b3bb8c1f",members:[]}],v=({track:s})=>e.jsxs(e.Fragment,{children:[e.jsx("section",{children:e.jsx(I,{children:s.name})}),e.jsx("div",{style:{display:"flex",margin:"1rem auto",maxWidth:"80%"},children:s.members.map(t=>e.jsx("article",{"data-testid":t.name,children:t.photo&&e.jsxs("div",{children:[e.jsx(x,{src:t.photo,alt:t.name}),e.jsx(T,{children:t.name}),e.jsxs(g,{children:[t.twitter&&e.jsx(m,{color:n.BLUE,twitterUrl:t.twitter}),t.linkedIn&&e.jsx(l,{color:n.BLUE,linkedinUrl:t.linkedIn})]})]})},t.name))})]}),W=({conferenceConfig:s=b,cfpData:t=S})=>{const{width:o}=d();h("CFP Committee",s.edition);const r=()=>t.every(i=>i.members.length>0);return e.jsxs(e.Fragment,{children:[e.jsxs(p,{color:n.WHITE,marginTop:5,children:[e.jsxs(u,{children:[e.jsx(f,{title:"CFP Committee",subtitle:`We're excited to announce the members of the Call for Papers committee
+          for the next DevBcn conference! These experienced professionals will
+          be reviewing and selecting the best talks and workshops for the
+          upcoming event.`,color:n.BLUE}),o>c&&e.jsxs(e.Fragment,{children:[e.jsx(j,{src:"/images/MoreThanBlueWhiteIcon.svg"}),e.jsx(y,{src:"/images/LessThanBlueWhiteIcon.svg"})]})]}),!r()&&e.jsxs("h1",{style:{color:"#002454",marginTop:"4rem"},children:["CFP Committee ",s.edition," in progress"]}),r()&&t.map(i=>e.jsx(v,{track:i},i.id))]}),e.jsx("div",{style:{height:"350px"},children:" "})]})};export{v as CfpTrackComponent,W as default};
+//# sourceMappingURL=CfpSection-Bku5Oelx.js.map
