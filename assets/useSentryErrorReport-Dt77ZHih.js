@@ -1,2 +1,0 @@
-import{q as n}from"./index-BNmA_PP7.js";(function(){try{var e=typeof window<"u"?window:typeof global<"u"?global:typeof globalThis<"u"?globalThis:typeof self<"u"?self:{};e.SENTRY_RELEASE={id:"5713ef49fc0a97f122b241fa07e8f42743071505"};var f=new e.Error().stack;f&&(e._sentryDebugIds=e._sentryDebugIds||{},e._sentryDebugIds[f]="5b09634d-716a-4cb4-9e93-a06ef6df378b",e._sentryDebugIdIdentifier="sentry-dbid-5b09634d-716a-4cb4-9e93-a06ef6df378b")}catch{}})();const r=e=>{e instanceof Error&&n(e)};export{r as u};
-//# sourceMappingURL=useSentryErrorReport-Dt77ZHih.js.map
