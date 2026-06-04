@@ -47,7 +47,6 @@ speaker profiles, talk details, venue information, and registration.
 ### Deployment
 
 - **Hosting**: GitHub Pages
-- **PWA Support**: vite-plugin-pwa
 - **Analytics**: Google Analytics (react-ga)
 
 ## Project Structure

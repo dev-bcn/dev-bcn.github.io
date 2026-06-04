@@ -3,7 +3,6 @@ import react from "@vitejs/plugin-react";
 import { sentryVitePlugin } from "@sentry/vite-plugin";
 import pkg from "./package.json";
 import path from "path";
-import { VitePWA } from "vite-plugin-pwa";
 
 export default defineConfig(({ mode }) => {
   return {
@@ -13,33 +12,6 @@ export default defineConfig(({ mode }) => {
         authToken: process.env.SENTRY_AUTH_TOKEN,
         org: "dev-bcn",
         project: "devbcn",
-      }),
-
-      VitePWA({
-        registerType: "autoUpdate",
-        includeAssets: [
-          "favicon.ico",
-          "apple-touch-icon.png",
-          "maskable_icon_x192.png",
-        ],
-        manifest: {
-          name: "DevBcn",
-          short_name: "DevBcn",
-          description: "DevBcn - The developer conference in Barcelona",
-          theme_color: "#ffffff",
-          icons: [
-            {
-              src: "logo192.png",
-              sizes: "192x192",
-              type: "image/png",
-            },
-            {
-              src: "logo512.png",
-              sizes: "512x512",
-              type: "image/png",
-            },
-          ],
-        },
       }),
     ],
     resolve: {

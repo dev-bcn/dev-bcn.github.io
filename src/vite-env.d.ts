@@ -1,4 +1,3 @@
-/// <reference types="vite-plugin-pwa/client" />
 interface ViteTypeOptions {
   strictImportMetaEnv: unknown;
 }
