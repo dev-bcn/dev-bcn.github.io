@@ -1,0 +1,11 @@
+import{C as l,a as i,m as f,j as t,L as E,$ as c,a0 as _,x as p,a1 as u,v as m,a2 as g,a3 as x,a4 as A,a5 as h,E as L}from"./index-BCDkc3cT.js";import{e as n,a as S,C as d}from"./sessionsAdapter-CfajeE_7.js";import{S as R}from"./MeetingDetail-ec6c0j9u.js";import{h as b,i as I,j as o,k as j,a as y}from"./Talks.style-DZCagobM.js";import"./Faqs.style-CFIjAGVH.js";import{T as D}from"./Tag-DOgoy_Py.js";(function(){try{var e=typeof window<"u"?window:typeof global<"u"?global:typeof globalThis<"u"?globalThis:typeof self<"u"?self:{};e.SENTRY_RELEASE={id:"c47f369a80181ba102fab5ee6d72a6932f658385"};var s=new e.Error().stack;s&&(e._sentryDebugIds=e._sentryDebugIds||{},e._sentryDebugIds[s]="85637f45-9723-4e08-b131-7fad04d07db4",e._sentryDebugIdIdentifier="sentry-dbid-85637f45-9723-4e08-b131-7fad04d07db4")}catch{}})();const K=i(f.div)`
+  color: ${l.BLACK_BLUE};
+`;i.div`
+  padding-top: 0.25rem;
+`;i.img`
+  height: 0.75rem;
+`;i.span`
+  font-size: 0.75rem;
+  padding-left: 0.25rem;
+`;const U=e=>e==="2026"?c:e==="2025"?_:e==="2024"?p:e==="2023"?u:m,O=e=>e==="2026"?g:e==="2025"?x:e==="2024"?A:e==="2023"?h:L,B=({showTrack:e=!1,talk:s,year:a,openFeedbackId:T})=>t.jsx(b,{initial:{opacity:"0"},animate:{opacity:"100%"},exit:{opacity:"0"},transition:{duration:.5},children:t.jsxs(K,{children:[t.jsx(I,{to:`${U(a)}/${s.id}`,children:s.title}),t.jsx(o,{children:s.speakers.map(r=>t.jsx(j,{children:t.jsx(E,{to:`${O(a)}/${r.id}`,children:r.name})},r.id))}),t.jsxs(o,{children:[`${n(s.categories,d.Format)} `,n(s.categories)," "]}),e&&t.jsxs(o,{children:[t.jsx("strong",{children:"Track: "}),n(s.categories,d.Track)]}),t.jsx(y,{children:S(s.questionAnswers)?.map(r=>t.jsx(D,{text:r,textColor:l.WHITE},r))}),t.jsx("section",{style:{display:"block"},children:t.jsxs(R,{href:`https://openfeedback.io/${T}/0/${s.id}`,target:"_blank",rel:"noreferrer noopener",children:["🗳️ ",t.jsx("strong",{children:"Vote this talk"})]})})]})});export{B as T};
+//# sourceMappingURL=TalkCard-Czb0efN2.js.map
